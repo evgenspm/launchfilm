@@ -1,0 +1,127 @@
+# CI: validators + typecheck + licence gates on every PR; a real Remotion render of films/_sample on Linux (CPU GL);
+# a Windows smoke install (junctions, paths). No secrets are used anywhere.
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  LAUNCHFILM_NO_CREDIT: '1'
+  DO_NOT_TRACK: '1'
+
+jobs:
+  lint:
+    name: lint, schemas, typecheck, licences
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: studio/package-lock.json
+      - name: REUSE (licence of every file)
+        run: |
+          pipx run --spec 'reuse[charset-normalizer]' reuse lint --json > reuse.json || true
+          node -e '
+            const r = require("./reuse.json"); const n = r.non_compliant || {};
+            const bad = Object.entries(n).filter(([k, v]) => (Array.isArray(v) ? v.length : Object.keys(v || {}).length) && !(k === "unused_licenses" && JSON.stringify(v) === JSON.stringify(["CC-BY-4.0"])));
+            if (bad.length) { console.error("REUSE problems:", JSON.stringify(Object.fromEntries(bad), null, 1)); process.exit(1); }
+            console.log("REUSE ok (" + r.summary.files_total + " files; CC-BY-4.0 reserved for our media)");'
+      - name: Media licence gate (SFX CC0 only, no committed music, repo ≤ 20 MB)
+        run: node scripts/check-media.mjs
+      - run: npm ci --prefix studio --no-audit --no-fund
+      - name: Skills + manifests (spec frontmatter, versions, no symlinks)
+        run: node scripts/sync-skills.mjs --check
+      - name: Recipes (schema + vocabulary)
+        run: node scripts/validate-recipes.mjs
+      - name: Recipe catalog is up to date
+        run: node scripts/build-index.mjs --check
+      - name: Typecheck (studio + CLI)
+        run: npm --prefix studio run typecheck
+      - name: film.json / brand.json / harness.config.json against schemas
+        run: node studio/cli/launchfilm.mjs validate
+
+  render:
+    name: render films/_sample (Linux, swangle)
+    runs-on: ubuntu-latest
+    env:
+      REMOTION_GL: swangle
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: studio/package-lock.json
+      - name: Remotion system libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libnss3 libdbus-1-3 libatk1.0-0 libasound2t64 libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libgbm-dev libcups2 libcairo2 libpango-1.0-0 libatk-bridge2.0-0
+      - run: npm ci --no-audit --no-fund
+        working-directory: studio
+      - uses: actions/cache@v4
+        with:
+          path: studio/node_modules/.remotion
+          key: chrome-headless-shell-${{ runner.os }}-${{ hashFiles('studio/package-lock.json') }}
+      - run: npx remotion browser ensure
+        working-directory: studio
+      - name: All compositions bundle
+        run: npx remotion compositions --quiet
+        working-directory: studio
+      - name: doctor (errors fail, warnings are fine)
+        run: node cli/launchfilm.mjs doctor --json > doctor.json || (cat doctor.json; exit 1)
+        working-directory: studio
+      - name: Render _sample at half scale
+        run: npm run render:sample
+        working-directory: studio
+      - name: ffprobe the sample
+        run: |
+          node cli/launchfilm.mjs sheet out/_sample.mp4 --out-dir out/sheets/_sample
+          npx remotion ffprobe -v error -show_entries stream=codec_name,profile,pix_fmt,width,height,r_frame_rate:format=duration -of json out/_sample.mp4 | tee probe.json
+          node -e 'const p=require("./probe.json");const v=p.streams.find(s=>s.width);const d=+p.format.duration;if(v.width!==960||v.height!==540||Math.abs(d-3)>0.2||v.codec_name!=="h264"||v.pix_fmt!=="yuv420p"){console.error("unexpected sample",JSON.stringify(p));process.exit(1)}console.log("sample ok",v.width+"x"+v.height,d+"s",v.profile)'
+        working-directory: studio
+      - name: Procedural SFX + beats (smoke, outside the library)
+        run: |
+          node cli/launchfilm.mjs sfx gen riser --out "$RUNNER_TEMP/riser.wav"
+          node cli/launchfilm.mjs beats "$RUNNER_TEMP/riser.wav" --out "$RUNNER_TEMP/riser.beats.json"
+        working-directory: studio
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sample-render
+          path: |
+            studio/out/_sample.mp4
+            studio/out/_sample-poster.png
+            studio/out/sheets/_sample/
+            studio/doctor.json
+          if-no-files-found: ignore
+
+  windows-smoke:
+    name: Windows install smoke (junctions, paths)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install into a temp repo (no npm, no render)
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/repo" && cd "$RUNNER_TEMP/repo" && git init -q
+          node "$GITHUB_WORKSPACE/studio/scripts/install.mjs" --target . --skip-npm --skip-media --skip-render
+          test -f .agents/skills/launch-film/SKILL.md
+          test -f .claude/skills/launch-film/SKILL.md
+          grep -q "launchfilm:begin" AGENTS.md
+          test -f launch-video/cli/launchfilm.mjs
+          node "$GITHUB_WORKSPACE/studio/scripts/install.mjs" --target . --skip-npm --skip-media --skip-render | grep -q "already current"

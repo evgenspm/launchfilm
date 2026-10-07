@@ -1,0 +1,582 @@
+{
+ "$comment": "launchfilm SFX library: 48 kHz WAV, peak -3 dBFS. In film.json use sfx: [{at, sound: <sound>}] (resolves to public/sfx/<sound>.wav). Licence per entry; CC0-1.0 only in the harness repo.",
+ "version": 1,
+ "format": {
+  "sampleRate": 48000,
+  "peakDbfs": -3,
+  "container": "wav"
+ },
+ "sounds": [
+  {
+   "id": "bass-drop",
+   "file": "bass-drop.wav",
+   "tags": [
+    "bass",
+    "drop",
+    "sub",
+    "trailer"
+   ],
+   "duration": 1.6,
+   "peak": -3,
+   "truePeak": -3,
+   "lufs": -11.49,
+   "rms": -7.23,
+   "channels": 1,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "1.6 s sub sweep 95 to 30 Hz",
+   "use": "drop after a riser, hero moment (needs headphones/speakers)",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "bass-drop",
+    "seed": 44
+   },
+   "sound": "bass-drop"
+  },
+  {
+   "id": "camera-shutter",
+   "file": "camera-shutter.wav",
+   "tags": [
+    "camera",
+    "shutter",
+    "screenshot",
+    "capture"
+   ],
+   "duration": 0.35,
+   "peak": -3,
+   "truePeak": -2.67,
+   "lufs": null,
+   "rms": -23.44,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "two-clack mechanical shutter",
+   "use": "screenshot, capture, photo moment",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "camera-shutter",
+    "seed": 52
+   },
+   "sound": "camera-shutter"
+  },
+  {
+   "id": "click",
+   "file": "click.wav",
+   "tags": [
+    "click",
+    "ui",
+    "mouse",
+    "button"
+   ],
+   "duration": 0.06,
+   "peak": -3,
+   "truePeak": -2.83,
+   "lufs": null,
+   "rms": -19.45,
+   "channels": 1,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "60 ms mouse/button click",
+   "use": "cursor click, button press",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "click",
+    "seed": 31
+   },
+   "sound": "click"
+  },
+  {
+   "id": "glitch-sfx",
+   "file": "glitch-sfx.wav",
+   "tags": [
+    "glitch",
+    "digital",
+    "error",
+    "transition"
+   ],
+   "duration": 0.4,
+   "peak": -3,
+   "truePeak": -2.79,
+   "lufs": -10.79,
+   "rms": -14.95,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "0.4 s bit-crushed glitch",
+   "use": "glitch cut, error state, AI/tech accent",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "glitch-sfx",
+    "seed": 43
+   },
+   "sound": "glitch-sfx"
+  },
+  {
+   "id": "hit",
+   "file": "hit.wav",
+   "tags": [
+    "hit",
+    "punch",
+    "accent",
+    "beat"
+   ],
+   "duration": 0.6,
+   "peak": -3,
+   "truePeak": -3,
+   "lufs": -16.3,
+   "rms": -11.63,
+   "channels": 1,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "0.6 s punchy hit",
+   "use": "text slam, beat accent, stat lands",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "hit",
+    "seed": 41
+   },
+   "sound": "hit"
+  },
+  {
+   "id": "impact-low",
+   "file": "impact-low.wav",
+   "tags": [
+    "impact",
+    "boom",
+    "low",
+    "logo"
+   ],
+   "duration": 1.2,
+   "peak": -3,
+   "truePeak": -3,
+   "lufs": -11.91,
+   "rms": -12.54,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "1.2 s low boom with tail",
+   "use": "logo reveal, end card, big statement",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "impact-low",
+    "seed": 42
+   },
+   "sound": "impact-low"
+  },
+  {
+   "id": "notification",
+   "file": "notification.wav",
+   "tags": [
+    "notification",
+    "ding",
+    "bell",
+    "chime"
+   ],
+   "duration": 1.5,
+   "peak": -3,
+   "truePeak": -2.85,
+   "lufs": -11.89,
+   "rms": -15.52,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "1.5 s soft bell (notification ding)",
+   "use": "notification arrives, message lands",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "notification",
+    "seed": 35
+   },
+   "sound": "notification"
+  },
+  {
+   "id": "pop",
+   "file": "pop.wav",
+   "tags": [
+    "pop",
+    "ui",
+    "appear",
+    "bubble"
+   ],
+   "duration": 0.1,
+   "peak": -3,
+   "truePeak": -3,
+   "lufs": null,
+   "rms": -16.11,
+   "channels": 1,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "100 ms upward pop",
+   "use": "element appears, badge, notification dot",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "pop",
+    "seed": 33
+   },
+   "sound": "pop"
+  },
+  {
+   "id": "reverse-cymbal",
+   "file": "reverse-cymbal.wav",
+   "tags": [
+    "reverse",
+    "cymbal",
+    "swell",
+    "build"
+   ],
+   "duration": 1.5,
+   "peak": -3,
+   "truePeak": -3,
+   "lufs": -19.42,
+   "rms": -22.2,
+   "channels": 1,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "1.5 s reversed metallic swell",
+   "use": "swell into a cut, title slam",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "reverse-cymbal",
+    "seed": 23
+   },
+   "sound": "reverse-cymbal"
+  },
+  {
+   "id": "riser",
+   "file": "riser.wav",
+   "tags": [
+    "riser",
+    "build",
+    "tension",
+    "short"
+   ],
+   "duration": 2,
+   "peak": -3,
+   "truePeak": -2.95,
+   "lufs": -16.14,
+   "rms": -20.49,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "2 s saw + noise riser with a hard stop",
+   "use": "build into a reveal or logo (end it on the cut)",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "riser",
+    "seed": 21
+   },
+   "sound": "riser"
+  },
+  {
+   "id": "riser-long",
+   "file": "riser-long.wav",
+   "tags": [
+    "riser",
+    "build",
+    "tension",
+    "trailer"
+   ],
+   "duration": 4,
+   "peak": -3,
+   "truePeak": -2.91,
+   "lufs": -15.8,
+   "rms": -21.21,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "4 s riser with a hard stop",
+   "use": "long build before the hero moment",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "riser-long",
+    "seed": 22
+   },
+   "sound": "riser-long"
+  },
+  {
+   "id": "shimmer",
+   "file": "shimmer.wav",
+   "tags": [
+    "shimmer",
+    "sparkle",
+    "glint",
+    "magic"
+   ],
+   "duration": 0.9,
+   "peak": -3,
+   "truePeak": -2.93,
+   "lufs": -9.81,
+   "rms": -16.87,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "0.9 s rising sparkle",
+   "use": "glint sweep, AI magic moment, highlight",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "shimmer",
+    "seed": 36
+   },
+   "sound": "shimmer"
+  },
+  {
+   "id": "silence-beat",
+   "file": "silence-beat.wav",
+   "tags": [
+    "silence",
+    "pause",
+    "beat"
+   ],
+   "duration": 0.5,
+   "peak": null,
+   "truePeak": null,
+   "lufs": null,
+   "rms": null,
+   "channels": 1,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "0.5 s of digital silence (a deliberate gap)",
+   "use": "cut to black for a beat of silence",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "silence-beat",
+    "seed": 0
+   },
+   "sound": "silence-beat"
+  },
+  {
+   "id": "swell",
+   "file": "swell.wav",
+   "tags": [
+    "swell",
+    "pad",
+    "low",
+    "reveal"
+   ],
+   "duration": 2,
+   "peak": -3,
+   "truePeak": -3,
+   "lufs": -15.95,
+   "rms": -18.15,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "2 s low pad swell",
+   "use": "under a light-on or reveal",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "swell",
+    "seed": 24
+   },
+   "sound": "swell"
+  },
+  {
+   "id": "swoosh-short",
+   "file": "swoosh-short.wav",
+   "tags": [
+    "swoosh",
+    "swipe",
+    "ui",
+    "fast"
+   ],
+   "duration": 0.25,
+   "peak": -3,
+   "truePeak": -2.5,
+   "lufs": null,
+   "rms": -18.36,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "0.25 s bright swoosh",
+   "use": "UI element flies in, swipe, word pops in from the side",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "swoosh-short",
+    "seed": 14
+   },
+   "sound": "swoosh-short"
+  },
+  {
+   "id": "tick",
+   "file": "tick.wav",
+   "tags": [
+    "tick",
+    "ui",
+    "counter",
+    "small"
+   ],
+   "duration": 0.03,
+   "peak": -3,
+   "truePeak": -2.53,
+   "lufs": null,
+   "rms": -17.98,
+   "channels": 1,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "30 ms tiny tick",
+   "use": "counter steps, list items, toggles",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "tick",
+    "seed": 32
+   },
+   "sound": "tick"
+  },
+  {
+   "id": "type-click",
+   "file": "type-click.wav",
+   "tags": [
+    "typing",
+    "key",
+    "keyboard",
+    "click"
+   ],
+   "duration": 0.07,
+   "peak": -3,
+   "truePeak": -2.98,
+   "lufs": null,
+   "rms": -20.5,
+   "channels": 1,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "one key press",
+   "use": "a single keystroke, typewriter letters",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "type-click",
+    "seed": 30
+   },
+   "sound": "type-click"
+  },
+  {
+   "id": "typing-burst",
+   "file": "typing-burst.wav",
+   "tags": [
+    "typing",
+    "keyboard",
+    "keys",
+    "ui"
+   ],
+   "duration": 1.25,
+   "peak": -3,
+   "truePeak": -2.64,
+   "lufs": -22.84,
+   "rms": -26.3,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "1.25 s burst of key presses",
+   "use": "prompt typing, search field, code typing",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "typing-burst",
+    "seed": 51
+   },
+   "sound": "typing-burst"
+  },
+  {
+   "id": "ui-confirm",
+   "file": "ui-confirm.wav",
+   "tags": [
+    "ui",
+    "confirm",
+    "success",
+    "chime"
+   ],
+   "duration": 0.45,
+   "peak": -3,
+   "truePeak": -2.98,
+   "lufs": -10,
+   "rms": -15.33,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "2-note rising chime",
+   "use": "task done, checkmark, success state",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "ui-confirm",
+    "seed": 34
+   },
+   "sound": "ui-confirm"
+  },
+  {
+   "id": "whoosh",
+   "file": "whoosh.wav",
+   "tags": [
+    "whoosh",
+    "transition",
+    "camera",
+    "medium"
+   ],
+   "duration": 0.8,
+   "peak": -3,
+   "truePeak": -2.9,
+   "lufs": -10.8,
+   "rms": -18.48,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "0.8 s whoosh, band sweep 300 Hz to 4 kHz",
+   "use": "camera move, scene transition",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "whoosh",
+    "seed": 12
+   },
+   "sound": "whoosh"
+  },
+  {
+   "id": "whoosh-long",
+   "file": "whoosh-long.wav",
+   "tags": [
+    "whoosh",
+    "transition",
+    "zoom",
+    "slow"
+   ],
+   "duration": 1.4,
+   "peak": -3,
+   "truePeak": -2.93,
+   "lufs": -12.47,
+   "rms": -19.91,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "1.4 s slow whoosh",
+   "use": "zoom-through, big reveal, slow push",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "whoosh-long",
+    "seed": 13
+   },
+   "sound": "whoosh-long"
+  },
+  {
+   "id": "whoosh-short",
+   "file": "whoosh-short.wav",
+   "tags": [
+    "whoosh",
+    "transition",
+    "swipe",
+    "fast"
+   ],
+   "duration": 0.4,
+   "peak": -3,
+   "truePeak": -2.9,
+   "lufs": -12.36,
+   "rms": -18.6,
+   "channels": 2,
+   "license": "CC0-1.0",
+   "source": "launchfilm-procedural",
+   "description": "0.4 s air whoosh, left to right",
+   "use": "quick cut, card slide, text swap",
+   "provenance": {
+    "generator": "launchfilm sfx gen",
+    "preset": "whoosh-short",
+    "seed": 11
+   },
+   "sound": "whoosh-short"
+  }
+ ]
+}

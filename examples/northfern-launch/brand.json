@@ -1,0 +1,23 @@
+{
+  "$schema": "../../schemas/brand.schema.json",
+  "id": "northfern",
+  "name": "Northfern",
+  "tagline": "Savings that grow while you sleep.",
+  "url": "northfern.finance",
+  "theme": "dark",
+  "colors": {"bg": "#06130F", "fg": "#EAF5EF", "accent": "#3FE0A0", "accent2": "#F2C75C", "muted": "#7FA195", "surface": "#0E1F19"},
+  "fonts": {"display": "Manrope", "text": "Manrope", "mono": "JetBrains Mono"},
+  "radius": 18,
+  "typography": {"displayWeight": 800, "displayTracking": -0.035, "displayLineHeight": 1.08, "textWeight": 500},
+  "logo": {
+    "mark": {
+      "viewBox": "0 0 48 48",
+      "paths": [
+        {"d": "M24 2 A22 22 0 1 1 23.99 2 Z M24 7.5 A16.5 16.5 0 1 0 24.01 7.5 Z", "fill": "accent", "fillRule": "evenodd"},
+        {"d": "M24 12 L33 33 L24 27.5 L15 33 Z", "fill": "accent2"}
+      ]
+    },
+    "wordmarkWeight": 800,
+    "wordmarkTracking": -0.03
+  }
+}

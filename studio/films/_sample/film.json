@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../schemas/film.schema.json",
+  "id": "sample",
+  "title": "Sample: brand title, one motion, no audio",
+  "fps": 30,
+  "aspects": ["16:9", "9:16"],
+  "duration": 3,
+  "shots": [
+    {"id": "title", "scene": "title", "dur": 3, "props": {"text": "Lumenfold", "sub": "Your agent for the boring half of work."}}
+  ],
+  "subtitles": {"enabled": false}
+}

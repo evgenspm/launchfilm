@@ -1,0 +1,279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/evgenspm/launchfilm/schemas/brand.schema.json",
+  "title": "launchfilm brand",
+  "description": "One product's look: colours, fonts, logo, radius. Lives at studio/films/<slug>/brand.json and is passed to <BrandProvider>; every preset and component reads it through useBrand(). Shape = studio/src/brand/types.ts (Brand).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "theme",
+    "colors",
+    "fonts",
+    "radius"
+  ],
+  "$defs": {
+    "hex": {
+      "type": "string",
+      "pattern": "^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$"
+    },
+    "font": {
+      "description": "A family name, or a family plus a font file under studio/public/. Vendored families need only the name: Inter, Geist, Geist Mono, JetBrains Mono, Manrope, Unbounded.",
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "family"
+          ],
+          "properties": {
+            "family": {
+              "type": "string",
+              "minLength": 1
+            },
+            "src": {
+              "type": "string",
+              "description": "woff2/woff/ttf/otf path under public/ (e.g. 'brand/fonts/Acme-Variable.woff2') or a URL"
+            },
+            "weight": {
+              "type": "string",
+              "description": "CSS weight or range of the file, e.g. '400' or '100 900' (default '100 900')"
+            },
+            "fallback": {
+              "type": "string",
+              "description": "CSS fallback stack, e.g. 'system-ui, sans-serif'"
+            }
+          }
+        }
+      ]
+    },
+    "colorRef": {
+      "description": "A hex colour or a colour token name.",
+      "type": "string",
+      "pattern": "^(#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})|bg|fg|accent|accent2|muted|surface)$"
+    }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "kebab-case slug"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "tagline": {
+      "type": "string",
+      "maxLength": 90,
+      "description": "one line; the end card's default line"
+    },
+    "url": {
+      "type": "string",
+      "description": "shown without the protocol, e.g. 'example.com'; the end card's default URL"
+    },
+    "theme": {
+      "enum": [
+        "dark",
+        "light"
+      ]
+    },
+    "colors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bg",
+        "fg",
+        "accent",
+        "accent2",
+        "muted",
+        "surface"
+      ],
+      "properties": {
+        "bg": {
+          "$ref": "#/$defs/hex",
+          "description": "frame background"
+        },
+        "fg": {
+          "$ref": "#/$defs/hex",
+          "description": "primary text"
+        },
+        "accent": {
+          "$ref": "#/$defs/hex",
+          "description": "the product colour; reserve it for the promise"
+        },
+        "accent2": {
+          "$ref": "#/$defs/hex",
+          "description": "second accent: charts, highlights"
+        },
+        "muted": {
+          "$ref": "#/$defs/hex",
+          "description": "secondary text, rules"
+        },
+        "surface": {
+          "$ref": "#/$defs/hex",
+          "description": "cards, windows, panels on top of bg"
+        }
+      }
+    },
+    "fonts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "display",
+        "text",
+        "mono"
+      ],
+      "properties": {
+        "display": {
+          "$ref": "#/$defs/font",
+          "description": "statements, headlines, wordmark"
+        },
+        "text": {
+          "$ref": "#/$defs/font",
+          "description": "UI text, subtitles, body"
+        },
+        "mono": {
+          "$ref": "#/$defs/font",
+          "description": "labels, eyebrows, URLs, code"
+        }
+      }
+    },
+    "logo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mark": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "description": "svg/png path under public/, e.g. \"brand/mark.svg\""
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "viewBox",
+                "paths"
+              ],
+              "description": "an inline vector mark: {viewBox, paths[{d, fill?, opacity?, fillRule?}]}",
+              "properties": {
+                "viewBox": {
+                  "type": "string",
+                  "pattern": "^-?[0-9.]+ -?[0-9.]+ [0-9.]+ [0-9.]+$"
+                },
+                "paths": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "d"
+                    ],
+                    "properties": {
+                      "d": {
+                        "type": "string"
+                      },
+                      "fill": {
+                        "$ref": "#/$defs/colorRef"
+                      },
+                      "opacity": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "fillRule": {
+                        "enum": [
+                          "nonzero",
+                          "evenodd"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "src": {
+          "type": "string",
+          "description": "alias of a string `mark` (older brand.json files); `mark` wins"
+        },
+        "wordmark": {
+          "type": "string",
+          "description": "wordmark text; defaults to name"
+        },
+        "wordmarkFont": {
+          "enum": [
+            "display",
+            "text",
+            "mono"
+          ]
+        },
+        "wordmarkWeight": {
+          "type": "number",
+          "minimum": 100,
+          "maximum": 1000
+        },
+        "wordmarkTracking": {
+          "type": "number",
+          "minimum": -0.2,
+          "maximum": 0.5,
+          "description": "em"
+        },
+        "wordmarkCase": {
+          "enum": [
+            "none",
+            "lower",
+            "upper"
+          ]
+        }
+      },
+      "description": "Logo. `mark` is either an svg/png path under studio/public/ (e.g. \"brand/mark.svg\") or an inline vector; without any mark a monogram tile is drawn. The wordmark is always text (font role, weight, tracking, case below), defaulting to `name`."
+    },
+    "radius": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 64,
+      "description": "corner radius of cards and windows at 1080p, px"
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "displayWeight": {
+          "type": "number",
+          "minimum": 100,
+          "maximum": 1000
+        },
+        "displayTracking": {
+          "type": "number",
+          "minimum": -0.2,
+          "maximum": 0.5,
+          "description": "em"
+        },
+        "displayLineHeight": {
+          "type": "number",
+          "minimum": 0.8,
+          "maximum": 2
+        },
+        "textWeight": {
+          "type": "number",
+          "minimum": 100,
+          "maximum": 1000
+        }
+      }
+    }
+  }
+}

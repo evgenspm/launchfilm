@@ -1,0 +1,34 @@
+{
+  "$schema": "../../schemas/film.schema.json",
+  "id": "northfern-launch",
+  "title": "Northfern: savings that grow while you sleep (example film)",
+  "fps": 30,
+  "aspects": ["16:9", "9:16"],
+  "beats": {"bpm": 100},
+  "shots": [
+    {
+      "id": "problem",
+      "scene": "statement",
+      "beat": 0,
+      "beats": 4,
+      "props": {"lines": [{"text": "Your savings sit still.", "enter": "cut", "exit": "cut", "emphasis": {"words": ["still."], "mode": "dim", "at": 18}}]}
+    },
+    {
+      "id": "turn",
+      "scene": "statement",
+      "beat": 4,
+      "beats": 4,
+      "transition": "blur-dissolve",
+      "props": {"lines": [{"text": "Northfern moves them.", "enter": "rise", "emphasis": {"words": ["Northfern"], "mode": "accent"}}]}
+    },
+    {"id": "growth", "scene": "growth", "beat": 8, "beats": 8, "transition": "slide-push"},
+    {"id": "features", "scene": "features", "beat": 16, "beats": 6, "transition": "zoom-through"}
+  ],
+  "vo": [
+    {"id": "l1", "text": "Every round-up and every payday | goes to *work* overnight.", "at": 5.0},
+    {"id": "l2", "text": "Set it once. *Watch it grow.*", "at": 9.9}
+  ],
+  "subtitles": {"enabled": true},
+  "endCard": {"dur": 2.6, "cta": "Get the app", "transition": "blur-dissolve"},
+  "look": {"grain": 0.05, "vignette": 0.25}
+}

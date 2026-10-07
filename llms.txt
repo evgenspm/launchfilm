@@ -1,0 +1,62 @@
+# launchfilm
+
+> Open-source (MIT) harness that turns a coding agent (Claude Code, Codex, Cursor, Gemini CLI, Copilot, OpenCode, Amp) into a product-launch motion designer on Remotion: Agent Skills for the pipeline, craft rules with numbers, a studio template, recipes, platform export presets and frame QA. Default providers need no API keys. Remotion is a dependency under its own license (free for individuals and companies of up to 3 people).
+
+Install by telling your agent: "Fetch and follow https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/INSTALL.md". The studio lands in `./launch-video/`; run the CLI there with `npx launchfilm <command>`. Pipeline: brief → brand → storyboard (user approves) → sound → scenes → QA → render per preset → package → post. Recipe gallery: https://motion.eugenefounder.lol
+
+## Start here
+
+- [README](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/README.md): what it is, install routes, providers, license, credit
+- [INSTALL.md](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/INSTALL.md): agent-executable install with a done-when check
+- [AGENTS.md](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/AGENTS.md): repo map, rules and validation for contributors
+
+## Skills
+
+- [launch-film](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/launch-film/SKILL.md): router and gated pipeline, platform presets, Remotion license notice, credit rule
+- [brand-intake](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/brand-intake/SKILL.md): brand.json from repo tokens, live URL or screenshots; hard stop instead of inventing a logo
+- [story](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/story/SKILL.md): brief, hooks, structures for 6–90 s, VO script, storyboard approval
+- [sound](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/sound/SKILL.md): voice-over, word timings, music and beat grid, SFX on events, mix targets
+- [scene-build](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/scene-build/SKILL.md): building scenes with studio presets; camera, motion, type, transitions, UI, look, 3D
+- [recipes](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/recipes/SKILL.md): search and remix recipes from recipes/index.json
+- [reference-study](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/reference-study/SKILL.md): turn a reference video into a recipe (study, then build)
+- [film-qa](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/film-qa/SKILL.md): contact sheets, stills, readability, contrast, safe zones, loudness, ffprobe
+- [launch-post](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/launch-post/SKILL.md): X, LinkedIn and Product Hunt copy without launch clichés
+
+## Craft (rules with numbers)
+
+- [00 pro vs amateur](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/00-pro-vs-amateur.md): the 12 tells (T1–T12) and their antidotes, as a blocking checklist
+- [01 story](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/01-story.md): order of work, two modes, structures for 6/15/30/45/60/90 s, hooks, storyboard format
+- [02 rhythm and sound](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/02-rhythm-and-sound.md): beat grid math, shot lengths, readability holds, glue rule, mix levels
+- [03 camera and staging](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/03-camera-and-staging.md): zoom tiers, drift and push-in, multi-aspect recomposition, cursor and keycaps
+- [04 motion](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/04-motion.md): named springs, easings, durations, stagger, entrances and exits, determinism
+- [05 typography](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/05-typography.md): fonts, sizes, kinetic type recipes, layout
+- [06 look](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/06-look.md): grade, grain, treatments, materials, banding
+- [07 footage](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/07-footage.md): screen recordings, rebuilt UI, archival, optional AI footage, provenance
+- [08 QA checklist](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/08-qa-checklist.md): procedure, blocking checks, delivery checks, evidence rules
+- [09 transitions](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/09-transitions.md): catalog by vocabulary id with frame counts and sound pairing
+- [10 platforms](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/10-platforms.md): export presets, encode settings, captions, SRT, safe zones, poster frame
+- [11 script and VO](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/11-script-and-vo.md): word budget, copy rules, banned phrases, voice style, best-of-N
+- [12 audio library](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/12-audio-library.md): music and SFX sources, licensing traffic lights, manifests
+- [13 UI recreation](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/13-ui-recreation.md): rebuild the UI in React vs screen recording with punch-ins
+- [vocabulary](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/vocabulary.md): the closed list of technique ids recipes use
+
+## Families (technique recipes)
+
+- [notifications](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/families/notifications.md): banners landing and stacking, pills and island morphs, the agent orb
+- [converge](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/families/converge.md): fragments pulled into one core, orbit rings, depth fields
+- [list](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/families/list.md): a list that maintains itself; prompt, thinking, answer
+- [screen](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/families/screen.md): staging a product screen: tilt plane, dolly, rack focus, laptop reveal
+- [statement](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/families/statement.md): statement sequences, word swaps, mask rises, dimensional hero type
+- [brandmark](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/families/brandmark.md): light-on, glass mark, portal zoom, particle form, end card
+
+## Schemas
+
+- [recipe.schema.json](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/schemas/recipe.schema.json): recipe metadata, beat sheet and techniques
+- [film.schema.json](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/schemas/film.schema.json): a film as data (beats, shots, VO, events)
+- [brand.schema.json](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/schemas/brand.schema.json): brand tokens captured by brand-intake
+
+## Optional
+
+- [CREDITS.md](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/CREDITS.md): author, dependencies, prior art, bundled asset licenses
+- [SHOWCASE.md](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/SHOWCASE.md): films made with launchfilm
+- [Remotion docs for agents](https://www.remotion.dev/llms.txt): the engine's own index

@@ -1,0 +1,21 @@
+{
+  "name": "launchfilm",
+  "owner": {"name": "Eugene Li", "url": "https://github.com/evgenspm"},
+  "metadata": {
+    "description": "launchfilm: product-launch films with your coding agent (Remotion). One repo = plugin + marketplace.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "launchfilm",
+      "source": ".",
+      "description": "Launch-film motion designer for coding agents: brief → brand → storyboard → Remotion scenes → QA → per-platform renders. Free defaults, no telemetry.",
+      "version": "0.1.0",
+      "author": {"name": "Eugene Li", "url": "https://github.com/evgenspm"},
+      "license": "MIT",
+      "homepage": "https://github.com/evgenspm/launchfilm",
+      "keywords": ["remotion", "video", "launch", "motion-design"],
+      "category": "productivity"
+    }
+  ]
+}

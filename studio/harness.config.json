@@ -1,0 +1,299 @@
+{
+  "$schema": "../schemas/harness-config.schema.json",
+  "credit": true,
+  "defaultPresets": [
+    "x-16x9",
+    "li-4x5"
+  ],
+  "presets": {
+    "x-16x9": {
+      "aspect": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "duration": [
+        30,
+        45
+      ],
+      "maxDuration": 140,
+      "captions": "burned",
+      "audio": true,
+      "hookMaxS": 1.5,
+      "safe": {
+        "top": 0.0556,
+        "right": 0.05,
+        "bottom": 0.1111,
+        "left": 0.05
+      },
+      "platform": "X",
+      "maxMB": 512
+    },
+    "li-4x5": {
+      "aspect": "4:5",
+      "width": 1080,
+      "height": 1350,
+      "fps": 30,
+      "duration": [
+        30,
+        60
+      ],
+      "captions": "burned",
+      "audio": true,
+      "hookMaxS": 1.5,
+      "safe": {
+        "top": 0.0593,
+        "right": 0.0593,
+        "bottom": 0.1185,
+        "left": 0.0593
+      },
+      "platform": "LinkedIn",
+      "maxMB": 5000
+    },
+    "li-1x1": {
+      "aspect": "1:1",
+      "width": 1080,
+      "height": 1080,
+      "fps": 30,
+      "duration": [
+        30,
+        60
+      ],
+      "captions": "burned",
+      "audio": true,
+      "hookMaxS": 1.5,
+      "safe": {
+        "top": 0.0593,
+        "right": 0.0593,
+        "bottom": 0.1296,
+        "left": 0.0593
+      },
+      "platform": "LinkedIn",
+      "maxMB": 5000
+    },
+    "ph-16x9": {
+      "aspect": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "duration": [
+        60,
+        90
+      ],
+      "captions": "burned",
+      "audio": true,
+      "hookMaxS": 3,
+      "safe": {
+        "top": 0.05,
+        "right": 0.05,
+        "bottom": 0.1019,
+        "left": 0.05
+      },
+      "platform": "Product Hunt / YouTube"
+    },
+    "hero-loop": {
+      "aspect": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "duration": [
+        10,
+        20
+      ],
+      "captions": "none",
+      "audio": false,
+      "loop": true,
+      "crf": 24,
+      "safe": {
+        "top": 0.125,
+        "right": 0.125,
+        "bottom": 0.125,
+        "left": 0.125
+      },
+      "platform": "Website hero"
+    },
+    "reel-9x16": {
+      "aspect": "9:16",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "duration": [
+        15,
+        30
+      ],
+      "maxDuration": 90,
+      "captions": "burned",
+      "audio": true,
+      "hookMaxS": 1,
+      "safe": {
+        "top": 0.1146,
+        "right": 0.1296,
+        "bottom": 0.25,
+        "left": 0.0556
+      },
+      "platform": "Reels / Shorts / TikTok"
+    }
+  },
+  "render": {
+    "crf": 18,
+    "x264Preset": "medium",
+    "pixelFormat": "yuv420p",
+    "colorSpace": "bt709",
+    "audioCodec": "aac",
+    "audioBitrate": "192k",
+    "sampleRate": 48000,
+    "concurrency": null,
+    "gl": null,
+    "poster": "frame0"
+  },
+  "audio": {
+    "master": {
+      "I": -14,
+      "TP": -1.5,
+      "LRA": 11
+    },
+    "vo": {
+      "I": -16,
+      "TP": -1.5,
+      "LRA": 11,
+      "tempo": 1,
+      "silenceDb": -50,
+      "padS": 0.04,
+      "targetWordsPerS": 2.7
+    },
+    "music": {
+      "I": -14,
+      "TP": -1.5,
+      "LRA": 11,
+      "fadeOutS": 1.5,
+      "fadeInS": 0
+    },
+    "sfx": {
+      "peakDb": -3,
+      "sampleRate": 48000
+    }
+  },
+  "ffmpeg": {
+    "binary": "auto"
+  },
+  "providers": {
+    "tts": {
+      "default": "kokoro",
+      "takes": 3,
+      "kokoro": {
+        "model": "kokoro-int8-multi-lang-v1_0",
+        "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/kokoro-int8-multi-lang-v1_0.tar.bz2",
+        "voice": "af_heart",
+        "speed": 1,
+        "threads": 2
+      },
+      "elevenlabs": {
+        "model": "eleven_v4",
+        "voice": "JBFqnCBsd6RMkjVDRZzb",
+        "outputFormat": "mp3_44100_128",
+        "stability": null
+      },
+      "cartesia": {
+        "model": "sonic-3.6",
+        "voice": null,
+        "apiVersion": "2026-08-14",
+        "language": "en",
+        "sampleRate": 44100
+      },
+      "azure": {
+        "voice": "en-US-AvaMultilingualNeural",
+        "outputFormat": "riff-48khz-16bit-mono-pcm"
+      },
+      "gemini": {
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Kore",
+        "style": "Say this casually and understated, like a founder showing a friend something on a laptop. Conversational, a bit quick, no selling, not an ad read:"
+      },
+      "openai": {
+        "model": "gpt-4o-mini-tts",
+        "voice": "marin",
+        "instructions": "Casual, understated founder voice. Conversational, slightly quick, not an announcer."
+      },
+      "say": {
+        "voice": null
+      }
+    },
+    "words": {
+      "default": "auto",
+      "whisper": {
+        "model": "large-v3-turbo",
+        "version": "1.8.2",
+        "binary": "auto",
+        "language": "en",
+        "noFlashAttention": true
+      },
+      "elevenlabs": {},
+      "deepgram": {
+        "model": "nova-3",
+        "language": "en"
+      }
+    },
+    "music": {
+      "default": "library",
+      "lyria": {
+        "model": "lyria-3.5"
+      },
+      "elevenlabs": {
+        "model": "music_v2_5"
+      },
+      "stableAudio": {
+        "model": "stable-audio-2.5"
+      }
+    },
+    "sfx": {
+      "default": "procedural",
+      "elevenlabs": {
+        "model": "eleven_text_to_sound_v2",
+        "promptInfluence": 0.5
+      },
+      "stableAudio": {
+        "model": "stable-audio-2.5"
+      },
+      "freesound": {}
+    },
+    "image": {
+      "default": null,
+      "gemini": {
+        "model": "gemini-nano-banana-2.1"
+      },
+      "openai": {
+        "model": "gpt-image-2.5-flare",
+        "size": "1536x1024"
+      },
+      "fal": {
+        "model": null
+      },
+      "runway": {
+        "model": "gen4_image_turbo"
+      }
+    },
+    "video": {
+      "default": null,
+      "gemini": {
+        "model": "gemini-omni-1.1-flash"
+      },
+      "runway": {
+        "model": "gen4.5"
+      },
+      "fal": {
+        "model": "fal-ai/kling-video/v3/pro/text-to-video"
+      }
+    },
+    "vision": {
+      "default": null,
+      "gemini": {
+        "model": "gemini-3.8-flash",
+        "fps": 4,
+        "mediaResolution": "high"
+      }
+    }
+  },
+  "update": {
+    "repo": "evgenspm/launchfilm",
+    "checkEveryHours": 24
+  }
+}

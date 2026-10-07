@@ -1,0 +1,722 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/evgenspm/launchfilm/schemas/harness-config.schema.json",
+  "title": "launchfilm harness.config.json",
+  "description": "Studio settings: platform presets, render/encode, loudness targets, ffmpeg choice, and provider model ids. Every key is optional: the CLI merges this file over its defaults, so a partial or older file keeps working. Keys live in .env, never here.",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "loudness": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "I": {
+          "type": "number",
+          "minimum": -40,
+          "maximum": -5,
+          "description": "integrated loudness target, LUFS"
+        },
+        "TP": {
+          "type": "number",
+          "minimum": -9,
+          "maximum": 0,
+          "description": "true-peak ceiling, dBTP"
+        },
+        "LRA": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 30,
+          "description": "loudness range target, LU"
+        }
+      }
+    },
+    "modelOnly": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "provider model id; check the provider's deprecations page, preview ids get retired"
+        }
+      }
+    },
+    "preset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aspect",
+        "width",
+        "height",
+        "fps",
+        "duration",
+        "captions",
+        "audio",
+        "platform"
+      ],
+      "properties": {
+        "aspect": {
+          "enum": [
+            "16:9",
+            "1:1",
+            "4:5",
+            "9:16"
+          ],
+          "description": "which film composition renders it: <film.id>-<aspect with x>"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 16
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 16
+        },
+        "fps": {
+          "enum": [
+            24,
+            25,
+            30,
+            50,
+            60
+          ]
+        },
+        "duration": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "recommended length window, seconds"
+        },
+        "maxDuration": {
+          "type": "number",
+          "minimum": 1,
+          "description": "hard platform limit, seconds"
+        },
+        "captions": {
+          "enum": [
+            "burned",
+            "srt",
+            "none"
+          ]
+        },
+        "audio": {
+          "type": "boolean",
+          "description": "false = no audio stream at all (hero-loop)"
+        },
+        "hookMaxS": {
+          "type": "number",
+          "minimum": 0,
+          "description": "second by which the viewer must know what this is"
+        },
+        "loop": {
+          "type": "boolean"
+        },
+        "crf": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 51,
+          "description": "per-preset CRF override"
+        },
+        "safe": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ],
+          "description": "UI-covered margins as fractions of width/height (px = fraction × size), craft/10#safe-zones",
+          "properties": {
+            "top": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.5
+            },
+            "bottom": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.5
+            },
+            "left": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.5
+            },
+            "right": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.5
+            }
+          }
+        },
+        "platform": {
+          "type": "string"
+        },
+        "maxMB": {
+          "type": "number",
+          "minimum": 1
+        }
+      }
+    }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "credit": {
+      "type": "boolean",
+      "description": "false = never show the one-time launchfilm credit note (also LAUNCHFILM_NO_CREDIT, DO_NOT_TRACK, CI, LAUNCHFILM_BATCH)"
+    },
+    "defaultPresets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "presets": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/preset"
+      }
+    },
+    "render": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "crf": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 51
+        },
+        "x264Preset": {
+          "enum": [
+            "ultrafast",
+            "superfast",
+            "veryfast",
+            "faster",
+            "fast",
+            "medium",
+            "slow",
+            "slower",
+            "veryslow"
+          ]
+        },
+        "pixelFormat": {
+          "enum": [
+            "yuv420p"
+          ]
+        },
+        "colorSpace": {
+          "enum": [
+            "default",
+            "bt601",
+            "bt709",
+            "bt2020-ncl"
+          ]
+        },
+        "audioCodec": {
+          "enum": [
+            "aac"
+          ]
+        },
+        "audioBitrate": {
+          "type": "string",
+          "pattern": "^\\d+k$"
+        },
+        "sampleRate": {
+          "enum": [
+            44100,
+            48000
+          ]
+        },
+        "concurrency": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "gl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Remotion --gl (angle, swangle, egl, vulkan); env REMOTION_GL wins"
+        },
+        "poster": {
+          "enum": [
+            "frame0",
+            "none"
+          ]
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "master": {
+          "$ref": "#/$defs/loudness"
+        },
+        "vo": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "I": {
+              "type": "number",
+              "minimum": -40,
+              "maximum": -5
+            },
+            "TP": {
+              "type": "number",
+              "minimum": -9,
+              "maximum": 0
+            },
+            "LRA": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 30
+            },
+            "tempo": {
+              "type": "number",
+              "minimum": 0.8,
+              "maximum": 1.2,
+              "description": "atempo after trimming; ≤ 1.085 stays artifact-free"
+            },
+            "silenceDb": {
+              "type": "number",
+              "maximum": -20
+            },
+            "padS": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.5
+            },
+            "targetWordsPerS": {
+              "type": "number",
+              "minimum": 1.5,
+              "maximum": 4,
+              "description": "best-of-N picks the take closest to this pace"
+            }
+          }
+        },
+        "music": {
+          "type": "object",
+          "properties": {
+            "I": {
+              "type": "number"
+            },
+            "TP": {
+              "type": "number"
+            },
+            "LRA": {
+              "type": "number"
+            },
+            "fadeOutS": {
+              "type": "number",
+              "minimum": 0
+            },
+            "fadeInS": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "sfx": {
+          "type": "object",
+          "properties": {
+            "peakDb": {
+              "type": "number",
+              "maximum": 0
+            },
+            "sampleRate": {
+              "enum": [
+                44100,
+                48000
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ffmpeg": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "binary": {
+          "type": "string",
+          "description": "auto (full system ffmpeg if present, else Remotion's bundled) | remotion | system | absolute path"
+        }
+      }
+    },
+    "providers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tts": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                "kokoro",
+                "elevenlabs",
+                "cartesia",
+                "azure",
+                "gemini",
+                "openai",
+                "say"
+              ]
+            },
+            "takes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            "kokoro": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "voice": {
+                  "type": [
+                    "string",
+                    "integer"
+                  ]
+                },
+                "speed": {
+                  "type": "number"
+                },
+                "threads": {
+                  "type": "integer"
+                }
+              }
+            },
+            "elevenlabs": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "voice": {
+                  "type": "string"
+                },
+                "outputFormat": {
+                  "type": "string"
+                },
+                "stability": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "cartesia": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "voice": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "apiVersion": {
+                  "type": "string"
+                },
+                "language": {
+                  "type": "string"
+                },
+                "sampleRate": {
+                  "type": "integer"
+                }
+              }
+            },
+            "azure": {
+              "type": "object",
+              "properties": {
+                "voice": {
+                  "type": "string"
+                },
+                "outputFormat": {
+                  "type": "string"
+                }
+              }
+            },
+            "gemini": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "voice": {
+                  "type": "string"
+                },
+                "style": {
+                  "type": "string"
+                }
+              }
+            },
+            "openai": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "voice": {
+                  "type": "string"
+                },
+                "instructions": {
+                  "type": "string"
+                }
+              }
+            },
+            "say": {
+              "type": "object",
+              "properties": {
+                "voice": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "words": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                "auto",
+                "whisper",
+                "elevenlabs",
+                "deepgram"
+              ]
+            },
+            "whisper": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "enum": [
+                    "tiny",
+                    "tiny.en",
+                    "base",
+                    "base.en",
+                    "small",
+                    "small.en",
+                    "medium",
+                    "medium.en",
+                    "large-v1",
+                    "large-v2",
+                    "large-v3",
+                    "large-v3-turbo"
+                  ]
+                },
+                "version": {
+                  "type": "string"
+                },
+                "binary": {
+                  "type": "string"
+                },
+                "language": {
+                  "type": "string"
+                },
+                "noFlashAttention": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "elevenlabs": {
+              "type": "object"
+            },
+            "deepgram": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "language": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "music": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                "library",
+                "lyria",
+                "elevenlabs",
+                "stable-audio"
+              ]
+            },
+            "lyria": {
+              "$ref": "#/$defs/modelOnly"
+            },
+            "elevenlabs": {
+              "$ref": "#/$defs/modelOnly"
+            },
+            "stableAudio": {
+              "$ref": "#/$defs/modelOnly"
+            }
+          }
+        },
+        "sfx": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                "procedural",
+                "elevenlabs",
+                "stable-audio",
+                "freesound"
+              ]
+            },
+            "elevenlabs": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "promptInfluence": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            },
+            "stableAudio": {
+              "$ref": "#/$defs/modelOnly"
+            },
+            "freesound": {
+              "type": "object"
+            }
+          }
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                null,
+                "gemini",
+                "openai",
+                "fal",
+                "runway"
+              ]
+            },
+            "gemini": {
+              "$ref": "#/$defs/modelOnly"
+            },
+            "openai": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "size": {
+                  "type": "string"
+                }
+              }
+            },
+            "fal": {
+              "$ref": "#/$defs/modelOnly"
+            },
+            "runway": {
+              "$ref": "#/$defs/modelOnly"
+            }
+          }
+        },
+        "video": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                null,
+                "gemini",
+                "fal",
+                "runway"
+              ]
+            },
+            "gemini": {
+              "$ref": "#/$defs/modelOnly"
+            },
+            "fal": {
+              "$ref": "#/$defs/modelOnly"
+            },
+            "runway": {
+              "$ref": "#/$defs/modelOnly"
+            }
+          }
+        },
+        "vision": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                null,
+                "gemini"
+              ]
+            },
+            "gemini": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "fps": {
+                  "type": "number",
+                  "minimum": 0.1,
+                  "maximum": 10
+                },
+                "mediaResolution": {
+                  "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "update": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "repo": {
+          "type": "string",
+          "pattern": "^[\\w.-]+/[\\w.-]+$"
+        },
+        "checkEveryHours": {
+          "type": "number",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

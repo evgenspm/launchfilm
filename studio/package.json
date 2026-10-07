@@ -1,0 +1,68 @@
+{
+  "name": "launchfilm-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "launchfilm studio: Remotion project + launchfilm CLI for product launch films. Built with Remotion (https://www.remotion.dev): free for individuals and teams of up to 3; companies of 4+ need a Remotion Company License (https://www.remotion.pro/license).",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "launchfilm": "cli/launchfilm.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "studio": "remotion studio",
+    "lf": "node cli/launchfilm.mjs",
+    "doctor": "node cli/launchfilm.mjs doctor",
+    "render:sample": "node cli/launchfilm.mjs render _sample --presets x-16x9 --scale 0.5 --out out/_sample.mp4",
+    "qa": "node cli/launchfilm.mjs qa",
+    "update": "node cli/launchfilm.mjs update",
+    "sfx:build": "node cli/launchfilm.mjs sfx gen all --library",
+    "fetch:kenney": "node scripts/fetch-kenney.mjs",
+    "fetch:music": "node scripts/fetch-music.mjs",
+    "fetch:media": "node scripts/fetch-kenney.mjs && node scripts/fetch-music.mjs",
+    "render": "remotion render",
+    "still": "remotion still",
+    "typecheck": "tsc --noEmit && tsc -p cli/tsconfig.json",
+    "typecheck:cli": "tsc -p cli/tsconfig.json"
+  },
+  "dependencies": {
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.1",
+    "@react-three/postprocessing": "3.1.3",
+    "@remotion/cli": "4.0.526",
+    "@remotion/effects": "4.0.526",
+    "@remotion/fonts": "4.0.526",
+    "@remotion/google-fonts": "4.0.526",
+    "@remotion/install-whisper-cpp": "4.0.526",
+    "@remotion/layout-utils": "4.0.526",
+    "@remotion/mac-cursors": "4.0.526",
+    "@remotion/media": "4.0.526",
+    "@remotion/motion-blur": "4.0.526",
+    "@remotion/noise": "4.0.526",
+    "@remotion/paths": "4.0.526",
+    "@remotion/renderer": "4.0.526",
+    "@remotion/shapes": "4.0.526",
+    "@remotion/three": "4.0.526",
+    "@remotion/transitions": "4.0.526",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "postprocessing": "6.39.5",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "remotion": "4.0.526",
+    "three": "0.186.1",
+    "tsx": "4.23.15"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.1",
+    "@types/react": "19.1.9",
+    "@types/react-dom": "19.1.7",
+    "@types/three": "0.186.0",
+    "typescript": "5.9.2"
+  },
+  "optionalDependencies": {
+    "sherpa-onnx-node": "1.13.8"
+  }
+}

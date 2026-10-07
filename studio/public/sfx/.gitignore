@@ -1,0 +1,3 @@
+# Kenney packs are fetched on install (node scripts/fetch-kenney.mjs). Your own generated sounds (custom/, user/)
+# can be committed in your repo; the harness repo itself only ships the CC0 procedural set (CI gate).
+kenney/

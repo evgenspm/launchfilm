@@ -1,0 +1,26 @@
+# Remotion packages must stay on one exact version: they move together in a single PR, and CI renders it.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /studio
+    schedule:
+      interval: weekly
+    versioning-strategy: increase
+    open-pull-requests-limit: 5
+    groups:
+      remotion:
+        patterns: ['remotion', '@remotion/*']
+      react:
+        patterns: ['react', 'react-dom', '@types/react', '@types/react-dom']
+      three:
+        patterns: ['three', '@types/three', '@react-three/*', 'postprocessing']
+    ignore:
+      # majors of Remotion change the licence terms (5.0); upgrade them by hand after reading the terms
+      - dependency-name: 'remotion'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@remotion/*'
+        update-types: ['version-update:semver-major']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

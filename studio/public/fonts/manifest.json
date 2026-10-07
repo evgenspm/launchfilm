@@ -1,0 +1,11 @@
+{
+  "note": "Vendored OFL-1.1 variable fonts. Loaded by src/brand/fonts.ts via @remotion/fonts. Each folder carries its OFL.txt.",
+  "fonts": [
+    {"family": "Inter", "file": "inter/Inter-Variable.woff2", "axes": "opsz 14-32, wght 100-900", "version": "4.1", "source": "https://github.com/rsms/inter/releases/tag/v4.1", "license": "OFL-1.1", "copyright": "Copyright (c) 2016 The Inter Project Authors"},
+    {"family": "Geist", "file": "geist/Geist-Variable.woff2", "axes": "wght 100-900", "version": "1.7.2", "source": "https://github.com/vercel/geist-font/releases/tag/v1.7.2", "license": "OFL-1.1", "copyright": "Copyright 2024 The Geist Project Authors"},
+    {"family": "Geist Mono", "file": "geist-mono/GeistMono-Variable.woff2", "axes": "wght 100-900", "version": "1.7.2", "source": "https://github.com/vercel/geist-font/releases/tag/v1.7.2", "license": "OFL-1.1", "copyright": "Copyright 2024 The Geist Project Authors"},
+    {"family": "JetBrains Mono", "file": "jetbrains-mono/JetBrainsMono-Variable.woff2", "axes": "wght 100-800", "version": "2.304", "source": "https://github.com/JetBrains/JetBrainsMono/releases/tag/v2.304", "license": "OFL-1.1", "copyright": "Copyright 2020 The JetBrains Mono Project Authors", "converted": "JetBrainsMono[wght].ttf -> woff2 (fontTools, no other changes)"},
+    {"family": "Manrope", "file": "manrope/Manrope-Variable.woff2", "axes": "wght 200-800", "source": "https://github.com/google/fonts/tree/main/ofl/manrope", "license": "OFL-1.1", "copyright": "Copyright 2018 The Manrope Project Authors", "converted": "Manrope[wght].ttf -> woff2 (fontTools, no other changes)"},
+    {"family": "Unbounded", "file": "unbounded/Unbounded-Variable.woff2", "axes": "wght 200-900", "source": "https://github.com/google/fonts/tree/main/ofl/unbounded", "license": "OFL-1.1", "copyright": "Copyright 2022 The Unbounded Project Authors", "converted": "Unbounded[wght].ttf -> woff2 (fontTools, no other changes)"}
+  ]
+}

@@ -1,0 +1,4 @@
+# fetched by scripts/fetch-music.mjs; only the manifest is committed
+*
+!.gitignore
+!music.json

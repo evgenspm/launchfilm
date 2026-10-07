@@ -1,0 +1,6 @@
+{
+  "name": "launchfilm",
+  "version": "0.1.0",
+  "description": "Product-launch films with Remotion: launch-film skill + studio CLI. Free defaults; keys only in launch-video/.env.",
+  "contextFileName": "gemini-context.md"
+}

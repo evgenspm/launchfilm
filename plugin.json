@@ -1,0 +1,11 @@
+{
+  "name": "launchfilm",
+  "version": "0.1.0",
+  "description": "Turns a coding agent into a product-launch motion designer (Remotion): skills for brief, brand, story, sound, scenes, recipes, reference study, QA and launch posts.",
+  "author": {"name": "Eugene Li", "url": "https://github.com/evgenspm"},
+  "homepage": "https://github.com/evgenspm/launchfilm",
+  "repository": "https://github.com/evgenspm/launchfilm",
+  "license": "MIT",
+  "keywords": ["remotion", "video", "launch", "motion-design", "agent-skills"],
+  "skills": "./skills"
+}
