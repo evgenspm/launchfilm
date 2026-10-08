@@ -1,0 +1,249 @@
+{
+  "id": "phone-page-scroll-locale-pair",
+  "title": "Tilted phone page scroll with a twin-locale pair",
+  "summary": "A realistic phone rises out of black and tilts while a mobile landing page scrolls on its screen; a low-angle pass over the article list, then two phones (two languages) cycle cards in sync before a logo, tagline and URL end card.",
+  "use_when": [
+    "Showing that a marketing site or web app works on mobile, top to bottom",
+    "A vertical feed film for an agency or service business with no product UI beyond its pages",
+    "Proving a second language or right-to-left version ships with the same layout",
+    "Silent autoplay where the scrolling page carries the story"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/6WR3EFVf",
+    "author": "Ralph Kattan",
+    "ref_id": "rl-034"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "vertical",
+    "phone",
+    "page-scroll",
+    "responsive",
+    "dark",
+    "localization",
+    "rtl",
+    "end-card",
+    "silent",
+    "agency"
+  ],
+  "techniques": [
+    "device-phone",
+    "device-3d",
+    "tilt-plane",
+    "orbit",
+    "push-in",
+    "end-card",
+    "smash-cut-black",
+    "glow"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 29.8,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#C8DBEF",
+      "#3CB3AA",
+      "#588D81",
+      "#3B3D41",
+      "#181818"
+    ],
+    "type_style": "page type is the site's own (geometric sans, sentence case); end tagline bold sans, title case, ~2.5 % H with white glow; URL bold sans lowercase ~2 % H",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone rises in from black",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "chat button tap opens the assistant panel",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "twin phones swap service card",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "logo lands inside the glowing frame",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "URL typed",
+        "sound": "type-click",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.77,
+      "beat": "hook",
+      "shot": "small phone on black grows to fill the frame, frontal; screen shows the page hero: mark, headline, space-photo band",
+      "camera": "push-in on the phone, scale ~0.25 -> 1.0 by 0.77 s, then hold 1.00",
+      "motion": "phone scale springs.cameraIn ~23 fr (overshoot not measurable); page starts scrolling up at 1.00, easings.inOutSine (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1.77,
+      "t1": 5,
+      "beat": "feature",
+      "shot": "page scrolls through about text, case-study image, services card, partner logos, testimonial card while the phone leans into 3D",
+      "camera": "orbit: phone yaws ~0 -> 25 deg and leans back from 2.77; drifts up and right; exits frame top-right 4.77 -> 5.00",
+      "motion": "page scroll ~1 screen per 0.75 s, easings.linear; tilt easings.inOutSine ~60 fr; exit easings.inExpo ~7 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 5,
+      "t1": 7,
+      "beat": "feature",
+      "shot": "phone drops back in from the top edge, small and slightly tilted, then the camera closes on the upper screen; a vertical icon rail slides out from the left edge and folds away",
+      "camera": "push-in 0.35 -> 1.6 (screen width) 5.27 -> 6.50, springs.cameraIn",
+      "motion": "phone enters from top easings.outExpo ~8 fr (±0.25 s); rail of 6 round icons expands 6.27 -> 6.50, springs.ui (overshoot not measurable), collapses by 7.00",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 7,
+      "t1": 8.77,
+      "beat": "feature",
+      "shot": "close-up of the hero; floating chat button pulses, is tapped, an assistant chat panel opens over the page with one greeting bubble and an input",
+      "camera": "static close-up 7.00 -> 8.50, then starts tilting back at 8.77",
+      "motion": "button glow pulse 7.50 -> 8.00; panel scales in from the button springs.ui ~8 fr (±0.25 s) at 8.27; holds 15 fr",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 8.77,
+      "t1": 10,
+      "beat": "feature",
+      "shot": "camera drops to a low angle behind the bottom edge of the phone: speaker grille and port in the foreground, the screen recedes as a steep plane",
+      "camera": "orbit down ~60 deg 8.77 -> 9.27, easings.inOutSine ~15 fr (±0.25 s); then slow dolly toward the bottom edge",
+      "motion": "page scrolls from the hero into the article list, easings.linear; far end of the screen blurred (depth of field)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 10,
+      "t1": 13.23,
+      "beat": "feature",
+      "shot": "article cards (image, date, bold italic title, summary) stream up the steep screen plane; phone edge sinks out of frame, cards fill the bottom half",
+      "camera": "tilt-plane low angle, push toward the screen ~65 %/s from 10.00 (motion.json zoom), plane rotateX ~70 deg",
+      "motion": "scroll ~1 card per 0.5 s, easings.linear; near cards sharp, far cards blurred",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 13.23,
+      "t1": 15,
+      "beat": "feature",
+      "shot": "same low-angle article scroll continues, two more cards pass; the image of the last card dims to black",
+      "camera": "tilt-plane, push continues then stops 14.00",
+      "motion": "scroll easings.linear; fade to black 14.50 -> 15.00 ~15 fr (±0.25 s)",
+      "transition_out": "smash-cut-black"
+    },
+    {
+      "t0": 15,
+      "t1": 19,
+      "beat": "feature",
+      "shot": "two phones, left-to-right and right-to-left language versions of the services section, staggered diagonally; their service card cycles in sync, 4 swaps",
+      "camera": "drift: pair rises from below 15.27 -> 15.77, then slow yaw ~10 deg; at 18.77 both turn frontal and split apart (one up, one down)",
+      "motion": "phones rise springs.heavy ~15 fr, second phone 0 fr after first (±0.25 s); card swap every ~0.75 s (16.27, 17.00, 17.77, 18.50), slide springs.ui; exit 18.77 -> 19.27 easings.inExpo",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 19,
+      "t1": 21.77,
+      "beat": "logo",
+      "shot": "brand mark with wordmark fades up at centre, then shrinks and wanders: down-right, far left, back toward centre",
+      "camera": "static",
+      "motion": "mark fades in 19.27 -> 19.77 easings.outQuint ~15 fr; scale 1.0 -> 0.55 by 20.27; drift ~0.25 W per 0.5 s, easings.inOutSine (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 21.77,
+      "t1": 22.77,
+      "beat": "logo",
+      "shot": "tagline, 3 words, white with a soft glow, appears beside the small mark; both slide left, then black",
+      "camera": "static",
+      "motion": "tagline on at 21.77 (entrance not measurable), slides left with the mark ~0.3 W by 22.00, gone by 22.27; 15 fr of black",
+      "transition_out": "smash-cut-black"
+    },
+    {
+      "t0": 22.77,
+      "t1": 24.83,
+      "beat": "logo",
+      "shot": "end card: thick glowing accent frame in the shape of a phone screen; mark drops in large, settles in the upper half; URL typed below",
+      "camera": "static",
+      "motion": "frame on at 22.77 (cut-in); mark scales 1.4 -> 1.0 23.27 -> 23.50 springs.snappy (overshoot not measurable); URL typed 23.27 -> 24.00 ~2 chars/fr@30 / 22 fr; holds 24 fr",
+      "transition_out": "smash-cut-black",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 24.83,
+      "t1": 29.8,
+      "beat": "outro",
+      "shot": "black",
+      "camera": "static",
+      "motion": "none, 149 fr of black",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 1,
+    "screenshots": 2,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "PhoneFrame",
+    "TiltPlane",
+    "Dolly",
+    "Camera",
+    "EndCard",
+    "BlurIn",
+    "Bloom",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg black, accent for the end-card frame and wordmark, logo",
+    "content.page": "tall full-page mobile screenshot of the main language (~8 screens), scrolled inside the phone",
+    "content.pageAlt": "the same section in a second language or RTL layout for the twin-phone row",
+    "content.cards": "4 service cards cycled in sync on both phones",
+    "content.tagline": "end tagline, 3 words",
+    "content.url": "URL typed on the end card",
+    "timing.scrollSpeed": "screens per second of page scroll (default ~1.3)",
+    "timing.blackTail": "frames of black after the end card (default 149; set 0 for feeds)"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Silent reference; sfx planned by the glue rule, not measured. The phone is a 3D model with visible thickness, edge, speaker grille and port (row 5), so a flat PhoneFrame tilt only covers rows 1 to 3. Hard cut at 13.23 is inside a continuous scroll (score 10.2, in motion) and reads as invisible. Proposed terms (not in vocabulary): page-scroll-in-device, locale-twin, edge-rail-expand. Last 4.97 s are pure black: trim for feeds.",
+  "status": "studied"
+}

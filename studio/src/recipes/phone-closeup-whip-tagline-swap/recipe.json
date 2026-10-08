@@ -1,0 +1,268 @@
+{
+  "id": "phone-closeup-whip-tagline-swap",
+  "title": "Phone close-up whip tour with tagline swap",
+  "summary": "One phone on a bright two-tone gradient: it rises in, then the camera punches, tilts and whips across its home screen in tight close-ups. It ends wide with a tagline the phone itself wipes into the call to action.",
+  "use_when": [
+    "A mobile app with one strong home screen worth touring up close",
+    "Silent social autoplay where motion, not VO, carries the energy",
+    "A short app teaser that ends on a tagline plus a try-it line",
+    "Brands with a loud single accent colour that can fill the background"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/xk3mqIsd",
+    "author": "Raylight",
+    "ref_id": "rl-071"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "mobile-app",
+    "close-up",
+    "whip",
+    "motion-blur",
+    "tilt",
+    "tagline",
+    "cta",
+    "gradient",
+    "light",
+    "silent"
+  ],
+  "techniques": [
+    "device-phone",
+    "ui-rebuild",
+    "push-in",
+    "pull-out",
+    "zoom-tier",
+    "tilt-plane",
+    "whip-pan",
+    "speed-ramp",
+    "word-reveal",
+    "mask-wipe",
+    "slide-push",
+    "hard-cut",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 21.8,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#99EE4D",
+      "#212022",
+      "#EFFBE7",
+      "#C1F59B",
+      "#939769"
+    ],
+    "type_style": "rounded geometric sans, medium weight, sentence case, normal tracking, cap height ~6 % H, one line left of or right of the phone",
+    "treatment": [
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone rises in and settles",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "fast punch-in or whip across the screen with motion blur",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "camera lands on a close-up after a whip",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "spin into the hard cut at 12.17 s",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "phone sweeps across the tagline and swaps it to the CTA",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "empty lime-to-white vertical gradient; one phone (home screen) rises from below to centre, ~38 % of frame height wide-shot, then holds",
+      "camera": "static frame; phone travels, ~1 % scale creep during the hold (±0.25 s)",
+      "motion": "phone y from below frame to centre 0.25 to 1.00 s, springs.heavy ~22 fr (overshoot not measurable, ±0.25 s); hold 30 fr",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2,
+      "t1": 3.25,
+      "beat": "feature",
+      "shot": "punch from the wide phone to a tilted close-up of the screen header: greeting line, three action pills, account chip",
+      "camera": "zoom-tier full to detail in ~8 fr (2.00 to 2.27 s, ±0.25 s), phone rolled ~-12 deg and leaned back in 3D; then slow push-in ~1.00 to 1.08 over 30 fr",
+      "motion": "zoom easings.inExpo into springs.cameraIn landing ~2.50 s (overshoot not measurable), motion blur on the punch frames",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.25,
+      "t1": 6,
+      "beat": "feature",
+      "shot": "same header close-up; the phone rolls through upright to a lean the other way, then straightens and recedes a little",
+      "camera": "tilt-plane: roll ~-12 deg to ~+8 deg 3.25 to 4.00 s with blur, hold lean to 4.77 s, straighten by 5.27 s; pull-out ~1.10 to 1.00 over 5.00 to 6.00 s",
+      "motion": "roll on easings.inOutCubic ~22 fr (±0.25 s); straighten springs.ui ~15 fr (±0.25 s); motion blur only on the roll frames",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 6,
+      "t1": 7,
+      "beat": "feature",
+      "shot": "vertical whip: the close-up phone drops out of the bottom, frame is empty gradient for one cell, then the phone re-enters from the top, heavily blurred",
+      "camera": "whip-pan vertical ~460 px/s at 1920 (motion.json t=6), ~15 px/fr; content moves down, wraps once",
+      "motion": "easings.inExpo out 8 fr, easings.outExpo in 8 fr (±0.25 s); vertical motion blur",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 7,
+      "t1": 9,
+      "beat": "feature",
+      "shot": "medium shot of the upper half of the phone: header, pills, balance card with a 4-digit amount, add-currency tile",
+      "camera": "pull-out ~1.08 to 1.00 over 7.00 to 8.00 s, then hold with ~1 % drift",
+      "motion": "landing springs.cameraOut ~24 fr (±0.25 s); the phone is upright, centred",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 9,
+      "t1": 10.25,
+      "beat": "feature",
+      "shot": "punch-in on the balance card: currency flag, account digits and the amount fill the frame",
+      "camera": "zoom-tier region to element, ~1.00 to 1.6 in ~8 fr (9.00 to 9.27 s, ±0.25 s), then slow push-in ~38 %/s decaying to 10.00 s",
+      "motion": "springs.cameraIn (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 10.25,
+      "t1": 11.75,
+      "beat": "feature",
+      "shot": "lateral whip right: phone slides to the right half, close-up of greeting line, pills and balance card",
+      "camera": "whip-pan right ~450 px/s at 1920 (motion.json t=10), blur 10.27 to 10.50 s; settle 10.77 s; then push-in ~1.00 to 1.05",
+      "motion": "easings.inOutCubic ~15 fr (±0.25 s) with horizontal motion blur, settle springs.ui",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 11.75,
+      "t1": 12.17,
+      "beat": "feature",
+      "shot": "the phone rolls hard and the camera dives into the currency flag; extreme blurred detail",
+      "camera": "speed-ramp roll ~+20 deg plus push-in to detail tier, accelerating into the cut",
+      "motion": "easings.inExpo ~12 fr (±0.25 s), strong rotational motion blur",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 12.17,
+      "t1": 14,
+      "beat": "feature",
+      "shot": "the phone arrives upside down and spinning, rolls to a diagonal close-up of the transactions block, then near upright on the right of frame",
+      "camera": "roll ~180 deg to ~-30 deg to ~-3 deg 12.17 to 13.00 s; then static close-up with ~1 % drift",
+      "motion": "roll easings.outExpo ~25 fr (±0.25 s), motion blur on the first ~8 fr",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 14,
+      "t1": 15.03,
+      "beat": "feature",
+      "shot": "lateral shift left reveals the full transaction row with the credited amount and running balance",
+      "camera": "dolly left ~1/3 frame width in ~8 fr (14.00 to 14.27 s, ±0.25 s), then hold",
+      "motion": "easings.outExpo ~8 fr (±0.25 s), horizontal blur on 14.00 s cell",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 15.03,
+      "t1": 18,
+      "beat": "feature",
+      "shot": "the close-up phone flies up out of frame; empty gradient; a 4-word tagline reveals left of centre while a small phone rises in from the lower right and yaws to face camera",
+      "camera": "static wide; phone exit up ~420 px/s at 1920 (motion.json t=15)",
+      "motion": "phone exit easings.inExpo 16 fr (15.03 to 15.57 s from cuts.json); tagline word-reveal left to right 15.57 to 16.50 s, ~7 fr per word (±0.25 s); small phone y from below plus yaw ~25 deg to ~10 deg, springs.heavy ~30 fr, settled 16.77 s; hold to 18.00 s",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 18,
+      "t1": 19,
+      "beat": "cta",
+      "shot": "the phone slides from right to left across the tagline; behind it the line becomes a 3-word try-it line with the product name",
+      "camera": "static wide",
+      "motion": "phone x right third to left third ~30 fr, easings.inOutCubic (±0.25 s); text swap masked by the phone's edge (mask-wipe), settled 19.00 s",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 19,
+      "t1": 21.8,
+      "beat": "cta",
+      "shot": "end hold: phone on the left third, try-it line on the right",
+      "camera": "static; phone ~1 % vertical float",
+      "motion": "hold 84 fr, no exit",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "Camera",
+    "Dolly",
+    "TiltPlane",
+    "WordReveal",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: accent fills the top of the background gradient, bg/white the bottom; display font for the two lines",
+    "content.screen": "one tall home screen (rebuilt UI or a screenshot) with a header, action pills, a balance card and a list",
+    "content.focus": "3-4 rects on the screen for the close-ups (header, card, list row, detail)",
+    "content.tagline": "one line, ~4 words, shown next to the phone",
+    "content.cta": "one line, ~3 words, includes the product name",
+    "aspect": "16:9 by default; 9:16 stacks the line above the phone"
+  },
+  "difficulty": "medium",
+  "render_cost": "heavy",
+  "notes": "Studied from 4 fps sheets (0.25 s resolution); no 30 fps strips, so all frame counts below 8 fr, springs and overshoot are suggested defaults. Pan speeds come from motion.json. Single shot from 0 to 12.17 s, one real hard cut at 12.17 s (spin into spin), one soft transition 15.03 to 15.57 s (phone flies up out of frame). Silent reference: sfx planned by the glue rule, not measured. Catalogue hints said data-stats and chart-draw: no chart is drawn; family is mobile-app. Proposed terms (not used as ids): device-wipe, whip-wrap.",
+  "status": "studied"
+}

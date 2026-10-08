@@ -1,0 +1,263 @@
+{
+  "id": "horizon-arc-prompt-reveal",
+  "title": "Horizon arc into prompt bar and generated image",
+  "summary": "A mark on black, then a lit planet rim rises under it and folds into a glowing prompt bar. A request is typed, a cursor sends it, the result grows out of the send button to full bleed, and a wipe returns to the mark.",
+  "use_when": [
+    "An AI tool that turns a typed prompt into a visual result (image, design, video)",
+    "A short launch teaser where the brand moment and the product moment share one shot",
+    "Dark, premium brands with one accent colour that can carry a glow",
+    "Silent autoplay: the typed prompt explains the product without VO"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/u0sjpuOB",
+    "author": "scanna",
+    "ref_id": "rl-004"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "ai-chat",
+    "prompt",
+    "horizon",
+    "glow",
+    "dark",
+    "image-generation",
+    "cursor",
+    "typing",
+    "teaser",
+    "violet"
+  ],
+  "techniques": [
+    "horizon-arc",
+    "morph",
+    "typewriter",
+    "prompt-typing",
+    "cursor-path",
+    "dolly",
+    "push-in",
+    "mask-wipe",
+    "ui-rebuild",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 14.04,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#F2F2F2",
+      "#555382",
+      "#231F53",
+      "#0E0A2E",
+      "#9C9C9C"
+    ],
+    "type_style": "humanist sans, regular weight, sentence case wordmark ~6 % H beside the mark; prompt text small ~2 % H, light grey",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 129.6,
+      "energy": "medium",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "rim lights on under the mark",
+        "sound": "swell"
+      },
+      {
+        "event": "wordmark and prompt characters typed",
+        "sound": "type-click"
+      },
+      {
+        "event": "cursor clicks the send button",
+        "sound": "ui-confirm"
+      },
+      {
+        "event": "result card expands to full bleed",
+        "sound": "whoosh"
+      },
+      {
+        "event": "plate wipes across the frame",
+        "sound": "swoosh-short"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.77,
+      "beat": "hook",
+      "shot": "white mark alone, centred high on pure black",
+      "camera": "locked-off; the mark itself turns ~8 deg/s and shrinks slightly (motion.json 0-1 s rot 8.25)",
+      "motion": "mark rotation easings.outQuint over 23 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.77,
+      "t1": 1.3,
+      "beat": "logo",
+      "shot": "mark slides left as the wordmark types in beside it; a huge black disc with a white-hot violet rim rises below",
+      "camera": "locked-off; mark drifts left ~0.1 W, rim rises 0.012 H",
+      "motion": "rim light-on 12 fr ease-out (measured f21-f33), rise 0.600 H -> 0.588 H over 18 fr; wordmark typed ~14 cps; mark slide easings.outExpo 12 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "swell"
+    },
+    {
+      "t0": 1.3,
+      "t1": 2,
+      "beat": "reveal",
+      "shot": "the disc flattens and shrinks into a wide pill: its rim becomes the glowing border of a prompt bar with placeholder",
+      "camera": "locked-off; lockup lifts ~0.05 H as the pill forms",
+      "motion": "arc -> pill shape morph springs.layout 12-15 fr (overshoot not measurable); placeholder fades in after the pill settles",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2,
+      "t1": 2.77,
+      "beat": "feature",
+      "shot": "lockup and prompt bar hold; the frame travels so the bar runs off the right edge, placeholder clears",
+      "camera": "dolly right with push-in ~1.00 -> 1.15 over 23 fr (motion.json 320 px/s, 19.7 %/s)",
+      "motion": "camera easings.inOutSine 23 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2.77,
+      "t1": 4.77,
+      "beat": "feature",
+      "shot": "an image request of ~5 words is typed into the bar; mic and round send button appear at the right end",
+      "camera": "dolly back left following the caret (motion.json -223 then -100 px/s)",
+      "motion": "prompt typed ~25 cps in one burst 2.77-4.00; send button scales in springs.ui ~10 fr (±0.25 s); hold 0.77 s",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 4.77,
+      "t1": 6,
+      "beat": "feature",
+      "shot": "frame pushes toward the send end of the bar, lockup leaves left; a pointer cursor enters and clicks send",
+      "camera": "dolly left + push-in ~3 %/s (motion.json)",
+      "motion": "cursor path springs.ui ~15 fr into the button (±0.25 s), press springs.click; button turns into a white rounded square",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 6,
+      "t1": 7.13,
+      "beat": "proof",
+      "shot": "a rounded card grows out of the send button; the generated landscape image fades in inside it, glowing border",
+      "camera": "slow push-in ~1.5 %/s",
+      "motion": "card scale-in springs.pop ~15 fr from the button (overshoot not measurable); image opacity 0 -> 1 over ~15 fr (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 7.13,
+      "t1": 7.63,
+      "beat": "proof",
+      "shot": "the image card expands from its spot to fill the whole frame, rounded corners flatten",
+      "camera": "card expand to full bleed",
+      "motion": "card expand easings.inOutSine 15 fr (soft 7.13-7.63 from cuts.json)",
+      "transition_out": "morph",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 7.63,
+      "t1": 9.27,
+      "beat": "proof",
+      "shot": "full-bleed image; a small translucent pill with a 3-word tagline drops from the top to centre",
+      "camera": "hold, push ~2.7 %/s easing to 0",
+      "motion": "tagline pill slides down springs.ui ~15 fr (±0.25 s), then holds 1.2 s",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 9.27,
+      "t1": 9.83,
+      "beat": "proof",
+      "shot": "the image breaks into coarse pixel blocks, then a light grey plate covers it from the top",
+      "camera": "locked-off; image blocks coarsen, plate travels down",
+      "motion": "pixelate steps every ~3 fr (±0.25 s); plate wipe easings.inExpo ~6 fr (±0.25 s)",
+      "transition_out": "mask-wipe",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9.83,
+      "t1": 10.77,
+      "beat": "logo",
+      "shot": "plate wipes off upward revealing black with the mark centred, small",
+      "camera": "push-in ~15 %/s settling (motion.json 10-11 s)",
+      "motion": "plate exit easings.outExpo ~8 fr (±0.25 s); mark scales in springs.snappy (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 10.77,
+      "t1": 13,
+      "beat": "logo",
+      "shot": "wordmark types in beside the mark; lockup holds centred, grey",
+      "camera": "push-in ~1.2 %/s, constant",
+      "motion": "wordmark typed ~14 cps in ~7 fr per 2 chars; hold 2.0 s, easings.linear push",
+      "transition_out": "mask-wipe",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 13,
+      "t1": 14.04,
+      "beat": "logo",
+      "shot": "a dark grey stepped plate creeps in from the lower right while the lockup dims to near black",
+      "camera": "push-in ~1.2 %/s, constant",
+      "motion": "stepped plate wipe easings.inOutSine ~30 fr; lockup opacity fade ~30 fr",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "HorizonArc",
+    "PromptBar",
+    "Typewriter",
+    "Cursor",
+    "Camera",
+    "KenBurns",
+    "ShotTransition",
+    "BrandBackdrop",
+    "BrandProvider"
+  ],
+  "params": {
+    "brand": "any brand.json: mark, wordmark font, fg, accent (rim glow and bar border), bg",
+    "content.name": "wordmark typed beside the mark, twice (open and close)",
+    "content.prompt": "the typed request, ~5 words / ~28 chars",
+    "content.placeholder": "short placeholder shown in the empty bar",
+    "content.result": "image (or video still) the prompt produces, shown full bleed",
+    "content.tagline": "3-word line in the pill over the result",
+    "timing.typeCps": "prompt typing speed (default 25 cps)",
+    "arc.palette": "rim core / glow / atmosphere colours, default from brand accent"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured by hand on the reference: rim top 0.60 H, radius ~0.39 W, centre ~1.30 H; light-on 12 fr ease-out; rise only 0.012 H over 18 fr, the event is the light. Rim core 4-5 px white, violet falloff to ~90 px. Arc -> pill morph 1.3-1.7 s. Not in vocabulary (see recipe.md Proposed terms): card-expand, pixelate-dissolve, stepped-plate-wipe. sfx planned by the glue rule, not measured. cut_on_beat 1/2 (soft 7.13 on beat 7.129; hard 9.83 off-beat).",
+  "status": "studied"
+}

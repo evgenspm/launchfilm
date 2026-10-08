@@ -1,0 +1,173 @@
+{
+  "id": "modular-grid-reflow-loop",
+  "title": "Modular card grid that reflows in a loop",
+  "summary": "Dark rounded cards in a fixed panel re-tile three times: columns slide, then rows, then columns, each move landing on a new layout and the last back on the first. Short holds let each set read.",
+  "use_when": [
+    "Showing 6 to 8 pieces of work, features or screens at once without cuts",
+    "A looping hero or background clip for a site, a deck or a feed",
+    "A studio or product overview where the layout itself is the motion",
+    "Silent autoplay where no copy has to carry the message"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/bento-modular-showreel/",
+    "author": "Rico®",
+    "ref_id": "jt-030"
+  },
+  "family": "product-ui",
+  "tags": [
+    "card-grid",
+    "modular",
+    "reflow",
+    "loop",
+    "showreel",
+    "portfolio",
+    "no-cuts",
+    "light",
+    "minimal",
+    "silent"
+  ],
+  "techniques": [
+    "card-grid"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 8.43,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#EEF0EF",
+      "#060606",
+      "#D0D4D5",
+      "#848786",
+      "#4D504E"
+    ],
+    "type_style": "small regular grotesk labels, sentence case, about 1 % of frame height, top-left of each card; tiny mono footer labels",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each grid move starts (3 times)",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "each layout lands",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.75,
+      "beat": "hook",
+      "shot": "layout A: light panel with 6 dark cards, two big left, a tall narrow, two small, a wide; footer wordmark and 3 tiny labels",
+      "camera": "static",
+      "motion": "hold 22 fr (±0.25 s); nothing moves",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.75,
+      "t1": 2.75,
+      "beat": "feature",
+      "shot": "the card columns slide vertically at different offsets inside the panel mask and land on layout B (5 cards, 2 columns)",
+      "camera": "static",
+      "motion": "column translateY, columns offset ~5 fr (±0.25 s), easings.inOutSine 60 fr (±0.25 s), overshoot not measurable; cards resize to the new tiling as they pass",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.75,
+      "t1": 3.5,
+      "beat": "feature",
+      "shot": "layout B holds: left column one big and two short cards, right column two tall cards",
+      "camera": "static",
+      "motion": "hold 22 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.5,
+      "t1": 5.5,
+      "beat": "feature",
+      "shot": "the card rows slide sideways in opposite directions, new cards enter from the panel edges, landing on layout C (8 cards)",
+      "camera": "static",
+      "motion": "row translateX, top and bottom rows opposite, easings.inOutSine 60 fr (±0.25 s), overshoot not measurable",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 5.5,
+      "t1": 6.25,
+      "beat": "feature",
+      "shot": "layout C holds: left two short cards over a big one, right a big card and a 2x2 block of small cards",
+      "camera": "static",
+      "motion": "hold 22 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 6.25,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "columns slide vertically again and re-tile back toward layout A",
+      "camera": "static",
+      "motion": "column translateY, columns offset ~5 fr (±0.25 s), easings.inOutSine 53-60 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 8,
+      "t1": 8.43,
+      "beat": "feature",
+      "shot": "layout A settles, identical to the first frame: the clip loops",
+      "camera": "static",
+      "motion": "last 8 fr (±0.25 s) of the settle, then hold to the loop point",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 8,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "Surface",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the panel, surface/fg for the cards, muted for labels, mono for the footer",
+    "content.items": "6-8 cards: image or clip plus a short label each",
+    "content.footer": "wordmark plus up to 3 tiny labels along the bottom edge",
+    "layouts": "3 tilings (A, B, C) as column/row rects; the film runs A to B to C to A",
+    "timing.hold": "frames each layout holds (default 22)",
+    "timing.move": "frames per re-tile (default 60), easings.inOutSine",
+    "timing.columnOffset": "frames between columns starting to move (default 5)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Zero cuts; the panel frame, background gradient and footer never move, only the cards inside the mask do. Cycle hold 22 fr + move 60 fr = about 83 fr per layout, metronomic. First and last frame match, so loopable. Proposed terms (not in vocabulary): column-scroll-reflow, row-slide-reflow. sfx planned by the glue rule, not measured (reference is silent). Timings at 0.25 s resolution from sheets.",
+  "status": "studied"
+}

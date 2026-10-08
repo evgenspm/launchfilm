@@ -1,0 +1,190 @@
+{
+  "id": "caret-claim-slide-tour",
+  "title": "Caret to claims slide tour",
+  "summary": "A caret blinks on black, types a two-line capability claim, then the whole stage slides sideways to an image-editing card cluster and on to a second claim before a small wordmark. One continuous lateral move links features without cuts.",
+  "use_when": [
+    "Demoing two or three AI capabilities in one continuous take, no hard cuts",
+    "Vertical social teaser where type carries most of the message and one UI moment proves it",
+    "Generative image or video tools that can show one output card with its prompt",
+    "Silent autoplay feeds: every claim is on screen long enough to read"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-prompt-generative-ai-features/",
+    "author": "Jitter",
+    "ref_id": "jt-008"
+  },
+  "family": "launch-film",
+  "tags": [
+    "typing",
+    "caret",
+    "vertical",
+    "dark",
+    "minimal",
+    "ai-features",
+    "lateral-slide",
+    "image-card",
+    "no-cuts",
+    "wordmark-end"
+  ],
+  "techniques": [
+    "typewriter",
+    "push-in",
+    "pull-out",
+    "slide-push",
+    "whip-pan",
+    "ui-rebuild",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 13,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FCFCFC",
+      "#B0B0B0",
+      "#7F8B9C",
+      "#F5F2E1",
+      "#4A4745"
+    ],
+    "type_style": "geometric sans, regular weight, sentence case, centred two-line claims at ~2 % of frame height after reflow; trailing words of each claim in muted grey",
+    "treatment": [
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each keystroke of the typed claim",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "lateral stage slide to the next feature",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "wordmark lands",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "empty black frame with a thin text caret centred, blinking",
+      "camera": "static",
+      "motion": "caret on/off, about 0.5 s period (on at 0.00 and 0.77, off at 0.27 and 0.50; ±0.25 s), cut-on/cut-off, no easing",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "capability claim typed letter by letter at large size, wraps to two lines and shrinks as it fills; last word muted grey",
+      "camera": "pull-out: type scale ~1.00 -> 0.60 over 30 fr as the line reflows (motion.json -12.4 %/s; ±0.25 s)",
+      "motion": "typewriter ~14 chars/s with caret; size eases down with easings.outQuint ~24 fr (±0.25 s); muted tail word typed in grey",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 2,
+      "t1": 4.5,
+      "beat": "hook",
+      "shot": "the finished two-line claim (4 words) holds centred on black",
+      "camera": "push-in 1.00 -> 1.05 over 75 fr (motion.json 2.1 %/s)",
+      "motion": "hold, easings.linear creep; caret gone",
+      "transition_out": "slide-push"
+    },
+    {
+      "t0": 4.5,
+      "t1": 5.5,
+      "beat": "reveal",
+      "shot": "claim slides out left while a cluster enters from the right: tall illustrated image card, prompt text card lower left, two pill chips; second claim overlaid on the card",
+      "camera": "dolly left ~860 px/s @1920 (motion.json), whole stage moves as one plane",
+      "motion": "stage translate easings.outExpo ~24 fr, settles by 5.50 (±0.25 s); pills trail the card by ~1 cell (springs.ui, overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5.5,
+      "t1": 7.5,
+      "beat": "feature",
+      "shot": "cluster holds: image card centre, prompt card bottom left with keywords in bold, chips top right and mid right; claim (6 words) over the card, tail muted",
+      "camera": "push-in 1.00 -> 1.02 over 60 fr (motion.json 0.8-1.8 %/s)",
+      "motion": "hold with easings.linear creep; no element entrances",
+      "transition_out": "whip-pan"
+    },
+    {
+      "t0": 7.5,
+      "t1": 11,
+      "beat": "feature",
+      "shot": "cluster whips out left in heavy blur; third claim (two lines, 6 words, second line muted) slides in from the right and holds centred",
+      "camera": "whip-pan left 7.50-8.77 with zoom 1.00 -> 1.10 (motion.json 10.3 %/s at 8-9 s), then push-in ~1.02 over 60 fr",
+      "motion": "exit easings.inExpo ~10 fr with motion blur (cell 7.77 fully blurred); entry easings.outExpo ~15 fr, settled at 8.77 (±0.25 s)",
+      "transition_out": "whip-pan",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 11,
+      "t1": 13,
+      "beat": "logo",
+      "shot": "small lowercase wordmark with a superscript tag, centred on black, holds to the end",
+      "camera": "dolly left (stage slide) 11.00-11.50, then static hold",
+      "motion": "claim exits left blurred at 11.00, wordmark slides in from the right, easings.outExpo ~10 fr, settled by 11.50 (±0.25 s); hold 45 fr",
+      "transition_out": "end",
+      "sfx": "pop"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Typewriter",
+    "useTypewriter",
+    "Dolly",
+    "KenBurns",
+    "Surface",
+    "Wordmark",
+    "BrandBackdrop",
+    "BrandProvider"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg, muted (claim tails), surface for cards, bg",
+    "content.claims": "3 capability claims, 4-6 words each, two lines; the last 1-3 words render muted",
+    "content.image": "one generated output image for the hero card (portrait, ~0.7 aspect)",
+    "content.prompt": "prompt text shown on the lower card, 30-40 words, 3 keywords bold",
+    "content.chips": "two short action labels for the pill chips (2 words each)",
+    "timing.caretHold": "frames of the blinking caret before typing (default 30)",
+    "timing.slide": "frames of each lateral stage move (default 24)"
+  },
+  "difficulty": "medium",
+  "render_cost": "heavy",
+  "notes": "Zero cuts in 13 s: every change is a lateral move of the whole stage. Motion.json pan peaks: -863 px/s (4-5 s), -398/-535 px/s (7-9 s), and a degenerate fit at 11-12 s (blurred exit). Claims shrink while typing (reflow from one big line to two small ones). Catalogue hinted prompt-typing; no prompt bar is typed or submitted in the sheets, so it is not tagged. sfx planned by the glue rule, not measured (reference is silent). Proposed term muted-tail (see recipe.md).",
+  "status": "studied"
+}

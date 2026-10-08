@@ -1,0 +1,176 @@
+{
+  "id": "sky-mark-wipe-version-dive",
+  "title": "Sky mark wipe into version dive",
+  "summary": "A frosted mark settles over drifting sky footage, slides aside to wipe on the product name with its version, the sky washes to white and a huge thin version number holds, then the camera dives into it.",
+  "use_when": [
+    "Announcing a major version of an existing product (2.0, v3) in a vertical feed",
+    "A short silent brand sting before a longer release film",
+    "The brand has a compact mark and an airy, light identity",
+    "You have one calm background clip (sky, water, texture) and no UI to show"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/hjnvRipe",
+    "author": "Raylight",
+    "ref_id": "rl-050"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo-sting",
+    "version-release",
+    "vertical",
+    "sky-footage",
+    "mark-wipe",
+    "zoom-through",
+    "light",
+    "silent",
+    "minimal"
+  ],
+  "techniques": [
+    "mask-wipe",
+    "blur-dissolve",
+    "zoom-through"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 5.83,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#1FA5D6",
+      "#FFFFFF",
+      "#141414",
+      "#555555",
+      "#C6D2DD",
+      "#B7B7B7"
+    ],
+    "type_style": "label: medium rounded grotesk, sentence case, normal tracking, ~2.6 % H, white then dark grey; version numeral: thin (~200 weight) rounded grotesk, ~10 % H centred, light grey to near-black",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "mark settles to solid white",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "mark slides aside and wipes on the label",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "dive into the version numeral",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "blue sky with cumulus clouds (footage); the brand mark appears large and frosted at upper centre and settles to solid white",
+      "camera": "footage drift: slow push 1.00 to ~1.02 across the row, clouds stay framed",
+      "motion": "mark in at f1: scale ~1.5 -> 1.0 and opacity 0.35 -> 1, easings.outExpo 17 fr (f1-f18), no overshoot; frame 0 is empty sky",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 1,
+      "t1": 2.8,
+      "beat": "logo",
+      "shot": "solid white mark, ~18 % of frame width, centred at 40 % H over the sky; nothing else",
+      "camera": "footage drift continues, mark fixed in frame",
+      "motion": "hold 54 fr; no element motion",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2.8,
+      "t1": 3.5,
+      "beat": "logo",
+      "shot": "the mark slides right and folds away while the label (product name plus version, 3 words) is uncovered left to right behind it",
+      "camera": "footage drift, mark and label locked to the frame",
+      "motion": "label uncovered left to right by the mark's trailing edge (mask-wipe), easings.inOutCubic 10 fr (f86-f96); the mark keeps sliding right and folds to a thin sliver, gone by f104",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.5,
+      "t1": 4.17,
+      "beat": "logo",
+      "shot": "the label alone over the sky; its colour drifts from white to dark grey while the sky washes out toward white",
+      "camera": "footage drift",
+      "motion": "label white until f107, fades out over 6 fr (f108-f113) and returns dark grey #555555 over f114-f119 (light-wash); footage lifts to white over f120-f126",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 4.17,
+      "t1": 5.4,
+      "beat": "outro",
+      "shot": "plain white canvas, the version numeral alone, huge and thin, centred",
+      "camera": "static until f150, then a slight creep 1.00 -> 1.03 to f162",
+      "motion": "cut-through-white at f127 to the numeral, which resolves light grey -> near-black in 13 fr (f127-f140), easings.outCubic; holds 22 fr",
+      "transition_out": "zoom-through",
+      "sfx": ""
+    },
+    {
+      "t0": 5.4,
+      "t1": 5.83,
+      "beat": "outro",
+      "shot": "the camera dives into the numeral, the final zero swelling past the frame edges; film ends mid-dive",
+      "camera": "zoom-through toward the right part of the numeral, scale 1.03 -> ~2.6 over 13 fr (f162-f174), easings.inExpo",
+      "motion": "accelerating zoom only; last frame (f174) still mid-move, no settle",
+      "transition_out": "end",
+      "sfx": "whoosh"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "FootageClip",
+    "BrandMark",
+    "Wordmark",
+    "ZoomThrough",
+    "ShotTransition",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json with a compact mark; mark is drawn in white over the clip, label and numeral use the display font",
+    "content.footage": "one calm, bright background clip (sky, clouds, water), at least 4.2 s",
+    "content.label": "product name plus version, 2-3 words, one line",
+    "content.version": "version numeral shown huge at the end, e.g. '2.0'",
+    "timing.markHold": "frames the mark holds before the wipe (default 54)",
+    "timing.numberHold": "frames the numeral holds before the dive (default 24)",
+    "aspect": "9:16 first; 1:1 and 16:9 keep the centred mark and numeral",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Frames measured from 30 fps strips of the local source (not copied). Proposed terms, not in vocabulary and not used as ids: mark-fold-wipe (row 3), frost-settle (row 1), light-wash (row 4). The row-4 transition is a fast wash/crossfade through white (f120-f127) with no blur visible; blur-dissolve is the nearest vocabulary id. sfx planned by the glue rule, not measured: the reference is silent. The film ends mid-zoom; for a loop or a longer film, put the next scene behind the ZoomThrough. Background footage is a user input with no schema field (see params.content.footage).",
+  "status": "studied"
+}

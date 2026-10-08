@@ -1,0 +1,178 @@
+{
+  "id": "tablet-wall-screen-reel",
+  "title": "Tablet wall dive with sliding screen reel",
+  "summary": "The camera pushes from a wall of landscape tablets into the centre one; its screens slide down one after another every 1.5 s, the strip showing past the bezel, then the camera pulls back out to the wall.",
+  "use_when": [
+    "Showing 3-5 screens of a tablet or landscape app without any copy",
+    "A short silent loop for a product page, gallery or social feed",
+    "Placeholder-first: screenshots are ready but there is no story or VO yet",
+    "Opening a longer device showcase with a wall-to-hero camera move"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/animated-ipad-mockup/",
+    "author": "Jitter",
+    "ref_id": "jt-036"
+  },
+  "family": "3d-device",
+  "tags": [
+    "tablet",
+    "device-mockup",
+    "screen-reel",
+    "device-wall",
+    "push-in",
+    "pull-out",
+    "vertical-slide",
+    "silent",
+    "light",
+    "no-copy",
+    "near-loop"
+  ],
+  "techniques": [
+    "push-in",
+    "pull-out",
+    "slide-push",
+    "device-phone"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 8,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#EEFAFF",
+      "#000000",
+      "#27A9FD",
+      "#C8EBFE",
+      "#FFFFFF",
+      "#312845"
+    ],
+    "type_style": "only placeholder labels on the screens: medium geometric sans, centred, about 6 % of frame height; no headline copy",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "camera pushes from the wall into the centre tablet",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "screen strip slides down to the next screen",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "camera pulls back out to the wall",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.83,
+      "beat": "hook",
+      "shot": "3x3 wall of black-bezel landscape tablets on dark violet, each screen a flat tint; camera dives into the centre one",
+      "camera": "push-in on the centre tablet: its width 0.39 W -> 0.75 W (about 1.0 -> 1.9) over 25 fr (f0-f25), background violet -> grey -> pale",
+      "motion": "springs.cameraIn 25 fr, decelerating, settles by f30 (overshoot not measurable, ±0.25 s); neighbours leave frame by f15",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.83,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "hero tablet centred on pale blue-white; first screen (white, label + 3-line caption) slides down, saturated blue screen enters from the top",
+      "camera": "settle 1.9 -> 2.0 by f38, then locked (motion.json zoom <= 1 %/s)",
+      "motion": "screen strip moves down one screen height: start f31, easings.inOutCubic 38 fr, covered share 22/52/80/93/98 % at 0.25 s steps; strip runs past the bezel above and below the device",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4,
+      "beat": "feature",
+      "shot": "blue screen slides down, light-blue screen enters from the top; outgoing screen visible below the bezel",
+      "camera": "locked, drift <= 0.4 %/s (motion.json)",
+      "motion": "same slide: start f76, easings.inOutCubic 38 fr, hold 7 fr; period 45 fr",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4,
+      "t1": 5.5,
+      "beat": "feature",
+      "shot": "light-blue screen slides down, white screen enters from the top",
+      "camera": "locked, drift <= 0.3 %/s (motion.json)",
+      "motion": "same slide: start f121, easings.inOutCubic 38 fr, hold 7 fr",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5.5,
+      "t1": 6.87,
+      "beat": "feature",
+      "shot": "white screen slides down, blue screen enters from the top and holds",
+      "camera": "locked, drift <= 0.3 %/s (motion.json)",
+      "motion": "same slide: start f166, easings.inOutCubic 38 fr, hold 2 fr before the pull-out",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.87,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "camera backs out of the hero tablet to the same 3x3 wall on dark violet; centre screen now blue",
+      "camera": "pull-out: centre tablet width 0.71 W at 7.00 -> 0.40 W at 7.77 (about 2.0 -> 1.0) over 24 fr (f206-f230), background pale -> grey -> violet",
+      "motion": "springs.cameraOut 24 fr, decelerating (±0.25 s); neighbours enter from the edges by f218; holds f230-f240",
+      "transition_out": "end",
+      "sfx": "whoosh"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 4,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Camera",
+    "ScreenSlot",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the hero backdrop, surface/fg for the wall background, accent for screen tints",
+    "content.screens": "3-5 landscape screenshots (4:3, e.g. 1180x820), in reel order; the first is shown during the dive",
+    "content.wall": "8 tints or thumbnails for the neighbour tablets on the wall (default: repeat screens)",
+    "aspect": "other (4:3 like the reference) | 16:9 | 1:1 | 4:5; the hero tablet fills about 75 % of width",
+    "timing.period": "frames at 30 fps per screen (default 45 = 38 fr slide + 7 fr hold), scaled to fps",
+    "timing.dive": "frames of the opening push-in (default 25)",
+    "timing.pull": "frames of the closing pull-out (default 24)",
+    "overflow": "show the strip past the bezel above and below the device (default true)",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s). The device is a flat front-on landscape tablet; device-phone is the nearest framed-device id in the vocabulary (proposed term: device-tablet). The screen strip is wider than the screen and continues outside the bezel at reduced width (about 0.57 W vs 0.81 W device), so the incoming and outgoing screens show above and below the device: proposed term screen-reel-overflow. Slides are always downward, 45 fr period, 38 fr move. Last cell matches the first wall layout but the centre screen differs (blue vs white), so loopable is false; making the last reel screen equal to the first makes it a seamless loop. No audio in the reference: sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

@@ -1,0 +1,151 @@
+{
+  "id": "receding-digit-beat-launch",
+  "title": "Receding digits on the beat, then a launch lockup",
+  "summary": "Five oversized gradient digits descend to one, each arriving blurred on a music beat and sinking into depth; a hard cut lands a name-plus-status lockup on near-black with a violet light ribbon, then a short sign-off line.",
+  "use_when": [
+    "Announcing that a product, feature or event has just launched",
+    "A short opener before a longer launch film, built on a slow 80-90 BPM track",
+    "A teaser where there is no UI to show yet, only the name",
+    "Social or event screens that need a number sequence hook in under 4 s"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/drqfpfhx",
+    "author": "Ochai Isaac",
+    "ref_id": "rl-104"
+  },
+  "family": "data-stats",
+  "tags": [
+    "digits",
+    "number-sequence",
+    "launch",
+    "release",
+    "dark",
+    "magenta",
+    "violet",
+    "depth",
+    "on-beat",
+    "lockup",
+    "no-ui"
+  ],
+  "techniques": [
+    "counter",
+    "kinetic-depth",
+    "glow",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 9.43,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#772143",
+      "#0F0D17",
+      "#FFFFFF",
+      "#FE02F7",
+      "#AC06F3",
+      "#8346F7"
+    ],
+    "type_style": "heavy grotesk, numerals and sentence case, tight tracking; digits 100-200 % H with violet-to-magenta horizontal gradient fill; lockup statement bold ~17 % H white, small bold label ~6 % H above; sign-off line bold ~7 % H",
+    "treatment": [
+      "vignette",
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 83,
+      "energy": "calm",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each new digit arrives on a beat (5 times, 0.17-2.89 s)",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "hard cut to the name-plus-status lockup at 3.67 s",
+        "sound": "impact-low",
+        "origin": "planned"
+      },
+      {
+        "event": "light sweep passes through the lockup letters (~4.27-4.77 s) and the sign-off (~7.27-7.77 s)",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.67,
+      "beat": "hook",
+      "shot": "five single digits, high to low, one per beat, each fills more than the frame height, on a dark wine radial field with a thin violet hairline curve",
+      "camera": "locked frame; depth comes from the digits: each digit scales down ~1.6x to ~1.2x of H across its ~22 fr life (±0.25 s); last digit sinks to ~16 % H by 3.63 s",
+      "motion": "digit n enters on beat n (0.17, 0.72, 1.44, 2.17, 2.89 s) oversized and blurred, sharpens within ~7 fr (±0.25 s) on easings.outExpo, then recedes slowly; the previous digit is replaced, no crossfade visible at 4 fps; final digit recedes on easings.inExpo ~4 fr (3.50-3.63 s, ±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 3.67,
+      "t1": 6.7,
+      "beat": "logo",
+      "shot": "lockup on near-black: small product-name label above a two-word status statement, centred; violet hairline grows into a soft light ribbon top-right",
+      "camera": "locked; text holds its position from 4.27 s; background ribbon drifts and widens (motion.json zoom ~+2 %/s at 6-7 s)",
+      "motion": "statement lands oversized (~2x) at the cut and settles by ~4.27 s, ~18 fr on springs.heavy (overshoot not measurable); label fades in ~7 fr (±0.25 s); a pale-pink light sweep runs left to right through the statement 4.27-4.77 s (±0.25 s); hold ~1.9 s",
+      "transition_out": "continuous",
+      "sfx": "impact-low"
+    },
+    {
+      "t0": 6.7,
+      "t1": 9.43,
+      "beat": "outro",
+      "shot": "the lockup is replaced by one short sign-off line (3 words) centred; the violet ribbon now crosses the frame diagonally and a glint rides it at the end",
+      "camera": "locked; ribbon keeps drifting, glint travels along it 9.00-9.27 s",
+      "motion": "lockup off and sign-off on within ~7 fr (±0.25 s, near-miss at 6.70 s), line fades grey to white by 7.00 s; light sweep through its letters 7.27-7.77 s (±0.25 s); exit: blur + fade from ~9.10 s, ~10 fr (±0.25 s); music is silent from 7.06 s",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Counter",
+    "BlurIn",
+    "BrandBackdrop",
+    "Vignette",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: two accents for the digit gradient (violet to magenta in the reference), bg near-black, fg white, display font heavy",
+    "content.from": "first digit (default 5); one digit per beat down to 1",
+    "content.name": "product name or logo shown as the small label of the lockup",
+    "content.status": "two-word status statement under the name (launch / availability)",
+    "content.signoff": "short closing line, ~3 words",
+    "timing.bpm": "track tempo; one digit per beat (83 BPM = 21.7 fr at 30 fps)",
+    "timing.lockupHold": "frames the lockup holds before the sign-off (default 91)",
+    "aspect": "16:9 in the reference; digits size to frame height so 9:16 and 1:1 work"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (0.25 s resolution): digit arrivals match the listed beats 0.174, 0.72, 1.44, 2.171, 2.891 within one cell; the hard cut at 3.667 s is 1.7 fr after the extrapolated next beat (3.61 s) but that beat is not in audio.json, so cut_on_beat counts 0/1. Spring and easing names, entrance and exit frame counts are suggested defaults, not measured. SFX planned by the glue rule, not measured (reference is music only, silent from 7.06 s). Proposed terms (not in vocabulary): receding-digit, light-ribbon, letter-light-sweep. Missing components: RecedingDigits, LightRibbon.",
+  "status": "studied"
+}

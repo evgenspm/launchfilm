@@ -1,0 +1,146 @@
+{
+  "id": "offset-panel-share-rise",
+  "title": "Offset panel share breakdown rise",
+  "summary": "A small chart title holds alone on charcoal, then five offset colour panels rise from a baseline one after another, pushing the title to the top while each panel's percentage rolls up from zero. A silent 4 s share reveal.",
+  "use_when": [
+    "Showing how one total splits into 3 to 6 parts (revenue, usage, audience)",
+    "A vertical social post or story slide with one data reveal",
+    "A proof beat inside a longer film where a breakdown backs a claim",
+    "Silent autoplay where the numbers must carry the message"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/stacked-chart-cascade/",
+    "author": "Jitter",
+    "ref_id": "jt-075"
+  },
+  "family": "data-stats",
+  "tags": [
+    "data",
+    "breakdown",
+    "percentages",
+    "panels",
+    "cascade",
+    "counter",
+    "vertical",
+    "dark",
+    "silent",
+    "proof"
+  ],
+  "techniques": [
+    "chart-draw",
+    "counter",
+    "card-grid"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#1C1C1C",
+      "#A3C3D7",
+      "#F68132",
+      "#E7DE3E",
+      "#CB8E4D",
+      "#3D3830"
+    ],
+    "type_style": "neutral grotesk; title regular sentence case ~2.5 % H in white; figures heavy grotesk ~7 % H in near-black with a superscript percent sign at ~45 % of figure size; category label regular ~1.6 % H under each figure",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each panel lands on the stack",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "figures roll up",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.25,
+      "beat": "hook",
+      "shot": "charcoal frame; chart title, 2 words, left, and a small brand glyph right, on one line at mid height",
+      "camera": "locked off: no zoom or pan (elements move, frame does not)",
+      "motion": "title words rise in with a small stagger (second word lower at 0.27 s), settled by 0.50 s: springs.snappy ~8 fr (overshoot not measurable, ±0.25 s); glyph fades in with it; title drifts up ~3 % H over 0.27-1.25 s, easings.linear",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 1.25,
+      "t1": 1.85,
+      "beat": "proof",
+      "shot": "a thin white baseline rule appears near the bottom; first two offset panels rise from it, figures at zero",
+      "camera": "locked off: no zoom or pan (elements move, frame does not)",
+      "motion": "baseline at 1.27 s; panels rise from the bottom edge in a cascade, stagger ~3 fr (±0.25 s), springs.layout; title travels with the stack from 50 % to 15 % H, easings.outExpo ~18 fr (±0.25 s); figures start rolling from 0",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 1.85,
+      "t1": 2.5,
+      "beat": "proof",
+      "shot": "five offset panels fill the lower 85 % of the frame, each with a white top rule, figure and label; title reaches the top",
+      "camera": "locked off: no zoom or pan (elements move, frame does not)",
+      "motion": "panels keep growing upward to final heights, springs.layout, settle ~2.40 s (overshoot not measurable); figures roll up, top panel lands first at 2.50 s, easings.outExpo; title settles at 5 % H",
+      "transition_out": "hard-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4,
+      "beat": "proof",
+      "shot": "finished breakdown: five panels with percentages and category labels under the title",
+      "camera": "locked off: no zoom or pan (elements move, frame does not)",
+      "motion": "remaining figures land by 2.77 s (last +1 to +2 each); then full hold 37 fr, nothing moves",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 5,
+    "url": false
+  },
+  "components": [
+    "Counter",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg, fg, display font; panel colours from a 5-colour list",
+    "content.title": "chart title, 1-3 words",
+    "content.items": "3-6 parts: {value (percent), label (2-3 words), color?}, largest first",
+    "aspect": "9:16 default; 4:5 and 1:1 shrink panel offsets",
+    "timing.riseAt": "frame the baseline appears (default 38)",
+    "timing.stagger": "frames between panels (default 3)",
+    "timing.hold": "frames the finished chart holds (default 37)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s). No hard cuts; the analyser's soft transition 1.47-2.23 s is the panel stack sweeping in, not a scene change. Panels: each one offset right/down from the previous, overlapping, thin white top rule, 1 px dark outline. Figures roll from 0 and land in order, top panel first (2.50 s), others by 2.77 s. motion.json reports zoom -5 %/s in 2-4 s but sheet cells 3.00-3.77 are identical: no camera move. Proposed term stack-cascade (offset overlapping panels rising from a baseline), not in vocabulary. SFX planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

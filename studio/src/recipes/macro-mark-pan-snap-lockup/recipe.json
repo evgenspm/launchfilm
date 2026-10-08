@@ -1,0 +1,145 @@
+{
+  "id": "macro-mark-pan-snap-lockup",
+  "title": "Close-up mark pan, snap out to lockup",
+  "summary": "The camera starts so close that the brand mark fills the frame, travels across it while the wordmark wipes in, then snaps out in one frame to the small centred lockup, holds and fades. The hidden scale makes a tiny logo feel big.",
+  "use_when": [
+    "A 4 s logo sting or the close of a longer film",
+    "A brand with a simple geometric mark next to a one-word name",
+    "Silent social loops where a flat colour field has to carry the brand",
+    "An intro bumper before a product demo"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/8Rw9e4DM",
+    "author": "Samet Onder",
+    "ref_id": "rl-062"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo",
+    "lockup",
+    "wordmark",
+    "close-up",
+    "snap-zoom",
+    "flat-colour",
+    "minimal",
+    "sting",
+    "no-ui"
+  ],
+  "techniques": [
+    "dolly",
+    "pull-out",
+    "match-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4.03,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#5268E5",
+      "#FEFFFE",
+      "#FA653A"
+    ],
+    "type_style": "bold geometric grotesk, sentence case, one word, tight tracking; about 20 % H in the close-up, about 5 % H in the wide lockup",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "camera travel across the close-up mark",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "one-frame snap out to the wide lockup",
+        "sound": "hit",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.13,
+      "beat": "hook",
+      "shot": "extreme close-up of the accent corner mark on a flat blue field, only the mark visible, no text",
+      "camera": "dolly at about 3x lockup scale: mark enters from lower right and travels up-left about 330 px@1920 in 10 fr, then drifts about 170 px/s up-left",
+      "motion": "travel easings.outExpo 10 fr (f0 to f10), then easings.linear drift to f33; mark itself does not change shape",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1.13,
+      "t1": 1.8,
+      "beat": "logo",
+      "shot": "same close-up: the one-word name wipes in at upper left while the mark slides toward the lower right edge",
+      "camera": "dolly reverses and speeds up: content moves down-right about 490 px/s horizontally, 300 px/s vertically @1920, slight scale growth",
+      "motion": "name revealed by a soft-edged left-to-right wipe, about 1 letter per 3 fr, edge feather about 0.5 letter width, f34 to f50; dolly easings.inOutSine f33 to f53",
+      "transition_out": "match-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 1.8,
+      "t1": 3.23,
+      "beat": "logo",
+      "shot": "wide view: the small lockup, name above-left of the mark, centred on the same blue field",
+      "camera": "pull-out as a one-frame snap at f54 (scale about 2.5 to 3x down), then drift: lockup moves about 80 px@1920 right and down over 43 fr, scale creep about 0.5 %/s",
+      "motion": "no element motion; only the easings.linear drift",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 3.23,
+      "t1": 4.03,
+      "beat": "outro",
+      "shot": "lockup fades away, empty blue field holds to the end",
+      "camera": "drift continues while fading, then static on the empty field from f109",
+      "motion": "name and mark fade together, opacity 1 to 0 over 12 fr (f97 to f109), easings.inOutSine; empty hold 12 fr",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandMark",
+    "Dolly",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg (flat field), fg (name), accent (mark), display font, mark",
+    "content.name": "one-word product name, the wordmark",
+    "closeScale": "camera scale of the close-up rows relative to the wide lockup (default 3)",
+    "timing.travelIn": "frames of the opening mark travel (default 10)",
+    "timing.wipeStart": "frame the name wipe starts (default 34)",
+    "timing.snap": "frame of the one-frame snap out (default 54)",
+    "timing.fadeOut": "frame the lockup starts to fade (default 97), fade 12 fr",
+    "fps": "composition fps (default 30); timings scale with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps frame strips: name first visible f34, wipe done about f50, snap out between f53 and f54 (no in-between frames), fade f97 to f109, empty from f109 to f120. Mark-to-lockup scale ratio from mark width about 3.0x; the name ratio reads about 2.5x because the name is still sliding in at f53. The snap is not detected by the cut detector (same colours), but it is the key moment. Proposed term: soft-edge letter wipe (not in vocabulary). sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

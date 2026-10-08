@@ -1,0 +1,208 @@
+{
+  "id": "specimen-swatch-dolly-brand-tour",
+  "title": "Brand guide tour: specimen push, swatch dolly, lockup",
+  "summary": "One-shot identity walkthrough on pale grey: title blurs in, a two-font specimen pushes toward camera, five swatches cascade in, the camera zooms on them and dollies across, a mood board, then a lockup holds.",
+  "use_when": [
+    "Presenting a new visual identity or a brand guide to a client",
+    "A portfolio piece that shows fonts, colours and a closing lockup in 15 s",
+    "Silent autoplay where calm type and flat colour carry the film",
+    "Opening a longer identity presentation before detailed pages"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/QFw3nJpQ",
+    "author": "Mikael Larsen",
+    "ref_id": "rl-114"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "identity",
+    "brand-guide",
+    "type-specimen",
+    "colour-swatches",
+    "light",
+    "minimal",
+    "one-shot",
+    "portfolio",
+    "silent"
+  ],
+  "techniques": [
+    "blur-in",
+    "push-in",
+    "card-grid",
+    "zoom-tier",
+    "dolly",
+    "speed-ramp",
+    "blur-dissolve"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 15.6,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FAFBFD",
+      "#010101",
+      "#6658EA",
+      "#00E5FD",
+      "#E1ACB9",
+      "#EEF2F5"
+    ],
+    "type_style": "geometric grotesk bold, sentence case title ~5 % H with a trailing asterisk; small caps-style section labels ~2 % H; mono for specimen and colour codes; closing lockup uppercase bold ~5 % H, tight",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "title lockup resolves from blur",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "font names resolve, specimen push begins",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "each colour swatch lands in the cascade",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "camera dollies across the swatch row",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "mood board image caption steps",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "closing lockup resolves",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "tiny company eyebrow, a 3-word title with a trailing asterisk, tiny tagline below, centred on a pale diagonal gradient",
+      "camera": "push-in ~1.00 -> 1.06 over 45 fr (title width +6 % between 0.27 and 1.27; motion.json ~8 %/s)",
+      "motion": "empty first cell; title blur-in whole line, grey and soft at 0.27, sharp by 0.50, easings.outExpo ~8 fr (±0.25 s); tagline fades in by 0.50; whole group fades out 1.27 -> 1.50 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 1.5,
+      "t1": 3.77,
+      "beat": "feature",
+      "shot": "section label at top, display font name with a weights line, mono font name with its weights line under it, on white",
+      "camera": "static 1.50-2.27, then push-in 1.00 -> ~1.9 from 2.27 to 3.50 with upward drift (display name width 70 -> 131 px in the cell), accelerating; easings.inExpo (±0.25 s)",
+      "motion": "display name blur-in at 1.50 (grey/soft), sharp by 1.77; mono name blur-in at 1.77 resolving left to right (second word still blurred), sharp by 2.00; weight lines fade in by 2.00; all fades to white by 3.77",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.77,
+      "t1": 5.1,
+      "beat": "feature",
+      "shot": "section label at top, five rounded colour swatches in a row with small hex captions (black, violet, cyan, pink, off-white), on white",
+      "camera": "static (motion.json small drift 12 px/s, not visible on the sheet)",
+      "motion": "label first at 4.00; swatches card-grid cascade left to right, 3 in by 4.27, 4th entering blurred, 5th faint at 4.50, all settled by 4.77: stagger ~2-3 fr per swatch (below sheet resolution, ±0.25 s), easings.outExpo; captions follow their swatch",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 5.1,
+      "t1": 6.77,
+      "beat": "feature",
+      "shot": "camera close on the swatch row: three swatches fill the frame width, hex captions in mono below, label gone",
+      "camera": "zoom-tier full -> element 1.0 -> ~2.1 from 5.10 to 5.77 (cuts.json soft zoom 5.10-5.77), springs.cameraIn (overshoot not measurable); then dolly left across the row with a speed ramp: ~8 / ~56 / ~19 px/fr @1920 for 5.77-6.00 / 6.00-6.27 / 6.27-6.77 (±0.25 s)",
+      "motion": "swatches are static in the plane; only the camera moves; easings.inOutSine on the dolly",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.77,
+      "t1": 8.77,
+      "beat": "feature",
+      "shot": "mood board section: label at top, bg settles to pale cool grey, empty image slot with a small numbered caption at the bottom",
+      "camera": "static",
+      "motion": "swatches blur and fade to white 6.77 -> 7.00 (cuts.json soft 6.77-6.97, ~6 fr); label at 7.27; bg tint from white to grey 7.27 -> 7.50; first caption from 7.50",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 8.77,
+      "t1": 12.27,
+      "beat": "feature",
+      "shot": "same mood board frame; the bottom caption steps to image two, then image three; the slot stays empty in the reference",
+      "camera": "static",
+      "motion": "caption cross-fades ~8 fr at 8.27-8.77 and 9.50-9.77 (±0.25 s); holds 9.77-11.77; bg flips back to white at 12.00 and the label fades",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 12.27,
+      "t1": 15.6,
+      "beat": "logo",
+      "shot": "uppercase two-word lockup centred, tiny mono sub-line with an edition year below, on the pale diagonal gradient",
+      "camera": "push-in ~1.00 -> 1.03 over the hold (motion.json 4.6 %/s easing to 0.6 %/s), decelerating, easings.outQuint",
+      "motion": "lockup blur-in whole word, soft at 12.27, sharp by 12.50 (easings.outExpo ~8 fr, ±0.25 s); sub-line fades in by 12.50; hold 3 s; whole frame fades out 15.27 -> 15.50",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 7,
+    "screenshots": 3,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BlurIn",
+    "Camera",
+    "KenBurns",
+    "Dolly",
+    "Wordmark",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: display font, mono font, fg, bg, colour tokens shown as swatches",
+    "content.eyebrow": "tiny label above the title",
+    "content.title": "brand guide title, 2-3 words",
+    "content.tagline": "one short line under the title",
+    "content.fonts": "two font specimens: name + weights line each (display, mono)",
+    "content.swatches": "3-6 colours with hex captions (default from brand colours)",
+    "content.moodImages": "3 images with numbered captions for the mood board section",
+    "content.lockup": "closing uppercase lockup + small sub-line",
+    "timing.sectionHold": "frames per section (defaults from the reference rows)",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "One continuous shot, no hard cuts; cuts.json lists two soft transitions (5.10-5.77 zoom onto the swatches, 6.77-6.97 blur fade). Timings from 4 fps sheets (±0.25 s); staggers, blur durations and spring choice are defaults, not measured. The mood board image slots render empty in the reference export (only the captions change), so image size and motion there are unknown; suggested: one image per caption, cross-fade with a slight push. Reference is silent: sfx planned by the glue rule, not measured. Catalogue hint 'glow' not seen on any sheet. Proposed terms (not in vocabulary): swatch-strip, type-specimen, mood-board-step.",
+  "status": "studied"
+}

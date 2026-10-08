@@ -1,0 +1,255 @@
+{
+  "id": "icon-dive-tilted-screen-tour",
+  "title": "Icon dive into a tilted dashboard tour",
+  "summary": "A three-line offer rises over a dark backdrop with a blue rim, an app-icon tile drops in and the camera dives through it, then seven light UI screens glide past on tilted planes under blue light for 30 s, each one held about 4 s.",
+  "use_when": [
+    "A business or back-office product with many dense screens and no single hero moment",
+    "A silent premium showcase for a site header, sales deck or social feed",
+    "You have 5-7 clean screens and want each one readable for about 4 s",
+    "The offer (demo, trial) should open the film instead of closing it"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/Hute1Vww",
+    "ref_id": "rl-043"
+  },
+  "family": "product-ui",
+  "tags": [
+    "dashboard",
+    "tilted-plane",
+    "dark",
+    "blue-light",
+    "screen-tour",
+    "app-icon",
+    "silent",
+    "premium",
+    "b2b",
+    "no-vo"
+  ],
+  "techniques": [
+    "tilt-plane",
+    "dolly",
+    "push-in",
+    "pull-out",
+    "zoom-through",
+    "horizon-arc",
+    "ui-rebuild",
+    "hard-cut",
+    "glow",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 35.93,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000201",
+      "#F2F4F4",
+      "#0A1C3B",
+      "#3B5074",
+      "#989D9F",
+      "#2A2E31"
+    ],
+    "type_style": "opening offer: condensed bold sans, title case, tight, 3 centred lines ~6.5 % H each; UI: small tracked uppercase labels and bold italic screen titles",
+    "treatment": [
+      "glow",
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "offer block slides up from below the frame",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "camera dives through the app-icon tile",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "light sheen passes across a tilted screen",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.43,
+      "beat": "hook",
+      "shot": "black backdrop with a thin blue rim lower left; offer statement, 3 lines of 3-4 words, centred",
+      "camera": "drift 1.00->1.06 over 1.00-2.00 s (5.9 %/s), then near hold (1.6 %/s)",
+      "motion": "block slides up from below the frame 0.27-0.77 s, easings.outExpo ~15 fr (±0.25 s); holds 2.2 s; exits downward 3.00-3.27 s, easings.inExpo ~8 fr (±0.25 s)",
+      "transition_out": "zoom-through",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.43,
+      "t1": 4.23,
+      "beat": "logo",
+      "shot": "rounded app-icon tile with the mark and wordmark drops in from the top, then fills the frame",
+      "camera": "zoom-through: tile ~0.16 W at 3.50 s to larger than the frame at 4.00 s (~118 %/s)",
+      "motion": "tile enters from above 3.27-3.50 s, springs.ui ~7 fr (overshoot not measurable); scale-up easings.inExpo ~15 fr (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 4.23,
+      "t1": 7.25,
+      "beat": "outro",
+      "shot": "screen 1: light dashboard with sidebar and KPI cards on a plane leaned back, right half of frame, far edge falls off in blur",
+      "camera": "dolly left 80 px/s (2.7 px/fr) + push-in ~5 %/s",
+      "motion": "plane already in place on the cut; constant glide easings.linear; no UI animation",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 7.25,
+      "t1": 9,
+      "beat": "outro",
+      "shot": "same screen; a blue light streak sweeps in along the top edge of the frame",
+      "camera": "dolly left 78 px/s until 8.00 s, then push-in 6 %/s",
+      "motion": "light streak grows from the top right over ~1 s, easings.inOutSine (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 9,
+      "t1": 11.47,
+      "beat": "outro",
+      "shot": "same screen held; the blue light widens into a broad glow at top",
+      "camera": "near hold, 0.2-0.8 %/s",
+      "motion": "glow brightens 10.00-11.47 s, easings.inOutSine (±0.25 s)",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 11.47,
+      "t1": 14.77,
+      "beat": "outro",
+      "shot": "screen 2: data table with search field and status chips, plane steeply tilted, header top left",
+      "camera": "push-in ~6 %/s, pan up 40 px/s (1.3 px/fr), roll -1 to -2 deg/s",
+      "motion": "on 11.47-12.00 the plane slides left 276 px/s then settles, springs.heavy (overshoot not measurable); white sheen passes 14.00-14.50 s",
+      "transition_out": "hard-cut",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 14.77,
+      "t1": 18.27,
+      "beat": "outro",
+      "shot": "screen 3: close-up of a form dialog (title, message field, picker, two buttons) over a tilted panel; blue light bands behind",
+      "camera": "drift right 41 px/s and up 20 px/s, roll ~2 deg/s, scale +-2 %/s",
+      "motion": "no UI animation; slow drift easings.linear",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 18.27,
+      "t1": 20,
+      "beat": "outro",
+      "shot": "screen 4: wide inventory table nearly face-on, slight lean, blue glow shapes behind",
+      "camera": "drift down 9-39 px/s, scale -0.6 %/s",
+      "motion": "no UI animation; diagonal reflection band sits across the plate",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 20,
+      "t1": 22.47,
+      "beat": "outro",
+      "shot": "same table; background light changes to a diagonal blue band under the plate",
+      "camera": "drift right 2-23 px/s, scale -0.5 to -1 %/s",
+      "motion": "background band slides across, easings.linear (±0.25 s)",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 22.47,
+      "t1": 27.03,
+      "beat": "outro",
+      "shot": "screen 5: KPI card grid on a plane rotated about 40 deg, running diagonally top left to bottom right, header top",
+      "camera": "drift right 13-30 px/s and down 18 px/s, scale +-1 %/s",
+      "motion": "no UI animation; glide easings.linear",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 27.03,
+      "t1": 31.13,
+      "beat": "outro",
+      "shot": "screen 6: wide matrix table with coloured status pills, plane leaned back low in frame",
+      "camera": "pull-out -2.3 to -3.1 %/s, pan right 33 px/s (1.1 px/fr)",
+      "motion": "no UI animation; glide easings.linear",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 31.13,
+      "t1": 35,
+      "beat": "outro",
+      "shot": "screen 7: breakdown card with rows, totals and blue progress bars on a thick rounded slab, tilted",
+      "camera": "push-in 1.7 %/s, pan left 22 px/s, roll -2 to -3 deg/s",
+      "motion": "slab glides and turns, easings.linear; no UI animation",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 35,
+      "t1": 35.83,
+      "beat": "outro",
+      "shot": "same slab; a blue rim of light appears behind its top right corner",
+      "camera": "push-in ~1 %/s, roll -4 to -5 deg/s",
+      "motion": "rim fades up over ~0.5 s, easings.inOutSine (±0.25 s)",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 35.83,
+      "t1": 35.93,
+      "beat": "outro",
+      "shot": "black backdrop with the blue rim only, as in the opening",
+      "camera": "static",
+      "motion": "3 fr tail, no animation",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 7,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "TiltPlane",
+    "Dolly",
+    "Camera",
+    "ZoomThrough",
+    "HorizonArc",
+    "BlurIn",
+    "Vignette",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "offer": "opening statement, 3 lines of 3-4 words: the outcome plus how to get a demo",
+    "icon": "square app-icon tile: mark + wordmark on a light rounded plate",
+    "screens": "5-7 light UI screens (rebuilt or screenshots), each with its plane angle and camera move",
+    "timing.hold": "seconds per screen (reference 3.3-4.7 s, about 4 s)",
+    "light": "accent blue for the rim, streaks and glow behind the planes"
+  },
+  "difficulty": "hard",
+  "render_cost": "medium",
+  "notes": "Silent reference, 8 hard cuts + 1 soft (zoom-through 3.43-3.93 s). Every screen is a light plate on black under a heavy vignette; the far edge of each plane falls into blur (depth of field). Camera speeds are slow and constant (1-3 px/fr, 1-6 %/s); no UI element animates, the camera and light carry all motion. Beat labels follow the first-match rule: the mark comes at 3.43 s, so every screen row after it reads outro; functionally rows 3-13 are the feature tour. Proposed term plane-sheen (light band sweeping across a tilted screen, rows 4, 6, 8) is not in the vocabulary. sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

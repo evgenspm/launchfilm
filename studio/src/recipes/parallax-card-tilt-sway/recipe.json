@@ -1,0 +1,160 @@
+{
+  "id": "parallax-card-tilt-sway",
+  "title": "Collectible card swaying in perspective",
+  "summary": "One portrait card on black leans into perspective to one side, holds, returns flat, then leans the other way and returns. Inner art layers slide against the frame, so a flat image reads as a thick object.",
+  "use_when": [
+    "Showcasing a single collectible, pass, ticket or membership card",
+    "A loopable hero or social post for a digital item with one artwork",
+    "Giving a flat product shot depth without a 3D model",
+    "A calm, silent autoplay loop on a dark page"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/nft-cards-3d/",
+    "author": "Rico®",
+    "ref_id": "jt-039"
+  },
+  "family": "3d-device",
+  "tags": [
+    "card",
+    "collectible",
+    "perspective",
+    "tilt",
+    "parallax",
+    "loop",
+    "dark",
+    "monochrome",
+    "single-object",
+    "showcase"
+  ],
+  "techniques": [
+    "tilt-plane"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 7,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#AFAFAF",
+      "#626262",
+      "#3C3C3C",
+      "#222222",
+      "#8E8E8E"
+    ],
+    "type_style": "card: heavy condensed display word behind the subject (about 22 % of card height), bold grotesk title caps, small mono labels; frame footer: four tiny mono corner labels",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "card settles flat after each lean",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "card leans into perspective",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.5,
+      "beat": "hook",
+      "shot": "single portrait card centred on black: metal-grey frame, dark artwork window with a bust and a big word behind it, title under it",
+      "camera": "static",
+      "motion": "card flat and frontal; nothing moves until 0.50 (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 0.5,
+      "t1": 2.27,
+      "beat": "feature",
+      "shot": "card leans: left edge recedes, slight clockwise roll; the word behind the bust slides relative to the frame",
+      "camera": "locked; the card moves in place, frame size unchanged",
+      "motion": "lean in easings.inOutSine ~15 fr (0.50 to 1.00, ±0.25 s), card width -4 %; holds the lean 30 fr (1.00 to 2.00) with ~1° drift; inner layers parallax; overshoot not measurable",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2.27,
+      "t1": 4,
+      "beat": "feature",
+      "shot": "card returns to flat frontal and holds; frame highlight brightens as it faces the viewer",
+      "camera": "locked; the card moves in place, frame size unchanged",
+      "motion": "return easings.inOutSine ~15 fr (2.00 to 2.50, ±0.25 s), width back to 100 %; frontal hold 45 fr (2.50 to 4.00)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4,
+      "t1": 5.77,
+      "beat": "feature",
+      "shot": "card leans the opposite way: right edge recedes, slight counter-clockwise roll; the word behind the bust slides the other way",
+      "camera": "locked; the card moves in place, frame size unchanged",
+      "motion": "mirror of row 2: lean easings.inOutSine ~15 fr (4.00 to 4.50, ±0.25 s), width -4 %; holds 30 fr (4.50 to 5.50); inner layers parallax",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5.77,
+      "t1": 7,
+      "beat": "feature",
+      "shot": "card back to flat frontal, identical to the first frame, holds until the loop point",
+      "camera": "locked; the card moves in place, frame size unchanged",
+      "motion": "return easings.inOutSine ~8-15 fr (5.50 to 6.00, ±0.25 s); frontal hold 30 fr (6.00 to 7.00) into the loop",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "TiltPlane",
+    "Surface",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg, fg, muted for the frame metal, mono for labels, display font for the card word",
+    "content.art": "hero image for the artwork window (subject cut out on a transparent background works best)",
+    "content.backWord": "one big word placed behind the subject, partly hidden by it",
+    "content.title": "card title under the artwork, 2 words",
+    "content.sub": "one small line under the title, about 10 words",
+    "content.serial": "short id code top right of the card",
+    "content.price": "small value label inside the artwork window",
+    "content.footer": "4 tiny corner labels along the frame bottom (mark, item name, edition, url)",
+    "timing.lean": "frames for each lean and each return (default 15)",
+    "timing.hold": "frames held in each lean (default 30) and flat (default 45)",
+    "tilt.yaw": "degrees of lean (default ~18, mirrored on the second lean)",
+    "aspect": "other (4:3 reference) | 1:1 | 4:5 | 16:9 | 9:16"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "No cuts; 7 s single shot split at the four tilt state changes (0.50, 2.27, 4.00, 5.77). Lean/return ~15 fr each at 0.25 s resolution, card width -4 % in the lean, flat holds 45 and 30 fr, lean holds 30 fr. Last frame equals first: seamless loop. Inner layers (back word, bust, labels) shift against the frame in the lean: proposed term layer-parallax-card. Frame brightness changes with angle: proposed term angle-sheen. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

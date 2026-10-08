@@ -1,0 +1,123 @@
+{
+  "id": "block-decode-dot-globe-poster",
+  "title": "Block-decode headline over a dot-screen globe",
+  "summary": "A square two-colour event poster: a three-line headline decodes glyph by glyph from solid blocks through coarse mosaic to crisp type in 1.7 s, over a static dot-screened globe, then holds 2.3 s.",
+  "use_when": [
+    "Announcing an event, date or launch day as a square social post",
+    "A retro print or texture look with only two brand colours",
+    "A short loop where the type entrance is the only motion",
+    "Turning a static key visual into a 4 s animated poster"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/dithering-effect/",
+    "author": "Jitter",
+    "ref_id": "jt-088"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "poster",
+    "event",
+    "decode",
+    "pixel-blocks",
+    "dot-screen",
+    "globe",
+    "two-colour",
+    "square",
+    "retro",
+    "silent",
+    "headline"
+  ],
+  "techniques": [
+    "dither",
+    "duotone"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FEBDFD",
+      "#5A2516",
+      "#774048",
+      "#DDA0C9"
+    ],
+    "type_style": "bold grotesk, sentence case, tight tracking, 3 left-aligned lines, cap size ~8 % H, line pitch ~10 % H, top-left at ~5.5 % margin",
+    "treatment": [
+      "dither",
+      "duotone"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "glyph blocks resolve into letters",
+        "sound": "glitch-sfx",
+        "origin": "planned"
+      },
+      {
+        "event": "headline fully resolved",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.7,
+      "beat": "hook",
+      "shot": "flat pink square, dot-screened globe cropped bottom right, small mark bottom right and ticket CTA bottom left; 3-line headline (event name 2 words, city 2 words, date 2 words) decodes top left",
+      "camera": "static",
+      "motion": "per glyph: solid foreground block the size of the glyph box, then 2-3 coarse mosaic steps with a mid-tone cell, then the crisp letter; glyphs resolve in random order inside each line; line 1 starts f0, line 2 f8, line 3 f18; line 3 done f32, line 2 done f40, first word of line 1 last at f50; steps are stepped (no easing), ~3-6 fr each",
+      "transition_out": "continuous",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 1.7,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "the same poster fully resolved and held: 3-line headline, dot-screened globe, mark and CTA corners",
+      "camera": "static",
+      "motion": "none: full hold 69 fr; the dot-screen globe does not animate (frame diff 0.00 from 2 s)",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Dither"
+  ],
+  "params": {
+    "lines": "3 headline lines, 2 words each (name, place, date), <= 14 characters per line",
+    "image": "one hero image (globe or product shot) rendered through the dot screen, cropped off the bottom-right edge",
+    "cta": "small corner label with an icon, bottom left, <= 2 words",
+    "colors": "background and ink: two brand colours only"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Decode times measured from 30 fps strips (1 fr). Proposed term (not in vocabulary): block-decode, glyph-by-glyph reveal from solid block via mosaic to letter. Image is a static ordered dot screen; corner mark and CTA are present from f0 and never move. sfx planned by the glue rule, not measured (reference is silent). Not loopable: frame 0 has no headline.",
+  "status": "studied"
+}

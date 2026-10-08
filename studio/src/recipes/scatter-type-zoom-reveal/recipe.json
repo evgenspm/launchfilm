@@ -1,0 +1,124 @@
+{
+  "id": "scatter-type-zoom-reveal",
+  "title": "Shard letters assemble, zoom, image drop",
+  "summary": "Four bold one-word lines assemble from tilted letter shards on flat cream, hold, then a fast zoom pushes the outer lines off frame and a key-art still drops into the gap between the two middle words.",
+  "use_when": [
+    "A release-date teaser for a show, drop or launch day",
+    "A 2-3 s silent feed loop that ends on one key image",
+    "Announcing what is coming and when, before showing it"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/text-scramble/",
+    "author": "Jitter",
+    "ref_id": "jt-045"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "teaser",
+    "release-date",
+    "type-only",
+    "scatter",
+    "zoom",
+    "key-art",
+    "light",
+    "short",
+    "silent"
+  ],
+  "techniques": [
+    "scatter",
+    "push-in"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 2.4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#EADAC0",
+      "#010101",
+      "#ECE1CB",
+      "#465849",
+      "#D3AF98",
+      "#34272A"
+    ],
+    "type_style": "heavy grotesk, all caps, tight tracking, centred; resolved lines about 7 % H, after the zoom about 11 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "letter shards settle into the four lines",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "fast zoom pushes the outer lines off frame",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "key-art still drops into the gap",
+        "sound": "impact-low",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.9,
+      "beat": "hook",
+      "shot": "flat cream; four one-word caps lines (two top, two bottom, empty middle) assemble from tilted letter shards, hold, then zoom",
+      "camera": "static 0-38 fr, then push-in 1.00 -> 1.60 (word width 52 % -> 84 % W) over f38-f57, decelerating; centred on the empty middle",
+      "motion": "letters scatter assemble: shards appear f8 (±0.25 s), rotated up to ~10 deg, partly drawn, resolve upright by f30 (±0.25 s), springs.ui (overshoot not measurable); bottom lines lag top by ~4 fr (±0.25 s); zoom easings.outExpo 19 fr",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1.9,
+      "t1": 2.4,
+      "beat": "reveal",
+      "shot": "same zoomed frame: one word top, one word bottom; a landscape key-art still sits in the gap, ~53 % W, centred",
+      "camera": "static",
+      "motion": "still appears on the cut frame f57 at full size, no entrance; everything holds to the end f72",
+      "transition_out": "end",
+      "sfx": "impact-low"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Scatter",
+    "Camera"
+  ],
+  "params": {
+    "lines": "4 one-word caps lines: top pair (maker or brand, title word), bottom pair (status word, day or date); top-1 and bottom-2 leave frame in the zoom",
+    "image": "one landscape key-art still, about 16:10, shown in the gap after the zoom",
+    "background": "flat warm light colour, text near black"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheet (±0.25 s). Assembly f8-f30, hold f30-f38, zoom f38-f57 to 1.60x, cut f57, still holds 15 fr. The catalogue calls this a glyph scramble; the sheets show tilted, partly drawn letter shards resolving in place, not random characters cycling. Proposed terms (not in vocabulary): shard-assemble, gap-drop. sfx planned by the glue rule, not measured (reference is silent). Missing component: GapImage (image placed between zoomed words); a plain Img inside the Camera works.",
+  "status": "studied"
+}

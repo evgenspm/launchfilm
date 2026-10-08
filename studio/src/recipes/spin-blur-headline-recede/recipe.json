@@ -1,0 +1,114 @@
+{
+  "id": "spin-blur-headline-recede",
+  "title": "Spinning blur headline over contracting rings",
+  "summary": "A two-line headline spins and sharpens out of a heavy blur while it falls back in depth, over concentric rounded rings that keep shrinking. One unbroken 2 s move with a slow middle gives a short claim depth.",
+  "use_when": [
+    "A one-claim feature announcement or availability line",
+    "A 2 s sting before or after a longer film",
+    "A silent loop for social feeds where one headline is the whole message",
+    "Introducing something with a depth or immersion angle"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/blurry-text-spin/",
+    "author": "Jitter",
+    "ref_id": "jt-042"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "headline",
+    "blur",
+    "spin",
+    "depth",
+    "rings",
+    "dark",
+    "announcement",
+    "type-only",
+    "short",
+    "sting"
+  ],
+  "techniques": [
+    "blur-in",
+    "kinetic-depth",
+    "pull-out",
+    "speed-ramp"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 2.1,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#0B0D0D",
+      "#FEFEFE",
+      "#233565",
+      "#5D7393",
+      "#121A39"
+    ],
+    "type_style": "semi-bold grotesk, sentence case, tight tracking, two centred lines, about 10 % of frame height per line; small white wordmark at the bottom, about 3 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "headline spins and resolves from blur (f3 to f28)",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.1,
+      "beat": "hook",
+      "shot": "two-line headline (3 words, names the feature) centred over concentric rounded-square rings in blue; small wordmark at the bottom",
+      "camera": "pull-out on the whole scene: headline width 0.50 W at f15 -> 0.42 W at f30 -> 0.36 W at f60 (about -24 %/s then -21 %/s); rings contract toward the centre at the same rate; roll -15 deg -> 0 at f30 -> +5 deg at f62, one clockwise spin with a slow middle (speed-ramp)",
+      "motion": "f0-f2 black; headline fades in from f3, blur ~0.15 em -> 0 and roll -15 deg -> 0 on easings.outQuint 25 fr (f3-f28, measured from 30 fps strip); line 2 sharpens 6 fr after line 1; wordmark blur-in f15-f22; rings fade in f5-f12; flat hold f28-f43; from f44 roll and recede accelerate again, easings.inOutSine to the end (about 0.27 deg/fr at f62)",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BlurIn",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font and fg for the headline, accent for the rings, bg near black",
+    "content.headline": "one statement on 2 lines, 2-4 words total ('\\n' = break)",
+    "content.mark": "small wordmark or logo under the headline ('' = none)",
+    "rings.count": "visible ring outlines (reference ~8-10)",
+    "rings.color": "ring stroke, outer rings lighter blue than inner (defaults to brand accent)",
+    "spin.from": "start roll in degrees (reference -15)",
+    "spin.to": "end roll in degrees (reference +5)",
+    "aspect": "16:10 reference; recompose for 16:9, 1:1, 4:5, 9:16",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Single shot, 0 cuts, no audio in the reference. Measured from 30 fps strips: 3 black frames, entrance f3-f28 (25 fr, deceleration only, no overshoot), line 2 lags line 1 by 6 fr, flat hold f28-f43, then the spin and recede pick up again; rotation and scale never reverse direction (clockwise roll and shrink throughout). Rings are a missing component (ContourRings). Proposed terms not in the vocabulary: spin-resolve, contour-rings. SFX planned by the glue rule, not measured. Palette from the full-res keyframe at 1.50 s only (no cut frames).",
+  "status": "studied"
+}

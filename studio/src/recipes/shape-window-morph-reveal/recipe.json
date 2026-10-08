@@ -1,0 +1,155 @@
+{
+  "id": "shape-window-morph-reveal",
+  "title": "Footage window that morphs through shapes",
+  "summary": "A small rectangle opens on a flat pastel field and grows into a portrait window onto footage, then bends through a notched bow, a twisting pinwheel and a square before locking into an hourglass. The clip never cuts; the mask is the motion.",
+  "use_when": [
+    "Opening a film on one strong clip without a hard cut",
+    "Silent loop or social teaser where a single shot needs more life",
+    "A mask transition into hero footage or a product video",
+    "Brands with a geometric mark the final shape can echo"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/morph-video-mask/",
+    "author": "Jitter",
+    "ref_id": "jt-068"
+  },
+  "family": "transitions",
+  "tags": [
+    "mask",
+    "shape-morph",
+    "footage",
+    "opener",
+    "window",
+    "hourglass",
+    "pastel",
+    "light",
+    "no-text",
+    "single-shot"
+  ],
+  "techniques": [
+    "mask-wipe",
+    "morph",
+    "push-in",
+    "pull-out"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 5.03,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#D2FBFD",
+      "#557BB5",
+      "#5B85C1",
+      "#638CC5",
+      "#DCDCD5",
+      "#E1FBF6"
+    ],
+    "type_style": "none: no type on screen",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "window opens from a point",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "mask bends into a new shape",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "mask locks into the final hourglass",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "flat pale cyan field; a small landscape window onto sky footage with a figure opens at centre and grows into a portrait rectangle",
+      "camera": "locked frame, no camera move; footage scale constant inside the window",
+      "motion": "window 0 -> ~12 % W landscape at 0.27, -> portrait 15 % W x 47 % H by 0.77, settled 1.00; springs.layout ~22 fr (overshoot not measurable, ±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1.27,
+      "t1": 2.5,
+      "beat": "hook",
+      "shot": "the portrait window bends: short sides bow, then concave notches cut into both long sides, forming a notched bow shape ~25 % W",
+      "camera": "locked frame; footage push-in starts inside the mask, 1.00 -> 1.15",
+      "motion": "path morph rect -> notched bow, springs.ui ~15 fr (±0.25 s); shape tilts ~5 deg by 2.27; footage scale 1.00 -> 1.15 easings.inOutSine",
+      "transition_out": "morph",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.5,
+      "t1": 3.77,
+      "beat": "hook",
+      "shot": "the bow twists into a four-lobed pinwheel ~40 % W, folds back into a near square ~30 % W, then pinches into an hourglass",
+      "camera": "locked frame; footage push-in to ~1.5 at 2.50, pull-out back to 1.0 by 3.77",
+      "motion": "pinwheel at 2.50 rotated ~-20 deg; square at 3.00 ~-3 deg, 3.27 ~+6 deg; twist ~-25 deg at 3.50; each state springs.ui ~8 fr apart (±0.25 s); rotation 6 -> 15 deg/s",
+      "transition_out": "morph",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.77,
+      "t1": 5.03,
+      "beat": "hook",
+      "shot": "the window holds as an upright hourglass with rounded corners, 24 % W x 47 % H, figure small in the waist",
+      "camera": "static",
+      "motion": "settled by 4.00 (springs.ui, ±0.25 s); no motion for 31 fr to the end",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": true,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "FootageClip",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg fills the field around the window, accent unused by default",
+    "content.clip": "footage file (or image) shown through the window; a calm subject on a clean background reads best",
+    "content.shapes": "ordered mask keyframes: rect, notched bow, pinwheel, square, hourglass (path ids)",
+    "content.finalShape": "the shape the window locks into; can be the brand mark silhouette",
+    "timing.open": "frames for the point -> portrait open (default 23)",
+    "timing.stateGap": "frames between morph states (default 8)",
+    "timing.hold": "frames of the final hold (default 38)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Single shot, 0 cuts, silent reference; sfx planned by the glue rule, not measured. Sizes from 4 fps sheet cells (±0.25 s): window 15 % W x 47 % H at 1.00, pinwheel ~40 % W at 2.50, hourglass 24 % W x 47 % H from 3.77. Footage scales ~1.0 -> 1.5 -> 1.0 inside the mask between 1.5 and 3.8 s (keyframes 2.50 vs 4.50). Rotation per motion.json 6 deg/s (2-3 s), 15 deg/s (3-4 s). Proposed term: shape-mask-morph (a clip mask whose path morphs through several shapes); not used as an id.",
+  "status": "studied"
+}

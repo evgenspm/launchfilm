@@ -1,0 +1,235 @@
+{
+  "id": "prompt-menu-code-mark-film",
+  "title": "Dark prompt, model menu, typed code, mark close",
+  "summary": "A glowing mark drops into a dark frame and becomes a lockup, then one continuous camera pushes over a prompt bar: typing, a model menu pick, send, a spinner, a code window typing itself, which collapses back into the mark.",
+  "use_when": [
+    "Launching an AI assistant or model picker where the prompt UI is the hero",
+    "A coding assistant that should show one request turn into code",
+    "Silent autoplay: the story reads from UI states alone, no VO",
+    "A dark, serif, restrained brand that wants one unbroken shot"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/XURkSmRa",
+    "author": "scanna",
+    "ref_id": "rl-037"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "ai-chat",
+    "prompt",
+    "model-menu",
+    "code",
+    "dark",
+    "serif",
+    "one-shot",
+    "no-cuts",
+    "logo-bookend",
+    "silent"
+  ],
+  "techniques": [
+    "push-in",
+    "dolly",
+    "prompt-typing",
+    "cursor-path",
+    "thinking-state",
+    "typewriter",
+    "ui-rebuild",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 24.27,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#1A1A1A",
+      "#EBEBEB",
+      "#D87755",
+      "#9A9A9A",
+      "#3B2D87",
+      "#899F82"
+    ],
+    "type_style": "book serif throughout, sentence case, normal tracking; opening lockup ~8 % H, greeting line ~4 % H, UI labels ~2.5 % H; code in the same serif at ~1.5 % H",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each prompt keystroke",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "model option click and send click",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "spinner while waiting",
+        "sound": "shimmer",
+        "origin": "planned"
+      },
+      {
+        "event": "mark lands at the close",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.27,
+      "beat": "hook",
+      "shot": "empty near-black frame; a small white glowing star mark falls in from the top edge and settles just left of centre",
+      "camera": "static",
+      "motion": "mark enters from above frame at 0.27-0.50, travels to centre by 1.00, springs.heavy ~20 fr (overshoot not measurable); slow drift down-left 1.00-2.00 (~2 % W); soft white glow halo around it",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2.27,
+      "t1": 3.77,
+      "beat": "logo",
+      "shot": "the wordmark (one word) appears to the right of the mark as a centred lockup with a wide glow, then shrinks and fades",
+      "camera": "static",
+      "motion": "wordmark reveals left to right in under 8 fr (±0.25 s); lockup holds big 2.27-2.50, scales down ~0.55x by 2.77 on easings.outExpo ~8 fr (±0.25 s); slow shrink to 3.27; fades out 3.27-3.50, 8 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 3.77,
+      "t1": 7,
+      "beat": "reveal",
+      "shot": "greeting line (5 words) with the accent-coloured mark above a rounded prompt bar: placeholder, plus button, model and effort selector, mic, send",
+      "camera": "push-in 1.00 -> 1.50 over 97 fr (bar width ~0.45 W -> 0.68 W), drifting right; easings.inOutSine",
+      "motion": "greeting and bar fade up together 3.77-4.27, 15 fr; a text caret slides in from the right at 6.00 and parks in the field by 6.50; placeholder fades at 6.77, 7 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 7,
+      "t1": 8.77,
+      "beat": "feature",
+      "shot": "the prompt field types a short request (5 words with an ellipsis); the send button lights in the accent colour at the first character",
+      "camera": "push-in continues ~1.50 -> 1.55, frame drifting right then up",
+      "motion": "Typewriter at ~13 chars/s, caret block; send button fills accent on the first keystroke (±0.25 s); request done at 8.77",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 8.77,
+      "t1": 11.27,
+      "beat": "feature",
+      "shot": "a dropdown under the model selector opens: four model options with one-line descriptions and an effort row; a cursor hovers and picks the top option",
+      "camera": "dolly: pan left ~230 px/s @1920 at 8.77-9.27 to frame the menu, then up ~170 px/s at 9.50-9.77, hold; easings.inOutSine",
+      "motion": "menu grows down from the selector, springs.layout ~10 fr (±0.25 s); cursor enters from lower right at 9.27, cursor-path to the top option by 10.00, click at 11.00; menu fades 11.00-11.27, 7 fr; selector label swaps to the chosen option",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 11.27,
+      "t1": 15.5,
+      "beat": "feature",
+      "shot": "cursor clicks send; the bar fades and a dotted spinner is left alone in the centre, grows, spins, shrinks away; then 1.2 s of empty dark",
+      "camera": "pull back to 1.00 on easings.inOutSine 15 fr as the UI fades (11.27-11.77); then static",
+      "motion": "send click squash at 11.27; UI fades 11.50-11.77; spinner scales 0.5 -> 1.0 by 12.50 (springs.ui), rotates constantly (easings.linear), holds to 13.27, scales down and dims 13.50-14.00, gone 14.27; empty 14.27-15.50",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 15.5,
+      "t1": 19.27,
+      "beat": "feature",
+      "shot": "a tall portrait code window (traffic-light dots, centred title) grows in the middle and types a short script line by line in syntax colours",
+      "camera": "static",
+      "motion": "window scales 0.7 -> 1.0 15.50-16.00, springs.ui 15 fr (overshoot not measurable); code streams line by line from 16.50, ~3 lines/s, imports green, functions blue-violet, body near-white, keywords magenta; ~17 lines by 19.00",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 19.27,
+      "t1": 20.27,
+      "beat": "feature",
+      "shot": "the code clears and the empty window outline collapses toward the centre into a tiny rectangle and disappears",
+      "camera": "static",
+      "motion": "code and dots fade at 19.27, 7 fr; outline shrinks 1.0 -> 0.3 by 19.77 then to 0 by 20.27, easings.inExpo ~30 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 20.27,
+      "t1": 22.27,
+      "beat": "logo",
+      "shot": "the star mark returns: large and soft grey, then small, white and crisp in the centre",
+      "camera": "static",
+      "motion": "mark appears at 20.50 at ~3x final size, blurred grey; shrinks and sharpens to final by 21.00, springs.snappy 15 fr (overshoot not measurable); holds still 21.00-22.27",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 22.27,
+      "t1": 24.27,
+      "beat": "logo",
+      "shot": "the wordmark joins the mark as the closing lockup, no glow, held to the end",
+      "camera": "static",
+      "motion": "wordmark appears beside the mark within one cell (< 8 fr, ±0.25 s), lockup recentres; holds 60 fr to the last frame",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "LogoReveal",
+    "Wordmark",
+    "Camera",
+    "Dolly",
+    "PromptBar",
+    "Typewriter",
+    "Cursor",
+    "Spinner",
+    "MacWindow",
+    "Bloom"
+  ],
+  "params": {
+    "brand": "brand.json: serif display font, bg near-black, fg near-white, accent for the greeting mark and send button, logo mark + wordmark",
+    "content.greeting": "one line above the prompt bar, about 5 words",
+    "content.placeholder": "prompt field placeholder, about 5 words",
+    "content.prompt": "the typed request, 3-6 words",
+    "content.models": "4 menu options, each a name and a one-line description",
+    "content.picked": "index of the option the cursor picks (default 0)",
+    "content.effort": "label of the effort row value",
+    "content.code": "the script typed in the code window, 12-18 short lines",
+    "content.windowTitle": "title in the code window bar"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Zero hard cuts: the whole film is one shot; rows split at state changes read from 4 fps sheets (±0.25 s). Camera moves only during the prompt section (3.77-11.77): push to ~1.5x then pans left and up to reveal the menu. Mark bookends the film (drop + lockup at the open, large-to-small settle + lockup at the close). Accent #D87755 sampled from the greeting mark pixels at 9.50 s, the rest from palettegen on keyframes 2.50 / 9.50 / 18.50 / 23.50. sfx planned by the glue rule, not measured (reference is silent). Proposed terms (not used as ids): model-menu-pick, collapse-to-mark, mark-scale-settle.",
+  "status": "studied"
+}

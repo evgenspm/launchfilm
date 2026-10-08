@@ -1,0 +1,155 @@
+{
+  "id": "wordmark-unfold-footage-hold",
+  "title": "Lockup word unfold over still footage",
+  "summary": "A small mark and one-word wordmark sit centred on a full-bleed travel plate; a second, lighter word unfolds to the right as the lockup re-centres, holds, then folds back. Quiet, loopable brand sting.",
+  "use_when": [
+    "A brand whose short name expands to a longer name or category (name + descriptor)",
+    "A loopable 5 s sting over hero photography or a calm footage plate",
+    "Silent autoplay intro where only the mark has to register",
+    "Travel, mobility or hospitality identities with strong imagery"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-route-logo-reveal/",
+    "author": "Jitter",
+    "ref_id": "jt-063"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo",
+    "lockup",
+    "wordmark",
+    "unfold",
+    "footage",
+    "loop",
+    "minimal",
+    "travel",
+    "sting"
+  ],
+  "techniques": [
+    "end-card",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#021C32",
+      "#0E3149",
+      "#4D697E",
+      "#8E969A",
+      "#C4BFB5",
+      "#DCD8CF"
+    ],
+    "type_style": "geometric grotesk, sentence case, normal tracking; first word medium weight white, second word light weight white at ~75 % opacity; cap height ~5 % H; mark = outlined rounded rectangle ~8 % H, stroke ~1 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "second word unfolds, lockup re-centres",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "second word folds back behind the first",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.17,
+      "beat": "hook",
+      "shot": "full-bleed aerial still of a jet fuselage over dark sea; small mark + one-word wordmark centred on the fuselage",
+      "camera": "static (plate does not move: motion diff 0.00-0.02, zoom 0.01-0.02 %/s)",
+      "motion": "none: short lockup holds from frame 0 (no entrance), 35 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1.17,
+      "t1": 1.73,
+      "beat": "logo",
+      "shot": "second word (descriptor, 1 word, lighter weight) unfolds to the right of the first; whole lockup slides left to stay centred",
+      "camera": "static",
+      "motion": "lockup x shift ~-85 px@1250 (~-130 px@1920) on easings.outExpo 17 fr (f35-f52); second word letters fade in left to right, ~1 fr per letter, opacity 0 -> 0.75, starting under the end of the first word",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1.73,
+      "t1": 3.5,
+      "beat": "logo",
+      "shot": "full two-word lockup centred on the plate",
+      "camera": "static",
+      "motion": "hold 53 fr, nothing moves",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 3.5,
+      "t1": 3.9,
+      "beat": "logo",
+      "shot": "second word folds back: it slides left under the first word and fades right to left; lockup re-centres on the short form",
+      "camera": "static",
+      "motion": "reverse of row 2, faster: second word x slides into the first word and fades, last letters out last; lockup x shift ~+85 px@1250 on easings.inOutSine 12 fr (f105-f117)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.9,
+      "t1": 5,
+      "beat": "logo",
+      "shot": "short lockup holds, identical to frame 0 so the clip loops",
+      "camera": "static",
+      "motion": "hold 33 fr; frame 149 = frame 0",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "FootageClip",
+    "Lockup",
+    "Wordmark",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: logo mark, wordmark font, fg colour for the lockup",
+    "content.name": "short brand word shown alone at start and end",
+    "content.extension": "one descriptor word that unfolds after the name (lighter weight, ~75 % opacity)",
+    "content.footage": "full-bleed still or calm clip behind the lockup, mid-tone area at frame centre",
+    "timing.unfoldAt": "frame the unfold starts (default 35 at 30 fps)",
+    "timing.foldAt": "frame the fold-back starts (default 105)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; lockup stays centred",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips at t=1.00 and t=3.30: unfold f35-f52 (17 fr), fold f105-f117 (12 fr); first and last frame match (loopable). The background plate is effectively a still (motion diff <= 0.02). No URL or CTA: end-card is used loosely for the held lockup. Proposed term (not in vocabulary): wordmark-unfold. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

@@ -1,0 +1,192 @@
+{
+  "id": "laptop-phone-orbit-handoff",
+  "title": "Dark laptop orbit to phone list, wordmark close",
+  "summary": "A dark laptop with a market dashboard: the camera swoops from a wide 3/4 view into the charts, pulls back, drops to a phone with an earnings list, glides down it under a rim glint, then a lit wordmark holds.",
+  "use_when": [
+    "A finance or analytics product with a desktop dashboard and a mobile companion",
+    "Showing the same product on two devices in one continuous camera move",
+    "A silent, premium dark teaser of 10 to 15 s",
+    "You have two screenshots and a wordmark, no copy lines"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/NTKG356A",
+    "author": "Raylight",
+    "ref_id": "rl-016"
+  },
+  "family": "3d-device",
+  "tags": [
+    "laptop",
+    "phone",
+    "orbit",
+    "dark",
+    "dashboard",
+    "charts",
+    "finance",
+    "multi-device",
+    "wordmark",
+    "silent",
+    "no-copy"
+  ],
+  "techniques": [
+    "device-laptop",
+    "device-phone",
+    "device-3d",
+    "orbit",
+    "push-in",
+    "pull-out",
+    "dolly",
+    "slide-push",
+    "blur-dissolve",
+    "light-on",
+    "horizon-arc",
+    "vignette",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 13.1,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#020302",
+      "#7D7876",
+      "#5B5B5B",
+      "#524F4F",
+      "#303031",
+      "#181717"
+    ],
+    "type_style": "wordmark only: bold grotesk, sentence case, normal tracking, about 5 % of frame height; UI type is the product's own small sans",
+    "treatment": [
+      "vignette",
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "camera swoop into the laptop and the drop to the phone",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "rim glint passes the phone edge",
+        "sound": "shimmer",
+        "origin": "planned"
+      },
+      {
+        "event": "wordmark lights up",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "dark closed-room laptop in 3/4 view, screen shows a table of tickers above two charts; soft curved light band at left",
+      "camera": "orbit + push-in: laptop width about 27 % to 70 % of frame in 30 fr, yaw swings toward frontal, roll about -9 deg/s",
+      "motion": "camera only, easings.inExpo into the screen (±0.25 s); UI static",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1,
+      "t1": 2.75,
+      "beat": "proof",
+      "shot": "low close angle on the screen: line chart left, red-to-green area chart right, keyboard foreground",
+      "camera": "orbit at keyboard height, push-in about 1.00 to 1.15, then lateral truck left about 14 px/fr @1920 (419 px/s at 2-3 s)",
+      "motion": "camera only, easings.inOutSine (±0.25 s); charts already drawn, no draw-on visible",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2.75,
+      "t1": 4,
+      "beat": "proof",
+      "shot": "camera drops to keyboard level, area chart fills the right two thirds, line chart cropped at left",
+      "camera": "dolly down then slow drift right and up about 1.5 px/fr, scale about 1.00 to 0.98",
+      "motion": "camera only, easings.outQuint settle (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4,
+      "t1": 5.75,
+      "beat": "feature",
+      "shot": "pull back to the whole laptop, frontal and centred, small in a black void; full dashboard readable as a layout",
+      "camera": "pull-out: laptop width about 100 % to 36 % of frame in 15 fr (4.00-4.50), then hold with drift 1.00 to 1.04",
+      "motion": "springs.cameraOut, about 15 fr (±0.25 s), no overshoot",
+      "transition_out": "slide-push"
+    },
+    {
+      "t0": 5.75,
+      "t1": 7.25,
+      "beat": "feature",
+      "shot": "laptop slides out downward, a phone enters frontal: dated list of tickers with status tags in green and red, groups with a more-count",
+      "camera": "vertical slide 175 px/s @1920 between devices, then push-in 1.00 to 1.08 on the phone",
+      "motion": "phone settles springs.heavy about 24 fr (overshoot not measurable); list static",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 7.25,
+      "t1": 10.25,
+      "beat": "feature",
+      "shot": "phone tilts back into steep perspective, close on the list rows; a white rim glint runs along the right edge; ends on a short pull back",
+      "camera": "push-in to about 1.8, then dolly up the list 290 px/s @1920 (8-9 s, content scrolls up), slow zoom out 6 %/s, quick pull-out at 10.00",
+      "motion": "camera easings.inOutSine; tilt about 0 to 35 deg over 15 fr (±0.25 s); glint glow follows the edge",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 10.25,
+      "t1": 13.1,
+      "beat": "logo",
+      "shot": "wordmark centred on black, a soft grey light arc sweeps down from the top right corner behind it",
+      "camera": "static frame; the light arc grows and swings from corner to a diagonal band over 1.75 s",
+      "motion": "wordmark light-on from grey to white over about 22 fr (10.27-11.00), holds 60 fr, dims to grey from 12.77 (±0.25 s); arc easings.inOutSine",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 2,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "LaptopFrame",
+    "PhoneFrame",
+    "Camera",
+    "TiltPlane",
+    "LineChart",
+    "Wordmark",
+    "HorizonArc",
+    "Vignette"
+  ],
+  "params": {
+    "desktopScreen": "laptop screenshot, dashboard with a data table over two charts (authored at 1512x982)",
+    "phoneScreen": "phone screenshot, a long vertical list that can be glided through",
+    "wordmark": "product name shown as the end wordmark"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "status": "studied",
+  "notes": "Zero cuts: one continuous camera move, rows split at camera state changes from 4 fps sheets (±0.25 s). Silent reference; sfx planned by the glue rule, not measured. Palette from palettegen on kf 1.5/6.5/9.5/11.5; the chart green and red accents are below the 6-colour cut. Proposed term: rim-glint (white highlight sliding along a device edge, rows 6). Device switch (5.75-6.00) is a vertical camera slide, not a cut."
+}

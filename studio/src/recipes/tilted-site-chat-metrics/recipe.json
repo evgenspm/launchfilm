@@ -1,0 +1,148 @@
+{
+  "id": "tilted-site-chat-metrics",
+  "title": "Tilted dark site: hero, chat, metrics",
+  "summary": "A dark violet landing page leaned back in 3D, cut twice: hero headline under a slow push, an assistant chat panel panning left, then the chat beside four metric tiles drifting right. Three planes, no type animation, all motion is camera.",
+  "use_when": [
+    "A service or agency site with a hero, an assistant and a results block",
+    "Short silent teaser where the UI itself is the whole story",
+    "Dark brand with a single violet or blue accent",
+    "B-roll under VO or a social post, 10 s, no copy beyond the UI"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/na79Evcu",
+    "author": "Vansh Panchal",
+    "ref_id": "rl-051"
+  },
+  "family": "product-ui",
+  "tags": [
+    "tilt-plane",
+    "dark",
+    "violet",
+    "website",
+    "chat",
+    "metrics",
+    "dashboard",
+    "camera-only",
+    "silent",
+    "agency"
+  ],
+  "techniques": [
+    "tilt-plane",
+    "push-in",
+    "dolly",
+    "device-browser",
+    "ui-rebuild",
+    "hard-cut",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 10.73,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#080B0D",
+      "#7F84AC",
+      "#6F71BB",
+      "#232141",
+      "#151B2F",
+      "#51597F"
+    ],
+    "type_style": "hero: bold geometric grotesk, title case, two lines, ~6 % H, light grey on violet; UI text small sans; metric figures mid-weight grotesk",
+    "treatment": [
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "hard cut to the chat panel",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "hard cut to the metrics plane",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.1,
+      "beat": "hook",
+      "shot": "landing hero on a tilted plane: nav bar, small pill badge, two-line headline, two-line sub, two buttons; violet glow top right",
+      "camera": "tilt-plane leaned back ~15 deg, right edge farther; push-in ~1.2 %/s (1.00 -> 1.04 over 93 fr), no pan",
+      "motion": "nothing inside the page moves; camera only, easings.linear over 93 fr; edges soft from depth of field",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.1,
+      "t1": 6.77,
+      "beat": "feature",
+      "shot": "assistant chat panel on the same site: window chrome dots, assistant header, greeting, user request bubble, assistant reply, quick-reply chip",
+      "camera": "tilt-plane, rotated ~8 deg in Z and leaned back; dolly: content travels left ~72 px/s @1920 (2.4 px/fr), push ~0.5-1 %/s",
+      "motion": "camera only: easings.linear dolly over 110 fr; bubbles already present (no entrances visible at 0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.77,
+      "t1": 10.73,
+      "beat": "proof",
+      "shot": "wider plane: chat column on the left, 2x2 grid of dark metric tiles (time, count, count, large count) with accent underlines",
+      "camera": "tilt-plane flatter and closer, rotated ~-10 deg in Z; dolly: content travels right ~100 px/s @1920 slowing to ~77 px/s, push-in ~2.3 %/s, roll -0.6 deg/s",
+      "motion": "camera only: easings.linear dolly over 119 fr with a slight slow-down after 9.0 s; figures static (no count-up visible at 0.25 s); ends mid-move",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 4,
+    "url": false
+  },
+  "components": [
+    "TiltPlane",
+    "BrowserFrame",
+    "ChatThread",
+    "ChatBubble",
+    "Counter",
+    "BrandBackdrop",
+    "Vignette",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "dark brand.json: bg near black, violet accent, display font for the hero",
+    "content.hero": "two-line headline, 2 words per line, plus a 2-line sub and two button labels",
+    "content.badge": "small pill above the headline, 3-4 words",
+    "content.chat": "3-4 messages: assistant greeting, user request, assistant reply, quick-reply chip",
+    "content.metrics": "4 figures with short labels (a time, two counts, one large count)",
+    "timing.shots": "frames per plane at 30 fps (default 93 / 110 / 119)",
+    "camera.tilt": "rotateX / rotateZ per plane; keep every plane leaned, never flat-on"
+  },
+  "difficulty": "medium",
+  "render_cost": "medium",
+  "notes": "Cuts at 3.10 s (f93) and 6.77 s (f203) measured on 30 fps strips; cuts.json missed both (dark, low contrast; near misses 3.10 and 6.767). Motion per second from motion.json: shot 1 zoom 1.1-1.4 %/s, shot 2 pan -71..-76 px/s, shot 3 pan +77..+102 px/s, zoom 2.0-2.5 %/s. All motion is camera; the UI is a still rebuild. The direction flips at every cut (still -> left -> right). sfx planned by the glue rule, not measured (reference is silent). Proposed term: direction-flip cut (not in vocabulary).",
+  "status": "studied"
+}

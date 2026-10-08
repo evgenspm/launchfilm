@@ -1,0 +1,116 @@
+{
+  "id": "pixel-cursor-build-erode",
+  "title": "Pixel cursor block build and erode",
+  "summary": "A blocky arrow pointer grows from its tip one diagonal of square cells at a time, holds for a third of a second, then erodes from the edges into one cell and vanishes. Stepped 10 fps timing reads as crafted pixel art.",
+  "use_when": [
+    "A screen-demo film needs a custom pointer entrance before the cursor starts moving",
+    "Opening or closing beat for a pixel, retro or developer-tool brand",
+    "A 2 s loopable sticker or avatar loop on a flat background",
+    "A transition sting between UI demo shots where the pointer is the subject"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/cursor/",
+    "author": "Luc Chaissac",
+    "ref_id": "jt-016"
+  },
+  "family": "product-ui",
+  "tags": [
+    "pointer",
+    "pixel-art",
+    "blocks",
+    "stepped",
+    "build-on",
+    "erode",
+    "loop",
+    "light",
+    "minimal",
+    "sting",
+    "no-text"
+  ],
+  "techniques": [
+    "logo-from-dot"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 2,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#000000",
+      "#7E7E7E"
+    ],
+    "type_style": "no type: square cells about 5 % of frame width with a 0.5 % gap, pure black on white, hard pixel edges",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each build step adds a diagonal of cells (every 3 fr, f1 to f19)",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "last cell disappears at f48",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "black pixel-grid arrow pointer (8 by 13 cells, about 59 cells) builds from its tip, holds, erodes to one cell near frame centre, then empty white",
+      "camera": "static",
+      "motion": "stepped at 10 fps (each state held 3 fr): f1 tip cell; build adds a diagonal wavefront from the tip, cell count 1, 4, 9, 22, 35, 50, 59 at f1, f3, f6, f9, f12, f15, f19 (easings.linear per step); full hold f19 to f29 (11 fr); erode from the outline inward 51, 39, 18, 4, 2, 1 cells at f30, f33, f36, f39, f42, f45; gone f48; empty f48 to f59 (12 fr)",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the field, fg for the cells (accent optional for the last cell)",
+    "glyph": "bitmap rows of the shape (default: arrow pointer 8 by 13 cells); any small pixel mark works",
+    "cell": "cell size as a share of frame width (default 0.05) and gap (default 0.005)",
+    "stepFrames": "frames each state is held at 30 fps (default 3 = 10 fps stepping)",
+    "buildOrder": "diagonal from the tip (default) | rows | random seeded",
+    "holdFrames": "frames the full glyph holds (default 11)",
+    "erodeTarget": "point the erosion collapses to (default frame centre)",
+    "tailFrames": "empty frames at the end so the loop breathes (default 12)",
+    "aspect": "1:1 | 16:9 | 4:5 | 9:16; glyph stays centred-left at the same cell size",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured at 30 fps from a dark-pixel bounding box per frame of the local source (no frames kept): every state holds exactly 3 fr, so the build is 7 steps (f1 to f19) and the erode 6 steps (f30 to f45). Build grows from the top-left tip in x and y together; the erode removes the outline first and ends on a single cell at about the frame centre, not the pointer's centre. No cursor travel, no click squash and no ripple are visible despite the catalogue hint, so cursor-path and click-ripple are not tagged. logo-from-dot is the nearest vocabulary id (grows from a point and shrinks back to one); proposed terms block-build and block-erode in recipe.md. First and last frames are both empty white, so it loops. Palette from keyframes (no cut frames exist); #7E7E7E is edge antialiasing. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

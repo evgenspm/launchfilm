@@ -31,7 +31,7 @@ for (const dir of recipeDirs()) {
 	for (const t of r.techniques ?? []) if (!vocab.techniques.has(t)) errors.push(`technique "${t}" is not in craft/vocabulary.md`);
 	for (const s of r.audio?.sfx ?? []) if (s.sound && !vocab.audio.has(s.sound)) errors.push(`audio.sfx sound "${s.sound}" is not a vocabulary audio id`);
 	for (const s of r.structure ?? []) {
-		if (s.transition_out && s.transition_out !== 'hard-cut' && !transitions.has(s.transition_out)) warnings.push(`structure ${s.t0}–${s.t1}: transition_out "${s.transition_out}" is not a transitions id`);
+		if (s.transition_out && !['hard-cut', 'continuous', 'end'].includes(s.transition_out) && !transitions.has(s.transition_out)) warnings.push(`structure ${s.t0}–${s.t1}: transition_out "${s.transition_out}" is not a transitions id`);
 		if (s.t1 < s.t0) errors.push(`structure ${s.t0}–${s.t1}: t1 < t0`);
 	}
 	// recipe.md + recipe.json are the recipe. Recipe.tsx + index.tsx are optional ready code, required only once the

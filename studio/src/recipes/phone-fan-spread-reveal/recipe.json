@@ -1,0 +1,120 @@
+{
+  "id": "phone-fan-spread-reveal",
+  "title": "Phone screens fan out from one",
+  "summary": "One numbered phone screen holds centre, then four more slide out from behind it into a symmetric fan while the group eases back to 91 %. A 1.3 s reveal of several app screens that then holds still as a poster.",
+  "use_when": [
+    "Showing that an app has several screens or steps in one short shot",
+    "A silent opener or loop tile for an app launch post",
+    "Intro beat before a longer phone feature tour",
+    "Placeholder layout to drop real screenshots into, numbered by order"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/mobile-screens-reveal/",
+    "author": "Jitter",
+    "ref_id": "jt-034"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "fan",
+    "screens",
+    "stack",
+    "reveal",
+    "app-launch",
+    "light",
+    "minimal",
+    "silent",
+    "short",
+    "numbered"
+  ],
+  "techniques": [
+    "device-phone",
+    "pull-out"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 3,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#E9E9E9",
+      "#F5F9F9",
+      "#3956F3",
+      "#354FDC",
+      "#C9CEDC"
+    ],
+    "type_style": "medium grotesk; large two-digit index top-left of each screen (~9 % H on the centre screen), three short stacked lines lower-left (~3 % H), sentence case, white on the screen colour",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "side screens slide out from behind the centre screen (inner pair f9, outer pair f12)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "fan settles into place (~f40)",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3,
+      "beat": "hook",
+      "shot": "one numbered blue phone screen centred on flat light grey, then four more fan out behind it, two each side, smaller and lower with depth",
+      "camera": "pull-out: whole group scale 1.00 -> 0.91 between f9 and ~f40, then static to f90",
+      "motion": "f0-8 single screen holds; f9 inner pair slides out from behind the centre, outer pair follows at f12 (stagger 3 fr); offsets to +-17 % W and +-30 % W, scales 0.90 and 0.77, settle ~f40 with easings.outQuint ~31 fr, no overshoot; hold f40-90",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 5,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS",
+    "STAGGER",
+    "easings"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the backdrop, accent as the screen fill, display font for index and lines",
+    "content.screens": "3 or 5 screens (centre first, then pairs outward): screenshot src or {index, lines[]} placeholder",
+    "content.lines": "up to 3 short lines on each placeholder screen, 1 word each",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; fan offsets are fractions of frame width, cap the fan at 80 % W",
+    "timing.holdFirst": "frames the single centre screen holds before the fan (default 9)",
+    "timing.spread": "frames of the spread (default 31)",
+    "timing.pairStagger": "frames between inner and outer pair (default 3)",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips: single screen f0-8, inner pair starts f9, outer pair f12, settled ~f40 (+-3 fr), static f40-90 (motion.json diff 0 in the last second). Final layout at 1322x992: centre screen 24 % W x 70 % H; inner pair centres +-17 % W, scale 0.90, centres 1.3 % H lower; outer pair +-30 % W, scale 0.77, 4 % H lower; all upright, no rotation, z-order centre on top. Side screens come out from behind the centre, not from off-screen as the catalogue hint says, and the hint's overshoot is not visible at 30 fps. Family hint 3d-device rejected: the layering is flat 2D with scale for depth. Soft drop shadow under each screen. Proposed term fan-spread (not in vocabulary). sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

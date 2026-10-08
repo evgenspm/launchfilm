@@ -1,0 +1,211 @@
+{
+  "id": "card-strip-step-orbit",
+  "title": "Card strip step-slide into scattered orbit",
+  "summary": "A row of full-bleed image cards steps sideways one card at a time on light grey, punches in once, then hard-cuts to the same five cards scattered in a ring that turns one revolution with a colour-fringe edge.",
+  "use_when": [
+    "Showing 4 to 6 portfolio images, posters or product shots without any copy",
+    "A vertical social teaser for a template, design or merch drop",
+    "A gallery beat inside a longer film where the visuals carry the message",
+    "Silent autoplay where motion alone must hold attention"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/OOF18XMl",
+    "author": "Raylight",
+    "ref_id": "rl-021"
+  },
+  "family": "transitions",
+  "tags": [
+    "gallery",
+    "image-cards",
+    "vertical",
+    "carousel",
+    "card-strip",
+    "orbit",
+    "portfolio",
+    "no-copy",
+    "light",
+    "silent"
+  ],
+  "techniques": [
+    "slide-push",
+    "push-in",
+    "orbit-ring",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 17.13,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#CECECE",
+      "#040404",
+      "#ABBFB5",
+      "#406ECB",
+      "#E2ECA6",
+      "#9B7156"
+    ],
+    "type_style": "no type of its own; all text lives inside the images",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "strip steps one card sideways",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "punch-in on the strip",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "hard cut to the scattered ring",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "ring revolution starts",
+        "sound": "riser",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "horizontal strip of tall image cards, edge to edge, band ~47 % H centred on flat grey; product card left, poster right",
+      "camera": "strip slides right ~1 card width (about 220 then 400 px/s @1920), scale 1.00 -> 1.06",
+      "motion": "strip steps right by one card, springs.ui ~20 fr (overshoot not measurable, ±0.25 s), step lands 1.50; third card enters from the left edge",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2,
+      "t1": 3,
+      "beat": "feature",
+      "shot": "three cards visible: new dark card left, product card centre, poster clipped at the right edge",
+      "camera": "static strip (pan -2 px/s)",
+      "motion": "hold 30 fr, nothing moves",
+      "transition_out": "slide-push"
+    },
+    {
+      "t0": 3,
+      "t1": 4,
+      "beat": "feature",
+      "shot": "strip steps right again; the dark card reaches centre and a bright blue-yellow poster card enters from the left",
+      "camera": "pan right ~980 px/s @1920 over ~0.75 s",
+      "motion": "one-card step, springs.ui ~22 fr (overshoot not measurable, ±0.25 s); settles 3.77",
+      "transition_out": "push-in",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4,
+      "t1": 5,
+      "beat": "feature",
+      "shot": "same three cards, the strip grows: band height 47 % -> 61 % H, cards now overflow both edges",
+      "camera": "push-in 1.00 -> 1.27 over ~24 fr (26 %/s), slight drift down 76 px/s",
+      "motion": "springs.cameraIn ~24 fr (overshoot not measurable, ±0.25 s); scale holds at 1.27 to the cut",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5,
+      "t1": 7,
+      "beat": "feature",
+      "shot": "strip reverses and steps left twice: dark card exits left, product card passes centre, poster card lands right of centre",
+      "camera": "pan left ~710 then ~510 px/s @1920 at scale 1.27",
+      "motion": "two one-card steps, springs.ui ~18 fr each (overshoot not measurable, ±0.25 s), second step lands 6.27",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 7,
+      "t1": 8.57,
+      "beat": "feature",
+      "shot": "hold: product card left half, poster card right half, strip at scale 1.27",
+      "camera": "static (pan -1 px/s, zoom 0 %/s)",
+      "motion": "hold 47 fr, no motion; cut at f257",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 8.57,
+      "t1": 10,
+      "beat": "feature",
+      "shot": "same five images as small cards (~30-40 % W each) scattered on a ring around the empty centre on grey; cards bend slightly like curled paper, colour-fringed edges",
+      "camera": "static frame, ring turns ~6 deg/s",
+      "motion": "cards sway in place, curl changes a few degrees, easings.inOutSine (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 10,
+      "t1": 15,
+      "beat": "feature",
+      "shot": "the ring of five cards turns one full revolution around the frame centre; each card keeps facing camera with perspective tilt toward the edge",
+      "camera": "static frame; ring rotation peaks ~1500 px/s @1920 at 12.5",
+      "motion": "ring revolution 360 deg over 150 fr, easings.inOutSine; cards near the edges foreshorten and clip at the frame edge",
+      "transition_out": "continuous",
+      "sfx": "riser"
+    },
+    {
+      "t0": 15,
+      "t1": 17.13,
+      "beat": "feature",
+      "shot": "ring settles back to its starting arrangement and holds",
+      "camera": "static",
+      "motion": "final settle ~15 fr springs.ui (±0.25 s), then hold 49 fr; card sway continues lightly",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 5,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Dolly",
+    "OrbitRing",
+    "RGBSplit",
+    "Surface",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "images": "5 image cards (portrait ~3:5 in the strip); the same list feeds the strip and the ring",
+    "strip.steps": "list of strip offsets in card widths with frame times; default +1 at f30, +1 at f105, push 1.27 at f120, -1 at f150, -1 at f180",
+    "strip.bandHeight": "card band height as share of H before the push (default 0.47)",
+    "push.scale": "punch-in scale on the strip (default 1.27)",
+    "cutAt": "frame of the hard cut to the ring (default 257)",
+    "ring.radius": "ring radius as share of W (default 0.36)",
+    "ring.revolutionFrames": "frames for the full revolution (default 150, starts f300)",
+    "fringe": "RGB split amount on the ring cards in px (default 3, 0 = off)",
+    "bg": "flat background colour (default #CECECE)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s) and motion.json. Strip cards touch edge to edge with small radii; band 47 % H, then 61 % H after the push at 4.0-5.0 s and it never scales back. Steps are one card width each and alternate direction: right, right, push, left, left. Shot 2 shows all five images as curled cards on a ring with a persistent RGB fringe (Proposed terms: card-curl, chroma-fringe; not vocabulary ids). Ring returns to its start pose, so shot 2 alone loops. No audio in the reference: sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

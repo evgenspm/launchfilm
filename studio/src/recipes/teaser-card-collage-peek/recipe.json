@@ -1,0 +1,164 @@
+{
+  "id": "teaser-card-collage-peek",
+  "title": "Teaser card peeking out of an artboard collage",
+  "summary": "A still collage of design artboards over giant cropped type; a cursor drifts to one artboard, a teaser card grows out of it with a masked three-line headline and pill buttons, folds back, then repeats from a second artboard.",
+  "use_when": [
+    "Pre-launch teaser where the feature itself must stay hidden",
+    "Design, template or creative tools whose output is a set of artboards or formats",
+    "Silent social loop that announces a release date or waitlist",
+    "Short looping header or hero clip for a launch page"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/feature-sneak-peek/",
+    "author": "Vendredi Society",
+    "ref_id": "jt-003"
+  },
+  "family": "launch-film",
+  "tags": [
+    "teaser",
+    "pre-launch",
+    "collage",
+    "artboards",
+    "cursor",
+    "card-expand",
+    "masked-headline",
+    "pill-buttons",
+    "loop",
+    "light",
+    "silent"
+  ],
+  "techniques": [
+    "mask-wipe",
+    "cursor-path"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 10.97,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#D8D2C2",
+      "#212420",
+      "#F9F9F6",
+      "#5A8CFB",
+      "#EBABAE",
+      "#5571A8"
+    ],
+    "type_style": "teaser headline: geometric sans, regular weight, uppercase, 3 stacked lines, about 9 % H per line, tight leading; backdrop word: heavy grotesk about 30 % H, cropped by the cards; artboard labels: small sans with tiny pill tags",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "teaser card grows out of an artboard",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "pill buttons land on the card",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "teaser card folds back into the collage",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "warm grey collage: five portrait and square artboards with pixel art over a giant cropped dark word; cursor enters",
+      "camera": "static (no card moves between cells)",
+      "motion": "cursor glides to the lower-left square artboard, springs via Cursor path, about 23 fr (±0.25 s), then rests on it",
+      "transition_out": "mask-wipe",
+      "sfx": ""
+    },
+    {
+      "t0": 1.5,
+      "t1": 4,
+      "beat": "reveal",
+      "shot": "teaser card grows out of the hovered artboard: headline 3 words on 3 lines, clipped by the card, then 3 pill buttons with a 2-word label",
+      "camera": "static",
+      "motion": "card scale-up from the artboard rect with a fade, springs.layout about 8-15 fr (±0.25 s, overshoot not measurable); headline lines uncovered by the card edge; pills land by 2.00, springs.ui (overshoot not measurable); cursor hovers pill to pill over 1.5 s",
+      "transition_out": "mask-wipe",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4,
+      "t1": 6.77,
+      "beat": "reveal",
+      "shot": "card folds back and fades, collage alone again; cursor travels to the orange square artboard and hovers it",
+      "camera": "static",
+      "motion": "card collapse plus fade, easings.inExpo about 8 fr (±0.25 s), gone by 4.27; cursor move over about 30 fr (±0.25 s), hover 1.5 s",
+      "transition_out": "mask-wipe",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.77,
+      "t1": 9.5,
+      "beat": "feature",
+      "shot": "same teaser card grows out of the second artboard, lines appear one per cell through the card mask, then the pills",
+      "camera": "static",
+      "motion": "card springs.layout about 8 fr (±0.25 s); headline line stagger about 7 fr (±0.25 s): 1 line at 6.77, 2 at 7.00, 3 plus pills at 7.27; cursor hovers the lower pill",
+      "transition_out": "mask-wipe",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9.5,
+      "t1": 10.97,
+      "beat": "feature",
+      "shot": "card folds back into the collage; collage holds with the cursor parked low, matching the first frame for the loop",
+      "camera": "static",
+      "motion": "collapse plus fade easings.inExpo about 8 fr (±0.25 s), gone by 9.77; cursor drifts down and rests",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 5,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Cursor",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (warm neutral), fg for the backdrop word, surface for the cards, accent plus two secondary colours for the pills",
+    "content.backdropWord": "one big word (product name) set behind the collage, cropped by the cards",
+    "content.artboards": "5 images or artboards with a size label, scattered at fixed positions",
+    "content.headline": "teaser headline, 3 short words, one per line",
+    "content.pillLabel": "2-word label on the 3 pill buttons",
+    "content.peekFrom": "indexes of the 2 artboards the card grows out of (default square-left, then square-centre)",
+    "timing.hold": "frames the card holds open (default 67 = 2.25 s)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; collage repositions per aspect"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Single shot, no cuts, silent. Two identical peeks: card open 1.50-4.00 and 6.77-9.50, about 2.5 s each, collage alone 2.77 s between them. The background never moves; motion.json reports a constant -19,17 px/s pan and -5.4 %/s zoom, but cards sit at the same place at 0.00 and 10.77, so it is an estimator artefact. Loopable: last cell matches the first. Proposed terms (not used as ids): thumb-expand, backdrop-type. sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

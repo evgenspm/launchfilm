@@ -1,0 +1,177 @@
+{
+  "id": "mobile-device-orbit-close",
+  "title": "Orbiting phone close-up with a quiet brand finish",
+  "summary": "A vivid phone fills the frame through three continuous 3D passes, then settles beside a short product line before collapsing to a mark and a restrained closing credit.",
+  "use_when": [
+    "a phone app needs a cinematic hero teaser",
+    "one product screen and one numeric proof point can carry the story",
+    "a short launch bumper needs a mark-led finish"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/UAUZqxCg",
+    "author": "Raylight",
+    "ref_id": "rl-031"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "3d-device",
+    "orbit",
+    "close-up",
+    "dark",
+    "product-screen",
+    "mark-close"
+  ],
+  "techniques": [
+    "device-phone",
+    "device-3d",
+    "orbit-3d",
+    "push-in",
+    "whip-pan",
+    "word-reveal",
+    "match-cut",
+    "pull-out",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 19.37,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FEFEFE",
+      "#63DC45",
+      "#1B1B1D",
+      "#98E586"
+    ],
+    "type_style": "regular neutral sans, sentence case, open tracking, 7% of frame height; bold numeric display at about 18% of frame height",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 102.9,
+      "energy": "medium",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone passes close to camera",
+        "sound": "whoosh"
+      },
+      {
+        "event": "phone reverses direction between passes",
+        "sound": "swoosh-short"
+      },
+      {
+        "event": "brand mark replaces the product layout",
+        "sound": "hit"
+      },
+      {
+        "event": "closing credit resolves",
+        "sound": "swell"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3,
+      "beat": "hook",
+      "shot": "A bright phone screen sweeps from an extreme lower-edge close-up into a readable product view on black.",
+      "camera": "orbit-3d; push-in 1.00 to 1.26 over the first 30 fr, then a shallow downward drift",
+      "motion": "device enters from above with easings.outExpo 9 fr (±0.25 s), then follows easings.inOutSine through an 82 fr orbit",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3,
+      "t1": 7.75,
+      "beat": "feature",
+      "shot": "The phone returns from the lower right; a large one-digit currency result stays centred as the device crosses left.",
+      "camera": "orbit-3d with a right-to-left pan across about 53% W; push-in 1.00 to 1.14 over 143 fr",
+      "motion": "device entrance easings.outExpo 12 fr (±0.25 s); continuous orbit uses easings.inOutSine over 131 fr",
+      "transition_out": "whip-pan",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 7.75,
+      "t1": 10.97,
+      "beat": "feature",
+      "shot": "The phone clears the left edge, re-enters from below at a new angle, then grows to another edge-to-edge detail.",
+      "camera": "orbit-3d; push-in 1.00 to 1.29 over 97 fr while the device travels from lower right toward centre",
+      "motion": "whip-pan exit and re-entry over about 23 fr (±0.25 s), then easings.inOutSine orbit through the hold",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 10.97,
+      "t1": 14,
+      "beat": "feature",
+      "shot": "A full phone settles on the right while a four-word placeholder statement builds in two lines on the left.",
+      "camera": "locked two-column framing after the 10 fr device entrance; phone centre at about 68% W",
+      "motion": "phone rises with easings.outExpo 10 fr (±0.25 s); words reveal every about 8 fr with easings.outExpo 9 fr (±0.25 s)",
+      "transition_out": "match-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 14,
+      "t1": 16.27,
+      "beat": "logo",
+      "shot": "A small monochrome mark replaces the product layout, rotates about a quarter turn, and settles at centre.",
+      "camera": "static; centred mark at about 8% H",
+      "motion": "mark rotation and corner settle use springs.heavy over about 30 fr (overshoot not measurable), then hold 38 fr",
+      "transition_out": "match-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 16.27,
+      "t1": 19.37,
+      "beat": "outro",
+      "shot": "A short three-word maker credit replaces the mark and holds alone on black through the silent tail.",
+      "camera": "pull-out 1.10 to 1.00 over 9 fr with springs.cameraOut, then static",
+      "motion": "credit resolves with easings.outExpo 9 fr (±0.25 s), followed by an 84 fr still hold",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 1,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "OrbitPhoneRig",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "productScreen": "portrait UI copy: eyebrow, helper and primaryAction",
+    "proofValue": "one short numeric result rendered as the dominant screen figure",
+    "statement": "one four-word product line designed to wrap to two lines",
+    "mark": "one-character monochrome mark for the closing transition",
+    "creditLine": "three-word maker or product credit for the final hold",
+    "deviceColor": "dark phone body contrasting with the bright screen",
+    "screenColor": "one high-luminance accent used as the phone-screen field"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Two hard cuts at 3.00 s and 10.97 s; only 1/2 is within ±2 fr of a detected beat, so cut_on_beat is false. Device entrances, whip duration, word cadence, rotation settle and overshoot are limited to 0.25 s sheet resolution. SFX planned by the glue rule, not measured. OrbitPhoneRig is a deterministic recipe-local CSS 3D rebuild with replaceable UI copy and colours.",
+  "preview": {
+    "demo_brand": "northfern"
+  },
+  "status": "built"
+}

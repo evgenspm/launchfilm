@@ -1,0 +1,222 @@
+{
+  "id": "dark-plane-vector-drift-tour",
+  "title": "Dark tilted dashboard drift tour",
+  "summary": "Seven close-ups of a dark dev-tool dashboard leaned back in steep perspective, each a single constant-speed drift in a new direction, lit by a soft spot that fades the plane into black; then a flat wordmark and mark.",
+  "use_when": [
+    "A dense developer or analytics tool whose UI looks ordinary flat but expensive in depth",
+    "A silent product tour where staging, not copy, carries the film",
+    "Dark-themed products with one bright focal element per screen",
+    "A 30-40 s loopable showcase for a landing page hero or feed"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/T89DiaWb",
+    "author": "Raylight",
+    "ref_id": "rl-027"
+  },
+  "family": "product-ui",
+  "tags": [
+    "dashboard",
+    "perspective",
+    "dark",
+    "dev-tool",
+    "tilt",
+    "drift",
+    "depth-of-field",
+    "silent",
+    "product-tour",
+    "no-copy"
+  ],
+  "techniques": [
+    "tilt-plane",
+    "dolly",
+    "push-in",
+    "pull-out",
+    "ui-rebuild",
+    "flash",
+    "hard-cut",
+    "glow",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 35.93,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#0C0C0D",
+      "#BFBFBE",
+      "#747777",
+      "#262938",
+      "#5D5560",
+      "#2F3234"
+    ],
+    "type_style": "small UI sans (dashboard labels ~1.5-2 % H on the plane); end wordmark medium-weight grotesk, sentence case, normal tracking, ~6 % H, centred",
+    "treatment": [
+      "glow",
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "first cut with the 1-frame flash",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "each hard cut to a new dashboard close-up",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "wordmark appears after the black frames",
+        "sound": "impact-low",
+        "origin": "planned"
+      },
+      {
+        "event": "mark replaces the wordmark",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4.23,
+      "beat": "hook",
+      "shot": "whole app on a tilted plane: sidebar nav and a request table, table panel floating on its own layer above the sidebar",
+      "camera": "tilt-plane rotateX 30-35 deg, rotateY about -15 deg; dolly left 3.1 px/fr @1920, push-in 1.00->1.031 over 127 fr (0.74 %/s)",
+      "motion": "fade-up from black 15 fr, easings.outQuint (70 % in the first 10 fr); camera easings.linear, speed thirds equal; two-layer parallax",
+      "transition_out": "flash",
+      "sfx": "hit"
+    },
+    {
+      "t0": 4.23,
+      "t1": 7.5,
+      "beat": "feature",
+      "shot": "close-up of the status and method columns of the table, row pills in green and blue",
+      "camera": "dolly up 2.6 px/fr @1920, push-in 1.00->1.18 over 98 fr (5.5 %/s), the only fast push",
+      "motion": "camera easings.linear, no settle; 1-frame white flash on entry (luma about 3x for 1 fr)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 7.5,
+      "t1": 11.03,
+      "beat": "feature",
+      "shot": "component render list with counts, icons and status pills on the right, steep lean",
+      "camera": "dolly up 1.5 px/fr @1920 (list scrolls up the tilt), scale about 1.00",
+      "motion": "camera easings.linear; focus band through the middle third, edges about 4-6x softer",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 11.03,
+      "t1": 15.23,
+      "beat": "proof",
+      "shot": "area chart with four peaks plus sidebar and filter column, almost flat angle: the breather",
+      "camera": "static pan (0.05 px/fr), pull-out 1.00->0.977 over 126 fr (-0.56 %/s)",
+      "motion": "chart already drawn on entry (no draw-on visible at 0.25 s); camera easings.linear",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 15.23,
+      "t1": 19.77,
+      "beat": "feature",
+      "shot": "diagnosis detail panel at an extreme angle: bright white prompt pill with glow, cause text, three proportion bars",
+      "camera": "tilt-plane rotateX about 45 deg, rotateZ about -20 deg; dolly down 1.1 px/fr @1920, push-in +0.37 %/s",
+      "motion": "camera easings.linear; glow held on the pill as the single focal target",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 19.77,
+      "t1": 23.9,
+      "beat": "feature",
+      "shot": "state-change log with a code diff: red and green highlighted lines, glowing prompt pill above",
+      "camera": "dolly right 2.6 px/fr @1920, push-in +0.92 %/s, roll -1.0 deg/s (only roll in the film)",
+      "motion": "camera easings.linear; pill glow constant",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 23.9,
+      "t1": 28.67,
+      "beat": "proof",
+      "shot": "floating complexity card: severity chip, four metric figures, four cost bars in cyan, violet, green, orange",
+      "camera": "dolly left 1.1 px/fr @1920, pull-out 1.00->0.94 over 141 fr (-1.4 %/s), slight easings.inQuad (speed thirds 0.99/1.13/1.27)",
+      "motion": "card edges dissolve into black through the spot falloff, no plane edge visible; 2 black frames at 28.60 before the next shot",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 28.67,
+      "t1": 31.55,
+      "beat": "logo",
+      "shot": "product wordmark, light grey, centred on flat near-black",
+      "camera": "static",
+      "motion": "appears by cut, no entrance visible at 0.25 s; holds 86 fr",
+      "transition_out": "continuous",
+      "sfx": "impact-low"
+    },
+    {
+      "t0": 31.55,
+      "t1": 35.93,
+      "beat": "logo",
+      "shot": "product mark alone, metallic grey gradient, centred; faint light diagonal in the top-left corner",
+      "camera": "static",
+      "motion": "appears by cut, holds 131 fr to the end",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "TiltPlane",
+    "CutFlash",
+    "LineChart",
+    "Bloom",
+    "Vignette",
+    "Wordmark",
+    "BrandMark",
+    "BrandBackdrop",
+    "BrandProvider"
+  ],
+  "params": {
+    "screens": "6 UI regions rebuilt in React (overview, table detail, list, chart, detail panel, diff, metric card); one bright focal element each",
+    "shots": "per shot {rotateX, rotateY, rotateZ, pan px/fr and direction, scale %/s}; direction must change every shot",
+    "shotFrames": "frames per UI shot (reference 98-141, average 123 at 30 fps)",
+    "flashFirstCut": "1-frame white flash on the first cut only (default true)",
+    "dof": "focus band through the middle third, edge blur 6-12 px @1920",
+    "spot": "soft spot falloff to near-black before the plane edge",
+    "endCard": "wordmark hold then mark hold, frames (default 86 + 131)"
+  },
+  "difficulty": "hard",
+  "render_cost": "medium",
+  "notes": "Timings and camera numbers from a human frame-by-frame measurement (ORB + RANSAC per shot), confirmed against the sheets. cuts.json found 0 hard cuts on this very dark footage (near misses at 7.50, 11.03, 15.23, 19.77, 23.90); rows use the sheet-visible shot changes. Every UI shot is one linear vector (speed thirds equal within 5 %), no ease-in, no settle; cuts land mid-move. Direction alternates left, up, up, none, down, right, left. Background is #0C0C0D, never pure black. Proposed terms (not in vocabulary): spot-falloff, tilt-shift-band, vector-alternation. sfx planned by the glue rule, not measured: the reference is silent.",
+  "status": "studied"
+}

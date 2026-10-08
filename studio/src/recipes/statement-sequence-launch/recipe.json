@@ -59,7 +59,7 @@
   },
   "structure": [
     {
-      "t0": 0.0,
+      "t0": 0,
       "t1": 3.1,
       "beat": "hook",
       "shot": "eyebrow 'INTRODUCING' then the product name with a period, centred on flat light grey",
@@ -95,7 +95,7 @@
       "shot": "availability statement, small grey sub-line with the URL underneath",
       "camera": "push-in 0.985 -> 1.03",
       "motion": "statement at f253; sub-line fades in 10 fr after the last word; holds 82 fr; fades out at f335",
-      "transition_out": "hard-cut",
+      "transition_out": "end",
       "sfx": ""
     }
   ],

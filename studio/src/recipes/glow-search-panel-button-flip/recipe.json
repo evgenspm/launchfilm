@@ -1,0 +1,180 @@
+{
+  "id": "glow-search-panel-button-flip",
+  "title": "Glowing search icon pulls out to a panel, button flips in",
+  "summary": "One dark shot: a red-haloed search icon pulls out to reveal it sits in a sidebar header with a red rim light, the panel dims away, then a glowing button turns from edge-on to face the camera.",
+  "use_when": [
+    "A short teaser for one UI action (search, share, export) on a dark brand",
+    "Intro or social loop where a single icon and one button carry the story",
+    "Brands with a strong saturated accent that can be the light source",
+    "Silent autoplay where light and one camera move replace copy"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/PUDTdZJt",
+    "author": "Raylight",
+    "ref_id": "rl-088"
+  },
+  "family": "product-ui",
+  "tags": [
+    "dark",
+    "red-glow",
+    "search-icon",
+    "pull-out",
+    "sidebar-panel",
+    "rim-light",
+    "button-flip",
+    "one-shot",
+    "silent",
+    "ui-teaser"
+  ],
+  "techniques": [
+    "pull-out",
+    "ui-rebuild",
+    "glow",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 7.37,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#040201",
+      "#A51918",
+      "#8E0E0E",
+      "#CE4D41",
+      "#FD6A48",
+      "#FFB388"
+    ],
+    "type_style": "UI grotesk, sentence case, normal tracking: panel labels ~4 % H at the settled framing; button label bold, ~9 % H at the end, white on a red-orange gradient",
+    "treatment": [
+      "glow",
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      { "event": "camera pulls out from the icon to the panel (1.25 s)", "sound": "whoosh", "origin": "planned" },
+      { "event": "edge-on button sliver lights up (4.25 s)", "sound": "shimmer", "origin": "planned" },
+      { "event": "button turns to face the camera and settles (5.50-6.50 s)", "sound": "swoosh-short", "origin": "planned" },
+      { "event": "button settled front-on (6.50 s)", "sound": "ui-confirm", "origin": "planned" }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 1.25,
+      "beat": "hook",
+      "shot": "outline search glyph glowing white-pink in the centre of a large red radial halo on black",
+      "camera": "pull-out: glyph and halo shrink ~1.00 -> 0.70 over 38 fr while drifting right then down-left (motion.json zoom -27 %/s in s 0-1)",
+      "motion": "halo radius shrinks with the scale, easings.inOutSine ~38 fr (suggested, ±0.25 s); glyph keeps its glow, no entrance (present from f0)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 1.25,
+      "t1": 2.0,
+      "beat": "reveal",
+      "shot": "the glyph turns out to be the search button of a dark sidebar panel: logo mark, workspace name with chevron, two tabs; red rim light hugs the panel's top-left corner",
+      "camera": "pull-out continues: panel ~1.6 -> 1.0 (label width 1.27 vs 1.77 cells), springs.cameraOut ~22 fr (overshoot not measurable)",
+      "motion": "the red halo hands over from the glyph to a rim glow behind the panel corner; panel fades up from near-black within ~8 fr (±0.25 s); glyph halo dims to a small red spot",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.0,
+      "t1": 3.5,
+      "beat": "reveal",
+      "shot": "panel hold: top-left corner of the panel, red rim glow along its top and left edges, rest of frame black",
+      "camera": "drift: slight push 1.00 -> ~1.02 and slow pan down ~5 px/fr @1920 (motion.json s 2-4)",
+      "motion": "rim glow breathes slightly; no element enters; easings.linear drift (suggested)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 3.5,
+      "t1": 4.25,
+      "beat": "reveal",
+      "shot": "panel dims and slides down, the rim glow fades to a dull red band, frame falls almost to black",
+      "camera": "drift down continues ~5 px/fr @1920",
+      "motion": "glow and panel opacity 1 -> ~0.3 by 4.00 s, gone by 4.27 s, easings.inQuad ~22 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 4.25,
+      "t1": 5.5,
+      "beat": "feature",
+      "shot": "a thin vertical glowing sliver (a button seen exactly edge-on) on black with a faint orange halo, wandering across centre",
+      "camera": "static frame; the object moves: centre-top at 4.27, centre 4.50, right of centre 4.77, left 5.00, centre 5.27",
+      "motion": "sliver light-on in ~8 fr (±0.25 s), lateral sway ~1/6 W each 0.25 s, easings.inOutSine (suggested; the sway reads as a slow wobble in Y rotation near 90 deg)",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 5.5,
+      "t1": 6.5,
+      "beat": "feature",
+      "shot": "the sliver rotates in Y to reveal the face: a rounded red-orange gradient button with a one-word action label",
+      "camera": "static frame; object grows ~3x in width (65 -> 170 px of a 480 cell, 5.77 -> 6.50)",
+      "motion": "rotateY ~90 -> 0 deg plus slight Z tilt that straightens, springs.heavy ~30 fr (overshoot not measurable); lands front-on at ~6.50",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.5,
+      "t1": 7.37,
+      "beat": "cta",
+      "shot": "front-on action button with bold one-word label, soft orange halo on black",
+      "camera": "drift: button sways left (7.00) and back to centre (7.27), scale ~1.00",
+      "motion": "settled; residual sway easings.inOutSine ~26 fr (suggested); no exit, film ends on the hold",
+      "transition_out": "end",
+      "sfx": "ui-confirm"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS",
+    "Camera",
+    "Dolly",
+    "Surface",
+    "LineIcon",
+    "Bloom",
+    "Vignette"
+  ],
+  "params": {
+    "brand": "any brand.json: accent is the light (halo, rim, button gradient), bg near black, logo in the panel header",
+    "content.workspace": "name shown in the panel header row with a chevron",
+    "content.tabs": "two tab labels, the first selected",
+    "content.action": "one-word label on the final button",
+    "glowColor": "halo/rim colour, defaults to brand accent",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "One continuous shot, 0 cuts in cuts.json, silent: every SFX is planned by the glue rule, not measured. Measured from 4 fps sheets (±0.25 s); all spring/easing names and frame counts are suggestions. The halo is the one light source: it moves from the glyph to the panel rim, dies, then is reborn on the button, so keep one accent colour. The button flip has no vocabulary id: proposed term edge-flip (see recipe.md). Catalogue hint prompt-typing was not seen on the sheets.",
+  "status": "studied"
+}

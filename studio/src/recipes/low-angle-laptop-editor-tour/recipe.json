@@ -1,0 +1,354 @@
+{
+  "id": "low-angle-laptop-editor-tour",
+  "title": "Low-angle laptop editor tour with agent-made edits",
+  "summary": "A laptop shot from keyboard level shows a motion editor flipping through sample scenes on every cut, then the camera dives into the UI to watch prompts, retyped labels, icon picks and an export dialog play out under VO.",
+  "use_when": [
+    "a vertical 45-60 s explainer for a creative tool or editor",
+    "showing an AI agent or integration driving a real app UI",
+    "a social cut where VO carries the story and the UI proves it",
+    "products with many sample outputs to flip through in the hook"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/aMS0jqXc",
+    "author": "Raylight",
+    "ref_id": "rl-052"
+  },
+  "family": "social-promo",
+  "tags": [
+    "vertical",
+    "laptop",
+    "editor",
+    "ui-tour",
+    "voice-over",
+    "agent",
+    "integration",
+    "dark",
+    "export",
+    "typing"
+  ],
+  "techniques": [
+    "device-laptop",
+    "stacked-roll",
+    "prompt-typing",
+    "typewriter",
+    "logo-from-dot",
+    "zoom-through",
+    "tilt-plane",
+    "dolly",
+    "pull-out",
+    "push-in",
+    "zoom-tier",
+    "whip-pan",
+    "cursor-path",
+    "ui-rebuild",
+    "blur-dissolve",
+    "end-card",
+    "hard-cut",
+    "glow",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 53.12,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#0C0C0E",
+      "#DDC3BC",
+      "#1B30C4",
+      "#EEAF3A",
+      "#855A50",
+      "#403EAF"
+    ],
+    "type_style": "UI sans (system grotesk), sentence case, normal tracking; canvas lines medium weight ~3 % H; end lines regular ~2.5 % H, centred white on black",
+    "treatment": [
+      "glow",
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": true,
+    "music": {
+      "present": true,
+      "bpm": 124.8,
+      "energy": "medium",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "canvas content swaps on a cut",
+        "sound": "hit"
+      },
+      {
+        "event": "text typed in prompt, chip label, product label, URL",
+        "sound": "type-click"
+      },
+      {
+        "event": "mark draws on",
+        "sound": "swell"
+      },
+      {
+        "event": "zoom-through, whip-pan and fast push",
+        "sound": "whoosh"
+      },
+      {
+        "event": "pointer clicks an option or icon",
+        "sound": "ui-confirm"
+      },
+      {
+        "event": "camera slides to the inspector",
+        "sound": "swoosh-short"
+      },
+      {
+        "event": "layer row selection steps",
+        "sound": "tick"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.63,
+      "beat": "hook",
+      "shot": "laptop seen from keyboard level at a low 3/4 angle under a blue gradient sky; editor on screen: style chip column left, preview canvas, neon timeline tracks",
+      "camera": "drift scale 1.00->1.013 over 49 fr, pan 47 px/s right (@1920)",
+      "motion": "chip column rolls up one step at 0.27-0.50 (springs.ui, overshoot not measurable); preview swaps at ~0.67 (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 1.63,
+      "t1": 5.5,
+      "beat": "feature",
+      "shot": "montage: 4 cuts, avg 0.97 s; same laptop framing, the preview canvas swaps to a new sample scene and the chip column rolls one step per cut",
+      "camera": "drift scale +0.6-1.0 %/s, pan 21-41 px/s right, continuous across the cuts",
+      "motion": "the cut is the change: chrome stays fixed, only canvas content and the active chip change; chip roll springs.ui ~8 fr (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 5.5,
+      "t1": 7.27,
+      "beat": "feature",
+      "shot": "dark sample scene on the canvas, then the canvas clears to a short 2-word line centred on black",
+      "camera": "drift scale 1.00->1.016, pan 43-53 px/s right",
+      "motion": "canvas content cuts to the line at 6.50 (one cell); line holds 23 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 7.27,
+      "t1": 10.27,
+      "beat": "feature",
+      "shot": "camera snaps into a prompt pill on the canvas, a 4-word line is typed with a caret, camera pulls back, the pill melts away leaving the line",
+      "camera": "zoom-tier full->detail at 7.27 (one cell), back to region at 8.27; drift 0.9 %/s after",
+      "motion": "typewriter ~2 chars per 0.25 s cell; pill border and plus icon fade 9.00-9.50 (easings.outQuint ~15 fr, ±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 10.27,
+      "t1": 11.5,
+      "beat": "logo",
+      "shot": "the line dissolves into the brand mark, drawn on as a stroke in the centre of the canvas",
+      "camera": "drift 0.8 %/s, pan 53 px/s right",
+      "motion": "mark stroke draws 10.27-10.77 (~15 fr, easings.outExpo, ±0.25 s), holds 22 fr",
+      "transition_out": "zoom-through",
+      "sfx": "swell"
+    },
+    {
+      "t0": 11.5,
+      "t1": 15.7,
+      "beat": "feature",
+      "shot": "a page of 4 integration cards on black with a diagonal blue light streak, laid on a tilted plane; camera glides over the cards then pulls back",
+      "camera": "zoom-through arrival at 11.50 with motion blur; dolly -695 px/s then +645 px/s; pull-out 1.00->0.55 at 14.77-15.00",
+      "motion": "tilt-plane yaw changes with the dolly (easings.inOutSine ~30 fr, ±0.25 s); motion blur on the fast legs",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 15.7,
+      "t1": 19.37,
+      "beat": "feature",
+      "shot": "light-theme sound-effects panel, heavily defocused, pink glow around the card, list of 3 generated sounds",
+      "camera": "drift up 306 px/s at 17.00-17.75, zoom -10.6 %/s; else near static",
+      "motion": "slow float, easings.inOutSine ~22 fr (±0.25 s); no element entrances",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 19.37,
+      "t1": 20.37,
+      "beat": "feature",
+      "shot": "black frame with the editor as a small window in the centre, scene with 3D cubes on the canvas",
+      "camera": "push-in 1.00->~1.9 over 30 fr (zoom-tier full->region), springs.cameraIn (overshoot not measurable)",
+      "motion": "window grows from 30 % to ~100 % of frame width by 20.27",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 20.37,
+      "t1": 21.3,
+      "beat": "feature",
+      "shot": "editor close-up: style chips and a dim sample scene, a working spinner chip on the canvas",
+      "camera": "drift pan 46 px/s, zoom 5 %/s",
+      "motion": "chip column rolls one step at 21.27 (springs.ui, ±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 21.3,
+      "t1": 22.3,
+      "beat": "feature",
+      "shot": "canvas shows a magazine-cover grid, then a yellow title card",
+      "camera": "drift scale 1.00->1.01",
+      "motion": "canvas content swaps at 21.77 (one cell)",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 22.3,
+      "t1": 24,
+      "beat": "feature",
+      "shot": "dark scene with glass cubes and an orange glow; camera pulls back to the whole editor window",
+      "camera": "pull-out 1.00->0.60 at 22.30-22.77 (springs.cameraOut, ±0.25 s), then hold",
+      "motion": "layer list and inspector appear at the frame edges as the camera backs off",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 24,
+      "t1": 28,
+      "beat": "feature",
+      "shot": "close-up of the chip column: one chip label is selected, deleted and retyped as a new word, then its icon swaps",
+      "camera": "zoom-tier full->element at 24.00-24.27; static hold 24.27-27.50; small re-frame at 27.77",
+      "motion": "selection box 24.27; text highlight 25.27; retype 26.00-26.50 (~2 chars per cell); icon handles 27.50",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 28,
+      "t1": 29.27,
+      "beat": "feature",
+      "shot": "camera slides right onto the inspector panel next to the canvas",
+      "camera": "dolly right ~600 px over 8 fr at 28.00-28.27 (easings.outExpo, ±0.25 s), then hold",
+      "motion": "panel fields settle with the move; no element entrances",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 29.27,
+      "t1": 32.77,
+      "beat": "feature",
+      "shot": "an icon picker grid opens over the canvas; a pointer hovers across icons and picks one",
+      "camera": "drift right 255 px/s at 29.00-29.77, then near static",
+      "motion": "picker pops in at 29.27 (springs.ui, overshoot not measurable); cursor moves every ~8 fr, click at ~31.77",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 32.77,
+      "t1": 35,
+      "beat": "feature",
+      "shot": "the editor window pulls back with a layer list on the left; the edited chip shows its new icon",
+      "camera": "pull-out to full window at 32.50-32.77 (springs.cameraOut), then zoom 6.6-11.9 %/s push",
+      "motion": "layer row selections step down the list every ~0.5 s",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 35,
+      "t1": 39.27,
+      "beat": "feature",
+      "shot": "canvas becomes a warm orange cloud scene with the brand mark; a 2-word product label types in beside the mark and the mark exits",
+      "camera": "push-in 1.00->1.30 at 35.00-35.27 (springs.cameraIn), then hold",
+      "motion": "label typewriter 38.00-38.27, mark slides out 38.27-38.50, label fades 38.77-39.00 (easings.outQuint, ±0.25 s)",
+      "transition_out": "whip-pan",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 39.27,
+      "t1": 40.77,
+      "beat": "feature",
+      "shot": "share/render panel opens on the right: project fields, a list of cloud renders, an agents promo box",
+      "camera": "whip-pan in at 39.27 with motion blur, holds 39.50-40.00; whip out at 40.27",
+      "motion": "list rows appear at 39.77 (one cell); pointer clicks the export button at ~40.00",
+      "transition_out": "whip-pan",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 40.77,
+      "t1": 46.97,
+      "beat": "feature",
+      "shot": "export dialog over a defocused cloud backdrop; pointer steps through resolution, compression and format options",
+      "camera": "push-in 1.00->1.35 at 41.50-41.77, pull-out at 42.77-43.27 (springs.cameraIn / cameraOut), else static",
+      "motion": "option pills toggle on clicks every ~0.5-0.75 s; panel body swaps to GIF settings at 45.77",
+      "transition_out": "hard-cut",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 46.97,
+      "t1": 49.27,
+      "beat": "logo",
+      "shot": "black frame, a 3-word credit line naming the tool fades in at the centre",
+      "camera": "static",
+      "motion": "line fades in 46.97-47.50 (~15 fr, easings.outQuint, ±0.25 s), holds 52 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 49.27,
+      "t1": 53.12,
+      "beat": "cta",
+      "shot": "the credit line is replaced by the domain, typed letter by letter, then holds to the end",
+      "camera": "static",
+      "motion": "typewriter ~3 chars per 0.25 s cell, 49.27-50.27, holds 85 fr",
+      "transition_out": "end",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 6,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "LaptopFrame",
+    "ScreenSlot",
+    "StackedRoll",
+    "PromptBar",
+    "Typewriter",
+    "Camera",
+    "TiltPlane",
+    "Dolly",
+    "Cursor",
+    "EndCard",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: accent drives the sky gradient and the timeline glow; mark for the stroke-drawn logo row",
+    "content.samples": "6 sample output stills shown on the canvas in the hook montage, one per cut",
+    "content.styleChips": "5-7 one-word style names rolling in the chip column",
+    "content.canvasLine": "2-word line set on the canvas (row 3)",
+    "content.prompt": "4-6 word prompt typed in the pill (row 4)",
+    "content.integrations": "3-4 cards: icon, name, one-line description, install button",
+    "content.retypedChip": "old and new chip label for the edit row",
+    "content.productLabel": "2-word label typed beside the mark",
+    "content.credit": "3-word credit line for the close",
+    "content.url": "domain typed at the end",
+    "vo": "VO script, ~19 short lines at ~2.8 words/s; rows stretch to its line timings",
+    "aspect": "9:16 native; 4:5 works by widening the laptop crop"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Measured from 4 fps sheets (±0.25 s) plus cut frames. The hook keeps the same laptop framing across 5 cuts at ~29 fr each and changes only the canvas content (proposed term preview-swap). cut_on_beat 3/11 within ±2 fr. VO 143 words over ~51 s (~2.8 w/s), music ducked under it (-23.6 LUFS integrated). SFX planned by the glue rule, not measured. Proposed terms (not in vocabulary): preview-swap, mark-stroke-draw.",
+  "status": "studied"
+}

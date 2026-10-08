@@ -1,0 +1,176 @@
+{
+  "id": "photo-ring-spin-column-dive",
+  "title": "Photo ring spin and column dive",
+  "summary": "Portrait photos float on true black in 3D: first a ring of cards turns past the camera, then a hard cut drops into a deep column of cards. Each shot is one eased in-out move, so the parallax reads like a real camera.",
+  "use_when": [
+    "A gallery, portfolio or image product that needs its pictures to carry the frame",
+    "An interlude or opener between scenes of a longer film",
+    "Silent autoplay where bright imagery on black has to hold attention",
+    "A looping background for a landing page hero"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/LlVTdiKk",
+    "author": "Raylight",
+    "ref_id": "rl-064"
+  },
+  "family": "transitions",
+  "tags": [
+    "photos",
+    "gallery",
+    "3d-space",
+    "parallax",
+    "ring",
+    "depth",
+    "dark",
+    "no-text",
+    "interlude",
+    "loop"
+  ],
+  "techniques": [
+    "speed-ramp",
+    "depth-field",
+    "hard-cut",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 12.77,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#030303",
+      "#0C0D0D",
+      "#253920",
+      "#6A764C",
+      "#74AF8E",
+      "#B8E0DB"
+    ],
+    "type_style": "none: no text on screen",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "ring turn reaches peak speed (row 2)",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "hard cut into the card column (6.40 s)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "column dive reaches peak speed (row 5)",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "about 8 portrait photo cards on a horizontal ring seen from slightly above: near row big and low, far row small and high, black",
+      "camera": "ring rotation starts from rest: near-row shift -3 px/0.1 s at 0.5 s, -9 at 1.0 s (human 30 fps study); inOutSine ramp-in",
+      "motion": "cards billboarded, no own animation; whole move easings.inOutSine over the shot (192 fr); near row drifts left, far row right",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 1.5,
+      "t1": 4.5,
+      "beat": "hook",
+      "shot": "the ring turns fast: near cards slide left out of frame, new cards come round from the right and rise into the near row",
+      "camera": "ring turn at peak: near row >= 800 px/s at 720p, far row ~640-690 px/s opposite (human 30 fps study), motion.json pan up to -779 px/s @1920",
+      "motion": "same single easings.inOutSine move, peak 2.5-4.0 s; near/far speed ratio 1.3-1.7, near/far height ratio ~1.85; no blur",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 4.5,
+      "t1": 6.4,
+      "beat": "hook",
+      "shot": "the ring slows and settles back into the opening arrangement (6.00 s cell matches 0.00 s)",
+      "camera": "ring turn decelerates: near row -60 px/0.1 s at 4.5 s, -27 at 5.0, -9 at 5.5, -2 at 6.0 (human 30 fps study)",
+      "motion": "tail of the easings.inOutSine move, settled by ~6.0 s (+-0.25 s); about 12 fr of near-still hold before the cut",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 6.4,
+      "t1": 8.0,
+      "beat": "hook",
+      "shot": "new layout: about 6 smaller cards scattered through a deep column with wide black gaps, some cropped at the frame edges",
+      "camera": "near still 6.40-7.00 s (motion.json 6-7 s pan ~0), then the camera starts to sink through the column; inOutSine ramp-in",
+      "motion": "cards billboarded; one easings.inOutSine move over the shot (191 fr); cards begin to stream up and right",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 8.0,
+      "t1": 11.0,
+      "beat": "hook",
+      "shot": "cards stream up and to the right past the camera, near cards grow and leave the top edge, new ones enter from below",
+      "camera": "dive at peak 9-10 s: motion.json pan +668 / -931 px/s @1920, zoom +16.6 %/s; depth by scale and parallax only",
+      "motion": "same easings.inOutSine move, peak 9-10 s (+-0.25 s); near cards ~0.45 H, far ~0.2 H tall",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 11.0,
+      "t1": 12.77,
+      "beat": "hook",
+      "shot": "the column slows and settles into a layout matching the first frame after the cut (12.50 s cell matches 6.50 s)",
+      "camera": "dive decelerates: motion.json 11-12 s pan ~300 px/s, 12-12.77 s ~10 px/s; settled by ~12.5 s (human 30 fps study)",
+      "motion": "tail of the easings.inOutSine move; ~8 fr near-still at the end (+-0.25 s)",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 10,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "DepthField",
+    "project",
+    "BrandBackdrop",
+    "Vignette",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (near-black works best), accent for the faint centre glow",
+    "content.images": "8-12 portrait images, ~3:4, bright and saturated; they are the light source",
+    "timing.shotFrames": "frames per shot at 30 fps (default 192); each shot is one inOutSine move",
+    "shots": "1 or 2: ring turn, then column dive",
+    "rimLight": "white glint on the top edge of each card, 0 = off"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Silent reference: sfx planned by the glue rule, not measured. Speeds, card sizes and the in-out profile come from the human 30 fps study; sheet resolution is 0.25 s. Each shot is one eased in-out move (not linear), peak mid-shot, ~0 at both ends; each shot ends on its own first frame, so a single shot loops, the whole film does not (loopable false). Near and far rows move in opposite directions from one projection: never fake parallax with per-layer speeds. No depth-of-field blur: depth is scale, overlap and parallax only. Cards: square corners, no border, bright rim glint on top edges, thin blue fringe on some left edges. Ring turn without a core is a proposed term (image-ring-spin); difficulty hard because the cards live in a 3D space (measure.md §10: any 3D), even though the projection is 2.5D (DepthField/project). All rows are hook by the beat rules (no product, text or mark appears). Spring/easing choice inOutSine is a default matched to the measured speed profile.",
+  "status": "studied"
+}

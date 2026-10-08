@@ -1,0 +1,143 @@
+{
+  "id": "capped-bar-rise-stat",
+  "title": "Capped bar rise with outline stat",
+  "summary": "Five flat colour bars with detached white caps rise together from a baseline while their values count up, the header lifts to the top and an outline growth figure steps in. One move, then a long readable hold.",
+  "use_when": [
+    "A square stat card for a monthly or quarterly growth number",
+    "Opening a data story with one headline figure backed by five values",
+    "A silent social post where the chart must read in under 3 s",
+    "Dashboard or report teasers with a flat, poster-like palette"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/bar-chart-skyline/",
+    "author": "Jitter",
+    "ref_id": "jt-074"
+  },
+  "family": "data-stats",
+  "tags": [
+    "bar-chart",
+    "stat",
+    "growth",
+    "counter",
+    "dark",
+    "square",
+    "flat-colour",
+    "data-story",
+    "report",
+    "no-audio"
+  ],
+  "techniques": [
+    "chart-draw",
+    "counter",
+    "logo-from-dot"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#1C1C1C",
+      "#DAD6D6",
+      "#E4E82F",
+      "#79B7DD",
+      "#FA802F",
+      "#CB8E4D"
+    ],
+    "type_style": "bold grotesk numerals inside bars (7 % H) with a small superscript unit; outline-only display figure (14 % H, 2 px stroke); small uppercase grotesk chip labels (2.5 % H); regular grotesk category labels (2.5 % H)",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "bars and header start their rise (f37)",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "values counting up during the rise",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "last value lands (f84)",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.23,
+      "beat": "hook",
+      "shot": "empty dark square; outlined label chip and filled year chip at mid height left, small mark right, five white baseline caps",
+      "camera": "static",
+      "motion": "f0-7 empty; chips fade in from f8, year fill brightens to white by f37 (easings.linear); mark grows from a flat line f8 -> full f15 (logo-from-dot); caps draw left to right from f13, stagger 1 fr, thicken 2 -> 8 px, settled f28",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1.23,
+      "t1": 2.8,
+      "beat": "proof",
+      "shot": "the five bars rise to unequal heights with live values inside; header lifts to the top edge; outline growth figure appears under it; month labels rise in at the bar feet",
+      "camera": "static",
+      "motion": "bars and header ride one curve f37-f80 (43 fr): accelerating lead f37-f48 (easings.inExpo 11 fr), peak 62 px/fr on the tallest bar at f48, then easings.outQuint 32 fr tail, no overshoot at 30 fps; header travels 515 px up; values count with the bar height, last tick f84; outline figure steps in per character f46-f53, 1-2 fr each; month labels rise in at the bar feet f60-f68 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.8,
+      "t1": 4,
+      "beat": "proof",
+      "shot": "settled chart: header chips and mark on top, outline figure, five capped bars with values and month labels",
+      "camera": "static",
+      "motion": "full hold 36 fr, nothing moves after f84",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 6,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BarChart",
+    "Counter",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg, fg for caps and chips, display font for values, one accent for the tallest bar",
+    "content.label": "uppercase chip label, 1 word",
+    "content.period": "filled chip text, e.g. a year, 4 chars",
+    "content.figure": "headline growth figure shown as outline type, <= 5 chars",
+    "content.bars": "exactly 5 {value, label, color}; value in thousands, label 3 chars",
+    "content.unit": "superscript unit after each value, 1 char",
+    "timing.riseAt": "frame the rise starts (default 37 at 30 fps)",
+    "timing.rise": "rise length in frames (default 43)",
+    "aspect": "1:1 default; 4:5 and 9:16 keep the chart bottom-anchored"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured at 30 fps from the source (column scans): caps first appear f15-f20 with 1 fr stagger; rise f37-f80 with the header lifting 516 px on the same curve; final bar heights 374/511/280/632/414 px of 1188 for values 18/24/14/30/20 (21 px per unit, baseline 4.5 % from bottom); bar width 18 % W, gap 0.7 % W; cap 18 px tall, 8 px above the bar. The catalogue hint of overshoot is not confirmed: heights are monotone to the last frame. Counters and bar heights share one progress. Proposed terms (recipe.md only): char-step-in, layout-lift, label-foot-rise. sfx planned by the glue rule, not measured (source is silent).",
+  "status": "studied"
+}

@@ -1,0 +1,163 @@
+{
+  "id": "context-chip-pipeline-run",
+  "title": "Prompt chips to a running pipeline",
+  "summary": "A dark prompt card gets a task, the camera pushes onto its context chip and pans across two dropdowns, then a tile library pulls out under a build button and a status-dot pipeline lights up stage by stage.",
+  "use_when": [
+    "An AI or vision tool where the user picks sources and a model before a job runs",
+    "Showing setup (prompt, device, camera) and the resulting run in under 7 s",
+    "Small UI that must stay legible: the camera pushes in instead of scaling the UI",
+    "A serious, no-bounce product voice: 2-3 fr fades and damped camera moves"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/kHjMpLD6",
+    "author": "Chile Guy",
+    "ref_id": "rl-113"
+  },
+  "family": "product-ui",
+  "tags": [
+    "prompt",
+    "dropdown",
+    "context-chip",
+    "pipeline",
+    "status-dots",
+    "camera-push",
+    "pan",
+    "tile-grid",
+    "ai-tool",
+    "dark-ui",
+    "no-audio"
+  ],
+  "techniques": [
+    "ui-rebuild",
+    "prompt-typing",
+    "cursor-path",
+    "zoom-tier",
+    "dolly",
+    "pull-out",
+    "card-grid",
+    "list-assemble"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 6.97,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000200",
+      "#F1E8E4",
+      "#B83E18",
+      "#181C1D",
+      "#AA9992",
+      "#DBD6D3"
+    ],
+    "type_style": "neutral grotesk (Inter-like), sentence case; prompt and card titles 600 about 2.5 % H at 720p, stage labels 600 about 1.4 % H, muted 400 sub-lines; tiny tracked uppercase mono-like tile labels",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "prompt and stage labels typing",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor click on a dropdown option, check appears",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "build button pops over the dimmed grid",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "pipeline stage turns done",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.17,
+      "beat": "hook",
+      "shot": "dark prompt card on a soft chrome-pink backdrop: upload strip, one-line task, context chip, model picker, send button; two dropdowns open",
+      "camera": "zoom-tier full -> element: push-in 1.0 -> 1.6 on the chip at f30-39 (springs.cameraIn, 9 fr); dolly right to the second dropdown at f60-72 (springs.ui, 10 fr)",
+      "motion": "card rises 6 fr (easings.outExpo); task typed by f15; chips fade together f15-24; send button at f23 (+-0.25 s); first dropdown 3 fr fade with 6 px drop at f25-27; second dropdown same 3 fr fade at f66-69 (+-0.25 s); cursor-path to the first option, click f78-84; check fades in 2 fr f84-85",
+      "transition_out": "hard-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3.17,
+      "t1": 5.77,
+      "beat": "feature",
+      "shot": "black field with a 6x4 grid of dark model tiles, each with a tiny uppercase label; an accent build button pops in the middle and the grid dims",
+      "camera": "pull-out: tiles shrink about 25 % from f95 to f114 (springs.cameraOut, about 19 fr, +-0.25 s), then hold (drift -1.8 %/s)",
+      "motion": "grid present at the cut, no stagger visible (+-0.25 s); build button springs.pop at f132-135 (overshoot not measurable); grid tiles and labels dim to about 35 % over f135-143 (easings.outQuint, +-0.25 s); hold to f173",
+      "transition_out": "hard-cut",
+      "sfx": "pop"
+    },
+    {
+      "t0": 5.77,
+      "t1": 6.97,
+      "beat": "feature",
+      "shot": "light chrome backdrop; a dark card with a short title and a rail of three status-dot stages (done, running, queued), each with a sub-line",
+      "camera": "drift: card rises about 12 px and settles by f180 (springs.ui, +-0.25 s), then hold",
+      "motion": "card fill fades light grey -> dark in 3 fr f173-175; title types from f173; stages light 7 fr apart (f176, f183, f190): dot dim 1 fr then full, label and sub-line type at 2 chars/fr with a 3-char trailing fade; dashed connector fills top -> bottom in 2 fr under a done stage; check fades in with the done sub-line; hold from f200 to the end",
+      "transition_out": "end",
+      "sfx": "ui-confirm"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 10,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PromptBar",
+    "ContextChip",
+    "SourcePipeline",
+    "Cursor",
+    "Camera",
+    "FocusCamera",
+    "Surface",
+    "DesktopBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: surface for the cards, accent for the send and build buttons, fg/muted for type",
+    "content.task": "one-line prompt, 4-6 words, what the system should find",
+    "content.chip": "context chip label and its first dropdown (group label + one item)",
+    "content.options": "2 options plus an add-new row for the second dropdown; index of the clicked one",
+    "content.tiles": "up to 24 short uppercase tile labels for the library grid",
+    "content.cta": "build button label, 1-2 words",
+    "content.pipeline": "card title + 3 stages {label, sub, state done|running|queued}",
+    "timing.stageGap": "frames between pipeline stages (default 7)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; push the camera in instead of shrinking the UI",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured at 30 fps by a human pass plus 4 fps sheets: dropdowns open in 3 fr with a 6 px drop and no scale; push-in 1.0 -> 1.6 in 9 fr, pan 10 fr, both critically damped; check fades in 2 fr, no pop; pipeline stages 7 fr apart, labels type at 2 chars/fr with a 3-char trailing fade. Nothing bounces except the build button. Frame 0 is black, picture from f1. SFX planned by the glue rule, not measured (reference is silent). Proposed term status-pipeline (rail of status dots that lights stage by stage) is not in the vocabulary; list-assemble used as nearest id. Draw our own chip glyph.",
+  "status": "studied"
+}

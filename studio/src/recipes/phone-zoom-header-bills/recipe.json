@@ -1,0 +1,194 @@
+{
+  "id": "phone-zoom-header-bills",
+  "title": "Phone header snap-zoom into a bills list",
+  "summary": "A blue phone card materialises on white, the camera snaps into its greeting header and pans across it, whips away, then a bills list with filter chips builds and the camera dives onto one row's status pill before fading to white.",
+  "use_when": [
+    "A mobile finance or billing app with a personal home header and a list screen",
+    "A short silent loop for a landing page hero or social post",
+    "Showing two screens of a phone app at detail zoom without a full device shot",
+    "A light, clean brand where one saturated colour carries the app"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/OPCRMePg",
+    "author": "Raylight",
+    "ref_id": "rl-011"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "mobile-app",
+    "fintech",
+    "bills",
+    "zoom-tier",
+    "ui-rebuild",
+    "status-pill",
+    "filter-chips",
+    "light",
+    "motion-blur",
+    "loop",
+    "silent"
+  ],
+  "techniques": [
+    "device-phone",
+    "ui-rebuild",
+    "blur-in",
+    "zoom-tier",
+    "dolly",
+    "whip-pan",
+    "list-assemble",
+    "push-in",
+    "blur-dissolve",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 9.7,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#0B0B0B",
+      "#4262FC",
+      "#E69365",
+      "#CDD1FE",
+      "#7D8898"
+    ],
+    "type_style": "geometric grotesk; UI header bold sentence case ~6 % H at close-up; list titles regular ~3 % H, sub-lines small grey; chip labels medium in pill buttons",
+    "treatment": [
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "camera snaps into the phone header (zoom-tier full to detail)",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "header action icons fade in one by one",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "whip-pan out of the header into the hard cut",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "active filter chip fills dark",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "each list row settles",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "status pill appears beside the zoomed row",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.1,
+      "beat": "hook",
+      "shot": "white frame; a tall rounded blue card (phone screen, gradient fading to white at the bottom) appears centred, avatar and greeting start",
+      "camera": "static frame, card itself scales ~0.9 -> 1.0 and drifts slightly left 0.50 -> 1.00",
+      "motion": "card fades + blurs in from a pale lavender ghost at 0.27, springs.ui ~15 fr (overshoot not measurable, ±0.25 s), solid by f15; avatar dot at f30, greeting starts blur-in f32",
+      "transition_out": "zoom-tier",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1.1,
+      "t1": 4.7,
+      "beat": "reveal",
+      "shot": "close-up of the phone header: status bar (clock, island pill, signal), round avatar and a 2-word greeting; then 2 action icons appear on the right",
+      "camera": "zoom-tier full -> detail (~3.2x) f33-f38, settles by f53; pan right f60-f75 (content moves left ~185 px/s @1920); drift f90-f128 scale 1.00 -> 0.97; whip up-left f128-f141",
+      "motion": "zoom springs.cameraIn ~20 fr (overshoot not measurable); greeting blur-in resolves by f45; pan easings.outExpo 15 fr with motion blur at f68; search icon blur-in f75, send icon f83 (stagger ~8 fr, ±0.25 s); whip easings.inExpo 13 fr, heavy motion blur on the last 5 fr",
+      "transition_out": "whip-pan",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4.7,
+      "t1": 7,
+      "beat": "feature",
+      "shot": "white list screen, no device frame: 2 filter chips (active + idle) at top-left, then 2 bill rows (round icon, title, grey sub-line) build below",
+      "camera": "push-in 1.00 -> 1.25 over f158-f195 (chip width 106 -> 132 px on the sheet), easings.inOutSine, accelerating into the next zoom from f203",
+      "motion": "chips fade in from white f141-f150; active chip fills grey f150 then near-black f158 (springs.ui); rows list-assemble: icon then title then sub-line, row stagger ~8 fr (±0.25 s), each easings.outExpo 12 fr (±0.25 s); settled f173",
+      "transition_out": "zoom-tier",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 7,
+      "t1": 9,
+      "beat": "feature",
+      "shot": "detail tier on the second row: its title huge at left edge, grey sub-line under it, an orange outlined status pill with a dot to its right",
+      "camera": "zoom-tier element -> detail f203-f218 with motion blur; hold with small drift f225-f240; steps out ~0.8x and pans right f240-f248; hold to f263",
+      "motion": "zoom easings.inExpo into springs.cameraIn ~15 fr (overshoot not measurable); status pill blur-in + fade from pale f218, sharp by f225 (springs.ui, ±0.25 s); exit at f263: all content blurs and fades to white in ~7 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "pop"
+    },
+    {
+      "t0": 9,
+      "t1": 9.7,
+      "beat": "feature",
+      "shot": "empty white frame, identical to frame 0, so the film loops",
+      "camera": "static",
+      "motion": "none; 21 fr hold",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 5,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "FocusCamera",
+    "Dolly",
+    "BlurIn",
+    "ListAssemble",
+    "BrandProvider",
+    "springs",
+    "easings"
+  ],
+  "params": {
+    "brand": "any brand.json: accent fills the phone screen gradient, fg for list text, bg white",
+    "content.avatar": "round user photo or initials for the header",
+    "content.greeting": "2-word personal greeting in the header",
+    "content.chips": "2 filter chip labels, first one active",
+    "content.rows": "2 list rows: {icon, title (1-2 words), sub (2-4 words)}",
+    "content.status": "status pill label (1 word) and its colour, shown beside row 2",
+    "timing.scale": "stretch factor for holds; the zoom snaps (5-15 fr) and whip (13 fr) keep their frame counts",
+    "loop": "true keeps the 21 fr white tail so the last frame equals frame 0"
+  },
+  "difficulty": "medium",
+  "render_cost": "heavy",
+  "notes": "Silent reference, sfx planned by the glue rule, not measured. Measured from 4 fps sheets (±0.25 s). Continuous camera, only one hard cut (f141), hidden by a whip with motion blur; the other two scene changes are zoom-tier snaps, not cuts. Phone appears as a frameless rounded screen, not a full device. Proposed terms (not used as ids): status-pill (coloured outlined status chip with a dot), filter-chips (segmented pill tabs, one active fill).",
+  "status": "studied"
+}

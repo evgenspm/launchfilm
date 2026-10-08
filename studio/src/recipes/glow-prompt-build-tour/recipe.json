@@ -1,0 +1,320 @@
+{
+  "id": "glow-prompt-build-tour",
+  "title": "Blue-lit prompt-to-site build tour",
+  "summary": "A glowing pixel types a promise and becomes a button; a prompt is sent, a browser page assembles and is light-scanned, action pills pop, a ring dollies open on a claim, tool tiles orbit, the mark glitches in. One blue light ties it.",
+  "use_when": [
+    "An AI builder or generator product that turns a prompt into a page, app or document",
+    "A dark, single-accent brand where everything can be lit by one colour",
+    "A 30 s site hero or launch teaser that walks prompt, result, workflow, integrations, logo",
+    "Showing integrations as a tool-tile carousel after the main feature"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/7tvkBhM0",
+    "author": "rock",
+    "ref_id": "rl-098"
+  },
+  "family": "product-ui",
+  "tags": [
+    "dark",
+    "glow",
+    "blue",
+    "prompt",
+    "ai-builder",
+    "website",
+    "browser",
+    "scan",
+    "ring",
+    "carousel",
+    "tool-tiles",
+    "saas"
+  ],
+  "techniques": [
+    "typewriter",
+    "morph",
+    "cursor-path",
+    "push-in",
+    "zoom-tier",
+    "prompt-typing",
+    "device-browser",
+    "ui-rebuild",
+    "tilt-plane",
+    "card-grid",
+    "dolly",
+    "flash",
+    "orbit-ring",
+    "speed-ramp",
+    "logo-from-dot",
+    "glow",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 30.33,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#00020F",
+      "#F2F4FA",
+      "#2B69F0",
+      "#0C3479",
+      "#9ABEF6",
+      "#161924"
+    ],
+    "type_style": "geometric grotesk, medium weight, sentence case, normal tracking; small UI text ~2.5 % H, ring claim ~4.5 % H white with soft glow, second line in accent blue",
+    "treatment": [
+      "glow",
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 126.7,
+      "energy": "build",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "glowing pixel types the hook line, per character",
+        "sound": "type-click"
+      },
+      {
+        "event": "cursor clicks a button (new item, send, action pills)",
+        "sound": "ui-confirm"
+      },
+      {
+        "event": "camera dives into the send button corner",
+        "sound": "whoosh"
+      },
+      {
+        "event": "light bar scans down the built page",
+        "sound": "shimmer"
+      },
+      {
+        "event": "ring dollies open around the claim",
+        "sound": "swell"
+      },
+      {
+        "event": "white flash in the ring centre",
+        "sound": "hit"
+      },
+      {
+        "event": "speed-ramp push into the logo cut",
+        "sound": "riser"
+      },
+      {
+        "event": "mark glitches in",
+        "sound": "glitch-sfx"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.75,
+      "beat": "hook",
+      "shot": "a small glowing square hops colour (magenta, cyan, blue) and types a one-line promise, 8 words, centre; dot-matrix texture on the frame edges",
+      "camera": "drift 1.00→1.01 (motion.json 0.3–0.4 %/s)",
+      "motion": "per-character typing ahead of the square, line complete at 0.77 s (~23 fr); square colour steps every 2 fr; easings.linear typing (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 1.75,
+      "t1": 3.25,
+      "beat": "reveal",
+      "shot": "two glowing squares slide along the line and fuse into a blank glowing pill; the pill fills, then a plus icon and a 2-word label type in; arrow cursor drifts in from bottom right",
+      "camera": "static 2.00–3.00 (no change in pill width), push starts at 3.25",
+      "motion": "line collapses into the pill over ~8 fr, springs.ui (overshoot not measurable); fill flash 2.27; label types 2.50–3.00; cursor springs.ui path toward the pill",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 3.25,
+      "t1": 4.8,
+      "beat": "feature",
+      "shot": "the button grows until it fills the frame; cursor lands and clicks, the button fills accent blue for 2 fr",
+      "camera": "push-in 1.0→~3.0 over 1.4 s (pill width 120 px at 3.27 to past frame width at 4.77), accelerating",
+      "motion": "push easings.inExpo ~42 fr (±0.25 s); click fill at 4.50 lasts 2 fr; springs.click on press",
+      "transition_out": "hard-cut",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 4.8,
+      "t1": 7.25,
+      "beat": "feature",
+      "shot": "an empty prompt box with glowing rim and model selector, send and add buttons; a 6-word request types in",
+      "camera": "drift 1.00→1.05 with slight up/right travel (box width 180→210 px on the sheet)",
+      "motion": "box grows from the pill footprint, springs.layout (overshoot not measurable); typing 5.27–6.77, ~30 cps, easings.linear",
+      "transition_out": "zoom-through",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 7.25,
+      "t1": 9,
+      "beat": "feature",
+      "shot": "camera dives to the box's bottom-right corner; the send button turns accent blue on click and holds",
+      "camera": "zoom-tier full→detail on the send button, ~×4 in 8 fr at 7.25–7.50, then drift 1.00→1.02",
+      "motion": "dive easings.outExpo ~8 fr (±0.25 s); send fill at 8.27 (1 cell), holds to 9.00",
+      "transition_out": "morph",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 9,
+      "t1": 11.75,
+      "beat": "feature",
+      "shot": "a narrow browser window grows tall then wide on a tilted plane; nav bar, 2-line headline with an accent word, CTA and a dashboard block fill in while accent placeholder blocks fly in and resolve",
+      "camera": "push-in 1.00→1.45 (window width 160→330 px of 480), tilt-plane yaw ~8° easing to ~3°",
+      "motion": "window grows springs.layout ~15 fr; headline types 9.50–10.27; placeholder blocks fly in and land, easings.outExpo 6–8 fr each (±0.25 s), page settled by 11.27",
+      "transition_out": "morph",
+      "sfx": "pop"
+    },
+    {
+      "t0": 11.75,
+      "t1": 13.75,
+      "beat": "feature",
+      "shot": "a glowing prompt card pops forward over the dimmed page; a 5-word follow-up request types in",
+      "camera": "drift 1.00→1.02",
+      "motion": "card springs.pop from a block footprint (overshoot not measurable), page dims to ~0.3; typing 12.27–13.27, easings.linear",
+      "transition_out": "blur-dissolve",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 13.75,
+      "t1": 16,
+      "beat": "feature",
+      "shot": "card dissolves into the page; a horizontal light bar scans down the page, the camera tilts down with it, rows under the bar light up",
+      "camera": "dolly down the page ~600 px/s @1920 at 14.5–15.5 (motion.json), tilt-plane ~5°",
+      "motion": "card blur-dissolve 6 fr; light bar travels easings.inOutSine over ~2 s; page blocks brighten as the bar passes",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 16,
+      "t1": 18.25,
+      "beat": "feature",
+      "shot": "the bar keeps sweeping a feature section: 5 cards in two rows with a bar chart, a wave chart, progress bars and a brain icon",
+      "camera": "dolly down ~150 px/s then stop at 17.25; drift 1.00→1.02",
+      "motion": "cards brighten from 0.3 to 1 as the bar passes, easings.outQuint ~8 fr per row (±0.25 s); settled 17.25–18.00",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 18.25,
+      "t1": 19.37,
+      "beat": "feature",
+      "shot": "a single accent-blue glossy pill with a 1-word action label grows centre on the dark backdrop",
+      "camera": "push-in 1.0→1.25 (pill 150→240 px)",
+      "motion": "pill fades in at 18.27 and grows springs.pop to 18.50 (overshoot not measurable), keeps creeping",
+      "transition_out": "hard-cut",
+      "sfx": "pop"
+    },
+    {
+      "t0": 19.37,
+      "t1": 20.5,
+      "beat": "feature",
+      "shot": "same pill, second 1-word action label",
+      "camera": "push-in 1.0→1.10 (pill 205→225 px)",
+      "motion": "label swapped on the cut, pill creeps, no entrance",
+      "transition_out": "hard-cut",
+      "sfx": "pop"
+    },
+    {
+      "t0": 20.5,
+      "t1": 22.5,
+      "beat": "feature",
+      "shot": "small pill grows, third 1-word action label; hand cursor rests on it and clicks; a dark glowing panel opens around the pill",
+      "camera": "push-in 1.0→1.15 then drift",
+      "motion": "pill springs.pop 8 fr (overshoot not measurable); click 21.50; panel grows around it springs.layout ~8 fr at 21.75",
+      "transition_out": "hard-cut",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 22.5,
+      "t1": 25,
+      "beat": "feature",
+      "shot": "a segmented glowing ring explodes open around a 3-word claim; a 3-word accent second line fades in under it; white flash in the centre at 23.07",
+      "camera": "dolly through the ring: radius 0.44→0.98 of end in 40 fr, end radius ≈ 0.64 H; keeps creeping",
+      "motion": "ring easings.outExpo ~15 fr (radius 0.76 at 3 fr, 0.90 at 9 fr), long tail to 40 fr; ring turns slowly; second line fades 1.2 s after the first; flash 2 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "swell"
+    },
+    {
+      "t0": 25,
+      "t1": 28.33,
+      "beat": "feature",
+      "shot": "8 glowing dark tool tiles with line icons ride a near edge-on carousel; front row large and opaque, back row small and translucent blue",
+      "camera": "push-in 1.0→~1.35 over 3 s, then speed-ramp with motion blur on the last 3 fr into the cut",
+      "motion": "tiles fade up from 0.2 at 25.0–25.6; carousel 45°/s, front row moves left; tilt ≈ 83°, near/far scale 1.5; push easings.inExpo at the end",
+      "transition_out": "hard-cut",
+      "sfx": "riser"
+    },
+    {
+      "t0": 28.33,
+      "t1": 30.33,
+      "beat": "logo",
+      "shot": "the glowing square returns, glitches through magenta and cyan and resolves into the accent mark on a soft blue light blob; dot-matrix edges; mark shrinks out",
+      "camera": "static 29.00–29.77, then pull-out (mark 1.0→0.5 at 30.00)",
+      "motion": "colour steps every 2 fr for ~12 fr, then light-on settle; exit scale-down easings.inExpo ~8 fr (±0.25 s); silence from 29.88",
+      "transition_out": "end",
+      "sfx": "glitch-sfx"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 8,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS",
+    "Camera",
+    "Dolly",
+    "Cursor",
+    "Typewriter",
+    "PillMorph",
+    "PromptBar",
+    "BrowserFrame",
+    "BlockResolve",
+    "FeatureCards",
+    "OrbitRing",
+    "AppTile",
+    "LineGlyph",
+    "Flash",
+    "LightBurst",
+    "Glitch",
+    "RGBSplit",
+    "LogoReveal",
+    "glowShadow"
+  ],
+  "params": {
+    "brand": "any brand.json; one accent colour lights every element (rims, glows, fills, ring)",
+    "content.hook": "one-line promise typed by the glowing pixel, ≤ 8 words",
+    "content.button": "label of the first button, ≤ 2 words",
+    "content.prompt": "first request typed in the prompt box, ≤ 7 words",
+    "content.page": "headline (2 lines, one accent word), CTA label and dashboard blocks of the built page",
+    "content.followUp": "second request typed in the overlay card, ≤ 6 words",
+    "content.actions": "three 1-word workflow steps shown as pills",
+    "content.ringLines": "two short lines inside the ring, ≤ 3 words each, second in accent",
+    "content.tools": "8 tool glyphs for the carousel",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Measured by a human frame by frame: ring radius normalised 0.44, 0.76, 0.84, 0.90, 0.93, 0.96, 0.98 at 0, 3, 5, 9, 15, 24, 40 fr after the cut; ring = 8 arc segments with 3–4° gaps, core ~2 px white-blue, glow 10–15 px; carousel tilt ≈ 83°, focal ≈ 2.3 H, 45°/s, front moves left, front tile 0.244 H, near/far 1.5, back tiles ~0.6 opacity; glow profile rim 0.011 S, half at 0.28 S, gone by 0.6 S; tile fill #161924, bg near #00010F. Source animates at 15 fps (doubled frames). No soft cuts detected, but 18.25 and 13.75 are visible state changes. sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): glitch-pixel, scan-reveal, segmented-ring-dolly, dot-matrix-edge.",
+  "status": "studied"
+}

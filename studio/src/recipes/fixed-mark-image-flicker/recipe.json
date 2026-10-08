@@ -1,0 +1,168 @@
+{
+  "id": "fixed-mark-image-flicker",
+  "title": "Fixed mark over a flickering image montage",
+  "summary": "The brand mark holds dead centre while full-frame images swap under it every 2-6 frames, a 1 s loop of six looks run four times; mid-film the mark flips dark to light. A still mark over chaos is all the eye can hold.",
+  "use_when": [
+    "A 3-5 s logo sting or bumper for a brand with a strong single mark",
+    "Showing the mark works on any background: photo, colour, light and dark",
+    "Silent loops for social feeds or event screens",
+    "Teasing a visual identity system (palette, imagery, device use) in one shot"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/KVhRrhFC",
+    "author": "scanna",
+    "ref_id": "rl-005"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo",
+    "mark",
+    "montage",
+    "flicker",
+    "rapid-cut",
+    "bumper",
+    "identity",
+    "silent",
+    "loop-cycle",
+    "phone-in-hand"
+  ],
+  "techniques": [
+    "match-cut",
+    "hard-cut",
+    "device-phone"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#111111",
+      "#F5F3E6",
+      "#1E5AD2",
+      "#D99A0F",
+      "#8B8B8B",
+      "#3D8CF5"
+    ],
+    "type_style": "no copy; only the mark, about 14 % of frame width, centred; tiny swatch labels (caps grotesk, ~2 % H) on the palette board",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each background swap under the mark",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "mark colour flips dark to light at 2.10 s",
+        "sound": "hit",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.1,
+      "beat": "hook",
+      "shot": "dark field of floating mono rock shards, one large crystal in the centre carries the dark mark on a flat face",
+      "camera": "drift: push about 2 %/s (motion.json second 0), shard rotation slow",
+      "motion": "mark static at centre; shards drift, no entrance (film opens mid-motion)",
+      "transition_out": "match-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 0.1,
+      "t1": 1,
+      "beat": "logo",
+      "shot": "montage: 6 shots, avg 0.15 s: glass phone in hands on grey (6 fr), its negative (3 fr), blue sky grid (3 fr), grey grid (3 fr), inverted planet rim (6 fr), 4-panel palette board (6 fr); dark mark",
+      "camera": "phone and grids static (±0.25 s); palette board pans left fast, ~470 px/s at 1920 (motion.json second 1)",
+      "motion": "hard swaps only, no entrances; the mark keeps the same centre and size through every cut (match-cut); per-shot holds 6/3/3/3/6/6 fr",
+      "transition_out": "match-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1,
+      "t1": 2,
+      "beat": "logo",
+      "shot": "montage: 7 shots, avg 0.14 s: cycle 2 repeats cycle 1 exactly, opening on the rock shards (3 fr); dark mark",
+      "camera": "same as cycle 1; palette board pans left, ~470 px/s at 1920",
+      "motion": "same 3/6/3/3/3/6/6 fr cadence; 1.00 s period, metronomic",
+      "transition_out": "match-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2,
+      "t1": 2.97,
+      "beat": "logo",
+      "shot": "montage: 6 shots, avg 0.16 s: cycle 3, shards then phone, negative phone, same images (sky grid fades to grey grid inside one 6 fr shot); mark now light/white",
+      "camera": "same as cycle 1; slight rotation on the shards (~5 deg/s, motion.json second 2)",
+      "motion": "mark colour flips dark to light inside the shard shot at 2.03-2.07 s (f61-62, between cut frames 2.00 and 2.07), no fade; negative phone 2 fr; cadence 3/6/2/6/6/6 fr",
+      "transition_out": "match-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 2.97,
+      "t1": 3.97,
+      "beat": "logo",
+      "shot": "montage: 6 shots, avg 0.17 s: cycle 4 with the light mark: shards, phone, negative phone, sky-to-grey grid, planet rim, palette board",
+      "camera": "same as cycle 3",
+      "motion": "cadence 3/6/3/6/6/6 fr; mark fixed at centre",
+      "transition_out": "hard-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3.97,
+      "t1": 4,
+      "beat": "logo",
+      "shot": "near-black flat frame with only the light mark centred (1 fr end)",
+      "camera": "static",
+      "motion": "none; the montage stops on the bare mark",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 4,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandMark",
+    "PhoneFrame",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: mark (needs a dark and a light variant), palette for the swatch board",
+    "content.images": "4 full-frame images: textured dark object field, light sky/grid, planet or landscape, any hero photo; one shot is a phone held in hands",
+    "content.swatches": "4 colours for the palette board (defaults to brand accent, light, dark, deepest)",
+    "timing.cadence": "frames per shot in one cycle at 30 fps (default 3/6/3/3/3/6/6 = 30 fr)",
+    "timing.cycles": "number of cycles (default 4)",
+    "timing.flipAt": "frame where the mark switches to its light variant (default f61, start of cycle 3)",
+    "fps": "composition fps (default 30); cadence scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 26 hard cuts in cuts.json at 30 fps: a 30 fr cycle of 7 shots (3/6/3/3/3/6/6 fr), repeated 4 times; cycles 3-4 tighten slightly (2 fr negative frame). Mark never moves or scales: it is the anchor. Mark colour flips at f61-62 (between cut frames 2.00 and 2.07). Every second shot type is a 3 fr negative of the previous one, acting like a flash without white. Silent reference; sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): anchored-mark-montage, negative-flicker.",
+  "status": "studied"
+}

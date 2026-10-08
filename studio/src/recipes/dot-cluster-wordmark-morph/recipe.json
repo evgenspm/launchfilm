@@ -1,0 +1,187 @@
+{
+  "id": "dot-cluster-wordmark-morph",
+  "title": "Dots gather, unroll and morph into a wordmark",
+  "summary": "Yellow dots pop in one by one on charcoal, huddle into a spinning cluster, unroll into a row of one dot per letter, then morph into a bold wordmark. A push-in flips it to an outline construction view and pans along the glyphs.",
+  "use_when": [
+    "Opening a reel or intro with a short product name (3 to 6 letters)",
+    "A brand-name reveal that avoids a standard text entrance",
+    "Silent social loops where one accent colour on a dark ground carries the brand",
+    "Type-led brands that want to show their letterforms as craft"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/morph-dots-to-text/",
+    "author": "Jitter",
+    "ref_id": "jt-053"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "dots",
+    "morph",
+    "wordmark",
+    "name-reveal",
+    "intro",
+    "type-only",
+    "no-ui",
+    "dark",
+    "outline",
+    "construction",
+    "minimal"
+  ],
+  "techniques": [
+    "logo-from-dot",
+    "morph",
+    "push-in",
+    "dolly"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 8.77,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#292929",
+      "#FBFE3F",
+      "#565654",
+      "#8C8E3F"
+    ],
+    "type_style": "heavy geometric grotesk, lowercase, tight tracking, wordmark about 60 % of frame width at the hold; later thin 2 px outlines with anchor dots",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each dot pops in",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "dots unroll into a row",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "row morphs into the letters",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "fill flips to outline construction view",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "empty charcoal frame; small accent dots appear one at a time above centre and drift together into a tight 2x2 cluster",
+      "camera": "static",
+      "motion": "15 empty frames; dots scale 0 -> 1 from a point, springs.pop (overshoot not measurable), about one new dot per 7 fr (±0.25 s); cluster centre slides down about 10 % H to frame centre, springs.ui 30 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 1.5,
+      "t1": 3,
+      "beat": "hook",
+      "shot": "the four-dot cluster swells and turns around its centre, then breaks open",
+      "camera": "static",
+      "motion": "dots grow about 1.4x while the cluster rotates about 90 deg, easings.inOutSine 30 fr (±0.25 s); at 2.77 the cluster loosens before the unroll",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 3,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "dots unroll from a diagonal into a horizontal row, one dot per letter of the name, and shrink",
+      "camera": "static",
+      "motion": "diagonal at 3.00 levels to a row by 3.50, easings.outExpo 15 fr (±0.25 s); dots shrink about 0.6x; row holds 8 fr",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4,
+      "t1": 4.77,
+      "beat": "logo",
+      "shot": "the dots morph left to right into the letters of a heavy lowercase wordmark",
+      "camera": "push-in 1.00 -> 1.04",
+      "motion": "per-letter dot -> glyph shape morph, stagger about 4 fr (±0.25 s), each letter springs.snappy 12 fr (overshoot not measurable); first letter formed at 4.00, all four by 4.50",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4.77,
+      "t1": 5.77,
+      "beat": "logo",
+      "shot": "filled wordmark holds centred on charcoal",
+      "camera": "push-in 1.00 -> 1.10 over 30 fr (about 18 %/s by motion estimate)",
+      "motion": "no element motion; scale creep only, easings.inOutSine",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 5.77,
+      "t1": 7.5,
+      "beat": "logo",
+      "shot": "the fill drops to thin outlines with anchor-point dots and grey metric guide lines across the frame; glyphs larger than the frame",
+      "camera": "push-in about 1.0 -> 1.4 over 52 fr (about 23 %/s), easings.inOutSine",
+      "motion": "fill -> outline switch within one sheet cell (±0.25 s), hard swap; anchor dots and guides appear with it; inner counters widen as the zoom continues",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 7.5,
+      "t1": 8.77,
+      "beat": "logo",
+      "shot": "camera slides along the line to the last two letters in outline, which fill the frame and hold",
+      "camera": "dolly left-to-right about 430 px/s at 1920 for 8 fr (±0.25 s), then hold with slight drift",
+      "motion": "lateral move easings.outExpo 15 fr (±0.25 s); from 8.00 to end nearly static",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "Camera",
+    "Wordmark",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font (heavy weight), accent for dots and type, bg flat",
+    "content.name": "lowercase product name, 3 to 6 letters; dot count equals letter count",
+    "aspect": "4:5 | 1:1 | 9:16 | 16:9; wordmark about 60 % of frame width at the hold",
+    "outline": "true = flip to the outline construction view after the hold (default true)",
+    "timing.holdFrames": "frames the filled wordmark holds before the outline flip (default 30)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Single continuous shot, no cuts; rows split at state changes read from 4 fps sheets (±0.25 s). Dot count matches the letter count, so the name length sets the cluster. The fill to outline flip lands inside one sheet cell, read as a hard swap. Proposed terms (not in vocabulary): dot-gather, glyph-construction. sfx planned by the glue rule, not measured; the reference is silent.",
+  "status": "studied"
+}

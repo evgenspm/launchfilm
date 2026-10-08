@@ -1,0 +1,107 @@
+{
+  "id": "store-badge-word-rise",
+  "title": "Store download badge assembles on black",
+  "summary": "A black download badge builds piece by piece on black: the rounded outline scales up, the store mark fades in, then the two label lines rise word by word inside the frame. It holds, then fades and shrinks out.",
+  "use_when": [
+    "a 2-4 s download CTA insert at the end of a mobile app film",
+    "an end-card overlay that tells viewers where to get the app",
+    "a silent, monochrome sign-off that must not compete with the logo"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/black-app-store-badge/",
+    "author": "Jitter",
+    "ref_id": "jt-064"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "store-badge",
+    "download-cta",
+    "end-card-insert",
+    "dark",
+    "monochrome",
+    "short",
+    "word-rise",
+    "mobile-app",
+    "silent"
+  ],
+  "techniques": [
+    "mask-rise",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 3,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FFFFFF",
+      "#A6A6A6",
+      "#797979"
+    ],
+    "type_style": "medium grotesk, sentence case, normal tracking; small eyebrow line ~11 % H above a large label line ~18 % H, left aligned beside the mark",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "badge outline scales in",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "label words rise in, one per word",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3,
+      "beat": "hook",
+      "shot": "one rounded-rectangle download badge centred on black: thin grey outline, store mark left, 3-word eyebrow over a 2-word label",
+      "camera": "static (no camera move; the badge itself scales 0.85→1.00 on entry and ~1.00→0.90 on exit)",
+      "motion": "f0 black; outline fades and scales 0.85→1.00 f1–f6, springs.ui (no overshoot at 1 fr); mark fades in f4–f8; words rise from below inside the badge clip with fade, stagger ~2 fr, first word f7, last f11, mask-rise on springs.ui (no overshoot seen), all settled f24; hold f24–f80; exit f80–f84 fade to black + scale to ~0.90, easings.inExpo 4 fr; black f84–f90",
+      "transition_out": "end",
+      "sfx": "pop"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BlurIn"
+  ],
+  "params": {
+    "mark": "store or platform glyph shown at the left of the badge",
+    "eyebrow": "small line above the label, ≤ 4 words (where to get it)",
+    "label": "large line, ≤ 2 words (the store name)",
+    "outline": "badge stroke colour, grey on black by default"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Single 3 s shot, no cuts, silent. Entrance timings measured from 30 fps strips of the local source (1 fr); frames 84–89 are black. The badge was ordered outline → mark → words. Catalogue hint device-phone not visible: no device on screen. SFX planned by the glue rule, not measured. Proposed terms (not used as ids): badge-assemble, shrink-fade-out.",
+  "status": "studied"
+}

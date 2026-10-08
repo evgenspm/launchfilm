@@ -1,0 +1,231 @@
+{
+  "id": "voice-query-panel-loop",
+  "title": "Voice query panel loop",
+  "summary": "A wordmark pill grows a mic button, a cursor taps it, the pill swells into a frosted panel where a spoken question resolves letter by letter, thinks, streams an answer and settles into a checked list, then folds back.",
+  "use_when": [
+    "An assistant or search product whose hero moment is speaking a question",
+    "A loopable vertical clip for a landing page hero or a social feed",
+    "Showing the full ask, think, answer cycle in one calm continuous shot",
+    "A silent autoplay demo where the UI states carry the story"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-prompt-voice-search/",
+    "author": "Jitter",
+    "ref_id": "jt-009"
+  },
+  "family": "product-ui",
+  "tags": [
+    "voice",
+    "assistant",
+    "search",
+    "frosted-panel",
+    "loop",
+    "vertical",
+    "light",
+    "pastel-gradient",
+    "answer-list",
+    "single-shot"
+  ],
+  "techniques": [
+    "cursor-path",
+    "morph",
+    "prompt-typing",
+    "thinking-state",
+    "stream-text",
+    "list-assemble",
+    "ui-rebuild",
+    "mesh-gradient"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 20,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#DFE3EE",
+      "#1D1D1F",
+      "#C7ABF7",
+      "#CFD6E8",
+      "#9BA1AC",
+      "#BDC3D3"
+    ],
+    "type_style": "geometric grotesk wordmark with a small superscript tag, 2.5 % H; query in regular sans, sentence case, 1.5 % H, three lines; status and list labels in light grey, about 1 % H",
+    "treatment": [
+      "mesh-gradient"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "cursor taps the mic button",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "each answer list item lands with its check",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "panel folds back into the pill",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.5,
+      "beat": "hook",
+      "shot": "short wordmark pill top-left on a large frosted plate over a pale blue-violet gradient",
+      "camera": "near-static: plate fixed, pill widens; motion.json zoom 1.6 %/s from the pill",
+      "motion": "pill width grows about 25 %, springs.layout 8 fr (±0.25 s)",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 0.5,
+      "t1": 2,
+      "beat": "feature",
+      "shot": "a round mic button splits off the pill's right end; cursor enters from the right and taps it",
+      "camera": "near-static: plate fixed; motion.json zoom 2.1 %/s, pan -11 px/s from the split",
+      "motion": "button slides out of the pill, springs.ui 8 fr (±0.25 s); cursor springs in at 0.77, rests on the button 1.00 to 1.50, press at 1.77, springs.click (overshoot not measurable)",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2,
+      "t1": 2.77,
+      "beat": "feature",
+      "shot": "pill and button merge into one rounded panel that grows downward; gradient saturates; status label fades in at the bottom",
+      "camera": "static plate; gradient shift only",
+      "motion": "panel height 1 to 1.6x, springs.layout 15 fr (±0.25 s); status label fade 8 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2.77,
+      "t1": 5.77,
+      "beat": "feature",
+      "shot": "the spoken question resolves letter by letter, three lines, about 11 words; listening label shimmers below",
+      "camera": "static plate; gradient drifts blue to violet",
+      "motion": "letters resolve left to right from blur with a soft trail, about 4 words/s, easings.outQuint per glyph (±0.25 s); label shimmer loop about 30 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 5.77,
+      "t1": 7.5,
+      "beat": "feature",
+      "shot": "question holds; status label swaps to a thinking state with a shimmer",
+      "camera": "static plate; gradient drifts violet",
+      "motion": "label crossfade 8 fr (±0.25 s), shimmer sweep about 30 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 7.5,
+      "t1": 9.77,
+      "beat": "feature",
+      "shot": "a grey answer paragraph streams in under the question and scrolls upward inside a faded mask, then fades out",
+      "camera": "static plate",
+      "motion": "stream about 14 words/s, text scrolls up 1 line per 0.25 s, easings.linear; fade out 8 fr from 9.50 (±0.25 s)",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 9.77,
+      "t1": 12,
+      "beat": "feature",
+      "shot": "question alone in the panel, empty answer area; gradient pales to lilac",
+      "camera": "static plate; gradient fades toward pale lilac",
+      "motion": "no element motion; first list row starts to fade in at 11.77 (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 12,
+      "t1": 15.27,
+      "beat": "proof",
+      "shot": "answer as a checked list: three short place names, each with a small check, one under the other",
+      "camera": "static plate",
+      "motion": "rows land one per 1.25 s (12.00, 13.27, 14.50) with blur-in fade, easings.outQuint 8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 15.27,
+      "t1": 17.27,
+      "beat": "proof",
+      "shot": "a row of six small action icons appears under the list; full answer holds",
+      "camera": "static plate; gradient pale blue",
+      "motion": "icon row fades in 8 fr (±0.25 s); hold 1.75 s",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 17.27,
+      "t1": 18.77,
+      "beat": "proof",
+      "shot": "panel content blurs out, panel collapses to a bar, splits back into pill plus mic button, button retracts",
+      "camera": "static plate",
+      "motion": "content blur-out 8 fr; panel height collapse springs.layout 15 fr; split at 18.00, button retracts 18.50 to 18.77 (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 18.77,
+      "t1": 20,
+      "beat": "logo",
+      "shot": "only the wordmark pill remains, narrowing back to its opening width; matches the first frame for the loop",
+      "camera": "static plate",
+      "motion": "pill width shrinks about 15 %, springs.layout 15 fr (±0.25 s); then hold",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 5,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Surface",
+    "BrandBackdrop",
+    "Cursor",
+    "PillMorph",
+    "TrailType",
+    "ThinkingState",
+    "StreamText",
+    "ListAssemble",
+    "LineIcon",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: wordmark text and font, fg, muted, accent pair for the gradient, surface for the panel",
+    "content.question": "spoken question, 8 to 14 words, wraps to 3 lines",
+    "content.answer": "answer paragraph streamed then dropped, 40 to 80 words",
+    "content.items": "3 short answer rows, 1 to 3 words each, with checks",
+    "content.statusListening": "label under the panel while listening",
+    "content.statusThinking": "label while thinking",
+    "content.actions": "number of action icons under the list (default 6)",
+    "timing.scale": "stretch the whole 600 fr cycle; keep the loop by matching first and last frame",
+    "aspect": "9:16 default; 4:5 and 1:1 keep the panel top-left on the plate"
+  },
+  "difficulty": "medium",
+  "render_cost": "medium",
+  "notes": "Single continuous shot, 0 cuts; all rows are UI state changes read from sheets at 0.25 s resolution. Loopable: 19.77 matches 0.00. No waveform is visible despite the catalogue hint; listening is shown only by a shimmering label. The answer paragraph is a red herring that streams and fades before the clean list lands. Background is an animated pastel gradient (blue, violet, lilac) moving behind a static frosted plate. Proposed terms (not in vocabulary): voice-transcribe, pill-split. sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

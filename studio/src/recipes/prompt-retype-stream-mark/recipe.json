@@ -1,0 +1,191 @@
+{
+  "id": "prompt-retype-stream-mark",
+  "title": "Prompt retype, send, streamed answer, mark close",
+  "summary": "A lone prompt bar on light grey: one question is typed and erased, a second is typed and sent with a cursor click, the view drops to a chat thread where a long answer streams and scrolls, then the brand mark holds.",
+  "use_when": [
+    "An AI writing or chat product that wants a 10 s silent loop of ask, answer, mark",
+    "Showing that the assistant writes long-form output fast",
+    "A minimal, monochrome brand that should feel like a native chat UI",
+    "A feed teaser where the prompt itself is the hook"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/FcuUd4Q5",
+    "author": "Tautwydas",
+    "ref_id": "rl-017"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "ai-chat",
+    "prompt",
+    "typing",
+    "streaming",
+    "chat-thread",
+    "light",
+    "monochrome",
+    "minimal",
+    "silent",
+    "logo-close"
+  ],
+  "techniques": [
+    "prompt-typing",
+    "push-in",
+    "cursor-path",
+    "stream-text",
+    "dolly",
+    "ui-rebuild",
+    "blur-dissolve"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 10,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#EBEBEB",
+      "#191919",
+      "#E2E2E2",
+      "#6F6F6F",
+      "#C8C8C8"
+    ],
+    "type_style": "regular grotesk, sentence case, normal tracking; prompt text ~5 % H in the close bar view, answer body ~3 % H in the thread view, heading same weight as body",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "prompt keystrokes",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor clicks the send button",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "brand mark appears",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "centred pill prompt bar with plus button and dark round send button; a 4-word question types in, then is erased",
+      "camera": "push-in 1.00 -> ~1.25 by 1.00 s (bar width 225 -> 282 px in sheet cells), springs.cameraIn, overshoot not measurable; settles ~4 % back",
+      "motion": "question typed in ~15 fr (done by 0.50 s, ±0.25 s); held ~8 fr; backspaced to empty by 1.27 s (~15 fr, ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 1.27,
+      "t1": 3,
+      "beat": "feature",
+      "shot": "same bar: a 4-word writing request types in; pointer cursor enters bottom right, glides to the send button and clicks",
+      "camera": "drift: bar holds near 1.25, eases back ~10 % between 2.50 and 2.77 s (bar width 282 -> 255 px)",
+      "motion": "request typed 1.50 -> 2.00 s (~15 fr, ±0.25 s); cursor visible from 1.77 s, reaches send at 2.27 s on springs.ui (overshoot not measurable); click at 2.50 s with springs.click squash; bar fades out by 3.00 s",
+      "transition_out": "blur-dissolve",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 3,
+      "t1": 3.77,
+      "beat": "feature",
+      "shot": "empty light grey frame, then the sent request appears as a small right-aligned bubble near the top of a chat thread view",
+      "camera": "static (thread view, scale ~0.4 of the bar view)",
+      "motion": "bubble fades in 3.27 -> 3.50 s, easings.outQuint ~8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 3.77,
+      "t1": 5.5,
+      "beat": "feature",
+      "shot": "answer streams under the bubble: a 2-word heading, then a long first paragraph, narrow left column",
+      "camera": "static",
+      "motion": "stream ~2 lines per 0.25 s (~8 lines/s, about 24 words/s), constant rate, easings.linear; each chunk fades in (fade not measurable at ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 5.5,
+      "t1": 7.5,
+      "beat": "feature",
+      "shot": "second heading and paragraph stream in; the thread scrolls up so the stream bottom stays in view, bubble leaves the top",
+      "camera": "dolly up: 60 px/s at 5-6 s, 332 px/s at 6-7 s, 11 px/s at 7-8 s (1920-wide), easings.inOutSine",
+      "motion": "stream continues at the same rate; scroll follows the text bottom",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 7.5,
+      "t1": 8.27,
+      "beat": "feature",
+      "shot": "answer finishes; a short follow-up request bubble appears under it, the thread scrolls it up, then everything fades to the bare background",
+      "camera": "dolly up ~60 % of frame height between 7.77 and 8.00 s, easings.outExpo (±0.25 s)",
+      "motion": "follow-up bubble fades in by 7.50 s; thread fades out by 8.27 s (~8 fr, ±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 8.27,
+      "t1": 10,
+      "beat": "logo",
+      "shot": "monochrome brand mark centred on the grey background, about 15 % of frame height, held to the end",
+      "camera": "static",
+      "motion": "mark appears by 8.50 s (entrance under 8 fr, ±0.25 s), holds 45 fr",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PromptBar",
+    "Typewriter",
+    "Cursor",
+    "StreamText",
+    "Dolly",
+    "Camera",
+    "LogoReveal",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (light grey), fg, muted, logo mark",
+    "content.decoy": "first prompt that is typed then erased, about 4 words",
+    "content.prompt": "the real request that gets sent, about 4 words",
+    "content.answer": "streamed answer: a short heading and 2 paragraphs of about 60-80 words",
+    "content.followUp": "short follow-up request bubble, 3 words",
+    "aspect": "16:9 (thread column recomposes for 1:1 and 9:16)",
+    "timing.streamWps": "answer stream rate in words per second (reference ~24)"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s). Zero detected cuts: the bar-to-thread and thread-to-mark changes are fades through the bare background (proposed term fade-through-bg; tagged blur-dissolve as nearest id, no blur measurable). Prompt erase (backspace) is the hook. Two scales: close bar view, then a thread view at ~0.4 scale. The stream is fast (~24 words/s) so the scroll, not the reading, carries rows 4-6. sfx planned by the glue rule, not measured; the reference is silent.",
+  "status": "studied"
+}

@@ -1,0 +1,201 @@
+{
+  "id": "tinted-panel-phone-screen-tour",
+  "title": "Tinted-panel phone close-ups, icon then wordmark",
+  "summary": "A light phone leaned back in perspective, five shallow-focus close-ups, each screen on its own slanted pastel panel and drifting slowly. Hard cuts between screens, then a quiet close: icon alone, then wordmark alone, on white.",
+  "use_when": [
+    "A mobile app with four or five distinct screens and a calm, clean brand",
+    "Silent autoplay feeds where each screen must read on its own for about 3.5 s",
+    "Showing breadth of an app (account, onboarding, support, main screen) without a narrative",
+    "A pastel per-screen colour code is wanted to separate features"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/LW7AUjzw",
+    "author": "Preach Quest",
+    "ref_id": "rl-077"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "mobile-app",
+    "close-up",
+    "tilted",
+    "depth-of-field",
+    "pastel",
+    "light",
+    "ui-tour",
+    "silent",
+    "end-mark",
+    "minimal"
+  ],
+  "techniques": [
+    "device-phone",
+    "tilt-plane",
+    "ui-rebuild",
+    "push-in",
+    "dolly",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 28.5,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#101010",
+      "#037DF3",
+      "#D1C7F9",
+      "#CBD7CA",
+      "#C8DEE7"
+    ],
+    "type_style": "headline: rounded geometric sans, medium weight, sentence case, 2 lines, about 5 % of frame height, trailing words fade to light grey; wordmark: bold grotesk, about 3 % of frame height, centred",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "hard cut to the next phone screen (rows 2-5)",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "app icon appears on white (row 7)",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "icon swaps to the wordmark in place (row 8)",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 4.23,
+      "beat": "hook",
+      "shot": "phone leaned back, top third in frame, on a slanted lilac panel; 2-line headline above it (claim, 3 words + 7 words)",
+      "camera": "dolly: content moves left about 84 px/s at 1920 wide (2.8 px/fr) plus push-in about 1.00 -> 1.07 across the row (motion.json 1.0-2.0 %/s)",
+      "motion": "fade up from white, 6 fr, easings.outQuint (30 fps strip at t = 0); then only the camera move, no element animation; tilt-plane with a focus band through the phone top, upper text and right side soft",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 4.23,
+      "t1": 7.5,
+      "beat": "feature",
+      "shot": "macro on the account screen: blue header, avatar with a membership badge, email line, status card below; light-green panel at the left edge",
+      "camera": "push-in decelerating, about 3.9 %/s then 1.6 then 0.8 %/s (motion.json); content rises about 25-35 px/s; slight roll (motion.json estimate, not checked)",
+      "motion": "no element animation visible at 4 fps; shallow focus on the badge and email line, bottom card blurred",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 7.5,
+      "t1": 11.2,
+      "beat": "feature",
+      "shot": "guest screen: grey gradient screen with a pale avatar, short status line and sign-in button; slanted light-green panel left",
+      "camera": "dolly left about 45 px/s at 1920 wide (1.5 px/fr), scale constant (motion.json zoom -0.4..0.5 %/s)",
+      "motion": "none besides the camera; left half of the frame is soft white blur",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 11.2,
+      "t1": 14.7,
+      "beat": "feature",
+      "shot": "support screen: title line, blue band with a chat pill and a sender row; slanted tan panel behind with a cropped 2-line claim at the top edge",
+      "camera": "dolly up-right about 30 px/s plus push-in 0.9 -> 3.3 %/s, accelerating into the cut (motion.json)",
+      "motion": "none besides the camera; focus on the title, the band fades out of focus to the bottom",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 14.7,
+      "t1": 18.9,
+      "beat": "proof",
+      "shot": "main screen: header with the mark and name, upload and download speed readouts, concentric rings at the bottom; slanted aqua panel left",
+      "camera": "near hold: pull about 0.5 %/s (1.00 -> 0.98), position steady within 2 px per cell (sheets 04-05)",
+      "motion": "no element animation visible at 4 fps (readouts do not count)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 18.9,
+      "t1": 23.03,
+      "beat": "proof",
+      "shot": "extreme close-up of the phone's left edge: a corner of the speed readout and rings, the frame mostly aqua glow on white",
+      "camera": "drift right about 55 px/s at 1920 wide, measured from cell positions (motion.json reads hold: textureless frame)",
+      "motion": "picture changes abruptly at 18.90 (near miss 4.39 in cuts.json, below the cut threshold); then only the drift",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 23.03,
+      "t1": 25.53,
+      "beat": "logo",
+      "shot": "app icon alone, a small blue rounded square (about 7 % of width) centred on white",
+      "camera": "static",
+      "motion": "appears at full size in one frame (30 fps strip at t = 23.0, near miss 4.31 in cuts.json); holds 75 fr",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 25.53,
+      "t1": 28.5,
+      "beat": "logo",
+      "shot": "wordmark alone, black, small (about 16 % of width), centred on white",
+      "camera": "static",
+      "motion": "replaces the icon in one frame (30 fps strip at t = 25.4), no animation; holds 89 fr to the end",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 1,
+    "screenshots": 5,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "TiltPlane",
+    "PhoneFrame",
+    "Dolly",
+    "Camera",
+    "LogoScene",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: accent for the UI, bg white, display font for the headline, wordmark and mark",
+    "content.headline": "2-line claim over the first shot, short first line of 2-3 words",
+    "content.screens": "5 phone screens (UI rebuilt), each with a pastel panel colour",
+    "content.panelColors": "one pastel tint per screen, e.g. lilac, green, green, tan, aqua",
+    "timing.shot": "frames per screen at 30 fps (reference 98-127, about 3.5 s)",
+    "timing.iconHold": "frames the icon holds before the wordmark (reference 75)",
+    "timing.wordmarkHold": "frames the wordmark holds to the end (reference 89)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16"
+  },
+  "difficulty": "hard",
+  "render_cost": "medium",
+  "notes": "Measured from 4 fps sheets, 30 fps strips at t = 0, 18.5, 23.0, 25.4, and motion.json (block matching; rotation values not checked). Only 4 hard cuts are in cuts.json; the picture changes at 18.90 and 23.03 are near misses there, so they are written as continuous and called out in shot/motion. No element animation is visible at 4 fps: every shot lives on the camera move and the focus band. Speeds per shot in px/s are normalized to 1920 wide. Sfx planned by the glue rule, not measured (reference is silent). The slanted per-screen pastel panel has no studio component (see recipe.md Missing components).",
+  "status": "studied"
+}

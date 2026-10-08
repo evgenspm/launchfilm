@@ -1,0 +1,248 @@
+{
+  "id": "phone-macro-tilt-twin-icon",
+  "title": "Phone macro glide, twin phones, icon to wordmark",
+  "summary": "One phone rises to fill a flat acid-lime frame, then the camera glides in macro over its balance chart and tab bar, slides up the screen on a tilted low angle, pulls back to two phones, and closes on the app icon and a lowercase wordmark.",
+  "use_when": [
+    "A mobile finance or tracking app with one strong home screen (balance + chart + tab bar)",
+    "Silent social or landing-page loop where the product UI is the whole story",
+    "A loud single-colour brand background that can carry the frame without type",
+    "Teaser before launch: no copy lines, only the screen, the icon and the name"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/quJS563Q",
+    "author": "Raylight",
+    "ref_id": "rl-028"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "macro",
+    "tilt",
+    "fintech",
+    "home-screen",
+    "twin-phones",
+    "app-icon",
+    "wordmark",
+    "lime",
+    "silent",
+    "no-copy"
+  ],
+  "techniques": [
+    "device-phone",
+    "ui-rebuild",
+    "push-in",
+    "pull-out",
+    "dolly",
+    "tilt-plane",
+    "device-3d"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 23.67,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#D5FD4F",
+      "#FCFDFA",
+      "#101010",
+      "#2F312D",
+      "#BA665B",
+      "#428CD1"
+    ],
+    "type_style": "UI type only (small grotesk inside the phone, balance figure bold); close: lowercase grotesk wordmark, regular weight, about 3 % of frame height, centred",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone rises to fill the frame",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "phone swings out and the screen bottom swings in",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "twin phones slide up into frame",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "app icon lands",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "icon swaps to the wordmark",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.5,
+      "beat": "hook",
+      "shot": "one phone, small (about 35 % H) and slightly turned, centred on flat lime; home screen with balance, chart, tab bar",
+      "camera": "push-in 0.35 -> 1.0 of frame-filling phone in 15 fr, ending low so the phone's bottom crops",
+      "motion": "phone scale + straighten on springs.cameraIn 15 fr (overshoot not measurable, ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.5,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "upper half of the phone: status bar, balance figure, four tabs, red down day line, jagged pink line chart",
+      "camera": "drift: phone width +4 % over 60 fr, slow roll 0 -> 2 deg, slight rise",
+      "motion": "phone holds; continuous scale creep easings.inOutSine 60 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4.77,
+      "beat": "feature",
+      "shot": "closer on the balance and chart; phone pushed off the left edge so only its right two-thirds remain",
+      "camera": "push-in 1.0 -> 1.35 over 68 fr with a pan left (phone x 50 % -> 30 % of frame) and roll back to about -3 deg",
+      "motion": "camera on easings.inOutSine 68 fr; nothing moves inside the screen",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4.77,
+      "t1": 6.27,
+      "beat": "feature",
+      "shot": "phone swings up and out the top; its lower screen (card stack with badge, account card, tab bar) swings in from the top and settles mid-frame",
+      "camera": "whip tilt down the device: top half exits by 5.00, lower half settles 5.50 (±0.25 s)",
+      "motion": "device rotate + translate on springs.heavy about 20 fr (overshoot not measurable); 5.50-6.27 slow drift down-left 4 %",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.27,
+      "t1": 8.5,
+      "beat": "feature",
+      "shot": "macro on the tab bar: active first tab icon and label large, unread dot on the fourth tab; the frame travels along the tabs to the last one",
+      "camera": "push-in 1.0 -> 2.2 in 8 fr (±0.25 s), then dolly right across the tabs about 20 px/fr @1920 from 7.00 to 8.27",
+      "motion": "zoom on springs.cameraIn, then the lateral dolly on easings.inOutSine 38 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 8.5,
+      "t1": 9.23,
+      "beat": "feature",
+      "shot": "pulled back: whole lower screen of the phone with the account card, card stack and tab bar, phone bottom edge visible",
+      "camera": "pull-out 2.2 -> 1.0 in 8 fr (±0.25 s), then a small rise 9.00",
+      "motion": "springs.cameraOut 8 fr; hold 14 fr",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 9.23,
+      "t1": 12.75,
+      "beat": "feature",
+      "shot": "low angle on the phone's bottom edge (port, speaker holes), screen leaned far back; camera climbs up the screen past the tab bar, cards and buying power to the chart",
+      "camera": "tilt-plane lean about 60 deg with depth of field; dolly up the screen about 18 px/fr @1920, zoom +55 %/s at 9-11 s then +40 %/s",
+      "motion": "camera on easings.linear 105 fr; near edge sharp, far UI blurred; slight roll 0 -> 2 deg",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 12.75,
+      "t1": 15.07,
+      "beat": "feature",
+      "shot": "same tilted screen reaching the top: chart, then the balance, tabs and status bar with the phone's top edge against lime",
+      "camera": "dolly continues up but decelerates: about 11 px/fr at 13 s, 5 px/fr at 14.5 s; roll -2 deg",
+      "motion": "easings.outQuint 70 fr into the top edge; the top edge stops about 30 % below the frame top",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 15.07,
+      "t1": 18.75,
+      "beat": "feature",
+      "shot": "two phones, upright, offset: lower-left shows the top of the home screen, upper-right shows the lower screen with cards and tab bar",
+      "camera": "static frame; phones drift up slowly about 1 px/fr",
+      "motion": "both phones slide up from below the frame 15.07 -> 15.50 on springs.ui 13 fr (±0.25 s), staggered: right phone leads; then easings.linear drift",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 18.75,
+      "t1": 19.27,
+      "beat": "feature",
+      "shot": "both phones lean back and exit: left one flies up and off the top-left, right one drops off the bottom",
+      "camera": "static",
+      "motion": "tilt then exit on easings.inExpo 15 fr (±0.25 s), opposite directions",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 19.27,
+      "t1": 20.77,
+      "beat": "logo",
+      "shot": "the app icon, small white rounded square with the brand mark, centred on lime with a soft shadow",
+      "camera": "static",
+      "motion": "icon present in its first cell (entrance not measurable at 0.25 s); holds 45 fr",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 20.77,
+      "t1": 23.67,
+      "beat": "logo",
+      "shot": "the icon is replaced by the lowercase wordmark, one word, small, centred, black on lime",
+      "camera": "static",
+      "motion": "swap in one cell (±0.25 s); holds 87 fr to the end",
+      "transition_out": "end",
+      "sfx": "ui-confirm"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 2,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "TiltPlane",
+    "Camera",
+    "LineChart",
+    "Wordmark",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg = the loud flat colour (lime here), accent for the active tab and icon mark, fg for UI type",
+    "content.balance": "headline figure on the home screen",
+    "content.dayChange": "small coloured change line under the tabs",
+    "content.chart": "values for the jagged line chart (about 40 points, falling day)",
+    "content.subFigure": "secondary figure in the account card",
+    "content.card": "notification card: label, 2-line message, badge count",
+    "content.tabs": "5 tab labels + icons, one active, one with an unread dot",
+    "content.icon": "app icon image or mark for the close",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Measured from 4 fps sheets (±0.25 s). No copy at all: the screen, the icon and the name carry the film. The 9.23 shot needs a 3D phone model (bottom edge, port, speaker holes) leaned back with depth of field; PhoneFrame + TiltPlane only covers the screen. Chart is static (no draw-on), so chart-draw is not tagged. Proposed term: icon-wordmark-swap (rows 11-12). sfx planned by the glue rule, not measured: the reference is silent.",
+  "status": "studied"
+}

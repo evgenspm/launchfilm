@@ -1,0 +1,153 @@
+{
+  "id": "magnetic-cta-pointer-glow",
+  "title": "Magnetic pill button with a pointer light",
+  "summary": "One violet pill button on deep indigo. The cursor arrives, the pill swells about 1.45x and leans toward it, a soft inner light follows the pointer, then a press shrinks and whitens it and it settles back to rest. Loops.",
+  "use_when": [
+    "The CTA beat of an end card: one button, one action",
+    "A web demo or landing hero that needs a hover micro-interaction",
+    "A short seamless loop for a social post or a docs header",
+    "Showing that a product's UI reacts to the pointer"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/interactive-button-trace/",
+    "author": "Jitter",
+    "ref_id": "jt-012"
+  },
+  "family": "product-ui",
+  "tags": [
+    "cta",
+    "button",
+    "cursor",
+    "hover",
+    "magnetic",
+    "micro-interaction",
+    "end-card",
+    "web-demo",
+    "dark",
+    "loop",
+    "single-element"
+  ],
+  "techniques": [
+    "cursor-path",
+    "glow"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 5.77,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#140137",
+      "#6F3ECD",
+      "#9866EF",
+      "#C19FF5",
+      "#E1D4FA",
+      "#2E1770"
+    ],
+    "type_style": "geometric sans, medium weight, sentence case, near-black on the pill, 2-word label, cap height about 4 % H at rest and 6 % H at full hover",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "pointer press on the pill (about 4.43 s)",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "small violet pill with a 2-word action label, slightly above centre on flat indigo; cursor enters below it at 0.27",
+      "camera": "locked frame, no camera move (motion.json zoom and pan are the pill itself on a flat background)",
+      "motion": "cursor fades in under the pill by 0.27 (±0.25 s); pill width 1.00 to 1.36 and drifts down about 8 % H toward the pointer, springs.layout, continuous over 30 fr (overshoot not measurable)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1,
+      "t1": 2,
+      "beat": "cta",
+      "shot": "pill at full hover size, cursor parked just off its right end; the pill leans right and up after it",
+      "camera": "locked frame, no camera move",
+      "motion": "width 1.36 to 1.48 by 1.27, then holds; pill centre follows the pointer with lag (springs.ui, about 12 fr behind, ±0.25 s); inner light sits at the right end nearest the cursor",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2,
+      "t1": 4,
+      "beat": "cta",
+      "shot": "cursor sweeps over the pill right to left and back; a white-pink inner light moves under the pointer",
+      "camera": "locked frame, no camera move",
+      "motion": "pill holds 1.48 width and translates with the cursor, drift down to 2.50 then up to 3.77 (springs.ui follow); inner radial light tracks the pointer x every cell, about 40 % of pill width (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4,
+      "t1": 5,
+      "beat": "cta",
+      "shot": "cursor rests on the lower middle of the pill and presses; the pill shrinks, flashes pale, and returns to its rest size and place",
+      "camera": "locked frame, no camera move",
+      "motion": "from 4.07 width 1.48 to 0.65 of hover size by 4.43 (about 11 fr, springs.click); fill whitens from the pointer at 4.37 to 4.57 (about 6 fr); release eases back to rest width 1.00 by 4.87 (springs.ui, 9 fr); pill returns to its start position",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 5,
+      "t1": 5.77,
+      "beat": "cta",
+      "shot": "rest pill alone, cursor fading out under it; frame matches 0.00 for the loop",
+      "camera": "locked frame, no camera move",
+      "motion": "cursor opacity 1 to 0 between 5.00 and 5.40 (±0.25 s, easings.linear); pill holds still for 11 fr at rest",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Cursor",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the backdrop, accent and accent2 for the pill gradient, fg for the label",
+    "content.label": "button label, 1 to 3 words, an action",
+    "cursor.path": "cursor keyframes in frames at 30 fps; default enters below at f8, parks right at f38, sweeps f60 to f120, presses at f133",
+    "hoverScale": "pill width at full hover vs rest (default 1.48)",
+    "pressScale": "pill size at the bottom of the press vs hover (default 0.65)",
+    "follow": "share of the pointer offset the pill travels toward it (default 0.35)",
+    "light.radius": "inner light radius as a share of pill width (default 0.4)",
+    "loop": "end on the exact start frame (default true)",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets and 30 fps strips at 0.5 s and 3.9 s. Pill widths in sheet cells: 168 px rest (0.00), 230 (1.00), 245 to 251 (1.27 to 3.77), 207 (4.00), 110 at the press bottom (strip, about 4.43), 159 to 170 back at rest (4.77 to 5.50). The magnetic follow and the pointer-tracked inner light are proposed terms (magnetic-hover, pointer-light), not vocabulary ids. The catalogue hint of an outline that draws itself on press was not seen in the sheets or the 30 fps strip; orbit, island-morph and highlighter were not seen either. sfx planned by the glue rule, not measured (the reference is silent). Loop: the 5.50 cell matches 0.00 in size and position.",
+  "status": "studied"
+}

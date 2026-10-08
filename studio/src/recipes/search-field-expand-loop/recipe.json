@@ -1,0 +1,154 @@
+{
+  "id": "search-field-expand-loop",
+  "title": "Round button opens into a search field",
+  "summary": "A round magnifier button on a violet gradient is tapped, stretches right into a wide field while its glyph flips into a caret, idles with a blinking caret, then folds back into the button. A seamless 6 s loop for search entry points.",
+  "use_when": [
+    "Introducing a search or command input before showing results",
+    "A looping hero or social clip for a product whose entry point is one field",
+    "An intro beat in a longer UI film, followed by a typing shot",
+    "Silent autoplay where one tidy UI gesture has to carry the frame"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/search-bar-reveal/",
+    "author": "Jitter",
+    "ref_id": "jt-011"
+  },
+  "family": "product-ui",
+  "tags": [
+    "search",
+    "input-field",
+    "button-to-field",
+    "caret",
+    "loop",
+    "ui-element",
+    "light",
+    "gradient",
+    "silent",
+    "entrance"
+  ],
+  "techniques": [
+    "morph",
+    "ui-rebuild"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 6,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#824DE9",
+      "#EBE2FD",
+      "#976FE9",
+      "#AF94E4",
+      "#BFABE6"
+    ],
+    "type_style": "light grotesk placeholder, sentence case, normal tracking, cap height ~11 % H, muted grey-violet on a pale lilac field; dark 2-px-equivalent caret",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "tap on the round button (touch dot appears)",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "field stretches open / folds closed",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "button settles back to a circle",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "round lilac button with a magnifier on a violet top-to-lilac gradient; tapped, it stretches right into a wide field past the frame edge",
+      "camera": "static (button and field height constant, 29 % H, across the row)",
+      "motion": "left edge pinned at 39 % W; width grows right, springs.ui ~15 fr (±0.25 s, overshoot not measurable); corners pill to ~17 % of height by 1.00; glyph flips on its vertical axis into a caret by 0.77; placeholder fades in 0.27-0.50; translucent touch dot under the field fades out by 1.00",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 1,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "open field with a one-word placeholder and a blinking caret; nothing is typed",
+      "camera": "static",
+      "motion": "caret blink period 30 fr (1.0 s, ±0.25 s): on at x.00 and x.77, dim at x.27, off at x.50; soft fade, not a hard toggle; field holds still",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 4,
+      "t1": 4.77,
+      "beat": "hook",
+      "shot": "field folds back left into the round button; caret flips back into the magnifier",
+      "camera": "static",
+      "motion": "caret tilts at 4.00, magnifier back by 4.27; width shrinks to a short pill at 4.50 and a circle at 4.77, springs.ui ~23 fr (±0.25 s, overshoot not measurable); placeholder fades out with the width, clipped by the right edge",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4.77,
+      "t1": 6,
+      "beat": "hook",
+      "shot": "round magnifier button alone on the gradient, identical to frame 0",
+      "camera": "static",
+      "motion": "hold 37 fr; no movement; end matches the first frame so the clip loops",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PillMorph",
+    "useTypewriter",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (gradient top), accent (gradient bottom), surface for the field, muted for the placeholder, fg for glyph and caret",
+    "content.placeholder": "placeholder in the open field, 1-2 words",
+    "content.icon": "glyph in the closed button (default magnifier)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16 | 4:3 (reference is 1322x992); button height 29 % H, left edge at 39 % W",
+    "timing.openAt": "frame the tap lands (default 2)",
+    "timing.hold": "frames the open field idles with the caret blinking (default 90)",
+    "timing.blinkPeriod": "caret blink period in frames (default 30)",
+    "loop": "true = end on frame 0's layout (default)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s). No cuts, no camera move: the motion.json zoom values come from the field width changing, not a camera. The catalogue hint mentions typing and result states, but the sheets show none: the field only idles with a blinking caret for 3.00 s. Field runs off the right edge of the frame on purpose. Proposed terms (not in vocabulary): caret-blink, touch-dot, glyph-flip. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

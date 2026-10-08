@@ -1,0 +1,167 @@
+{
+  "id": "landing-blocks-arc-letters",
+  "title": "Landing page blocks with arcing hero letters",
+  "summary": "A rebuilt landing page fades up on a pale backdrop; the headline rises out of line masks, block copy and avatars cascade in, and one word's letters swing along an arc into a vertical stack beside the hero photo. Holds, then fades out.",
+  "use_when": [
+    "Showing a website or landing page design as a short silent loop",
+    "A studio or agency portfolio post where one page layout is the subject",
+    "Opening a site launch film on the hero section before a scroll tour",
+    "Social cutdowns that need one calm 5 s product moment"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/landing-page-blocks/",
+    "author": "Jitter",
+    "ref_id": "jt-026"
+  },
+  "family": "product-ui",
+  "tags": [
+    "landing-page",
+    "website",
+    "hero",
+    "bento-blocks",
+    "mask-rise",
+    "arc-text",
+    "light",
+    "loop",
+    "silent",
+    "portfolio"
+  ],
+  "techniques": [
+    "ui-rebuild",
+    "mask-rise",
+    "card-grid",
+    "mesh-gradient"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#CFD1DD",
+      "#000000",
+      "#DCC0C3",
+      "#F0F1F0",
+      "#D5D3D4",
+      "#756C6F"
+    ],
+    "type_style": "heavy geometric grotesk headline, sentence case, tight leading, 3 lines at ~8 % H; arc word in a wide monospace lowercase ~7 % H; small regular sans body ~2.5 % H",
+    "treatment": [
+      "mesh-gradient"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "headline lines rise out of their masks",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "avatars pop in",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.27,
+      "beat": "hook",
+      "shot": "empty pale backdrop, then the page card with nav bar, hero panel with cutout portrait and three empty lower blocks fades up",
+      "camera": "locked; page card rises ~1 % H while fading in",
+      "motion": "f0 empty; page opacity 0 to 1 and rise ~1 % H f1 to f6, easings.outExpo 6 fr; blocks and portrait arrive with the page, not staggered",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.27,
+      "t1": 1,
+      "beat": "reveal",
+      "shot": "hero headline, 3 short lines, rises in; pill button, quote block copy and mission copy fade in; arc letters start entering top right",
+      "camera": "locked",
+      "motion": "headline lines mask-rise from f8, line stagger ~2 fr, springs.maskRise ~10 fr (overshoot not measurable); target icon fades f12; pill fades f14 to f18; left block copy f13 to f22, middle block copy f16 to f24, easings.outQuint; avatars pop f22, f25, f28, springs.pop (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1,
+      "t1": 2,
+      "beat": "feature",
+      "shot": "letters of one 6-letter word swing along an arc around the portrait and settle as a vertical stack; two small glyph icons appear beside them",
+      "camera": "locked",
+      "motion": "letters travel a clockwise arc from the top-right corner, each rotating to its final angle, start f12, settle ~f57, easings.outQuint ~45 fr, letter stagger ~3 fr (±0.25 s); asterisk glyph fades f35, half-disc glyph f48",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2,
+      "t1": 4.4,
+      "beat": "feature",
+      "shot": "finished landing page holds: headline, button, three blocks, arc word, gradient orb block",
+      "camera": "static",
+      "motion": "no element moves; gradient orb in the right block shifts hue slowly (blue toward mint), easings.linear across the hold",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 4.4,
+      "t1": 5,
+      "beat": "feature",
+      "shot": "the whole page fades into the pale backdrop and shrinks slightly; last cells show the empty backdrop, matching frame 0",
+      "camera": "locked; page scales 1.00 to 0.97",
+      "motion": "page opacity 1 to 0 and scale 1.00 to 0.97 f132 to f143, easings.inOutSine 11 fr; empty backdrop f143 to f150",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 6,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS",
+    "BlurIn",
+    "Surface",
+    "BrandBackdrop"
+  ],
+  "params": {
+    "brand": "any brand.json: display font for the headline, mono for the arc word, bg for the backdrop, accent for the pill button gradient",
+    "content.wordmark": "site wordmark in the nav, top left",
+    "content.nav": "3 nav labels plus one dark pill button label",
+    "content.headline": "hero statement, 3 short lines, 1 to 2 words each",
+    "content.cta": "pill button label, 2 words",
+    "content.arcWord": "one word of 4 to 7 letters that swings along the arc",
+    "content.blocks": "two lower blocks: a short quote paragraph (4 lines) and a mission line (3 lines) with a team label",
+    "content.portrait": "cutout portrait or product image for the hero panel (transparent PNG)",
+    "content.avatars": "3 small avatar images or initials",
+    "timing.hold": "frames the finished page holds before the exit (default 72)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; blocks restack below the hero for tall aspects",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips at t = 0, 1, 4 s (480 px wide): page fade-up 6 fr, headline from f8, arc letters f12 to ~f57, exit f132 to f143. No camera move: motion.json reports zoom of -1 to -3.5 %/s but frame diff is ~0 from 2 to 4 s, so it is noise. Loops cleanly because frame 0 and the last frames are both the empty backdrop. Proposed term arc-letters (letters travel along a curved path and rotate into a vertical word) is not in the vocabulary and is not used in techniques. sfx planned by the glue rule, not measured; the reference is silent.",
+  "status": "studied"
+}

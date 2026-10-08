@@ -1,0 +1,158 @@
+{
+  "id": "phone-row-step-glide",
+  "title": "Phone screen row that steps one card per beat",
+  "summary": "A row of tall phone-screen cards on a light-to-grey floor glides left one card pitch about every 2.15 s: a fast eased slide, then a slow creep. One continuous move tours many screens with no cuts.",
+  "use_when": [
+    "Touring 6-10 mobile app screens in one silent loop",
+    "A product page hero or social loop where screenshots carry the message",
+    "A feature-tour beat inside a longer mobile launch film",
+    "A calm, minimal brand voice with no VO and no SFX"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/mobile-screens-slider/",
+    "author": "Rico®",
+    "ref_id": "jt-035"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "carousel",
+    "screenshots",
+    "feature-tour",
+    "loop",
+    "no-cuts",
+    "minimal",
+    "light",
+    "silent",
+    "screen-row"
+  ],
+  "techniques": [
+    "dolly",
+    "speed-ramp",
+    "device-phone"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 12.87,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#E1E2E4",
+      "#0D0E0D",
+      "#797A7B",
+      "#060606",
+      "#A6A8A9",
+      "#D5D6D9"
+    ],
+    "type_style": "small regular grotesk label top-left on each card, sentence case, about 2.8 % of H, white; tiny mono labels in a footer row, about 1.2 % of H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "row starts each one-card slide",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.27,
+      "beat": "hook",
+      "shot": "three tall dark screen cards in a row, one centred, neighbours cut by the frame edges; light top, grey floor gradient, footer row",
+      "camera": "dolly left, one card pitch (436 px at 1120 W = 39 % W) per step; step 1 at 0.27-1.00",
+      "motion": "slide 85 % of pitch, easings.inOutSine 22 fr (±0.25 s), then easings.linear creep ~15 % pitch over 30 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2.27,
+      "t1": 4.5,
+      "beat": "feature",
+      "shot": "next card slides into the centre slot; same row, same floor",
+      "camera": "dolly left one pitch, step 2 at 2.27-3.00",
+      "motion": "same step: easings.inOutSine 22 fr (±0.25 s), peak speed 2.50-2.77; creep after",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4.5,
+      "t1": 6.77,
+      "beat": "feature",
+      "shot": "next card takes the centre slot",
+      "camera": "dolly left one pitch, step 3 at 4.50-5.27",
+      "motion": "same step, 23 fr (±0.25 s); hold-creep 5.27-6.77",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 6.77,
+      "t1": 8.77,
+      "beat": "feature",
+      "shot": "next card takes the centre slot; row scale dips about 1 % during the slide",
+      "camera": "dolly left one pitch, step 4 at 6.77-7.50; scale 1.00 -> 0.99 -> 1.00 (±0.25 s)",
+      "motion": "same step, 22 fr (±0.25 s); creep 7.50-8.77",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 8.77,
+      "t1": 11,
+      "beat": "feature",
+      "shot": "next card takes the centre slot",
+      "camera": "dolly left one pitch, step 5 at 8.77-9.50",
+      "motion": "same step, 22 fr (±0.25 s); creep 9.50-11.00",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 11,
+      "t1": 12.87,
+      "beat": "feature",
+      "shot": "last step; final frame matches the first layout, so the clip loops",
+      "camera": "dolly left one pitch, step 6 at 11.00-11.77",
+      "motion": "same step, 23 fr (±0.25 s); creep to the end, lands on the frame-0 layout",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 9,
+    "screenshots": 9,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "Surface",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg (light top), fg, muted for the floor gradient, mono for the footer, logo for cards and footer",
+    "content.screens": "6-10 screenshots in phone aspect (~0.46 w/h), one per card",
+    "content.labels": "one short label per card, 1-3 words, top-left",
+    "content.footer": "up to 3 tiny mono labels in the footer row ('' = none)",
+    "timing.period": "frames between step starts (default 65 = 2.15 s at 30 fps)",
+    "timing.step": "frames of the eased slide (default 22)",
+    "timing.creep": "share of the pitch covered by the slow creep (default 0.15)",
+    "layout.cardWidth": "card width as share of W (default 0.29)",
+    "layout.pitch": "card pitch as share of W (default 0.39)",
+    "aspect": "4:5 | 1:1 | 9:16 | 16:9; card height ~50 % of H, row centred at 50 % H"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s, no 30 fps strip). Zero cuts in one 12.87 s shot; rows split at each step start. Step starts 0.27, 2.27, 4.50, 6.77, 8.77, 11.00 s (period 2.0-2.27, mean 2.15 s); each moves ~85 % of the pitch in ~22 fr with the peak in the middle (inOut profile), the rest is a slow creep (~185 px/s at 1920 W from motion.json in the quiet seconds vs ~400-500 px/s in step seconds). Card 324x705 px at 1120x1400, radius ~24 px, pitch 436 px, top at 25 % H; a hairline divides each card at mid height. Cards in the reference are empty placeholders. sfx planned by the glue rule, not measured (reference is silent). Proposed term step-carousel (recipe.md), not in recipe.json. Catalogue hints horizon-arc, mask-wipe, slide-push were not seen in any cell.",
+  "status": "studied"
+}

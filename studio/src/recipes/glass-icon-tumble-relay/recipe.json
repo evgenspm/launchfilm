@@ -1,0 +1,183 @@
+{
+  "id": "glass-icon-tumble-relay",
+  "title": "Glass icon tumble relay over ribbon waves",
+  "summary": "Three thick glass app tiles with white line glyphs tumble in one after another over a pastel iridescent ribbon field, settle centre, float, and hand over to the next. One locked shot, no copy: the material is the message.",
+  "use_when": [
+    "Showing three features or app sections as icons, no UI needed",
+    "A premium, calm silent loop for a landing hero or social post",
+    "Opening an app announcement before the product UI appears",
+    "Brands with a light, glossy, glass-heavy visual language"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/4ZIHIahT",
+    "author": "Raylight",
+    "ref_id": "rl-102"
+  },
+  "family": "3d-device",
+  "tags": [
+    "glass",
+    "icon",
+    "3d",
+    "tumble",
+    "iridescent",
+    "waves",
+    "loop",
+    "no-copy",
+    "light",
+    "app-icons",
+    "silent"
+  ],
+  "techniques": [
+    "liquid-glass",
+    "physics",
+    "continuous",
+    "end"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 12.4,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#56EAFB",
+      "#6CB2EA",
+      "#2C67B2",
+      "#AA9EE8",
+      "#B7CBF3",
+      "#6588D0"
+    ],
+    "type_style": "no type; white rounded line glyphs (stroke ~8 % of tile width), extruded with visible thickness",
+    "treatment": [
+      "liquid-glass"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "glass tile tumbles into frame",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "tile settles at centre",
+        "sound": "shimmer",
+        "origin": "planned"
+      },
+      {
+        "event": "last tile lifts out of the top edge",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.75,
+      "beat": "hook",
+      "shot": "empty iridescent ribbon wave field; glass tile 1 (home-type glyph) rises edge-on from the bottom edge and tumbles to centre",
+      "camera": "locked-off; background unchanged 0.00 vs 12.27; motion.json 1.4 %/s zoom in s1 is the tile growing, not the camera",
+      "motion": "tile enters at 0.27 edge-on (yaw ~90 deg), rotates to face camera while rising from below frame to centre, scale ~0.5 to 1.0; springs.heavy ~36 fr (overshoot not measurable, ±0.25 s); faces camera by 1.50",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1.75,
+      "t1": 4,
+      "beat": "reveal",
+      "shot": "tile 1 floats centre-left of frame, glass refracts the ribbons behind it",
+      "camera": "locked-off",
+      "motion": "idle float: drift of a few px and ~1-2 deg tilt, easings.inOutSine (suggested, below sheet resolution); at 3.77 tile starts to shrink and lift up-right",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4,
+      "t1": 5,
+      "beat": "feature",
+      "shot": "tile 2 (globe glyph) swings in large from the left foreground while tile 1 recedes small up-right and leaves",
+      "camera": "locked-off",
+      "motion": "tile 1 exit: scale 1.0 to ~0.5, moves up-right, gone by 4.50; tile 2: enters at 4.27 near edge-on and ~2x final size, yaw unwinds and scale 2.0 to 1.0 by 5.00, springs.heavy ~24-30 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "tile 2 settles and floats centre-left",
+      "camera": "locked-off",
+      "motion": "small residual rotate-in 5.00 to 5.75, then idle float as row 2; recede begins at 7.77",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 8,
+      "t1": 9.25,
+      "beat": "feature",
+      "shot": "tile 3 (tray glyph) slides in from the right, edge-on and large, knocking tile 2 away to the upper left",
+      "camera": "locked-off",
+      "motion": "tile 2 exit: scale to ~0.6 and slide up-left, hidden behind tile 3 by 8.27; tile 3 enters at 8.00 from right edge yawed ~70 deg, unwinds with a roll of ~10 deg, scale ~1.3 to 1.0, faces camera by 9.25, springs.heavy ~36 fr (±0.25 s); motion.json pan -32 px/s in s9 = tile settling leftwards",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 9.25,
+      "t1": 11.75,
+      "beat": "feature",
+      "shot": "tile 3 floats centre-left",
+      "camera": "locked-off",
+      "motion": "idle float as row 2; from 11.00 starts drifting up",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 11.75,
+      "t1": 12.4,
+      "beat": "feature",
+      "shot": "tile 3 lifts up out of the top edge; the empty wave field returns, matching frame 0",
+      "camera": "locked-off",
+      "motion": "tile rises and shrinks, easings.inExpo ~15 fr (±0.25 s); off frame by 12.27; empty field holds to the loop point",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "LineGlyph",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: accent tints the ribbon gradient; glyph colour stays white",
+    "content.icons": "3 line glyph names (LineGlyph set or custom SVG paths), one per tile",
+    "timing.period": "frames per tile (default ~120 at 30 fps: 4 s, entry ~36 fr, float, exit ~15 fr)",
+    "entries": "per tile entry side and yaw: bottom / left foreground / right (default as reference)",
+    "loop": "end on the empty field so the last frame matches frame 0 (default true)"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "One shot, 0 cuts, silent. Each tile owns ~4 s; entries alternate direction (bottom, left foreground, right). Sfx planned by the glue rule, not measured (reference is silent). Spring choices, float amplitude and exit easing are suggestions: the 4 fps sheets cannot show overshoot. Proposed terms (not in vocabulary): glass-icon-tile (thick glass app tile with extruded white glyph), ribbon-wave-field (static iridescent 3D ribbon background), tile-relay (next object enters as the previous exits). physics tag = rigid-body tumble and the push-out at 8.00-8.27, not a measured simulation.",
+  "status": "studied"
+}

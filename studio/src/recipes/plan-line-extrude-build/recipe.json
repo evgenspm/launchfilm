@@ -1,0 +1,336 @@
+{
+  "id": "plan-line-extrude-build",
+  "title": "Point to line to plan to built place",
+  "summary": "A single dot stretches into a line, the line draws a floor plan, the plan tilts into 3D and extrudes into lit volumes inside a growing site, with figure callouts and two short statements, then rewinds to the line and the wordmark.",
+  "use_when": [
+    "Architecture, real estate, construction or spatial-design products that turn drawings into places",
+    "A build-from-nothing story where the object assembles in one continuous camera move",
+    "A slow, premium loop for a site hero or showroom screen",
+    "Showing 3-4 project figures over a hero object without a UI"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/31WSJcqS",
+    "author": "yousef.M Hamarneh",
+    "ref_id": "rl-075"
+  },
+  "family": "launch-film",
+  "tags": [
+    "architecture",
+    "3d-build",
+    "line-draw",
+    "floor-plan",
+    "extrude",
+    "one-shot",
+    "dark",
+    "minimal",
+    "stats",
+    "rewind",
+    "real-estate"
+  ],
+  "techniques": [
+    "logo-from-dot",
+    "statement-sequence",
+    "push-in",
+    "pull-out",
+    "orbit-3d"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 72,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#DAD9CF",
+      "#B8B5A6",
+      "#848475",
+      "#4F554B",
+      "#2C2C2C"
+    ],
+    "type_style": "thin geometric sans, all caps, wide tracking (~0.2 em), wordmark ~8 % H with a hairline warm-tan rule under it; side caption and statements small caps ~2 % H; figures light sans ~6 % H with tiny tracked caps labels",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "dot appears and stretches into a line",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "wordmark rises above the line",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "walls and volumes settle while extruding",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "each figure callout lands",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "streets and neighbour blocks grow around the building",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "build rewinds to the plan and the line",
+        "sound": "reverse-cymbal",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.75,
+      "beat": "hook",
+      "shot": "black; a single dot appears centre and stretches into a short horizontal line",
+      "camera": "static",
+      "motion": "dot visible from 0.50; line grows both ways to ~25 % W by 1.50, easings.inOutSine ~30 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.75,
+      "t1": 3,
+      "beat": "logo",
+      "shot": "wordmark, one word in tracked caps, sits on the line as its underline; fades out leaving the line",
+      "camera": "static",
+      "motion": "wordmark fades up 1.75 (one cell, ±0.25 s), holds ~22 fr, fades by 2.77 over ~8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 3,
+      "t1": 6.25,
+      "beat": "reveal",
+      "shot": "the line slides right and splits into strokes that draw a floor plan of three rooms; two-line side caption on the left names the idea",
+      "camera": "static",
+      "motion": "strokes draw on in sequence 3.27-5.00 (rooms close at 4.50, inner walls by 5.00), easings.linear per stroke; caption fades in at 3.77, out by 6.25",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 6.25,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "finished plan alone, moves to centre and grows to fill the frame width",
+      "camera": "push-in 1.00 -> 1.55 (plan width) 6.25-7.00 with a pan from right to centre, then hold to 8.00",
+      "motion": "camera springs.cameraIn ~22 fr (overshoot not measurable); plan static",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 8,
+      "t1": 10,
+      "beat": "feature",
+      "shot": "plan tilts back into perspective; columns rise, translucent sage walls extrude, then solid cream volumes on a dark base slab",
+      "camera": "orbit-3d: from top-down to ~40 deg elevation and ~15 deg roll in 0.75 s (8.00-8.77), slight scale-down",
+      "motion": "columns 8.77, walls 9.00-9.50 rising from the plan, solid volumes 9.77-10.00; each layer easings.outQuint ~10 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 10,
+      "t1": 12.5,
+      "beat": "feature",
+      "shot": "volumes gain glazing, frames and a courtyard; interiors light warm amber",
+      "camera": "orbit-3d hold at the 3/4 aerial angle, drift ~1 %/s",
+      "motion": "facades cut open 10.50, courtyard 10.77, warm interior light switches on 11.27 (one cell, ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 12.5,
+      "t1": 17.25,
+      "beat": "proof",
+      "shot": "project figures appear in two slots above the building, left and right: number plus tiny caps label, four in total, two at a time",
+      "camera": "drift: slow scale creep ~1.3 %/s",
+      "motion": "slot L in 12.50, slot R in 13.27, L out 14.50 and next L in 14.77, R out 15.00 and next R in 15.50, L out 16.77, R out 17.00; each fade ~8 fr (±0.25 s), ~2 s holds",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 17.25,
+      "t1": 22.25,
+      "beat": "feature",
+      "shot": "site lines draw around the building (plot and street outlines); two short statements in turn above it: 3 words, then 2 words",
+      "camera": "pull-out: building width 1.00 -> 0.58 from 17.75 to 19.00, then hold",
+      "motion": "site strokes draw 17.77-19.00 easings.linear; statement 1 fades in 18.27-18.50, holds to 20.00, out 20.27; statement 2 in 20.77, out by 22.00; camera springs.cameraOut ~38 fr",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 22.25,
+      "t1": 27,
+      "beat": "feature",
+      "shot": "outlined streets fill solid sage, neighbour blocks and hedges rise around the plot: a full place",
+      "camera": "slight push-in ~1.2x 23.00-24.00, then hold",
+      "motion": "streets fill as a wipe from the left 22.50-23.27, blocks extrude 23.50-24.27 easings.outQuint ~10 fr (±0.25 s); hold 2.7 s",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 27,
+      "t1": 29.5,
+      "beat": "feature",
+      "shot": "rewind: the site vanishes, the building strips back to bare volumes, walls, slab and plan, which shrinks to the line",
+      "camera": "orbit-3d back to top-down 27.75-28.50, then pull-out as the plan shrinks",
+      "motion": "each layer removed per cell 27.27, 27.50, 27.77, 28.00; plan flat by 28.77; shrinks to the line 29.00-29.50 easings.inExpo ~15 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "reverse-cymbal"
+    },
+    {
+      "t0": 29.5,
+      "t1": 31,
+      "beat": "logo",
+      "shot": "wordmark on the line with a one-line tagline under it, then fade to black",
+      "camera": "static",
+      "motion": "wordmark fades up 29.77, tagline by 30.00, hold ~22 fr, fade to black by 31.00 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 31,
+      "t1": 34,
+      "beat": "logo",
+      "shot": "second cycle: black, dot, line, larger wordmark on its rule, fades out leaving the line",
+      "camera": "static",
+      "motion": "dot 31.50, line 32.00-32.50, wordmark 32.77 holds to 33.50, fades 33.77 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 34,
+      "t1": 39,
+      "beat": "feature",
+      "shot": "line slides right and draws the same plan with the side caption; caption out, plan pushed to full width",
+      "camera": "push-in 1.00 -> 1.55 37.25-38.00 with pan to centre, hold to 39.00",
+      "motion": "repeat of rows 3-4 at the same frame offsets (+31.00 s): strokes 34.27-36.00, caption 34.77-37.00",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 39,
+      "t1": 43.5,
+      "beat": "feature",
+      "shot": "tilt and extrude again into the finished building; interiors stay cool, only a faint warm cast",
+      "camera": "orbit-3d same move as row 5, 39.00-39.77",
+      "motion": "repeat of rows 5-6 (+31.00 s); facade 41.50-42.00",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 43.5,
+      "t1": 48.25,
+      "beat": "proof",
+      "shot": "the same four figures in the two slots",
+      "camera": "drift ~1.3 %/s",
+      "motion": "repeat of row 7 (+31.00 s): L 43.50, R 44.27, swaps 45.50 / 45.77 / 46.50, out 47.77 / 48.00",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 48.25,
+      "t1": 53.25,
+      "beat": "feature",
+      "shot": "site lines draw, camera pulls out, the two statements in turn",
+      "camera": "pull-out 1.00 -> 0.58 48.75-50.00",
+      "motion": "repeat of row 8 (+31.00 s): statement 1 49.27-51.00, statement 2 51.77-53.00",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 53.25,
+      "t1": 58.25,
+      "beat": "feature",
+      "shot": "streets fill, blocks rise, then the camera dives closer over the finished place",
+      "camera": "push-in 1.00 -> 1.45 (building width) 54.27-55.00, hold",
+      "motion": "street wipe 53.50-54.27, blocks 54.50-54.77, camera springs.cameraIn ~22 fr; hold 3 s",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 58.25,
+      "t1": 60.75,
+      "beat": "feature",
+      "shot": "rewind to bare volumes, slab, plan and line",
+      "camera": "orbit-3d back to top-down 59.00-59.75",
+      "motion": "repeat of row 10 (+31.00 s): layers per cell 58.27-59.27, plan flat 59.77, line 60.50",
+      "transition_out": "continuous",
+      "sfx": "reverse-cymbal"
+    },
+    {
+      "t0": 60.75,
+      "t1": 62,
+      "beat": "logo",
+      "shot": "wordmark with tagline under the rule",
+      "camera": "static",
+      "motion": "wordmark 60.77, tagline 61.00, hold to 61.77, plan replaces it at 62.00 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 62,
+      "t1": 72,
+      "beat": "outro",
+      "shot": "variant build: rectangular site plan with grid and core, tilts, slab with core and columns, monolithic volumes; then the original plan returns and extrudes once more to the facade stage",
+      "camera": "orbit-3d: tilt 63.00-63.77, hold aerial 64-67; snap back to top-down 67.00, tilt again 68.27-68.77",
+      "motion": "site rectangle hold 62.00-63.00; walls 63.50, columns 64.00, slab darkens 64.50, volumes 65.27-65.77, hold to 67.00; plan 67.00-68.00; extrude 68.77-70.50; facade 70.77-71.77 (repeat of rows 5-6)",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 3,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 4,
+    "url": false
+  },
+  "components": [
+    "Wordmark",
+    "StatRow",
+    "Stat",
+    "StatementSequence",
+    "Camera",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: thin display font, fg off-white, accent for the hairline rule, bg black",
+    "content.name": "one-word wordmark, set in tracked caps over the line",
+    "content.tagline": "one short line under the rule at the close",
+    "content.caption": "two-line side caption during the plan draw, <= 5 words",
+    "content.statements": "two short statements in turn over the site, 3 and 2 words",
+    "content.stats": "4 figures {value, label}, shown two at a time in left/right slots",
+    "plan": "floor-plan geometry: rooms as rectangles with inner wall strokes, extruded heights per room",
+    "cycles": "1 or 2 build cycles (reference runs the 31 s cycle twice plus a 10 s variant)"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "One continuous shot: cuts.json has 0 cuts (near-miss at 67.00 is the plan snapping back, not a cut), so every transition is continuous. The 31 s cycle (rows 1-11) repeats at +31.00 s with small differences (larger wordmark, cool interiors, a push-in over the finished site). Times from the 4 fps sheets (±0.25 s); fades, stroke speeds and layer durations below 0.25 s are defaults. Spring choices are suggested: overshoot not measurable at 4 fps. Camera scales measured from object widths on the sheets. Audio: no music, no VO; audio.json shows non-music sound events between 0 and 30.7 s and silence after 30.69 s; their kind could not be identified, so all sfx are planned by the glue rule, not measured. Proposed terms (not in vocabulary): plan-draw, extrude-build, build-rewind, site-grow, stat-callout.",
+  "status": "studied"
+}

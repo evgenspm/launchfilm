@@ -1,0 +1,262 @@
+{
+  "id": "product-ui-plane-tour",
+  "title": "Tilted UI plane feature tour",
+  "summary": "A dark product interface travels past the camera in six capability stops, cuts to a resource grid, then resolves into a glowing mark, short promise, and typed URL.",
+  "use_when": [
+    "A multi-screen product needs a compact capability tour",
+    "The interface can be rebuilt as one continuous spatial canvas",
+    "A silent launch cut needs readable UI and a clear closing URL"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/4tL1d6mA",
+    "author": "William Popoola",
+    "ref_id": "rl-019"
+  },
+  "family": "product-ui",
+  "tags": [
+    "product-ui",
+    "tilted-plane",
+    "feature-tour",
+    "dark",
+    "silent",
+    "camera-led",
+    "url-close"
+  ],
+  "techniques": [
+    "tilt-plane",
+    "dolly",
+    "push-in",
+    "ui-rebuild",
+    "slide-push",
+    "hard-cut",
+    "blur-dissolve",
+    "mask-wipe",
+    "light-on",
+    "end-card",
+    "typewriter",
+    "glow",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 28.2,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#0C0D0E",
+      "#CFD3DC",
+      "#506CA9",
+      "#A45247",
+      "#878581",
+      "#2E374B"
+    ],
+    "type_style": "bold rounded grotesk for the opening at 8-10 % of frame height; compact sans UI at 2-4 %; medium grotesk close at 5 %",
+    "treatment": [
+      "glow",
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "camera arrives at the next interface region",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "resource-card grid replaces the interface",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "resource grid dissolves to the mark",
+        "sound": "reverse-cymbal",
+        "origin": "planned"
+      },
+      {
+        "event": "mark lights on",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "URL types on screen",
+        "sound": "type-click",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4.27,
+      "beat": "hook",
+      "shot": "dark landing UI with a two-clause hero promise, two actions, and a floating result card",
+      "camera": "tilt-plane; dolly right at about 94 px/s @1920 with push-in 1.00->1.10 over 128 fr",
+      "motion": "plane appears by easings.outExpo over about 8 fr (±0.25 s); camera uses easings.inOutSine for 128 fr",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 4.27,
+      "t1": 7,
+      "beat": "feature",
+      "shot": "single-column sign-in panel with provider, credential, recovery, and primary-action controls",
+      "camera": "tilt-plane; vertical dolly about 39 px/s @1920, scale nearly constant over 82 fr",
+      "motion": "shared UI plane moves on easings.inOutSine for 82 fr; no separate element entrance is visible",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 7,
+      "t1": 9,
+      "beat": "feature",
+      "shot": "upload workspace with a short status line, large drop zone, file formats, and one browse action",
+      "camera": "tilt-plane; lateral dolly about 118 px/s @1920 over 60 fr, scale nearly constant",
+      "motion": "shared UI plane moves on easings.inOutSine for 60 fr; focus stays on the drop zone",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 9,
+      "t1": 11.77,
+      "beat": "feature",
+      "shot": "generated summary view with navigation tabs, one content panel, and a two-choice check below",
+      "camera": "tilt-plane; push-in accelerates to about 1.10 while the plane travels diagonally over 83 fr",
+      "motion": "camera uses easings.inOutSine for 83 fr; fast middle move carries visible motion-blur (shutter not measurable)",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 11.77,
+      "t1": 15,
+      "beat": "feature",
+      "shot": "quiz state with a question panel, progress controls, and stacked answer choices",
+      "camera": "tilt-plane; diagonal dolly about 420 px/s @1920 with pull-out about 1.10->1.00 over 97 fr",
+      "motion": "camera uses easings.inOutSine for 97 fr; motion-blur carries the fastest part (shutter not measurable)",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 15,
+      "t1": 18.8,
+      "beat": "feature",
+      "shot": "flashcard study state with numbered progress, mode controls, one large card, and a reveal action",
+      "camera": "tilt-plane; lateral dolly about 78 px/s @1920 with subtle push-in 1.00->1.02 over 114 fr",
+      "motion": "continuous camera travel on easings.linear for 114 fr; interface remains fully assembled",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 18.8,
+      "t1": 22.13,
+      "beat": "feature",
+      "shot": "tilted grid of four external learning-resource cards with thumbnails and primary actions",
+      "camera": "tilt-plane; slow pull-out about 1.00->0.98 over 100 fr",
+      "motion": "grid holds while camera uses easings.inOutSine for 100 fr; no separate element entrance is visible",
+      "transition_out": "blur-dissolve",
+      "sfx": "reverse-cymbal"
+    },
+    {
+      "t0": 22.13,
+      "t1": 22.43,
+      "beat": "feature",
+      "shot": "resource grid darkens and blurs into an empty black stage",
+      "camera": "tilt-plane; pull-out continues through the 9 fr overlap",
+      "motion": "9 fr blur-dissolve on easings.inOutSine (exact blur radius not measurable)",
+      "transition_out": "blur-dissolve",
+      "sfx": "reverse-cymbal"
+    },
+    {
+      "t0": 22.43,
+      "t1": 25.27,
+      "beat": "logo",
+      "shot": "small mark appears alone on black, brightens, grows, and travels toward the right side",
+      "camera": "subtle push-in about 1.00->1.02 over 85 fr while the mark crosses the frame",
+      "motion": "mark light-on about 14 fr (±0.25 s), halo lags about 5 fr (±0.25 s); easings.inOutSine travel 85 fr",
+      "transition_out": "mask-wipe",
+      "sfx": "swell"
+    },
+    {
+      "t0": 25.27,
+      "t1": 26,
+      "beat": "logo",
+      "shot": "four-word brand promise sits left of the dimmed mark on black",
+      "camera": "slow push-in 1.00->1.01 over 22 fr",
+      "motion": "line completes left-to-right in about 8 fr with easings.outExpo (±0.25 s); mark dims over about 8 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 26,
+      "t1": 28.2,
+      "beat": "cta",
+      "shot": "centred URL types on black, then holds with a soft white halo",
+      "camera": "push-in 1.00->1.01 over 66 fr",
+      "motion": "URL typewriter about 1 fr per character through 26.77 s (±0.25 s); easings.linear push and 43 fr final hold",
+      "transition_out": "end",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "BrandProvider",
+    "BrandMark",
+    "TiltPlane",
+    "Pill",
+    "TopBar",
+    "Lines",
+    "Button",
+    "Panel",
+    "Hero",
+    "SignIn",
+    "Upload",
+    "Summary",
+    "Quiz",
+    "Flashcard",
+    "Screen",
+    "LearningResourceGrid",
+    "ResourceVisual",
+    "DarkStage",
+    "Typewriter",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json; the recipe derives a dark stage from its tokens and uses its mark, type, radius, and accents",
+    "content.heroCopy": "opening first clause, 2-4 words",
+    "content.heroAccent": "opening accented second clause, 2-4 words",
+    "content.uiScreens": "copy for six branded states: landing, sign-in, upload, summary, quiz, and flashcard",
+    "content.resourceCards": "four learning-resource cards with title and metadata",
+    "content.closingLine": "short promise shown beside the mark",
+    "content.url": "short domain typed during the final row",
+    "cameraStops": "six optional direction overrides for the UI plane camera stops; -1 travels left, 1 travels right"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Eleven contiguous rows from six visible UI state changes, the 18.80 s hard cut, and both bounds of the 22.13-22.43 s soft transition. Silent reference: cut_on_beat is false (0/2; no beats). Sub-0.25 s entrances, overshoot, blur shutter, and exact easing are not measurable. SFX planned by the glue rule, not measured. Recipe-local UI and resource components implement the proposed continuous-plane-tour without shared-studio changes.",
+  "preview": {
+    "demo_brand": "tallyfield"
+  },
+  "status": "built"
+}

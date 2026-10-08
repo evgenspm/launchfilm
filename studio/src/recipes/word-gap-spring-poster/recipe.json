@@ -1,0 +1,115 @@
+{
+  "id": "word-gap-spring-poster",
+  "title": "Spring-gap word poster",
+  "summary": "A left-aligned event poster on black: each word lands from a wide gap and springs tight against its neighbours, the block squeezes once more, then the words fling out left one after another. Two short lines, a footer URL and a corner mark.",
+  "use_when": [
+    "Announcing an event, date or launch day as a single poster frame",
+    "A short looping opener for a feed post or story",
+    "A bold one-statement teaser with no UI to show",
+    "Silent autoplay where type and rhythm carry the message"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/stretch-snap-text/",
+    "author": "Jitter",
+    "ref_id": "jt-043"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "poster",
+    "event",
+    "date",
+    "word-spacing",
+    "elastic",
+    "type-only",
+    "dark",
+    "black-and-white",
+    "short-loop",
+    "announcement"
+  ],
+  "techniques": [
+    "scatter",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 2.5,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FFFFFF",
+      "#959595"
+    ],
+    "type_style": "bold grotesk, sentence case, tight tracking, headline about 8 % of frame height, flush left, two-line blocks; small bold footer URL about 2.5 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each word lands and snaps tight (f3 to f15, 3 fr stagger)",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "words fling out left at the end (f63)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.5,
+      "beat": "hook",
+      "shot": "black poster: headline, 4 words on 2 lines, top left; date block, 2 lines, mid left; footer URL bottom left and a small mark bottom right",
+      "camera": "static frame (footer pinned, no scale change); all movement is word position",
+      "motion": "f0-2 footer only; words enter one per 3 fr from f3 to f15 at wide horizontal gaps (up to ~35 % W) and slide together, springs.snappy, settled ~f30, gaps briefly close to touching at f24-29; hold; second squeeze f51-53 then release f54-62; exit f63-74 words slide out left, easings.inExpo ~12 fr, first word first, last word still in frame at f74",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font (bold grotesk), fg, bg; logo for the corner mark",
+    "content.headline": "statement, 3-5 words, wraps to 2 lines, flush left at the top",
+    "content.date": "when/where block, 2 short lines (e.g. month and day range)",
+    "content.url": "footer URL, bottom left, 2 lines max",
+    "content.mark": "small logo, bottom right",
+    "timing.stagger": "frames between word entrances (default 3)",
+    "timing.spread": "max starting gap as share of width (default 0.35)",
+    "timing.exitAt": "frame the fling-out starts (default 63 of 75)",
+    "aspect": "4:5 default; 9:16 and 1:1 keep the flush-left grid"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips: first word f3, stagger 3 fr (f3, f6, f9, f12, f15), entries are horizontal only; words overshoot so gaps nearly vanish at f24-29 and again at f51-53 (deliberate second squeeze before the exit); exit starts f63, inExpo, words leave left in reading order, the last word is still on screen at f74 so the loop is not seamless. Vertical letter stretch named in the catalogue is not measurable at 300 px strip width. The footer URL and mark never move. Proposed term word-gap-spring (not in vocabulary): words spring together along the line, gaps oscillate. scatter is the closest vocabulary id (word level, horizontal). sfx planned by the glue rule, not measured; the reference is silent.",
+  "status": "studied"
+}

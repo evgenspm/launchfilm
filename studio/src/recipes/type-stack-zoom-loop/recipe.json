@@ -1,0 +1,109 @@
+{
+  "id": "type-stack-zoom-loop",
+  "title": "Recursive type stack zoom loop",
+  "summary": "A two-word lockup repeated as a shrinking column of copies on black; the front copy zooms up and out of frame while the next one grows into its place, so one second loops without a seam.",
+  "use_when": [
+    "A seamless loop for a social post, story sticker or website hero",
+    "An intro or outro sting built from a two-word name or slogan",
+    "A type-only background behind a talk, stream or event screen",
+    "Hypnotic filler between scenes of a longer film"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/motion-design-looped-text/",
+    "author": "Jitter",
+    "ref_id": "jt-051"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "type-only",
+    "loop",
+    "seamless",
+    "zoom",
+    "recursive",
+    "stack",
+    "dark",
+    "monochrome",
+    "square",
+    "social",
+    "sting"
+  ],
+  "techniques": [
+    "zoom-through",
+    "kinetic-depth"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 1,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FFFFFF",
+      "#5A5A5A"
+    ],
+    "type_style": "heavy geometric sans, italic, lowercase, tight leading (lines overlap by ~10 %), front lockup ~45 % of frame width at f0, copies below at ~0.4x each step",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "front copy flies out past the frame (once per loop, ~f10-f18)",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "two-word lockup, white on black, repeated ~8 times in a column that shrinks and tightens downward; copies overlap; front copy zooms past",
+      "camera": "static frame; the stack itself scales: front copy ~0.80 -> ~6+ frame widths in 30 fr, rising ~83 px/s @1920 (motion.json zoom 117 %/s)",
+      "motion": "every copy takes the place of the one above in 30 fr; scale rides easings.inExpo-like acceleration (widths in strip: f0 0.79, f5 0.92, f11 1.5+, f17 off-frame); next copy settles easings.outQuint into f0 size by f29; self-similar so f29 = f0",
+      "transition_out": "end",
+      "sfx": "whoosh"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "ZoomThrough",
+    "BrandProvider",
+    "ASPECTS",
+    "easings"
+  ],
+  "params": {
+    "brand": "any brand.json: display font (heavy, ideally italic), fg for the type, bg",
+    "content.lines": "two short words or a two-line name, one word per line, <= 8 letters each",
+    "copies": "number of copies in the column (default 8)",
+    "ratio": "scale of each copy relative to the one above (default ~0.42)",
+    "timing.period": "frames per loop at 30 fps (default 30 = 1 s), scaled to fps",
+    "aspect": "1:1 | 4:5 | 9:16 | 16:9; the column stays centred, front copy ~80 % of width at f0"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from a 30 fps strip (1 fr resolution, scale estimates from widths at 320 px, about +-3 %): front lockup width 0.79 of frame at f0, 0.92 at f5, exceeds the frame by f8, only giant fragments of it remain f12-f19; second copy reaches f0 size at f29, so the loop wraps seamlessly at 30 fr. Copies are drawn as a union of white fills (no outline, no shadow), each overlapping the next by ~25 % of its height; the column tapers to small copies near the bottom third. No camera move or cut: the zoom is in the content. Proposed term 'recursive-zoom' (not in vocabulary, not used as an id). sfx planned by the glue rule, not measured (source is silent).",
+  "status": "studied"
+}

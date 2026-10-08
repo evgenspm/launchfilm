@@ -1,0 +1,142 @@
+{
+  "id": "data-chart-shape-morph",
+  "title": "Data chart shape morph",
+  "summary": "A compact data card pulls back as a flat line becomes a moving area chart, then its six points reorganize into a radar plot. The chart earns its final form through one continuous transformation.",
+  "use_when": [
+    "A metric story should progress from simple history to multidimensional comparison",
+    "A short silent data-visualization interlude needs one clear transformation",
+    "A dashboard feature needs motion without showing a full product screen"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/morph-line-to-radar-chart/",
+    "author": "Jitter",
+    "ref_id": "jt-076"
+  },
+  "family": "data-stats",
+  "tags": [
+    "data-viz",
+    "line-chart",
+    "radar-chart",
+    "shape-morph",
+    "silent",
+    "dashboard-card"
+  ],
+  "techniques": [
+    "chart-draw",
+    "pull-out",
+    "frame-in-frame",
+    "morph",
+    "mesh-gradient"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 10.27,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#54495B",
+      "#F6C7FD",
+      "#967EA3",
+      "#4D5462",
+      "#C8E3FE",
+      "#8591B0"
+    ],
+    "type_style": "regular grotesk, sentence case, normal tracking, 2.5 % of frame height",
+    "treatment": [
+      "mesh-gradient"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "data card pulls back into the surrounding field",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "line chart reorganizes into the radar plot",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "chart values advance to the next configuration",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "A six-point baseline becomes a filled line chart while its rounded data card pulls back to reveal the field",
+      "camera": "pull-out 1.00 -> 0.42 over 30 fr on springs.cameraOut (overshoot not measurable)",
+      "motion": "baseline points rise into the first area chart with easings.outExpo over ~8 fr (±0.25 s); card pull-out settles by 30 fr",
+      "transition_out": "frame-in-frame",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1,
+      "t1": 6,
+      "beat": "proof",
+      "shot": "The six-point area chart advances through changing value windows while its category labels travel with the series",
+      "camera": "static; the card bounds and centre do not change across the row",
+      "motion": "points, fill and labels interpolate continuously with easings.linear over 150 fr; per-state timing is not measurable (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 6,
+      "t1": 10.27,
+      "beat": "proof",
+      "shot": "Six line-chart points remap onto a six-axis radar grid; the polygon then cycles through comparison shapes",
+      "camera": "static; the card bounds and centre do not change across the row",
+      "motion": "axes assemble and points morph into the radar polygon on springs.ui over ~23 fr (±0.25 s); later shapes use easings.inOutSine over ~15 fr each (±0.25 s)",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 6,
+    "url": false
+  },
+  "components": [
+    "RadarChartMorph",
+    "BrandProvider"
+  ],
+  "params": {
+    "content.title": "one short neutral heading for the chart card, at most 3 words",
+    "content.labels": "six short category labels shared by both chart forms",
+    "content.datasets": "ordered six-value arrays that drive the moving line and radar shapes",
+    "morphAt": "frame where the line chart starts reorganizing into the radar chart",
+    "updateFrames": "frames between dataset configurations",
+    "palette": "optional brand-derived overrides for field, glow, card, chart, grid and text colours"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "No hard cuts; one soft frame-in-frame transition spans 0.37-0.57 s (frames 11-17). The repeated chart-window scroll is proposed, not used as a vocabulary id. Motion below 0.25 s and overshoot are not measurable from the sheets. SFX planned by the glue rule, not measured; the reference is silent.",
+  "preview": {
+    "demo_brand": "shellpine"
+  },
+  "status": "built"
+}

@@ -1,0 +1,241 @@
+{
+  "id": "caps-punch-statement-reveal",
+  "title": "Caps punch statements to an accent name reveal",
+  "summary": "One line on black, a cut to light grey, then half-sentences built word by word that each land on a single uppercase punch word. An eyebrow and an accent-coloured name reveal follow, three short claims, and a wordmark with a tagline close.",
+  "use_when": [
+    "A problem-to-promise story told with type only, before any UI is worth showing",
+    "Silent autoplay where each sentence must split into a setup and a one-word payoff",
+    "Naming a product with one accent colour on an otherwise neutral light film",
+    "A 15-20 s teaser for a simple tool with three verb claims"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/4NkKI8GD",
+    "author": "Bryan Edosoma",
+    "ref_id": "rl-013"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "statement",
+    "type-only",
+    "uppercase-punch",
+    "problem-solution",
+    "light",
+    "dark-open",
+    "accent-name",
+    "no-ui",
+    "silent",
+    "minimal"
+  ],
+  "techniques": [
+    "statement-sequence",
+    "blur-in",
+    "push-in",
+    "blur-dissolve",
+    "mask-rise"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 18.57,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#F6F6F8",
+      "#1D1F1E",
+      "#E77134",
+      "#000000",
+      "#A8A9AA"
+    ],
+    "type_style": "bold grotesk, sentence case for setup lines and claims at ~5 % H, uppercase single punch words at ~5 % H, tiny tracked uppercase eyebrow ~1.5 % H, name in accent ~6 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "hard cut from the black opening to the light background",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "product name resolves in the accent colour under the eyebrow",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "each uppercase punch word settles",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.13,
+      "beat": "hook",
+      "shot": "white setup line, 2 words + ellipsis, centred on black; first cell empty",
+      "camera": "push-in ~1.00->1.02 (motion.json 1.8 %/s)",
+      "motion": "words blur-in per word from 0.27, blur + small drop, easings.outExpo ~12 fr (±0.25 s); settled 0.50; dims from 1.10 into the cut",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 1.13,
+      "t1": 2.77,
+      "beat": "problem",
+      "shot": "dark setup half-sentence, 4 words, on light grey; laid out at its final centred position, words fill left to right",
+      "camera": "push-in ~1.00->1.02",
+      "motion": "per-word blur-in, stagger ~5 fr (±0.25 s), each word easings.outExpo ~12 fr (±0.25 s); settled 2.00; exit from 2.50: fade + blur + drift down ~2 % H, ~7 fr (±0.25 s)",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 2.77,
+      "t1": 3.5,
+      "beat": "problem",
+      "shot": "single uppercase punch word completing the sentence, centred",
+      "camera": "push-in ~1.00->1.02",
+      "motion": "whole word blur-in, easings.outExpo ~7 fr (±0.25 s); settled 3.00; holds 0.5 s; overlaps the next line at 3.50",
+      "transition_out": "blur-dissolve",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3.5,
+      "t1": 4.5,
+      "beat": "problem",
+      "shot": "setup line, 3 words, starting the next sentence; enters while the punch word fades",
+      "camera": "push-in ~1.00->1.02",
+      "motion": "per-word blur-in under a crossfade, ~8 fr overlap (±0.25 s); settled 3.77-4.00; fade from 4.27, gone by 4.50",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 4.5,
+      "t1": 6,
+      "beat": "problem",
+      "shot": "empty cell, then setup line, 2 words + ellipsis, first word placed left of centre at its final slot",
+      "camera": "push-in ~1.00->1.02 (motion.json 0.9 %/s)",
+      "motion": "empty gap of at least one cell at 4.50 (±0.25 s); word 1 blur-in at 4.77, word 2 at 5.27 (+15 fr), easings.outExpo ~12 fr (±0.25 s); holds to 5.77",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 6,
+      "t1": 7.27,
+      "beat": "problem",
+      "shot": "single uppercase punch word, longer, centred",
+      "camera": "push-in ~1.00->1.03 (motion.json 2.6 %/s)",
+      "motion": "blur-in, blurred at 6.00, sharp at 6.27, easings.outExpo ~8 fr (±0.25 s); holds ~0.75 s; fades at 7.00; empty at 7.27",
+      "transition_out": "blur-dissolve",
+      "sfx": "tick"
+    },
+    {
+      "t0": 7.27,
+      "t1": 8.77,
+      "beat": "problem",
+      "shot": "promise setup line, 5 words, no end punctuation",
+      "camera": "push-in ~1.00->1.02",
+      "motion": "per-word blur-in from 7.50 left to right, stagger ~5 fr (±0.25 s); settled 8.00; holds to 8.50",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 8.77,
+      "t1": 10,
+      "beat": "problem",
+      "shot": "single uppercase punch word answering the promise, centred",
+      "camera": "push-in ~1.00->1.02",
+      "motion": "blur crossfade over the setup line at 8.77 (~8 fr, ±0.25 s); settled 9.00; holds to 9.50; exit at 9.77 sinks down into a clip mask, easings.inExpo ~7 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 10,
+      "t1": 12,
+      "beat": "logo",
+      "shot": "empty frame, then tiny grey uppercase eyebrow above centre, then the product name in the accent colour beneath it",
+      "camera": "push-in ~1.00->1.03 (motion.json 2.3 %/s)",
+      "motion": "eyebrow fades in at 10.27; name blur-in left to right at 11.00 (+22 fr after the eyebrow), easings.outExpo ~8 fr (±0.25 s); settled 11.27; holds to 11.77; both gone at 12.00",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 12,
+      "t1": 13.27,
+      "beat": "feature",
+      "shot": "claim one, 3 words with a period, verb first",
+      "camera": "push-in ~1.00->1.02",
+      "motion": "per-word blur-in from 12.27, settled 12.50; holds ~0.5 s; exit at 13.00: fade + blur + drift down ~5 % H, ~8 fr (±0.25 s)",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 13.27,
+      "t1": 15.27,
+      "beat": "feature",
+      "shot": "claim two, 2 words with a period",
+      "camera": "push-in ~1.00->1.02 (motion.json 1.8 %/s)",
+      "motion": "mask-rise: glyphs rise out of a clip edge at 13.27, springs.maskRise (overshoot not measurable); settled 13.50; holds 1.25 s; fade + slight lift from 14.77, gone by 15.27",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 15.27,
+      "t1": 17.27,
+      "beat": "feature",
+      "shot": "claim three, 3 words with a period",
+      "camera": "push-in ~1.00->1.03 (motion.json 2.6 %/s)",
+      "motion": "per-word blur-in rising ~3 % H from 15.27, easings.outExpo ~12 fr (±0.25 s); settled 15.50; holds 1.5 s; fade + blur from 17.00",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 17.27,
+      "t1": 18.57,
+      "beat": "logo",
+      "shot": "product name as a dark wordmark with a period, small grey 3-word tagline underneath",
+      "camera": "push-in ~1.00->1.02 (motion.json 2.5 %/s)",
+      "motion": "wordmark blur-in, blurred at 17.27, sharp at 17.50; tagline fades in at 17.77 (+15 fr); holds 0.5 s; both fade from 18.27 to near zero at 18.50",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 11,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "StatementSequence",
+    "Statement",
+    "BlurIn",
+    "BrandProvider",
+    "ASPECTS",
+    "TRANSITIONS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg, muted, accent (product name), bg; the opening uses black bg + white text",
+    "content.hook": "opening setup line on black, 2-3 words with an ellipsis",
+    "content.pairs": "3 setup + punch pairs: setup half-sentence 2-5 words, punch = one uppercase word that completes it",
+    "content.eyebrow": "tiny uppercase label before the name, e.g. 'Introducing'",
+    "content.name": "product name, shown once in the accent colour and once as the dark closing wordmark with a period",
+    "content.claims": "3 claims, 2-3 words each, verb first, ending in a period",
+    "content.tagline": "small closing line under the wordmark, 3 short words",
+    "timing.punchHold": "frames a punch word holds (default 15-22)",
+    "timing.claimHold": "frames a claim holds (default 38-45)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Studied from 4 fps sheets (±0.25 s): no 30 fps strips were made because the analysis dir is read-only. The reference is silent (no music, no VO), so sfx are planned by the glue rule, not measured. Setup lines are laid out at their final centred position and fill word by word, so they never re-centre. Punch words are uppercase and always alone on screen; they follow their setup line with no empty frame, and the third (row 8) blur-crossfades over it. The only hard cut is black to light at 1.13 s. Camera creep is 0.5-2.6 %/s from motion.json, never fully static. Proposed terms (not used as ids): caps-punch, mask-sink.",
+  "status": "studied"
+}

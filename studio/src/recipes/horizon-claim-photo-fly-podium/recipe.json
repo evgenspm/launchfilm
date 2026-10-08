@@ -1,0 +1,343 @@
+{
+  "id": "horizon-claim-photo-fly-podium",
+  "title": "Horizon glow claims, photo fly-through and podium",
+  "summary": "A 60 s voice-led pitch on black with a blue horizon glow: phone peek, one-word claims, a fly-through wall of frustrated photo tiles, then one feature per beat (button press, card grid, podium count, tilted phone) and a typed URL lockup.",
+  "use_when": [
+    "A 60 s voice-over explainer for a marketplace, wallet or payments app",
+    "The story needs a clear pain beat before the product appears",
+    "Several features, each one short line plus one visual, no footage",
+    "Dark brand with one cool accent colour that can carry a horizon glow"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/cJpg69yX",
+    "author": "Ochai Isaac",
+    "ref_id": "rl-103"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "dark",
+    "horizon-glow",
+    "voice-over",
+    "statement",
+    "phone",
+    "photo-wall",
+    "fly-through",
+    "card-grid",
+    "podium",
+    "counter",
+    "halftone",
+    "typed-url"
+  ],
+  "techniques": [
+    "horizon-arc",
+    "device-phone",
+    "statement-sequence",
+    "blur-in",
+    "word-reveal",
+    "depth-field",
+    "typewriter",
+    "cursor-path",
+    "card-grid",
+    "counter",
+    "end-card",
+    "glow",
+    "halftone",
+    "hard-cut",
+    "continuous"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 60.65,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#DAE9F3",
+      "#7197EE",
+      "#10161E",
+      "#27334D",
+      "#B4DAFD"
+    ],
+    "type_style": "bold grotesk, sentence case, normal tracking, white; claim words ~7 % H, feature lines ~5 % H in 1–2 lines, left or right aligned next to the phone",
+    "treatment": [
+      "glow",
+      "halftone"
+    ]
+  },
+  "audio": {
+    "vo": true,
+    "music": {
+      "present": true,
+      "bpm": 69.9,
+      "energy": "calm",
+      "genre": null,
+      "cut_on_beat": true
+    },
+    "sfx": [
+      {
+        "event": "wordmark line and URL type on",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor presses the pill button",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "card grid and cross icon pop in",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "medals land, counters settle",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "camera flies through the photo wall",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "phone slides in beside a feature line",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.07,
+      "beat": "hook",
+      "shot": "two-line quoted title over pure black, phone top barely visible at the bottom; 2 fr lead-in",
+      "camera": "static",
+      "motion": "none (2 fr); the horizon glow switches on at the cut",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 0.07,
+      "t1": 5,
+      "beat": "reveal",
+      "shot": "same title on black with blue horizon glow; phone top with a marketplace page rises under it, two token coins float at the sides",
+      "camera": "push-in 1.00→1.01 (motion.json 0.1–0.2 %/s)",
+      "motion": "phone rises from bottom edge 0.27→0.50, springs.ui ~8 fr (±0.25 s); coins drift in from edges 0.27→0.50 and bob ±2 %; phone sinks out 4.27→4.77 easings.inExpo ~15 fr (±0.25 s); title fades by 5.00",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 5,
+      "t1": 10.5,
+      "beat": "reveal",
+      "shot": "empty horizon glow, then three claims one at a time centred: one word, one word, two-word line in two rows",
+      "camera": "static",
+      "motion": "each claim blur-in rising ~0.3 H from below, easings.outExpo ~8 fr (±0.25 s): at 5.77, 6.50, 8.00; previous claim cut away on the same frame; last claim gone by 10.27",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 10.5,
+      "t1": 15,
+      "beat": "problem",
+      "shot": "inset dark panel with a glowing blue rim; ~20 photo tiles of frustrated people scattered in depth",
+      "camera": "fly forward through the tiles, zoom 9–17 %/s (motion.json), drifting up then left",
+      "motion": "tiles grow and slide off the frame edges as the camera passes them, easings.linear; new tiles come up from depth; rounded corners ~12 % of tile",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 15,
+      "t1": 18.75,
+      "beat": "problem",
+      "shot": "same photo wall, camera bends right; a different tile reaches the foreground every ~0.75 s",
+      "camera": "fly forward 12–15 %/s with pan right 9–17 px/s @1920",
+      "motion": "easings.linear travel; foreground tiles exit past the frame edge within ~0.5 s each (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 18.75,
+      "t1": 19.5,
+      "beat": "problem",
+      "shot": "wall settles back to its opening layout, one tile in front",
+      "camera": "zoom slows to 0 by 19.00 (easings.outQuint, ±0.25 s)",
+      "motion": "hold 0.5 s",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 19.5,
+      "t1": 21.75,
+      "beat": "logo",
+      "shot": "empty horizon glow, then the brand mark plus wordmark at top and a line typing below that introduces the product",
+      "camera": "static",
+      "motion": "lockup fades in 20.00→20.27 (±0.25 s); line types 20.27→21.00 at ~10 chars/s; whole group lifts slightly 21.27→21.50 and is gone at 21.77",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 21.75,
+      "t1": 24.25,
+      "beat": "feature",
+      "shot": "frosted pill button with one-word label slides from right to centre; hand cursor arrives and presses it",
+      "camera": "static, then whips up-left at 24.00 (motion.json 71/89 px/s)",
+      "motion": "button slide 22.50→23.00 springs.ui ~12 fr (±0.25 s); cursor enters 23.27, springs.click press ~23.75 (not measurable); button and cursor carried up-left 24.00",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 24.25,
+      "t1": 26.25,
+      "beat": "feature",
+      "shot": "a listing detail card pulls back into a 3×2 grid of dark product cards; a heading line appears above",
+      "camera": "pull-out from one card to the grid 24.27→24.77, zoom −7 %/s",
+      "motion": "grid settles 24.50→24.77 springs.layout (overshoot not measurable); heading fades in 25.00→25.27; top row slides down out of frame 25.77→26.00",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 26.25,
+      "t1": 27.25,
+      "beat": "feature",
+      "shot": "one-word claim blurs in over the remaining card row, row slides away, word holds alone",
+      "camera": "static",
+      "motion": "word blur-in left to right 26.27→26.50 easings.outExpo ~8 fr (±0.25 s); card row exits down 26.77→27.00; word gone at 27.27",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 27.25,
+      "t1": 30.5,
+      "beat": "feature",
+      "shot": "red cross icon centred with a one-line negative claim (4 words) under it",
+      "camera": "static",
+      "motion": "cross pops 27.50 springs.pop (overshoot not measurable); line word-reveal 27.50→27.77; cross grows ~1.6× 29.00→29.50 then shrinks 29.77→30.27; line exits 30.27",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 30.5,
+      "t1": 35.5,
+      "beat": "feature",
+      "shot": "five halftone black-and-white hands rise holding bills and token coins; a one-line claim above, then a second line replaces it",
+      "camera": "static",
+      "motion": "hands rise from bottom 30.27→30.50 springs.heavy (±0.25 s); coins flip in the hands every ~0.5 s; line 1 word-reveal 31.00→31.50; swap to line 2 at 33.27→33.77 word-reveal; hands drop out 35.27→35.50",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 35.5,
+      "t1": 37.75,
+      "beat": "feature",
+      "shot": "one-line claim alone on the horizon glow, 4 words",
+      "camera": "static",
+      "motion": "word-reveal with blur 35.50→36.00 (±0.25 s); hold; fades and drops 37.50→37.77",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 37.75,
+      "t1": 41,
+      "beat": "proof",
+      "shot": "three medals 3-1-2 hang from the top edge, counters under each count up to round numbers, a two-word label rises below",
+      "camera": "static",
+      "motion": "medals drop from above 38.00→38.27 springs.pop (overshoot not measurable); counters appear 38.77 and roll 0→final 39.00→39.77 easings.outQuint ~24 fr; label rises 40.27; all cut away at 41.00",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 41,
+      "t1": 46,
+      "beat": "feature",
+      "shot": "two-line feature line left; tilted dark phone with a checkout screen slides in on the right",
+      "camera": "static",
+      "motion": "line blur-in 41.27→41.50; phone enters from right edge 41.77→43.00 springs.heavy, slight Y rotation drift ±3° to 45.50; line and phone exit up 45.50→46.00",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 46,
+      "t1": 50.75,
+      "beat": "feature",
+      "shot": "mirrored layout: two-line feature line right-aligned, same tilted phone on the left",
+      "camera": "static",
+      "motion": "line blur-in from left 46.00→46.50; phone slides in from the left edge 46.50→47.27 springs.heavy; slow sway; both exit 50.50→50.77",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 50.75,
+      "t1": 58,
+      "beat": "feature",
+      "shot": "three one-word verbs, one at a time, large and centred, after 0.75 s of empty glow",
+      "camera": "static",
+      "motion": "each word blur-in 0.25 s (±0.25 s) at 51.50, 54.00, 56.27; hold ~2 s; fade out 0.25 s (53.50, 56.00, 57.77)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 58,
+      "t1": 60.65,
+      "beat": "logo",
+      "shot": "brand mark plus wordmark centred, URL types on underneath, holds to the end",
+      "camera": "static",
+      "motion": "lockup scales 1.6→1.0 58.00→58.27 springs.cameraOut (±0.25 s); URL types 58.00→60.00 ~6 chars/s; hold 0.65 s",
+      "transition_out": "end",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 14,
+    "screenshots": 3,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 3,
+    "url": true
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "HorizonArc",
+    "PhoneFrame",
+    "StatementSequence",
+    "BlurIn",
+    "WordReveal",
+    "Typewriter",
+    "DepthField",
+    "Cursor",
+    "FeatureCards",
+    "Counter",
+    "Lockup",
+    "EndCard",
+    "Camera",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg black, accent drives the horizon glow, fg white for all copy, display font bold grotesk",
+    "content.title": "two-line opening title over the phone peek",
+    "content.claims": "3 opening claims, 1–2 words each",
+    "content.painPhotos": "12–20 photo tiles for the fly-through (stock, people frustrated with the old way)",
+    "content.intro": "line typed under the lockup that names the product",
+    "content.button": "one-word button label for the press beat",
+    "content.cards": "6 product card images for the grid",
+    "content.features": "6–8 feature lines, ≤ 8 words each, each with a visual (cross, hands, podium, phone)",
+    "content.podium": "3 numbers for the medal counters",
+    "content.verbs": "3 one-word verbs before the close",
+    "content.url": "URL typed under the end lockup",
+    "vo": "VO file and its line timings; rows follow the VO lines",
+    "fps": "30"
+  },
+  "difficulty": "medium",
+  "render_cost": "heavy",
+  "notes": "Studied from 4 fps sheets (±0.25 s); no 30 fps strips. Only 3 real cuts (0.07, 10.50, 19.50); everything else is one shot with state changes. SFX are all planned by the glue rule, not measured: the reference has music and VO only as far as we can tell. Spring names, overshoot and stagger are suggestions. Proposed terms (not in vocabulary): rim-panel (inset screen with glowing rim, rows 4–6), coin-flip (tokens flip in held hands, row 12), podium (three ranked medals with counters, row 14). Rows 3, 12, 15, 16, 17 merged from state changes to stay at 18 rows.",
+  "status": "studied"
+}

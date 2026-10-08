@@ -1,0 +1,187 @@
+{
+  "id": "device-orbit-interface-dive",
+  "title": "Orbiting device with an interface dive",
+  "summary": "A rendered phone turns through close and wide views while the camera travels across one interface, then dives into a detail and resolves to a quiet wordmark.",
+  "use_when": [
+    "a mobile product needs a polished hero-object demo",
+    "one interface screen can support several camera framings",
+    "a silent product teaser needs continuous visual motion"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/smjc2X8P",
+    "author": "Raylight",
+    "ref_id": "rl-008"
+  },
+  "family": "3d-device",
+  "tags": [
+    "3d-device",
+    "phone-demo",
+    "orbit",
+    "interface",
+    "camera-dive",
+    "light",
+    "silent",
+    "hero-object"
+  ],
+  "techniques": [
+    "device-phone",
+    "device-3d",
+    "orbit",
+    "orbit-3d",
+    "dolly",
+    "push-in",
+    "depth-field",
+    "blur-in",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 19.4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#2C2A27",
+      "#84868E",
+      "#BEBAB4",
+      "#F8F7F7",
+      "#FAF9F9"
+    ],
+    "type_style": "compact sans serif UI, sentence case, regular to semibold, 2-4 % of frame height; small bold wordmark at about 3 % of frame height",
+    "treatment": [
+      "depth-field"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "device or camera begins an orbit sweep",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "hard reframe to a new device angle",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "camera accelerates into the interface detail",
+        "sound": "riser",
+        "origin": "planned"
+      },
+      {
+        "event": "wordmark finishes resolving",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "extreme close view of a rendered phone turning from its metal edge toward the interface",
+      "camera": "orbit from edge-biased to front-biased with push-in 1.00 -> 1.44 over 60 fr",
+      "motion": "camera follows easings.inOutSine for 60 fr; shallow focus remains on the upper interface",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2,
+      "t1": 4.37,
+      "beat": "feature",
+      "shot": "front-biased close view eases back and exposes more of the phone while keeping the interface readable",
+      "camera": "orbit continues toward the opposite edge with pull-out 1.00 -> 0.84 over 71 fr",
+      "motion": "camera follows easings.inOutSine for 71 fr; scale direction changes at the row start (plus or minus 0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 4.37,
+      "t1": 8.4,
+      "beat": "feature",
+      "shot": "a tilted close view travels from search controls down to a grid of content cards on the same screen",
+      "camera": "dolly about -128,-363 px/s at 1920 width while the device continues its orbit over 121 fr",
+      "motion": "continuous easings.inOutSine dolly for 121 fr with depth-field focus held on the travelling screen region",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 8.4,
+      "t1": 12.4,
+      "beat": "feature",
+      "shot": "the complete phone floats on white at a low diagonal angle with one long interface visible",
+      "camera": "orbit about 8 degrees with push-in 1.00 -> 1.09 over 120 fr",
+      "motion": "device and camera use easings.inOutSine for 120 fr; no independent interface animation is visible",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 12.4,
+      "t1": 16.4,
+      "beat": "feature",
+      "shot": "the phone drops from the top edge as the camera dives into the lower content cards and navigation",
+      "camera": "push-in 1.00 -> 2.45 with a vertical dolly across the phone over 120 fr",
+      "motion": "camera acceleration uses easings.inExpo for about 75 fr, then easings.outQuint for about 45 fr (plus or minus 0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "riser"
+    },
+    {
+      "t0": 16.4,
+      "t1": 19.4,
+      "beat": "logo",
+      "shot": "a small centred wordmark resolves from pale partial letters on white, then holds",
+      "camera": "locked framing; no scale or position change over 90 fr",
+      "motion": "letters blur-in left to right with easings.outExpo over about 11 fr (plus or minus 0.25 s), then hold 79 fr",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS",
+    "PhoneFrame",
+    "BlurIn",
+    "DeviceOrbitStage"
+  ],
+  "params": {
+    "content": "productName plus eyebrow, headline, metric, four cards and navigation labels for the local interface rebuild",
+    "deviceBody": "neutral light or dark chassis colour with metallic edge highlights",
+    "cameraShots": "five measured camera paths covering the device rows; each pose uses frames at the composition fps",
+    "background": "flat light brand background, white by default",
+    "focus": "0-1 shadow and apparent depth strength for close device views",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16",
+    "fps": "composition fps, default 30; all structure frames scale from 30 fps"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Four hard cuts at 4.37, 8.40, 12.40 and 16.40 s; no audio or beat grid, so cut_on_beat is false (0/4). Exact camera yaw, focus distance, focal length, sub-0.25 s easing changes and entrance overshoot are not measurable from the 4 fps sheets. SFX planned by the glue rule, not measured. Phase B builds a deterministic local 2.5D DeviceOrbitStage because no true 3D phone stage is exported by the studio.",
+  "preview": {
+    "demo_brand": "tallyfield"
+  },
+  "status": "built"
+}

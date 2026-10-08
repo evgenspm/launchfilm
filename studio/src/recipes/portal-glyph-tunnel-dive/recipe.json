@@ -1,0 +1,155 @@
+{
+  "id": "portal-glyph-tunnel-dive",
+  "title": "Portal letter dive into a light tunnel",
+  "summary": "One word on a pale page; its round letter is a live window into a blue vortex. The camera dives through it in 8 frames, then two short lines rise from depth and leave past the camera, so the tunnel reads as space.",
+  "use_when": [
+    "A 3 s teaser or opener that has to feel like going somewhere, not a wipe",
+    "The hook word has a round glyph or a dot that can become a window",
+    "Naming a product after one setup line, no UI yet",
+    "A light-to-dark contrast flip to open a darker film"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/ef2v0JXY",
+    "author": "Raylight",
+    "ref_id": "rl-058"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "portal",
+    "tunnel",
+    "zoom-through",
+    "depth-type",
+    "light-to-dark",
+    "teaser",
+    "opener",
+    "short",
+    "vortex",
+    "type-only",
+    "no-ui"
+  ],
+  "techniques": [
+    "portal",
+    "zoom-through",
+    "tunnel",
+    "kinetic-depth",
+    "push-in",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 2.97,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#FBFAF5",
+      "#000002",
+      "#1B57DA",
+      "#013FBF",
+      "#003293",
+      "#021E4D"
+    ],
+    "type_style": "geometric grotesk; hook word medium-bold, sentence case, cap height ~11 % H; tunnel lines weight ~500, lowercase sentence case, tracking 0, ~3.5 % H, white",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "dive through the round glyph into the tunnel",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "setup line zooms past the camera",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "product name settles from depth",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.93,
+      "beat": "hook",
+      "shot": "one short word, near-black on off-white, centred; its round letter is a disc showing the blue vortex inside",
+      "camera": "static f0-22; zoom-through about the disc centre f23-31, scale 1.00 -> ~14 (disc covers the frame diagonal)",
+      "motion": "disc content drifts while the word holds; zoom eased on ln(scale) with easings.inExpo, 8 fr (4 fr anticipation); outgoing letters blur 6-12 px @1080 tied to zoom speed; inner scene grows ~5x while the disc grows ~14x (parallax)",
+      "transition_out": "portal",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.93,
+      "t1": 1.87,
+      "beat": "hook",
+      "shot": "blue vortex with a dark hole and a lit rim crescent; a setup statement, 5 words, sets up the launch moment",
+      "camera": "drift: tunnel zoom ~1.2 %/s, rim light rotates ~10 deg/s",
+      "motion": "line already inside the disc at f28, blurred, sharp by f33 (easings.outExpo 5 fr); hold f33-51 with scale creep 1.00 -> 1.12 accelerating (easings.inExpo); exit f52-55: scale 1.12 -> 1.35, blur 0 -> 8 px, fade, 4 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1.87,
+      "t1": 2.97,
+      "beat": "reveal",
+      "shot": "same vortex; a two-word line that introduces the product by name, centred",
+      "camera": "drift: tunnel zoom ~1.6 %/s, slight rotation",
+      "motion": "enters from depth f56-60: scale 0.55 -> 1, blur 8 -> 0 px, easings.outExpo 5 fr (no overshoot seen at 30 fps); holds f60-88 while the background drifts",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PortalZoom",
+    "PortalWord",
+    "portalSizeFor",
+    "BrandTunnel",
+    "DepthPhrase",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: page bg and ink for the hook word, accent drives the tunnel palette and rim light",
+    "content.hook": "one short word containing a round glyph; split as before / after around the portal disc",
+    "content.setup": "one setup line, <= 6 words, one line at 16:9",
+    "content.name": "the naming line, <= 3 words",
+    "timing.hookHold": "frames the hook word holds before the dive (default 23)",
+    "timing.dive": "zoom-through length in frames (default 8, keep 8-12)",
+    "timing.setupHold": "frames the setup line holds (default 19; raise toward 36 for readability)",
+    "timing.nameHold": "frames the name holds at the end (default 29)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured at 30 fps: disc rest diameter 9.4 % of width; dive scale per frame f23-31: 1.00, 1.06, 1.32, 1.60, 2.10, 3.40, 7.8, 10.0, >=13, i.e. ease-in on ln(scale), not on scale. The detector cut at 0.93 s is the frame turning blue mid-dive, not a real cut. Text never fades in place: enters from 0.55 scale + blur, leaves past the camera at 1.35. Tunnel palette field #0035A2-#003ECC, hole ~#010418, rim crescent ~#1A5CFF. sfx planned by the glue rule, not measured (reference is silent). Proposed term: log-zoom (zoom eased on ln(scale)). statement-sequence hint not used: two lines only, handled by DepthPhrase.",
+  "status": "studied"
+}

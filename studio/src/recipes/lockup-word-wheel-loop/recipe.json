@@ -1,0 +1,122 @@
+{
+  "id": "lockup-word-wheel-loop",
+  "title": "Lockup with a stepping word wheel",
+  "summary": "A fixed logo lockup sits beside a tall vertical list of one-word features; the list steps up one slot per second and only the word level with the lockup is dark. Twenty steps make a seamless 20 s loop.",
+  "use_when": [
+    "A product with many features or product lines that each fit in one word",
+    "A looping brand background for a booth screen, story or site hero",
+    "A calm, confident fintech or utility brand voice with no UI to show",
+    "Silent autoplay where the lockup must stay readable the whole time"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-vault-feature-list/",
+    "author": "Jitter",
+    "ref_id": "jt-007"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "lockup",
+    "word-wheel",
+    "feature-list",
+    "loop",
+    "vertical",
+    "type-only",
+    "no-ui",
+    "light",
+    "fintech",
+    "minimal"
+  ],
+  "techniques": [
+    "word-swap",
+    "stacked-roll"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 20,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#C7E7FE",
+      "#070C0F",
+      "#8CA5B8",
+      "#B1CFE4"
+    ],
+    "type_style": "lockup: round black mark + bold grotesk wordmark, sentence case, ~2.6 % H; list: regular grotesk, sentence case, same size, row pitch ~5.3 % H; active word dark, neighbours fade by distance",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "list settles on the next word (once per second)",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.4,
+      "beat": "hook",
+      "shot": "lockup (mark + wordmark) centred-left; to its right a tall list of one-word features, the first one dark, the rest pale",
+      "camera": "locked-off frame, no scale or pan; only the list moves inside it",
+      "motion": "no entrance, the film opens mid-loop on word 1; first step starts at f12 (0.40 s): list rises one row on easings.inOutSine 6 fr (30 fps strip, ±1 fr), lands f18 (0.60 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 0.4,
+      "t1": 20,
+      "beat": "feature",
+      "shot": "20 list steps merged into one row (avg 0.98 s, 19.60 s total each): the list rises one row per second, each new word turns dark beside the fixed lockup",
+      "camera": "locked-off frame; lockup fixed, list travels one row pitch (~5.3 % H) per 30 fr",
+      "motion": "every second: step starts at x.40 s, easings.inOutSine 6 fr (measured on a 30 fps strip at 1.00-2.00 s, ±1 fr), hold 24 fr; active word darkens and the previous one greys during the same 6 fr; the 20th step (19.40-19.60 s) lands on word 1 again",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 20,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Lockup",
+    "WordSwap",
+    "StackedRoll",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: mark + wordmark for the lockup, bg, fg for the active word, muted for the list",
+    "content.words": "8-24 one-word features or product lines (reference: 20); the loop length is words x period",
+    "timing.period": "frames per step at 30 fps (default 30); hold = period - move",
+    "timing.move": "frames of the step move (default 6, easings.inOutSine)",
+    "falloff": "opacity of rows by distance from the active row (default 1, 0.45, 0.3, then down to 0.08 at the edges)",
+    "aspect": "9:16 | 4:5 | 1:1 | 16:9; list height fills the frame, lockup stays at vertical centre",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured on a 30 fps strip at 1.00-2.00 s: one step per 30 fr, move 6 fr slow-in slow-out (inOutSine, ±1 fr), hold 24 fr; steps start at x.40 s. 20 words, so frame 600 equals frame 0: perfect loop. The lockup never moves. Row pitch ~5.3 % of H, about 19 rows visible. Beat: the lockup is constant, the changing words are the content, so rows after the hook are feature, not logo. Proposed term focus-wheel (flat vertical list stepping one slot with opacity falloff by distance) is not in the vocabulary; word-swap + stacked-roll are the nearest ids. sfx planned by the glue rule, not measured (the reference is silent).",
+  "status": "studied"
+}

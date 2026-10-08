@@ -1,0 +1,200 @@
+{
+  "id": "waveform-lane-button-pin-review",
+  "title": "Waveform lanes, button pair and review pins",
+  "summary": "One white shot, three UI states: waveform clips settle into colour lanes and one is dragged, two action buttons pop out of each other, then stretch into a glowing line where pins type review notes. Ends on a name.",
+  "use_when": [
+    "An audio or video editing tool announcing a version",
+    "A product whose story is edit, send out, collect feedback",
+    "A short silent feature teaser built only from rebuilt UI pieces",
+    "Light, clean brand with a few saturated accent colours"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/UYylYxWE",
+    "author": "Raylight",
+    "ref_id": "rl-099"
+  },
+  "family": "product-ui",
+  "tags": [
+    "waveform",
+    "audio-editor",
+    "clip-lanes",
+    "action-buttons",
+    "review-pins",
+    "comments",
+    "one-shot",
+    "light",
+    "version-launch",
+    "ui-pieces"
+  ],
+  "techniques": [
+    "ui-rebuild",
+    "blur-in",
+    "morph",
+    "typewriter",
+    "glow",
+    "motion-blur",
+    "continuous",
+    "end"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 12.17,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#000000",
+      "#19C0FB",
+      "#01BF77",
+      "#FAA78C",
+      "#F990DD"
+    ],
+    "type_style": "geometric grotesk, medium weight, sentence case, normal tracking; buttons ~3 % H bold labels, closing name ~6 % H; comment notes tiny white text ~1.5 % H on coloured cards",
+    "treatment": [
+      "glow",
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "clip lanes fly in and settle",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "clip selected (glow outline appears)",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "button pops in / second button slides out",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "button press squash",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "comment note typing",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "closing name appears",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.77,
+      "beat": "hook",
+      "shot": "four lanes of colour-coded waveform clips (teal pair, one coral, two violet, three blue) arrive on white and settle",
+      "camera": "zoom in + pan: content grows ~37 %/s and travels right ~600 px/s @1920 in s 0-1, then ~6 %/s creep in s 1-2 (motion.json)",
+      "motion": "clips fade and blur in from tiny at left edge, lanes offset per row; settle ~1.00 s (f30), easings.outExpo ~30 fr (±0.25 s, overshoot not measurable); per-lane stagger below sheet resolution",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1.77,
+      "t1": 4.5,
+      "beat": "feature",
+      "shot": "the coral clip gets a glowing outline (selected), is dragged right along its lane, then the whole arrangement slides away right",
+      "camera": "near static (pan <= 51 px/s, zoom <= 1 %/s in s 2-4), then exit pan ~480 px/s right in s 4-5",
+      "motion": "glow outline fades on 1.77-2.00 (~7 fr, ±0.25 s); drag 3.00-3.77, ~ +40 % frame width, springs.ui (overshoot not measurable); 4.00-4.50 lanes slide right with blur and fade out, easings.inExpo ~15 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4.5,
+      "t1": 7.27,
+      "beat": "feature",
+      "shot": "a blue action button (1 word) pops in, a black twin button (1 word) slides out from behind it; the blue one is pressed",
+      "camera": "static (motion.json hold, s 5-7)",
+      "motion": "blank 4.50; blue button blur-in + scale at 4.77, springs.pop (overshoot not measurable) ~8 fr (±0.25 s); 5.00 it sits left, 5.27 recentres; black button emerges from under it 5.50, pair centred 5.77, springs.ui; press 6.27: blue scales to ~0.88, springs.click, released by 6.50",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 7.27,
+      "t1": 8.27,
+      "beat": "feature",
+      "shot": "the two buttons fly apart and stretch into a pink glowing track line; a green pin marker rises onto it",
+      "camera": "static",
+      "motion": "7.00-7.27 buttons slide outward with directional blur, the gap becomes a twin pink line with soft glow (morph, ~8 fr, ±0.25 s); green pin fades in 7.50 and grows to full at 7.77, springs.snappy (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 8.27,
+      "t1": 10.5,
+      "beat": "feature",
+      "shot": "the green pin opens into a note card and types a short review note (2 lines); a yellow pin slides left and types its own note (2 lines)",
+      "camera": "static (motion.json hold s 8-10)",
+      "motion": "pin head widens into card springs.layout ~8 fr (±0.25 s); notes typewriter ~13 chars/s, 8.27-8.77 green, 9.00-9.50 yellow; yellow pin slides left 8.27-8.77 ~ -50 % cell width, easings.outQuint; green card collapses back to pin at 9.50; 10.27 both blur and fade, gone by 10.50",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 10.5,
+      "t1": 12.17,
+      "beat": "logo",
+      "shot": "product name with version number (2 words), black, centred on white, holds to the end",
+      "camera": "static, then a fast zoom change in the last 5 fr (motion.json -41 %/s at 12.00-12.17)",
+      "motion": "blank 10.50; name blur-in, whole line, settled at 10.77 (~8 fr, ±0.25 s), easings.outExpo; hold 42 fr",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Camera",
+    "BlurIn",
+    "Typewriter",
+    "PillMorph",
+    "Wordmark",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg white, fg black, accent for the primary button; lane colours from the palette",
+    "content.lanes": "4 lanes of clips: colour + clip widths (default 2/1/2/3 clips)",
+    "content.selectedClip": "lane and index of the clip that is lifted and dragged",
+    "content.actions": "two 1-word button labels, primary first",
+    "content.notes": "2 review notes, each <= 2 short lines, typed on pins",
+    "content.name": "closing product name + version, <= 3 words",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "medium",
+  "render_cost": "heavy",
+  "notes": "One shot, no cuts (cuts.json empty), silent: sfx planned by the glue rule, not measured. All times from 4 fps sheets (±0.25 s); springs chosen without overshoot data; staggers, typing rate and morph length are defaults. Proposed terms (not in vocabulary): waveform-clip-lanes, pin-note-expand. Blank white frames at 4.50 and 10.50 separate the three UI states without a cut. render_cost heavy only because directional motion blur is visible on exits; a plain blur filter keeps it light.",
+  "status": "studied"
+}

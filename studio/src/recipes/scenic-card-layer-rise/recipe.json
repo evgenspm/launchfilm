@@ -1,0 +1,156 @@
+{
+  "id": "scenic-card-layer-rise",
+  "title": "Illustrated card assembles in layers, holds, fades",
+  "summary": "A single portrait card scales in on a blush background, its title rises out of a mask and the illustrated scene builds layer by layer from the bottom; copy fades in, the scene settles, holds 2 s and fades out to loop.",
+  "use_when": [
+    "Showing one app card, desktop panel or onboarding screen as a calm hero moment",
+    "A square loop for a feed or a landing page tile",
+    "A product whose screen carries illustration that can be split into depth layers",
+    "Silent autoplay where one name and one short line are enough"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/yosemite-animated-widget/",
+    "author": "Fons Mans",
+    "ref_id": "jt-018"
+  },
+  "family": "product-ui",
+  "tags": [
+    "card",
+    "illustration",
+    "layered",
+    "parallax",
+    "loop",
+    "square",
+    "calm",
+    "pastel",
+    "light",
+    "single-screen",
+    "silent"
+  ],
+  "techniques": [
+    "ui-rebuild",
+    "mask-rise"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FDEAE6",
+      "#F8DFDD",
+      "#CE8AAB",
+      "#432859",
+      "#774A79",
+      "#946187"
+    ],
+    "type_style": "medium grotesk, sentence case, tight tracking; title ~5.5 % H in pale pink on the card, tracked uppercase eyebrow ~1.3 % H, two-line centred description ~1.4 % H, small outline play-icon button label",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "card scales in",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "title rises out of its mask",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "sun rises behind the valley",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "empty blush frame, then a portrait card with a purple-to-pink sky gradient; title and back-to-front scenery layers build inside it",
+      "camera": "locked off; the card itself scales 0.89 -> 1.00 about the frame centre (f8 -> f23)",
+      "motion": "card enters f0-f8 at scale 0.89, springs.ui to 1.00 by f23 (overshoot not measurable, ±0.25 s); title mask-rise f15-f23 (±0.25 s); far treeline rises from the card's bottom edge by f15, cliffs, near trees and river by f23, foreground bushes by f30, each layer easings.outExpo ~8 fr, stagger ~7 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1,
+      "t1": 2,
+      "beat": "feature",
+      "shot": "same card: eyebrow, two-line description and a small play button appear; flowers and a pale sun complete the scene",
+      "camera": "locked off; inner artwork pull-out about 1.7 %/s while it settles (motion.json second 1)",
+      "motion": "eyebrow, description and button fade in together f26-f38, easings.outQuint (±0.25 s); flower dots appear by f45; sun disc rises behind the valley f45-f60, easings.outExpo (±0.25 s); all layers settle by f60",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 2,
+      "t1": 4,
+      "beat": "feature",
+      "shot": "finished card holds: name, line, button over the full illustrated scene, soft pink drop shadow",
+      "camera": "static",
+      "motion": "full hold 60 fr, no element moves (motion.json diff 0.00 for seconds 2 and 3)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 4,
+      "t1": 5,
+      "beat": "feature",
+      "shot": "the whole card and its shadow fade out to the empty blush background, matching frame 0 for a loop",
+      "camera": "static",
+      "motion": "card opacity 1 -> ~0.7 (f128) -> ~0.45 (f135) -> ~0.08 (f143) -> 0 by f150, no scale or position change; curve close to easings.linear (±0.25 s)",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 4,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS",
+    "BrandBackdrop",
+    "BlurIn"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the frame, card gradient from two brand colours, pale fg for type, display font",
+    "content.eyebrow": "short uppercase label above the name ('' = none)",
+    "content.name": "product or screen name, one or two words",
+    "content.line": "description, up to 2 lines, about 12 words",
+    "content.button": "button label next to a play or arrow icon, 1 word",
+    "content.layers": "3-6 transparent PNG/SVG scenery layers, back to front, plus an optional sun/orb layer",
+    "aspect": "1:1 default; card stays 42 % W x 62 % H of the square, recomposes for 4:5 and 9:16",
+    "timing.hold": "frames the finished card holds (default 60)",
+    "timing.fadeOut": "frames of the closing fade (default 30)",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Single shot, no cuts, silent; loops because the first and last frames are the empty background. Card 42 % W x 62 % H, corner radius ~3 % W, large soft pink shadow. Card scale-in starts at 0.89, not 0. Scenery builds back to front, roughly one layer per 0.25 s cell; sun is the last element (f45-f60). Inner art drifts down in scale ~1.7 %/s during second 1. sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): layer-rise (illustration layers rise from the card's bottom edge in depth order), card-scale-in (whole card scales from ~0.9 with no fade), fade-loop (whole frame fades back to the empty first frame).",
+  "status": "studied"
+}

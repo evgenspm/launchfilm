@@ -1,0 +1,184 @@
+{
+  "id": "island-live-card-loop",
+  "title": "Island pill opens into a live trip card",
+  "summary": "A small top pill on a translucent phone over a soft sky widens, adds a middle label, then springs open into a dark status card where a hero image slides in, clouds drift past and a progress bar creeps; it folds back to the pill and loops.",
+  "use_when": [
+    "Showing a live status widget (trip, delivery, order) on a phone",
+    "A vertical loop for a feed or a landing page hero",
+    "Demonstrating real-time progress without a cut",
+    "One calm UI moment with no VO and no music"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-route-ios-flight-tracker/",
+    "author": "Jitter",
+    "ref_id": "jt-024"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "island",
+    "live-activity",
+    "status-card",
+    "progress",
+    "travel",
+    "vertical",
+    "loop",
+    "phone",
+    "dark-card",
+    "sky",
+    "no-cut"
+  ],
+  "techniques": [
+    "island-morph",
+    "device-phone",
+    "ui-rebuild"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 16.5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#1F7CAF",
+      "#5D9EC4",
+      "#A3BDCF",
+      "#000000",
+      "#1A1A1A",
+      "#232323"
+    ],
+    "type_style": "small grotesk UI labels (about 1 % H); endpoint codes in a bold condensed mono, uppercase, about 2.5 % H; mono micro-captions under the stats",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "pill springs open into the card",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "hero image slides into the card",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "card folds back into the pill",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.27,
+      "beat": "hook",
+      "shot": "compact black pill at the top of a translucent phone body over a blurred blue sky: status dot + short time left, yellow chip right",
+      "camera": "drift: sky drifts slowly, scale change about 0.1 %/s (motion.json), pill fixed",
+      "motion": "pill breathes in width about 10 % on springs.ui 30 fr (overshoot not measurable, ±0.25 s); nothing else moves",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 2.27,
+      "t1": 3.27,
+      "beat": "feature",
+      "shot": "pill widens to almost full phone width and a middle label (id, 2 words) fades in between the two halves",
+      "camera": "drift: same sky drift, pill fixed",
+      "motion": "width grows on springs.layout about 20 fr; middle label opacity 0 to 1 on easings.outQuint 15 fr (±0.25 s)",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 3.27,
+      "t1": 4.27,
+      "beat": "feature",
+      "shot": "the pill opens into a dark rounded card: 3 stats row, inner panel with the pill row, two endpoint codes, an empty progress track, two buttons",
+      "camera": "drift: sky drift, zoom 0.2 %/s (motion.json)",
+      "motion": "card grows down from the pill on springs.layout, settled by 3.77 (about 15 fr, ±0.25 s); text fades in late, dim at 3.27, full at 3.77; buttons rise last",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 4.27,
+      "t1": 5.77,
+      "beat": "feature",
+      "shot": "a hero vehicle image slides in from the left edge of the inner panel; progress fill grows from 0 to about half",
+      "camera": "drift: sky drift, scale about -0.2 %/s",
+      "motion": "image enters from x -100 % to centre on easings.outExpo about 30 fr (±0.25 s); progress fill on easings.outQuint 30 fr to about 55 %",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5.77,
+      "t1": 12.5,
+      "beat": "feature",
+      "shot": "live hold: cloud puffs pass right to left across the image inside the panel; the progress fill creeps from about 55 % to 65 %",
+      "camera": "drift: sky drift, scale about -0.2 %/s (motion.json)",
+      "motion": "clouds loop at easings.linear, one pass about 2 s (±0.25 s); progress easings.linear about 1.5 %/s; card itself static",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 12.5,
+      "t1": 13,
+      "beat": "feature",
+      "shot": "the card folds back up: buttons and stats go first, image exits right, card shrinks into a wide pill",
+      "camera": "drift: sky drift, pill fixed",
+      "motion": "card height collapses on springs.ui about 12 fr (±0.25 s); contents fade on easings.inExpo 8 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 13,
+      "t1": 16.5,
+      "beat": "feature",
+      "shot": "wide pill narrows back to the compact pill and holds, matching the first frame for the loop",
+      "camera": "drift: sky drift, scale about -0.1 %/s",
+      "motion": "width shrinks in steps on springs.ui, compact by 15.00 (±0.25 s); hold 45 fr",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 3,
+    "url": false
+  },
+  "components": [
+    "IslandPill",
+    "PhoneFrame",
+    "BrandProvider",
+    "ASPECTS",
+    "progress"
+  ],
+  "params": {
+    "brand": "any brand.json: accent paints the right chip and the status dot; card stays near-black",
+    "content.pill": "left label (short value), middle label (id, 1-2 words), right chip text",
+    "content.stats": "3 small stats for the card top row, value + caption each",
+    "content.endpoints": "two short endpoint codes with a date caption each",
+    "content.buttons": "2 button labels, 1-2 words each",
+    "content.hero": "transparent PNG of the moving object shown in the panel",
+    "content.progress": "start and end fraction of the progress fill (default 0 -> 0.55 -> 0.65)",
+    "timing.openAt": "frame the pill opens into the card (default 98 at 30 fps)",
+    "timing.closeAt": "frame the card folds back (default 375)",
+    "aspect": "9:16 first; 4:5 and 1:1 keep the phone centred"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "No cuts, no audio: one continuous morph loop. Measured from 4 fps sheets (±0.25 s). Expansion pill to card 3.00 to 3.77, collapse 12.50 to 12.77. The sky drifts all the time so no frame is static. Yellow accent chip not captured by palettegen (too small); sample it from a keyframe crop in phase B. SFX planned by the glue rule, not measured (reference is silent). Proposed terms (not in vocabulary): live-activity-card, cloud-pass, progress-fill.",
+  "status": "studied"
+}

@@ -1,0 +1,178 @@
+{
+  "id": "block-caret-prompt-slot-tile",
+  "title": "Block-caret prompt with swapping slot and app tile",
+  "summary": "A glowing block caret types and erases the name, types a three-line terminal-style promise whose bracketed noun swaps under a glowing selection, types a short call to action, then hard-cuts to the app tile on a violet haze.",
+  "use_when": [
+    "Developer tools, CLIs or coding agents that want a terminal voice",
+    "A 10 s intro or bumper where one sentence plus a variable noun carries the pitch",
+    "Showing breadth (many things you can make) without any UI",
+    "Closing on an app icon rather than a wordmark"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/wQWZvRln",
+    "author": "rock",
+    "ref_id": "rl-086"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "terminal",
+    "typing",
+    "caret",
+    "word-swap",
+    "dark",
+    "violet",
+    "app-icon",
+    "dev-tool",
+    "intro",
+    "glow"
+  ],
+  "techniques": [
+    "typewriter",
+    "word-swap",
+    "highlighter",
+    "glow",
+    "grain",
+    "mesh-gradient",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 10.03,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#0D0B25",
+      "#B8B4D4",
+      "#3A27AF",
+      "#5B4798",
+      "#1E1756",
+      "#949CE6"
+    ],
+    "type_style": "geometric grotesk regular, sentence case, normal tracking; name ~6 % H, prompt lines ~6 % H stepped right line by line; swap word in mono inside brackets; prompt glyph in lavender mono",
+    "treatment": [
+      "glow",
+      "grain",
+      "mesh-gradient"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 119.8,
+      "energy": "medium",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each typed or erased character",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "slot word swaps under the glowing selection",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "two sparkle dots after the call to action completes",
+        "sound": "shimmer",
+        "origin": "planned"
+      },
+      {
+        "event": "app tile lands after the hard cut",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "glowing block caret alone on dark violet haze, types the product name (one word), holds, then erases it",
+      "camera": "static frame; background gradient blobs drift (motion.json 0.3 %/s, background only)",
+      "motion": "typewriter ~2 chars per 0.25 s (0.27-0.77), caret halo shifts magenta -> cyan -> blue while typing; caret hides at 0.77; name holds ~7 fr then erases from the left side 1.00-1.50 (±0.25 s); text moves off-centre left between 0.77 and 1.00 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 1.5,
+      "t1": 3.5,
+      "beat": "feature",
+      "shot": "terminal prompt glyph appears, then a three-line promise types on: 3 words, 2 words with a bracketed mono slot word, 2 words; each line steps right",
+      "camera": "static frame; background drift (motion.json 0.7-1.2 %/s, background only)",
+      "motion": "typewriter: line 1 by 1.77, line 2 with bracket slot 2.00-2.50, line 3 2.77-3.00 (±0.25 s); slot word in lavender mono brackets",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 3.5,
+      "t1": 5.5,
+      "beat": "feature",
+      "shot": "the slot word swaps twice (3 nouns total) under a cyan glowing selection box, then the whole block erases",
+      "camera": "static frame; background drift",
+      "motion": "word-swap: swap 1 at 3.50 with cyan selection fill + bloom glow ~0.25 s, swap 2 at 4.27 (no glow visible at 4 fps); hold ~1 s; erase 5.27-5.50 (±0.25 s), lines erase back from the end",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5.5,
+      "t1": 7.73,
+      "beat": "cta",
+      "shot": "two-word call to action (verb + product name) typed by a glowing block caret, centred, larger type (~9 % H); two sparkle dots flank it once",
+      "camera": "static frame; background drift (motion.json 1.6 %/s, background only)",
+      "motion": "typewriter 5.77-6.00 (±0.25 s), caret halo violet -> blue; caret vanishes at 6.27 leaving 2 white sparkle dots for ~1 cell; hold 6.27-7.50 (~37 fr); text gone by 7.70 (exit not measurable)",
+      "transition_out": "hard-cut",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 7.73,
+      "t1": 10.03,
+      "beat": "logo",
+      "shot": "white rounded app tile with the product glyph, centred on a brighter blue-violet field; a dark haze blob drifts on the right",
+      "camera": "static; background blob sweeps right to upper right",
+      "motion": "tile enters large (~30 % W at 7.73) and settles to ~11 % W by 8.00, springs.cameraOut ~8 fr (overshoot not measurable); holds to the end",
+      "transition_out": "end",
+      "sfx": "pop"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 4,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Typewriter",
+    "WordSwap",
+    "Highlighter",
+    "AppTile",
+    "BrandBackdrop",
+    "Grain",
+    "BrandProvider"
+  ],
+  "params": {
+    "content.name": "product name typed and erased in the hook (one word)",
+    "content.promise": "three short lines, 3 / 2 / 2 words, line 2 holds the slot",
+    "content.slotWords": "3 nouns cycled in the bracket slot, mono font",
+    "content.cta": "two-word call to action: verb + name",
+    "content.tile": "app icon image for the end tile",
+    "caretColors": "caret halo colours cycled while typing (default magenta, cyan, blue)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One shot 0-7.73 s plus one hard cut to the tile; no glitch cut is visible despite the catalogue hint. Text appears only by typing and leaves only by erasing. Cut 7.73 is 2.8 fr from beat 7.64, so cut_on_beat 0/1. Typing speed, caret blink and erase speed measured at 4 fps only (±0.25 s). Zoom values in motion.json come from the drifting background blobs, the text does not scale. sfx planned by the glue rule, not measured (music-only reference). Proposed terms (not used as ids): glow-block-caret, tile-land.",
+  "status": "studied"
+}

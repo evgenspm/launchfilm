@@ -1,0 +1,111 @@
+{
+  "id": "gradient-line-word-drop",
+  "title": "Gradient spec line word drop",
+  "summary": "One short spec line on white, each word dropping from slightly above while fading in, staggered about a quarter second apart, the whole line painted in a cool-to-lime gradient, then a long calm hold.",
+  "use_when": [
+    "A chapter title or single feature claim inside a premium announcement",
+    "Naming one hero spec (resolution, battery, speed) in three words or fewer",
+    "Opening a silent product reel on a light, restrained brand",
+    "Inserting a calm text beat between UI or device shots"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/sliding-title-reveal-apple-event/",
+    "author": "Jitter",
+    "ref_id": "jt-006"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "title-card",
+    "spec-line",
+    "gradient-text",
+    "keynote",
+    "minimal",
+    "type-only",
+    "light",
+    "word-stagger",
+    "chapter-title"
+  ],
+  "techniques": [
+    "blur-in"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#638782",
+      "#8FAB78",
+      "#BACB7C",
+      "#DAE38F"
+    ],
+    "type_style": "medium-bold grotesk, sentence case, normal tracking, cap height about 9 % of frame height, one line centred, horizontal gradient fill slate teal to lime across the line",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each word lands",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "white frame, then one centred spec line of 3 words (number, then two words) in a left-to-right cool-to-lime gradient",
+      "camera": "static (line position and width identical in sheet-01 cells 7 to 15)",
+      "motion": "empty f0 to f12 (±0.25 s); per word fade-in with a drop of about 0.5 em from above, easings.outQuint ~15 fr (±0.25 s), stagger ~8 fr (±0.25 s); last word settled by f53 (±0.25 s); hold 67 fr to the end",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": true,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "BlurIn",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, bg, two or three accent stops for the gradient",
+    "content.line": "one spec line, 2-4 words, optionally led by a number",
+    "content.gradient": "colour stops left to right across the line (default brand muted to accent)",
+    "timing.lead": "empty frames before the first word (default 12)",
+    "timing.stagger": "frames between word starts (default 8)",
+    "timing.enter": "frames of each word's fade and drop (default 15)",
+    "timing.hold": "frames the settled line holds (default 67)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; the line caps at 84 % of width",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets only (±0.25 s). Words come down into place, not up: in sheet-01 cells 2 and 3 each later word sits higher than the previous one, matching a drop from above. No clip mask is visible (faded words are drawn above the baseline unclipped), so the catalogue hints mask-wipe and slide-push are not used; there is no horizontal slide. The gradient is fixed to the line, not per word. Blur in the entrance is not measurable at this resolution; blur-in is the closest vocabulary entry (BlurIn blurDrop with a longer stagger). Proposed term: gradient-fill. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

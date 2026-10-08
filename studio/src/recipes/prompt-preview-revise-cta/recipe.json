@@ -1,0 +1,240 @@
+{
+  "id": "prompt-preview-revise-cta",
+  "title": "Prompt to preview card, revised twice",
+  "summary": "A question types itself word by word, a prompt field grows from a dot and types a request, then a page preview card appears and changes on two short follow-up prompts before a word-by-word close and a mark.",
+  "use_when": [
+    "A generator product where one prompt produces a visible result",
+    "Showing that the result can be revised with short follow-up instructions",
+    "A silent dark teaser of 15-20 s with one question, one demo and one close",
+    "There is no real UI yet: the result is a coloured stand-in card"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/qtz7LbLv",
+    "author": "Tautwydas",
+    "ref_id": "rl-029"
+  },
+  "family": "product-ui",
+  "tags": [
+    "prompt",
+    "generator",
+    "preview-card",
+    "revision",
+    "dark",
+    "cursor",
+    "word-reveal",
+    "edge-glow",
+    "silent",
+    "no-vo"
+  ],
+  "techniques": [
+    "word-reveal",
+    "horizon-arc",
+    "cursor-path",
+    "slide-push",
+    "prompt-typing",
+    "ui-rebuild",
+    "push-in",
+    "dolly",
+    "blur-dissolve",
+    "logo-from-dot",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 16.47,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#181A19",
+      "#EBEBEB",
+      "#171E4F",
+      "#EC9695",
+      "#474847",
+      "#6D799B"
+    ],
+    "type_style": "geometric rounded sans, regular weight, lowercase question and sentence-case close, about 4.5 % of frame height, normal tracking; prompt text about 3 % H",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "prompt characters typed",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor clicks the send button",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "preview card appears or changes fill",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "layout slides down or up out of frame",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "mark grows from a point and settles",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "question, 4 words, lowercase, centred on near-black; blue glow arc hugs the bottom edge",
+      "camera": "static (no scale or position change in sheet-01 cells 0-7)",
+      "motion": "WordReveal one word every 15 fr (f8, f23, f38, f53), each word fades from about 40 % grey to white over at least 7 fr, easings.outExpo (±0.25 s); line re-centres as it grows",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2,
+      "t1": 3.27,
+      "beat": "hook",
+      "shot": "pointer cursor enters from lower right, hovers the last word, the line drops toward the bottom and leaves",
+      "camera": "static",
+      "motion": "cursor-path from lower right, arrives on the last word by f68 (±0.25 s), pointer shape; at f90 the line has dropped about 30 % H, easings.inExpo out by f98 (±0.25 s); glow arc moves from bottom edge to top edge between f90 and f105",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.27,
+      "t1": 5.77,
+      "beat": "reveal",
+      "shot": "dark prompt field grows from a dot at centre and types a two-line request, about 13 words; glow arc at the top edge",
+      "camera": "push-in 1.00 -> 1.53 from f120 to f180 (field width 157 -> 240 px per 485 px cell), decelerating, easings.outQuint (±0.25 s)",
+      "motion": "dot at f98 grows to the full field by f105, springs.ui (overshoot not measurable); PromptBar types at about 32 chars/s (6, 15, 23, 30, 39 chars on successive cells), wraps to 2 lines at f143, done by f165",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 5.77,
+      "t1": 7,
+      "beat": "feature",
+      "shot": "cursor comes in and presses the round send button at the field's lower right",
+      "camera": "push-in continues to 1.55, then holds (motion.json 0.35 %/s at 6-7 s)",
+      "motion": "cursor-path from lower right at f173, on the button by f180; press held f180-f203, springs.click squash (±0.25 s); cursor gone by f210",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 7,
+      "t1": 8.73,
+      "beat": "feature",
+      "shot": "field glides down to the lower third, its text clears, a muted card slides down from the top edge",
+      "camera": "dolly down: field travels about 0.2 H from f210 to f240 (motion.json 381 px/s at 1920), easings.inOutSine",
+      "motion": "field reaches the lower third at f240; prompt text fades out f240-f248; card top enters from the frame top at about f255, easings.outExpo (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 8.73,
+      "t1": 10.27,
+      "beat": "feature",
+      "shot": "preview card (wide rounded rectangle, upper 60 % of frame) in a solid pink fill; empty field below types a 5-word revision",
+      "camera": "static",
+      "motion": "card fill crossfades from a muted purple-brown to pink in 4 fr (f262-f266), card settles down to its rest position by f270, springs.ui; revision typed f278-f285 at about 32 chars/s, then held",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 10.27,
+      "t1": 11.27,
+      "beat": "feature",
+      "shot": "card switches to an amber fill as the field clears, then a 3-word revision types in",
+      "camera": "static",
+      "motion": "fill swap within one cell (±0.25 s), field text cleared at the same frame; second revision typed f315-f323 at about 32 chars/s",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 11.27,
+      "t1": 11.77,
+      "beat": "feature",
+      "shot": "card and field slide up together and out of the top; the card turns green on its way out",
+      "camera": "dolly up: whole layout travels about 0.6 H in 15 fr, easings.inExpo (motion.json -331 px/s at 11-12 s)",
+      "motion": "card leaves by f345, field by f353; fill swap to green visible at f345 (±0.25 s)",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 11.77,
+      "t1": 14.27,
+      "beat": "cta",
+      "shot": "closing call to action, 4 words in two short sentences, centred, no glow",
+      "camera": "static",
+      "motion": "WordReveal: words at f353, f375, f390, f405 (about 15-22 fr apart), same fade as the hook (±0.25 s); hold to f428",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 14.27,
+      "t1": 16.47,
+      "beat": "logo",
+      "shot": "angular single-colour mark, centred, alone on near-black",
+      "camera": "static",
+      "motion": "mark at about 40 % size at f428 grows to full by f435, springs.snappy (overshoot not measurable); holds 1.6 s; at f488 it collapses toward its top-left corner, easings.inExpo (±0.25 s)",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 5,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "WordReveal",
+    "PromptBar",
+    "Cursor",
+    "Camera",
+    "Dolly",
+    "HorizonArc",
+    "LogoReveal",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg near-black, fg, accent for the edge glow, mark for the close",
+    "content.question": "hook question, 3-5 words, lowercase, ends with a question mark",
+    "content.prompt": "first request, 10-15 words, wraps to 2 lines",
+    "content.revisions": "2 follow-up instructions, 3-6 words each",
+    "content.previewFills": "4 fills for the preview card: arriving, after prompt, after revision 1, exit (or 4 screenshots)",
+    "content.close": "call to action, up to 4 words, revealed word by word",
+    "timing.wordGap": "frames between hook and close words (default 15)",
+    "timing.cps": "typing speed in chars/s (default 32)"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s); no 30 fps strip. One soft transition at 8.73-8.87 s is the preview card's fill crossfade, not a scene change. motion.json reports zoom 37 %/s with -4.8 deg rotation at 9-11 s, but the sheets show a static layout there: the flat card fill fooled the block matcher, the sheets win. Silent reference: sfx planned by the glue rule, not measured. The edge glow flips from the bottom edge to the top edge when the prompt field appears and is gone in the close. Proposed terms (not used as ids): dot-to-field grow, result fill swap.",
+  "status": "studied"
+}

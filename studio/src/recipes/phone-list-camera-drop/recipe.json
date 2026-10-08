@@ -1,0 +1,173 @@
+{
+  "id": "phone-list-camera-drop",
+  "title": "Phone screen that assembles from the lens",
+  "summary": "An empty phone on flat grey fills itself group by group: header, three action tiles, a section label, five list rows and a tab bar each fall from the camera, big and blurred, onto their slots with overlapping staggers.",
+  "use_when": [
+    "A mobile app whose home screen is a list of items (projects, devices, accounts)",
+    "A 5 s silent loop or opener before a feature tour",
+    "Showing that an app is set up instantly or that a workspace fills itself",
+    "A light, calm product voice where depth comes from motion, not 3D"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/NI7nJpks",
+    "author": "Raylight",
+    "ref_id": "rl-041"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "list",
+    "drop-in",
+    "fly-in",
+    "assemble",
+    "ui-rebuild",
+    "light",
+    "silent",
+    "home-screen",
+    "stagger"
+  ],
+  "techniques": [
+    "device-phone",
+    "ui-rebuild",
+    "list-assemble",
+    "card-grid"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 5.03,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#ECECEC",
+      "#49514F",
+      "#4A8F6A",
+      "#FFFFFF",
+      "#AFACA9",
+      "#74907A"
+    ],
+    "type_style": "geometric sans, regular and medium weights, sentence case, small UI sizes: row title ~2.4 % H, muted count line below, section label ~2 % H muted",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each list row lands in its slot",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "action tiles land",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "tab bar closes the frame",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.3,
+      "beat": "hook",
+      "shot": "empty white rounded phone body, no bezel, centred on flat light grey",
+      "camera": "static",
+      "motion": "none: hold 9 fr",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.3,
+      "t1": 0.9,
+      "beat": "reveal",
+      "shot": "status bar and app header (round badge, app name, menu icon) arrive at the top of the phone",
+      "camera": "static",
+      "motion": "header slides down from about 40 px above the phone top, easings.outExpo 12 fr, short settle (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.9,
+      "t1": 1.5,
+      "beat": "feature",
+      "shot": "three outlined action tiles (icon + two-word label each) fill the row under the header",
+      "camera": "static",
+      "motion": "fly-in from the camera: scale ~2.5 -> 1, blur ~10 -> 0 px, opacity ~0.3 -> 1, offset up-right -> 0 on one curve, listSprings.drop 9 fr; stagger 4-5 fr",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 1.5,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "section label, then five two-line list rows (chevron, 3D icon, name, muted count, more icon); tab bar rises at the bottom",
+      "camera": "static",
+      "motion": "rows fly in from the camera, lower-left vector: scale 2.2-5 -> 1, blur 8-14 -> 0 px (gone 2 fr early), opacity 0.35 -> 1, listSprings.drop lands in 8-10 fr; stagger 3-6 fr (mean 4.5), up to 3 rows in flight; tab bar rises from below at f69, scaleX settle ~3 %, lands 3 fr before the last row",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.5,
+      "t1": 5.03,
+      "beat": "feature",
+      "shot": "fully assembled home screen holds",
+      "camera": "drift 1.00 -> ~1.02 from 3.0 s (motion.json 0.5-1.4 %/s; below sheet resolution)",
+      "motion": "none: hold 76 fr",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 9,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "ListAssemble",
+    "assemble",
+    "listSprings",
+    "LIST_T",
+    "BrandProvider",
+    "BrandBackdrop",
+    "KenBurns",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the backdrop, fg and muted for row text, accent for the header badge",
+    "content.appName": "name in the app header",
+    "content.tiles": "3 action tiles, icon + label of 2-3 words",
+    "content.sectionLabel": "one-word label above the list",
+    "content.rows": "4-6 list rows: name + short count line + optional icon",
+    "content.tabs": "4-5 tab bar icons",
+    "timing.stagger": "frames between rows (default 4)",
+    "timing.hold": "frames the finished screen holds (default 76)",
+    "push": "slow push-in during the hold, e.g. [1, 1.04]; 1 = reference (almost static)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Single shot, no cuts, no audio. Numbers from a frame-by-frame human measurement at 30 fps: rows land in 8-10 fr, half the scale distance covered in the first 2 fr, at most 1-2 % settle; stagger 3-6 fr (mean 4.5); one vector per group (header from above, tiles from upper-right, rows from lower-left, tab bar from below); the tab bar closes the frame while rows are still landing. The 2.5 s static hold is the weak part; add a push-in. sfx planned by the glue rule, not measured. Proposed term: camera-drop (element falls from the lens, scale + blur + opacity on one spring); generalises list-assemble enter 'drop' to any UI group.",
+  "status": "studied"
+}

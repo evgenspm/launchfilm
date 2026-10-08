@@ -1,0 +1,142 @@
+{
+  "id": "rule-hinge-word-flip",
+  "title": "Word flips across a hairline rule",
+  "summary": "A thin rule appears on white, one short line rises out from behind it, leans a few degrees, flips under the rule like a hinge, leans the other way, then slips back behind it. One line, one rule, four seconds.",
+  "use_when": [
+    "A short title card or chapter marker where the type is the whole picture",
+    "Introducing a product name or a two-word label in a calm, minimal voice",
+    "A loopable lower-energy sting between longer scenes",
+    "Silent autoplay feeds that need motion without SFX"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/WnMUHCFk",
+    "author": "Samet Onder",
+    "ref_id": "rl-059"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "rule",
+    "hairline",
+    "hinge",
+    "flip",
+    "mask",
+    "minimal",
+    "type-only",
+    "light",
+    "title-card",
+    "short"
+  ],
+  "techniques": [
+    "mask-rise"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4.47,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#1E1E1E",
+      "#696969",
+      "#B8B8B8"
+    ],
+    "type_style": "light-regular grotesk, sentence case, normal tracking, cap height ~4 % H, one line of 2 words; 1 px grey hairline 49 % W at frame centre",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "line passes through the rule (flip)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "line rises out of the rule",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.2,
+      "beat": "hook",
+      "shot": "empty white frame; a thin grey horizontal rule fades in at centre, 49 % of the width",
+      "camera": "static",
+      "motion": "rule opacity 0 -> 1 over f4-f6, easings.linear 3 fr; full width from its first frame (no draw-on)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.2,
+      "t1": 1.43,
+      "beat": "reveal",
+      "shot": "one line, 2 words (name or label), rises out from behind the rule and sits just above it, centred",
+      "camera": "static",
+      "motion": "line rises out of a clip mask whose bottom edge is the rule, whole line, f6-f9, easings.outExpo 3 fr (overshoot not measurable); then rotateZ 0 -> -4 deg (counter-clockwise) f9-f30, easings.inOutSine, holds, returns to 0 deg by f42",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.43,
+      "t1": 3.2,
+      "beat": "reveal",
+      "shot": "the same line flips across the rule and now hangs below it",
+      "camera": "static",
+      "motion": "hinge flip: rotateX around the rule, line above -> line below, f43-f47, easings.inOutSine 4 fr, letters squash and fade at the rule; below, rotateZ 0 -> +4 deg (clockwise) f48-f78 easings.inOutSine, holds, back to 0 deg by f95",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.2,
+      "t1": 4.47,
+      "beat": "reveal",
+      "shot": "the line slips back up through the rule and is gone; only the rule holds on white to the end",
+      "camera": "static",
+      "motion": "exit f96-f99: line rises into the rule and is clipped away, easings.inExpo 3 fr; rule holds untouched 35 fr (f99-f134), no fade out",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BlurIn",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: text font for the line, fg for the type, muted for the rule, bg",
+    "content.line": "one line, 1-3 words, fits inside the rule width (~80 % of it)",
+    "timing.flipAt": "frame of the hinge flip (default 43 at 30 fps)",
+    "timing.exitAt": "frame the line slips back into the rule (default 96)",
+    "tilt.deg": "lean during each hold, sign flips with the side (default 4)",
+    "rule.width": "rule width as a share of frame width (default 0.49)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from a 30 fps strip of the centre region. Rule never moves or scales (same width in every sheet cell); motion.json zoom/pan values come from the small tilting text, not a camera. Lean is about 4 deg (+-1 deg) each side, opposite sign above and below the rule. Flip is 4 fr, entrance and exit 3 fr: keep them short, the holds carry the piece. Proposed terms (not in vocabulary): rule-hinge-flip, rest-tilt. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

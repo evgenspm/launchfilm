@@ -1,0 +1,200 @@
+{
+  "id": "glow-tile-route-dive",
+  "title": "Glowing map tile with route dive",
+  "summary": "A rim-lit map tile grows out of dark space, a route draws across it, the camera dives to a nav arrow and follows it past three bold street labels, then pulls back to the whole tile. One continuous shot, no copy.",
+  "use_when": [
+    "A navigation, delivery, travel or location product with a route as its core idea",
+    "A short teaser where one continuous camera move replaces cuts and copy",
+    "Dark premium brands that want a glow object instead of a screenshot",
+    "Opening a longer film with the product map before feature beats"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/hgwVPnTG",
+    "author": "Yusel",
+    "ref_id": "rl-063"
+  },
+  "family": "launch-film",
+  "tags": [
+    "map",
+    "route",
+    "navigation",
+    "location",
+    "dark",
+    "glow",
+    "one-shot",
+    "camera-dive",
+    "no-copy",
+    "ui-rebuild",
+    "minimal"
+  ],
+  "techniques": [
+    "frame-in-frame",
+    "horizon-arc",
+    "zoom-tier",
+    "cursor-follow",
+    "pull-out",
+    "ui-rebuild",
+    "continuous",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 9.45,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#010511",
+      "#323332",
+      "#B8DFEC",
+      "#3858A9",
+      "#5576CE",
+      "#ACC2F1"
+    ],
+    "type_style": "bold rounded grotesk, title case, normal tracking, white; tiny on the full tile (~1.5 % H), ~8 % H in the close-ups, two-line street labels",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 87.3,
+      "energy": "calm",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "tile lights on and grows out of the dark",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "camera dives from the full tile into the arrow close-up",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "each street label lands next to the arrow",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "pull-out back to the full tile",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.23,
+      "beat": "hook",
+      "shot": "black space, a thin blue planet rim curves across the lower left; a small rim-lit rounded square appears at centre",
+      "camera": "drift 1.00->1.02 (motion.json 1.7 %/s zoom in second 0; ±0.25 s)",
+      "motion": "square lights on: rim and halo rise from 0, easings.outQuint ~6 fr (±0.25 s); planet rim already present",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 0.23,
+      "t1": 2.33,
+      "beat": "reveal",
+      "shot": "square grows into a beveled dark map tile with blocks and five tiny labels; blue glow floods; a cyan route draws",
+      "camera": "frame-in-frame scale 0.26 -> 1.00 (tile width 9 % -> 34 % W, 0.20 -> 0.43 s), then tile settles from upper third to centre 0.77 -> 1.00",
+      "motion": "tile scale springs.heavy ~9 fr (overshoot not measurable); streets fade in by 0.50; route draws from the bottom-left street up, right, then up to the top edge 1.00 -> 2.00, easings.linear ~30 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2.33,
+      "t1": 3.5,
+      "beat": "feature",
+      "shot": "dive into the tile: route close-up, white nav arrow in a two-ring grey halo puck, tile bevel at frame left",
+      "camera": "zoom-tier full -> detail, ~1.0 -> ~6x over 2.33 -> 2.77 (~13 fr), springs.cameraIn; then cursor-follow locked on the arrow, map scrolls down (motion.json pan 252 px/s at 3-4 s)",
+      "motion": "arrow travels up the route at constant speed, easings.linear; halo rings fixed around it",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.5,
+      "t1": 5,
+      "beat": "feature",
+      "shot": "arrow reaches the first turn; a two-line bold street label (3 words) sits over the puck; route turns right",
+      "camera": "cursor-follow: arrow held at centre, map pans under it; slight roll as the heading turns (motion.json rot 1.5 deg/s at 7 s)",
+      "motion": "label scales up with the zoom, no separate entrance; arrow heading rotates ~90 deg toward the new street 4.27 -> 4.77, springs.ui ~15 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 5,
+      "t1": 6.6,
+      "beat": "feature",
+      "shot": "second street: label of 2 words over the puck, the route bends from horizontal up to a diagonal",
+      "camera": "cursor-follow: arrow centred, map slides left then holds 5.27 -> 6.50",
+      "motion": "arrow heading follows the path tangent, springs.ui; label holds at full opacity",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 6.6,
+      "t1": 7.77,
+      "beat": "feature",
+      "shot": "third street: label of 2 words; the tile edge and its light rim come into view at frame right",
+      "camera": "cursor-follow pans up-right along the diagonal 6.60 -> 7.07 (motion.json 26 px/s), slight push-in on the arrow 7.00 -> 7.77",
+      "motion": "previous label scrolls out with the map, new label carried in; easings.inOutSine ~14 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 7.77,
+      "t1": 9.45,
+      "beat": "feature",
+      "shot": "pull back to the full glowing tile with the finished route; planet rim arcs top right; music ends 8.30",
+      "camera": "pull-out detail -> full 7.77 -> 8.27 (~14 fr), springs.cameraOut; tile drifts from upper third to centre 8.77 -> 9.00, then holds",
+      "motion": "nothing new enters; the hold mirrors the 1.00 -> 2.27 framing",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "FrameInFrame",
+    "HorizonArc",
+    "FocusCamera",
+    "Camera",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any dark brand.json: bg near black, accent drives the route colour and the background glow",
+    "content.streets": "3 street or place labels shown in the close-ups, 2-3 words each",
+    "content.mapLabels": "up to 5 tiny labels on the full tile",
+    "content.route": "polyline in tile coordinates the route draws along, with 2 turns",
+    "timing.drawFrames": "frames for the route draw (default 30)",
+    "timing.diveAt": "frame where the dive starts (default 70)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; tile stays square-ish and centred",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "One continuous shot: cuts.json has 0 hard cuts; its 4 soft transitions (0.23, 2.33, 6.60, 7.77) are camera moves and are used as row boundaries with transition continuous. cut_on_beat 0/4. Music silent from 8.30 to the end. Route colour is a saturated cyan not caught by palettegen (accent in brand). sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): route-draw, nav-puck, bevel-tile. Resolution 0.25 s from sheets; no 30 fps strips taken.",
+  "status": "studied"
+}

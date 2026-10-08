@@ -1,0 +1,115 @@
+{
+  "id": "photo-mask-parallax-url",
+  "title": "Parallax photo plate with a URL letter rise",
+  "summary": "A black plate on a flat colour field fades a photo up inside an inset mask while the plate shrinks faster than the picture; a bold URL rises letter by letter across it, then the photo window collapses to a corner and the letters sink away.",
+  "use_when": [
+    "A short loop that pairs one hero photo with a web address",
+    "Editorial or portfolio sites that want depth without 3D",
+    "A closing card where the URL is the only copy",
+    "Silent social autoplay that must loop seamlessly"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/image-mask-parallax-effect/",
+    "author": "Jitter",
+    "ref_id": "jt-070"
+  },
+  "family": "transitions",
+  "tags": [
+    "photo",
+    "mask",
+    "parallax",
+    "url",
+    "loop",
+    "editorial",
+    "letter-rise",
+    "plate",
+    "minimal",
+    "no-ui"
+  ],
+  "techniques": [
+    "mask-rise",
+    "mask-wipe",
+    "pull-out"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#506D53",
+      "#FDFDFD",
+      "#030303",
+      "#262726",
+      "#414641"
+    ],
+    "type_style": "bold geometric grotesk, lowercase, tight tracking, cap height about 9 % H, one line about 62 % W, wider than the plate",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "URL letters settle in their mask",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "photo window collapses to the corner",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "black plate centred on a flat green field; a black-and-white group photo sits in an inset window; a one-line URL across it",
+      "camera": "plate scale 1.00 -> 0.83 over f0-f30 (about -17 %/s), then near static (drift under 1 %); plate grows back 0.83 -> 1.00 over f95-f110",
+      "motion": "f0-f9 photo fades up inside the plate; f0-f30 plate shrinks with easings.outExpo while the photo shrinks less and the mask inset widens from ~2 % to ~4 % of the plate (parallax); f18-f35 URL letters rise out of a baseline clip mask, stagger ~1 fr, springs.maskRise (overshoot not measurable); hold f35-f95; f96-f110 photo window collapses toward the bottom-right corner (easings.inExpo) while the plate regrows; f102-f110 letters sink back below the baseline mask, left to right, stagger ~1 fr; f110-f120 empty black plate = loop point",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "BlurIn",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the field, fg for the URL, display font",
+    "content.photo": "one photo, landscape about 3:2, cover-cropped into the plate window",
+    "content.url": "web address, one line, up to about 16 characters at 16:9",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; plate stays about 60 % of width",
+    "timing.hold": "frames the settled card holds (default 60)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets and 30 fps strips of t 0-1 s and 3-4 s. Plate width (sheet px of 480 cell): 300, 286, 270, 258, 252, 250 at 0.00/0.27/0.50/0.77/1.00/1.27 s, then 250 to 3.00 s. URL rise f18-f35; exit window collapse f96-f110; letter sink f102-f110. First and last frames match (empty black plate), so it loops. Proposed terms (not in vocabulary): parallax-mask (picture moves at a different rate than its mask frame), mask-sink (letters exit down through their baseline mask). sfx planned by the glue rule, not measured; the reference is silent.",
+  "status": "studied"
+}

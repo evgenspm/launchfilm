@@ -1,0 +1,120 @@
+{
+  "id": "extruded-phrase-swing-push",
+  "title": "Extruded phrase swing-in with push",
+  "summary": "A short bold phrase swings in letter by letter with a solid cobalt side extrusion, lands over a soft orange blob backdrop, then the camera pushes in to the end. Faux depth gives a 3D title without a 3D scene.",
+  "use_when": [
+    "A 3 s title or slogan sting for a playful consumer brand",
+    "Opening card of a promo where one short phrase is the whole message",
+    "Silent social loop where type has to carry energy without UI",
+    "Bumper before or after a longer film"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/text-extrusion/",
+    "author": "Jitter",
+    "ref_id": "jt-055"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "extrusion",
+    "3d-type",
+    "title",
+    "slogan",
+    "sting",
+    "playful",
+    "warm",
+    "type-only",
+    "no-ui",
+    "short"
+  ],
+  "techniques": [
+    "extrude-type",
+    "push-in",
+    "mesh-gradient"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 3,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FE8403",
+      "#FEA417",
+      "#FE900A",
+      "#FFD398",
+      "#9E737E"
+    ],
+    "type_style": "condensed heavy display sans, all caps, tight tracking, white face with a solid cobalt extrusion to the lower right, cap height ~12 % H, one line ~70 % W",
+    "treatment": [
+      "mesh-gradient"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "letters start swinging in",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "phrase settles flat",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3,
+      "beat": "hook",
+      "shot": "empty warm orange backdrop with soft blurred darker blobs, then a 3-word slogan in extruded caps, centred, one line",
+      "camera": "push-in 1.00 -> 1.16 over 60 fr (f30-f90), accelerating (about 8 %/s then 14 %/s), easings.inQuad",
+      "motion": "backdrop blobs drift from f0; phrase appears ~f12 (±0.25 s); per letter swing from a ~10 deg tilted, rotated-in-depth pose to flat, left to right stagger (±0.25 s), extrusion swings with the face; lands ~8 % oversize at f23 and settles to 1.00 by f30 on springs.snappy (overshoot not measurable); then holds and pushes",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": true,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS",
+    "KenBurns",
+    "DesktopBackdrop"
+  ],
+  "params": {
+    "brand": "any brand.json: display font (condensed heavy works best), bg and accent for the backdrop blobs, fg for the face, a second colour for the extrusion",
+    "content.phrase": "one slogan line, 2-4 words, all caps, fits ~70 % of the width",
+    "extrusion.depth": "side depth in px at 1280 wide (reference ~10 px, lower right)",
+    "extrusion.color": "extrusion side colour (reference: cobalt against warm orange)",
+    "timing.enter": "frame the swing starts (default 12)",
+    "timing.stagger": "frames between letters (not measurable at 4 fps, start at 1)",
+    "push": "[from, to] scale of the end push (default [1.0, 1.16])",
+    "aspect": "16:10 in the reference; any aspect, phrase capped at 70 % W"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Single shot, 3.00 s, no cuts. Entrance between 0.27 and 0.50 s; at 0.50 s left letters are near flat while the right ones are still tilted (stagger left to right). Phrase width 0.80 W at 0.77 s, 0.735 W at 1.00 s, 0.85 W at 2.77 s. motion.json: rotation 8.5 deg/s in second 0, zoom +8.3 %/s then +14.3 %/s. Extrusion is a solid cobalt side, no shading gradient, offset lower right; it reads as faux depth (stacked offset copies) and can be built in CSS/SVG without WebGL, though the vocabulary files extrude-type under 3d. Proposed term letter-swing-in (letters rotate in depth to flat with stagger) is not in the vocabulary. sfx planned by the glue rule, not measured; the reference is silent. Text face white and extrusion cobalt (about #FFFFFF / #2340B8 by eye) are not in palettegen output, which samples the dominant orange.",
+  "status": "studied"
+}

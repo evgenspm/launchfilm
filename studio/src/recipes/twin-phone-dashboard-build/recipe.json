@@ -1,0 +1,178 @@
+{
+  "id": "twin-phone-dashboard-build",
+  "title": "Twin phone dashboard build-up",
+  "summary": "Two bezel-less phone screens fade up on a light stage, then a finance dashboard assembles itself: tinted metric cards with rolling numbers and rings, rising bars, a 2x2 stat grid. Holds on a slow push, fades out to an empty loop.",
+  "use_when": [
+    "Showing a finance, sales or analytics mobile app in one short loop",
+    "A silent autoplay shot for a landing page hero or a social card",
+    "Proving the product tracks numbers: metrics, progress and a chart on one screen",
+    "Opening a longer film with a calm, light product reveal"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/revenue-app-dribbble/",
+    "author": "Jitter",
+    "ref_id": "jt-023"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "dashboard",
+    "fintech",
+    "metrics",
+    "phone",
+    "two-screens",
+    "bar-chart",
+    "counters",
+    "progress-ring",
+    "light",
+    "loop",
+    "ui-build",
+    "analytics"
+  ],
+  "techniques": [
+    "device-phone",
+    "ui-rebuild",
+    "card-grid",
+    "counter",
+    "chart-draw",
+    "push-in"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#F6F6F6",
+      "#3D3D3D",
+      "#A9EBAE",
+      "#F2BD92",
+      "#A2DEF1",
+      "#E5E7E5"
+    ],
+    "type_style": "geometric sans, semibold headings and figures, sentence case, normal tracking; greeting ~3 % H, card figures ~3 % H, captions ~1.3 % H in light grey",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone screen fades up",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "metric card or stat tile appears",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "rolling number settles",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "screens fade out",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.4,
+      "beat": "hook",
+      "shot": "empty light stage: large grey disc and three small coloured dots; left phone screen fades up with header and greeting",
+      "camera": "push-in starts, scale creep decelerating (zoom 9.3 %/s in the first second, motion.json)",
+      "motion": "stage alone f0-f6; left screen opacity 0 -> 1 with a small rise, easings.outQuint 6 fr (f6-f12, 30 fps strip); header row and greeting with the screen",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 0.4,
+      "t1": 0.8,
+      "beat": "proof",
+      "shot": "right screen fades up offset lower; left screen fills with three tinted metric cards, right screen with a five-bar chart",
+      "camera": "push-in continues, decelerating",
+      "motion": "right screen fade-up easings.outQuint 5 fr, 6 fr after the left; cards cascade, stagger ~4 fr, fade + rise easings.outExpo 8 fr; figures roll up in a clip mask (counter, rolling) ~10 fr; bars rise left to right on springs.chartBar, stagger 2 fr, value labels fade in after each bar",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 0.8,
+      "t1": 1.27,
+      "beat": "proof",
+      "shot": "chart title appears, then a 2x2 grid of stat tiles under it; rings on the metric cards finish drawing; bottom nav icons appear",
+      "camera": "push-in continues, decelerating",
+      "motion": "tiles fade + rise row by row, stagger ~4 fr, easings.outExpo 8 fr (overshoot not measurable); progress arcs draw clockwise easings.outQuint ~12 fr; all settled by f38 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.27,
+      "t1": 4.5,
+      "beat": "proof",
+      "shot": "complete dashboard on both screens, held; no element changes",
+      "camera": "push-in about 1.00 -> 1.05 over 97 fr, decelerating (2.4 -> 0.35 %/s, motion.json), easings.outQuint",
+      "motion": "none; only the camera creep and a slight upward drift of both screens (~2 % H)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 4.5,
+      "t1": 5,
+      "beat": "proof",
+      "shot": "screens fade out left first, then right, back to the empty stage that opened the film",
+      "camera": "push-in, near stopped (0.35 %/s)",
+      "motion": "left screen opacity 1 -> 0 easings.inExpo 5 fr from f135; right screen same 4 fr, starts 2 fr later; empty from f141 to f150 so the loop seam is invisible",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 7,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "BarChart",
+    "Counter",
+    "ProgressRing",
+    "Camera",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg, fg, muted, accent and two extra tints for the metric cards",
+    "content.greeting": "short header line on the left screen, 2 words, plus a muted sub-line of 2 words",
+    "content.metrics": "3 metric cards: label, muted sub-label, value, ring percentage",
+    "content.bars": "5 bar values 0-100 with % labels",
+    "content.chartTitle": "short chart heading, 2 words",
+    "content.tiles": "4 stat tiles: icon, value, label",
+    "timing.hold": "frames the finished dashboard holds (default 97)",
+    "loop": "end on the empty stage so the clip loops (default true)"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Single continuous shot, no cuts, silent. Build lasts 0.20-1.27 s (f6-f38), hold 1.27-4.50, staggered fade-out 4.50-4.70, then 9 empty frames = first frame, so it loops. Screens are white rounded cards with soft shadows and no bezel or notch. Proposed term: fade-up-loop (empty stage at both ends). sfx planned by the glue rule, not measured. Family chosen mobile-app over the catalogue hint product-ui because both screens are phones.",
+  "status": "studied"
+}

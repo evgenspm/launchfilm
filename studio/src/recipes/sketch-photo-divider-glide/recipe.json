@@ -1,0 +1,179 @@
+{
+  "id": "sketch-photo-divider-glide",
+  "title": "Sketch-to-photo divider glide",
+  "summary": "A line-drawing layer and the finished photo of the same scene share one frame; a thin divider with a pill handle glides left, rests, comes back to centre, then returns home, so the viewer compares plan and result in one shot.",
+  "use_when": [
+    "Showing a transformation: plan vs result, draft vs final, raw vs edited",
+    "Interior, renovation, retouch or design-tool reels where both states share one framing",
+    "A square or vertical feed loop with no cuts and a short two-line promise",
+    "Proof beat inside a longer film: the before/after carries the claim"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/before-after-slider/",
+    "author": "Jitter",
+    "ref_id": "jt-069"
+  },
+  "family": "transitions",
+  "tags": [
+    "compare",
+    "divider",
+    "wipe",
+    "transformation",
+    "sketch",
+    "photo",
+    "interior",
+    "square",
+    "no-cuts",
+    "silent",
+    "loop"
+  ],
+  "techniques": [
+    "mask-wipe",
+    "word-reveal"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 10,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#E0972D",
+      "#D7DCCA",
+      "#65421D",
+      "#3E2B16",
+      "#C6A676",
+      "#B8B8A5"
+    ],
+    "type_style": "regular text serif, sentence case, white, normal tracking, 2 lines top-left, ~5.5 % H per line, left margin ~6 % W; small white monogram mark bottom-left (~8 % W)",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "divider glide starts",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "divider settles",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "orange line-drawing of a room covers 87 % of the width, a sliver of the real photo right of a white divider with pill handle; 2-line headline, 7 words, names the transformation",
+      "camera": "static (layers fixed; motion.json zoom 0.2 %/s, not visible on sheets)",
+      "motion": "headline per-word fade left to right, starts by f8, complete by f15, easings.outExpo (±0.25 s); divider creeps 0.87 -> 0.83 W, easings.inOutSine 30 fr",
+      "transition_out": "mask-wipe",
+      "sfx": ""
+    },
+    {
+      "t0": 1,
+      "t1": 3,
+      "beat": "proof",
+      "shot": "divider glides left and reveals the photo of the same room; headline and mark stay on the drawing layer and are clipped by the divider",
+      "camera": "static",
+      "motion": "divider x 0.83 -> 0.18 W: 0.69 at 1.27, 0.46 at 1.50, 0.33 at 1.77, 0.28 at 2.00, 0.18 at 2.77; peak 0.23 W per 0.25 s at 1.27-1.50; springs.heavy ~50 fr, no overshoot (overshoot not measurable)",
+      "transition_out": "mask-wipe",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3,
+      "t1": 4.5,
+      "beat": "proof",
+      "shot": "rest on the finished photo, a narrow orange strip with the clipped headline and mark at left",
+      "camera": "static",
+      "motion": "divider settles 0.18 -> 0.16-0.17 W, no visible rebound (±0.25 s)",
+      "transition_out": "mask-wipe",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4.5,
+      "t1": 6,
+      "beat": "proof",
+      "shot": "divider glides back right, the drawing returns over the left half",
+      "camera": "static",
+      "motion": "divider x 0.17 -> 0.48 W: 0.19 at 4.77, 0.25 at 5.00, 0.37 at 5.27, 0.42 at 5.50, 0.45 at 5.77; peak at 5.00-5.27; springs.heavy ~45 fr (overshoot not measurable)",
+      "transition_out": "mask-wipe",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6,
+      "t1": 7.5,
+      "beat": "proof",
+      "shot": "split near the centre: drawing left, photo right, headline cut mid-word by the divider",
+      "camera": "static",
+      "motion": "divider creeps 0.48 -> 0.52 W, easings.linear 45 fr (±0.25 s)",
+      "transition_out": "mask-wipe",
+      "sfx": ""
+    },
+    {
+      "t0": 7.5,
+      "t1": 9,
+      "beat": "proof",
+      "shot": "divider glides right, the drawing covers the room again and the full headline returns",
+      "camera": "static",
+      "motion": "divider x 0.52 -> 0.85 W: 0.59 at 7.77, 0.72 at 8.00, 0.78 at 8.27, 0.81 at 8.50, 0.83 at 8.77; peak at 7.77-8.00; springs.heavy ~45 fr (overshoot not measurable)",
+      "transition_out": "mask-wipe",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9,
+      "t1": 10,
+      "beat": "proof",
+      "shot": "hold on the opening composition: drawing with headline, photo sliver right of the divider",
+      "camera": "static",
+      "motion": "divider settles 0.85 -> 0.86 W; nothing else moves",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 2,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandMark",
+    "BlurIn",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: accent tints the before layer, fg colours the headline, divider and mark",
+    "content.before": "image of the before state (sketch, draft, raw), same framing as after",
+    "content.after": "image of the after state (photo, final, edited)",
+    "content.headline": "2-line promise, 6-8 words, on the before layer",
+    "content.tint": "colour laid over the before image (default brand accent, multiply)",
+    "timing.stops": "divider stops as share of width, default [0.87, 0.83, 0.17, 0.48, 0.52, 0.86]",
+    "timing.glides": "glide start frames at 30 fps, default [30, 135, 225]",
+    "aspect": "1:1 | 4:5 | 9:16 | 16:9; divider stays vertical"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One continuous shot, 0 cuts: row boundaries are speed changes of one divider. Divider positions measured from sheet cells (share of width, ±1 %). Three glides start at f30, f135, f225 and settle in 45-50 fr without visible overshoot; holds of 1.5 s between them. Headline and mark live on the before layer and are clipped by the divider. The two layers are the same room aligned 1:1 (drawing traced from the photo). Not loopable as is: the headline is absent at f0 and present at the end, the divider position matches. sfx planned by the glue rule, not measured (source is silent). Proposed term: divider-glide (two-state compare slider, not in vocabulary).",
+  "status": "studied"
+}

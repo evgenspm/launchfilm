@@ -1,0 +1,260 @@
+{
+  "id": "desk-laptop-editor-step-tutorial",
+  "title": "Desk laptop opener into a voiced editor step tutorial",
+  "summary": "A filmed laptop on a dark desk shows a finished phone render, then the film becomes a screen capture on a blue backdrop that walks through each editor step under VO. One continuous shot, the result proves the steps.",
+  "use_when": [
+    "A creative tool shows how fast a result is made, step by step, with VO",
+    "Vertical social tutorial where the finished output must open the film",
+    "A real screen recording exists and each step is one or two clicks",
+    "Showing that settings (zoom, tilt, animation, effects, export) change a preview live"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/d0bwPGAN",
+    "author": "Raylight",
+    "ref_id": "rl-076"
+  },
+  "family": "product-ui",
+  "tags": [
+    "tutorial",
+    "how-to",
+    "vertical",
+    "screen-recording",
+    "voice-over",
+    "editor",
+    "phone-mockup",
+    "laptop",
+    "dark",
+    "one-shot",
+    "export"
+  ],
+  "techniques": [
+    "screen-recording",
+    "device-laptop",
+    "device-phone",
+    "device-3d",
+    "zoom-tier",
+    "cursor-follow",
+    "push-in",
+    "handheld",
+    "vignette",
+    "glow"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 34.58,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#040506",
+      "#C7BFB4",
+      "#0446D7",
+      "#191B1F",
+      "#1E2B46",
+      "#868F97"
+    ],
+    "type_style": "no added type: all text is the product UI (small grotesk UI labels, white on dark panels); no captions burned in",
+    "treatment": [
+      "vignette",
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": true,
+    "music": {
+      "present": true,
+      "bpm": 122.3,
+      "energy": "medium",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "cursor click on a sidebar control or menu item (rows 2-7, 9, 11-12)",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "settings menu or effects list opens (rows 7, 9)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "final click on the export button (row 13)",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4.75,
+      "beat": "hook",
+      "shot": "filmed laptop on a dark desk, brick wall behind; its screen shows the editor with a finished macro phone render and a lit timeline",
+      "camera": "handheld drift, slight pull 1.00->0.98 over 0-3 s (motion.json -0.5..-1.7 %/s), then push-in toward the screen ~1.00->1.15 over 4.00-4.77 (±0.25 s)",
+      "motion": "only the on-screen preview plays: a toolbar button gains a selection outline at 2.77 and the macro phone turns slightly 3.00-3.77; timeline playhead advances (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 4.75,
+      "t1": 7.5,
+      "beat": "feature",
+      "shot": "screen capture of the editor on a blue gradient backdrop: a flat phone screenshot sits on the canvas; sidebar shows frame settings",
+      "camera": "zoom-tier full->region on the canvas 5.00->5.50 (window width ~45 %->70 % of frame), then dolly right to the sidebar 6.00->6.50, holds",
+      "motion": "screenshot already placed at 5.00; cursor opens the frame dropdown 6.77 and picks a phone frame 7.00-7.27 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 7.5,
+      "t1": 10.75,
+      "beat": "feature",
+      "shot": "camera back on the canvas: the screenshot now wears a black phone frame with notch; the frame previews a quick turn and then scales down",
+      "camera": "dolly left back to the canvas 7.27->7.77, then static framing with small drift",
+      "motion": "phone frame appears at 7.77; 3D turn preview 8.77-9.00 (edge-on at 9.00), back to front 9.27; device scales ~1.00->0.55 and moves down 9.50-10.50 (±0.25 s, springs.ui suggested)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 10.75,
+      "t1": 13,
+      "beat": "feature",
+      "shot": "editor with the device small at the canvas bottom; sidebar zoom value is raised and the phone grows into a tight macro crop of its top corner",
+      "camera": "zoom-tier region with sidebar visible on the right; slight push 10.77->11.77",
+      "motion": "device scale ~0.55->2.5 between 11.00 and 12.27, easings.outExpo suggested (±0.25 s); macro crop shows status bar, chips and two list rows",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 13,
+      "t1": 16.75,
+      "beat": "feature",
+      "shot": "macro of the phone corner fills the canvas; tilt is added so the device leans back with visible bezel edge and perspective",
+      "camera": "zoom-tier element: canvas only, push-in 13.00->14.77 (~1.00->1.35); sidebar off-frame",
+      "motion": "phone rises and recentres 13.00-14.77; tilt applied 15.00-15.27 (rows of UI skew ~8° and the right bezel shows), settles by 15.50 (±0.25 s, springs.heavy suggested)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 16.75,
+      "t1": 18,
+      "beat": "feature",
+      "shot": "camera slides down-left along the tilted phone to the timeline; a clip is dragged and a second track appears",
+      "camera": "dolly down-left 16.50->17.50 (motion.json -189,-398 px/s @1920)",
+      "motion": "hand cursor drags the clip 16.77-17.27; a red track row appears at 17.50 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 18,
+      "t1": 20,
+      "beat": "feature",
+      "shot": "sidebar animate tab: empty animation list, an add menu opens with custom moves and effects; a rotation move is picked and its easing shows",
+      "camera": "zoom-tier element on the sidebar, static after a short pan at 18.00-18.27",
+      "motion": "add menu opens 18.77 (appears between cells, < 7 fr); rotation highlighted 19.27; settings panel with direction and easing at 19.50 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 20,
+      "t1": 23,
+      "beat": "proof",
+      "shot": "playback of the result: the tilted dark phone slowly rotates on the canvas while the playhead runs",
+      "camera": "dolly back to the canvas 19.77->20.27, then static framing",
+      "motion": "phone yaw turn ~10° over 20.27-22.77, easings.inOutSine (ease in and out set in the panel); timeline playhead moves",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 23,
+      "t1": 26,
+      "beat": "feature",
+      "shot": "sidebar design tab: layer effects list opens and three cinematic effects are picked one after another",
+      "camera": "dolly right to the sidebar 23.00->23.77, push-in on the list 24.77->25.27 (~1.00->1.6)",
+      "motion": "effects list opens 24.77; picks highlighted at 25.27, 25.50, 25.77 (one per cell, ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 26,
+      "t1": 29.25,
+      "beat": "proof",
+      "shot": "playback with effects: the rotating phone now soft-focused with blur and dark vignette, edge highlights glow",
+      "camera": "dolly back to the canvas 26.00->26.27, then static",
+      "motion": "phone rotation continues; focus softens by 26.27 and the image holds blurred to 29.00",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 29.25,
+      "t1": 30,
+      "beat": "feature",
+      "shot": "project panel slides in with background presets; the share menu opens with a list of saved items",
+      "camera": "dolly right 29.00->29.50",
+      "motion": "panel enters 29.27; share menu opens 29.77 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 30,
+      "t1": 33.5,
+      "beat": "feature",
+      "shot": "export dialog over a blurred editor: format, resolution, compression and destination options; file destination is chosen",
+      "camera": "zoom-tier region: dialog framed small, holds; pans slightly 30.00->30.50",
+      "motion": "background blurs as the dialog opens 30.00; resolution clicked 32.00; destination switched to file 32.77, button label changes (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 33.5,
+      "t1": 34.58,
+      "beat": "feature",
+      "shot": "close framing on the dialog's lower half: compression options, a save toggle and the export button under the cursor",
+      "camera": "push-in on the button 33.27->33.77 (~1.00->1.6, motion.json 25 %/s), holds",
+      "motion": "cursor clicks the export button 34.00; hold to the end",
+      "transition_out": "end",
+      "sfx": "ui-confirm"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 1,
+    "screen_recording": true,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "FootageClip",
+    "LaptopFrame",
+    "PhoneFrame",
+    "ZoomTier",
+    "Camera",
+    "Cursor",
+    "BrandBackdrop",
+    "BrandProvider",
+    "Vignette",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg and accent drive the blue gradient backdrop band above and below the capture",
+    "content.opener": "4-5 s filmed or rendered shot of a laptop showing the finished output",
+    "content.recording": "screen recording of the tool, one take, about 30 s, covering 6-8 steps",
+    "content.steps": "list of {t, target} zoom targets (canvas or sidebar region) the camera visits, one per VO step",
+    "content.vo": "VO script: 11 short phrases, ~104 words over ~32 s (~3.3 words/s), one step per phrase",
+    "music.bpm": "light beat around 122 BPM under the VO, ducked",
+    "aspect": "9:16; the capture is framed with blue backdrop bands top and bottom"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "One continuous shot (cuts.json: 0 hard, 0 soft, 0 flashes); near-misses at 4.83, 9.20, 28.73 are camera moves inside the shot, so every transition_out is continuous. The opener is filmed footage of a laptop; from ~4.83 the picture is a screen capture with zooms and pans, the join reads as a push into the screen (not measured frame by frame; 4 fps sheets). VO ~104 words, 0.55-32.55 s, ~3.3 words/s, one step per phrase; music 122.3 BPM (confidence 0.21). sfx planned by the glue rule, not measured: clicks are not distinguishable under VO and music. Springs and easings are suggestions; all motion numbers are ±0.25 s from sheets. device-3d: the phone is a 3D device render inside the tool, tilted and rotated. Proposed terms: footage-to-capture handoff, tutorial step zoom.",
+  "status": "studied"
+}

@@ -1,0 +1,153 @@
+{
+  "id": "pixel-slice-word-reveal",
+  "title": "Pixel slice word reveal",
+  "summary": "A flat blue hold snaps to a brand-pink frame, then band and column slices tear through a dot grid until one word assembles from coarse pink pixel blocks over a pale field, a small URL settling under it. Under 3 s, edgy.",
+  "use_when": [
+    "A short tech or developer brand intro where the name is the only copy",
+    "A sting before or after a longer film, 2-3 s",
+    "Social loops that need a hard, digital-feeling reveal of one word",
+    "Silent autoplay where a colour snap has to stop the scroll"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/glitch-01-text-reveal/",
+    "author": "Jitter",
+    "ref_id": "jt-046"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "text-reveal",
+    "pixel",
+    "slice",
+    "rgb-split",
+    "tech",
+    "intro",
+    "sting",
+    "type-only",
+    "wordmark",
+    "short",
+    "flash"
+  ],
+  "techniques": [
+    "glitch-cut",
+    "flash",
+    "mask-wipe"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 2.9,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#4D48FA",
+      "#111111",
+      "#FD00E7",
+      "#DCE1FE"
+    ],
+    "type_style": "regular-weight grotesk, sentence case, normal tracking, one word centred, cap height ~12 % H; URL small (~2 % H) at ~85 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "full-frame pink snap",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "band and column slices tearing the frame",
+        "sound": "glitch-sfx",
+        "origin": "planned"
+      },
+      {
+        "event": "word resolves from pixel blocks",
+        "sound": "glitch-sfx",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.03,
+      "beat": "hook",
+      "shot": "flat saturated blue field, empty; snaps to a full-frame brand-pink fill just before the cut",
+      "camera": "static",
+      "motion": "hold f0-f28 (no change in any cell); pink fill f28-f31, 3 fr, no easing (frame swap)",
+      "transition_out": "flash",
+      "sfx": "hit"
+    },
+    {
+      "t0": 1.03,
+      "t1": 1.27,
+      "beat": "tension",
+      "shot": "frame torn into horizontal bands: pale top third, blue below with thin blue rules, tiny pink pixel specks; then a blue bar on pale",
+      "camera": "static",
+      "motion": "bands swap every 2-4 fr, easings.linear frame steps (±0.25 s); specks 4-8 px at fixed positions",
+      "transition_out": "glitch-cut",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 1.27,
+      "t1": 1.6,
+      "beat": "reveal",
+      "shot": "blue field with a 5x8 white dot grid and pink specks; then a 3-row mosaic of blue and pale column blocks with a pink pixel fragment of the word at centre",
+      "camera": "static",
+      "motion": "dot grid holds ~5 fr; column mosaic appears ~f45, blocks toggle blue/pale every 2-3 fr (±0.25 s); word fragment as pink blocks, letters offset",
+      "transition_out": "mask-wipe",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 1.6,
+      "t1": 2.9,
+      "beat": "logo",
+      "shot": "pale lavender field, one word centred in near-black, small URL near the bottom; last blue columns clear",
+      "camera": "drift 1.00->1.01 (motion.json 0.8 %/s, not visible on sheets)",
+      "motion": "2 remaining columns gone by f53; word letters jump between offset positions with pink block overlays, resolved by f68 (±0.25 s); URL last letters offset and faded, settled by f83; hold to f87",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "SliceGlitch",
+    "RGBSplit",
+    "Flash",
+    "CutFlash",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg (blue field), fg (word), accent (pink snap and pixel blocks), muted (pale field)",
+    "content.word": "one word, the product name, 4-8 letters",
+    "content.url": "small line under the word; defaults to brand.url",
+    "aspect": "4:5 | 1:1 | 9:16 | 16:9",
+    "timing.hold": "frames of the empty opening hold (default 28)",
+    "seed": "seed for block and slice positions"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets and cut frames: cuts at f31, f38, f48; pink snap f28-f31 (near-miss score at 0.93 s). Every glitch state is a frame swap, not a tween: blocks and slices change on 2-3 fr steps. Opening is 1 s of nothing; keep it, the snap needs the empty hold. Proposed terms (not in vocabulary): pixel-block-reveal, column-slice-mosaic, dot-grid. sfx planned by the glue rule, not measured (reference is silent). Cut rate 1.03/s; energy left null because there is no music.",
+  "status": "studied"
+}

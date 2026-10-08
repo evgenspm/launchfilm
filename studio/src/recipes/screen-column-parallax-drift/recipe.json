@@ -1,0 +1,193 @@
+{
+  "id": "screen-column-parallax-drift",
+  "title": "Two-lane screen column drift",
+  "summary": "Nine product screens of mixed sizes (wide, square, tall) rise through the frame in a staggered two-lane column at a constant speed, each lane a touch faster or slower, so a long screen tour reads as one calm, continuous scroll.",
+  "use_when": [
+    "A product overview with many screens and no single hero view",
+    "Showing web and mobile layouts of one product side by side",
+    "A silent loop for a site hero, a booth screen or a showreel interlude",
+    "Background plate behind a statement or logo in a longer film"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/cascading-screens/",
+    "author": "Jitter",
+    "ref_id": "jt-028"
+  },
+  "family": "product-ui",
+  "tags": [
+    "screens",
+    "showreel",
+    "scroll",
+    "parallax",
+    "masonry",
+    "multi-screen",
+    "loop",
+    "light",
+    "silent",
+    "overview"
+  ],
+  "techniques": [
+    "dolly",
+    "card-grid"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 18,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#EFFAFE",
+      "#41AEF2",
+      "#28A9FD",
+      "#C8EBFE",
+      "#FDFEFE"
+    ],
+    "type_style": "rounded geometric sans, medium weight, size label centred on each screen at ~4 % H (6 % on wide screens), a tiny 3-line note at ~1 % H under the label of the first wide screen",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "a new screen crosses the bottom edge",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.5,
+      "beat": "hook",
+      "shot": "empty pale field; first wide pale screen rises from the bottom edge, size label then a 3-line note appear as it climbs",
+      "camera": "dolly up, easings.linear, ~0.26 H/s (12.5 px/fr at 1920 wide), no zoom",
+      "motion": "screen enters at 0.27 s from below frame, easings.linear rise, no own animation (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4.77,
+      "beat": "feature",
+      "shot": "saturated square screen (left lane) and white tall screen (right lane) rise under the wide one, square overlaps it",
+      "camera": "dolly up, easings.linear, ~0.26 H/s",
+      "motion": "square enters 2.50 s, tall screen 2.77 s: stagger 8 fr (±0.25 s); lane speeds differ ~0.23 to 0.29 H/s",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4.77,
+      "t1": 5.77,
+      "beat": "feature",
+      "shot": "small pale square enters lower left while the wide screen leaves past the top edge",
+      "camera": "dolly up, easings.linear, ~0.26 H/s",
+      "motion": "enters 4.77 s, easings.linear (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5.77,
+      "t1": 8.77,
+      "beat": "feature",
+      "shot": "saturated wide screen rises across both lanes, small square overlaps its top edge; it owns the centre around 8.0 to 9.0 s",
+      "camera": "dolly up, easings.linear, ~0.26 H/s",
+      "motion": "enters 5.77 s, easings.linear; layered under the small square (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 8.77,
+      "t1": 9.77,
+      "beat": "feature",
+      "shot": "second small pale square appears under the wide screen, right of centre",
+      "camera": "dolly up, easings.linear, ~0.26 H/s",
+      "motion": "enters 8.77 s, tucked under the wide screen, easings.linear (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9.77,
+      "t1": 10.77,
+      "beat": "feature",
+      "shot": "white tall screen enters lower left; lanes have swapped sides compared with the first half",
+      "camera": "dolly up, easings.linear, ~0.26 H/s",
+      "motion": "enters 9.77 s, easings.linear (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 10.77,
+      "t1": 12,
+      "beat": "feature",
+      "shot": "saturated tall screen enters lower right while the wide screen exits at the top",
+      "camera": "dolly up, easings.linear, ~0.26 H/s",
+      "motion": "enters 10.77 s, easings.linear (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 12,
+      "t1": 15.77,
+      "beat": "feature",
+      "shot": "last wide pale screen rises behind the saturated tall screen and climbs to the centre as the others leave",
+      "camera": "dolly up, easings.linear, ~0.26 H/s",
+      "motion": "enters 12.00 s under the tall screen (lower z), easings.linear; tall screen exits top ~16.0 s (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 15.77,
+      "t1": 18,
+      "beat": "feature",
+      "shot": "last wide screen drifts out past the top edge; the empty pale field from frame 0 returns",
+      "camera": "dolly up, easings.linear, ~0.26 H/s",
+      "motion": "exit by the same linear rise, gone by ~17.8 s; nothing new enters (±0.25 s)",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 9,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "ScreenSlot",
+    "Dolly",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the field, accent for the saturated screens, a pale accent tint and surface white for the others",
+    "content.screens": "ordered list of screenshots with kind wide | square | small | tall; default order wide, square, tall, small, wide, small, tall, tall, wide",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; lanes recompose, screen widths scale to the frame width",
+    "timing.speed": "rise speed in frame heights per second (default 0.26)",
+    "timing.laneSpread": "per-screen speed factor spread (default 0.12 = 0.88 to 1.12)",
+    "timing.gap": "seconds between screen entries (default ~1.0, pairs 8 fr apart)",
+    "labels": "show size labels on placeholder screens (default false in a real film)",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Single shot, no cuts, silent; sfx planned by the glue rule, not measured. Measured from 4 fps sheets: constant upward travel ~0.26 frame heights per second (motion.json -322 to -413 px/s at 1920 wide), per-screen speeds 0.23 to 0.29 H/s give a light parallax; no zoom, no rotation (motion.json zoom/rot noise comes from the parallax). A new screen crosses the bottom edge about every 1 s. First and last frames are the empty field, so it loops. Proposed term: parallax-cascade (not in the vocabulary).",
+  "status": "studied"
+}

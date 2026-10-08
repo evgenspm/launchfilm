@@ -1,0 +1,153 @@
+{
+  "id": "mask-rise-split-mark",
+  "title": "Twin serif phrases around a splitting wordmark",
+  "summary": "Two 2-line serif phrases rise out of clip masks above and below a small centred wordmark; the mark splits in half and pushes the phrases apart, then the top phrase drops away and the bottom one holds alone.",
+  "use_when": [
+    "A fashion, beauty or lifestyle brand opening a campaign with a two-part contrast line",
+    "Silent autoplay feeds where type alone carries a short editorial statement",
+    "A 6 s intro or bumper in 4:5 before product shots",
+    "Brands with a short all-caps wordmark that reads when split into two halves"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-edit-product-launch/",
+    "author": "Jitter",
+    "ref_id": "jt-002"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "serif",
+    "editorial",
+    "wordmark",
+    "mask-rise",
+    "type-only",
+    "light",
+    "minimal",
+    "fashion",
+    "split",
+    "no-ui",
+    "vertical-4x5"
+  ],
+  "techniques": [
+    "mask-rise"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 6,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#010101",
+      "#232323",
+      "#7A7A7A",
+      "#D1D1D1",
+      "#F6F6F6"
+    ],
+    "type_style": "high-contrast condensed italic serif display, sentence case, tight leading (~0.9), each line ~11 % H; small bold grotesk caps wordmark ~2 % H; tiny mono caps corner labels ~1 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each phrase line lands out of its mask",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "wordmark halves slide apart",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "top phrase drops out of its mask",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.3,
+      "beat": "hook",
+      "shot": "white page, small wordmark centred, four tiny corner labels; a 2-word phrase on 2 lines rises above it, a second 2-word phrase below",
+      "camera": "static",
+      "motion": "per line rise out of a clip mask, line starts f1 / f5 / f10 / f14 (stagger 4-5 fr), each line easings.outExpo 8 fr, all settled f24; overshoot not visible on the 30 fps strip",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.3,
+      "t1": 3.5,
+      "beat": "logo",
+      "shot": "the wordmark splits into its two halves which slide to the phrase edges; the two phrases push apart to open a wide middle band; hold",
+      "camera": "static",
+      "motion": "split starts f39, halves travel to the left and right text edges, top phrase up ~8 % H, bottom phrase down ~8 % H, one curve easings.inOutSine 15 fr (f39-f54); hold f54-f105",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.5,
+      "t1": 4.5,
+      "beat": "outro",
+      "shot": "top phrase and both wordmark halves leave, a near-invisible ghost of them stays; bottom phrase holds in place",
+      "camera": "static",
+      "motion": "top phrase drops into its clip masks, lower line first f105-f108, upper line f109-f112 (stagger 4 fr), easings.inExpo 4 fr; wordmark halves fade 3 fr at f106; ghost left at ~3 % opacity",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4.5,
+      "t1": 6,
+      "beat": "outro",
+      "shot": "bottom phrase alone on white, corner labels faded to the same faint ghost",
+      "camera": "static",
+      "motion": "corner labels fade between 4.27 and 4.50 s (±0.25 s, easing not measurable); then a full hold of 45 fr to the end",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "useBrand",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font (an italic serif works best), fg, bg, mono for the corner labels",
+    "content.mark": "short all-caps wordmark text, split at its midpoint (4-6 letters)",
+    "content.top": "first phrase, 2 words, one per line (the 'before' half of the contrast)",
+    "content.bottom": "second phrase, 2 words, one per line (the half that stays to the end)",
+    "content.labels": "four tiny corner labels: top-left, top-centre, top-right, bottom-centre ('' = none)",
+    "aspect": "4:5 native; 9:16 and 1:1 keep the vertical stack",
+    "timing.stagger": "frames between line entrances (default 4.5 at 30 fps)",
+    "timing.splitAt": "frame the wordmark splits (default 39)",
+    "timing.exitAt": "frame the top phrase drops (default 105)",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One continuous shot, zero cuts; rows split at state changes measured on 30 fps strips (1 fr) except the corner-label fade (sheet cells, ±0.25 s). transition_out hard-cut is the schema default only, no cut happens. Entrances are per line, not per letter. Exits are 4 fr, half the 8 fr entrance. Ghost of the removed phrase stays at ~3 % opacity to the end. Proposed terms (not in vocabulary): mark-split, ghost-hold. sfx planned by the glue rule, not measured (reference is silent). Palette sampled from keyframes 0.5/2.5/4.5 s since there are no cut frames. motion.json zoom 1.3 %/s in 4-6 s is not visible on the sheets (bottom phrase width unchanged), so no push-in. Catalogue hints typewriter / card-grid / hard-cut were not seen.",
+  "status": "studied"
+}

@@ -1,0 +1,162 @@
+{
+  "id": "mark-slide-phrase-wipe",
+  "title": "Mark grows from a dot, slides open a phrase, hides it",
+  "summary": "On black, a glowing mark grows from a dot at centre, glides left, then whips right and drags a short phrase out from behind its edge. It slides back over the phrase to swallow it and settles left, dimmed. One object does every move.",
+  "use_when": [
+    "A 4 s logo sting or bumper with a mark and one short line",
+    "Opening or closing a dark film with the brand mark as the only actor",
+    "A mark with a strong silhouette that reads at 10 % of frame width",
+    "Silent autoplay where one motion idea must carry the brand"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/MjeQBgU1",
+    "author": "Samet Onder",
+    "ref_id": "rl-003"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "logo-sting",
+    "mark",
+    "dark",
+    "glow",
+    "mask-reveal",
+    "tagline",
+    "bumper",
+    "minimal",
+    "black"
+  ],
+  "techniques": [
+    "logo-from-dot",
+    "mask-wipe",
+    "glow",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4.27,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#E1E1E1",
+      "#7B7B7B",
+      "#3E3E3E",
+      "#1A1A1B"
+    ],
+    "type_style": "bold grotesk, title case, normal tracking, cap height ~6 % H, one line of 3 words, white with a soft halo",
+    "treatment": [
+      "glow",
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "mark grows from the dot to full size",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "mark glides left and settles",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "mark whips right, phrase revealed",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "mark slides back over the phrase",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "black frame; a dot appears at centre and grows into the mark, ~3 % to ~10 % of frame width, glow halo rising with it",
+      "camera": "locked frame, no global move; growth is the mark's own scale",
+      "motion": "empty 0.00-0.27; dot at 0.27 (~3 % W); scale up 22 fr (±0.25 s), slow to 0.77 then fast to full at 1.00, springs.heavy (overshoot not measurable); halo fades in with the scale",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 1,
+      "t1": 2.27,
+      "beat": "logo",
+      "shot": "the mark alone, glowing at centre, then glides to the left third and stops",
+      "camera": "locked frame; the mark travels ~27 % of width left on a shallow downward arc",
+      "motion": "hold 1.00-1.27 (8 fr); glide left 22 fr (±0.25 s), easings.inOutSine, path dips ~9 % H at 1.77 and returns, ~7 deg tilt mid-move, motion blur on the fast frames; settled at 2.00, holds to 2.27",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2.27,
+      "t1": 3.27,
+      "beat": "logo",
+      "shot": "mark whips to the right of centre; a 3-word phrase is pulled out from behind its left edge and sits centred, mark beside it",
+      "camera": "locked frame",
+      "motion": "mark travels ~57 % of width right in 15 fr (±0.25 s), easings.outExpo, heavy motion blur at 2.50; phrase clipped by a mask whose edge follows the mark, fully shown at 2.77; mark settles springs.snappy (~6 % overshoot read at 3.00, ±0.25 s); phrase holds still 2.77-3.27",
+      "transition_out": "mask-wipe",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.27,
+      "t1": 4.27,
+      "beat": "logo",
+      "shot": "mark slides back left over the phrase, which disappears behind its edge; mark ends alone at the left third, dimmed",
+      "camera": "locked frame",
+      "motion": "mark travels ~57 % of width left in 22 fr (±0.25 s), easings.inOutSine, motion blur at 3.50; phrase hidden by the same mask from its right end; glow fades and mark drops to ~60 % brightness 3.77-4.00; hold to end",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": true,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandMark",
+    "LogoReveal",
+    "MarkHalo",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: the mark (needs a solid silhouette), display font, fg, bg (dark)",
+    "content.phrase": "one tagline line, 2-4 words, fits in ~45 % of frame width at 6 % H cap height",
+    "timing.growFrames": "frames for dot to full mark (default 22)",
+    "timing.revealFrames": "frames of the right whip that reveals the phrase (default 15)",
+    "timing.hideFrames": "frames of the return slide that hides it (default 22)",
+    "glow": "halo strength under the mark and phrase (default soft white)",
+    "endDim": "mark brightness at the end (default 0.6)"
+  },
+  "difficulty": "easy",
+  "render_cost": "heavy",
+  "notes": "Single shot, no cuts, silent reference; all times read from 4 fps sheets (±0.25 s). Mark size is constant (~10 % W, ~18 % H) after 1.00. The phrase never moves: only the mask edge travels with the mark. Glow sits under the mark, never additive on top. sfx planned by the glue rule, not measured. Proposed term (recipe.md only): mark-carried mask, a text mask whose edge is the moving mark. Palette sampled from keyframes 1.50 and 3.50 (no cut frames).",
+  "status": "studied"
+}

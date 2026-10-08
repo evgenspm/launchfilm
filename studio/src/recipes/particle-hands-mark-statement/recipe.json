@@ -1,0 +1,194 @@
+{
+  "id": "particle-hands-mark-statement",
+  "title": "Dot-grid figures reach for a glowing mark, then type",
+  "summary": "A glowing app mark spins in on black while two dot-column figures slide in from the edges and reach for it; the scene loses its light, an offer line and a grey sub-line blur in, then a URL is typed on a silent black end.",
+  "use_when": [
+    "a short silent teaser for a service or agency offer with a single promise",
+    "opening a film with a premium mark moment before any UI exists",
+    "a dark brand with a strong single-colour icon (blue, cyan, violet)",
+    "muted autoplay feeds where the copy must carry the offer"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/YXMdJ2QD",
+    "author": "Raylight",
+    "ref_id": "rl-087"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "particles",
+    "dot-grid",
+    "glow",
+    "logo-intro",
+    "lights-off",
+    "statement",
+    "url-typing",
+    "dark",
+    "silent",
+    "no-ui",
+    "offer"
+  ],
+  "techniques": [
+    "particle-form",
+    "light-on",
+    "glow",
+    "blur-in",
+    "statement-sequence",
+    "typewriter",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 12.3,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FFFFFF",
+      "#0674CD",
+      "#4CCDE8",
+      "#02164A",
+      "#8B8B8B"
+    ],
+    "type_style": "semibold grotesk, sentence case, normal tracking, ~7 % of frame height, period on each line; sub-line same size in mid grey; URL in the same face, white, lower case",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "mark spins in to face-on",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "halo builds behind the mark",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "dot figures slide in",
+        "sound": "shimmer",
+        "origin": "planned"
+      },
+      {
+        "event": "lights go off to black",
+        "sound": "silence-beat",
+        "origin": "planned"
+      },
+      {
+        "event": "URL typed, per character",
+        "sound": "type-click",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.25,
+      "beat": "hook",
+      "shot": "app mark centred on black spins from near edge-on to face-on and grows; two dot-column figures slide in from left and right edges, fingers pointing at it",
+      "camera": "static frame; mark width 34 -> 110 px (720p) over 60 fr",
+      "motion": "mark rotateY ~80 -> 0 deg + scale, easings.outQuint 60 fr (50 % by f18, 90 % by f40, no overshoot); figures slide 36 % W f15 -> f66, easings.outQuint 51 fr; halo light-on f15 -> f54 lagging the mark",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2.25,
+      "t1": 3.5,
+      "beat": "logo",
+      "shot": "hold: lit mark dead centre with blue halo, the two figures' fingertips almost touching it",
+      "camera": "drift: mark grows ~+12 % 3.00 -> 3.77 (±0.25 s)",
+      "motion": "figures drift back 1.5 % W over 40 fr, easings.inOutSine; dot columns flicker 40-100 % per column",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 3.5,
+      "t1": 4.5,
+      "beat": "logo",
+      "shot": "lights off: figures and halo fade out, the mark tilts away and darkens to black",
+      "camera": "static",
+      "motion": "halo + figures to black 15 fr (f105 -> f120), easings.inOutSine; mark tilts away and dims core -> deep blue (f127) -> black (f135), 30 fr; 5 fr of pure black",
+      "transition_out": "continuous",
+      "sfx": "silence-beat"
+    },
+    {
+      "t0": 4.5,
+      "t1": 6.25,
+      "beat": "feature",
+      "shot": "offer statement, 6 words, white, centred on black",
+      "camera": "static",
+      "motion": "whole line blur-in from black, blur + fade 24 fr (f136 -> f160), easings.outQuint; holds",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 6.25,
+      "t1": 8.5,
+      "beat": "feature",
+      "shot": "grey sub-line, 5 words, the guarantee, appears under the offer; the pair re-centres, then both fade out",
+      "camera": "static",
+      "motion": "sub-line blur-in ~15 fr (6.27 -> 6.77, ±0.25 s), first line rises ~4 % H on springs.ui to re-centre the pair; both fade out ~8 fr after 8.00 (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 8.5,
+      "t1": 12.3,
+      "beat": "cta",
+      "shot": "URL, 19 characters, typed on black, left edge fixed at the final centred position; holds ~2 s",
+      "camera": "static",
+      "motion": "typewriter steady ~3 fr/char from sheets (2 chars at 8.50, 17 at 10.00, complete by 10.27; human 30 fps pass: 2.5 fr/char), no caret; hold ~60 fr to the end",
+      "transition_out": "end",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "ParticleForm",
+    "BrandMark",
+    "MarkHalo",
+    "Dolly",
+    "lightCurve",
+    "lightsOff",
+    "StatementSequence",
+    "Statement",
+    "Typewriter",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: mark (rounded app icon reads best), accent for halo and dots, bg near black, fg, muted for the sub-line",
+    "content.figure": "PNG/SVG silhouette sampled into dot columns for the two side figures (mirrored), e.g. reaching hands",
+    "content.statement": "offer line, <= 7 words, ends in a period",
+    "content.sub": "grey guarantee line under it, <= 6 words",
+    "content.url": "URL typed at the end, <= 24 chars",
+    "particles.pitch": "column pitch in px at 720p (default 10), dot 2 px, vertical pitch 3 px",
+    "timing.charFrames": "frames per typed character at 30 fps (default 2.6; sheets read ~3)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "heavy",
+  "notes": "No cuts: one continuous shot split at state changes. Measured at 30 fps by a human pass: mark 34 -> 110 px over 60 fr outQuint, no overshoot; figures 36 % W in 51 fr then drift back 1.5 % over 40 fr; halo #000420 -> #02164A over ~36 fr; lights-off halo 15 fr, mark 30 fr, 5 fr black; text blur-in 24 fr; URL 19 chars ~2.5-2.6 fr/char, no caret. Dots are a column grid (pitch 10 px at 720p, dot 2 px, ~3 px vertical pitch), cyan core to blue edge, per-column brightness 40-100 %. Proposed terms (not in vocabulary): lights-off, mark-spin-in, dot-column-figure. SFX planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

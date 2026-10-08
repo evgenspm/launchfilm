@@ -1,0 +1,147 @@
+{
+  "id": "dark-phone-macro-glow-tagline",
+  "title": "Dark phone macro tour with glowing name close",
+  "summary": "Four tight macro shots of a dark phone (hero art, score rings, suggestion card, hero again) on hard cuts, the whole phone rises out of black, fades, then the name and a short tagline glow in on black.",
+  "use_when": [
+    "A mobile app with one striking hero visual on its home screen",
+    "Premium, moody 9:16 teaser where the device is the set",
+    "An app whose home screen shows a score or a few ring metrics",
+    "Closing on name plus a 3-word tagline instead of a URL card"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/cTutKC8e",
+    "author": "Raylight",
+    "ref_id": "rl-066"
+  },
+  "family": "mobile-app",
+  "tags": ["vertical", "dark", "phone", "macro", "depth-of-field", "hero-art", "glow", "tagline", "teaser", "premium", "9-16"],
+  "techniques": ["device-phone", "device-3d", "rack-focus", "push-in", "dolly", "blur-in", "word-reveal", "quiet-close", "glow", "vignette", "hard-cut"],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 27.71,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": ["#0D0E0E", "#C8DECE", "#8D9A92", "#3F473F", "#4A564D", "#454646"],
+    "type_style": "UI: rounded grotesk, glowing pale-mint numerals; close: medium grotesk, sentence case, normal tracking, ~2 % H, centred, grey with a mint glow pass",
+    "treatment": ["glow", "vignette"]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 151.9,
+      "energy": "high",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {"event": "each hard cut between macro shots", "sound": "swoosh-short", "origin": "planned"},
+      {"event": "whole phone rises out of black", "sound": "swell", "origin": "planned"},
+      {"event": "name glow and tagline glow pass", "sound": "shimmer", "origin": "planned"},
+      {"event": "music drops out under the tagline and credit line (audio.json silence 22.50-27.71)", "sound": "silence-beat", "origin": "observed"}
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0, "t1": 3.6, "beat": "hook",
+      "shot": "macro of a dark phone's top corner, tilted; home screen: time, glowing wordmark, a gem on rock in a dark cave",
+      "camera": "slow lateral drift, -140 px/s (1920 basis), roll -2 deg/s, push 1.00 -> ~1.05 over 108 fr (motion.json)",
+      "motion": "camera only; screen static; easings.linear drift (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.6, "t1": 6.87, "beat": "proof",
+      "shot": "tilted close-up of the score block: big number, three ring metric pills, a suggestion card falling out of focus below",
+      "camera": "drift the other way, +125 px/s, roll +1 deg/s, slow pull back ~-1.5 %/s; shallow depth of field, focus on the top third",
+      "motion": "camera only; blur on lower card grows across the shot (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.87, "t1": 10.43, "beat": "feature",
+      "shot": "bottom edge of the phone at a steep angle: suggestion card with a button and a tab bar; rim light on the chamfer",
+      "camera": "drift -125 px/s, roll +3 deg/s, push ~+1 %/s; rack-focus from soft to sharp on the card",
+      "motion": "camera only; focus settles by ~9.00 (sheet-03 cell 4) (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 10.43, "t1": 14.03, "beat": "feature",
+      "shot": "very tight tilted shot of the hero gem on the screen, wordmark and score blurred at the edges",
+      "camera": "push-in accelerating 4.5 -> 9 %/s with a tilt up (-140 px/s vertical), easings.inOutSine (±0.25 s)",
+      "motion": "camera only; gem glows brighter as it nears frame centre",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 14.03, "t1": 16.5, "beat": "feature",
+      "shot": "black frame with a soft overhead light; the whole phone rises from the bottom edge, small, then grows to ~70 % frame height",
+      "camera": "dolly up and toward the phone: phone ~0.2 H at 15.00 -> ~0.7 H at 16.00, springs.heavy (overshoot not measurable)",
+      "motion": "phone enters at ~14.75 from below, settles ~16.50 (±0.25 s); screen wakes from dark as it rises",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 16.5, "t1": 18.5, "beat": "feature",
+      "shot": "full phone, front-on, floating in a soft spotlight showing the full home screen",
+      "camera": "near static hold with a tiny float, < 1 %/s",
+      "motion": "phone fades to black 18.00 -> 18.50, easings.inOutSine 15 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 18.5, "t1": 20.75, "beat": "logo",
+      "shot": "black with a faint radial vignette; product name small at centre",
+      "camera": "static",
+      "motion": "name blur-in 18.77 -> 19.27 (~15 fr, easings.outQuint); mint glow halo builds to 20.00, dims to grey by 20.27 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 20.75, "t1": 23.6, "beat": "logo",
+      "shot": "the name gains a period and a 3-word tagline on the same centred line",
+      "camera": "static",
+      "motion": "tagline word-reveal left to right 20.77 -> 21.50 while the line recentres; mint glow pass runs over the new words 21.27 -> 21.77, then all grey by 22.00; hold (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 23.6, "t1": 27.71, "beat": "outro",
+      "shot": "small grey sign-off line, 3 words, centred on black",
+      "camera": "static",
+      "motion": "line swaps in on one cell (±0.25 s); holds ~3.5 s; fades out from ~27.20",
+      "transition_out": "end",
+      "sfx": "silence-beat"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 4,
+    "url": false
+  },
+  "components": ["PhoneFrame", "Camera", "Dolly", "RackFocus", "KenBurns", "BlurIn", "WordReveal", "QuietClose", "Vignette", "Bloom", "BrandBackdrop", "BrandProvider", "ASPECTS"],
+  "params": {
+    "brand": "brand.json: dark bg, pale-mint accent for UI glow and the glow pass, display font",
+    "content.homeScreen": "one home screen: wordmark, hero art, a score with 3 ring metrics, one suggestion card, tab bar",
+    "content.heroArt": "image or 3D still of the hero object (shot 1 and 4)",
+    "content.name": "product name for the close",
+    "content.tagline": "3-word tagline that extends the name on one line",
+    "content.signoff": "small closing line, 3 words ('' = none)",
+    "timing.shot": "macro shot length in frames at 30 fps (reference ~107)"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Macro shots are a real 3D render of a phone with depth of field; the studio PhoneFrame is flat, so device-3d needs a model or a pre-rendered plate. Cut rhythm: 4 shots of 3.27-3.60 s, cut_on_beat 2/4 (3.60 and 14.03 land on beats). The cut at 14.03 goes to black with the phone emerging; it reads as a smash-cut-black but the music continues, so it is tagged hard-cut. Camera numbers from motion.json, not from strips; entrance frames are at 0.25 s sheet resolution. Glow pass along the tagline is a proposed term (glow-sweep). SFX other than the silence are planned by the glue rule, not measured; the reference is music-only."
+,
+  "status": "studied"
+}

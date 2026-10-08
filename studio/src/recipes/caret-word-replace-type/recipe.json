@@ -1,0 +1,111 @@
+{
+  "id": "caret-word-replace-type",
+  "title": "Caret word replace on white",
+  "summary": "A lone caret drops in on white, a name builds letter by letter from the caret, then a second phrase types out on the caret's left while the first word erases on its right. One caret does both jobs in 3 s.",
+  "use_when": [
+    "Swapping a product name for its category or a one-line definition",
+    "A 3 s silent opener or sticker loop before a longer film",
+    "Type-only social posts where the brand has no UI to show yet",
+    "Rewriting one term into another: old way to new way, name to tagline"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/moypOJA7",
+    "author": "Samet Onder",
+    "ref_id": "rl-014"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "typewriter",
+    "caret",
+    "word-replace",
+    "type-only",
+    "minimal",
+    "light",
+    "short",
+    "silent",
+    "no-ui"
+  ],
+  "techniques": [
+    "typewriter",
+    "push-in"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 3,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#000000",
+      "#9C9C9C"
+    ],
+    "type_style": "geometric grotesk, sentence case, normal tracking; first word semibold ~11 % H, second phrase medium ~10 % H; caret a 6 px rounded black bar ~15 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each glyph typed or erased",
+        "sound": "type-click",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3,
+      "beat": "hook",
+      "shot": "one shot on flat white: caret alone, then a one-word name (7 letters), then a two-word category phrase (15 chars) replaces it",
+      "camera": "static f0-f59; from f60 slow drift: scale 1.00 -> ~1.013 and ~15 px/s right (at 1920 W) to the end",
+      "motion": "f0-4 empty; caret drops in from above ~0.3 caret heights with opacity 0 -> 1, easings.outExpo 10 fr (f5-f15, overshoot not measurable); f20-f35 name builds right-to-left at the caret, ~2 fr per glyph, each glyph opacity+blur in 3 fr, whole line stays centred; f35-f45 caret eases left one space width away from the word, easings.outQuint 10 fr; f52-f73 phrase types left-to-right on the caret's left ~1.4 fr per char while the name erases from its first letter on the caret's right ~2 fr per glyph (3 fr fade out each); caret ends at the phrase's right edge f73; hold f73-f87, caret stays solid; f88-89 text clears, caret alone (loop reset)",
+      "transition_out": "end",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Typewriter",
+    "useTypewriter",
+    "typeDuration",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg for type and caret, bg flat",
+    "content.first": "one word, the name, built backwards from the caret (<= 10 letters)",
+    "content.second": "the replacement phrase typed forwards, 1-3 words (<= 20 chars)",
+    "timing.firstPerGlyph": "frames per glyph of the first word (default 2)",
+    "timing.secondPerGlyph": "frames per char of the second phrase (default 1.4)",
+    "timing.hold": "frames the final phrase holds before the reset (default 15)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; line stays centred, type ~10 % of H capped at 8 % of W",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from a 30 fps strip of the reference. No cuts, no audio. The caret never blinks during the 3 s; it is the only constant. First word appears glyph by glyph to the caret's right (reverse build), second phrase types normally to its left while the first word erases from its left edge: the caret sits between new and old text. Glyphs fade in over 3 fr with a light blur, not a hard pop. The line re-centres every frame (both edges move). Last 2 fr (f88-89) clear to caret only, so a loop restarts from the caret. Unknown term caret-swap is in recipe.md Proposed terms. sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

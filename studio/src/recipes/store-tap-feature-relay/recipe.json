@@ -1,0 +1,238 @@
+{
+  "id": "store-tap-feature-relay",
+  "title": "Store tap into a feature relay with ring and orbit",
+  "summary": "A store listing is tapped, then the app answers in fast single-idea shots: twin phones swing in, a card flips, a chart counts up, a band types a claim, a ring fills, coins orbit a globe, and the wordmark wipes on. Each shot under 2.3 s.",
+  "use_when": [
+    "A finance or wallet app launch that needs several capabilities shown in 15 s",
+    "Silent feed autoplay where each shot must carry one idea without VO",
+    "A store-download push: the film opens on the listing and the tap",
+    "Brands with one saturated accent per scene on black and white grounds"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/f2RRus1f",
+    "author": "scanna",
+    "ref_id": "rl-030"
+  },
+  "family": "product-ui",
+  "tags": [
+    "fintech",
+    "mobile",
+    "app-launch",
+    "feature-montage",
+    "progress-ring",
+    "orbit",
+    "line-chart",
+    "counter",
+    "store-listing",
+    "mixed-theme",
+    "silent"
+  ],
+  "techniques": [
+    "push-in",
+    "cursor-path",
+    "device-phone",
+    "device-3d",
+    "chart-draw",
+    "counter",
+    "typewriter",
+    "flash",
+    "orbit-ring",
+    "mask-wipe",
+    "ui-rebuild",
+    "glow",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 14.1,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#000000",
+      "#FFFFFF",
+      "#10B981",
+      "#806CC9",
+      "#332759",
+      "#AFB6B2"
+    ],
+    "type_style": "geometric grotesk, semibold, sentence case, normal tracking; headlines 4-6 % H, figures bold tabular 3 % H, sublines 1.5 % H",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "cursor presses the listing's action pill",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "twin phones swing in on Y",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "card slides down and flips",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "claim typed into the black band, per character",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "ring reaches 100 % and settles",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "each coin appears on the orbit",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "white wipe reveals the wordmark",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.33,
+      "beat": "hook",
+      "shot": "store listing strip on black: app icon, name line with a subline, action pill; cursor enters and presses the pill",
+      "camera": "push-in: listing width 12 % W -> 35 % W 0.00-0.77 s, 37 % at 1.00, then pull back to 28 % at 1.27 (frames 0-40)",
+      "motion": "listing scale up on springs.cameraIn ~23 fr (overshoot not measurable); cursor-path from lower right 0.50-1.00 s, springs.click press at f30 (±0.25 s); listing recedes easings.inExpo 8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 1.33,
+      "t1": 2.77,
+      "beat": "reveal",
+      "shot": "two phones with the app home screen (balance, round action buttons, list) side by side, one offset back, on black",
+      "camera": "pull-out: phones shrink and travel down 237 px/s @1920 from 2.00 s, scale -6 %/s",
+      "motion": "phones enter edge-on (Y ~85 deg at 1.50) and swing to a 3/4 view by 1.77 s on springs.heavy ~13 fr (±0.25 s); specular glint on the right phone's top corner at 1.77; 2.00-2.50 slow lean, then sink below frame easings.inExpo ~8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.77,
+      "t1": 4,
+      "beat": "feature",
+      "shot": "a gradient payment card (pink to blue, chip, small wordmark) alone on black",
+      "camera": "pull-out at the end: card width 25 % W at 3.50 -> 15 % W at 3.77 (zoom -32 %/s)",
+      "motion": "card slides down from the top edge at 2.77, then flips on Y: edge-on at 3.00, 3/4 at 3.27, near face-on at 3.50 (180 deg in ~22 fr, easings.inOutCubic, ±0.25 s); recedes 3.50-3.90 easings.inExpo",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4,
+      "t1": 5.43,
+      "beat": "proof",
+      "shot": "investment chart on black: big balance figure, small green delta line, a thin white wavy line chart, two small stat pairs below, pill badge top right",
+      "camera": "static 4.00-5.00, then slight drift left and scale down 5.00-5.27 (±0.25 s)",
+      "motion": "balance counter climbs 4.00-4.77 s (23 fr, easings.outExpo), then holds; line draws left to right 4.00-4.50 (15 fr, ±0.25 s) via chart-draw; stat figures count in sync with the balance; whole block fades to black 5.27-5.40 (~4 fr)",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 5.43,
+      "t1": 7.37,
+      "beat": "feature",
+      "shot": "white frame with a full-width black band across the middle; a 3-word claim types inside the band in white",
+      "camera": "static",
+      "motion": "band opens at the cut at ~60 % H and settles to ~27 % H by 6.00 s (springs.layout ~17 fr, ±0.25 s); typewriter 5.77-7.00 s (~16 cps, 21 chars in 37 fr); band collapses to nothing by 7.27 (≤ 8 fr, easings.inExpo, ±0.25 s)",
+      "transition_out": "flash",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 7.37,
+      "t1": 9.63,
+      "beat": "proof",
+      "shot": "white frame: 2-word label on top, a thick green progress ring in the centre with a bold percent figure inside",
+      "camera": "static",
+      "motion": "after a 2 fr black flash at 7.37, label words fade in staggered (7.50 first, 7.77 both); ring fills 0 -> 100 % in 27 fr (7.50-8.40) on easings.inOutCubic (reference is steeper: 20 -> 78 % inside 3 fr), start 9 o'clock, counter-clockwise, butt caps, no track; counter is the same eased value; hold to 9.00; everything fades out by 9.27, white holds to the cut",
+      "transition_out": "hard-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 9.63,
+      "t1": 11.73,
+      "beat": "feature",
+      "shot": "black frame: 5-word headline and tiny subline on top, violet globe centre, 8 currency coins on a face-on circle around it",
+      "camera": "push-in 1.00 -> 1.05 across the row, easings.inOutSine",
+      "motion": "black band grows from mid-frame over white/grey to full frame 9.63-10.27 (~19 fr, springs.layout) as the globe rises; coins appear clockwise 1.3 fr apart 9.97-10.20, radius 0.89 -> 1.00 of 0.264 H; creep 1 deg/fr, then one in-out spin of ~107 deg over 53 fr (peak 9.5 deg/fr at 10.95), then 0.3-0.5 deg/fr drift; glyphs stay upright; coin glow ~8 px",
+      "transition_out": "mask-wipe",
+      "sfx": "pop"
+    },
+    {
+      "t0": 11.73,
+      "t1": 14.1,
+      "beat": "logo",
+      "shot": "white frame, black wordmark centred, about 18 % W",
+      "camera": "static",
+      "motion": "white panel wipes right to left over the orbit 11.73-12.13 (12 fr, easings.inOutCubic); wordmark letters swing in from the right end to the left 12.13-12.77 (~1-2 fr per letter, springs.snappy, overshoot not measurable); hold 40 fr to the end",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 5,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 4,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS",
+    "Camera",
+    "Cursor",
+    "PhoneFrame",
+    "LineChart",
+    "Counter",
+    "Typewriter",
+    "ProgressRing",
+    "OrbitRing",
+    "LogoReveal",
+    "Flash",
+    "ShotTransition"
+  ],
+  "params": {
+    "brand": "brand.json: display font, fg/bg for the light rows, one accent for the ring, one for the orbit coins and globe",
+    "content.listing": "app name line and a subline of up to 6 words for the store strip, plus the action pill label",
+    "content.homeScreen": "phone home screen rebuild: balance figure, 4 round actions, 2 list rows",
+    "content.card": "payment card art: gradient stops, chip, small wordmark",
+    "content.chart": "balance figure (start and end), delta line, 12-20 chart points, two small stat pairs",
+    "content.claim": "one claim of about 3 words typed into the band",
+    "content.ring": "2-word label and the target percent (default 100)",
+    "content.orbit": "headline (about 5 words), subline, 8 short glyphs for the coins",
+    "timing.ringFrames": "ring fill duration (default 27 fr)",
+    "timing.spin": "orbit spin degrees and frames (default 107 deg over 53 fr)"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Measured: ring 0 -> 100 % in 27 fr, 20 -> 78 % inside 3 fr (steep in-out, no overshoot), start 9 o'clock ccw, r 0.21 H, stroke 0.19 r. Orbit face-on: r 0.264 H, coin 0.089 H, globe 0.23 H, 8 items at 45 deg, one 107 deg in-out spin over 53 fr then drift. The 7.37 flash is black, 2 fr (vocabulary flash used with a black colour). Each shot holds one idea and moves front-loaded, then holds. sfx planned by the glue rule, not measured (reference is silent). Proposed terms (not used here): card-flip-3d, band-open, letter-wipe-reveal.",
+  "status": "studied"
+}

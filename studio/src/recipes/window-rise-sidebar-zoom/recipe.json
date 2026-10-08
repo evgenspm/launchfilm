@@ -1,0 +1,167 @@
+{
+  "id": "window-rise-sidebar-zoom",
+  "title": "Credit line, window rise, sidebar zoom",
+  "summary": "A two-word credit line on white hands over to a rounded app window that rises from below, a two-word title lands above it, then the camera snaps in on the window's sidebar menu and holds so every item can be read.",
+  "use_when": [
+    "Announcing one navigation or menu change inside an existing chat or app UI",
+    "A short silent teaser that ends on a readable UI detail instead of a logo",
+    "Light, restrained product voice with one camera move",
+    "Opening shot of a longer UI walkthrough"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/TpL12kTM",
+    "author": "Joseph Lauriano",
+    "ref_id": "rl-109"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "ui-zoom",
+    "sidebar",
+    "menu",
+    "chat-ui",
+    "light",
+    "minimal",
+    "one-shot",
+    "silent",
+    "window-rise",
+    "title-card"
+  ],
+  "techniques": [
+    "ui-rebuild",
+    "zoom-tier",
+    "push-in"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 9.8,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#2A2A2A",
+      "#F4F4F4",
+      "#E7E7E7",
+      "#888A8C",
+      "#BEBEBF"
+    ],
+    "type_style": "geometric sans, regular weight, sentence case, normal tracking; credit line ~3.5 % H, title ~8 % H centred above the window",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "app window rises in from the bottom edge",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "title words close their gap and settle",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "camera snaps in on the sidebar",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "credit line, 2 words (maker + role), small and centred on flat white",
+      "camera": "push-in ~1.00->1.02 over 60 fr (motion.json 1.2 %/s in second 0, 0.3 %/s in second 1)",
+      "motion": "fade in from grey at 0.27 s to full black by 0.50 s (~8-15 fr, easings.outQuint suggested, ±0.25 s); holds; text shrinks slightly by 1.77 s as the window starts to come",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2,
+      "t1": 2.77,
+      "beat": "reveal",
+      "shot": "rounded app window with sidebar menu, centre greeting and prompt field rises from the bottom; credit line slides down behind it and is gone",
+      "camera": "static frame, window moves",
+      "motion": "window translate-y from ~55 % H below to rest at ~1/3 H in <= 8 fr (2.00 half-in and faint, 2.27 settled; springs.layout, overshoot not measurable, ±0.25 s) with an opacity ramp; credit exits down with the window",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.77,
+      "t1": 3.77,
+      "beat": "feature",
+      "shot": "title above the window, 2 words: product name + the feature noun; window holds with the prompt field visible",
+      "camera": "static",
+      "motion": "title fades in grey with a wide word gap at 2.77 s and closes to normal spacing, full contrast by 3.00 s (~7 fr, easings.outExpo suggested, ±0.25 s); holds 23 fr",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 3.77,
+      "t1": 4.27,
+      "beat": "feature",
+      "shot": "camera moves from the full window to the sidebar menu region; title leaves up out of frame",
+      "camera": "zoom-tier full -> region: sidebar width 218 px -> 356 px of 1280 (x1.63), pan up-left, settled by 4.27 s; springs.cameraIn, 15 fr (±0.25 s)",
+      "motion": "title moves up with the camera and fades out; window content does not animate",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4.27,
+      "t1": 9.8,
+      "beat": "feature",
+      "shot": "close framing on the sidebar: app name row, 9 menu items with icons, one tag chip, lower items fading to white; prompt field edge at bottom right",
+      "camera": "static (motion.json pan 0, zoom 0.01-0.02 %/s from 5 s on)",
+      "motion": "settle tail of the camera spring inside second 4 (motion.json 'animation', diff 0.27), then a 166 fr hold with no motion",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "MacWindow",
+    "SidebarItem",
+    "FocusCamera",
+    "PromptBar",
+    "BlurIn",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg, muted, bg",
+    "content.credit": "2-word credit line before the reveal (maker + role)",
+    "content.title": "2-word title above the window: product name + feature noun",
+    "content.sidebar": "8-10 menu items {label, icon, tag?}; the zoom lands on this list",
+    "content.greeting": "short centre greeting and prompt placeholder inside the window",
+    "timing.zoomAt": "frame of the sidebar zoom at 30 fps (default 113)",
+    "timing.hold": "frames the final sidebar framing holds (default 166)"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "One shot, 0 cuts, silent: all sfx planned by the glue rule, not measured. Timings from 4 fps sheets (±0.25 s); spring names and entrance frame counts are suggested defaults, overshoot not measurable. Zoom factor x1.63 measured on keyframes 3.50 and 5.50 (sidebar width). The last 5.5 s is a pure hold: shorten timing.hold for social feeds. The prompt field is shown idle (no typing). Proposed term: word-gap-close (title words start apart and slide together), not in the vocabulary. Catalogue hint 'glow' not visible on the sheets.",
+  "status": "studied"
+}

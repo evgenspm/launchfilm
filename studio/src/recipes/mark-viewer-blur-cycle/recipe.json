@@ -1,0 +1,189 @@
+{
+  "id": "mark-viewer-blur-cycle",
+  "title": "Dark viewer card cycling marks with blur swaps",
+  "summary": "One dark rounded card on flat light grey lights up a mark, then swaps it for the next every 1.5 s: the old mark slides left into blur, the new one sharpens in from the right, its name wipes in below. Loops back to empty.",
+  "use_when": [
+    "Showing an integrations, partners or product-family row one mark at a time",
+    "A silent loop for a landing page hero or social card about a logo set",
+    "Before/after of a mark evolution, one state per slot",
+    "Any 4:5 or 1:1 post where a calm, repeatable rhythm beats a full film"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/blur-logo-switcher/",
+    "author": "Jitter",
+    "ref_id": "jt-058"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo",
+    "mark-cycle",
+    "integrations",
+    "partners",
+    "blur",
+    "viewer-card",
+    "loop",
+    "minimal",
+    "light",
+    "silent"
+  ],
+  "techniques": [
+    "light-on",
+    "island-morph",
+    "blur-dissolve",
+    "blur-in"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 10,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#D5D5D5",
+      "#050505",
+      "#A1A1A1",
+      "#252525",
+      "#EAEAEA"
+    ],
+    "type_style": "neutral grotesk, medium, sentence case; grey captions ~2.8 % H above and below the card; white mark name ~1.4 % H; tiny bold+regular label in the top pill",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "first mark lights on inside the card",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "mark swap (slide + blur, every 45 fr)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "incoming mark settles sharp",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.23,
+      "beat": "hook",
+      "shot": "empty dark rounded card with soft drop shadow on light grey; caption above and below fade in; first mark lights on, top pill drops open",
+      "camera": "near-static: zoom -0.2 %/s, pan 2 px/s (motion.json), not visible on sheets",
+      "motion": "captions fade 0 -> 1 over f0-f23 (easings.inOutSine, ±0.25 s); mark appears dim at f11, light-on S-curve to full by f24; pill grows down from the card top f14-f20 on springs.ui (overshoot not measurable); name fades in f17-f24",
+      "transition_out": "blur-dissolve",
+      "sfx": "swell"
+    },
+    {
+      "t0": 1.23,
+      "t1": 2.73,
+      "beat": "logo",
+      "shot": "swap to mark 2 inside the same card; its one-word name under it",
+      "camera": "near-static: zoom -0.3 %/s (motion.json)",
+      "motion": "out: mark slides ~25 % card width left, blur 0 -> ~12 px, fades in 4 fr (easings.inExpo); in: from ~20 % right, blur -> 0, slides to centre in 7 fr (easings.outExpo); old name drops ~4 px and cuts, new name wipes in left to right with a feathered edge over 8 fr; hold 37 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2.73,
+      "t1": 4.23,
+      "beat": "logo",
+      "shot": "swap to mark 3, name under it",
+      "camera": "near-static: zoom -0.3 to -0.5 %/s (motion.json)",
+      "motion": "same swap: out 4 fr left + blur, in 6-7 fr from right on easings.outExpo, name wipe 8 fr; hold ~38 fr; period 45 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4.23,
+      "t1": 5.73,
+      "beat": "logo",
+      "shot": "swap to mark 4, a two-part name under it",
+      "camera": "near-static: zoom -0.5 %/s (motion.json)",
+      "motion": "same swap; incoming mark sharp by f132 (5 fr after start); name wipe ~10 fr for the longer name",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5.73,
+      "t1": 7.23,
+      "beat": "logo",
+      "shot": "swap to mark 5, an outline mark, name under it",
+      "camera": "near-static: zoom -0.45 %/s (motion.json)",
+      "motion": "same swap; incoming mark sharp by f179 (7 fr); name wipe 8 fr; hold 38 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 7.23,
+      "t1": 8.37,
+      "beat": "logo",
+      "shot": "swap back to mark 1 (the loop closes on the opening mark), holds",
+      "camera": "near-static: zoom -0.4 %/s (motion.json)",
+      "motion": "same swap, incoming sharp by f224 (7 fr); hold 27 fr, shorter than the others",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 8.37,
+      "t1": 10,
+      "beat": "outro",
+      "shot": "lights off: mark, name and pill dim away, captions fade out; empty dark card holds to the loop point",
+      "camera": "near-static: zoom -0.2 %/s (motion.json)",
+      "motion": "mark and name dim f251-f266 (reverse light-on, easings.inOutSine); pill retracts up into the card edge by f260 on springs.ui; captions fade 1 -> ~0.1 over f258-f282; empty card holds f266-f300",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Surface",
+    "IslandPill",
+    "useMarkSource",
+    "lightCurve",
+    "lightsOff",
+    "transitionStyle",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the backdrop, surface for the card, fg for marks and names, muted for captions, accent for the live dot",
+    "content.marks": "4-6 marks (SVG or vector), each with a one- or two-word name; the first is repeated at the end to close the loop",
+    "content.label": "short label in the top pill, 2 words",
+    "content.above": "caption above the card, 2 words",
+    "content.below": "caption below the card, 3 words",
+    "timing.period": "frames between swaps at 30 fps (default 45 = 1.5 s)",
+    "timing.swap": "swap length in frames (default 7: out 4 fr overlapping in 7 fr)",
+    "aspect": "4:5 | 1:1 | 16:9 | 9:16; card stays ~55 % of width, centred",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips at t = 0, 1.1, 2.6, 4.1, 5.6, 7.1, 8.2: swaps start at f37, f82, f127, f172, f217 (period 45 fr); the swap is directional (out left, in from right) and blurred, a cross-dissolve of 4-7 fr, not a centred fade. The name under the mark wipes in left to right with a feathered blur edge (Proposed term label-feather-wipe); the swap itself is Proposed term slide-blur-swap. Loop: frame 0 and frame 299 are both the empty card. Card and shadow never move; the only scale change is a sub-0.5 %/s drift. Accent: a small green live dot in the pill (#5FD068 approx, not in palettegen output). sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

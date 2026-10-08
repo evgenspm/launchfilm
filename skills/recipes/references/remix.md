@@ -74,9 +74,16 @@ recompose (a wide horizon arc, a horizontal ticker), choose a different recipe f
 
 ## 7. Sound
 
-Each recipe lists `audio.sfx[{event, sound}]` and a `sfx` per row. After re-timing, every listed event still needs its
+Each recipe lists `audio.sfx[{event, sound, origin}]` and a `sfx` per row. After re-timing, every listed event still needs its
 sound at its new frame (the scaffold puts each row's first sound on its shot; the engine also places SFX from film.json
 events). Music BPM: keep the recipe's band (± 10 BPM) unless the brief's mood says otherwise.
+
+`origin: "observed"` = heard in the reference. `origin: "planned"` = the reference is silent (most template previews are)
+and the sound is the recipe author's suggestion from the glue rule (craft/02): a good default, not a measurement. Tell
+the user which kind they are getting when it matters.
+
+Transitions: `continuous` means the reference does not cut there, the same shot keeps going (state change); build it as
+one scene with keyframed states, not two Sequences. `hard-cut` is a real cut. `end` is the last beat.
 
 ## 8. Record
 

@@ -1,0 +1,189 @@
+{
+  "id": "dark-laptop-pose-reel",
+  "title": "Dark laptop pose reel with beat words",
+  "summary": "A dark laptop on charcoal: one word per beat above the closed lid, then five poses (swing-open, two ramped pushes, front lid-open, spin-up fly-in), each with a new screen; brand word and a two-word line close.",
+  "use_when": [
+    "A desktop or web product that wants a premium hardware-style teaser",
+    "Five hero screenshots, each worth its own camera pose",
+    "Short brand teaser where the screen lighting up is the reveal",
+    "Dark brand palette with a single bright type colour"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/Z5z55UI7",
+    "author": "scanna",
+    "ref_id": "rl-069"
+  },
+  "family": "3d-device",
+  "tags": [
+    "laptop",
+    "device",
+    "dark",
+    "screen-on",
+    "pose-reel",
+    "word-per-beat",
+    "teaser",
+    "desktop-app",
+    "charcoal",
+    "tagline-close"
+  ],
+  "techniques": [
+    "device-laptop",
+    "device-3d",
+    "orbit",
+    "speed-ramp",
+    "push-in",
+    "glow",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 22.27,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#191C1E",
+      "#D0D2D1",
+      "#A79A7E",
+      "#292D2E",
+      "#625B50",
+      "#414343"
+    ],
+    "type_style": "bold geometric sans, sentence case, normal tracking, ~6 % H, white with a soft outer glow, centred",
+    "treatment": [
+      "glow",
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 101.1,
+      "energy": "medium",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      { "event": "hook word changes on the beat", "sound": "tick", "origin": "planned" },
+      { "event": "laptop swings toward camera and the screen powers on", "sound": "swell", "origin": "planned" },
+      { "event": "ramped push into a new pose", "sound": "whoosh", "origin": "planned" },
+      { "event": "lid opens front-on", "sound": "swoosh-short", "origin": "planned" },
+      { "event": "music drops out under the brand word", "sound": "silence-beat", "origin": "observed" },
+      { "event": "closing line lands as music returns", "sound": "hit", "origin": "planned" }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 2.9,
+      "beat": "hook",
+      "shot": "closed dark laptop low-centre, edge-on; above it a 4-word phrase shown one word at a time (last word = product name)",
+      "camera": "near-static; laptop yaws slowly ~15 deg over the row (0.25 s cells), zoom +0.8 %/s",
+      "motion": "words replace each other on beats 0.27 / 0.77 / 1.27 s, no in-animation (±0.25 s); laptop yaw easings.linear 87 fr; last word clears letter by letter at ~3.00 s (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.9,
+      "t1": 6.37,
+      "beat": "reveal",
+      "shot": "laptop swings ~60 deg toward camera in 3/4 view, lid opens, screen powers on with a warm landscape wallpaper, then drifts",
+      "camera": "orbit ~60 deg in ~36 fr then slow drift; frame luma lifts ~34 % as the screen lights (human 30 fps study)",
+      "motion": "swing easings.inOutSine ~36 fr (human 30 fps study); lid passes ~75 deg at 3.33-3.50 s and the screen is full bright as it finishes (~20 fr, human); settle springs.heavy (overshoot not measurable); drift 4.50-6.27 s, slight roll",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 6.37,
+      "t1": 8.0,
+      "beat": "feature",
+      "shot": "close 3/4 high angle, screen now shows a cool dune wallpaper, laptop large and cropped right",
+      "camera": "push-in scale x1.23 over 49 fr with a speed-ramp, speed thirds 6 / 29 / 11 px/fr (human 30 fps study)",
+      "motion": "speed-ramp easings.inOutSine 49 fr; no element animation",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 8.0,
+      "t1": 9.57,
+      "beat": "feature",
+      "shot": "low angle, keyboard in the foreground, screen shows a snowy peak with warm cloud; laptop drifts right off frame",
+      "camera": "push-in scale x1.48 over 47 fr, speed-ramp thirds 5.6 / 25.7 / 7.9 px/fr (human 30 fps study)",
+      "motion": "speed-ramp easings.inOutSine 47 fr",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 9.57,
+      "t1": 12.17,
+      "beat": "feature",
+      "shot": "front view at ~10 deg elevation, laptop closed centre-low; lid opens to show a misty blue landscape, then holds",
+      "camera": "static (sheet-03 cells 7-15: framing unchanged)",
+      "motion": "lid opens 10.00 -> 10.65 s, ~20 fr easings.inOutSine (human 30 fps study); screen already lit while opening; hold 45 fr",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 12.17,
+      "t1": 15.1,
+      "beat": "feature",
+      "shot": "tiny closed laptop seen top-down far away, spins and flies toward camera, flips open into 3/4 with an earth-from-space screen",
+      "camera": "object scale 4 % -> 60 % of frame over ~70 fr, rotation ~180 deg; ease-in (human 30 fps study)",
+      "motion": "fly-in easings.inExpo ~70 fr (approach slow 12.27-13.27 s, fast 13.50-14.50 s); lid flips open 14.27-14.77 s (±0.25 s), lands springs.heavy (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 15.1,
+      "t1": 17.23,
+      "beat": "logo",
+      "shot": "laptop gone; brand word centred alone on charcoal with soft glow; music silent 15.70-17.21 s",
+      "camera": "static",
+      "motion": "word appears whole between 15.00 and 15.27 s (entrance not measurable at 0.25 s; suggested BlurIn 8 fr); held 61 fr",
+      "transition_out": "continuous",
+      "sfx": "silence-beat"
+    },
+    {
+      "t0": 17.23,
+      "t1": 22.27,
+      "beat": "outro",
+      "shot": "closing line, 2 words with a period, replaces the brand word centred; held to the end",
+      "camera": "static",
+      "motion": "line swaps in on the beat at 17.21 s with the music returning (±0.25 s, no in-animation visible); held 151 fr; no exit",
+      "transition_out": "end",
+      "sfx": "hit"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 5,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "LaptopFrame",
+    "LaptopReveal",
+    "Camera",
+    "BlurIn",
+    "Vignette"
+  ],
+  "params": {
+    "hookWords": "4 words shown one per beat; last is the product name",
+    "screens": "5 screenshots, one per pose (swing-open, push 1, push 2, front open, fly-in)",
+    "brandWord": "product or company name, one word",
+    "closingLine": "2-word line with a period"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "status": "studied",
+  "notes": "One shot per cuts.json (0 hard, 0 soft); detector near-misses at 6.37, 8.00, 9.57, 15.10 s look like pose changes (the human study calls them cuts), so transitions are written continuous and a rebuild may cut there. Timings for swing, pushes, lid open and fly-in from the human 30 fps study; the rest at 0.25 s sheet resolution. SFX planned by the glue rule except the observed music drop 15.70-17.21 s. Proposed terms: word-per-beat (words swap on beats over a continuous shot), device-fly-in (object flies from far top-down into pose). Background lifted charcoal with a radial spot behind the laptop, not black."
+}

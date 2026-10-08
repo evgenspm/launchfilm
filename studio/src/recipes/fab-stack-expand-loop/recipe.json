@@ -1,0 +1,121 @@
+{
+  "id": "fab-stack-expand-loop",
+  "title": "Floating button fans into a stacked icon menu",
+  "summary": "A round action button on a flat pale field drops down while three icon buttons pop out of it one by one into a centred vertical stack, hold, then snap back into the button, which springs home. Seamless 4 s loop.",
+  "use_when": [
+    "Showing an expand-to-menu interaction in a mobile or web app demo",
+    "A looping micro-interaction clip for a landing page, docs or a feature card",
+    "Introducing quick actions or navigation shortcuts without any copy",
+    "A short silent insert between larger product shots"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/floating-action-menu/",
+    "author": "Jitter",
+    "ref_id": "jt-014"
+  },
+  "family": "product-ui",
+  "tags": [
+    "action-button",
+    "icon-menu",
+    "expand-collapse",
+    "stagger",
+    "micro-interaction",
+    "mobile-ui",
+    "loop",
+    "light",
+    "no-copy"
+  ],
+  "techniques": [
+    "list-assemble"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#F2EEFC",
+      "#7F47EB",
+      "#9F60F1",
+      "#BE77F7",
+      "#D38EF9",
+      "#C397F5"
+    ],
+    "type_style": "no type; white outline icons, ~2.5 % H stroke-weight line icons centred in each button",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each menu button pops out of the main button",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "menu collapses back into the main button",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "main button settles back at centre",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "round violet action button, 4-dot icon, on flat pale lilac; fans into a 4-button vertical stack, holds, collapses",
+      "camera": "static (stack recentres itself; no frame scale or pan)",
+      "motion": "f0 rest; f1-f30 button slides down 50 % -> 81 % H on springs.ui while 3 buttons emerge from behind it, stagger 8 fr (f2, f10, f18), each scale ~0.3 -> 1 and rising to its slot on springs.ui ~20 fr (overshoot not measurable); stack settled f36; hold f36-f75; f76-f78 menu buttons shrink to dots and vanish, easings.inExpo 3 fr; f76-f100 main button returns to centre on springs.pop (~12 % overshoot upward, scale dip ~10 %), lightens back to rest colour; f100-f120 still",
+      "transition_out": "end",
+      "sfx": "pop"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "LineIcon",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the field, accent for the deepest button, lighter accent tints up the stack",
+    "content.trigger": "LineIcon name on the main button (default grid of 4 dots look)",
+    "content.items": "2-5 LineIcon names, bottom to top, for the menu buttons (reference: 3)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; stack stays centred, button diameter 17 % of frame height",
+    "timing.stagger": "frames between menu buttons (default 8)",
+    "timing.hold": "frames the open stack holds (default 40)",
+    "timing.rest": "frames at rest after the collapse (default 20); keep rest pose equal to frame 0 for the loop",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips at t = 0-1.2 s and 2.3-3.5 s. Button diameter ~17.5 % H, slot pitch ~21 % H; the open stack is vertically centred (top slot 18 % H, main button 81 % H). Each button is a top-light to bottom-dark vertical gradient; the stack darkens bottom-up (main button deepest), and the main button is lighter at rest than when open. Items emerge from behind the previous button, not from a fade. Collapse is far faster (3 fr) than the expand (~30 fr): keep that asymmetry. Proposed term: fab-expand (see recipe.md). sfx planned by the glue rule, not measured. Catalogue hints cursor-path and device-phone not seen: no cursor, no device frame.",
+  "status": "studied"
+}

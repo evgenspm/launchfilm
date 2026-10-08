@@ -1,0 +1,142 @@
+{
+  "id": "partner-letter-toss-lockup",
+  "title": "Floating letter toss partner lockup",
+  "summary": "Two partner names, each as oversized single letters tossed up from below and drifting in slow rotation, joined by a spinning cross on a colour flip. Weightless letter motion makes a plain name pairing playful.",
+  "use_when": [
+    "Announcing a partnership or collab: name, cross, name",
+    "A short silent title card where the type itself is the entertainment",
+    "Social loops and story openers under 3 s",
+    "Brands with a short name of 4 to 7 letters"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/zero-gravity-bouncy-words/",
+    "author": "Rico®",
+    "ref_id": "jt-052"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "partnership",
+    "collab",
+    "letters",
+    "weightless",
+    "toss",
+    "colour-flip",
+    "title-card",
+    "type-only",
+    "sticker",
+    "short"
+  ],
+  "techniques": [
+    "scatter",
+    "sticker",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 2.67,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#4F5458",
+      "#DFE3E4",
+      "#2465FF",
+      "#101010"
+    ],
+    "type_style": "geometric grotesk caps, medium weight, single letters about 45 % of frame height, each rotated -30 to +30 deg; tiny tracked caps labels on a hairline at mid height",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "letters tossed up into frame",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "cross glyph enters on the colour flip",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "hand sticker pops in",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.07,
+      "beat": "hook",
+      "shot": "first partner name as 6 huge light letters scattered and rotated over flat grey; hairline with 3 small labels at mid height",
+      "camera": "static frame; only letters move",
+      "motion": "letters tossed up from below the frame edge, rise to apex at ~0.50 s, fall back out of frame by 1.00 s; slow independent rotation, easings.outQuint up, easings.inExpo down (±0.25 s, apex and spin rate not measurable)",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1.07,
+      "t1": 1.9,
+      "beat": "hook",
+      "shot": "background flips to saturated blue; one small rotated cross glyph (the joiner) alone near centre",
+      "camera": "static",
+      "motion": "cross enters from the bottom edge at 1.07 s, rises to apex above the hairline at ~1.50 s, falls to lower right by 1.77 s while spinning ~45 deg, easings.outQuint up / easings.inExpo down (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "pop"
+    },
+    {
+      "t0": 1.9,
+      "t1": 2.67,
+      "beat": "logo",
+      "shot": "second partner name plus a registered-style circle mark as huge black letters on light grey; a 3D hand sticker joins at 2.27 s",
+      "camera": "static frame; letters drift up then settle (motion estimate 443 px/s up at 1920 w in this second)",
+      "motion": "letters tossed up from below at 1.90 s, near apex by 2.27 s, begin to sink by 2.50 s with slow rotation; hand sticker pops up from the bottom edge at ~2.27 s, springs.pop (overshoot not measurable, ±0.25 s)",
+      "transition_out": "end",
+      "sfx": "pop"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Scatter",
+    "Sticker",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: display font for the letters, bg and fg per scene, accent for the joiner scene",
+    "content.nameA": "first partner name, 4-7 letters, one letter per tossed glyph",
+    "content.nameB": "second partner name, 4-7 letters, optional trailing circle mark",
+    "content.joiner": "glyph shown alone in the middle scene (default a cross)",
+    "content.sticker": "optional cutout image that pops in on the last scene",
+    "content.labels": "3 tiny labels on the mid hairline (left, centre, right)",
+    "seed": "seed for letter positions and rotations",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets only (±0.25 s). Scenes 32 / 25 / 23 fr at 30 fps. Letters never settle: each scene is one toss up and fall, which is the whole effect. Background flip grey to blue at 1.07 s is read as a cut (soft window 0.63-1.07 s is the letters leaving). The motion reads as 2D rigid-body gravity; vocabulary `physics` sits under 3d, so it is not used here, see Proposed terms (flat-gravity-toss). Cross and circle mark stay in fg colour. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

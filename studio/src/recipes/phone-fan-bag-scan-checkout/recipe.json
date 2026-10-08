@@ -1,0 +1,233 @@
+{
+  "id": "phone-fan-bag-scan-checkout",
+  "title": "Device fan-out to in-app checkout",
+  "summary": "One phone on black, then three back-view colour variants slide out beside it under a name pill; a price and pay button appear, a cursor clicks, and the film dives into a store app: add to bag, bag page, face-scan confirm.",
+  "use_when": [
+    "Hardware or accessory launch that ends in a buy action",
+    "Showing colour or finish variants side by side before a purchase flow",
+    "Store or checkout app demo that wants a product-shot opener",
+    "Silent autoplay ad on a dark feed"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/ldT0NzT7",
+    "author": "scanna",
+    "ref_id": "rl-068"
+  },
+  "family": "3d-device",
+  "tags": [
+    "device",
+    "phone",
+    "variants",
+    "colourways",
+    "checkout",
+    "store",
+    "price",
+    "face-scan",
+    "dark",
+    "one-shot",
+    "commerce"
+  ],
+  "techniques": [
+    "device-3d",
+    "device-phone",
+    "blur-in",
+    "push-in",
+    "cursor-path",
+    "blur-dissolve",
+    "zoom-tier",
+    "notification-stack",
+    "pull-out",
+    "ui-rebuild",
+    "thinking-state"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 12.57,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#010101",
+      "#E6EAEB",
+      "#B2B2B2",
+      "#555455",
+      "#6F767D",
+      "#51573D"
+    ],
+    "type_style": "geometric grotesk, semibold, sentence case, small (name pill ~3 % H, price block 3 lines ~3.5 % H); in-app UI at system sizes",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each variant phone slides out of the stack",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "price block and pay button appear",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor clicks the pay button",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "camera dives into the store grid",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "added-to-bag toast lands",
+        "sound": "notification",
+        "origin": "planned"
+      },
+      {
+        "event": "face-scan ring resolves to a check",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "one phone, front three-quarter view with a glowing abstract wallpaper, left third of a black frame; a dark name pill top centre",
+      "camera": "push-in ~4.4 %/s with slight drift right (motion.json, camera-mixed)",
+      "motion": "phone already on screen at 0.00; name pill words blur-in left to right 0.27-0.77 (~15 fr, easings.outQuint, ±0.25 s); phone glass brightens 0.50",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 1,
+      "t1": 3.5,
+      "beat": "reveal",
+      "shot": "three back-view variants (dark, natural, light) slide out from behind the first phone to the right, forming a fan of four",
+      "camera": "push-in ~3.5 %/s, pan right ~67 px/s at 1920 in 2.0-3.0 to keep the fan centred-left",
+      "motion": "variants enter at ~1.00, ~1.75, ~2.25 s, each slides right ~0.25 phone widths and fades from a ghosted translucent state to solid over ~15 fr (springs.heavy, overshoot not measurable); fan settled by 3.27",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.5,
+      "t1": 4.77,
+      "beat": "cta",
+      "shot": "price block (3 short lines: from-price, monthly price, term) and an outlined pay button appear right of the fan; cursor enters from below",
+      "camera": "near static, zoom ~0.8 %/s",
+      "motion": "price block fades in 3.27-3.50 (~7 fr, ±0.25 s); button outline glows from 3.50 to 3.77; cursor enters bottom at 4.00 and glides to the button by 4.77 (cursor-path, easings.inOutSine ~23 fr)",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 4.77,
+      "t1": 5.77,
+      "beat": "feature",
+      "shot": "click: the fan ghosts out and the frame goes dark, then an empty rounded phone outline grows in the centre and its screen fills with a store grid",
+      "camera": "static",
+      "motion": "click at ~4.77; phones turn translucent 4.77 and fade to black with the text by 5.27 (blur-dissolve ~15 fr, ±0.25 s); blank screen rect appears 5.27 and grows taller to full phone 5.50 (springs.layout); store UI fades in 5.77",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 5.77,
+      "t1": 6.77,
+      "beat": "feature",
+      "shot": "in-app product grid on the phone: two cases, two straps, bottom tab bar with bag badge; camera dives to the lower row",
+      "camera": "zoom tier full to element: ~1.0 to ~3.0 scale between 6.00 and 6.27, then tilt down to the top row by 6.77 (largest motion, diff 3.3)",
+      "motion": "zoom-tier on springs.cameraIn ~10 fr (±0.25 s, overshoot not measurable); vertical drift 6.27-6.77 ~64 px/s",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.77,
+      "t1": 8.27,
+      "beat": "feature",
+      "shot": "close crop on the grid top: header with back arrow and continue button, an added-to-bag toast over the first product card",
+      "camera": "hold, scale ~1.00 to ~1.01",
+      "motion": "toast lands by 6.77 (from the 6.50 cell, ±0.25 s); hold 1.25 s; continue button brightens at 8.00 (pressed state)",
+      "transition_out": "continuous",
+      "sfx": "notification"
+    },
+    {
+      "t0": 8.27,
+      "t1": 9.77,
+      "beat": "feature",
+      "shot": "bag page: large page title, then the camera pulls back to the whole phone while the bag list loads (item row, carrier, protection plan, billed-separately card)",
+      "camera": "pull-out from title detail (~2.5x) to full phone between 8.27 and 8.50 (springs.cameraOut, ±0.25 s)",
+      "motion": "empty page with a small loader 8.50-8.77; list rows fade in 8.77-9.00 (~7 fr); list scrolls up slowly 9.00-9.77 (easings.linear)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 9.77,
+      "t1": 11,
+      "beat": "cta",
+      "shot": "page scrolls to the bottom: help card, subtotal with price, two buttons (primary checkout, white pay button)",
+      "camera": "static on the phone",
+      "motion": "in-screen scroll 9.77-10.00 (~7 fr, easings.outQuint, ±0.25 s), settle and hold to 11.00",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 11,
+      "t1": 12.57,
+      "beat": "cta",
+      "shot": "primary button dims, a face-scan ring appears at the top of the screen, spins, and resolves to a check mark",
+      "camera": "static",
+      "motion": "checkout button greys out at 11.00; scan ring appears 11.27, rotates 11.27-12.00 (thinking-state, easings.linear), turns into a check 12.27 and holds to end",
+      "transition_out": "end",
+      "sfx": "ui-confirm"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 4,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "Camera",
+    "ZoomTier",
+    "BlurIn",
+    "Cursor",
+    "NotificationStack",
+    "Spinner",
+    "ProgressRing",
+    "VerifiedSeal"
+  ],
+  "params": {
+    "productName": "name pill text, 2-4 words",
+    "variants": "4 device renders (1 front, 3 back-view colourways), transparent PNG or 3D model",
+    "priceLines": "3 short lines: from-price, monthly price, term",
+    "payLabel": "pay button label",
+    "storeGrid": "4 product cards (image, label, optional New badge) for the in-app grid",
+    "toastText": "added-to-bag confirmation, 3-4 words",
+    "bagItems": "bag rows: item with price, 2-3 info cards, subtotal",
+    "checkoutLabels": "primary and secondary button labels"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "One shot, 0 cuts in cuts.json (near misses at 4.70 and 8.10 are the dissolve and the bag page swap inside the shot), so every transition_out is continuous. Silent reference: every sfx is planned by the glue rule, not measured. All entrance durations are from 4 fps sheets (±0.25 s); springs chosen by the no-overshoot rule, overshoot not measurable. Variant entries at 1.00/1.75/2.25 s read from sheet-01 cells. Camera zoom %/s from motion.json. Proposed terms (not used as ids): variant-fan, in-screen-scroll, face-scan-confirm.",
+  "status": "studied"
+}

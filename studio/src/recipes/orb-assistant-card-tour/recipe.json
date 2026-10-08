@@ -1,0 +1,288 @@
+{
+  "id": "orb-assistant-card-tour",
+  "title": "Voice assistant orb with status card tour",
+  "summary": "On a bright grid canvas a tiny call glyph grows into an app icon, a brand moment plays on a soft gradient, then a glossy orb speaks in typed lines and three rim-lit cards land one by one while the camera follows the newest.",
+  "use_when": [
+    "Launching a voice or chat agent that does a few concrete jobs for the user",
+    "Showing three capabilities as live status cards rather than screen recordings",
+    "A calm, light, premium tone with no music or VO required",
+    "A 20 to 25 s explainer where the assistant itself is the character"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/zuPFFUs0",
+    "author": "Samet Onder",
+    "ref_id": "rl-022"
+  },
+  "family": "launch-film",
+  "tags": [
+    "orb",
+    "voice-agent",
+    "assistant",
+    "status-cards",
+    "light",
+    "soft-tail-typing",
+    "wash",
+    "icon-morph",
+    "ui-rebuild",
+    "calm"
+  ],
+  "techniques": [
+    "morph",
+    "blur-dissolve",
+    "mesh-gradient",
+    "typewriter",
+    "mask-wipe",
+    "card-grid",
+    "list-assemble",
+    "push-in",
+    "dolly",
+    "glow",
+    "ui-rebuild"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 24.53,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#262626",
+      "#79A3EF",
+      "#8D92DC",
+      "#A9BDEC",
+      "#E3DADF"
+    ],
+    "type_style": "rounded geometric grotesk; brand word semibold white 6 % H; assistant lines regular sentence case 3 % H; card headings bold navy 4 % H; tiny mono timers",
+    "treatment": [
+      "glow",
+      "mesh-gradient"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "call glyph pops in on the grid",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "colour wash floods the frame",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "caret deletes or types characters",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "card lands from the camera",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "booking pill confirms",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "light sweep across the end line",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "empty white canvas with a faint grid; a tiny round call-glyph button pops in at centre and holds",
+      "camera": "grid lines shift between cells, slow pull-out, scale not measurable (±0.25 s)",
+      "motion": "button springs.pop scale 0 to 1 at 0.27 to 0.50 s (overshoot not measurable), ~10 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "pop"
+    },
+    {
+      "t0": 2,
+      "t1": 4.5,
+      "beat": "reveal",
+      "shot": "button has grown into a large squircle icon with a blue-lavender-peach mesh fill; glyph crossfades call to waveform; bars dance",
+      "camera": "static centre, icon breathes ~2 %",
+      "motion": "grow 12 to 110 px on easings.pillGrow 12 fr (±0.25 s); glyph crossfade 8 fr (±0.25 s); waveform bars loop easings.linear",
+      "transition_out": "blur-dissolve",
+      "sfx": "swell"
+    },
+    {
+      "t0": 4.5,
+      "t1": 6,
+      "beat": "logo",
+      "shot": "icon washes to white, frame floods with a blurred blue-violet gradient; brand word fades in white at centre",
+      "camera": "static; gradient drifts slowly",
+      "motion": "wash tint + fade 8 fr, gradient resolves 8 fr; word opacity 0 to 1 over 8 fr (±0.25 s), easings.outQuint",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 6,
+      "t1": 7.25,
+      "beat": "logo",
+      "shot": "a caret appears left of the word and deletes it right to left until only the caret remains",
+      "camera": "static",
+      "motion": "typewriter delete at ~2 chars per 0.25 s, easings.stepped per char, letters fade 2 to 3 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 7.25,
+      "t1": 8.75,
+      "beat": "logo",
+      "shot": "the caret thickens into a rounded bar, then a white app-icon squircle with the brand mark; holds, then washes out to white",
+      "camera": "static",
+      "motion": "caret to bar to squircle on springs.ui ~12 fr (±0.25 s); mark fades in 8 fr; wash out 8 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "swell"
+    },
+    {
+      "t0": 8.75,
+      "t1": 10,
+      "beat": "feature",
+      "shot": "glossy pastel orb fades in on white left of centre; a short greeting, 1 word, is wiped in beside it",
+      "camera": "static",
+      "motion": "orb opacity 0 to 1 in 8 fr, scale 0.96 to 1, ~100 px leftward drift decelerating over 20 fr (easings.outQuint); greeting mask-wipe right to left + 30 px slide, 9 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 10,
+      "t1": 11.75,
+      "beat": "feature",
+      "shot": "greeting shrinks up and greys; a second line, 7 words, types under it with a soft fading tail; then both fade, orb alone",
+      "camera": "drift: orb moves ~30 px/s",
+      "motion": "greeting moves up on springs.ui 12 fr (±0.25 s); line types ~1.1 chars/fr with an 8 to 10 char opacity tail; text fades 8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 11.75,
+      "t1": 13,
+      "beat": "feature",
+      "shot": "orb slides off right; a huge pale rounded card lands from the camera and settles at left with a light-blue rim glow",
+      "camera": "static",
+      "motion": "orb exit 120 px right + fade 10 fr, easings.inExpo; card scale ~2.5 to 1 and blur heavy to 0 on easings.landing over ~18 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 13,
+      "t1": 14,
+      "beat": "feature",
+      "shot": "card one: bold heading, 1 word, types in; three call rows appear one by one with mini orb, live bars, timer and call button",
+      "camera": "static",
+      "motion": "heading typewriter 1 char/fr, starts 3 fr after row 1; rows stagger 6 to 8 fr, each fades 5 to 6 fr with 4 px blur, no slide",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 14,
+      "t1": 15.75,
+      "beat": "feature",
+      "shot": "card two rises from lower right with a calendar strip, three appointment rows and a confirmed pill; camera moves onto it",
+      "camera": "push-in 1.00 to 1.25 over 25 fr with pan right, easings.inOutSine",
+      "motion": "card rise 12 fr from opacity 0.1, scale 0.85, +60 px, blue tint to white, springs.ui; rows stagger 6 to 8 fr; pill pops springs.pop (overshoot not measurable)",
+      "transition_out": "blur-dissolve",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 15.75,
+      "t1": 17.75,
+      "beat": "feature",
+      "shot": "everything tints pale blue and dissolves; card three resolves: reminder timeline on the left, message bubble panel on the right",
+      "camera": "static, then dolly left starts at 17.75",
+      "motion": "wash tint 8 fr, card resolves out of the tint 8 fr (±0.25 s); timeline steps and bubbles fade in staggered ~6 fr (±0.25 s)",
+      "transition_out": "slide-push"
+    },
+    {
+      "t0": 17.75,
+      "t1": 19,
+      "beat": "feature",
+      "shot": "card slides off left; orb returns at right; a short line, 3 words, fades in left of it then clears",
+      "camera": "dolly left ~530 px/s at 1920 for ~0.5 s, easings.inOutSine",
+      "motion": "orb enters from right, springs.heavy (no overshoot), ~24 fr (±0.25 s); line fades 8 fr in and out",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 19,
+      "t1": 20.75,
+      "beat": "feature",
+      "shot": "a new line, 6 words, types left of the orb with a soft fading tail and holds",
+      "camera": "drift: orb ~30 px/s",
+      "motion": "soft-tail typing ~1.1 chars/fr, 8 to 10 char opacity ramp; hold ~0.75 s",
+      "transition_out": "blur-dissolve",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 20.75,
+      "t1": 23.75,
+      "beat": "cta",
+      "shot": "orb exits right while the line crossfades into a centred close, 4 words, ending in the product name; a light sweep crosses the letters; hold",
+      "camera": "static",
+      "motion": "crossfade 8 fr (±0.25 s); sweep left to right ~1 s at 21.75 to 22.75, easings.inOutSine; hold to 23.50; fade out 8 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 23.75,
+      "t1": 24.53,
+      "beat": "outro",
+      "shot": "empty white frame",
+      "camera": "static",
+      "motion": "none",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 5,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "AgentOrb",
+    "StatusCard",
+    "TrailType",
+    "AppTile",
+    "LiveBars",
+    "Typewriter",
+    "Camera",
+    "BrandBackdrop",
+    "PillMorph"
+  ],
+  "params": {
+    "seedGlyph": "NotifGlyph kind for the seed button (call by default)",
+    "greeting": "assistant greeting, 1 to 2 words",
+    "lineA": "assistant line after the greeting, up to 8 words",
+    "cards": "3 capability cards: title (1 word) + rows; card 1 call rows, card 2 schedule rows + confirmed pill, card 3 timeline + message",
+    "bookend": "two short assistant lines before the close, 3 and 6 words",
+    "close": "end line, 4 words, ending in the product name"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Zero cuts in 24.53 s: every change is a morph, wash, landing card or camera move. Measured from the human notes: orb in 8 fr, orb out 10 fr, card rows stagger 6 to 8 fr, heading types 1 char/fr, card rise 12 fr, follow push 1.25 over 25 fr, wash 8 + 8 fr. sfx planned by the glue rule, not measured (reference is silent). Proposed terms: wash, soft-tail-type, card-land, shimmer-sweep, caret-morph.",
+  "status": "studied"
+}

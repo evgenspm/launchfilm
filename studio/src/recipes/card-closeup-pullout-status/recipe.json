@@ -1,0 +1,181 @@
+{
+  "id": "card-closeup-pullout-status",
+  "title": "Dark card close-ups pulling out to a status line",
+  "summary": "Two tight crops of a near-black payment card, each with an oversized wordmark that lights up and fades to a hairline outline, then a cut out to the whole card and a one-line status message that slowly grows over it.",
+  "use_when": [
+    "A fintech or banking launch where a physical or virtual card is the hero",
+    "A premium, quiet 1:1 product moment with no UI to show",
+    "Closing a longer film on a delivered or activated state",
+    "A silent autoplay loop where the wordmark must carry the brand"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-vault-card-reveal/",
+    "author": "Jitter",
+    "ref_id": "jt-040"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "card",
+    "fintech",
+    "dark",
+    "wordmark",
+    "close-up",
+    "pull-out",
+    "outline-type",
+    "status-message",
+    "minimal",
+    "square",
+    "silent"
+  ],
+  "techniques": [
+    "fit-word",
+    "light-on",
+    "match-cut",
+    "pull-out",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 16.27,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#9C9C9C",
+      "#2B2B2B",
+      "#161616",
+      "#0C0C0C",
+      "#202020"
+    ],
+    "type_style": "wordmark: heavy geometric grotesk, sentence case, tight, overflowing the frame (cap height about 30 % H in close-ups); status line: regular grotesk, sentence case, 4 % H, mid grey; tiny attribution lockup 2 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "wordmark lights up in a close-up or on the full card",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "cut between card crops",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "status message arrives",
+        "sound": "notification",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.97,
+      "beat": "hook",
+      "shot": "close-up on the card's top-left corner: masked number tail top, oversized wordmark start bottom, overflowing right edge",
+      "camera": "drift 1.00->0.99 (block match -0.2 to -0.5 %/s), card edge fixed at sheet resolution",
+      "motion": "wordmark fill lights up 0.00->1.50 (45 fr, easings.inOutSine, ±0.25 s); number tail lights 0.77->1.00; fill fades to a hairline outline 1.77->2.00 (±0.25 s); outline dims to 2.97",
+      "transition_out": "match-cut",
+      "sfx": "swell"
+    },
+    {
+      "t0": 2.97,
+      "t1": 6,
+      "beat": "logo",
+      "shot": "close-up on the card's top-right corner: network mark top, wordmark tail bottom, both fully lit on the first frame",
+      "camera": "drift, pan under 4 px/s at 1920 wide, card edge fixed at sheet resolution",
+      "motion": "no entrance (lit on the cut, 1 fr seam at f89 from a 30 fps strip); hold 1.5 s; fill fades to outline 4.50->5.77 (38 fr, easings.inOutSine, ±0.25 s)",
+      "transition_out": "match-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6,
+      "t1": 7,
+      "beat": "logo",
+      "shot": "cut out to the whole card centred at 47 % of frame width, almost black, wordmark only a ghost",
+      "camera": "static (card position and width unchanged across cells)",
+      "motion": "card face holds dark; card lower edge fades into black (vertical gradient)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 7,
+      "t1": 9.33,
+      "beat": "logo",
+      "shot": "whole card: wordmark across the lower half and small network mark top right light up",
+      "camera": "static",
+      "motion": "wordmark light-on 7.00->7.50 (15 fr, easings.inOutSine, ±0.25 s); network mark from 7.27 (±0.25 s); hold 1.8 s",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 9.33,
+      "t1": 15.25,
+      "beat": "outro",
+      "shot": "status line, 4 words, says the card has arrived, over the card centre; tiny attribution lockup (label, mark, wordmark) below",
+      "camera": "static on the card; the status line alone scales 1.00->1.15 over 150 fr, decelerating",
+      "motion": "line and lockup fade in 9.33->9.80 (14 fr from a 30 fps strip, easings.outQuint); line scale creep easings.outQuint 150 fr; card wordmark dims behind the line",
+      "transition_out": "continuous",
+      "sfx": "notification"
+    },
+    {
+      "t0": 15.25,
+      "t1": 16.27,
+      "beat": "outro",
+      "shot": "same frame fading toward black",
+      "camera": "static",
+      "motion": "everything fades 15.25->16.27 (31 fr, easings.linear, ±0.25 s); not fully black on the last frame",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "Surface",
+    "Wordmark",
+    "Lockup",
+    "BlurIn",
+    "ShotTransition",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font for the wordmark, text font for the status line, muted grey, near-black surface",
+    "content.wordmark": "brand word printed huge on the card (defaults to brand name)",
+    "content.cardDigits": "last 4 digits shown after the masked dots",
+    "content.networkMark": "small mark in the card's top-right corner (your own, never a real network logo)",
+    "content.status": "one status line, about 4 words, e.g. the card is ready",
+    "content.attribution": "small label before the lockup under the status line ('' = none)",
+    "timing.closeups": "frames per close-up (default 89 and 91)",
+    "timing.statusAt": "frame the status line arrives (default 280)",
+    "aspect": "1:1 by default; 4:5 and 9:16 keep the card at 47 % of width"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Two cuts (2.97 s f89, 6.00 s f180) are missed by cuts.json because the frames are near black; both found on 30 fps strips. Wordmark fill lights up then fades to a 1 px outline: proposed term 'outline-ghost' (not in vocabulary). Status line scales 1.00->1.15 while the card stays still. Whole film sits below 10 % luminance except the status line (#9C9C9C). sfx planned by the glue rule, not measured (silent reference).",
+  "status": "studied"
+}

@@ -1,0 +1,143 @@
+{
+  "id": "disc-label-url-portfolio-tour",
+  "title": "Disc label to typed address, then a portfolio tour",
+  "summary": "On flat grey a soft disc shrinks into a small icon over a one-line label, a tilted capsule flips flat into an address field that types itself, then three hard cuts tour the live pages: grid, hero with a sliding photo strip, item page.",
+  "use_when": [
+    "Announcing a portfolio, shop or landing page where the address is the call to action",
+    "A short teaser that ends on real footage of the live pages",
+    "Creators or studios sharing a new personal page in under 8 s"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/zQRfa6NH",
+    "author": "Carrie",
+    "ref_id": "rl-082"
+  },
+  "family": "product-ui",
+  "tags": [
+    "url-field",
+    "typing",
+    "screen-recording",
+    "portfolio",
+    "art-shop",
+    "light",
+    "cursor",
+    "photo-strip",
+    "intro-label",
+    "short"
+  ],
+  "techniques": [
+    "blur-in",
+    "typewriter",
+    "pull-out",
+    "screen-recording"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 7.77,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#DCDCDC",
+      "#12110E",
+      "#936C60",
+      "#F4F4F4",
+      "#52514A",
+      "#CECBC0"
+    ],
+    "type_style": "intro label: medium grotesk, sentence case, normal tracking, cap height ~7 % H, near-black; address field: small grotesk ~1.5 % H in a white capsule; page hero (recording): heavy grotesk all caps, tight",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 94.2,
+      "energy": "build",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      { "event": "soft disc lands as the small icon (0.77 s)", "sound": "pop", "origin": "planned" },
+      { "event": "address characters typed into the capsule (2.77 to 3.27 s)", "sound": "type-click", "origin": "planned" },
+      { "event": "hard cut from the grey intro into the page recording (3.87 s)", "sound": "swoosh-short", "origin": "planned" }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.87,
+      "beat": "hook",
+      "shot": "flat grey; soft disc shrinks into a small icon above a 1-word label that grows to 3 words; label dims; tilted capsule flips flat into an address field, address types, field blurs out",
+      "camera": "locked frame, no camera move (only elements scale and rotate)",
+      "motion": "0.00 empty; 0.27 large blurred disc (~0.18 W) + label word blur-in; disc shrinks to ~0.02 W icon by 0.77, springs.ui ~15 fr (overshoot not measurable); 1.27 two more words blur-in to the right; 1.50 icon flips on its x axis (edge-on), back by 1.77; 1.77 label fades to ~40 %; 2.00 capsule enters tilted ~4 deg, flips through edge-on at 2.27, flat at 2.50, springs.ui ~22 fr (±0.25 s); 2.77 to 3.27 address typed (typewriter, ~14 chars/0.5 s); 3.50 hold; 3.77 blur + fade out 3 to 6 fr (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "pop"
+    },
+    {
+      "t0": 3.87,
+      "t1": 4.4,
+      "beat": "reveal",
+      "shot": "recording of a light shop page: grid of three tall dark artworks with title and price under each; section heading appears at top",
+      "camera": "pull-out 1.30 -> 1.00 over ~15 fr, easings.outExpo (±0.25 s), measured from card width 0.27 W -> 0.21 W",
+      "motion": "the grid zooms out and drifts down into place; nothing else animates",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4.4,
+      "t1": 5.93,
+      "beat": "feature",
+      "shot": "page hero: big all-caps studio name, 2-line sub-line, two buttons (black filled, white outline), full-width strip of tall photos below; cursor over the strip",
+      "camera": "locked frame; the photo strip slides left inside the page",
+      "motion": "strip slides left ~420 px @1920 over 1.27 s, decelerating (~380 px/s in second 4, ~195 px/s in second 5), easings.outQuint; a small page-preview thumbnail bottom right fades out by 5.00 (±0.25 s); hero text static",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 5.93,
+      "t1": 7.77,
+      "beat": "feature",
+      "shot": "item page: one dark artwork fills ~70 % of the frame on the left; right panel with title, two license chips, 4 spec lines, black buy button with price",
+      "camera": "locked frame; motion.json reports a slow vertical drift (~250 px/s @1920, ~5 deg) inside the artwork area only, the panel stays fixed",
+      "motion": "artwork drifts slowly upward (easings.linear, not resolvable on sheets); cursor rests on the artwork; holds to the end",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": true,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "BlurIn",
+    "Typewriter",
+    "FootageClip",
+    "Camera",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg (flat grey intro), fg for the label, display font",
+    "content.label": "intro line, 1 word that extends to 3 (invites the viewer to look)",
+    "content.icon": "small round icon or mark the disc shrinks into",
+    "content.url": "address typed into the capsule, ~15 to 25 chars",
+    "content.clips": "3 screen-recording clips: grid/listing page (0.53 s), hero with a sliding strip (1.53 s), item/detail page (1.83 s)",
+    "aspect": "16:9 (recorded pages are landscape); other aspects need recrops"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "All times from 4 fps sheets (±0.25 s) and cuts.json; no 30 fps strips were made. Springs are defaults chosen from the 4 fps cells (overshoot not measurable). The 0 to 3.87 s intro is one shot (< 4 s, not split by the rule); its internal states are timed in the motion field. Music only, no VO; all sfx are planned by the glue rule, not measured. cut_on_beat 0/3 (the detected beats stop at 3.69 s). Cut at 4.40 sits 1 fr from an onset at 4.435. The cursor in rows 3 and 4 is the real recorded cursor, not a spring cursor. Proposed terms (not in vocabulary): disc-shrink-icon, capsule-flip, label-extend, strip-slide."
+  ,"status": "studied"
+}

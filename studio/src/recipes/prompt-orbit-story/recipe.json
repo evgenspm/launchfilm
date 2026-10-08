@@ -1,0 +1,255 @@
+{
+  "id": "prompt-orbit-story",
+  "title": "Prompt orbit story with a guided light trail",
+  "summary": "A soft orb carries one continuous story from a portrait into a typed prompt, an orbiting media mosaic, short claims, selectable outputs, and a restrained mark close.",
+  "use_when": [
+    "a 20–30 s launch film led by one visual guide",
+    "a creative tool that turns one input into several outputs",
+    "a brand story that needs media examples without full product UI",
+    "a light-background film with continuous morph transitions"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/xMJIaaAS",
+    "author": "Yusel",
+    "ref_id": "rl-049"
+  },
+  "family": "launch-film",
+  "tags": [
+    "prompt",
+    "orb",
+    "media-mosaic",
+    "light",
+    "morph",
+    "typed-input",
+    "guided-story",
+    "logo-close"
+  ],
+  "techniques": [
+    "morph",
+    "logo-from-dot",
+    "typewriter",
+    "prompt-typing",
+    "orbit-ring",
+    "pull-out",
+    "statement-sequence",
+    "word-swap"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 26.01,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#151515",
+      "#9D9D9D",
+      "#6065EE",
+      "#DAAEF6",
+      "#CA9DEC"
+    ],
+    "type_style": "regular grotesk, sentence case, neutral tracking, 4–8 % of frame height",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 160.3,
+      "energy": "high",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "orb or card changes form",
+        "sound": "whoosh"
+      },
+      {
+        "event": "prompt or wordmark types",
+        "sound": "type-click"
+      },
+      {
+        "event": "media tiles arrive around the claim",
+        "sound": "pop"
+      },
+      {
+        "event": "output label changes beside the check",
+        "sound": "ui-confirm"
+      },
+      {
+        "event": "final mark resolves",
+        "sound": "hit"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.77,
+      "beat": "hook",
+      "shot": "a pastel orb grows at the centre of a thin construction grid on white",
+      "camera": "push-in 1.00→1.42 over 53 fr, then hold",
+      "motion": "orb scales from a point with springs.cameraIn over ~38 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "swell"
+    },
+    {
+      "t0": 1.77,
+      "t1": 2.77,
+      "beat": "hook",
+      "shot": "the orb becomes a rounded portrait card that expands to the grid's central frame",
+      "camera": "push-in 1.00→1.54 over 30 fr",
+      "motion": "circular mask opens into a rounded card with springs.layout over ~8 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.77,
+      "t1": 4.77,
+      "beat": "logo",
+      "shot": "a small mark replaces the portrait; its short wordmark types beside it, then compresses",
+      "camera": "pull-out 1.20→0.78 over 60 fr",
+      "motion": "mark logo-from-dot with springs.snappy ~12 fr (±0.25 s); wordmark typewriter over ~22 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 4.77,
+      "t1": 6.5,
+      "beat": "feature",
+      "shot": "the wordmark stretches into an outlined prompt pill and types a short introduction",
+      "camera": "fixed frame; pill width grows 0.00→0.50 W across ~15 fr (±0.25 s)",
+      "motion": "pill grows with springs.layout ~15 fr (±0.25 s); prompt-typing at ~14 characters/s",
+      "transition_out": "morph",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 6.5,
+      "t1": 10,
+      "beat": "feature",
+      "shot": "eight rounded media tiles form a loose ring around a centred four-word capability claim",
+      "camera": "pull-out 1.32→0.82 over 105 fr while the ring fills the frame",
+      "motion": "tiles orbit-ring in, stagger ~4 fr (±0.25 s), springs.pop ~15 fr; claim fades in over ~8 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "pop"
+    },
+    {
+      "t0": 10,
+      "t1": 12,
+      "beat": "feature",
+      "shot": "the media ring collapses to the pastel orb, which contracts, rebounds, and drops toward the next line",
+      "camera": "pull-out 1.00→0.24, then push-in 0.24→1.12 across 60 fr",
+      "motion": "ring contracts with easings.inExpo ~8 fr (±0.25 s); orb rebounds on springs.pop ~22 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 12,
+      "t1": 14,
+      "beat": "feature",
+      "shot": "the orb traces a thin curved line beneath two successive short process statements",
+      "camera": "dolly right about 98 px/s at 1920 reference width, then settles",
+      "motion": "first statement enters with easings.outExpo ~8 fr (±0.25 s); orb follows a 60 fr curve",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 14,
+      "t1": 15.5,
+      "beat": "feature",
+      "shot": "a second compact process statement replaces the first while the orb completes another arc",
+      "camera": "drift scale 1.00→1.02 over 45 fr",
+      "motion": "statement-sequence swap with springs.ui ~8 fr (±0.25 s); orb arc runs 38 fr",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 15.5,
+      "t1": 17,
+      "beat": "cta",
+      "shot": "a five-word creation instruction types from the right and recentres; a checked output appears",
+      "camera": "dolly up about 147 px/s at 1920 reference width, then hold",
+      "motion": "instruction word-reveal with easings.outExpo ~15 fr (±0.25 s); check pops on springs.ui ~8 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 17,
+      "t1": 20,
+      "beat": "cta",
+      "shot": "the checked output label cycles through three deliverable types as the orb repeats broad arcs",
+      "camera": "fixed frame; guide orb crosses ~0.65 W on each 38–60 fr arc",
+      "motion": "word-swap at 18.50, 18.77, and 19.27; springs.ui ~8 fr each (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 20,
+      "t1": 22,
+      "beat": "feature",
+      "shot": "the portrait card returns large inside the grid, then shrinks rapidly to a tiny central tile",
+      "camera": "pull-out 1.18→0.16 over 60 fr",
+      "motion": "card settles on springs.layout ~12 fr (±0.25 s), then exits with easings.inExpo ~18 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 22,
+      "t1": 26.01,
+      "beat": "logo",
+      "shot": "a small mark resolves at centre, its short wordmark types beside it, and the lockup holds on white",
+      "camera": "fixed frame; mark shifts ~0.08 W left as the wordmark grows, then holds",
+      "motion": "mark logo-from-dot with springs.snappy ~12 fr (±0.25 s); wordmark typewriter over ~22 fr (±0.25 s); hold 67 fr",
+      "transition_out": "end",
+      "sfx": "hit"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 8,
+    "screenshots": 9,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandMark",
+    "ConstructionGrid",
+    "GuideOrb",
+    "PortraitCard",
+    "TypedLockup",
+    "PromptPill",
+    "MediaMosaic",
+    "MediaTile",
+    "OrbTrail",
+    "CheckLabel"
+  ],
+  "params": {
+    "brand": "any brand.json; the light paper uses brand fg, ink uses brand bg, and media uses both accents",
+    "content.portraitLabel": "short original label inside the abstract portrait card",
+    "content.mediaTiles": "exactly eight short labels for abstract supporting media tiles",
+    "content.prompt": "one short typed introduction, 3–5 words",
+    "content.capability": "one centred capability claim, exactly 4 short words",
+    "content.statements": "three process or benefit lines, 4–7 words each",
+    "content.outputLabels": "three short deliverable names, 1–2 words each",
+    "orbPalette": "optional two or three brand-compatible colours for the guide orb and trail",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; composition size comes from ASPECTS",
+    "timing.speed": "global cadence multiplier; 1 preserves the measured 26.01 s structure",
+    "fps": "composition fps; every structure boundary scales from seconds"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "No detected hard or soft cuts; the film is a continuous chain of morphs. Boundaries are visible state changes at 0.25 s sheet resolution. The curved orb trail is a proposed term, not a recipe technique id. Demo media are abstract brand-colour tiles, never reference images. SFX planned by the glue rule, not measured. cut_on_beat is false because there are no cuts (0/0).",
+  "preview": {
+    "demo_brand": "shellpine"
+  },
+  "status": "built"
+}

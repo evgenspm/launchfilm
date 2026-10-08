@@ -1,0 +1,110 @@
+{
+  "id": "feature-list-cascade-hold",
+  "title": "Centred feature list cascade",
+  "summary": "Eleven short feature lines cascade in top to bottom on black, one every 1.5 frames, each fading up and rising a quarter line, then the full list holds still for three seconds so every item can be read.",
+  "use_when": [
+    "The feature rundown section of a launch film, after the product reveal",
+    "A spec or capability list of 6-12 short items that should land as one block",
+    "Silent autoplay where a dense list has to read without VO",
+    "A calm, premium keynote voice with no UI to show"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/feature-list-apple-event/",
+    "author": "Jitter",
+    "ref_id": "jt-005"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "feature-list",
+    "list",
+    "cascade",
+    "rundown",
+    "type-only",
+    "no-ui",
+    "dark",
+    "minimal",
+    "keynote",
+    "silent"
+  ],
+  "techniques": [
+    "list-assemble"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FDFDFD",
+      "#DCDCDC",
+      "#808080",
+      "#3D3D3D"
+    ],
+    "type_style": "semibold grotesk, sentence case, normal tracking, cap size ~4.3 % H, line pitch 6.7 % H, centred column, block centred vertically",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "last line settles and the list is complete (f30)",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "black frame; an 11-line centred list of short feature names (1-4 words each) assembles top to bottom, then holds",
+      "camera": "static (motion diff 0.00 from 1.00 s on, no scale or position change between cells)",
+      "motion": "f0-f9 empty black; line 1 appears f10; lines cascade, stagger 1.5 fr, line 11 starts f25; each line opacity 0 -> 1 and rise ~0.25 line pitch (1.7 % H) -> 0 on easings.outExpo 6 fr; all settled f30; hold 90 fr to f120",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 11,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg, bg",
+    "content.items": "6-12 feature names, 1-4 words each, one line each at 16:9",
+    "timing.lead": "empty frames before the first line (default 10)",
+    "timing.stagger": "frames between line starts (default 1.5, fractional allowed)",
+    "timing.enter": "frames of each line's fade + rise (default 6)",
+    "timing.hold": "frames the complete list holds (default 90)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; line size scales to keep the column inside 80 % H",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from a 30 fps strip (0.20-1.17 s, +-1 fr) and the 4 fps sheet: lead 10 empty frames, 11 lines in 15 fr (stagger 1.5 fr), per-line fade + rise ~6 fr with no overshoot, settled at f30, then a fully static 3 s hold. No cuts, no audio in the reference; sfx planned by the glue rule, not measured. Proposed term (recipe.md): line-cascade, a centred text list whose lines fade-rise in sequence with a sub-2-frame stagger. The vocabulary list-assemble is the closest id; the studio ListAssemble component renders task rows and does not match this look, so a LineCascade component is missing.",
+  "status": "studied"
+}

@@ -1,0 +1,155 @@
+{
+  "id": "ring-mark-hero-drop",
+  "title": "Ring-built mark into hero product drop",
+  "summary": "A mark grows from a dot inside concentric pill-shaped hairlines, splits apart, and hard-cuts to a floating hero product under a frame-wide name that stretches off screen, then a white end card with a typed caption.",
+  "use_when": [
+    "A physical product launch with one strong cutout photo or render",
+    "The brand mark has two halves or a symmetric shape that can split",
+    "A short 4:5 or 9:16 social teaser of about 6-7 s",
+    "E-commerce drops where the build-up matters more than features"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-track-product-reveal/",
+    "author": "Jitter",
+    "ref_id": "jt-001"
+  },
+  "family": "launch-film",
+  "tags": [
+    "product-drop",
+    "hero-product",
+    "logo-build",
+    "end-card",
+    "mixed-theme",
+    "wide-type",
+    "ecommerce",
+    "short",
+    "portrait",
+    "hairlines"
+  ],
+  "techniques": [
+    "logo-from-dot",
+    "push-in",
+    "match-cut",
+    "hard-cut",
+    "typewriter",
+    "end-card"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 6.63,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#FFFFFF",
+      "#0D0D0D",
+      "#3B0401",
+      "#964D38",
+      "#D7CFCA",
+      "#8C8C8C"
+    ],
+    "type_style": "extra-wide geometric display, rounded stroke ends, caps, product name ~7 % H spanning the full width; small lowercase grotesk wordmark ~3 % H; tiny caps mono caption ~0.7 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "mark and rings grow from the dot",
+        "sound": "riser",
+        "origin": "planned"
+      },
+      {
+        "event": "hard cut to the hero product",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "name strokes stretch off frame before the cut",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "caption words typed on the end card",
+        "sound": "type-click",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.1,
+      "beat": "hook",
+      "shot": "white frame: a dot becomes a ring of hairlines, the two-part mark appears inside, rings stretch into a tall pill outline",
+      "camera": "push-in on the ring group: pill width 1.00 -> 1.30 from f23 to f60, speeding up over f57-f62",
+      "motion": "dot f1-f5, ring grows f6-f11 easings.outExpo; mark halves appear f12 and grow on springs.snappy (overshoot not measurable) by f18; rings elongate to a pill f18-f24 easings.outQuint; f60-f62 halves slide apart and their bars extend to both frame edges, easings.inExpo 3 fr",
+      "transition_out": "match-cut",
+      "sfx": "riser"
+    },
+    {
+      "t0": 2.1,
+      "t1": 4.53,
+      "beat": "reveal",
+      "shot": "hero product cutout floating over a dark red landscape, pill hairlines behind, frame-wide product name, small wordmark and caption, corner dots",
+      "camera": "push-in on the photo 1.00 -> ~1.05 over the row (±0.25 s); type layer moves separately",
+      "motion": "name grows outward from two letter halves f63-f69 easings.outExpo 6 fr; the name then widens horizontally 1.00 -> ~1.40 across f69-f126 easings.linear; f126-f135 outer strokes stretch to and past the frame edges easings.inExpo 10 fr",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 4.53,
+      "t1": 6.63,
+      "beat": "logo",
+      "shot": "white end card: mark left, small caps caption centre, wordmark right, pill hairlines zooming past the frame, edge dots",
+      "camera": "push-in on the hairlines 1.00 -> >1.6 (they leave the frame) f136-f173 easings.outExpo; static hold f173-f199",
+      "motion": "mark and wordmark present from f136; caption typed word by word, 7 words, one every 3-5 fr from f136 to f159; edge dots appear ~f150; hold 26 fr",
+      "transition_out": "end",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 1,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandMark",
+    "KenBurns",
+    "Typewriter",
+    "EndCard",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: mark (ideally two symmetric halves), wordmark, fg/bg for the white frames, accent for the dark product backdrop",
+    "content.name": "product name, 3-5 characters, set in a wide display face; it fills the frame width",
+    "content.caption": "small caps line, 5-8 words, typed on the end card",
+    "content.productImage": "cutout photo or render of the product (transparent PNG), placed over the backdrop",
+    "content.backdrop": "full-bleed environment photo or a gradient in the accent colour",
+    "aspect": "4:5 | 9:16 | 1:1",
+    "timing.hook": "frames of the mark build (default 63)",
+    "timing.product": "frames of the product shot (default 73)",
+    "timing.end": "frames of the end card (default 63)"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips: cuts at f63 and f136; the hook build is front-loaded (dot to pill in 24 fr) then a slow push until a 3 fr split right before the cut. Both exits accelerate into the cut (split bars, stretched name strokes): the cut lands on the most extended frame. End card caption: 7 words over 23 fr. Silent reference: sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): ring-pill hairlines motif, stretch-type exit, edge registration dots.",
+  "status": "studied"
+}

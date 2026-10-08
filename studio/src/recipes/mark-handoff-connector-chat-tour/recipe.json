@@ -1,0 +1,355 @@
+{
+  "id": "mark-handoff-connector-chat-tour",
+  "title": "Mark handoff into a connector chat tour",
+  "summary": "Two-brand lockup opens, then one continuous dark UI tour: add a connector, three prompts with streamed answers, an authorize click that morphs into a permissions list, and the mark returns as the end card.",
+  "use_when": [
+    "Announcing an integration that plugs one product into an AI assistant",
+    "Showing a setup flow end to end: install, ask, act, grant permissions",
+    "A calm dark product walkthrough with no cuts and no VO",
+    "Partnership launches where both marks share the opening lockup"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/tnLnt5na",
+    "author": "rock",
+    "ref_id": "rl-108"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "integration",
+    "connector",
+    "chat",
+    "prompt",
+    "permissions",
+    "authorize",
+    "one-shot",
+    "dark",
+    "ui-tour",
+    "cursor",
+    "partner-lockup"
+  ],
+  "techniques": [
+    "ui-rebuild",
+    "logo-from-dot",
+    "cursor-path",
+    "zoom-tier",
+    "dolly",
+    "pull-out",
+    "push-in",
+    "prompt-typing",
+    "stream-text",
+    "list-assemble",
+    "morph",
+    "end-card"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 45.79,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#1D1D1D",
+      "#F2F2F2",
+      "#A67668",
+      "#2E2E2E",
+      "#8B8B8B",
+      "#151414"
+    ],
+    "type_style": "UI in a neutral grotesk, sentence case, small (prompt text ~4 % H at element zoom, ~1.5 % H at full frame); assistant answers in a book serif; wordmark bold grotesk ~2.5 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 126,
+      "energy": "medium",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "mark punch-in at open and before the end card",
+        "sound": "impact-low",
+        "origin": "planned"
+      },
+      {
+        "event": "wordmark unfold, lockup and end card settle",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "prompt and greeting typing",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "button presses, connector add check, authorize",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "tool-call rows, answer lines, table rows, permission rows landing",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "camera push toward the authorize dialog",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "lockup slide to centre",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.75,
+      "beat": "hook",
+      "shot": "two-bar product mark punches in huge on flat charcoal, then shrinks to a small centred glyph and holds",
+      "camera": "static frame; the mark scales ~6x down (motion.json -96 %/s in s0)",
+      "motion": "mark appears at 0.27 at ~0.3 H tall, shrinks to ~0.03 H by 1.00, easings.outExpo ~20 fr (±0.25 s); holds 1.00-1.75",
+      "transition_out": "continuous",
+      "sfx": "impact-low"
+    },
+    {
+      "t0": 1.75,
+      "t1": 3.75,
+      "beat": "logo",
+      "shot": "wordmark unfolds right out of the glyph, a grey suffix tag, a thin dash and the partner mark + name fade in: a two-brand lockup",
+      "camera": "static (motion.json zoom -0.2 %/s)",
+      "motion": "wordmark letters wipe out of the glyph by 1.77; suffix at 2.00; dash + partner mark blur-in 2.27-2.50, easings.outQuint ~8 fr (±0.25 s); lockup recentres as it grows",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 3.75,
+      "t1": 5,
+      "beat": "logo",
+      "shot": "first wordmark fades, partner lockup slides to centre, its name drops away and the glyph alone rises toward the top",
+      "camera": "static",
+      "motion": "left half fades 3.77 (±0.25 s); partner lockup recentres 3.77-4.27 springs.ui (overshoot not measurable); name fades 4.50; glyph drifts up ~0.1 H by 4.77",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5,
+      "t1": 6.25,
+      "beat": "reveal",
+      "shot": "assistant home screen: glyph + greeting line types in, a rounded prompt box with plus, model label and send fades in below; cursor enters from below",
+      "camera": "static, then zoom starts at ~6.00 (motion.json +4.6 %/s in s5)",
+      "motion": "greeting reveals left-to-right 5.00-5.27 (~8 fr, ±0.25 s); prompt box fades/rises with it; cursor arrives at 5.50, springs.ui",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 6.25,
+      "t1": 7.25,
+      "beat": "feature",
+      "shot": "close-up on the plus button of the prompt box; cursor hovers and presses it, the button fills grey",
+      "camera": "zoom-tier region to element ~1.0 to 2.5x by 6.27, then slow drift left (motion.json zoom +16.7 %/s in s7)",
+      "motion": "camera springs.cameraIn ~8 fr (±0.25 s); cursor press squash springs.click on 6.50; button hover fill 6.50-7.00",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 7.25,
+      "t1": 9.5,
+      "beat": "feature",
+      "shot": "a row of three menu chips (icon + label + chevron) replaces the box; camera dollies right along it to the third chip, which turns accent",
+      "camera": "dolly right along the row (motion.json pan -54 to -91 px/s @1920, zoom +17 %/s in s7-s9); zoom-tier element",
+      "motion": "chips slide in from left 7.27-7.77, stagger ~4 fr (±0.25 s); cursor tracks the target; third chip label + icon turn accent at 8.77; fill tints 9.00; label fades 9.27-9.50",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 9.5,
+      "t1": 12.5,
+      "beat": "feature",
+      "shot": "the emptied chip morphs into a connector card: square logo tile, name, verified badge, one-line description, plus; cursor clicks the plus, it becomes an accent check",
+      "camera": "static (motion.json hold, zoom < 0.5 %/s)",
+      "motion": "card grows from chip 9.50-10.00 springs.layout (overshoot not measurable); cursor glides to the plus 10.27-10.77; press 11.00; accent check pops 11.27 springs.pop (overshoot not measurable); hold to 12.27; content fades 12.50",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 12.5,
+      "t1": 15.25,
+      "beat": "feature",
+      "shot": "the card shrinks into a single prompt field; prompt one types in (question, 6 words) with the freshest characters in accent",
+      "camera": "static",
+      "motion": "card height collapses 12.50-13.00 springs.layout; typing 13.27-14.27 (~1 s, ~40 chars/s), trailing ~6 chars accent then settle to text colour by 14.77; hold to 15.00",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 15.25,
+      "t1": 16.75,
+      "beat": "feature",
+      "shot": "pull back to the full chat: user bubble top right, assistant working line, tool-call rows tick in one by one, composer bar at the bottom",
+      "camera": "pull-out ~3x to full chat by 15.50, then tilt up through the thread (motion.json pan -80,-55 in s17)",
+      "motion": "camera springs.cameraOut ~8 fr (±0.25 s); 3 tool-call rows appear 15.77-16.50, one per ~0.25 s (±0.25 s), each icon + label fade",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 16.75,
+      "t1": 19.5,
+      "beat": "proof",
+      "shot": "the assistant answer streams in serif: lead line, three bullets with figures, a follow-up question, then the action icon row",
+      "camera": "camera tilts up and pushes slightly (motion.json pan -154,-149, zoom +1.3 %/s in s18)",
+      "motion": "text streams line by line 17.27-18.77, ~0.25 s per line (±0.25 s), each line fades from 0.3 to 1 opacity; action icons 19.00; everything fades 19.27-19.50",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 19.5,
+      "t1": 22,
+      "beat": "feature",
+      "shot": "fresh prompt field; prompt two types in (request, 8 words) with accent tail",
+      "camera": "static (motion.json hold)",
+      "motion": "empty field fades in 19.50; typing 20.00-21.00 (~1 s), accent tail settles by 21.27; hold to 21.77; field fades by 22.00",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 22,
+      "t1": 24.75,
+      "beat": "proof",
+      "shot": "assistant reply builds top-left: small status line, bold serif lead, a tiny tag chip, then a three-column table (name pill in accent, focus, link)",
+      "camera": "static (motion.json pan -26 px/s in s22, drift)",
+      "motion": "status line 22.50; lead streams 22.77-23.00; table headers 23.27; accent pill 23.50; middle and link columns 23.77; link underline 24.00; action icons 24.27; fade 24.75",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 24.75,
+      "t1": 27.75,
+      "beat": "feature",
+      "shot": "fresh prompt field; prompt three types over two lines (guardrail instruction, 9 words) with accent tail",
+      "camera": "static",
+      "motion": "empty field 24.77-25.00; typing 25.27-26.77 (~1.5 s), wraps to line two at 26.27; accent tail settles by 27.27; field dims 27.50",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 27.75,
+      "t1": 30.75,
+      "beat": "proof",
+      "shot": "assistant confirms with one serif line and a ruled key/value spec table: name, description (2 lines), mode, violation rule; action icons",
+      "camera": "static (motion.json zoom < 1 %/s)",
+      "motion": "lead line 27.77; table rows build top-down 28.27-29.00, ~0.25 s per row (±0.25 s), rules draw with them; icons 29.77; hold to 30.50",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 30.75,
+      "t1": 33.25,
+      "beat": "feature",
+      "shot": "authorization dialog: partner glyph + title, filled email field, two buttons (deny, authorize); cursor rises from below to authorize",
+      "camera": "push-in from 32.27: dialog 1.0 to ~2x by 33.00 (motion.json zoom +126 %/s in s32), drifting to the right button",
+      "motion": "dialog fades in 30.77-31.00; cursor travels 31.00-32.00 springs.ui; camera springs.cameraIn ~15 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 33.25,
+      "t1": 34.75,
+      "beat": "feature",
+      "shot": "everything but the authorize button blurs and fades; the button alone fills the centre, cursor presses, label turns accent",
+      "camera": "zoom-tier to element ~3.3x of the dialog by 34.27 (motion.json zoom +32.8 %/s in s33)",
+      "motion": "field and deny button blur out 33.27-33.77; press 34.27 springs.click; label accent 34.27-34.50; cursor leaves down-right 34.50",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 34.75,
+      "t1": 36.25,
+      "beat": "feature",
+      "shot": "the button morphs into a three-state segmented toggle (allow, ask, block); selection slides from ask to allow, which turns green",
+      "camera": "static, then the toggle shrinks and rises (motion.json -81 %/s in s35)",
+      "motion": "button collapses into toggle 34.77-35.00 springs.layout (overshoot not measurable); selection slides 35.27-35.50 springs.ui; shrink 35.77-36.00",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 36.25,
+      "t1": 39.25,
+      "beat": "proof",
+      "shot": "permission list assembles: six tool rows, each label + toggle + status pill; three allowed (green), two need approval (amber), one blocked (red)",
+      "camera": "static (motion.json hold)",
+      "motion": "toggle docks at top 36.27; rows add one per ~0.25 s 36.77-37.77 (±0.25 s), toggles set as rows land, pills fade 1 row behind; hold 38.00-39.00; list fades by 39.27",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 39.25,
+      "t1": 41,
+      "beat": "logo",
+      "shot": "return to the opening: the two-bar mark punches in huge and shrinks to a small glyph",
+      "camera": "static frame; mark scales ~6x down (motion.json animation in s39)",
+      "motion": "mark appears 39.50 at ~0.3 H, shrinks to small by 39.77-40.00, easings.outExpo ~10 fr (±0.25 s); holds to 40.77",
+      "transition_out": "continuous",
+      "sfx": "impact-low"
+    },
+    {
+      "t0": 41,
+      "t1": 45.79,
+      "beat": "logo",
+      "shot": "end card: wordmark unfolds from the glyph, grey suffix tag, then a small tagline (5 words) beneath; holds to the end",
+      "camera": "slow push-in ~1.9 %/s (motion.json s42-s45)",
+      "motion": "wordmark wipes out of the glyph 41.00-41.27; suffix fades 41.50; tagline fades in 42.27, easings.outQuint ~8 fr (±0.25 s); hold 3.5 s; music ends 41.4",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 7,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 3,
+    "url": false
+  },
+  "components": [
+    "BrandBackdrop",
+    "BrandMark",
+    "Wordmark",
+    "Lockup",
+    "Camera",
+    "ZoomTier",
+    "Dolly",
+    "Cursor",
+    "PromptBar",
+    "Typewriter",
+    "StreamText",
+    "ChatThread",
+    "ChatBubble",
+    "ListAssemble",
+    "PillMorph",
+    "EndCard"
+  ],
+  "params": {
+    "partner_mark": "second brand glyph + name for the opening lockup and the authorize dialog",
+    "menu_chips": "3 menu labels, the third is the target",
+    "connector": "name, one-line description (<= 9 words), logo tile",
+    "prompts": "3 user prompts, 6-9 words each",
+    "answers": "3 assistant replies: bullets with 3 figures; a 3-column table; a 4-row key/value spec",
+    "permissions": "6 tool rows, each allow / ask / block",
+    "tagline": "end-card line, <= 6 words"
+  },
+  "difficulty": "hard",
+  "render_cost": "light",
+  "notes": "One continuous shot (cuts.json: 0 hard, 0 soft), so every row hands over continuous; states change through fades, morphs and camera moves. Music-only reference (126.0 BPM, -12.87 LUFS, no VO); all sfx are planned by the glue rule, not measured. Timings at 0.25 s sheet resolution; spring names chosen without visible overshoot (not measurable at 4 fps). Camera magnitudes are estimates from object widths in cells plus motion.json. Proposed terms (not in vocabulary): accent-tail-typing, focus-isolate-blur, button-to-toggle morph uses morph. Accent sampled by palettegen as #A67668 (anti-aliased); the on-screen accent reads as a warmer orange. Status colours green / amber / red appear only in the permissions row and are not in the palette.",
+  "status": "studied"
+}

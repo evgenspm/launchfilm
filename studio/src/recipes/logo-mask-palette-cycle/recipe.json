@@ -1,0 +1,160 @@
+{
+  "id": "logo-mask-palette-cycle",
+  "title": "Tap-driven mark with palette wipes",
+  "summary": "A centered mark contracts like a press, then rebounds as a rounded field expands to the next palette color. Five evenly spaced changes and a matched loop make a compact, tactile brand intro.",
+  "use_when": [
+    "A brand mark and a five-color palette are the whole story",
+    "A square silent loop needs an interaction-like rhythm",
+    "A short brand intro should feel tactile without showing a cursor"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/logo-tap-color-reveal/",
+    "author": "Jitter",
+    "ref_id": "jt-060"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo",
+    "palette",
+    "tap",
+    "square",
+    "silent",
+    "loop",
+    "color-wipe"
+  ],
+  "techniques": [
+    "mask-wipe",
+    "match-cut"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 9.8,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#174BEB",
+      "#BAD029",
+      "#9608FF",
+      "#ABAEC7",
+      "#E4C011",
+      "#FFFFFF"
+    ],
+    "type_style": "medium grotesk, uppercase, open tracking, about 3% of frame height; paired technical values align in two columns",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "mark releases and the next palette field takes over",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.68,
+      "beat": "hook",
+      "shot": "opening palette state with a centered mark card and three small color-information lines",
+      "camera": "locked center; no camera travel; mark card changes scale 1.00 -> ~0.52 -> 1.00",
+      "motion": "card contracts with easings.inExpo over ~7 fr (±0.25 s); rounded field mask-wipe expands over 9 fr, mark rebounds with easings.outExpo 9 fr",
+      "transition_out": "mask-wipe",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 0.68,
+      "t1": 2.47,
+      "beat": "logo",
+      "shot": "second palette state holds, then the centered mark compresses to trigger the next color",
+      "camera": "locked center; no camera travel; mark card changes scale 1.00 -> ~0.52 -> 1.00",
+      "motion": "incoming field and mark settle with easings.outExpo ~5 fr; hold; card contracts ~8 fr (±0.25 s), next mask-wipe runs 10 fr",
+      "transition_out": "mask-wipe",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 2.47,
+      "t1": 4.48,
+      "beat": "logo",
+      "shot": "third palette state keeps the mark centered while the labels update, then another press changes color",
+      "camera": "locked center; no camera travel; mark card changes scale 1.00 -> ~0.52 -> 1.00",
+      "motion": "mark rebounds with easings.outExpo ~9 fr; hold; easings.inExpo contraction ~8 fr (±0.25 s), rounded mask-wipe 9 fr",
+      "transition_out": "mask-wipe",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 4.48,
+      "t1": 6.5,
+      "beat": "logo",
+      "shot": "neutral palette state holds the same mark and information layout before a centered color field grows",
+      "camera": "locked center; no camera travel; mark card changes scale 1.00 -> ~0.52 -> 1.00",
+      "motion": "mark rebounds with easings.outExpo ~9 fr; hold; easings.inExpo contraction ~8 fr, mask-wipe ~10 fr (±0.25 s)",
+      "transition_out": "mask-wipe",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 6.5,
+      "t1": 8.47,
+      "beat": "logo",
+      "shot": "fifth palette state settles, holds the centered mark, then compresses into the return color",
+      "camera": "locked center; no camera travel; mark card changes scale 1.00 -> ~0.52 -> 1.00",
+      "motion": "mark rebounds with easings.outExpo ~9 fr; hold; easings.inExpo contraction ~8 fr (±0.25 s), rounded mask-wipe 10 fr",
+      "transition_out": "mask-wipe",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 8.47,
+      "t1": 9.8,
+      "beat": "logo",
+      "shot": "opening palette state returns with the same mark scale and information layout for a seamless loop",
+      "camera": "locked center; no camera travel; mark card settles at scale 1.00",
+      "motion": "incoming field completes over ~5 fr and mark settles with easings.outExpo ~9 fr (±0.25 s); final ~31 fr hold",
+      "transition_out": "match-cut"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandMark",
+    "PaletteTapCycle",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json; logo mark, fonts, card color, and demo palette all come from it",
+    "content.colors": "six palette states: five steps plus a final state matching the first; each has color, label, detailLabel, and detailValue",
+    "tapFrames": "five contraction start frames at 30 fps; defaults follow the measured transition windows and scale with fps",
+    "cardScale": "contracted mark-card scale, about 0.52 in the reference",
+    "wipeFrames": "five rounded-field expansion durations, 9-10 frames at 30 fps, scaled with fps",
+    "aspect": "1:1 by default; preserve the centered mark and corner labels when recomposing",
+    "fps": "composition fps (default 30); timing scales from the measured 30 fps structure"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "No hard cuts, beats, music, VO, or audible SFX. Four detector-confirmed soft windows are 0.53-0.83, 2.30-2.63, 4.33-4.63, and 8.30-8.63 s; the sheets show the same palette change around 6.50 s although it was not classified as soft. The final state matches the opening state. Sub-frame press timing and overshoot are only measurable to ±0.25 s. SFX planned by the glue rule, not measured. Proposed terms: tap-squash and palette-cycle.",
+  "preview": {
+    "demo_brand": "northfern"
+  },
+  "status": "built"
+}

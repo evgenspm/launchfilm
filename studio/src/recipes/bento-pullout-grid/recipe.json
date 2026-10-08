@@ -1,0 +1,138 @@
+{
+  "id": "bento-pullout-grid",
+  "title": "Bento pull-out: hero tile to full claim grid",
+  "summary": "One hero tile fades up close on a white frame, then the camera pulls out while eight claim tiles slide inward and lock into a bento grid around it. The calm settle and long hold let a dense wall of proof points read as one statement.",
+  "use_when": [
+    "A launch slide that has to show many short proof points at once (materials, specs, certifications)",
+    "Closing a product film on one summarising frame",
+    "Silent autoplay where one held frame must carry the message",
+    "A restrained, premium tone with light backgrounds and product photos"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/sliding-blocks-apple-event/",
+    "author": "Jitter",
+    "ref_id": "jt-004"
+  },
+  "family": "launch-film",
+  "tags": [
+    "bento",
+    "grid",
+    "tiles",
+    "pull-out",
+    "claims",
+    "light",
+    "keynote",
+    "minimal",
+    "announcement",
+    "proof-wall"
+  ],
+  "techniques": [
+    "card-grid",
+    "pull-out"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FCFDFC",
+      "#0E0E0E",
+      "#AED0B4",
+      "#2D2F2F",
+      "#636262",
+      "#949494"
+    ],
+    "type_style": "bold grotesk, lowercase and sentence case, tight tracking; hero claim 2 lines at ~6 % H, tile headlines 7-9 % H, tiny 1.5 % H captions; marker-style hand lettering in a saturated green on two tiles",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "camera pulls out from the hero tile to the full grid",
+        "sound": "reverse-cymbal",
+        "origin": "planned"
+      },
+      {
+        "event": "each tile settles into its grid slot",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "blank white frame, then one wide hero tile (product photo left, wordmark and a 2-line claim right) fades up close",
+      "camera": "pull-out: hero tile 62 % W at 0.50 s -> 49 % W at rest (scale ~1.27 -> 1.00), motion.json -24.9 %/s",
+      "motion": "white until 0.27 s; hero tile fades 0 -> 1 over ~15 fr (±0.25 s), easings.outQuint; first neighbour tiles appear at the frame edges at 0.77 s",
+      "transition_out": "continuous",
+      "sfx": "reverse-cymbal"
+    },
+    {
+      "t0": 1,
+      "t1": 2,
+      "beat": "proof",
+      "shot": "eight claim tiles (stats, struck-out materials list, product box photo, circuit photo) close in around the hero",
+      "camera": "pull-out continues and decelerates, motion.json -6.3 %/s, settles by ~1.77 s (±0.25 s), springs.cameraOut (overshoot not measurable)",
+      "motion": "tiles slide inward from beyond the frame edge toward the hero and fade 0 -> 1, stagger ~3-4 fr by distance (±0.25 s), springs.ui (overshoot not measurable); all tiles opaque and locked by 1.77 s",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2,
+      "t1": 4,
+      "beat": "proof",
+      "shot": "full bento of nine rounded tiles on white: hero centre, two columns left, one row above and below, dark photo tile right",
+      "camera": "static (motion.json 0.2 %/s, no change visible in cells 8-15)",
+      "motion": "hold 60 fr, nothing moves",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 9,
+    "screenshots": 3,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 5,
+    "url": false
+  },
+  "components": [
+    "FocusCamera",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg, fg, muted, accent (marker-style tiles), display font",
+    "content.hero": "hero tile: product image, logo, 2-line claim (<= 4 words per line)",
+    "content.tiles": "8 tiles: {kind stat|list|image|mark, headline <= 3 words, caption <= 10 words, image?}",
+    "layout": "bento slots as grid spans around the hero; recomposed per aspect",
+    "timing.heroIn": "frame the hero starts fading in (default 8)",
+    "timing.pullOut": "frames of the pull-out from hero to full grid (default 45)",
+    "timing.stagger": "frames between tile arrivals, ordered by distance from the hero (default 3)",
+    "timing.hold": "frames the full grid holds (default 60)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One shot, no cuts, silent. Measured from 4 fps sheets and 1 fps keyframes: hero tile 62 % W at 0.50 s, 49 % W from 2.00 s (pull-out ~1.27x); motion.json zoom -24.9 %/s then -6.3 %/s then 0. Half the runtime is a static hold: the motion is only the build. Tiles enter from outside inward, never cross the hero. Proposed term bento-assemble (tiles converge into a mixed-span grid during a pull-out) is not in the vocabulary. sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

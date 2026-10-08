@@ -1,0 +1,158 @@
+{
+  "id": "spinner-check-pop-loop",
+  "title": "Spinner that pops into a success check",
+  "summary": "A small loading spinner on a pale track ring snaps into a filled disc that pops to 2.7x with a check, holds, then clock-wipes back into a pie spinner. A 4 s loop for the done moment after any action.",
+  "use_when": [
+    "The confirm beat right after a submit, upload or payment in a product demo",
+    "A looping micro-interaction tile for a feature grid or social post",
+    "Bridging a loading state to a result in a longer UI film",
+    "A silent, monochrome brand that wants one clear state change"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/loading-spinner-success-animation/",
+    "author": "Jitter",
+    "ref_id": "jt-020"
+  },
+  "family": "product-ui",
+  "tags": [
+    "spinner",
+    "loading",
+    "success",
+    "checkmark",
+    "ui-state",
+    "micro-interaction",
+    "minimal",
+    "monochrome",
+    "light",
+    "loop",
+    "square"
+  ],
+  "techniques": [
+    "thinking-state",
+    "morph",
+    "mask-wipe"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 8,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#E5E5E3",
+      "#050701",
+      "#B8B8B5"
+    ],
+    "type_style": "no type; one geometric glyph: a thin light check (stroke ~2 % of frame) centred in a near-black disc",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "spinner snaps into the filled success disc (f30, f150)",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "disc reaches its pop peak and settles (f36, f156)",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "small loading spinner centred on flat pale grey: a thin dark arc running around a light grey track ring, ring 15 % of frame",
+      "camera": "static",
+      "motion": "arc head travels clockwise ~12 deg/fr (easings.linear, measured f24-f29 from a 30 fps strip) while the arc length shrinks from ~300 deg to ~40 deg; at f30 the arc closes to a full dark outline in 1 fr",
+      "transition_out": "morph",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 1,
+      "t1": 2.6,
+      "beat": "feature",
+      "shot": "success state: the ring becomes a near-black filled disc, 40 % of frame, with a light check in the centre",
+      "camera": "static",
+      "motion": "f31 stroke thickens inward, f32 fills to a disc; scale 1.0 -> 2.7x ring size on springs.pop: peak f36 (~18 % overshoot), settled ~f41; check fades in 4 fr f32-f35 riding the same progress; hold f41-f77",
+      "transition_out": "mask-wipe",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.6,
+      "t1": 5,
+      "beat": "feature",
+      "shot": "disc shrinks back to ring size and is clock-wiped into a solid pie wedge that spins on the track ring as the second loading state",
+      "camera": "static",
+      "motion": "f78-f80 check fades 3 fr; f79-f82 disc shrinks to ring size on easings.inExpo (5 fr); f82-f84 radial wipe removes ~3/4 of the disc; wedge rotates clockwise ~8-9 deg/fr while its angle breathes ~20 deg -> ~270 deg -> ~20 deg (sheet-01 cells 13-15, sheet-02 cells 0-3); at f150 the wedge closes to a full disc in 1 fr",
+      "transition_out": "morph",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 5,
+      "t1": 6.6,
+      "beat": "feature",
+      "shot": "success state again: filled near-black disc, 40 % of frame, light check centred",
+      "camera": "static",
+      "motion": "disc grows from ring size on springs.pop: f151-f155 rise (60 -> 176 px at 1/3 scale), peak f155-f156 (~18 % overshoot), settled ~f161; check fades in 4 fr f152-f155; hold to f197",
+      "transition_out": "mask-wipe",
+      "sfx": "tick"
+    },
+    {
+      "t0": 6.6,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "the disc clock-wipes back into the spinning pie wedge; ends mid-spin with the wedge at ~270 deg",
+      "camera": "static",
+      "motion": "same exit as row 3 (check fade 3 fr, shrink easings.inExpo 5 fr, radial wipe 3 fr); wedge spin ~8-9 deg/fr (sheet-02 cells 11-15)",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Spinner",
+    "LineGlyph",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the field, fg for the disc and arc, muted for the track ring, bg for the check",
+    "content.cycles": "loading -> success cycles (default 2, period 120 fr at 30 fps)",
+    "content.spinnerStyles": "per cycle 'arc' | 'pie' (default ['arc', 'pie'])",
+    "content.glyph": "LineGlyph name inside the disc (default 'check')",
+    "timing.loadFrames": "frames of loading before the snap (default 30 first cycle, 72 later)",
+    "timing.holdFrames": "frames the success disc holds after settling (default 36)",
+    "size.ring": "track ring diameter as a share of the short side (default 0.146)",
+    "size.disc": "settled disc diameter as a share of the short side (default 0.40)",
+    "aspect": "1:1 | 4:5 | 16:9 | 9:16; the glyph stays centred",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips: period 120 fr (success snaps at f30 and f150, exits start f78 and f198). Disc 174 px ring -> 474 px settled (1188 frame), peak ~528 px = ~18 % overshoot on springs.pop, peak 5-6 fr after the snap. Exit accelerates (inExpo), entrance overshoots: never bounce the exit. The snap from spinner to disc is a 1 fr jump; the spring does the drama. SFX planned by the glue rule, not measured (source is silent). Proposed terms (not in vocabulary): pie-spinner, clock-wipe, success-pop. Loopable from 2.60 s (rows 3-4 repeat with period 4.00 s); the full 8 s file starts with the arc variant, so loopable is false.",
+  "status": "studied"
+}

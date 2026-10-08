@@ -1,0 +1,125 @@
+{
+  "id": "leaned-page-section-cut-url",
+  "title": "Leaned website sections, cut tour to a URL card",
+  "summary": "A vertical tour of one website: four page sections on a leaned 3D plane, each a slow camera move of 3-4 s joined by hard cuts, closing on a small serif URL on black. Depth and drift make a static site feel filmed.",
+  "use_when": [
+    "A studio, agency or freelancer shows off a site it built, vertical feed",
+    "A landing page with a hero, a services block, a form and contact details",
+    "Silent autoplay where the UI itself has to carry the film",
+    "A short portfolio piece that must end on the URL"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/zfMy2UXL",
+    "author": "sitesbyamin",
+    "ref_id": "rl-110"
+  },
+  "family": "product-ui",
+  "tags": ["vertical", "website", "portfolio", "tilted-plane", "page-tour", "hard-cuts", "url-close", "light", "silent", "agency"],
+  "techniques": ["tilt-plane", "dolly", "push-in", "ui-rebuild", "quiet-close", "hard-cut", "end"],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 17.13,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": ["#F1F5F7", "#171B28", "#353B49", "#8C8486", "#A1A6AB", "#070B0C"],
+    "type_style": "page headline in a light high-contrast serif, sentence case, one italic accent word, ~5 % H; body in a wide grotesk; tracked uppercase mono for bullet lists; URL close in a condensed serif ~2 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      { "event": "hard cut to the next page section", "sound": "swoosh-short", "origin": "planned" },
+      { "event": "cut to the URL on black", "sound": "silence-beat", "origin": "planned" }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 3.1,
+      "beat": "hook",
+      "shot": "page hero on a leaned plane: 3-line serif headline, 4-line sub, filled and ghost buttons, two big stat figures low",
+      "camera": "push-in 1.00->1.03 over 93 fr (motion.json ~1 %/s), plane leaned back with its left edge receding",
+      "motion": "no element animation visible at 4 fps; only the camera creep, easings.linear",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 3.1,
+      "t1": 6.37,
+      "beat": "feature",
+      "shot": "services block: tail of an intro paragraph, 3-item mono bullet list, then a card with an icon tile, a 2-word title, 3-line body, 3 mono bullets",
+      "camera": "dolly up the plane ~4.3 px/fr @1920 (content rises) + push-in ~1.00->1.22 over 98 fr, roll ~+1 deg/s",
+      "motion": "content static on the plane; move is easings.linear across the whole row (no ease visible at 0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.37,
+      "t1": 10.03,
+      "beat": "cta",
+      "shot": "inquiry form on a steeply leaned plane: blurred serif heading and sub, 3 labelled fields, wide dark pill submit button sharp at the bottom",
+      "camera": "plane tilted so the right edge falls away into dark; lateral dolly left ~1.9 px/fr @1920 with roll ~+2 deg/s; first 0.5 s eases out of a slight pull-out (-2 %/s)",
+      "motion": "shallow depth of field fixed on the button, top of the form blurred; no element animation; easings.linear drift",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 10.03,
+      "t1": 14.17,
+      "beat": "cta",
+      "shot": "contact card on black, skewed in perspective: tracked mono eyebrow, then email, phone, social handle, city, each with a round icon chip",
+      "camera": "lateral dolly right ~4.5 px/fr @1920 (card slides right), slight push-in ~1 %/s, roll ~-0.7 deg/s",
+      "motion": "card static on the plane; easings.linear across 124 fr",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 14.17,
+      "t1": 17.13,
+      "beat": "cta",
+      "shot": "the site URL, one small condensed serif line, centred on near-black",
+      "camera": "static",
+      "motion": "URL is fully on screen at the first cell after the cut (14.27); no entrance or exit visible at 0.25 s; holds 89 fr",
+      "transition_out": "end",
+      "sfx": "silence-beat"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": true,
+    "lines": 6,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 2,
+    "url": true
+  },
+  "components": ["TiltPlane", "Dolly", "QuietClose", "BrandProvider", "BrandBackdrop", "ASPECTS"],
+  "params": {
+    "brand": "any brand.json: serif display, grotesk body, mono for lists and eyebrows, fg navy, accent for the buttons, bg off-white",
+    "content.hero": "headline (3 short lines, one italic accent word), 4-line sub, two button labels, two stat figures with labels",
+    "content.services": "intro sentence tail, 3 mono bullets, one service card: icon, 2-word title, 3-line body, 3 bullets",
+    "content.form": "form heading (2 lines), 4-line sub, 3 field labels, submit label",
+    "content.contact": "eyebrow + 4 contact rows (email, phone, handle, city) with icons",
+    "content.url": "site URL for the close",
+    "timing.sections": "frames at 30 fps per section (default 93, 98, 110, 124), close holds 89",
+    "aspect": "9:16 (reference); 4:5 works with the same planes"
+  },
+  "difficulty": "hard",
+  "render_cost": "medium",
+  "notes": "Silent reference: sfx planned by the glue rule, not measured (origin planned). Camera speeds come from motion.json global estimates (px/s normalised to 1920, %/s zoom, deg/s roll), cross-checked on sheet cell positions; easing curves are not measurable at 4 fps and are given as linear defaults. Row 4 is 4.13 s with no visible state change, so it is not split. Theme light by runtime (rows 1-3 and the card in row 4); the last 2.97 s are dark. Proposed term plane-dof (static shallow depth of field on a tilted plane, row 3) is covered by TiltPlane dof and not used as an id. Catalogue hint social-promo overridden: no sticker grammar, the content is a website UI."
+,
+  "status": "studied"
+}

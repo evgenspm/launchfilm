@@ -1,0 +1,340 @@
+{
+  "id": "template-swap-editor-walkthrough",
+  "title": "Vertical editor walkthrough: pick, swap, tilt, retype",
+  "summary": "A vertical product tour of a motion editor: a template is picked from a gallery, its phone screen is swapped, tilted and recoloured, a headline is retyped, then URL and mark close. Each step is one visible edit, paced to the VO.",
+  "use_when": [
+    "Showing a creative or design tool end to end in one vertical clip",
+    "A template or remix product where the edit itself is the payoff",
+    "VO-led tutorials where every sentence maps to one UI action",
+    "Reels or shorts that need a product demo under 50 s"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/fEBKQAIB",
+    "author": "Raylight",
+    "ref_id": "rl-097"
+  },
+  "family": "product-ui",
+  "tags": [
+    "vertical",
+    "editor",
+    "tutorial",
+    "template",
+    "cursor",
+    "phone-mockup",
+    "typing",
+    "walkthrough",
+    "voice-over",
+    "dark",
+    "blue-gradient"
+  ],
+  "techniques": [
+    "device-3d",
+    "device-laptop",
+    "device-phone",
+    "push-in",
+    "pull-out",
+    "dolly",
+    "tilt-plane",
+    "cursor-path",
+    "ui-rebuild",
+    "typewriter",
+    "blur-in",
+    "light-on",
+    "end-card",
+    "zoom-through",
+    "blur-dissolve",
+    "slide-push",
+    "hard-cut",
+    "glow"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 45.44,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#050706",
+      "#FAF7F3",
+      "#0191F8",
+      "#80D548",
+      "#1A1A1A",
+      "#BB816F"
+    ],
+    "type_style": "UI sans at app scale (labels 1-2 % H); display grotesk for the edited words, bold, tight, white-to-grey vertical gradient, about 45 % of artboard width; URL in medium sans, 4 % W",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": true,
+    "music": {
+      "present": true,
+      "bpm": 161.4,
+      "energy": "high",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone lands in the laptop canvas, mark at the end",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "soft slide or zoom transitions between UI views",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor clicks on buttons, menus and the colour picker",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "letters typed into the text layer",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "light sweep across the wordmark and the URL",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 2.97,
+      "beat": "hook",
+      "shot": "dark laptop on a desk, editor open; a green-screen phone rises into the canvas and settles tilted, keys pick up green spill",
+      "camera": "push-in 1.00->1.12 over 89 fr, slight roll ~-0.5 deg/s (motion.json)",
+      "motion": "phone rises from below the canvas edge, springs.heavy ~30 fr (overshoot not measurable); spill fades up with it",
+      "transition_out": "hard-cut",
+      "sfx": "swell"
+    },
+    {
+      "t0": 2.97,
+      "t1": 3.77,
+      "beat": "reveal",
+      "shot": "blue-to-black gradient backdrop; a dark template-gallery window floats in the centre, about 85 % of width",
+      "camera": "static hold (no scale change across 4 cells)",
+      "motion": "gallery tiles already placed; one tile plays a tiny phone preview",
+      "transition_out": "zoom-through",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.77,
+      "t1": 7.0,
+      "beat": "feature",
+      "shot": "gallery fills the frame: featured row of two tiles, community row with filter chips below",
+      "camera": "push-in through the window 1.00->1.35 over 15 fr, then dolly up ~200 px/s@1920 with slow push 1.00->1.15 (motion.json)",
+      "motion": "zoom-through window edge easings.inOutSine 15 fr (+-0.25 s); tiles hold, labels stay crisp",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 7.0,
+      "t1": 9.97,
+      "beat": "feature",
+      "shot": "camera pulls back to the window, grid reflows with new tiles, then glides down to a phone-app template tile",
+      "camera": "pull-out 1.15->1.00 over 8 fr, dolly down ~290 px/s@1920 at 8.00-9.00, push-in 1.00->1.12 on the phone tile",
+      "motion": "new tiles slide in from the right edge, easings.outExpo ~12 fr (+-0.25 s)",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 9.97,
+      "t1": 12.27,
+      "beat": "feature",
+      "shot": "template preview card on a dark panel; a tilted orange-UI phone inside it, then the phone turns to show its side edge",
+      "camera": "push-in 1.00->1.40 over 30 fr (motion.json 40 %/s), roll -3 deg",
+      "motion": "phone yaws from three-quarter to side profile over ~45 fr, easings.inOutSine (+-0.25 s); card contents swap to a blank side view at 11.50",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 12.27,
+      "t1": 14.0,
+      "beat": "cta",
+      "shot": "close-up of the preview panel corner: a free-use button; cursor clicks it, label switches to a loading state",
+      "camera": "tilt-plane: panel tilted ~15 deg, slides up and right over 17 fr, then slow drift",
+      "motion": "cursor-path to the button, press squash springs.click (+-0.25 s); label swap to spinner state on click",
+      "transition_out": "blur-dissolve",
+      "sfx": "tick"
+    },
+    {
+      "t0": 14.0,
+      "t1": 15.77,
+      "beat": "feature",
+      "shot": "editor canvas: the template phone on a white artboard, toolbar under it, layered timeline at the bottom",
+      "camera": "push-in 1.00->1.07 over 53 fr",
+      "motion": "artboard wipes up from below with blur, ~18 fr (cuts.json soft 14.00-14.60); phone settles; selection box draws at 15.50",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 15.77,
+      "t1": 20.27,
+      "beat": "feature",
+      "shot": "image swap flow: inspector panel with source menu, cursor picks the library, popover with two green tiles, phone screen becomes green",
+      "camera": "dolly right to the inspector (~700 px/s@1920 at 17-18 s), back to the canvas at 18.50; push-in 1.00->1.05",
+      "motion": "menu opens springs.ui ~8 fr (+-0.25 s); cursor-path with clicks at 16.50, 17.27, 18.27; screen content swaps in one frame",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 20.27,
+      "t1": 22.73,
+      "beat": "feature",
+      "shot": "user drags the phone corner handle: the phone tilts through several angles inside its selection box",
+      "camera": "static artboard; slight push 1.00->1.04",
+      "motion": "phone tilt follows the drag, about 4 poses in 2.5 s, easings.inOutSine per pose (+-0.25 s)",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 22.73,
+      "t1": 25.77,
+      "beat": "feature",
+      "shot": "project settings panel slides in; background colour picker opens and the canvas background flips white to black",
+      "camera": "slide-push left 19 fr (cuts.json soft 22.73-23.37), then static; pull-out 1.00->0.94 at 24.27",
+      "motion": "picker popover springs.ui ~8 fr (+-0.25 s); background swap in one frame at ~24.27",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 25.77,
+      "t1": 27.77,
+      "beat": "feature",
+      "shot": "green phone on black canvas rotates in 3D: three-quarter left, front, three-quarter right with a deep side edge",
+      "camera": "push-in 1.00->1.20 over 60 fr (motion.json ~20 %/s)",
+      "motion": "phone yaw about 50 deg over ~45 fr, easings.inOutSine (+-0.25 s), handles follow",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 27.77,
+      "t1": 29.27,
+      "beat": "feature",
+      "shot": "text artboard: one huge gradient word over a glowing violet horizon, timeline with text layers below",
+      "camera": "pull-out to the whole editor at 27.77, then static",
+      "motion": "word wipes in left to right with blur ~8 fr (+-0.25 s), springs.snappy scale settle (overshoot not measurable)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 29.27,
+      "t1": 30.77,
+      "beat": "feature",
+      "shot": "short tagline line, 3 words, small and centred on the same horizon",
+      "camera": "static",
+      "motion": "blur-in by word, stagger ~2 fr (+-0.25 s), easings.outExpo 12 fr; exits with a left-to-right mask wipe ~8 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 30.77,
+      "t1": 32.27,
+      "beat": "logo",
+      "shot": "wordmark in grey on pure black; a white light sweeps through it and leaves a halo",
+      "camera": "static",
+      "motion": "light-on: highlight sweeps left to right over ~30 fr, halo peaks at 31.27 then fades (+-0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 32.27,
+      "t1": 35.27,
+      "beat": "feature",
+      "shot": "text edit: the big word gets a selection box, text highlighted in accent blue, then a new 4-letter word is typed",
+      "camera": "static",
+      "motion": "selection highlight on in 1 frame at 33.00; deletion, then typewriter at ~4 chars/s (4 letters in 0.75 s); caret shown",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 35.27,
+      "t1": 36.77,
+      "beat": "feature",
+      "shot": "preview playback: the edited word, the tagline and the wordmark pass in quick order",
+      "camera": "static",
+      "motion": "each card ~0.25 s, same entrances as rows 12-14 at speed (playhead scrub)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 36.77,
+      "t1": 39.77,
+      "beat": "feature",
+      "shot": "wordmark text replaced: selection box, typed placeholder name of 2 words, then played back with the light sweep",
+      "camera": "static",
+      "motion": "typewriter ~5 chars/s (8 chars 36.77-38.27); blank 38.50; replay light-on sweep 38.77-39.77 (+-0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 39.77,
+      "t1": 42.5,
+      "beat": "cta",
+      "shot": "editor gone: product URL on near-black, centred, white with a soft halo",
+      "camera": "static",
+      "motion": "blur-in 8 fr (+-0.25 s) at 40.00-40.27; light-on halo peaks at 41.00-41.27; blur-out exit ~8 fr at 42.27",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 42.5,
+      "t1": 45.44,
+      "beat": "logo",
+      "shot": "brand mark alone in white, centred on near-black, about 8 % of width",
+      "camera": "static",
+      "motion": "fades up from grey to white over ~8 fr (+-0.25 s), then holds 80 fr; audio silent from 44.48",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 3,
+    "screenshots": 2,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "PhoneFrame",
+    "LaptopFrame",
+    "MacWindow",
+    "Camera",
+    "Dolly",
+    "TiltPlane",
+    "Cursor",
+    "Typewriter",
+    "BlurIn",
+    "Bloom",
+    "Wordmark",
+    "BrandMark",
+    "EndCard",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg gradient top colour (blue in the reference), panel dark, accent, display font",
+    "content.templates": "6-8 gallery tile images or titles; one is the phone template that gets picked",
+    "content.phoneScreens": "2 phone screen images: the template default and the swapped-in screen",
+    "content.headline": "the big word on the text artboard and the 1 word it is retyped to (<= 6 letters each)",
+    "content.tagline": "one line, 3 words",
+    "content.wordmark": "product name that gets the light sweep, and the 2-word placeholder it is retyped to",
+    "content.url": "product URL for the close",
+    "vo": "VO lines with times; each row starts on the sentence that names its action",
+    "aspect": "9:16 (reference); 4:5 works with a shorter gallery",
+    "fps": "30"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Measured from 4 fps sheets (+-0.25 s): rows are the reference times; camera numbers partly from motion.json estimates. Two hard cuts (2.97, 9.97); five soft transitions from cuts.json (3.77, 12.27, 14.00, 15.77, 22.73), ids chosen from the sheet look (zoom blur, slide), not measured exactly. Springs and staggers are suggested defaults, overshoot not measurable. Music and VO only: every sfx is planned by the glue rule, not observed. Near-black stretch 39.77-45.44 is a separate end card with no editor chrome. The phone in rows 1, 5, 11 is a real 3D device turning, hence device-3d and heavy render. cut_on_beat 2/7. Proposed terms (not used as ids): template-pick, layer-swap. Theme dark by majority, the blue gradient backdrop sits above L 0.2 but below 0.6.",
+  "status": "studied"
+}

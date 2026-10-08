@@ -1,0 +1,171 @@
+{
+  "id": "phone-call-pill-queue-stack",
+  "title": "Phone call pill and queued notification stack",
+  "summary": "A phone swings in, the camera snaps to its top where a dark call pill materialises, then tilts down as light cards rise from a visible depth queue and a dark missed-call card fades in. Dark-on-pastel contrast sets hierarchy.",
+  "use_when": [
+    "A messaging, calling or CRM app whose value is the stream of incoming events",
+    "Showing that a product catches calls and messages the user would otherwise miss",
+    "A short silent loop for a landing page hero or a social feed",
+    "Phone-first products with no desktop UI to show"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/dLQiU3Bl",
+    "author": "Samet Onder",
+    "ref_id": "rl-042"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "lockscreen",
+    "notifications",
+    "incoming-call",
+    "missed-call",
+    "queue-depth",
+    "camera-snap",
+    "light",
+    "silent",
+    "loop",
+    "pastel-wallpaper"
+  ],
+  "techniques": [
+    "device-phone",
+    "zoom-tier",
+    "dolly",
+    "notification-stack",
+    "blur-dissolve"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 6.23,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#010104",
+      "#9684C1",
+      "#D6BED0",
+      "#F3F1F0",
+      "#4F487E"
+    ],
+    "type_style": "system grotesk on UI scale: card titles semibold, bodies regular, about 2 % H at macro framing; lockscreen clock huge thin numerals behind the cards; red accent label on the missed-call card",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone settles facing camera",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "call pill materialises",
+        "sound": "notification",
+        "origin": "planned"
+      },
+      {
+        "event": "each notification card arrives in its slot",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "missed-call card fades in",
+        "sound": "notification",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.8,
+      "beat": "hook",
+      "shot": "empty white; a small phone appears edge-on, turns to face camera while growing to about 60 % of frame height, then goes soft",
+      "camera": "static frame; the device scales about 8 % H -> 60 % H (object move, not camera)",
+      "motion": "phone y-rotation edge-on -> front with scale up, easings.outExpo 15 fr (f6-f21); at 0.77 the phone is pale and blurred as the push starts (±0.25 s)",
+      "transition_out": "zoom-tier",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.8,
+      "t1": 1.8,
+      "beat": "feature",
+      "shot": "macro on the top third of the phone: status bar, camera cutout, a dark call pill with an avatar initial, two-line caller label and red and green round buttons",
+      "camera": "zoom-tier full -> detail, about 6x in 4 fr (f21-f25), springs.cameraIn; then creep about 1.00 -> 1.03 over 30 fr",
+      "motion": "call pill materialises in place: opacity 0.15 -> 1, blur 8 px -> 0, no scale, easings.linear 8 fr (f29-f37); content present from the first frame; hold 17 fr",
+      "transition_out": "dolly",
+      "sfx": "notification"
+    },
+    {
+      "t0": 1.8,
+      "t1": 2.48,
+      "beat": "feature",
+      "shot": "camera travels down the screen: the call pill leaves off the top, four light glass notification cards stream up from below and stack",
+      "camera": "dolly down about half a phone screen in 9 fr (f54-f63), easings.inOutSine",
+      "motion": "notification-stack, queue with depth: depth 1 scale 0.89 opacity 0.5, depth 2 scale 0.79 opacity 0.2 blur 1-2 px; each card rises to its slot in 6 fr, springs.ui (no overshoot), stagger 3 fr, first card f55, last settled about f69",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 2.48,
+      "t1": 3.85,
+      "beat": "feature",
+      "shot": "two message cards above, a dark missed-call card with avatar, red label line, caller line and a red call-back glyph at the bottom of the screen",
+      "camera": "drift: slight downward settle, about 1 % over 41 fr",
+      "motion": "missed-call card materialises at the bottom: opacity 0.2 -> 1 with blur, easings.linear 5 fr (f74-f79); then hold 35 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "notification"
+    },
+    {
+      "t0": 3.85,
+      "t1": 6.23,
+      "beat": "feature",
+      "shot": "empty white frame, held to the end so the loop restarts on white",
+      "camera": "static",
+      "motion": "phone dissolves to white in 3 fr (f116-f119), then nothing moves for 68 fr",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "Camera",
+    "NotificationStack",
+    "NotifCard",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (white here), accent for the call-back glyph and missed label, wallpaper colours for the phone screen",
+    "content.caller": "caller initial and two-line label (status line + name)",
+    "content.notifications": "4 cards: app glyph, title, one-line body, time label; two pairs from two apps",
+    "content.missed": "missed-call card: status line and caller name",
+    "timing.stagger": "frames between card arrivals (default 3)",
+    "timing.tailHold": "white frames after the dissolve (default 68; 0 for a tight loop)"
+  },
+  "difficulty": "medium",
+  "render_cost": "medium",
+  "notes": "Measured frame by frame at 30 fps (human notes) and checked on 4 fps sheets. The call pill and the missed-call card are not island morphs: they materialise in place (opacity + blur, no scale). Queue depth makes arrivals read as coming forward: depth 1 = 0.89 scale / 0.5 opacity, depth 2 = 0.79 / 0.2. The wide -> macro push is so fast (4 fr) it reads as a match cut. Action ends at 3.85 s; the rest is white. Proposed terms (not in vocabulary): device-swing-in, materialize, queue-depth. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

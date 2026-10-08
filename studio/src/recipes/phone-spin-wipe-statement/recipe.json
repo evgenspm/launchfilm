@@ -1,0 +1,178 @@
+{
+  "id": "phone-spin-wipe-statement",
+  "title": "Spinning phone sweeps two statements",
+  "summary": "On white, a phone showing a call screen spins a full turn while it crosses the frame; its pass wipes one short line away and draws the next in behind it. Two lines, two sweeps, the phone grows each time, then a clean exit to white.",
+  "use_when": [
+    "A phone-first product with one hero screen and a two-line setup and promise",
+    "A 5 s silent social loop or an opener before a longer app film",
+    "Pairing a situation line with the product's answer to it",
+    "Light, minimal brands where the device itself is the motion"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/k1Lo4TYA",
+    "author": "Samet Onder",
+    "ref_id": "rl-018"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "device-spin",
+    "statement",
+    "two-lines",
+    "text-wipe",
+    "light",
+    "minimal",
+    "call-screen",
+    "loop",
+    "short"
+  ],
+  "techniques": [
+    "statement-sequence",
+    "device-phone",
+    "device-3d",
+    "mask-wipe"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#030303",
+      "#A6877F",
+      "#DED9D6",
+      "#4D4742"
+    ],
+    "type_style": "semibold geometric grotesk, title case, normal tracking, cap-to-baseline ~6.5 % H, one line, vertically centred at ~47 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone spins and sweeps across the frame",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "last line wipes away",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.6,
+      "beat": "hook",
+      "shot": "empty white; a phone with a call screen fades in, front-facing, right of centre (x 0.72 W), height 44 % H",
+      "camera": "locked frame; phone creeps left 0.72 -> 0.61 W from f12",
+      "motion": "phone opacity 0 -> 1 f3 -> f14, easings.outQuint 11 fr; leftward creep starts f12, easings.inOutSine (part of the row 2 travel)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 0.6,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "phone spins one full turn (front, edge, back with camera block, edge, front) while crossing to the left third; line one, 3 words, situation, appears right of it",
+      "camera": "locked frame; phone scales 44 -> 56 % H and travels 0.61 -> 0.23 W",
+      "motion": "yaw 0 -> 360 deg f18 -> f30, easings.inOutSine 12 fr; travel easings.inOutSine ending f30; line one revealed right-to-left by a mask whose edge trails the phone, done f30; text right edge at 0.81 W",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1,
+      "t1": 1.8,
+      "beat": "hook",
+      "shot": "phone front-facing in the left third with a slight yaw, line one held on the right",
+      "camera": "locked frame; phone scales 56 -> 67 % H (+20 % over 24 fr), x drifts 0.24 -> 0.18 -> 0.19 W",
+      "motion": "phone scale creep easings.linear 24 fr; slight yaw toward camera (±0.25 s); text holds 24 fr, no motion",
+      "transition_out": "mask-wipe"
+    },
+    {
+      "t0": 1.8,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "phone spins one full turn again while crossing to the right third; line one wipes out, line two, 4 words, the product's answer, wipes in on the left",
+      "camera": "locked frame; phone scales 67 -> 79 % H and travels 0.20 -> 0.72 W",
+      "motion": "yaw 0 -> 360 deg f55 -> f71, easings.inOutSine 16 fr; travel easings.inOutSine 26 fr (f54 -> f80, ~0.03 W/fr mid-move); line one erased left-to-right f57 -> f68, line two revealed left-to-right f59 -> f72, both mask edges follow the phone",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.5,
+      "t1": 3.4,
+      "beat": "feature",
+      "shot": "phone front-facing in the right third at 79 % H, line two held on the left (left edge 0.07 W)",
+      "camera": "locked frame; phone settles the last 0.02 W of its travel by f80, then drifts ~6 px/s @1920 (motion.json)",
+      "motion": "travel tail easings.inOutSine to f80; hold 22 fr after that with only the drift",
+      "transition_out": "mask-wipe"
+    },
+    {
+      "t0": 3.4,
+      "t1": 4,
+      "beat": "feature",
+      "shot": "line two wipes away from its left end; phone stays put, then vanishes in one frame",
+      "camera": "locked frame",
+      "motion": "line two erased left-to-right f101 -> f114, easings.outQuint 13 fr (measured on a 30 fps strip); phone holds to f119 and is removed at f120 with no exit animation",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4,
+      "t1": 5,
+      "beat": "feature",
+      "shot": "empty white, matches frame 0 so the film loops",
+      "camera": "static",
+      "motion": "none, 30 fr of white",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS",
+    "TRANSITIONS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (white in the reference), fg for the lines, display font",
+    "content.lines": "2 one-line statements: a situation (~3 words) and the product's answer (~4 words)",
+    "content.screen": "one phone screenshot or drawn screen shown on the device front",
+    "content.back": "phone back colour / finish for the half turn where the back faces camera",
+    "timing.sweep1": "frames of the first spin-travel (default 12 yaw / 18 travel at 30 fps)",
+    "timing.sweep2": "frames of the second spin-travel (default 16 yaw / 26 travel)",
+    "timing.hold": "frames each line holds between sweeps (default 24 and 22)",
+    "timing.tail": "white frames after the phone leaves (default 30, keeps the loop)",
+    "aspect": "16:9 by default; at 9:16 stack phone above or below the line instead of left/right",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Measured on 4 fps sheets plus local 30 fps strips at 0.00, 1.80 and 3.40 s. No cuts, no audio. The phone is the wipe edge: text masks follow its x, so the line never moves, only its visible span. The phone grows 44 -> 79 % H over 0.5 -> 2.5 s while the type keeps its size. The phone shows its back for ~5 fr mid-spin, so a flat frame is not enough (device-3d). The phone exit at f120 is a one-frame removal, then 30 fr of white make the loop. sfx planned by the glue rule, not measured. Proposed term (not in vocabulary): device-sweep-wipe.",
+  "status": "studied"
+}

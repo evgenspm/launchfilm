@@ -20,7 +20,9 @@ Format: `id` — what it is (component that implements it, if any).
 - `depth-field` — cards or fragments scattered in z with depth of field; the camera travels through them (DepthField)
 
 ## transitions
-- `hard-cut` — on the beat, no effect (default)
+- `continuous` — no cut: the same shot keeps going into the next beat (a state change). Default between beats of a one-shot film
+- `hard-cut` — a real cut on the beat, no effect. Only where the reference actually cuts
+- `end` — the last beat; nothing follows
 - `match-cut` — shape/position carried across the cut
 - `mask-wipe` — shape or text mask reveals next scene
 - `morph` — element transforms into the next scene's element (PillMorph)

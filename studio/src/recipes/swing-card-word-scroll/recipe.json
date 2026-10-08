@@ -1,0 +1,111 @@
+{
+  "id": "swing-card-word-scroll",
+  "title": "Swinging card over a stepping feature list",
+  "summary": "A tall all-caps list of one-word features steps down the square frame while a payment card swings to a new tilt and colour at each stop. One hero object plus a wall of capabilities, read in under 4 s.",
+  "use_when": [
+    "A card, pass or badge product with many small capabilities to name at once",
+    "A short square loop for a feed, landing page hero or plan comparison",
+    "Silent autoplay where one object and single words carry the message",
+    "Showing several colour or tier variants of the same physical object"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-vault-card-features/",
+    "author": "Jitter",
+    "ref_id": "jt-021"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "card",
+    "fintech",
+    "feature-list",
+    "word-list",
+    "hero-object",
+    "all-caps",
+    "square",
+    "light",
+    "silent",
+    "loop",
+    "variants"
+  ],
+  "techniques": [
+    "stacked-roll"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 3.77,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#DBE0E0",
+      "#000000",
+      "#0002C7",
+      "#D9E5EA",
+      "#A8AEB2"
+    ],
+    "type_style": "heavy grotesk, all caps, tight tracking, cap height about 8.5 % H, line pitch about 14 % H, centred stack of 7 lines; tiny sentence-case caption under the card about 1.5 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "card settles at a list stop (3 per loop)",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.77,
+      "beat": "hook",
+      "shot": "centred wall of 7 one-word features on pale grey; a card with a big wordmark covers the middle; 3 stops: deep blue, pale blue, black card",
+      "camera": "locked frame, no scale change (line pitch 67 px in cells 0.00 and 1.27); the list travels down 238-314 px/s @1920 during moves",
+      "motion": "3 stops of about 38 fr: hold 15-22 fr, then list steps down 3-4 lines on easings.outExpo ~22 fr (±0.25 s) while the card swings to a new tilt (0°, about -12°, about +12°) and new colour on springs.heavy ~22 fr (±0.25 s, overshoot not measurable); a tiny caption or icon chip shows near the card at each stop",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 17,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Surface",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font for the list, fg, bg, accent for the first card",
+    "content.features": "12-18 one-word capabilities, all caps, ≤ 10 letters each; the list wraps",
+    "content.cards": "3 card variants: background, wordmark colour, tilt in degrees (default 0, -12, +12)",
+    "content.captions": "optional tiny line per stop under the card (tagline, credit line), ≤ 4 words",
+    "timing.stop": "frames per stop at 30 fps (default 38), hold share about 45 %",
+    "timing.linesPerStep": "lines the list advances per stop (default 3-4)",
+    "aspect": "1:1 (reference) | 4:5 | 9:16; 16:9 needs 2 columns or larger card",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from one 4 fps sheet (no cuts, silent). Period about 1.26 s per stop, 3 stops in 3.77 s. List moves downward (new words enter from the top). Card covers about 50 % of the width and hides 2-3 words; its soft drop shadow is the only depth cue. Colour swap moment and any flip are not measurable at 0.25 s. Last cell (3.50) is still settling about 10 % off the first, so loopable is false by the rule, though the piece is built to loop. sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): hero-swing-stop, step-scroll-list.",
+  "status": "studied"
+}

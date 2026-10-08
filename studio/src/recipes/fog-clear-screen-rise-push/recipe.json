@@ -1,0 +1,48 @@
+{
+  "id": "fog-clear-screen-rise-push",
+  "title": "Fog clears on a night forest, a site screen rises",
+  "summary": "One continuous shot: the camera pushes through dense night fog and thorny branches until a dark website screen, lying in the grass, tilts upright and settles centre frame under a moonlit sky.",
+  "use_when": [
+    "a seasonal or themed teaser where the setting sells the mood and the landing page is the payoff",
+    "a single hero page to show with no feature walk-through",
+    "silent autoplay loops on social where one slow reveal is enough"
+  ],
+  "source": {"name": "raylight", "url": "https://www.raylight.app/templates/nm0vARFg", "author": "Raylight", "ref_id": "rl-095"},
+  "family": "product-ui",
+  "tags": ["fog-reveal", "night", "forest", "one-shot", "push-in", "screen-rise", "hero-page", "dark", "seasonal", "silent"],
+  "techniques": ["push-in", "speed-ramp", "tilt-plane", "device-browser", "vignette"],
+  "format": {"aspect": "16:9", "duration_s": 11.4, "fps": 30, "loopable": false},
+  "look": {
+    "theme": "dark",
+    "palette": ["#10151B", "#9BB0C4", "#4A627D", "#2B3C4E", "#15191E"],
+    "type_style": "on-screen page only: large light serif headline, sentence case, 2 lines, about 6 % of frame height at the hold; small grotesk nav and body",
+    "treatment": ["vignette"]
+  },
+  "audio": {
+    "vo": false,
+    "music": {"present": false, "bpm": null, "energy": null, "genre": null, "cut_on_beat": false},
+    "sfx": [
+      {"event": "fog thins and the branches appear", "sound": "swell", "origin": "planned"},
+      {"event": "camera accelerates through the branches while the screen tilts up", "sound": "riser", "origin": "planned"},
+      {"event": "screen reaches upright and the push lands", "sound": "impact-low", "origin": "planned"}
+    ]
+  },
+  "structure": [
+    {"t0": 0, "t1": 2, "beat": "hook", "shot": "full-frame dense blue-grey fog, nothing else readable; darker edges", "camera": "push-in ~1.3 %/s for 1 s, then ~13 %/s with a slight up-left drift and ~2 deg roll", "motion": "fog layers churn slowly; push accelerates, easings.inOutSine onset (speed from motion estimate, ±0.25 s)", "transition_out": "continuous"},
+    {"t0": 2, "t1": 3, "beat": "reveal", "shot": "fog thins: thorny branches frame the top and sides, forest and hills behind; a dark screen lies almost flat in the grass, centre low", "camera": "push-in ~16 %/s, still accelerating", "motion": "fog opacity falls from full to about half over 30 fr (±0.25 s); screen visible only as a thin dark sliver with a light top edge", "transition_out": "continuous", "sfx": "swell"},
+    {"t0": 3, "t1": 6, "beat": "reveal", "shot": "screen tilts up from lying back to upright, showing a dark landing page with a 2-line headline and one pill button; moon and castle appear", "camera": "push-in peaks ~22 %/s at 4–5 s, then eases to ~5 %/s by 6 s; foreground branches slide out to the frame edges; slight downward drift", "motion": "screen tilt from ~80 deg back to ~0 deg over ~60 fr (3.00–5.00, ±0.25 s), springs.heavy (overshoot not measurable); screen width ~40 % → 42 % of frame", "transition_out": "continuous", "sfx": "riser"},
+    {"t0": 6, "t1": 8, "beat": "reveal", "shot": "upright screen centre-left, page fully readable; fog rolls along the ground in front of its base", "camera": "push ends, then a slow pull back ~-2.6 %/s; screen width 42 % → ~38 % of frame", "motion": "easings.outQuint settle of the push (±0.25 s); fog drifts left to right continuously", "transition_out": "continuous", "sfx": "impact-low"},
+    {"t0": 8, "t1": 11.4, "beat": "reveal", "shot": "same composition held: screen, moonlit sky with bats, graveyard on the right, warm-lit castle on the left", "camera": "drift: pull back ~-1.7 → 0 %/s, holds still from ~10 s; screen ~36 % of frame width", "motion": "only the ground fog moves; no UI animation inside the page", "transition_out": "end"}
+  ],
+  "inputs": {"product_name": false, "logo": false, "tagline": true, "lines": 1, "screenshots": 1, "screen_recording": false, "ui_rebuild": false, "stats": 0, "url": false},
+  "components": ["TiltPlane", "KenBurns", "Camera", "ScreenSlot", "Vignette"],
+  "params": {
+    "screenshot": "one full landing page screenshot, 16:10, dark theme reads best in the night plate",
+    "backdrop": "a night forest plate (sky, moon, trees) plus 2 foreground branch layers and 2 fog layers",
+    "headline": "the page's own hero line, 2 lines ≤ 6 words, must stay legible at ~36 % frame width"
+  },
+  "difficulty": "easy",
+  "render_cost": "medium",
+  "notes": "One shot, 0 cuts in cuts.json, so every transition_out is continuous. Push speeds from motion.json (per second, 1920-wide frame); screen widths measured on sheet cells at 0.25 s resolution. Tilt angles and spring choice are estimates (not measurable at 4 fps). Reference is silent: all SFX planned by the glue rule, not measured. Proposed term (not in vocabulary): fog-clear, a reveal where layered fog thins while the camera pushes through it.",
+  "status": "studied"
+}

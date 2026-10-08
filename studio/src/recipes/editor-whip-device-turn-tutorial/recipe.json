@@ -1,0 +1,257 @@
+{
+  "id": "editor-whip-device-turn-tutorial",
+  "title": "Vertical editor how-to with whip pans and a device turn",
+  "summary": "A 27 s vertical tutorial: a laptop shows a video editor, the camera dives into its canvas and whip-pans between screenshot, inspector and timeline while a phone frame turns in 3D; two hard-cut extras, then mark and typed URL.",
+  "use_when": [
+    "A creative or editing tool explains its whole workflow in under 30 s with voice-over",
+    "Vertical social feed (reels, shorts) where each VO step needs a matching UI moment",
+    "The product turns a flat screenshot into a framed, animated device shot",
+    "A how-to that should end on the mark and a typed URL"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/g8hYmDJV",
+    "author": "Raylight",
+    "ref_id": "rl-074"
+  },
+  "family": "social-promo",
+  "tags": [
+    "tutorial",
+    "how-to",
+    "vertical",
+    "editor-ui",
+    "device-frame",
+    "whip-pan",
+    "device-turn",
+    "voice-over",
+    "dark",
+    "end-card",
+    "typed-url"
+  ],
+  "techniques": [
+    "pull-out",
+    "push-in",
+    "whip-pan",
+    "orbit",
+    "tilt-plane",
+    "device-laptop",
+    "device-phone",
+    "device-3d",
+    "ui-rebuild",
+    "cursor-path",
+    "end-card",
+    "typewriter",
+    "glow",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 27.52,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FFFFFF",
+      "#2648E5",
+      "#062DAA",
+      "#6C8EED",
+      "#F4F1F9"
+    ],
+    "type_style": "UI sans in the editor chrome (small, ~1.5 % H); end URL in medium-weight rounded grotesk, lowercase, ~2.5 % H, centred on black",
+    "treatment": [
+      "glow",
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": true,
+    "music": {
+      "present": true,
+      "bpm": 114.8,
+      "energy": "build",
+      "genre": null,
+      "cut_on_beat": true
+    },
+    "sfx": [
+      {
+        "event": "whip-pan between canvas, inspector and timeline (rows 2, 3, 6)",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor flips a toggle / picks the device frame (row 3)",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "device turns to its side and back (row 5)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "mark assembles on black (row 10)",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "URL types on letter by letter (row 11)",
+        "sound": "type-click",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.77,
+      "beat": "hook",
+      "shot": "laptop on a dark desk, magenta light streaks above; the editor opens with a blue glow rim on its sidebar panel",
+      "camera": "pull-out ~1.25→1.00 over the first 30 fr (motion.json -25 %/s in s 0), then near-static drift",
+      "motion": "screen fades up from black in ~8 fr (±0.25 s); glow rim brightens 0.50→1.50 s, easings.inOutSine (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2.77,
+      "t1": 4.27,
+      "beat": "feature",
+      "shot": "camera is inside the editor canvas: a flat phone-app screenshot on a blue gradient canvas, toolbar and timeline below",
+      "camera": "push-in 1.00→1.15 from 3.27 to 3.77 (screenshot width measured on cells), then whip-pan right at 4.00",
+      "motion": "screenshot sits flat; whip 4.00→4.27 with motion-blur, easings.inExpo ~8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 4.27,
+      "t1": 6.27,
+      "beat": "feature",
+      "shot": "inspector panel at full height: depth, tilt, size, opacity rows; cursor toggles background and opens the frame menu with a device option",
+      "camera": "static on the panel 4.50 to 6.00 (motion.json hold in s 5), whip-pan back left at 6.00",
+      "motion": "cursor-path to toggle at 4.77, to frame row at 5.77; menu drops at 6.00, springs.ui (overshoot not measurable); whip ~8 fr easings.inExpo (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 6.27,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "the screenshot now wears a dark phone frame, selected with blue handles, centred on the blue canvas",
+      "camera": "settles from the whip 6.27→6.77, then static; a slight yaw starts at 7.77",
+      "motion": "frame lands with the whip, springs.ui ~12 fr (±0.25 s); selection handles visible throughout",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 8,
+      "t1": 10,
+      "beat": "feature",
+      "shot": "the framed phone turns in 3D: side view, back with camera bump, side again, then returns to the front, slightly tilted",
+      "camera": "orbit: device yaw ~70° at 8.00, back ~150° at 8.50, side 9.00, front with ~10° tilt at 9.27 to 9.77",
+      "motion": "turn read at 0.25 s steps only, suggested springs.heavy ~30 fr per half turn; selection handles follow the device",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 10,
+      "t1": 14.5,
+      "beat": "feature",
+      "shot": "camera-move keyframing: canvas pans, phone slides to the right edge, purple keyframe bars appear on the timeline, an empty canvas with a corner of the device",
+      "camera": "whip-pan right at 10.00 (motion.json -103 px/s), cut-like slides at 10.77 and 13.00, whip 14.27; dolly between",
+      "motion": "purple keyframe tracks grow on the timeline 11.27→12.00 easings.outExpo (±0.25 s); device edges in from the right at 13.50",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 14.5,
+      "t1": 16.3,
+      "beat": "proof",
+      "shot": "playback of the result: the phone rises from lying flat to upright, turns from back to front and holds in its frame",
+      "camera": "orbit 14.50→15.50, then slow push-in ~1.00→1.05 to 16.27",
+      "motion": "phone rotates up ~90° 14.50→14.77, yaw back→front 14.77→15.27, settle suggested springs.heavy ~24 fr (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 16.3,
+      "t1": 19.87,
+      "beat": "feature",
+      "shot": "dark tilted plane of task chips, numbers and avatars in deep depth of field; a status pill with a progress label appears mid-shot",
+      "camera": "tilt-plane pan right at ~125 px/s @1920 (motion.json s 16 to 19, coherence 0.86 to 1.00), constant",
+      "motion": "pill fades in at 18.27 (±0.25 s), easings.outQuint; rest drifts with the plane, easings.linear",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 19.87,
+      "t1": 23.1,
+      "beat": "feature",
+      "shot": "light editor: preview window over coral audio waveform clips; a short two-word caption types into the preview, then a longer caption",
+      "camera": "push-in 20.00→20.27 from white, pan right 21.50→22.00 (motion.json +710 px/s in s 21), pull-out at 22.00 to reveal the clip list",
+      "motion": "caption appears letter by letter (typewriter, ~2 letters per 0.25 s); white fade-out 22.77→23.07",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 23.1,
+      "t1": 25,
+      "beat": "logo",
+      "shot": "white brand mark centred on black, assembling from two pieces",
+      "camera": "static",
+      "motion": "pieces sweep into place 23.10→23.77 (~20 fr, ±0.25 s), suggested springs.snappy (overshoot not measurable); holds 37 fr",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 25,
+      "t1": 27.52,
+      "beat": "cta",
+      "shot": "the mark is replaced by the URL in white, centred, typed on; holds on black in audio silence (25.51 to end)",
+      "camera": "static",
+      "motion": "typewriter ~3 letters per 0.25 s, URL complete at 25.77 (23 fr); hold 53 fr to end",
+      "transition_out": "end",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 9,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "LaptopFrame",
+    "PhoneFrame",
+    "Camera",
+    "Dolly",
+    "TiltPlane",
+    "Cursor",
+    "Typewriter",
+    "BrandMark",
+    "EndCard",
+    "VO",
+    "Music",
+    "Sfx",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg, fg, accent (canvas blue), mark, display font for the URL",
+    "content.screenshot": "one phone-app screenshot that gets framed and turned",
+    "content.vo": "9 short VO lines, ~70 words, ~2.9 words/s: promise, five steps (drop, frame, effect, camera, export), a two-line 'done' beat, creative extras, CTA",
+    "content.extras": "two extra-feature shots after the main flow (tilted dark UI plane, light audio editor)",
+    "content.url": "URL typed on the end card",
+    "timing.bpm": "music tempo, default 114.8; cut the two extras on beats"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "One continuous shot 0 to 16.30 (no cuts in cuts.json; near misses at 2.70 and 11.20 are camera moves), then 3 hard cuts. Rows inside shot 1 split at visible state changes, all continuous. All times from 4 fps sheets (±0.25 s); rotation angles and spring names are suggestions. SFX planned by the glue rule, not measured (the reference has music and VO; SFX may exist but cannot be separated). Energy = build by the cut-rate rule (0 cuts in the first third, 2 in the last). Proposed term: mark-assemble (row 10). VO ends 24.19; last 2.0 s is silent.",
+  "status": "studied"
+}

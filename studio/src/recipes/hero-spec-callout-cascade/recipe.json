@@ -1,0 +1,135 @@
+{
+  "id": "hero-spec-callout-cascade",
+  "title": "Product hero with cascading key callouts",
+  "summary": "A flat hardware hero scales up from small and fades in on white, settles, then four thin leader-line callouts with short labels and outlined targets appear one after another. A quiet spec-sheet beat that points at details.",
+  "use_when": [
+    "A hardware or device product where specific buttons, ports or keys deserve a name",
+    "A spec-sheet beat inside a longer launch film, after the hero shot",
+    "A silent loop for a product page that labels 3-5 details",
+    "Clean light keynote look with no camera moves or cuts"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/magic-keyboard-specs-apple-event/",
+    "author": "Jitter",
+    "ref_id": "jt-038"
+  },
+  "family": "3d-device",
+  "tags": [
+    "hardware",
+    "spec-sheet",
+    "callouts",
+    "leader-lines",
+    "product-hero",
+    "light",
+    "minimal",
+    "no-cuts",
+    "silent",
+    "labels"
+  ],
+  "techniques": [
+    "keycaps"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#4A5F5E",
+      "#BAD3C9",
+      "#91A19C",
+      "#EEF2F1",
+      "#D3E0DC"
+    ],
+    "type_style": "small grotesk, medium weight, sentence case, normal tracking, labels about 2.5 % of frame height, dark teal",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "hero object settles after the scale-in",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "each callout label and outline land",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "empty white frame, then the product (flat top view, mint body, white keys) appears centred and grows to ~80 % of frame width",
+      "camera": "static frame; the hero object scales 0.55 -> 1.00 of its final width (motion.json: 37 %/s zoom in second 0)",
+      "motion": "opacity 0 -> 1 over 10 fr (f1-f11); scale springs.heavy ~25 fr, settled by f25-f29, no overshoot seen on the 30 fps strip; hold from f30",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 1.27,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "four callouts cascade: one below the bottom-left key, then three above adjacent top-row keys, each a thin vertical leader, a 1-3 word label and a dark outline on the key",
+      "camera": "static (hero holds at 1.00, no scale or position change between cells)",
+      "motion": "callout starts f38, f56, f63, f68 (gaps 18, 7, 5 fr); each: leader draws and label fades in easings.outQuint ~6 fr, key outline appears ~2 fr after the label starts; all settled by f75",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4,
+      "beat": "feature",
+      "shot": "full spec frame holds: product with four outlined keys and their labels, nothing moves",
+      "camera": "static",
+      "motion": "hold 45 fr (f75-f120), no motion; end on the full state",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the backdrop, fg/muted for labels and leaders, accent for the target outlines",
+    "content.product": "cut-out product image (top view, transparent background), fills ~80 % of frame width",
+    "content.callouts": "3-5 items: {label (1-3 words), target rect on the product image, side 'above'|'below'}",
+    "timing.enter": "frames of the hero scale-in (default 25 at 30 fps)",
+    "timing.firstCallout": "frame of the first callout (default 38)",
+    "timing.stagger": "frames between callouts after the first (default 6; the first gap is 18)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; product width caps at 80 % of frame width",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips: hero visible from f1, opaque by f11, settled ~f25-f29 (scale 0.55 -> 1.00, no overshoot). Callouts at f38, f56, f63, f68, all settled by f75; first gap 18 fr, then 5-7 fr. One shot, no cuts, silent. sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary, not used as ids): hero-scale-in, spec-callout. The 4.00 s single shot was split at visible state changes (f38, f75). Flat 2D product image, no 3D despite the family.",
+  "status": "studied"
+}

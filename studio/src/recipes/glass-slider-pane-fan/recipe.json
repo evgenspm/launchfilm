@@ -1,0 +1,196 @@
+{
+  "id": "glass-slider-pane-fan",
+  "title": "Glass slider, petal icon and tinted pane fan",
+  "summary": "A refractive glass track slides under a fixed call knob over deep blue waves, a hard cut to a pastel petal icon pulling out and turning, then one lilac glass pane splits into a three-pane fan that rotates and merges back.",
+  "use_when": [
+    "Showing off a translucent glass material or a new visual style for a UI kit",
+    "A short silent loop for a feed where the material is the message",
+    "Teasing a call, unlock or confirm control before the full product film",
+    "An app icon refresh where the icon itself can carry a shot"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/OAGcvCiR",
+    "author": "Raylight",
+    "ref_id": "rl-012"
+  },
+  "family": "product-ui",
+  "tags": [
+    "glass",
+    "material",
+    "slider",
+    "ui-control",
+    "icon",
+    "3d-panes",
+    "pastel",
+    "silent",
+    "mixed-theme"
+  ],
+  "techniques": [
+    "liquid-glass",
+    "pull-out",
+    "morph",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 13.13,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#D5EBED",
+      "#FFFFFF",
+      "#CCB8EE",
+      "#002450",
+      "#1A82CF",
+      "#E881C3"
+    ],
+    "type_style": "regular grotesk, lowercase, normal tracking, ~6 % of frame height, white at ~70 % opacity inside the track",
+    "treatment": [
+      "liquid-glass"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "glass track slides under the knob",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "hard cut to the petal icon",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "single pane splits into three",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "fan merges back into one pane",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "white call knob at centre, glass track to its right with a clipped 3-word instruction, blue wave backdrop",
+      "camera": "static (motion.json 0-1 s: zoom 0.18 %/s, pan 0)",
+      "motion": "hold 30 fr; nothing moves",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1,
+      "t1": 3.5,
+      "beat": "feature",
+      "shot": "glass track slides left under the fixed knob; leading cap stretches with a rainbow fringe; label scrolls",
+      "camera": "locked on the knob; backdrop drifts with the track (motion.json pan 19 to 49 px/s @1920, zoom within ±3.3 %/s)",
+      "motion": "track travel ~95 % of frame width over 75 fr, easings.inOutCubic (±0.25 s); cap stretch peaks at 1.77-2.00 then relaxes, springs.ui (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.5,
+      "t1": 4.3,
+      "beat": "feature",
+      "shot": "the track rests with the knob at its right cap; the last word of the label sits to the left of the knob",
+      "camera": "static (motion.json 3-4 s: zoom 0.13 %/s, pan 0)",
+      "motion": "settle hold 24 fr; right cap stops within 5 px of its final x by 3.50 (±0.25 s)",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 4.3,
+      "t1": 8.5,
+      "beat": "reveal",
+      "shot": "close-up of a white icon tile with overlapping pastel petals; pulls out and turns until the tile fits, then leaves",
+      "camera": "pull-out: tile width ~3.0x to ~1.0x of its final size over 119 fr (motion.json zoom -36 to -20 %/s), rotation ~17-22 deg/s, easings.outQuint (±0.25 s)",
+      "motion": "petals overlap with multiply-like tint; tile gone between 8.27 and 8.50 (exit ≤ 7 fr, ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "hit"
+    },
+    {
+      "t0": 8.5,
+      "t1": 9.25,
+      "beat": "feature",
+      "shot": "empty mint backdrop, then one lilac glass rounded-rectangle pane at centre, face-on, about 35 % of frame width",
+      "camera": "static",
+      "motion": "pane appears between 8.50 and 8.77 (≤ 8 fr), springs.ui (overshoot not measurable); at 9.27 a second edge shows as it starts to turn",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 9.25,
+      "t1": 10.75,
+      "beat": "feature",
+      "shot": "the pane turns ~30 deg about its vertical axis and splits into three stepped panes: lilac front, rose middle, mint back",
+      "camera": "static",
+      "motion": "split and turn complete by 9.50 (≤ 8 fr), springs.ui (±0.25 s); fan holds 30 fr with a slow drift of ~2 % width",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 10.75,
+      "t1": 12.25,
+      "beat": "feature",
+      "shot": "the three-pane fan flips through the horizontal to the mirrored side; mint now on the left, lilac on the right",
+      "camera": "static",
+      "motion": "flip from 10.50 to 11.27 (~23 fr), easings.inOutCubic (±0.25 s); holds 22 fr; at 12.00 starts the reverse turn",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 12.25,
+      "t1": 13.13,
+      "beat": "feature",
+      "shot": "the panes swing back and collapse into the single lilac pane at centre, which fades out on mint",
+      "camera": "static",
+      "motion": "merge done by 12.50 (≤ 8 fr), springs.ui (±0.25 s); hold 8 fr; fade to ~10 % by 13.00, easings.inQuad (±0.25 s)",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS",
+    "Camera",
+    "TiltPlane"
+  ],
+  "params": {
+    "content.label": "slider instruction inside the track, 3 words, lowercase",
+    "content.knobGlyph": "glyph in the knob (default a call handset, LineGlyph phone)",
+    "content.icon": "app icon or mark for the pull-out row (default petal cluster on a white tile)",
+    "content.paneColors": "three pane tints, front to back (default lilac, rose, mint)",
+    "backdrop.dark": "wave backdrop colours for rows 1-3",
+    "backdrop.light": "flat light backdrop for rows 4-8",
+    "fps": "composition fps (default 30); timing scales with fps/30"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Silent reference: no music, no beats, cut_on_beat 0/1 (no beats to match). SFX planned by the glue rule, not measured. All entrance and settle frames measured at 0.25 s resolution from sheets; no 30 fps strip was extracted. The knob stays fixed at frame centre while the track moves, which is what sells the slide. Glass needs real refraction and a chromatic fringe on the moving cap (WebGL transmission material), hence hard/heavy. Row 4 beat chosen as reveal (icon treated as product, not brand mark). Proposed terms (not in vocabulary): glass-slider, pane-fan, object-flip.",
+  "status": "studied"
+}

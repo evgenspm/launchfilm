@@ -1,0 +1,171 @@
+{
+  "id": "stat-wall-erode-summary",
+  "title": "Stat wall erodes into a completion card",
+  "summary": "One result figure tiles the whole frame, blinks, then erodes glyph by glyph to black; a bold two-line done headline lands, rises to the top, and a mono stat list types in beside a growing track icon.",
+  "use_when": [
+    "Closing beat of a flow: a workout, task or order has just been completed",
+    "A single hero number deserves a loud entrance before the detail",
+    "Silent vertical or 4:5 feed posts for fitness, tracking or productivity apps",
+    "A reward screen recap with three to five labelled stats"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-track-session-complete/",
+    "author": "Jitter",
+    "ref_id": "jt-025"
+  },
+  "family": "data-stats",
+  "tags": [
+    "stats",
+    "result",
+    "completion",
+    "reward",
+    "type-only",
+    "dark",
+    "mono",
+    "fitness",
+    "summary-card",
+    "erode"
+  ],
+  "techniques": [
+    "typewriter",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 6.13,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#F4F4F4",
+      "#828282"
+    ],
+    "type_style": "bold neo-grotesk, sentence case with a period, tight tracking; headline 2 lines ~10 % H; stat wall numerals ~5 % H; stats small uppercase mono ~2 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "stat wall appears on the cut",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "glyphs erode off the wall",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "headline lands",
+        "sound": "impact-low",
+        "origin": "planned"
+      },
+      {
+        "event": "stat labels and values type in",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "track icon settles",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.8,
+      "beat": "hook",
+      "shot": "black lead-in, nothing on screen",
+      "camera": "static",
+      "motion": "none; 24 fr of pure black",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 0.8,
+      "t1": 1.77,
+      "beat": "proof",
+      "shot": "one result figure repeated in a 3-column, 2-block wall bleeding off the left and right edges; blinks, then erodes to black",
+      "camera": "static frame; wall offset left so columns crop at both edges",
+      "motion": "wall appears on the cut fully formed; 3 fr black blink; then glyphs drop from the end of each line, one glyph per 1-2 fr, lower lines of each block go first, wall gone in ~14 fr (30 fps strip); ~2 fr empty before the headline",
+      "transition_out": "continuous",
+      "sfx": "hit"
+    },
+    {
+      "t0": 1.77,
+      "t1": 3,
+      "beat": "reveal",
+      "shot": "two-line done headline (2 words with a period) centred; small brand lockup appears above it; block rises toward the top",
+      "camera": "static frame; headline block travels from ~51 % to ~21 % of H",
+      "motion": "word 1 cuts on alone, word 2 cuts on 1-2 fr later (no in-animation); lockup cuts on ~4 fr after; hold ~22 fr; rise 0.30 H on springs.layout ~20 fr, no overshoot (30 fps strip)",
+      "transition_out": "continuous",
+      "sfx": "impact-low"
+    },
+    {
+      "t0": 3,
+      "t1": 4,
+      "beat": "proof",
+      "shot": "headline and lockup held at top; 4 labelled stats type in bottom left in small mono; outline circle bottom right grows into a multi-lane oval track",
+      "camera": "static",
+      "motion": "label of each line types first, value follows; a new line every ~7 fr (±0.25 s); circle thickens into concentric lanes then stretches horizontally into a stadium shape, ~20 fr, springs.ui (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 4,
+      "t1": 6.13,
+      "beat": "proof",
+      "shot": "finished completion card: lockup, headline, 4-line stat list, track icon; held to the end",
+      "camera": "static",
+      "motion": "none; last value finishes typing at ~4.10, then a 61 fr hold (motion.json diff 0.00)",
+      "transition_out": "end",
+      "sfx": "ui-confirm"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 4,
+    "url": false
+  },
+  "components": [
+    "Typewriter",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font for the wall and headline, mono for the stats, fg on bg (dark brands read best)",
+    "content.hero": "the single figure tiled on the wall, with its unit, <= 7 characters",
+    "content.headline": "two-word completion statement with a period, one word per line",
+    "content.stats": "3-5 {label, value} pairs, label <= 10 chars uppercase, value <= 10 chars",
+    "content.icon": "outline shape that grows in beside the stats (default: oval track)",
+    "aspect": "4:5 | 9:16 | 1:1 | 16:9; wall columns and rows recompute to overfill the frame",
+    "timing.lead": "black frames before the wall (default 24)",
+    "timing.erode": "frames for the wall to erode (default 14)",
+    "timing.statStep": "frames between stat lines (default 7)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured on sheets (0.25 s) plus local 30 fps strips used for relative frame counts. No in-animations on the type: every element cuts on, the only eased moves are the headline rise and the icon growth. The wall must overfill the frame (crop at both sides) or it reads as a table. SFX planned by the glue rule, not measured (reference is silent). Proposed terms (not in vocabulary): stat-wall, glyph-erode, layout-rise, icon-grow-morph.",
+  "status": "studied"
+}

@@ -1,0 +1,293 @@
+{
+  "id": "archive-glow-button-flip-tour",
+  "title": "Archive photo montage into blue-glow UI tour",
+  "summary": "Fast black-and-white office photos set up the struggle, a typed line on black turns the corner, then a blue-lit product tour: laptop push-in, multiplayer editor, a glowing button flipping in edge-on, a post, URL, mark.",
+  "use_when": [
+    "A founder or startup-program launch that opens on the hard, human side before showing the tool",
+    "A video or design tool with collaboration and an export step to show",
+    "A silent autoplay film that needs one strong colour (electric blue) to carry the product half",
+    "Contrasting a grey past with a lit present in one film"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/ZTbPvi98",
+    "author": "Raylight",
+    "ref_id": "rl-057"
+  },
+  "family": "product-ui",
+  "tags": [
+    "archive-photos",
+    "montage",
+    "black-and-white",
+    "blue-glow",
+    "dark",
+    "multiplayer-cursors",
+    "button-flip",
+    "social-post",
+    "typed-url",
+    "end-card",
+    "silent"
+  ],
+  "techniques": [
+    "blur-in",
+    "cursor-path",
+    "device-laptop",
+    "push-in",
+    "pull-out",
+    "zoom-through",
+    "ui-rebuild",
+    "match-cut",
+    "flash",
+    "frame-in-frame",
+    "counter",
+    "typewriter",
+    "end-card",
+    "bloom",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 24.77,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#D2E1ED",
+      "#3E9BFC",
+      "#1D4CC3",
+      "#0C266B",
+      "#BFBFBF"
+    ],
+    "type_style": "medium-weight grotesk, sentence case, normal tracking; statements small (about 3 % H) centred on black; URL and closing words the same size; button label bold about 8 % H",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each archive photo cut in the opening montage",
+        "sound": "camera-shutter",
+        "origin": "planned"
+      },
+      {
+        "event": "statement words and URL characters appear",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "zoom-through into the glowing button",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "button settles face-on",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "white flash into the large mark",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "final mark lands",
+        "sound": "impact-low",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.3,
+      "beat": "hook",
+      "shot": "montage: 6 cuts, avg 0.22 s; black-and-white office and co-working photos, inset about 55 % W on black",
+      "camera": "static frame per photo; photo size changes cut to cut (55-75 % W)",
+      "motion": "none inside shots; cuts at f3, f10, f15, f21, f29, f39 (the cut is the animation)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 1.3,
+      "t1": 2.37,
+      "beat": "problem",
+      "shot": "one archive group photo of an early team in a cramped lab, black-and-white, held",
+      "camera": "drift 1.00 -> 1.03 across the hold (±0.25 s)",
+      "motion": "photo holds 32 fr; no element motion",
+      "transition_out": "smash-cut-black",
+      "sfx": ""
+    },
+    {
+      "t0": 2.37,
+      "t1": 6.2,
+      "beat": "reveal",
+      "shot": "black: product wordmark small centred, then a 4-word statement builds word by word; a 2-word line with an emoji sticker flying through and a labelled cursor",
+      "camera": "static; soft grey radial glow behind the text fades up 3.77-4.00",
+      "motion": "wordmark hard-cut in, holds 19 fr; words blur-in one per cell, easings.outExpo 8 fr (±0.25 s), 1 word every 7-8 fr; line re-centres as it grows; second line words blur-in, rocket sticker crosses with a flame trail 5.00-5.75, cursor with name tag glides in springs.ui (overshoot not measurable); line dims to ~0.6 at 6.00",
+      "transition_out": "hard-cut",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 6.2,
+      "t1": 7.77,
+      "beat": "feature",
+      "shot": "laptop at a 3/4 angle in the dark, screen blue light streaks, a dock of 5 app tiles with the product tile in the middle",
+      "camera": "push-in 1.00 -> 1.15 over 47 fr, easings.outQuint; slight depth blur at the start clears by 6.77",
+      "motion": "screen keeps its light streaks drifting; tiles static",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 7.77,
+      "t1": 9.77,
+      "beat": "feature",
+      "shot": "pull-out reveals the screen sits inside an editor: layer list left, inspector right, timeline with clip bars below; three coloured name-tag cursors move over it",
+      "camera": "pull-out 1.15 -> 1.00 over 15 fr springs.cameraOut, then drift up and left about 3 px/fr @1920",
+      "motion": "three cursors (pink, blue, green) wander on springs.ui paths, 20-40 px per 0.25 s; playhead moves along the timeline; clip bars glow orange",
+      "transition_out": "zoom-through",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 9.77,
+      "t1": 13.17,
+      "beat": "feature",
+      "shot": "black with a blue radial glow: a glossy glowing button seen edge-on as a thin vertical sliver, rotates to face camera and reads one action word",
+      "camera": "static; the button travels from upper centre down to centre while it turns",
+      "motion": "9.77 motion-blurred zoom into the editor; 10.00 sliver drops from top in 15 fr easings.outExpo; Y rotation 90 -> 0 deg over 54 fr (10.50-12.27) easings.inOutSine; settles springs.heavy, slight 3D tilt drift 12.27-13.00",
+      "transition_out": "match-cut",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 13.17,
+      "t1": 14.73,
+      "beat": "feature",
+      "shot": "the button becomes the main action button in the top bar of a dark settings panel (badge, two icons, project name field), panel tilted in perspective",
+      "camera": "drift: panel slides left about 4 px/fr @1920 and grows 1.00 -> 1.02",
+      "motion": "panel holds; button keeps its glow; no new elements",
+      "transition_out": "flash",
+      "sfx": "hit"
+    },
+    {
+      "t0": 14.73,
+      "t1": 16,
+      "beat": "logo",
+      "shot": "large white product mark on a blue card fills the frame, then shrinks into the media slot of a social post with a view counter",
+      "camera": "pull-out: mark card from about 95 % W to 50 % W in 9 fr springs.cameraOut, then 50 % -> 45 % by 16.00",
+      "motion": "2 fr white flash at f442; mark card frame-in-frame into the post; blue card fades to black over 20 fr; view counter under the media rolls up continuously (3 digits -> 5 digits by 16.00)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 16,
+      "t1": 17.27,
+      "beat": "logo",
+      "shot": "inside the post: the product name types out to the left of the mark until mark and name form one lockup",
+      "camera": "drift: post grows 1.00 -> 1.05 and recentres (±0.25 s)",
+      "motion": "name characters appear about 2 per 0.25 s while the mark slides right and then is replaced by the last letters (±0.25 s); view counter keeps climbing",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 17.27,
+      "t1": 19.27,
+      "beat": "feature",
+      "shot": "a glowing screen-source toolbar pill (close, three source options) sits in the post media; a pointer clicks one option; pull-out to a monitor on a desk with blue backlight and a plant",
+      "camera": "pull-out 1.00 -> 0.55 over 60 fr, easings.inOutSine, drifting up about 1 px/fr @1920",
+      "motion": "toolbar blur-in 8 fr (±0.25 s) with blue rim glow; pointer travels to the second option springs.ui and clicks at 17.77 (±0.25 s); toolbar fades as the room appears; backlight grows",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 19.27,
+      "t1": 20.33,
+      "beat": "feature",
+      "shot": "on the monitor, the post media shows a 4-word statement one word at a time, each replacing the last, then two words together",
+      "camera": "pull-out continues 0.55 -> 0.50, then holds",
+      "motion": "one word per 0.25-0.5 s, replace in place, no transition (±0.25 s); final 2-word phrase holds 10 fr",
+      "transition_out": "smash-cut-black",
+      "sfx": ""
+    },
+    {
+      "t0": 20.33,
+      "t1": 22.77,
+      "beat": "cta",
+      "shot": "black: the product URL with a path types out centred, small white type",
+      "camera": "static",
+      "motion": "typewriter about 1 char per 2 fr (22 chars over ~45 fr), line re-centres as it grows; holds 23 fr",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 22.77,
+      "t1": 24.77,
+      "beat": "logo",
+      "shot": "the product mark alone, small (about 7 % H), white, centred on black",
+      "camera": "static",
+      "motion": "mark hard-cut in, holds 60 fr to the end; no glow",
+      "transition_out": "end",
+      "sfx": "impact-low"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 3,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 1,
+    "url": true
+  },
+  "components": [
+    "FootageClip",
+    "KenBurns",
+    "Wordmark",
+    "BlurIn",
+    "Sticker",
+    "Cursor",
+    "LaptopFrame",
+    "AppTile",
+    "Camera",
+    "ZoomThrough",
+    "Bloom",
+    "Flash",
+    "FrameInFrame",
+    "Counter",
+    "Typewriter",
+    "Desktop",
+    "EndCard",
+    "BrandMark",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: mark, wordmark, accent (the blue glow), bg black, display font",
+    "content.photos": "6-7 black-and-white archive or office photos; the last one holds about 1 s",
+    "content.statement": "brand name + a 3-4 word claim, built word by word",
+    "content.subline": "2-word line with an emoji sticker and a named cursor",
+    "content.editorUi": "rebuilt editor screen: layers, inspector, timeline, 3 named cursors",
+    "content.buttonLabel": "one action word on the flipping glowing button",
+    "content.panel": "settings panel top bar the button lands in",
+    "content.post": "social post card that frames the mark, with a climbing view counter",
+    "content.toolbar": "small screen-source toolbar with 3 options, one clicked",
+    "content.closingWords": "4-word phrase shown word by word on the monitor",
+    "content.url": "URL with a path, typed on black"
+  },
+  "difficulty": "hard",
+  "render_cost": "medium",
+  "notes": "Silent reference: sfx planned by the glue rule, not measured. Measured from 4 fps sheets plus 30 fps strips at 11.00 and 14.50 s. The opening is a cut-paced photo montage (6 cuts in 1.3 s); after that the film has only 3 cuts in 23 s and moves by camera and match-cuts. The 3D button turn from edge-on (proposed term edge-on flip) has no studio component. Flash at 14.73 is 2 fr white. Photos are monochrome (proposed term mono-archive). Colour only enters at 6.20: grey past, blue present.",
+  "status": "studied"
+}

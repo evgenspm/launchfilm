@@ -1,0 +1,318 @@
+{
+  "id": "poster-flicker-loop-reel",
+  "title": "Poster flicker montage loop",
+  "summary": "About 28 full-bleed vertical posters hard-cut every 2 to 14 frames (4 cuts per second), with 2 to 3 frame interstitial frames, slice glitches and a white flash as accents; it ends on the opening poster so it loops.",
+  "use_when": [
+    "A studio or designer showreel built from finished poster or cover work",
+    "A launch-day vertical teaser where volume of work is the message",
+    "A seamless loop for a social profile, story or event screen",
+    "A silent autoplay feed where no copy needs to be read"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/drop-it-like-it-s-hot-sizzle-reel/",
+    "author": "Savee",
+    "ref_id": "jt-084"
+  },
+  "family": "social-promo",
+  "tags": [
+    "sizzle-reel",
+    "showreel",
+    "poster",
+    "montage",
+    "fast-cuts",
+    "vertical",
+    "loop",
+    "portfolio",
+    "glitch",
+    "silent"
+  ],
+  "techniques": [
+    "hard-cut",
+    "glitch-cut",
+    "flash",
+    "grain"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6.17,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#000000",
+      "#F6F6F6",
+      "#FD48AE",
+      "#4E36D7",
+      "#FD0403",
+      "#85B4D3"
+    ],
+    "type_style": "poster typography owned by each still: heavy condensed or wide grotesk caps, tight tracking, 10 to 25 % of frame height, cropped at the frame edges; no overlay type added by the edit",
+    "treatment": [
+      "grain"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": "high",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each poster cut",
+        "sound": "camera-shutter",
+        "origin": "planned"
+      },
+      {
+        "event": "slice glitch interstitial at 0.80 and 1.30",
+        "sound": "glitch-sfx",
+        "origin": "planned"
+      },
+      {
+        "event": "white flash at 0.60",
+        "sound": "hit",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.1,
+      "beat": "hook",
+      "shot": "opening poster: grey cut-out figure mid-stride on black, thin rules and small text columns (loop anchor)",
+      "camera": "static (3 fr, ±0.25 s)",
+      "motion": "none, hold 3 fr (f0-3)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 0.1,
+      "t1": 0.4,
+      "beat": "hook",
+      "shot": "white poster: grainy photocopy figure with one oversized serif word across the full width, small address line",
+      "camera": "static",
+      "motion": "hold 9 fr (f3-12); first 3 fr after the cut are an interstitial frame (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 0.4,
+      "t1": 0.8,
+      "beat": "hook",
+      "shot": "black poster: tilted white script and grotesk lines rotated about 30 deg, thin curved strokes",
+      "camera": "static",
+      "motion": "hold 12 fr (f12-24); white full-frame flash at f18 for 3 fr",
+      "transition_out": "glitch-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 0.8,
+      "t1": 0.9,
+      "beat": "hook",
+      "shot": "interstitial: white bars, blocks and arcs on black, a broken grid graphic",
+      "camera": "static",
+      "motion": "hold 3 fr (f24-27), reads as a glitch frame",
+      "transition_out": "hard-cut",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 0.9,
+      "t1": 1.2,
+      "beat": "hook",
+      "shot": "hot pink poster: three-line grey display headline cropped at both edges, small two-line credit, outline mark at the bottom",
+      "camera": "static",
+      "motion": "hold 9 fr (f27-36)",
+      "transition_out": "glitch-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 1.2,
+      "t1": 1.4,
+      "beat": "hook",
+      "shot": "three event posters side by side on black (centre one whole, neighbours cropped), then horizontal slice stripes",
+      "camera": "static",
+      "motion": "hold f36-39, slice-glitch bands f39-42 (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 1.4,
+      "t1": 1.8,
+      "beat": "hook",
+      "shot": "pale blue grid poster with stretched heavy letterforms in four blocks, green striped border",
+      "camera": "static",
+      "motion": "hold 12 fr (f42-54); border stripes step between cells 1.50 and 1.77, easings.linear (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 1.8,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "black poster: white stepped pixel silhouette with small repeated words on both sides",
+      "camera": "static",
+      "motion": "hold 6 fr (f54-60)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 2,
+      "t1": 2.3,
+      "beat": "hook",
+      "shot": "violet poster: four tilted lines of white display text repeated top to bottom as a pattern",
+      "camera": "static",
+      "motion": "hold 9 fr (f60-69); pattern drifts up a few px, easings.linear (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 2.3,
+      "t1": 2.5,
+      "beat": "hook",
+      "shot": "deep blue poster: small icon at top, giant cropped display letters across the bottom",
+      "camera": "static",
+      "motion": "hold 6 fr (f69-75), interstitial frame on entry (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 2.5,
+      "t1": 2.97,
+      "beat": "hook",
+      "shot": "3 fr wavy red, violet and halftone type poster, then a person seen from behind in a white tee with a black wordmark on blue",
+      "camera": "static",
+      "motion": "interstitial f75-78, then hold 11 fr (f78-89)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 2.97,
+      "t1": 3.2,
+      "beat": "hook",
+      "shot": "montage: 2 cuts, avg 0.12 s: blurred green and lilac gradient poster with a vertical lime word, then a light type lockup poster",
+      "camera": "static",
+      "motion": "holds 5 fr (f89-94) and 2 fr (f94-96)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 3.2,
+      "t1": 3.73,
+      "beat": "hook",
+      "shot": "merged 2 shots, avg 0.27 s: portrait flash with big white digits, dark fashion photo poster; then dark poster with condensed heading top and bottom",
+      "camera": "static",
+      "motion": "digits portrait f96-99 as interstitial, photo hold f99-105, type poster hold 7 fr (f105-112)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 3.73,
+      "t1": 3.83,
+      "beat": "hook",
+      "shot": "orange and red motion-smeared portrait with one thin line of small type across the middle",
+      "camera": "static",
+      "motion": "hold 3 fr (f112-115)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 3.83,
+      "t1": 4.23,
+      "beat": "hook",
+      "shot": "warm extreme close-up of an eye with small centred text, then a silver foil poster with dense black event text",
+      "camera": "static",
+      "motion": "eye f115 to about f118, foil poster hold to f127 (change not detected as a cut, ±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 4.23,
+      "t1": 4.4,
+      "beat": "hook",
+      "shot": "close-up of a face with water drops, white wordmark and three small lines over the cheek",
+      "camera": "static",
+      "motion": "hold 5 fr (f127-132)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 4.4,
+      "t1": 4.8,
+      "beat": "hook",
+      "shot": "black poster: red condensed heading blocks repeated three times, two fashion photos stacked on the right",
+      "camera": "static",
+      "motion": "hold 12 fr (f132-144)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 4.8,
+      "t1": 5.5,
+      "beat": "hook",
+      "shot": "merged 3 shots, avg 0.23 s: light poster of stacked green UI cards; red poster with dark three-line condensed heading; grey poster of black rounded blobs",
+      "camera": "static",
+      "motion": "holds 5 fr (f144-149), 10 fr (f149-159), 6 fr (f159-165)",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 5.5,
+      "t1": 5.9,
+      "beat": "tension",
+      "shot": "montage: 3 cuts, avg 0.13 s: giant black word over a store photo; translucent ticket graphic; notes-on-letters poster flash; white list poster with circled digits",
+      "camera": "static",
+      "motion": "holds 5 fr (f165-170), 3 fr (f170-173), notes interstitial f173-175, list poster f175-177",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 5.9,
+      "t1": 6.17,
+      "beat": "tension",
+      "shot": "the opening poster returns: grey cut-out figure on black, identical to row 1, closing the loop",
+      "camera": "static",
+      "motion": "hold 8 fr (f177-185), last frame matches frame 0",
+      "transition_out": "end",
+      "sfx": "camera-shutter"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 28,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS",
+    "FootageClip",
+    "Flash",
+    "CutFlash",
+    "SliceGlitch",
+    "Grain"
+  ],
+  "params": {
+    "posters": "ordered list of about 28 vertical stills (9:16, cover-cropped), the first repeated as the last for the loop",
+    "holds": "frames per poster at 30 fps; default list 3, 9, 12, 3, 9, 6, 12, 6, 9, 6, 14, 5, 2, 9, 7, 3, 12, 5, 12, 5, 10, 6, 5, 3, 4, 8",
+    "interstitials": "cut indices that open with a 2-3 fr foreign poster frame (default cuts at f3, f27, f36, f42, f54, f69, f75, f96, f173)",
+    "glitchAt": "frames that get SliceGlitch bands (default f24-27 graphic and f39-42)",
+    "flashAt": "white flash frames (default f18, 3 fr)",
+    "fps": "composition fps (default 30); hold lists scale with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured: 25 hard cuts in 6.17 s (4.05 cuts/s), holds 2-14 fr, median about 6 fr; no camera move (motion.json zoom under 0.3 %/s). Nine cuts carry a 2-3 fr interstitial frame of another poster (cuts.json via flash). Silent reference: sfx planned by the glue rule, not measured. Proposed term (recipe.md only): interstitial-frame cut. Loop: frame 185 equals frame 0.",
+  "status": "studied"
+}

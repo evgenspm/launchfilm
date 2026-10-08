@@ -1,0 +1,117 @@
+{
+  "id": "centre-bar-funnel-count",
+  "title": "Centre-out bar funnel with live counters",
+  "summary": "Five stacked colour bars appear as hairlines on the centre axis, then widen symmetrically into a descending funnel while each big figure counts up and settles. A small header moves to the top as the bars arrive.",
+  "use_when": [
+    "Showing three to five headline metrics as a ranking or funnel in one frame",
+    "A short silent social post or slide insert that ends on a readable stat poster",
+    "Comparing values that differ by orders of magnitude (width encodes rank, not scale)",
+    "A data beat inside a longer film where the last frame must hold"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/horizontal-bar-chart-metrics/",
+    "author": "Jitter",
+    "ref_id": "jt-073"
+  },
+  "family": "data-stats",
+  "tags": [
+    "bar-chart",
+    "funnel",
+    "metrics",
+    "counter",
+    "ranking",
+    "stats",
+    "dark",
+    "portrait",
+    "silent",
+    "poster-hold"
+  ],
+  "techniques": [
+    "chart-draw",
+    "counter"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#1C1C1C",
+      "#FFFFFF",
+      "#F9802F",
+      "#78B8DB",
+      "#E6E825",
+      "#CC8C4E"
+    ],
+    "type_style": "header: medium grotesk, sentence case, 2.6 % H, first word white, second word starts muted; figures: heavy condensed grotesk, 8 % H, near-black on the bar; labels: regular grotesk 2 % H, bottom-right of each bar",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each bar starts to widen (centre-out order)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "counters settle on their final values",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "dark flat frame: two-word header and corner mark at mid height, then five stacked colour bars widen into a centred funnel, each with a big figure and a small label",
+      "camera": "static: no frame-wide scale or pan in any cell; only elements move",
+      "motion": "0.27-0.77 header fades in 15 fr (easings.outExpo, ±0.25 s), second word muted then white by 1.00; mark assembles 0.50-0.77; 1.27 a hairline of the middle bar appears at full height on the centre axis; 1.50 all five bars as slivers, middle widest, outer bars still lines (centre-out stagger ~4 fr, ±0.25 s); 1.50-3.00 widths grow symmetrically, easings.outExpo 45 fr (70 % at 2.00, 90 % at 2.27, 97 % at 2.50, ±0.25 s), no overshoot visible; 1.77-2.00 header slides off left and re-enters at top-left, fading in by 3.00 (±0.25 s); 1.77-3.00 figures count up on easings.outExpo 37 fr, last digit settles at 3.00; 3.00-4.00 hold 30 fr",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 5,
+    "url": false
+  },
+  "components": [
+    "Counter",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg, fg, display font for the figures, text font for header and labels, mark for the corner",
+    "content.title": "two-word header; first word bright, second word muted until it brightens",
+    "content.stats": "3-5 items {value, label, color}; ordered largest first so widths form a descending funnel",
+    "content.widths": "bar width per row as a fraction of frame width (reference 0.92, 0.81, 0.70, 0.59, 0.48)",
+    "timing.barsAt": "frame the first hairline appears (reference 38 at 30 fps)",
+    "timing.grow": "frames for the width growth (reference 45)",
+    "timing.count": "frames for the count-up (reference 37)",
+    "aspect": "4:5 reference; 9:16 stretches bar height, 16:9 needs fewer rows or two columns"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets and 1 fps full-res keyframes; no 30 fps strip, so stagger and easing are ±0.25 s. Bar width is rank, not proportional to value (the top value is ~7000x the bottom, widths differ by ~2x). Bars are centred on the frame axis, each with a thin white double rule on its top edge, 5 bars filling 11-97 % of H with ~1 % gaps. Bars appear first as full-height hairlines, then widen: height never animates. Counters start near their final values (only the last digits roll), so the figure is readable from the first frame it shows. Proposed terms (not in vocabulary): centre-out-widen, header-relocate. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

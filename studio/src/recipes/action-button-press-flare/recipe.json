@@ -1,0 +1,149 @@
+{
+  "id": "action-button-press-flare",
+  "title": "Single button press with ambient colour flare",
+  "summary": "A prompt bar with one dark pill button idles on a pale drifting gradient; a cursor glides in, presses with a squash, the sparkle icon collapses and the whole background flares saturated blue-violet, then slowly calms.",
+  "use_when": [
+    "The press of one AI action button is the moment to sell",
+    "A short vertical loop for a feature page or social post with no copy beyond the button label",
+    "An insert between a prompt-typing shot and the result shot of a longer film",
+    "Calm, premium product voice where a colour shift replaces a loud effect"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-prompt-generate-button/",
+    "author": "Jitter",
+    "ref_id": "jt-010"
+  },
+  "family": "product-ui",
+  "tags": [
+    "button",
+    "press",
+    "cursor",
+    "prompt-bar",
+    "ai-action",
+    "gradient",
+    "light",
+    "vertical",
+    "silent",
+    "micro-interaction"
+  ],
+  "techniques": [
+    "cursor-path",
+    "ui-rebuild",
+    "mesh-gradient"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 7,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#DBE0F5",
+      "#4C4D5B",
+      "#CECDEB",
+      "#D9D0F5",
+      "#B9C9FC",
+      "#D0A8FD"
+    ],
+    "type_style": "neutral grotesk, medium, sentence case, normal tracking, button label ~2.6 % H in white on a near-black pill",
+    "treatment": [
+      "mesh-gradient"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "button press squash",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "background flares saturated after the press",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "prompt bar cropped off the left edge at ~48 % H, dark pill button with sparkle icon and one-word label; pale blue-lilac gradient",
+      "camera": "static framing; only the background gradient drifts (blobs shift ~0.25 frame width over 2 s)",
+      "motion": "button idle, no movement; gradient blobs drift easings.inOutSine over 60 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2,
+      "t1": 2.6,
+      "beat": "feature",
+      "shot": "arrow cursor glides in from bottom right and parks on the button's right end",
+      "camera": "static framing",
+      "motion": "cursor enters f61, arrives f64, settles f66: springs.ui ~5 fr, no overshoot visible at 30 fps; button hover nudge ~1 %",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2.6,
+      "t1": 3.5,
+      "beat": "feature",
+      "shot": "button presses, sparkle icon shrinks to one star and vanishes; background floods saturated blue to violet",
+      "camera": "static framing",
+      "motion": "press f78: springs.click, width -4 % for ~5 fr then back; sparkle collapses f84-f95 easings.outQuint 11 fr; background saturates f83-f88 easings.outExpo 5 fr; cursor fades f91-f106 easings.linear 15 fr",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3.5,
+      "t1": 7,
+      "beat": "feature",
+      "shot": "button rests in its done state, label only, no icon; background slowly fades back to the pale opening gradient",
+      "camera": "static framing",
+      "motion": "button static; gradient desaturates and drifts back from 4.27 to 6.00 s, easings.inOutSine ~52 fr (±0.25 s), holds pale to the end",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PromptBar",
+    "Cursor",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg and accent drive the two gradient states, fg for the button pill",
+    "content.label": "button label, one or two words",
+    "content.icon": "icon in the button that collapses on press (default sparkle)",
+    "aspect": "9:16 default; 1:1 and 4:5 recompose with the bar at ~48 % H",
+    "timing.pressAt": "press frame at 30 fps (default 78)",
+    "timing.flare": "frames the saturated state holds before calming (default 40)",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Single shot, no cuts, silent. Measured from 30 fps strips at t = 2-4 s: cursor in f61-f66, press f78, background flare f83-f88, icon gone f95, cursor gone f106. No loading spinner is visible: the done state is the icon removal plus the colour flare. Proposed terms (not in vocabulary): button-state-press, ambient-flare. sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

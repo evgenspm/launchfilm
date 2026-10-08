@@ -1,0 +1,155 @@
+{
+  "id": "split-band-photo-reveal",
+  "title": "Split band photo reveal to wordmark",
+  "summary": "From black, a thin vertical slit opens into side-by-side photo bands that swap images every quarter second, then part to uncover a full-frame texture shot where a bold wordmark rises out of a baseline mask and holds.",
+  "use_when": [
+    "A fashion, beauty or lifestyle brand with strong photography and a text wordmark",
+    "A 6 s opener or chapter change that ends on the name",
+    "Teasing several product or mood photos before one hero image",
+    "Silent autoplay where the picture carries the energy"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-edit-split-reveal/",
+    "author": "Jitter",
+    "ref_id": "jt-067"
+  },
+  "family": "transitions",
+  "tags": [
+    "split-reveal",
+    "vertical-bands",
+    "photo-montage",
+    "wordmark",
+    "mask",
+    "editorial",
+    "fashion",
+    "dark",
+    "opener",
+    "silent"
+  ],
+  "techniques": [
+    "mask-wipe",
+    "mask-rise",
+    "push-in"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 6,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#01040D",
+      "#FFFFFF",
+      "#4B7B95",
+      "#1B4365",
+      "#F2F2F2",
+      "#1F1B12"
+    ],
+    "type_style": "heavy grotesk wordmark, all caps, tight tracking, cap height ~18 % H, small registered-style superscript; tiny tracked mono labels in the two top corners (~1.5 % H)",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "slit opens and bands widen",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "band photos swap every 0.25 s",
+        "sound": "camera-shutter",
+        "origin": "planned"
+      },
+      {
+        "event": "wordmark settles out of its mask",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.5,
+      "beat": "hook",
+      "shot": "pure black, then a thin vertical slit right of centre opens onto a monochrome collage photo",
+      "camera": "static frame; photo inside the slit pushes in (motion 64 %/s over sec 0, part of it is the band growth)",
+      "motion": "slit appears f8 at ~5 % W, widens to ~50 % W by f15 as two adjacent bands, easings.outExpo ~7 fr (±0.25 s)",
+      "transition_out": "mask-wipe",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 0.5,
+      "t1": 1.27,
+      "beat": "tension",
+      "shot": "montage: 4-6 vertical bands of different widths fill the frame, each band shows a different photo; photos swap every 0.25 s",
+      "camera": "push-in inside each band, ~1.00 to 1.04 over the row (4 %/s in sec 1)",
+      "motion": "band edges slide sideways and re-divide the frame each cell; photo inside a band changes on cells f15, f23, f30, f38; motion blur visible on the swap at f23 (±0.25 s)",
+      "transition_out": "mask-wipe",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 1.27,
+      "t1": 1.77,
+      "beat": "logo",
+      "shot": "bands part to the edges to reveal a full-frame dark textile close-up; wordmark rises from a baseline clip at centre, corner labels already in",
+      "camera": "push-in ~1.00 to 1.02 on the texture, settling (motion 4 %/s)",
+      "motion": "two narrow cream side bars remain f38-f47 then slide off the edges; wordmark letters rise out of a clip mask, tops visible at f45, settled at f53, springs.maskRise ~15 fr (overshoot not measurable)",
+      "transition_out": "hard-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.77,
+      "t1": 6,
+      "beat": "logo",
+      "shot": "wordmark centred over the textile background with two tiny corner labels; held to the end",
+      "camera": "static (motion diff 0.0-0.1, zoom 0.06 %/s from 2 s)",
+      "motion": "hold 127 fr, no element moves",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 5,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "Wordmark",
+    "TYPE_ENTER",
+    "KenBurns",
+    "ShotTransition",
+    "TRANSITIONS",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font for the wordmark, mono for the corner labels, bg behind the opening black",
+    "content.photos": "4-6 photos shown inside the bands during the montage",
+    "content.hero": "one full-frame texture or product photo behind the wordmark",
+    "content.labels": "two tiny corner labels (location line, founding year), 2-3 words each",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; band count scales with width",
+    "timing.swap": "frames between band photo swaps (default 7-8 at 30 fps)",
+    "timing.hold": "frames the wordmark holds (default 127)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (0.25 s resolution). The only soft transition (0.27-1.57 s) is the whole split montage; no hard cuts. The reveal is front-loaded: everything happens by f53, then a 4.2 s static hold, so the recipe needs a reason to hold (shorten timing.hold for social). Proposed term split-band-reveal (vertical bands open and swap photos) is not in the vocabulary; mask-wipe is used in its place. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

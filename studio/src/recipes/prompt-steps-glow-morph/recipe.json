@@ -1,0 +1,178 @@
+{
+  "id": "prompt-steps-glow-morph",
+  "title": "Prompt typed big, then bloomed into a step list",
+  "summary": "A wordmark on a green gradient erases into big typing with a colour trail, cuts to the same line in a small prompt bar, then the bar blooms into a card whose tagged steps write themselves in under a second.",
+  "use_when": [
+    "An agent or automation product that turns one instruction into a plan of steps",
+    "A short silent intro (about 5 s) for a feed or a landing hero loop",
+    "Showing input and structured output as one continuous object, no cut to a new scene",
+    "A light, calm brand where colour-coded tags can carry meaning"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/V0CIgaMV",
+    "author": "Raylight",
+    "ref_id": "rl-101"
+  },
+  "family": "product-ui",
+  "tags": [
+    "prompt",
+    "typing",
+    "colour-trail",
+    "step-list",
+    "morph",
+    "glow",
+    "light",
+    "ai-workflow",
+    "gradient-open",
+    "silent",
+    "short"
+  ],
+  "techniques": [
+    "push-in",
+    "blur-dissolve",
+    "match-cut",
+    "morph",
+    "prompt-typing",
+    "list-assemble",
+    "ui-rebuild",
+    "mesh-gradient",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4.97,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#F2F1ED",
+      "#141514",
+      "#428A71",
+      "#195C42",
+      "#FDFDFD",
+      "#717F7F"
+    ],
+    "type_style": "neutral grotesk, regular weight, sentence case, normal tracking; wordmark ~3 % H, hero typing ~9 % H, UI text ~1.5 % H, list body ~1.2 % H",
+    "treatment": [
+      "mesh-gradient",
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each typed character (rows 2-3)",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "send button swaps colour (3.33 s)",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "each list row writes in (rows 4)",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.33,
+      "beat": "hook",
+      "shot": "small wordmark lockup (mark + name + light second word) centred on a dark-to-light green blurred gradient; the name erases letter by letter from the left",
+      "camera": "static f0-25 (gradient drifts slowly), then push-in 1.00 -> ~3.0 f25-40 accelerating, easings.inExpo (±0.25 s)",
+      "motion": "hold 25 fr; letters removed from the left edge ~1 per fr f25-43; gradient washes to off-white over f35-45 (10 fr)",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 1.33,
+      "t1": 2.27,
+      "beat": "hook",
+      "shot": "hero-size typing on off-white: one instruction sentence, about 6 words, centred, accent caret",
+      "camera": "static (text grows left to right; no scale change between cells 1.50 and 2.00)",
+      "motion": "typing ~23 chars/s (17 chars f45-67), 1 char/fr with 2 fr holds at word gaps; colour trail: newest 3-4 chars in the accent, cool to near-black over 4-5 fr per char; solid 2 px accent caret, no blink",
+      "transition_out": "match-cut",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 2.27,
+      "t1": 3.4,
+      "beat": "reveal",
+      "shot": "wide shot: the same sentence continues inside a small white pill prompt bar with a round dark send button, on off-white",
+      "camera": "static, slight drift 1.000 -> ~1.01 (zoom 0.6-1.1 %/s from motion.json)",
+      "motion": "f68 one black frame, bar already placed; typing resumes at UI size, same trail, ends f93; caret removed; f100 send button colour swap dark -> accent in 1 fr, no press visible; accent glow ramps inside the bar f99-102 (3 fr)",
+      "transition_out": "morph",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 3.4,
+      "t1": 4.4,
+      "beat": "feature",
+      "shot": "bar dissolves into a blurred accent ellipse that grows into a white card; numbered steps with colour-coded tag pills write themselves in, nested sub-steps, an add-step row",
+      "camera": "static; card content scrolls up ~8 px at 720p from f119 to keep the newest row near centre",
+      "motion": "bar blur 0 -> ~20 px f101-103, card rect grows ~1.4x by f105 (springs.layout, overshoot not measurable); rows from f106 every 3-4 fr (9 rows by f129); per row ~6-8 fr: number 1 fr -> tag pill scaleX from left 2-3 fr -> text reveal with soft accent-tinted leading edge ~5 fr; card height grows with springs.layout",
+      "transition_out": "morph",
+      "sfx": "pop"
+    },
+    {
+      "t0": 4.4,
+      "t1": 4.97,
+      "beat": "feature",
+      "shot": "rows clear and the card collapses back into the blurred accent ellipse on off-white (end state, not the opening frame)",
+      "camera": "static (pan 0,-38 px/s @1920 in motion.json is the card collapsing, not camera)",
+      "motion": "reverse of the morph: text fades, card shrinks into a wide blurred ellipse, easings.inExpo ~12 fr (±0.25 s); ellipse holds to the end",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 10,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PromptBar",
+    "TypeLine",
+    "ListAssemble",
+    "Wordmark",
+    "Camera",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (off-white), fg, accent (trail, caret, send, glow), display font; wordmark from brand.logo",
+    "content.wordmark": "product name lockup shown 0-1.33 s, erased letter by letter",
+    "content.prompt": "one instruction sentence, 30-45 chars, typed big then finished in the bar",
+    "content.splitAt": "character index where the hero typing cuts to the bar (default ~17 chars)",
+    "content.steps": "6-10 steps {n, tag, tagColor, text, depth}; tags 1 word, text 4-10 words",
+    "timing.cps": "typing speed in chars/s (default 23)",
+    "timing.rowGap": "frames between list rows (default 3-4 at 30 fps)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; bar and card width cap at 60 % of frame width",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured by a human on 30 fps frames, confirmed against 4 fps sheets: typing ~23 chars/s, colour trail 3-4 chars over 4-5 fr each; one black frame at f68 on the big-type -> bar cut; send = 1 fr colour swap, glow ramps 3 fr; bar -> glow -> card morph ~6 fr total; list rows every 3-4 fr, each row writes in 6-8 fr (number, tag pill, text with tinted leading edge). Silent reference: sfx planned by the glue rule, not measured. Proposed term (not used as an id): letter-erase for the wordmark removed letter by letter from the left during the push. Missing components: MeshGradient backdrop, bar-to-card glow morph, tagged step rows with nesting.",
+  "status": "studied"
+}

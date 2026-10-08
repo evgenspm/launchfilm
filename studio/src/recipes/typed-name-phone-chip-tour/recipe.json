@@ -1,0 +1,248 @@
+{
+  "id": "typed-name-phone-chip-tour",
+  "title": "Typed name, rising phone, benefit chips",
+  "summary": "The app name types itself on a warm glow, a phone rises over it, tilts and sprouts three one-word benefit chips, then a macro close-up and a side profile with shallow focus before a short call to action and the name again.",
+  "use_when": [
+    "A consumer mobile app with one strong home screen to show",
+    "Vertical feeds where the product name must land in the first second",
+    "Three one-word benefits (speed, safety, trust) that fit on chips",
+    "A silent autoplay promo with a warm, friendly brand colour"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/0tu3irDD",
+    "author": "Raylight",
+    "ref_id": "rl-025"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "vertical",
+    "phone",
+    "mobile-app",
+    "typewriter",
+    "benefit-chips",
+    "macro",
+    "depth-of-field",
+    "warm-gradient",
+    "light",
+    "silent",
+    "promo"
+  ],
+  "techniques": [
+    "typewriter",
+    "device-phone",
+    "push-in",
+    "slide-push",
+    "rack-focus",
+    "dolly",
+    "zoom-through",
+    "blur-in",
+    "blur-dissolve",
+    "glow"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 19.07,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#0F0E0E",
+      "#DC7852",
+      "#ED9B75",
+      "#F6D7BF",
+      "#453C3B"
+    ],
+    "type_style": "rounded humanist sans, semibold, sentence case, normal tracking; name ~7 % of frame width per letter, ~4 % H; chips small medium-weight labels with a line icon",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each letter of the name typed",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "phone rises into frame",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "benefit chip pops beside the phone",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "phone flies out and the macro slides in",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "zoom through the screen to the call to action",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "product name, one word, typed letter by letter, centred upper third; white bg with a warm glow rising from the bottom",
+      "camera": "static",
+      "motion": "typewriter 7 letters in 0.77 s (~9 cps, 0.00-0.77); warm glow fades up from white 0.00-0.50 (easings.inOutSine ~15 fr, ±0.25 s); name holds 15 fr",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 1.27,
+      "t1": 3.27,
+      "beat": "reveal",
+      "shot": "phone with the app home screen rises from below, covers the name and settles centred, face-on",
+      "camera": "drift: phone scale ~1.00 -> 1.04 over 1.0 s after landing",
+      "motion": "phone rises from y +45 % H to centre with a slight forward roll, springs.heavy ~22 fr (1.27-2.00, overshoot not measurable); name stays behind and is covered; holds 2.00-3.27 with a small upward drift",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.27,
+      "t1": 4.27,
+      "beat": "feature",
+      "shot": "phone rolls into a 3/4 tilt (top leaning left) and shrinks; first benefit chip appears left of the phone",
+      "camera": "pull-out: phone width ~78 % -> 62 % of frame over 30 fr",
+      "motion": "phone rotates ~25 deg z and ~30 deg y, springs.heavy ~24 fr (3.27-4.00); chip 1 (icon + 1 word) pops at 3.77, springs.pop ~10 fr (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 4.27,
+      "t1": 5.62,
+      "beat": "feature",
+      "shot": "three chips around the tilted phone: one top, one right, one left; hold, then the chips shrink",
+      "camera": "drift: phone glides right ~4 % W across the row",
+      "motion": "chips 2 and 3 pop together at 4.27 (springs.pop ~10 fr, ±0.25 s); hold 30 fr; from 5.27 chips scale down and fade 8 fr while the phone starts flipping back",
+      "transition_out": "slide-push",
+      "sfx": "pop"
+    },
+    {
+      "t0": 5.62,
+      "t1": 6.73,
+      "beat": "feature",
+      "shot": "phone flips flat and flies out the top edge; empty white frame; a blurred close-up of the phone slides in from the lower right",
+      "camera": "whip-pan up then a fast slide-in from bottom right",
+      "motion": "exit easings.inExpo ~10 fr (5.50-5.85); white with fading glow 6.00-6.27 (8 fr); close-up enters 6.27-6.73, easings.outExpo ~14 fr, heavy blur 14 px -> 6 px",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.73,
+      "t1": 10.27,
+      "beat": "feature",
+      "shot": "macro of the phone's upper screen: header row and the two balance cards, tilted, shallow depth of field",
+      "camera": "push-in: slow creep ~1.00 -> 1.05 over 3.0 s, slight drift up-left; from 9.77 accelerates upward",
+      "motion": "rack-focus: the balance figures sharpen 6.73-7.50 (springs.heavy ~22 fr); near and far edges stay blurred; hold 7.50-9.50",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 10.27,
+      "t1": 11,
+      "beat": "feature",
+      "shot": "camera travels down the screen past the list and the bottom tab bar; the phone leaves through the bottom, white frame",
+      "camera": "dolly down the screen ~1700 px/s @1920, easings.inExpo into the exit (10.27-10.77)",
+      "motion": "content slides up and out within 15 fr (±0.25 s); 10.77-11.00 empty white, glow off",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 11,
+      "t1": 14.22,
+      "beat": "feature",
+      "shot": "side profile of the phone (buttons, frame edge) turns in from the left and settles in a 3/4 view, screen top on the right; soft focus",
+      "camera": "orbit-like turn ~60 deg y (11.00-11.77) then drift 1.00 -> 1.03 to 13.77",
+      "motion": "phone yaw from edge-on to 3/4, springs.heavy ~24 fr; screen out of focus (rack-focus, maxBlur ~6 px); warm glow returns 11.27-11.77",
+      "transition_out": "zoom-through",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 14.22,
+      "t1": 15,
+      "beat": "feature",
+      "shot": "camera flies into the screen past the cards and list; everything blurs to the warm radial glow",
+      "camera": "zoom-through ~1.0 -> 3.0 over 16 fr, easings.inExpo",
+      "motion": "screen layers blur 0 -> 20 px and fade, 14.22-14.77; glow fills the frame centre by 14.77",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 15,
+      "t1": 17,
+      "beat": "cta",
+      "shot": "call to action, 3 words, white on a centred orange radial glow",
+      "camera": "static",
+      "motion": "line blur-in 15.00-15.27 (blur 12 px -> 0, easings.outExpo ~8 fr, ±0.25 s); holds 52 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 17,
+      "t1": 19.07,
+      "beat": "logo",
+      "shot": "product name in white on the same glow, then the glow and name fade to plain white",
+      "camera": "static",
+      "motion": "name replaces the call to action at 17.00 (blur-dissolve <= 8 fr, ±0.25 s); hold to 18.00; name and glow fade to white 18.00-18.77 (easings.inOutSine ~23 fr); white end 9 fr",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Typewriter",
+    "PhoneFrame",
+    "Camera",
+    "RackFocus",
+    "ZoomThrough",
+    "BlurIn",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: warm accent for the radial glow, fg, display font",
+    "content.name": "product name, one word, typed at the start and shown at the end",
+    "content.screen": "one tall home-screen screenshot (or a rebuilt screen) for the phone",
+    "content.chips": "3 benefits, one word each, with a line icon each",
+    "content.cta": "call to action, 2-4 words",
+    "aspect": "9:16 native; 4:5 works with the chips moved inward",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "medium",
+  "render_cost": "medium",
+  "notes": "No hard cuts: every scene change is carried by phone motion (rise, flip-out, slide-in, dolly-out, zoom-through). Name typing ~9 cps; phone rise lands by 2.00; chips 1 then 2+3 together, 0.50 s apart. Empty white frames at 6.00-6.27 and 10.77-11.00 act as breaths. Reference phone is a real 3D model; rebuild uses PhoneFrame tilt (2.5D). Proposed term (not in vocabulary): benefit-chip-pop. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

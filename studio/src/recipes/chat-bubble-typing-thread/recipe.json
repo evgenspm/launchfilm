@@ -1,0 +1,159 @@
+{
+  "id": "chat-bubble-typing-thread",
+  "title": "Two-sided chat thread with typing pills",
+  "summary": "A vertical chat builds top-down on white: each message starts as a pill with pulsing dots, the pill stretches to the bubble size, then its words rise in. Five messages alternate grey left and blue right, one every ~2.8 s.",
+  "use_when": [
+    "Telling a product story as a short dialogue between two people or a user and an agent",
+    "Vertical social posts where the conversation itself is the content",
+    "Opening a messaging, support or assistant product film before the real UI",
+    "Silent autoplay: every line is read on screen, no VO needed"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/animated-text-messages/",
+    "author": "Jitter",
+    "ref_id": "jt-019"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "chat",
+    "messages",
+    "conversation",
+    "typing-indicator",
+    "bubbles",
+    "vertical",
+    "light",
+    "dialogue",
+    "minimal"
+  ],
+  "techniques": [
+    "thinking-state",
+    "word-reveal"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 14,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#3D5B82",
+      "#1A82FD",
+      "#DDDDDD",
+      "#EEF1F1",
+      "#A5BFE3"
+    ],
+    "type_style": "humanist sans, semibold, sentence case, normal tracking, about 2.4 % H; dark grey on grey bubbles, white on blue bubbles",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "typing pill pops in",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "bubble finishes stretching and its text settles",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.5,
+      "beat": "hook",
+      "shot": "empty white frame; grey typing pill top left, then the first incoming bubble: a greeting question, 3 words",
+      "camera": "static",
+      "motion": "pill pops in at 0.27 (springs.pop, overshoot not measurable, 8 fr ±0.25 s); dots pulse 1.0 s; dots fade at 1.50; pill stretches right to bubble width springs.layout 7 fr (±0.25 s); words rise in from a baseline mask 1.77-2.00, about 13 words/s",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 2.5,
+      "t1": 5.27,
+      "beat": "feature",
+      "shot": "first bubble stays; blue typing pill on the right below it, then the outgoing reply: 5 words, one line",
+      "camera": "static",
+      "motion": "empty blue pill at 2.50, dots in by 2.77 (springs.pop, overshoot not measurable); dots pulse 1.0 s; 4.00 pill stretches leftward from the right edge (springs.layout, ±0.25 s); words rise in 4.27-4.77, about 8 words/s; settled 4.77",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 5.27,
+      "t1": 8.27,
+      "beat": "feature",
+      "shot": "grey typing pill left under the reply, then the longest incoming message: about 10 words on 3 lines, an excited remark",
+      "camera": "static",
+      "motion": "pill pops in at 5.27 (springs.pop, overshoot not measurable); dots pulse 1.0 s; dots gone at 6.50; 6.77 pill grows in width and height to the 3-line bubble in one move (springs.layout, ±0.25 s); words rise in line by line 6.77-7.77, about 10 words/s",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 8.27,
+      "t1": 11.27,
+      "beat": "feature",
+      "shot": "blue typing pill right, then the outgoing answer: about 7 words on 2 lines, agreeing and looking forward",
+      "camera": "static",
+      "motion": "empty blue pill at 8.27, dots in at 8.50 (springs.pop, overshoot not measurable); dots pulse 1.0 s; 9.77 pill stretches to a 2-line bubble (springs.layout, ±0.25 s); words rise in 10.00-10.77, about 9 words/s",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 11.27,
+      "t1": 14,
+      "beat": "feature",
+      "shot": "grey typing pill left, then a one-word sign-off with an emoji; full five-bubble thread holds",
+      "camera": "static",
+      "motion": "pill pops in at 11.27 (springs.pop, overshoot not measurable); dots pulse 1.0 s; 12.77 pill stretches (springs.layout, ±0.25 s); word rises in at 13.00, emoji pops in at 13.27 (springs.pop, ±0.25 s); hold 0.73 s to the end",
+      "transition_out": "end",
+      "sfx": "pop"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 5,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "ChatBubble",
+    "TypingDots",
+    "ChatThread",
+    "WordReveal",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (thread background), accent (outgoing bubble), muted surface (incoming bubble), fg, body font",
+    "content.messages": "3-6 messages {side: 'in'|'out', text}, alternating; 1-12 words each, the last one a short sign-off",
+    "aspect": "9:16 default; 4:5 and 1:1 keep the top-anchored thread with larger margins",
+    "timing.typing": "frames the dots pulse before each bubble (default 30)",
+    "timing.gap": "frames between a bubble settling and the next typing pill (default 15)",
+    "timing.wps": "words per second for the word rise (default 10)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Single shot, no cuts; rows split at each new typing pill. The thread is top-anchored and never scrolls: bubbles stack downward with a constant gap of about 3.5 % H. Message period about 2.75-3.0 s: pill, 1.0 s of dots, stretch, then the words. Outgoing pills appear empty for one cell before the dots. sfx planned by the glue rule, not measured (reference is silent). Proposed terms (not in the vocabulary): typing-pill-stretch, chat-sequence.",
+  "status": "studied"
+}

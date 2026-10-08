@@ -1,0 +1,131 @@
+{
+  "id": "color-lineup-slide-cascade",
+  "title": "Colour lineup slide-in cascade",
+  "summary": "Seven side-profile desktop units in seven colours slide in from the right one after another on a near-white field; the row re-spaces as each joins and settles into an even lineup that holds. Calm, keynote-style variant reveal.",
+  "use_when": [
+    "Hardware or product with several colour or model variants",
+    "A short silent loop or opener for a lineup announcement",
+    "A light, minimal keynote voice with no copy on screen",
+    "A bridge shot before a variant picker or pricing line"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/imac-cascade-apple-event/",
+    "author": "Jitter",
+    "ref_id": "jt-037"
+  },
+  "family": "3d-device",
+  "tags": [
+    "lineup",
+    "variants",
+    "colours",
+    "hardware",
+    "side-profile",
+    "cascade",
+    "slide-in",
+    "light",
+    "minimal",
+    "no-copy",
+    "keynote"
+  ],
+  "techniques": [
+    "device-laptop"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FAFAFA",
+      "#295A6F",
+      "#D2A68B",
+      "#80465D",
+      "#2B4B6E",
+      "#AF6158"
+    ],
+    "type_style": "no type on screen",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each unit slides in from the right edge",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.33,
+      "beat": "hook",
+      "shot": "empty near-white field, nothing on screen",
+      "camera": "static",
+      "motion": "none; first unit's foot edge crosses the right frame edge at f10",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.33,
+      "t1": 2.5,
+      "beat": "reveal",
+      "shot": "side-profile desktop units (thin tilted panel on an angled stand) slide in from the right, one colour each, 7 in total",
+      "camera": "static frame; the whole row travels left (about 384 px/s @1920 in 1.00-2.00 s) and its spacing tightens from ~25 % W to ~14 % W as units join; unit size constant",
+      "motion": "unit entrances at f10, f15, f21, f27, f33, f41, f50 (stagger 5-6 fr, then 8-9 fr for the last two, ±1 fr from a 30 fps strip); each unit enters from off-screen right on easings.outExpo, the row re-spaces on springs.heavy and settles at ~f75 (overshoot not measurable, ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4,
+      "beat": "reveal",
+      "shot": "the full 7-colour lineup holds, evenly spaced, centred, units span ~92 % W",
+      "camera": "static",
+      "motion": "hold, no change between 2.50 and 3.77 cells; motion.json diff 0.06 then 0.00",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the field; accent can be one of the variant colours",
+    "content.variants": "3-8 variant colours, each {panel, stand} hex (stand is a pale tint of the panel)",
+    "content.device": "silhouette of the product in side profile (default: thin tilted panel on an angled stand)",
+    "timing.firstAt": "frame the first unit enters (default 10)",
+    "timing.stagger": "frames between unit entrances (default 6, last two 8-9)",
+    "timing.hold": "frames the settled lineup holds (default 45)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; vertical aspects need fewer units or a smaller unit",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from a 30 fps strip (0.30-2.30 s): entrance onsets f10, f15, f21, f27, f33, f41, f50; units never change size, only the gaps shrink (motion.json reads that as -31 %/s zoom). Settled by 2.50 s, then 1.5 s still hold. device-laptop is the closest vocabulary device id; the unit is a drawn side-profile desktop with no screen content. Proposed term lineup-cascade (recipe.md). sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

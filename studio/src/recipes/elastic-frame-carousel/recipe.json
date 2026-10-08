@@ -1,0 +1,210 @@
+{
+  "id": "elastic-frame-carousel",
+  "title": "Elastic frame carousel",
+  "summary": "Six stills cycle in a silent vertical loop. Each outgoing frame compresses toward the top edge while the next expands upward, turning every change into the subject.",
+  "use_when": [
+    "A short silent reel needs motion from a set of still images",
+    "The scene changes should carry more energy than the individual frames",
+    "A looping editorial or product-image carousel needs one repeatable transition"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/image-stretch-transition/",
+    "author": "Jitter",
+    "ref_id": "jt-065"
+  },
+  "family": "transitions",
+  "tags": [
+    "vertical-warp",
+    "carousel",
+    "loop",
+    "editorial",
+    "silent",
+    "still-media"
+  ],
+  "techniques": [
+    "slide-push"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 7.5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#0E0D0B",
+      "#D8D3C7",
+      "#1D7734",
+      "#6F7E74",
+      "#816F5B",
+      "#BEBEBD"
+    ],
+    "type_style": "small uppercase serif corner labels, regular weight, wide tracking, roughly 2% of frame height",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each frame compresses and the next frame expands",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.3,
+      "beat": "hook",
+      "shot": "first monochrome editorial still with two small corner labels",
+      "camera": "static",
+      "motion": "still hold for 9 fr",
+      "transition_out": "slide-push",
+      "sfx": ""
+    },
+    {
+      "t0": 0.3,
+      "t1": 0.77,
+      "beat": "hook",
+      "shot": "first still compresses toward the top while an exterior still expands upward from the bottom",
+      "camera": "fixed frame; scene layers deform vertically",
+      "motion": "vertical slide-push with opposing height scales, easings.inOutSine over 14 fr",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.77,
+      "t1": 1.8,
+      "beat": "hook",
+      "shot": "exterior architecture still with the same two small corner labels",
+      "camera": "static",
+      "motion": "still hold for 31 fr",
+      "transition_out": "slide-push",
+      "sfx": ""
+    },
+    {
+      "t0": 1.8,
+      "t1": 2.23,
+      "beat": "hook",
+      "shot": "exterior still compresses toward the top while a dark product arrangement expands from below",
+      "camera": "fixed frame; scene layers deform vertically",
+      "motion": "vertical slide-push with opposing height scales, easings.inOutSine over 13 fr",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.23,
+      "t1": 3.27,
+      "beat": "hook",
+      "shot": "dark still life of neutral containers with the recurring corner labels",
+      "camera": "static",
+      "motion": "still hold for 31 fr",
+      "transition_out": "slide-push",
+      "sfx": ""
+    },
+    {
+      "t0": 3.27,
+      "t1": 3.83,
+      "beat": "hook",
+      "shot": "still life compresses toward the top while a green portrait expands upward from the bottom",
+      "camera": "fixed frame; scene layers deform vertically",
+      "motion": "vertical slide-push with opposing height scales, easings.inOutSine over 17 fr",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.83,
+      "t1": 4.7,
+      "beat": "hook",
+      "shot": "green-background portrait still with the recurring corner labels",
+      "camera": "static",
+      "motion": "still hold for 26 fr",
+      "transition_out": "slide-push",
+      "sfx": ""
+    },
+    {
+      "t0": 4.7,
+      "t1": 5.3,
+      "beat": "hook",
+      "shot": "portrait compresses toward the top while a light furniture still expands upward from below",
+      "camera": "fixed frame; scene layers deform vertically",
+      "motion": "vertical slide-push with opposing height scales, easings.inOutSine over 18 fr",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5.3,
+      "t1": 6.27,
+      "beat": "hook",
+      "shot": "light furniture still with the recurring corner labels",
+      "camera": "static",
+      "motion": "still hold for 29 fr",
+      "transition_out": "slide-push",
+      "sfx": ""
+    },
+    {
+      "t0": 6.27,
+      "t1": 6.77,
+      "beat": "hook",
+      "shot": "furniture still compresses toward the top while the first monochrome still returns from below",
+      "camera": "fixed frame; scene layers deform vertically",
+      "motion": "vertical slide-push with opposing height scales, easings.inOutSine over 15 fr",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 6.77,
+      "t1": 7.5,
+      "beat": "hook",
+      "shot": "the first monochrome still returns and holds to close the loop",
+      "camera": "static",
+      "motion": "still hold for 22 fr",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 6,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "ElasticFramePush",
+    "DemoArtwork",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json; text colour styles the optional corner labels",
+    "content.slides": "five owned portrait stills under public/, or five deterministic brand-coloured demo art variants; the first returns after the fifth transition",
+    "content.labels": "two optional short labels repeated at the left and right edges",
+    "transitionFrames": "per-change durations at 30 fps; reference sequence is 14, 13, 17, 18 and 15 frames",
+    "holdFrames": "still holds at 30 fps; reference sequence is 9, 31, 31, 26, 29 and 22 frames",
+    "direction": "bottom-to-top for every change",
+    "aspect": "4:5 by default; layout may recompose to another supported aspect",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "The five soft changes run at frames 9-23, 54-67, 98-115, 141-159 and 188-203. ElasticFramePush compresses and expands whole frames vertically while a shared boundary travels upward. SFX are planned by the glue rule, not measured; the reference is silent. Transition curve shape and any sub-frame edge blur are not measurable at 0.25 s sheet resolution.",
+  "preview": {
+    "demo_brand": "lumenfold"
+  },
+  "status": "built"
+}

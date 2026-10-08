@@ -1,0 +1,147 @@
+{
+  "id": "page-scroll-url-loop",
+  "title": "Scrolling page card with typed address",
+  "summary": "A chrome-less landing page on a rounded card scrolls up and out, the domain types itself in the gap, then a dark section drops in, scrolls, and the page whips back to its hero so the last frame matches the first.",
+  "use_when": [
+    "Showing off a finished marketing page or portfolio site in a short silent loop",
+    "Agency reels and client handovers where the page design is the product",
+    "A launch post that needs the domain on screen without an end card",
+    "Feeds that autoplay on loop: the last frame returns to the first"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/website-promo/",
+    "author": "Studio Size",
+    "ref_id": "jt-027"
+  },
+  "family": "product-ui",
+  "tags": [
+    "page-scroll",
+    "landing-page",
+    "portfolio",
+    "agency",
+    "typed-address",
+    "domain",
+    "loop",
+    "silent",
+    "light",
+    "card"
+  ],
+  "techniques": [
+    "device-browser",
+    "dolly",
+    "typewriter",
+    "blur-dissolve",
+    "slide-push",
+    "speed-ramp"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 9,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#000000",
+      "#E9EFED",
+      "#C1C6C4",
+      "#504E4F",
+      "#836A65"
+    ],
+    "type_style": "page: bold grotesk, sentence case, tight tracking, headlines about 4 % H; address line: medium grotesk, lowercase, about 5 % H, left edge fixed so the finished line sits centred",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "address characters typing in",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "dark page card drops in from above",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "page whips back up to the hero",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.83,
+      "beat": "hook",
+      "shot": "light page card (black header with 2-line headline over a pale glass image) scrolls to a work grid and exits up; domain types in on white",
+      "camera": "dolly: page travels up about 0.9 card heights 0.50 to 1.27, then card leaves through the top edge by 1.50 (±0.25 s)",
+      "motion": "page scroll easings.inOutSine 38 fr (±0.25 s); card exit easings.inExpo ~8 fr (±0.25 s); address typewriter from 1.10, ~22 cps, 16 chars done at 1.77; holds 15 fr; blur-out 2.50 to 2.83, 10 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 2.83,
+      "t1": 6.5,
+      "beat": "feature",
+      "shot": "dark page card drops from above: services list (12 lines, one bright, rest dim) then about block, then a dark hero with 2-line headline and a link",
+      "camera": "dolly: card drops from above the frame to top at 0.15 H, 2.77 to 3.77; inside it the page scrolls down to 5.77, then reverses",
+      "motion": "card entrance springs.heavy ~30 fr (overshoot not measurable); inner scroll easings.inOutSine, sections change at 4.50 and 4.77 (±0.25 s); reversal at 5.77 (±0.25 s)",
+      "transition_out": "slide-push",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.5,
+      "t1": 9,
+      "beat": "feature",
+      "shot": "same card scrolls back fast through about, services with client logos, work grid and glass image to the light hero header",
+      "camera": "dolly with speed-ramp: content moves down slow at 6.50, about 640 px/s at 1920 W in 7.00 to 8.00, then about 110 px/s settling into the opening frame",
+      "motion": "reverse scroll easings.inOutCubic 37 fr (6.50 to 7.73, ±0.25 s); hero settles easings.outQuint ~30 fr to the 0.00 layout by 8.77",
+      "transition_out": "end",
+      "sfx": "whoosh"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "Dolly",
+    "Typewriter",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the frame, fg for the address line, display font for the address",
+    "content.page": "one full-length page capture (light hero first, at least one dark section), width 1440",
+    "content.url": "domain typed in the gap, 10 to 20 characters; defaults to brand.url",
+    "content.stops": "scrollY stops in page px: hero, work grid, dark section start, deepest point (4 values)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; card width 66 % of frame width at 16:9",
+    "timing.cps": "address typing speed (default 22)",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s). Page card is chrome-less (no browser bar): 66 % W, top at about 0.15 H, rounded corners about 1.6 % W, on flat white. Address typed from a fixed left edge: 7 chars at 1.27, 12 at 1.50, 16 at 1.77. Dark card enters 2.77 and settles by 3.77 with a long decelerating tail. Services list keeps one line bright and the rest dim, but it is static page design, not an animation. The catalogue hinted stacked-roll; the sheets show plain page scroll, so it is not tagged. Frame 8.77 matches 0.00, so the film loops. Proposed term page-scroll-loop (recipe.md). No audio in the reference; sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

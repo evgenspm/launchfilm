@@ -1,0 +1,202 @@
+{
+  "id": "line-icon-morph-chain",
+  "title": "Line icon morph chain into a loader",
+  "summary": "One centred line icon on a flat warm colour turns into the next every 1-2 s: bag, plane, window, globe, pin, then it collapses to a dash that fans into a spinning loader and vanishes. One stroke weight ties the chain into a single journey.",
+  "use_when": [
+    "Linking 4-6 feature or journey steps with one icon each, no copy needed",
+    "A short looping explainer for an icon set or a step-by-step flow",
+    "A transition sting between scenes of a longer film",
+    "Ending on a loading or processing state before a result"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-route-morphing-icons/",
+    "author": "Jitter",
+    "ref_id": "jt-072"
+  },
+  "family": "transitions",
+  "tags": [
+    "icon",
+    "line-icon",
+    "shape-morph",
+    "loader",
+    "spinner",
+    "journey",
+    "travel",
+    "flat",
+    "minimal",
+    "loop",
+    "no-copy"
+  ],
+  "techniques": [
+    "morph",
+    "thinking-state"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 12.77,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FDC124",
+      "#010101"
+    ],
+    "type_style": "no type; rounded line icons, black stroke about 1.5 % of frame height, round caps, icon about 22-30 % of frame height, centred",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each icon morph settles into the next symbol",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "dash fans out into the radial loader",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "loader shrinks to nothing",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.53,
+      "beat": "hook",
+      "shot": "empty flat yellow, then a black line bag icon grows in at centre and holds",
+      "camera": "static",
+      "motion": "0.00 empty; bag appears flat and short at 0.27, body and handle grow up to full height by 0.50 with springs.ui ~8 fr (±0.25 s); hold f15-f45",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.53,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "the bag tilts and becomes a plane icon pointing up-right, held centred",
+      "camera": "static",
+      "motion": "morph measured on a 30 fps strip: f46 bag rotated ~10 deg, f47 plane complete (2 fr swap, easings.outExpo); plane holds f47-f68; leaves between 2.27 and 2.50 (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4.27,
+      "beat": "feature",
+      "shot": "the plane becomes a tilted rounded-square window; it rights itself and two cloud strokes trace in inside its frame",
+      "camera": "static",
+      "motion": "window enters tilted ~15 deg and rotates upright by 3.00 with springs.ui ~15 fr (±0.25 s); cloud strokes draw on 2.77-3.77, easings.outQuint; window narrows 2.50->3.00",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4.27,
+      "t1": 6.27,
+      "beat": "feature",
+      "shot": "the window rounds into a globe; the cloud lines slide round it as continents, then merge into one wave line inside the ring",
+      "camera": "static",
+      "motion": "square->circle 4.00-4.27 (±0.25 s); inner lines rotate around the ring 4.27-5.50, easings.inOutSine; reduce to one S-line by 5.77; ring stroke thickens at 6.00 just before the next morph",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 6.27,
+      "t1": 7.67,
+      "beat": "feature",
+      "shot": "the globe ring becomes a map pin with an inner circle; the inner line closes into the circle",
+      "camera": "static",
+      "motion": "ring sharpens to a pin point 6.27-6.50, inner line closes to a ring by 6.77, springs.ui (overshoot not measurable); hold to f225; strip: pin swells ~+13 % f225-f229, easings.inExpo",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 7.67,
+      "t1": 8.77,
+      "beat": "feature",
+      "shot": "the pin collapses to a small oval that thins into a single short vertical dash above centre, held",
+      "camera": "static",
+      "motion": "strip: f230 pin gone, small oval left; oval narrows to a filled dash f230-f240, easings.outExpo; dash holds f240-f263",
+      "transition_out": "morph",
+      "sfx": ""
+    },
+    {
+      "t0": 8.77,
+      "t1": 9.5,
+      "beat": "feature",
+      "shot": "the dash tilts and fans out clockwise into a ring of twelve radial ticks around the centre",
+      "camera": "static",
+      "motion": "dash tilts at 8.77; 3 ticks at 9.00, half ring at 9.27, full ring of 12 at 9.50: ticks unfold one after another, stagger ~1 fr (±0.25 s), easings.outQuint",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9.5,
+      "t1": 11.5,
+      "beat": "feature",
+      "shot": "the twelve-tick loader spins in place, then shrinks to nothing",
+      "camera": "static",
+      "motion": "rotation easings.linear (rate not measurable: 12-fold symmetry aliases at 4 fps); strip: shrink f341-f344 ~-10 %, gone at f345, easings.inExpo 4 fr",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 11.5,
+      "t1": 12.77,
+      "beat": "feature",
+      "shot": "empty flat yellow hold that matches frame 0, so the chain loops",
+      "camera": "static",
+      "motion": "none; 38 fr empty",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Spinner",
+    "LineGlyph",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg fills the frame, fg is the icon stroke",
+    "content.icons": "4-6 line icons as SVG path data (or LineGlyph names), one per step, in journey order",
+    "content.endWithLoader": "true = last icon collapses to a dash and fans into the radial loader (default true)",
+    "timing.hold": "frames each icon holds between morphs (reference 21-45 fr at 30 fps)",
+    "timing.morph": "frames of each morph (reference 2-8 fr)",
+    "timing.tailHold": "empty frames at the end for a clean loop (reference 38)",
+    "stroke": "stroke width as a share of frame height (reference ~1.5 %)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; icon stays centred, size from the short side",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Single shot, no cuts, no camera: every change is the icon itself. Morphs are fast (2 fr bag->plane measured on a 30 fps strip) and the holds carry the rhythm: 46, 29, 53, 60, 42, 33, 22, 60, 38 fr. All icons share one stroke weight and round caps; that is what reads as one continuous line. Pin swells ~13 % before collapsing (anticipation). Proposed terms not in the vocabulary: icon-morph-chain, stroke-draw, radial-fan. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

@@ -1,0 +1,158 @@
+{
+  "id": "frosted-digit-clock-tick",
+  "title": "Frosted glass digit clock tick",
+  "summary": "Four giant frosted glass digits in a two-row clock layout over a soft blurred colour field; the last digit steps once per second. Refraction through the glyphs makes a static frame feel premium and alive.",
+  "use_when": [
+    "A countdown or timer moment before a launch or deadline",
+    "A premium, calm loop for a social post or a hero background",
+    "A stat beat where one number ticks up in whole steps",
+    "A silent autoplay tile with no copy beyond the number"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/frosted-glass-counter/",
+    "author": "Jitter",
+    "ref_id": "jt-080"
+  },
+  "family": "data-stats",
+  "tags": [
+    "counter",
+    "clock",
+    "countdown",
+    "timer",
+    "frosted-glass",
+    "refraction",
+    "light",
+    "minimal",
+    "type-only",
+    "loop",
+    "vertical"
+  ],
+  "techniques": [
+    "counter",
+    "liquid-glass",
+    "mesh-gradient"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 5.03,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#C9CBD2",
+      "#DEE5EB",
+      "#8CA7CF",
+      "#B9BFD8",
+      "#D1D4DC"
+    ],
+    "type_style": "geometric grotesk numerals, bold, tabular, stacked two rows of two digits, each digit ~40 % of frame height wide-set, colon as two round dots at the left edge; glyphs are frosted glass with a 1 px light rim",
+    "treatment": [
+      "liquid-glass",
+      "mesh-gradient"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "last digit steps to the next value (every 30 fr)",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "four frosted glass digits, hours on top, minutes below with a dot colon, over a soft peach, blue and lilac blurred field",
+      "camera": "static (motion.json drift 2 px/s @1920, zoom -0.1 %/s, not visible)",
+      "motion": "everything holds; refraction inside the glyphs is fixed; last digit steps at f30 in 1 fr (easings.stepped(1)), measured on a 30 fps strip",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1,
+      "t1": 2,
+      "beat": "proof",
+      "shot": "same clock, last digit one step higher; its refraction pattern differs with the new glyph shape",
+      "camera": "static",
+      "motion": "hold 30 fr; next step at f60, 1 fr swap (easings.stepped(1)) (±0.25 s from sheets, f30 swap measured)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2,
+      "t1": 3,
+      "beat": "proof",
+      "shot": "same clock, last digit one step higher",
+      "camera": "static",
+      "motion": "hold 30 fr; step at f90 (easings.stepped(1), ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3,
+      "t1": 4,
+      "beat": "proof",
+      "shot": "same clock, last digit one step higher",
+      "camera": "static",
+      "motion": "hold 30 fr; step at f120 (easings.stepped(1), ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4,
+      "t1": 5.03,
+      "beat": "proof",
+      "shot": "last digit at its highest value, then on the final frame both minute digits roll over to the next ten",
+      "camera": "static",
+      "motion": "hold 30 fr; at f150 (last frame) tens and units step together in 1 fr (easings.stepped(1), ±0.25 s)",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "Counter",
+    "DesktopBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg and accent feed the blurred colour field, display font for the numerals",
+    "content.start": "clock value at frame 0, four digits (hh:mm or any 4-digit count)",
+    "content.step": "increment per tick (default +1 on the last digit, carries to the tens)",
+    "timing.tickFrames": "frames between ticks at 30 fps (default 30 = 1 s)",
+    "timing.ticks": "number of ticks (default 5; length = ticks x tickFrames + 1)",
+    "glass.blur": "frost amount inside the glyphs",
+    "glass.refraction": "strength of the displacement that bends the field through each glyph",
+    "aspect": "4:5 default; 1:1 and 9:16 keep the 2x2 stack, 16:9 lays out one row",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "heavy",
+  "notes": "Measured on a 30 fps strip (0.70-1.70 s): the digit swap is a 1-frame step at f30, no roll, no fade, no scale. Ticks every 30 fr (1.00, 2.00, 3.00, 4.00, 5.00 s); the 5.00 tick is the last frame and carries into the tens digit. Background field is static (2 px/s drift, -0.1 %/s zoom from motion.json). Not loopable: the end value differs from the start. Proposed term: frosted-glyph (glyphs as frosted refractive glass with a light rim). sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

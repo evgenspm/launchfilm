@@ -1,0 +1,155 @@
+{
+  "id": "badge-count-icon-carousel",
+  "title": "Endless icon carousel with badge counts",
+  "summary": "Five rounded app tiles glide left in an endless row at constant speed; twice a red badge pops onto one tile, counts up, then shrinks away. A seamless 10 s loop that says the product sits among the tools people use.",
+  "use_when": [
+    "An integrations or ecosystem beat: the product lives next to tools the viewer knows",
+    "A seamless loop for a landing page hero, waitlist or social card",
+    "Showing activity (unread items, alerts) without any UI rebuild",
+    "A family of apps or cards presented as equals"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-vault-app-icons/",
+    "author": "Jitter",
+    "ref_id": "jt-022"
+  },
+  "family": "product-ui",
+  "tags": [
+    "icon-row",
+    "carousel",
+    "badge",
+    "loop",
+    "integrations",
+    "ecosystem",
+    "dark",
+    "no-copy",
+    "minimal"
+  ],
+  "techniques": [
+    "dolly",
+    "counter"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 10,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#1A1A1A",
+      "#0E0E0E",
+      "#0002C7",
+      "#D1EAFD",
+      "#F5F6F7",
+      "#E5E6F6"
+    ],
+    "type_style": "small medium grotesk labels inside tiles (~1.2 % H); badge numeral medium grotesk, white on red, ~2.5 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "badge pops onto a tile",
+        "sound": "notification",
+        "origin": "planned"
+      },
+      {
+        "event": "badge digit steps up",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.93,
+      "beat": "hook",
+      "shot": "row of rounded tiles on a dark corner gradient; red badge lands on the second tile and counts 1 to 5, then shrinks out",
+      "camera": "dolly: row travels left at a constant 312 px/s @1920 (10.4 px/fr), easings.linear, never stops",
+      "motion": "badge enters f4, springs.pop 3 fr (overshoot not measurable); digit shows 1 at f7, then steps every 3 fr to 5 at f18 (counter, no roll); holds to f54; exit scale to 0 easings.inExpo 4 fr, gone f58",
+      "transition_out": "continuous",
+      "sfx": "notification"
+    },
+    {
+      "t0": 1.93,
+      "t1": 4.5,
+      "beat": "feature",
+      "shot": "row keeps gliding with no badge; first tile leaves left, a pale lavender wordmark tile enters right at 2.50",
+      "camera": "dolly: same constant 312 px/s @1920, easings.linear",
+      "motion": "no in-row animation; one new tile crosses the right edge every 60 fr (2.00 s), spacing = 60 fr of travel",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4.5,
+      "t1": 6.13,
+      "beat": "feature",
+      "shot": "row keeps gliding; the deep blue card tile enters right, the white card tile leaves left",
+      "camera": "dolly: same constant 312 px/s @1920, easings.linear",
+      "motion": "no in-row animation; tiles stay at full scale and opacity while crossing the frame edge (hard crop, no fade)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 6.13,
+      "t1": 7.93,
+      "beat": "feature",
+      "shot": "red badge lands on the lavender tile (now second in the row) and counts 1 to 2, holds, then shrinks out",
+      "camera": "dolly: same constant 312 px/s @1920, easings.linear",
+      "motion": "badge enters f184, springs.pop 3 fr (overshoot not measurable); digit steps once at f190; holds to f234; exit easings.inExpo 4 fr, gone f238",
+      "transition_out": "continuous",
+      "sfx": "notification"
+    },
+    {
+      "t0": 7.93,
+      "t1": 10,
+      "beat": "feature",
+      "shot": "row glides back to the opening order (blue card, logo tile, white card) so frame 300 matches frame 0",
+      "camera": "dolly: same constant 312 px/s @1920, easings.linear",
+      "motion": "no in-row animation; the five-tile cycle is exactly 300 fr (5 tiles x 60 fr), seamless loop",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 2,
+    "url": false
+  },
+  "components": [
+    "Dolly",
+    "Counter",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the backdrop, accent for the badge (default red), one tile carries the brand mark",
+    "content.tiles": "4-6 tile specs {icon|logo, label?, bg}: the brand tile plus partner or sibling tiles",
+    "content.badges": "list of {tile, at, to, out}: which tile gets a badge, start frame, final count, exit frame (default two badges, counts 5 and 2)",
+    "timing.step": "frames of travel between neighbouring tiles (default 60 = 2.00 s); loop length = tiles x step",
+    "timing.countStep": "frames between badge digits (default 3)",
+    "tileSize": "tile edge as a fraction of frame width (default 0.11, gap 0.035)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; row stays vertically centred, tile count visible scales with width",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips at t = 0, 1.5, 6, 7.5 s: badge enters f4/f184, digits step every 3 fr, badge exit 4 fr ending f58/f238. Travel 312 px/s @1920 (motion.json, constant every second, coherence 0.74-0.82), one tile step per 60 fr, 5 tiles = 300 fr loop. Zoom 0.05-0.77 %/s in motion.json is not visible in the sheets; treat as noise. Badge red is not in the palettegen output (too small); sample it from the brand accent. Proposed terms (not in vocabulary): icon-carousel, badge-pop. SFX planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

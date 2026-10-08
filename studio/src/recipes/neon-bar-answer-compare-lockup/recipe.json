@@ -1,0 +1,135 @@
+{
+  "id": "neon-bar-answer-compare-lockup",
+  "title": "Neon search bar to answer, compare and lockup",
+  "summary": "A search bar glows green on black with light streaks, a question pill lands, dots think, a step-by-step answer card fills in, a two-panel us-vs-them compare holds, then a glowing wordmark, tagline and button close. One shot, 8 s.",
+  "use_when": [
+    "Showing an AI assistant answering one developer question end to end",
+    "A short silent teaser for a chatbot or docs assistant on a dark, neon brand",
+    "Closing a product tour with a quick ours-vs-others comparison and a start button"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/EvqCnDk5",
+    "author": "Chile Guy",
+    "ref_id": "rl-105"
+  },
+  "family": "ai-chat",
+  "tags": ["ai-chat", "search-bar", "neon", "green", "dark", "answer-card", "comparison", "wordmark", "cta", "one-shot", "silent"],
+  "techniques": ["glow", "thinking-state", "stream-text", "ui-rebuild", "end-card"],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 8.13,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": ["#000000", "#000E15", "#41D69C", "#2C8E6C", "#14815A", "#05332B"],
+    "type_style": "geometric sans; UI copy small (about 2 % H) sentence case, white on navy; wordmark bold, sentence case, tight, about 8 % H in bright green; mono for the code line",
+    "treatment": ["glow"]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {"event": "glowing search bar appears", "sound": "whoosh", "origin": "planned"},
+      {"event": "question pill lands", "sound": "pop", "origin": "planned"},
+      {"event": "answer lines and code line fill in", "sound": "type-click", "origin": "planned"},
+      {"event": "compare panels resolve", "sound": "tick", "origin": "planned"},
+      {"event": "start button appears under the wordmark", "sound": "ui-confirm", "origin": "planned"}
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "empty search bar with a thick green halo on black; thin green light streaks and a curved ribbon sweep diagonally behind it",
+      "camera": "drift: bar slides right-to-left across frame (centre-right at 0.27 s, left of centre at 1.00 s, centre at 1.27 s), slight zoom ~+4.6 %/s (motion.json second 0)",
+      "motion": "frame 0 black; bar + halo in by 0.27 s (8 fr@30, ±0.25 s), entrance curve not measurable, suggested easings.outExpo 8 fr; streaks travel linearly corner to corner, easings.linear; whole scene dims out 1.27 to 1.50 s, suggested easings.inOutSine 7 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1.5,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "user question pill (one line, 7 words, asks how to add a feature) top right in solid green; a faint green radial pool centre; thinking dots on the left",
+      "camera": "static (pill and pool stay put across cells 6 to 9)",
+      "motion": "pill present at 1.50 s, entrance under 0.25 s, suggested springs.ui ~10 fr (overshoot not measurable); one dot at 1.77 s, three pulsing dots at 2.00 to 2.27 s (thinking, variant dots); dots gone at 2.50 s",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4.5,
+      "beat": "feature",
+      "shot": "answer card (navy, thin teal border) below the pill: intro line, step 1, a mono code field, step 2, step 3",
+      "camera": "static, card shifts from centre-right (2.50 to 2.77 s) to centre-left (3.00 s on); motion.json pan 1,8 px/s",
+      "motion": "card frame in at 2.50 s with intro line only; step 1 + empty code field at 2.77 s; code types in 3.00 to 3.27 s (partial then full) and step 2 appears; step 3 at 3.27 s; holds to 4.27 s. Line reveal per 0.25 s cell, finer stagger not measurable",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 4.5,
+      "t1": 6.5,
+      "beat": "proof",
+      "shot": "two side-by-side panels with short labels above (ours, others): left has three grey skeleton lines and a bright glowing button, right has mismatched blocks and an outlined bar",
+      "camera": "drift: pan ~31 px/s left and zoom ~-2.6 %/s in second 5 (motion.json), then ~-0.8 %/s",
+      "motion": "pill and card fade as the empty panels fade in over a strong centre glow at 4.50 s; content blocks slide in at 4.77 s (one right-panel block enters from the right edge); settled at 5.00 s, suggested springs.ui ~10 fr (±0.25 s); right-panel outline bar grows from left 5.00 to 5.27 s; hold to 6.27 s",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 6.5,
+      "t1": 7.25,
+      "beat": "logo",
+      "shot": "product wordmark in bright green centred inside a teal radial glow; short tagline (4 words, ends in an ellipsis) under it",
+      "camera": "static",
+      "motion": "panels gone and wordmark present at 6.50 s (switch within ±0.25 s, suggested blur-dissolve 6 fr); tagline appears at 6.77 s, suggested easings.outQuint 8 fr",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 7.25,
+      "t1": 8.13,
+      "beat": "cta",
+      "shot": "same lockup plus a rounded solid green start button (2 words) under the tagline",
+      "camera": "static",
+      "motion": "button present at 7.27 s, suggested springs.pop ~10 fr (overshoot not measurable); hold 26 fr to the end",
+      "transition_out": "end",
+      "sfx": "ui-confirm"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 6,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": ["PromptBar", "ChatBubble", "TypingDots", "ThinkingState", "StreamText", "EndCard", "BrandBackdrop", "BrandProvider", "ASPECTS"],
+  "params": {
+    "brand": "brand.json with a bright green accent (glow, pill, wordmark, button) on near-black bg and a navy card surface",
+    "content.question": "one user question, 5 to 8 words, shown as a pill",
+    "content.answer": "intro line + 3 numbered steps, one step carries a short code line",
+    "content.compare": "two labels (ours, others) and a description of what each panel shows",
+    "content.name": "product wordmark",
+    "content.tagline": "3 to 5 words",
+    "content.cta": "button label, 2 words"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "One continuous shot, cuts.json lists no cuts, so every row hands over with continuous. Measured from 4 fps sheets only (±0.25 s); all springs, easings and frame counts under 8 fr are suggestions. Reference is silent: sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): light-streak sweep (row 1), split-compare panels (row 4). The empty bar never shows typing in the sheets: the question appears directly as a pill, so prompt-typing is not claimed. Palette from palettegen on keyframes 0.5/2.5/5.5/7.5 s; the white UI text is not in it."
+  ,"status": "studied"
+}

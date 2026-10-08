@@ -1,0 +1,185 @@
+{
+  "id": "caret-collapse-prompt-mark-url",
+  "title": "Line collapses into a prompt, then mark and typed URL",
+  "summary": "A small opener line squeezes into a caret, a huge prompt field types the promise, the camera snaps out to a pill, the chrome falls away, then a drawn mark, a credit line and a typed URL. Silent except real key clicks.",
+  "use_when": [
+    "An AI or text-to-anything product whose promise fits one typed prompt",
+    "A short silent teaser or social loop under 12 s",
+    "A minimal dark sign-off that needs mark plus URL without an end-card layout",
+    "Brands with a simple geometric mark that can be drawn on in strokes"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/r3WAW4Mu",
+    "author": "Raylight",
+    "ref_id": "rl-070"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "prompt",
+    "typing",
+    "caret",
+    "pull-out",
+    "mark-draw",
+    "url",
+    "dark",
+    "minimal",
+    "one-shot",
+    "ai"
+  ],
+  "techniques": [
+    "morph",
+    "prompt-typing",
+    "pull-out",
+    "logo-from-dot",
+    "typewriter"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 11.35,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#111111",
+      "#0A0B0B",
+      "#FFFFFF",
+      "#D7D7D7",
+      "#868686",
+      "#3D3D3D"
+    ],
+    "type_style": "medium-bold grotesk, sentence case, normal tracking; opener and credit 4-5 % H, prompt in the zoomed field ~15 % H, settled prompt line ~7 % H; URL in a rounder geometric sans ~7 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each character typed into the prompt field (0.82-1.67 s, 10 onsets)",
+        "sound": "type-click",
+        "origin": "observed"
+      },
+      {
+        "event": "each character of the URL typed (8.64-9.33 s, 9 onsets)",
+        "sound": "type-click",
+        "origin": "observed"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.77,
+      "beat": "hook",
+      "shot": "opener line, 2 words, small and centred on near-black; it collapses into a caret that grows a rounded input field",
+      "camera": "locked frame, no camera move; the line drops ~17 % H into centre over the first 3 fr while a dark card corner leaves bottom-left (30 fps strip)",
+      "motion": "settle 0-3 fr, easings.outExpo (strip); hold to f16; f17-f20 letters squeeze toward a point at the left third (4 fr, easings.inExpo, strip); f19-f23 field grows around the caret, springs.layout ~5 fr (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.77,
+      "t1": 1.6,
+      "beat": "reveal",
+      "shot": "the prompt field seen very close, larger than the frame: plus icon, tall caret, the 4-word promise typing in, right side cropped",
+      "camera": "zoomed in ~2.4x of the settled pill (type height 110 px vs 46 px at 1280 W); slight pan left ~37 px/s @1920 as the text runs out of frame",
+      "motion": "typing f28-f47, ~1.6 chars/fr at peak (~48 cps); new chars arrive grey and brighten to white over ~5 fr (colour trail); caret hides once typing starts to run (~f35)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 1.6,
+      "t1": 2.87,
+      "beat": "feature",
+      "shot": "the whole prompt now a small centred pill with plus icon and hairline; then the icon and the pill chrome fall away, leaving the bare line",
+      "camera": "snap pull-out 2.4x -> 1.0 between f47 and f48 (1-2 fr, easings.outExpo); then static",
+      "motion": "hold f48-f77; f78-f81 plus icon fades and slides left; f79-f86 pill fill and hairline wipe off left to right (~8 fr, easings.linear); line recentres ~2 % W left on springs.ui (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2.87,
+      "t1": 3.78,
+      "beat": "feature",
+      "shot": "the promise as a bare centred line, a brightness band travels across it word by word",
+      "camera": "static",
+      "motion": "luma band ~2 words wide moves left to right f87-f105 (~18 fr, easings.linear), words behind it settle grey, then all words rise to full white by f113 (±0.25 s); line cut out at f113 with no exit",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 3.78,
+      "t1": 5.47,
+      "beat": "logo",
+      "shot": "the brand mark alone, centred, about 17 % H; built from ribbon strokes",
+      "camera": "static",
+      "motion": "strokes grow from short fragments f114-f132 (~18 fr, easings.outQuint, 30 fps strip); hold f132-f163; swaps out on one frame",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 5.47,
+      "t1": 8.6,
+      "beat": "logo",
+      "shot": "credit line, 3 words naming the maker, small and centred",
+      "camera": "static",
+      "motion": "appears on one frame at f164 (no entrance, 30 fps strip); holds 94 fr; replaced on one frame at f258",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 8.6,
+      "t1": 11.35,
+      "beat": "cta",
+      "shot": "the URL, 12 characters, typed in from a fixed left edge so it ends centred; no caret",
+      "camera": "static",
+      "motion": "typewriter f258-f277, ~1.6 fr per char (~19 cps, uneven cadence); holds 63 fr to the end",
+      "transition_out": "end",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 3,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "PromptBar",
+    "TypeLine",
+    "Typewriter",
+    "Camera",
+    "LogoReveal",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg, muted, bg, mark (vector, strokes drawn on), url",
+    "content.opener": "2-word opener line shown before the prompt",
+    "content.prompt": "the promise as a prompt, 4 words, ends with a period",
+    "content.credit": "3-word credit or tagline shown after the mark",
+    "content.url": "URL typed at the end (defaults to brand.url)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; field zoom keeps the left edge of the text in frame",
+    "timing.zoom": "field zoom factor before the snap pull-out (default 2.4)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "One shot, no cuts (cuts.json empty); every row hands over continuously. Numbers come from 4 fps sheets plus 30 fps strips extracted locally at 0, 1, 2.5, 3.8, 5.2 and 8.5 s. The audio is silent except key clicks whose onsets line up with both typing bursts (0.82-1.67 s, 8.64-9.33 s), so type-click is observed; keep everything else silent. Timing gaps are deliberate: long static holds (mark 31 fr, credit 94 fr, URL 63 fr). The collapse of the opener into the caret and the luma band sweep have no vocabulary id: see Proposed terms (caret-collapse, luma-sweep). Spring choices are defaults where overshoot was not measurable.",
+  "status": "studied"
+}

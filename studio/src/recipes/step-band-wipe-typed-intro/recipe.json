@@ -1,0 +1,48 @@
+{
+  "id": "step-band-wipe-typed-intro",
+  "title": "Stepped band wave wipes open to a typed intro card",
+  "summary": "Thick accent bands stepped like a bar graph swell across a light grid, split and slide off top and bottom, uncovering a white card where an eyebrow word types with a block caret, then the name and an accent product line type in.",
+  "use_when": [
+    "a 3 s brand sting before a product demo",
+    "announcing a named product or dataset with one accent phrase",
+    "a light, technical brand with one strong accent colour"
+  ],
+  "source": {"name": "raylight", "url": "https://www.raylight.app/templates/gruB73Za", "author": "Raylight", "ref_id": "rl-089"},
+  "family": "logo-brand",
+  "tags": ["intro", "typing", "caret", "accent-bands", "wipe", "light", "grid", "short", "sting"],
+  "techniques": ["mask-wipe", "typewriter"],
+  "format": {"aspect": "16:9", "duration_s": 2.73, "fps": 30, "loopable": false},
+  "look": {
+    "theme": "light",
+    "palette": ["#F5F5F5", "#0F0F0F", "#E8662A", "#FFFFFF", "#E3E3E3"],
+    "type_style": "medium grotesk, sentence case, tight tracking, ~8 % of frame height, block underscore caret; second line: name in fg + product phrase in accent",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {"present": false, "bpm": null, "energy": null, "genre": null, "cut_on_beat": false},
+    "sfx": [
+      {"event": "bands split and slide off the frame", "sound": "whoosh", "origin": "planned"},
+      {"event": "eyebrow word typed, per character", "sound": "type-click", "origin": "planned"},
+      {"event": "name and product line land", "sound": "tick", "origin": "planned"}
+    ]
+  },
+  "structure": [
+    {"t0": 0, "t1": 1.03, "beat": "hook", "shot": "accent bands stepped in ~10 columns, tallest at left, tapering right like a wave, over a light square grid with sparse character speckle on band edges", "camera": "static frame; the bands carry the motion (bands rise ~71 px/s and tilt slightly, motion.json)", "motion": "0.00 one band at upper third; 0.27 and 0.50 band thickens toward a peak (easings.outCubic ~15 fr, suggested); 0.77 it splits into a top and a bottom band opening a gap at centre (±0.25 s)", "transition_out": "mask-wipe", "sfx": "whoosh"},
+    {"t0": 1.03, "t1": 2, "beat": "hook", "shot": "bands retreat to top and bottom edges and leave; a white chip at centre grows into a large white card with corner handles and guide lines while an eyebrow word types", "camera": "card scale grows ~13 %/s (motion.json); chip ~25 % W at 1.00 to ~83 % W at 1.77", "motion": "bands slide out vertically, gone by 1.50 (mask-wipe 0.77 to 1.30, cuts.json soft); card grows springs.layout ~22 fr (overshoot not measurable); typewriter ~12 chars/s = 2.5 fr per char (2, 5, 7, 10 chars at 1.00/1.27/1.50/1.77), block caret", "transition_out": "continuous", "sfx": "type-click"},
+    {"t0": 2, "t1": 2.73, "beat": "logo", "shot": "eyebrow cleared; on the full card a product name in fg types followed by a 2-word product phrase in accent, centred", "camera": "near static, card ~87 % W (zoom -0.8 %/s, motion.json)", "motion": "word cleared in one cell at 2.00; line typed fast with a soft fading leading edge, ~17 of ~25 chars at 2.27, complete at 2.50 (~45 chars/s, ±0.25 s); holds ~7 fr", "transition_out": "end", "sfx": "tick"}
+  ],
+  "inputs": {"product_name": true, "logo": false, "tagline": true, "lines": 2, "screenshots": 0, "screen_recording": false, "ui_rebuild": false, "stats": 0, "url": false},
+  "components": ["BrandProvider", "Typewriter", "useTypewriter"],
+  "params": {
+    "eyebrow": "one announcing word typed first, ≤ 12 chars",
+    "name": "product or company name, fg colour, ≤ 12 chars",
+    "accentLine": "product phrase in accent, ≤ 3 words",
+    "bands.columns": "number of stepped columns (default 10)",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One-shot film: zero hard cuts, one soft transition 0.77 to 1.30 s (the band split-and-slide wipe). Measured at 0.25 s from sheet-01 and two keyframes: typing cadence ~2.5 fr per char for the eyebrow; second line much faster. Spring and easing names are suggested (overshoot not measurable). The row split at 2.00 is a visible state change, not a cut. Silent reference: all SFX planned by the glue rule, not measured. Proposed terms (not used as ids): stepped-band-wave, guide-frame-card, char-speckle.",
+  "status": "studied"
+}

@@ -1,0 +1,347 @@
+{
+  "id": "multiplayer-cursor-mockup-collage",
+  "title": "Multiplayer cursor mockup collage",
+  "summary": "A one-word-at-a-time sentence on white while named cursor tags draw frames that fill with device mockups; the collage collapses to a sphere, a dark mark beat, staged phone shots, a gallery that scatters and stacks, then a quiet end card.",
+  "use_when": [
+    "A design or mockup tool that wants to show many polished outputs in 30 s",
+    "Products with real-time collaboration where named cursors are part of the story",
+    "A silent autoplay launch on a light canvas with one dark brand interlude",
+    "You have 10 or more finished renders or screenshots to show as a gallery"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/mRI6PLFk",
+    "author": "Raylight",
+    "ref_id": "rl-054"
+  },
+  "family": "product-ui",
+  "tags": [
+    "mockups",
+    "collaboration",
+    "cursor-tags",
+    "gallery",
+    "collage",
+    "device-phone",
+    "light",
+    "silent",
+    "converge",
+    "end-card"
+  ],
+  "techniques": [
+    "statement-sequence",
+    "cursor-path",
+    "device-phone",
+    "device-laptop",
+    "converge",
+    "mask-wipe",
+    "frame-in-frame",
+    "card-grid",
+    "zoom-through",
+    "push-in",
+    "blur-dissolve",
+    "end-card",
+    "mesh-gradient",
+    "duotone",
+    "glow",
+    "vignette",
+    "grain",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 29.57,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#FFFFFF",
+      "#070908",
+      "#0130C1",
+      "#4576E4",
+      "#02061B",
+      "#EBE8DE"
+    ],
+    "type_style": "medium grotesk, sentence case and lowercase, normal tracking, small: about 4 % of frame height, centred; no display sizes anywhere",
+    "treatment": [
+      "mesh-gradient",
+      "duotone",
+      "glow",
+      "vignette",
+      "grain",
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "cursor tag lands and draws a selection frame",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "collage cards converge into a stack",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "sphere wipe into the dark mark beat",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "gallery bursts outward through the camera",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "button press by the hand cursor",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "one word, black, small and centred on white, swapped for the second word at 0.50; two named cursor tags (blue, green) enter from corners dragging thin blue selection frames",
+      "camera": "static",
+      "motion": "words appear by hard swap, no entrance (f0, f15); cursor tags slide in on springs.ui ~12 fr (overshoot not measurable), frame corners trail the arrow; top-left frame fills with a cloud image at 0.77 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 1.27,
+      "t1": 3.27,
+      "beat": "feature",
+      "shot": "two-word phrase; four corner frames fill with mockups (laptop, phone, dark poster); a third pink tag draws a frame bottom-left; text tints teal then blurs out",
+      "camera": "static",
+      "motion": "phrase grows by its second word at 1.77; frames fill by hard image swap one every ~0.25 s; tags fade at 2.27; phrase blur-out easings.inExpo ~8 fr at 3.00 (±0.25 s)",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 3.27,
+      "t1": 4.27,
+      "beat": "feature",
+      "shot": "one word (fourth step of the sentence) centred, six mockup tiles around the edges: laptop on rock, phone lock screen, chat UI, laptop on stool",
+      "camera": "push-in on the tiles 1.00 -> 1.08 over 30 fr, centre word unscaled",
+      "motion": "tiles drift outward then inward, easings.inOutSine; word fades at 4.27",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4.27,
+      "t1": 5.5,
+      "beat": "feature",
+      "shot": "the six tiles converge into one overlapping stack at centre, shuffle order, then fold into a small multicoloured blob",
+      "camera": "pull-out: stack scale 1.00 -> 0.25 between 5.00 and 5.50",
+      "motion": "converge with springs.heavy ~20 fr (±0.25 s); reorder 1 swap per 0.25 s; collapse easings.inExpo ~12 fr (±0.25 s)",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 5.5,
+      "t1": 7,
+      "beat": "feature",
+      "shot": "blob resolves into a lit sphere on white that darkens to navy, shrinks and drifts right; a big blue sphere edge sweeps in from the right",
+      "camera": "static",
+      "motion": "sphere scale 1.00 -> 0.45 over 30 fr easings.outQuint, drift right ~12 px/fr @1920 with motion blur at 6.77; blue disc wipe from right edge ~6 fr (±0.25 s)",
+      "transition_out": "mask-wipe",
+      "sfx": "swell"
+    },
+    {
+      "t0": 7,
+      "t1": 9.57,
+      "beat": "logo",
+      "shot": "white mark centred on a deep-blue swirling mesh gradient; wordmark slides out of the mark at 8.00; gradient heats to cyan, pink and orange at 9.27",
+      "camera": "slow rotation of the gradient, ~6 deg/s; mark static",
+      "motion": "wordmark reveal by mask-wipe left to right ~8 fr, mark shifts left to recentre the lockup (springs.ui); colour shift 9.00 -> 9.50 easings.inOutSine",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 9.57,
+      "t1": 10.77,
+      "beat": "feature",
+      "shot": "phone standing on a dark rock, black void; small lighting panel with one slider top-left; 2-frame duotone (cyan/orange) flash at the cut",
+      "camera": "push-in 1.00 -> 1.04 over 36 fr",
+      "motion": "duotone frame 9.57 -> 10.00 then clean; a blue cursor tag enters from the right at 10.27, springs.ui (overshoot not measurable)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 10.77,
+      "t1": 13.77,
+      "beat": "feature",
+      "shot": "same rock and phone, the screen now a bright green payment app; the cursor tag drags the lighting slider and the rock light shifts; tag then moves to the rock",
+      "camera": "drift: slight orbit, phone rotates ~10 deg over 90 fr; at 13.50 the frame becomes a rounded card on white",
+      "motion": "tag to slider at 11.77, drags slider 0.10 -> 0.85 between 12.00 and 13.27 easings.inOutSine; rock highlight follows; card shrink starts 13.50 springs.cameraOut",
+      "transition_out": "frame-in-frame"
+    },
+    {
+      "t0": 13.77,
+      "t1": 15,
+      "beat": "feature",
+      "shot": "the scene as a rounded card shrinking on white, then a duotone cyan version of the same mockup at 14.77",
+      "camera": "pull-out: card width 0.86 -> 0.48 of frame over 23 fr",
+      "motion": "card shrink springs.cameraOut ~20 fr with motion blur on the first 4 fr; duotone swap by hard cut at 14.77 (±0.25 s)",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 15,
+      "t1": 15.47,
+      "beat": "feature",
+      "shot": "macro of a phone screen corner (green payment app) framed inside a soft green glow backdrop",
+      "camera": "push-in 1.00 -> 1.05 over 14 fr",
+      "motion": "framed image in a blurred backdrop of its own colour; no in-animation, the cut is the change",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 15.47,
+      "t1": 15.97,
+      "beat": "feature",
+      "shot": "tall card: phone with an events app standing on dark rock, pink and blue rim light on a grey backdrop",
+      "camera": "push-in 1.00 -> 1.03 over 15 fr",
+      "motion": "same framed-image grammar, 15 fr hold",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 15.97,
+      "t1": 16.47,
+      "beat": "feature",
+      "shot": "phone corner close-up with a white app screen on a blue-violet and white blurred backdrop",
+      "camera": "push-in 1.00 -> 1.03 over 15 fr",
+      "motion": "same framed-image grammar, 15 fr hold",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 16.47,
+      "t1": 16.93,
+      "beat": "logo",
+      "shot": "tall card of glowing blue mark tiles cascading diagonally on deep blue",
+      "camera": "push-in 1.00 -> 1.03 over 14 fr",
+      "motion": "static image; glow halo around the card; 4-frame white flash into the next row",
+      "transition_out": "flash"
+    },
+    {
+      "t0": 16.93,
+      "t1": 17.77,
+      "beat": "feature",
+      "shot": "that card shrinks onto a white canvas while about 12 more mockup cards fly in from the edges",
+      "camera": "pull-out 1.00 -> 0.40 on the first card over 10 fr",
+      "motion": "cards fly in with motion blur, springs.heavy ~20 fr, stagger ~2 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 17.77,
+      "t1": 19,
+      "beat": "feature",
+      "shot": "the cards settle into a gallery grid (4 columns, mixed heights) inside an app window with a left sidebar",
+      "camera": "push-in 1.00 -> 1.02 over 37 fr",
+      "motion": "grid holds; one card swaps at 18.77",
+      "transition_out": "zoom-through"
+    },
+    {
+      "t0": 19,
+      "t1": 20,
+      "beat": "feature",
+      "shot": "the grid explodes toward camera: cards scale up and pass the lens with heavy horizontal blur",
+      "camera": "zoom-through 1.00 -> 3.00 over 30 fr",
+      "motion": "easings.inExpo, motion blur on every card, white frame at 19.77",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 20,
+      "t1": 22.5,
+      "beat": "feature",
+      "shot": "about 9 small mockup cards float on white, drift, then converge into one overlapping stack at centre that drops out the bottom",
+      "camera": "static",
+      "motion": "drift 20.00 -> 21.00 easings.linear; converge 21.00 -> 21.50 springs.heavy; stack bobs at 21.77-22.27; drops off bottom easings.inExpo ~8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 22.5,
+      "t1": 23.77,
+      "beat": "feature",
+      "shot": "one blue rounded button with a one-word action label centred on white; a hand cursor presses it",
+      "camera": "static",
+      "motion": "hand cursor enters at 22.77 springs.ui; press at 23.00: button dims to 0.6 opacity and squash springs.click; back to full at 23.50",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 23.77,
+      "t1": 26.5,
+      "beat": "logo",
+      "shot": "small black closing line naming the tool (3 words) centred on white, then the black mark alone",
+      "camera": "static",
+      "motion": "hard swaps: line 23.77 -> 25.27, mark 25.27 -> 26.50; no entrance animation",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 26.5,
+      "t1": 29.57,
+      "beat": "cta",
+      "shot": "the URL alone, small black type centred on white, held to the end",
+      "camera": "static",
+      "motion": "appears by hard swap, holds 92 fr",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 6,
+    "screenshots": 13,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "Statement",
+    "Cursor",
+    "PhoneFrame",
+    "LaptopFrame",
+    "FragmentCard",
+    "Converge",
+    "FrameInFrame",
+    "ZoomThrough",
+    "Camera",
+    "KenBurns",
+    "BrandMark",
+    "Wordmark",
+    "EndCard",
+    "Flash",
+    "Grain",
+    "Vignette",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "content.sentence": "4 steps of one sentence, 1-2 words each, swapped in place (word, word, two words, word)",
+    "content.cursors": "2-3 collaborator names with tag colours (blue, green, pink)",
+    "content.mockups": "10-13 finished mockup images (phones, laptops, posters), each with its dominant colour for the backdrop",
+    "content.heroMockups": "2 phone renders for the lighting-slider scene (screen before / after)",
+    "content.panelLabel": "label of the small settings panel with one slider",
+    "content.button": "one-word action label for the pressed button",
+    "content.close": "closing line naming the tool, about 3 words",
+    "content.url": "URL for the last card",
+    "brand": "mark, wordmark, accent blue for the gradient interlude and the button"
+  },
+  "difficulty": "medium",
+  "render_cost": "heavy",
+  "notes": "Silent reference: sfx planned by the glue rule, not measured. Type stays small (about 4 % H) the whole film: the mockups are the picture. Cuts 15.00, 15.47, 15.97, 16.47 come every 14-15 fr. Cuts 15.00-16.47 kept as three rows (each 14-15 fr, above the 6 fr montage threshold). Proposed terms (not in vocabulary): collaborator-cursor-tag, collage-to-sphere collapse. Phones on rocks are pre-rendered images; rebuild with stills, not 3D.",
+  "status": "studied"
+}

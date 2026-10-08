@@ -1,0 +1,248 @@
+{
+  "id": "prompt-gallery-workflow",
+  "title": "Prompt gallery proof reel",
+  "summary": "A typed request opens a vertical reel, a dense gallery and rolling count prove breadth, one example becomes a branching workflow, and a compact mark-and-URL close converts the proof into action.",
+  "use_when": [
+    "a vertical developer-tool promo needs a fast proof of breadth",
+    "a product can show many visual examples before one focused workflow",
+    "a voice-over needs clear visual chapters without a music bed"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/8cQzMX1c",
+    "author": "Amelie Roesmann",
+    "ref_id": "rl-045"
+  },
+  "family": "social-promo",
+  "tags": [
+    "vertical",
+    "prompt",
+    "gallery",
+    "counter",
+    "workflow",
+    "developer-tools",
+    "voiceover",
+    "light",
+    "end-card"
+  ],
+  "techniques": [
+    "prompt-typing",
+    "card-grid",
+    "counter",
+    "word-reveal",
+    "zoom-tier",
+    "end-card",
+    "hard-cut",
+    "blur-dissolve",
+    "morph",
+    "slide-push"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 14.12,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#F2F6F5",
+      "#010201",
+      "#FEFEFE",
+      "#575858",
+      "#D8D9C7",
+      "#A69497"
+    ],
+    "type_style": "bold grotesk, sentence case, tight tracking, 4-9 % of frame height; narrow serif and script accents",
+    "treatment": []
+  },
+  "audio": {
+    "vo": true,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "prompt characters appear",
+        "sound": "type-click"
+      },
+      {
+        "event": "gallery and count card land",
+        "sound": "hit"
+      },
+      {
+        "event": "inventory count advances",
+        "sound": "tick"
+      },
+      {
+        "event": "one gallery example fills the focus area",
+        "sound": "whoosh"
+      },
+      {
+        "event": "workflow tiles populate",
+        "sound": "pop"
+      },
+      {
+        "event": "mark and closing line appear",
+        "sound": "ui-confirm"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "rounded prompt field types a 6-word request above a 4-word capability claim on a pale field",
+      "camera": "drift scale 1.00→1.04 with 56 px downward pan over 60 fr",
+      "motion": "prompt types over ~23 fr at human cadence, then submits; claim holds; both fade with easings.inExpo 7 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 2,
+      "t1": 3.73,
+      "beat": "problem",
+      "shot": "a 4-word contrast statement replaces the prompt, with its final word in a narrow display face",
+      "camera": "drift scale 1.04→1.00 with easings.inOutSine over 52 fr",
+      "motion": "words reveal in two lines over ~15 fr with easings.outExpo; final word settles last (±0.25 s)",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 3.73,
+      "t1": 5,
+      "beat": "proof",
+      "shot": "dense wall of example cards rushes in behind a white panel whose three-digit inventory count rolls upward",
+      "camera": "drift scale 1.00→1.02 with 52 px upward pan over 38 fr",
+      "motion": "grid and panel land on springs.heavy ~24 fr; counter rolls for ~30 fr, easings.outExpo (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "hit"
+    },
+    {
+      "t0": 5,
+      "t1": 5.5,
+      "beat": "proof",
+      "shot": "the inventory count resolves and gains a suffix while the example wall continues drifting",
+      "camera": "drift scale 1.00→1.01 with 20 px upward pan over 15 fr",
+      "motion": "suffix fades and rises 12 px on easings.outExpo 8 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "tick"
+    },
+    {
+      "t0": 5.5,
+      "t1": 8,
+      "beat": "proof",
+      "shot": "a 4-word category line appears below the settled count while the gallery drifts behind it",
+      "camera": "drift scale 1.00→1.05 with 94 px upward pan over 75 fr",
+      "motion": "category words resolve left to right in ~15 fr with easings.outExpo, then hold (±0.25 s)",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 8,
+      "t1": 8.27,
+      "beat": "proof",
+      "shot": "a short growth qualifier appears under the count before the view selects one example",
+      "camera": "zoom-tier begins toward one gallery card over 8 fr",
+      "motion": "qualifier rises on easings.outExpo 8 fr as the chosen card starts springs.cameraIn (±0.25 s)",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 8.27,
+      "t1": 10,
+      "beat": "feature",
+      "shot": "one dark example card enlarges while a 5-word workflow claim reveals one word at a time below",
+      "camera": "zoom-tier to the chosen card, then 961 px left pan with easings.inOutSine over 52 fr",
+      "motion": "card settles on springs.cameraIn ~15 fr; words reveal every 7-8 fr; card exits left on easings.inExpo 9 fr (±0.25 s)",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 10,
+      "t1": 11.27,
+      "beat": "feature",
+      "shot": "six round workflow tiles stack vertically as fine curved connectors grow from an off-screen source",
+      "camera": "drift scale 1.00→1.02 with 17 px right pan over 38 fr",
+      "motion": "connectors draw with easings.outQuint 20 fr; tiles land on springs.ui, stagger 4 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "pop"
+    },
+    {
+      "t0": 11.27,
+      "t1": 12.5,
+      "beat": "logo",
+      "shot": "black mark lockup appears above a 2-word imperative closing line on the pale field",
+      "camera": "drift scale 1.00→1.02 over 37 fr",
+      "motion": "mark and line blur-in on easings.outExpo 12 fr; script stroke settles on springs.snappy ~18 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 12.5,
+      "t1": 13.27,
+      "beat": "logo",
+      "shot": "the first closing line gives way to one benefit word while the mark remains fixed above",
+      "camera": "drift scale 1.02→1.03 over 23 fr",
+      "motion": "old line fades on easings.inExpo 7 fr; replacement blur-in uses easings.outExpo 10 fr (±0.25 s)",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 13.27,
+      "t1": 14.12,
+      "beat": "cta",
+      "shot": "small URL appears under the mark and benefit word, then the complete end card holds",
+      "camera": "drift scale 1.03→1.04 over 26 fr, visually still for the final ~0.6 s",
+      "motion": "URL fades in on easings.outExpo 8 fr, then all elements hold through the end (±0.25 s)",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 6,
+    "screenshots": 16,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 1,
+    "url": true
+  },
+  "components": [
+    "PromptBar",
+    "Counter",
+    "BrandMark",
+    "Wordmark",
+    "GalleryWall",
+    "BranchMap",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "content.prompt": "one request, no more than 6 words",
+    "content.hookClaim": "short capability claim beneath the prompt",
+    "content.contrastLead": "bridge statement before the display-face emphasis word",
+    "content.contrastAccent": "one emphasized word on the second line",
+    "content.proofCount": "one three-digit breadth figure",
+    "content.proofSuffix": "short suffix, usually +",
+    "content.proofLabel": "category line beneath the count",
+    "content.qualifier": "short growth qualifier",
+    "content.workflowWords": "5 words revealed one at a time around the focused example",
+    "content.workflowLabel": "label under the six-tile branch map",
+    "content.closeLine": "first compact closing line",
+    "content.benefitLine": "replacement benefit line",
+    "content.url": "short destination shown on the final hold; defaults to brand.url",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; default 9:16",
+    "fps": "composition fps; default 30 and all timing scales with it",
+    "timing.duration": "duration in frames at 30 fps; default 424"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "One hard cut at 3.73 s; no detected music beats, so cut_on_beat is false (0/1). All sub-0.25 s entrance durations and spring choices are sheet-resolution measurements; overshoot is not measurable. SFX are planned by the glue rule, not measured. GalleryWall and BranchMap are local recipe components and use only brand tokens and generated abstract card art.",
+  "preview": {
+    "demo_brand": "plumday"
+  },
+  "status": "built"
+}

@@ -1,0 +1,141 @@
+{
+  "id": "glass-capsule-squash-morph",
+  "title": "Liquid glass capsule squash and stretch",
+  "summary": "One refractive glass shape over a dark red striped shader: a wide capsule squeezes into a small circle, swells into a large lens, then stretches into a thin full-width bar. Spring overshoot on every change makes the glass feel elastic.",
+  "use_when": [
+    "Showing off a glass material or a liquid-glass UI style with no copy",
+    "A loopable ambient background or interstitial between product shots",
+    "Teasing a control (button, search bar, toggle) before its UI appears",
+    "A dark, single-accent brand that wants motion without type"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/PqUKC9Wh",
+    "author": "Raylight",
+    "ref_id": "rl-033"
+  },
+  "family": "product-ui",
+  "tags": [
+    "liquid-glass",
+    "shader",
+    "morph",
+    "squash-stretch",
+    "abstract",
+    "dark",
+    "red",
+    "no-copy",
+    "glass-ui",
+    "elastic"
+  ],
+  "techniques": [
+    "liquid-glass",
+    "shader-bg",
+    "morph"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 7.3,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#F36A69",
+      "#C22623",
+      "#AF4645",
+      "#641A19",
+      "#350D0B"
+    ],
+    "type_style": "no type: the glass shape is the only subject",
+    "treatment": [
+      "liquid-glass",
+      "shader-bg"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "glass shape settles after each squash or stretch",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "circle swells into the large lens",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.77,
+      "beat": "hook",
+      "shot": "wide glass capsule (0.55 W x 0.41 H) centred over diagonal red stripes, then squeezes sideways into a small circle",
+      "camera": "locked frame, no camera move; only the shader stripes drift diagonally",
+      "motion": "capsule holds f0-8, width 0.55 W -> 0.20 W at f23 (undershoot) -> 0.24 W at f30, height kept 0.41-0.43 H; springs.pop, overshoot ~13 % (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 0.77,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "small glass circle (0.24 W) holds at centre, the stripes refract and shift inside its rim",
+      "camera": "locked frame, no camera move; stripes drift and dim slowly",
+      "motion": "circle finishes settling 0.20 W -> 0.24 W by f30 (±0.25 s), then holds 45 fr, centre fixed at 0.51 W / 0.50 H; no scale change within ±2 %",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 2.5,
+      "t1": 5,
+      "beat": "feature",
+      "shot": "circle swells into a large glass lens (0.49 W, 0.87 H) and holds while the stripes behind dim",
+      "camera": "locked frame, no camera move; stripes drift, highlight band fades out by f120",
+      "motion": "diameter 0.24 W -> 0.53 W peak at f90 -> 0.49 W settled by f98; springs.pop, overshoot ~16 % (±0.25 s); hold 52 fr",
+      "transition_out": "morph",
+      "sfx": "pop"
+    },
+    {
+      "t0": 5,
+      "t1": 7.3,
+      "beat": "feature",
+      "shot": "lens stretches into a wide capsule, then a thin full-width glass bar (0.91 W x 0.16 H) that holds over a brightening red hot spot",
+      "camera": "locked frame, no camera move; red hot spot grows in the lower left from f180",
+      "motion": "f150 circle -> f158 capsule 0.78 W x 0.38 H -> f165 bar 0.92 W x 0.10 H shifted left to the edge -> f173 recentred, height rebounds -> settled 0.91 W x 0.16 H by f180; springs.pop squash and stretch (overshoot not measurable); hold 39 fr",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [],
+  "params": {
+    "accent": "stripe colour of the shader background (brand accent, default deep red)",
+    "shapes": "sequence of glass states {w, h, at}: capsule -> small circle -> large circle -> thin bar",
+    "holdFrames": "frames each state holds before the next morph (measured 30-52 fr)"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Single continuous shot, 0 cuts, silent. Rows split at shape state changes read from 4 fps sheets (±0.25 s). The glass refracts the background: stripes inside the rim are offset and bent, the rim is a thin red-tinted hairline. sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): squash-stretch-morph (one glass shape changes aspect on a spring, rows 1-4); stripe-shader (diagonal blurred light bands drifting, rows 1-4). Catalogue hint 'physics' not used: no falling or collision, only spring morphs. Missing components: LiquidGlassShape, StripeShaderBackground.",
+  "status": "studied"
+}

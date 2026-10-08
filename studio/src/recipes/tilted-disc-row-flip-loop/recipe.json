@@ -1,0 +1,168 @@
+{
+  "id": "tilted-disc-row-flip-loop",
+  "title": "Tilted disc row, one flip every three seconds",
+  "summary": "Six thick translucent red discs stand in a diagonal row on black under a red glow; every 3 s one disc, out of order, spins through edge-on to broad face and re-seats. A calm, loopable object loop with no copy.",
+  "use_when": [
+    "A loopable dark background or interstitial between scenes of a longer film",
+    "A brand whose mark is a coin, token, chip or disc shape",
+    "A silent autoplay tile that needs slow, regular life without text",
+    "A hold under an end card or a lower-third where motion must stay calm"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/hQW90g0h",
+    "author": "Raylight",
+    "ref_id": "rl-096"
+  },
+  "family": "transitions",
+  "tags": [
+    "disc",
+    "coin",
+    "flip",
+    "loop",
+    "abstract",
+    "dark",
+    "red",
+    "glow",
+    "no-copy",
+    "background",
+    "one-shot"
+  ],
+  "techniques": [
+    "glow",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 17.87,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#0F0707",
+      "#852126",
+      "#E83C3D",
+      "#3D0B0C",
+      "#5B1518",
+      "#F34343"
+    ],
+    "type_style": "none (no on-screen text)",
+    "treatment": [
+      "glow",
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "a disc turns edge-on and swings to its broad face",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "the flipped disc re-seats in the row",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.77,
+      "beat": "hook",
+      "shot": "six tilted translucent red discs on a diagonal, low-left to upper-right, red glow behind; disc 4 (from left) flips",
+      "camera": "static (locked-off: resting discs keep position and size in every cell)",
+      "motion": "hold 0.00-0.77; disc 4 tilts at 0.77, edge-on 1.00-1.27, broad face lying near-horizontal and brightest 1.50-2.00, re-seated by 2.27; flip ~45 fr (+-0.25 s), ease suggested easings.inOutSine (not measurable); rim highlight brightens at broad face",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.77,
+      "t1": 6.5,
+      "beat": "hook",
+      "shot": "same row; disc 6 (upper-right end) flips",
+      "camera": "static (locked-off)",
+      "motion": "disc 6 tilts at 3.77-4.00, edge-on 4.27, broad face 4.50-5.00 (partly off the right edge), re-seated by 5.50; same ~45 fr flip (+-0.25 s), start 90 fr after flip 1",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.5,
+      "t1": 9.5,
+      "beat": "hook",
+      "shot": "same row; disc 2 (from left) flips",
+      "camera": "static (locked-off)",
+      "motion": "disc 2 tilts at 6.50-6.77, edge-on 7.00, broad face 7.50-7.77, re-seated 8.00-8.27; ~45 fr flip (+-0.25 s), 90 fr after flip 2",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9.5,
+      "t1": 12.5,
+      "beat": "hook",
+      "shot": "same row; disc 3 (from left) flips",
+      "camera": "static (locked-off)",
+      "motion": "disc 3 tilts at 9.77, edge-on 10.00, broad face 10.50-10.77, re-seated 11.00-11.27; ~45 fr flip (+-0.25 s), 90 fr after flip 3",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 12.5,
+      "t1": 15.5,
+      "beat": "hook",
+      "shot": "same row; disc 1 (lower-left end, partly off frame) flips",
+      "camera": "static (locked-off)",
+      "motion": "disc 1 tilts at 12.77, edge-on 13.00, broad face 13.50-13.77 (crosses the left edge), re-seated by 14.00; ~45 fr flip (+-0.25 s), 90 fr after flip 4",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 15.5,
+      "t1": 17.87,
+      "beat": "hook",
+      "shot": "same row; disc 5 (second from right) flips, then the row rests as at frame 0",
+      "camera": "static (locked-off)",
+      "motion": "disc 5 edge-on 15.77-16.00, broad face turned to camera (near-round) 16.27-16.77, returning 17.00, re-seated 17.27; ~45 fr flip (+-0.25 s), 90 fr after flip 5; last cell matches the first (loop point)",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandBackdrop",
+    "Vignette",
+    "Bloom"
+  ],
+  "params": {
+    "discColor": "disc body colour (brand accent, reference uses a deep red)",
+    "discCount": "visible discs in the row, 6 in the reference plus one cut off at the left edge",
+    "flipOrder": "order of discs to flip, reference 4, 6, 2, 3, 1, 5 (counted from lower-left)",
+    "interval": "frames between flip starts, 90 fr at 30 fps",
+    "flipFrames": "length of one flip, ~45 fr"
+  },
+  "difficulty": "hard",
+  "render_cost": "light",
+  "notes": "One shot, no cuts (cuts.json empty); every transition_out is continuous, last is end. Silent reference: sfx planned by the glue rule, not measured. Flip cadence measured from sheet timestamps at 0.25 s resolution: starts ~0.77, 3.77, 6.50/6.77, 9.77, 12.77, 15.50/15.77 = 90 fr period; flip length ~45 fr (+-0.25 s). Easing, axis and whether the turn is 180 or 360 degrees are not measurable from 4 fps sheets (a symmetric disc reads the same). motion.json labels flip seconds camera-zoom (0.7-1.3 %/s) because the flipping disc changes the picture; resting discs do not move, so the camera is treated as locked-off. Difficulty hard because the discs are 3D objects with thickness and perspective; render_cost light if rebuilt with CSS 3D transforms, heavy if rebuilt in R3F. Proposed term (not in vocabulary): disc-flip-cascade.",
+  "status": "studied"
+}

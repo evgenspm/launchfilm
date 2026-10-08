@@ -1,0 +1,123 @@
+{
+  "id": "concentric-ring-fill-card",
+  "title": "Concentric progress rings fill on a stat card",
+  "summary": "A white stat card grows from a point, three nested progress rings sweep on from twelve o'clock beside three ratio figures, hold for over a second, then the arcs retract and the card fades back to an empty canvas, so it loops.",
+  "use_when": [
+    "Showing two to four goal-vs-actual figures at once in an analytics or reporting product",
+    "A short loopable dashboard widget moment for a feed, landing page or slide",
+    "An insert inside a longer film where one card has to prove a result",
+    "Light SaaS brands with three distinct accent colours"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/stacked-donut-chart/",
+    "author": "Jitter",
+    "ref_id": "jt-078"
+  },
+  "family": "data-stats",
+  "tags": [
+    "chart",
+    "progress-rings",
+    "analytics",
+    "stats",
+    "card",
+    "loop",
+    "light",
+    "dashboard",
+    "ratio",
+    "widget"
+  ],
+  "techniques": [
+    "chart-draw",
+    "mask-rise"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FAFAFA",
+      "#FFFFFF",
+      "#7C3DD9",
+      "#D02B61",
+      "#F79762",
+      "#F5F3F3"
+    ],
+    "type_style": "geometric grotesk; card title bold sentence case ~2.4 % H; figures semibold ~5 % H with a light grey '/total' suffix at ~60 % size; tiny grey legend labels ~1.9 % H next to rounded colour squares",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "card grows in from the centre",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "each ring reaches its value and settles",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "arcs retract and the card leaves",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "one shot, no cuts: empty light canvas, a rounded white stat card grows in; title, date range, 3 ratio figures with legend on the left, 3 nested rings on the right fill, hold, retract, card fades out",
+      "camera": "locked off, no camera move (motion.json 1-4 s: pan 0, zoom 0 %/s; the 0-1 s 'camera-mixed' reading is the card growing, not the camera)",
+      "motion": "card grows 0.35 -> 1.00 scale from the centre on springs.layout, settled by 0.77 s (~23 fr, overshoot not measurable, ±0.25 s); title + legend fade in 0.27-0.50 s; grey tracks and coloured arcs draw on clockwise from 12 o'clock while the ring group rotates ~90° into place, inner ring first then middle then outer, stagger ~3 fr (±0.25 s), easings.outExpo, all settled by 1.00 s (f30); figures mask-rise 0.50-0.77 s (±0.25 s); hold 1.00-2.27 s (~38 fr); exit 2.27-2.77 s: arc tails retract clockwise toward their ends with easings.inExpo while opacity drops to ~0.15, card fades out by 3.27 s; empty canvas 3.27-4.00 s",
+      "transition_out": "end",
+      "sfx": "pop"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 3,
+    "url": false
+  },
+  "components": [
+    "ProgressRing",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg, surface (card), fg, muted, radius, plus three accent colours for the rings",
+    "content.title": "card title, 2-3 words naming the metric group",
+    "content.subtitle": "small grey period line under the title, e.g. a date range",
+    "content.series": "2-4 items {value, total, label, color}; ring sweep = value / total",
+    "timing.hold": "frames the filled card holds (default 38 at 30 fps)",
+    "timing.ringStagger": "frames between ring starts, inner to outer (default 3)",
+    "loop": "true keeps the empty canvas at both ends so the clip loops seamlessly",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from one 4 fps sheet (±0.25 s) and keyframes at 0.5/1.5/2.5 s. Final sweeps at 1.50 s: inner ~0.82 of a turn (matches 335/400), middle ~0.65 (80/120 = 0.67), outer ~0.37 (45/120 = 0.375): sweep is value/total, so keep it data-true. Ring geometry at 864 px H: radii ~195 / 145 / 95 px, stroke ~28 px, gap ~22 px, light grey full-circle track under each arc, flat (butt) caps. Exit reverses the draw from the start edge, not the end. Silent reference: sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): ring-fill, arc-retract.",
+  "status": "studied"
+}

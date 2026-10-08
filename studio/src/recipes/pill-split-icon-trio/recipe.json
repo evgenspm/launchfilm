@@ -1,0 +1,156 @@
+{
+  "id": "pill-split-icon-trio",
+  "title": "Pill button splits into an icon trio",
+  "summary": "A single labelled pill button dims its label, then breaks into three round chips (payment, cart, item count) and later merges back. One flat light shot, no cuts, a seamless loop for a micro-interaction demo.",
+  "use_when": [
+    "Showing a button that expands into quick actions or a status count",
+    "An e-commerce or checkout micro-interaction clip, silent and loopable",
+    "A short UI detail insert inside a longer product film",
+    "A landing-page hero loop for a component or design-system release"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/view-cart-button-split/",
+    "author": "Jitter",
+    "ref_id": "jt-013"
+  },
+  "family": "product-ui",
+  "tags": [
+    "button",
+    "pill",
+    "split",
+    "micro-interaction",
+    "checkout",
+    "loop",
+    "light",
+    "single-shot",
+    "ui-state"
+  ],
+  "techniques": [
+    "morph",
+    "ui-rebuild"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 7.5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#F7F7F7",
+      "#291754",
+      "#FEDD12",
+      "#7141D8",
+      "#000000"
+    ],
+    "type_style": "geometric sans, regular weight, sentence case, normal tracking, label about 6 % H; thin outline icons; count digit in white on the accent chip",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "pill splits into three chips",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "chips merge back into the pill and settle",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.4,
+      "beat": "hook",
+      "shot": "one yellow pill button centred on flat light grey: outline cart icon left, two-word action label right",
+      "camera": "static",
+      "motion": "pill stretches about 8 % wider f5 (easings.outQuint ~4 fr); label opacity 1 -> ~0.3 over f5-f12 (easings.linear 8 fr); icon stays",
+      "transition_out": "morph",
+      "sfx": ""
+    },
+    {
+      "t0": 0.4,
+      "t1": 0.83,
+      "beat": "feature",
+      "shot": "pill splits: a black chip slides out left with a card icon, a violet chip right with a one-digit count; yellow body shrinks to a circle",
+      "camera": "static",
+      "motion": "split f12-f25: side chips emerge from behind the pill edges, yellow width ~47 % W -> circle (springs.ui 13 fr, overshoot not measurable at 30 fps strip, none visible); label gone by f17",
+      "transition_out": "morph",
+      "sfx": "pop"
+    },
+    {
+      "t0": 0.83,
+      "t1": 3.77,
+      "beat": "feature",
+      "shot": "three equal round chips in a row with small even gaps: card, cart, count",
+      "camera": "static",
+      "motion": "hold 88 fr; nothing moves after the gap settles at f25",
+      "transition_out": "morph",
+      "sfx": ""
+    },
+    {
+      "t0": 3.77,
+      "t1": 4.3,
+      "beat": "feature",
+      "shot": "side chips part slightly, then the yellow chip widens over them back into the labelled pill",
+      "camera": "static",
+      "motion": "anticipation f113-f118: side chips move out ~10 px@1322 (easings.outQuint 5 fr); merge f118-f121: yellow grows over both chips (easings.inExpo ~4 fr); empty pill f121; label fades in f122-f129 (easings.outQuint 7 fr) while the pill settles its width (springs.ui)",
+      "transition_out": "morph",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4.3,
+      "t1": 7.5,
+      "beat": "feature",
+      "shot": "labelled pill button at rest, same as the opening frame",
+      "camera": "static",
+      "motion": "hold 96 fr; last frame equals frame 0, so the clip loops",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg, accent for the main pill, fg for the label and the left chip, a second accent for the count chip",
+    "content.label": "button label, 1-3 words",
+    "content.icon": "icon on the main pill (cart, bag, plus)",
+    "content.left": "icon on the left chip (card, wallet)",
+    "content.count": "number or short string on the right chip",
+    "timing.splitAt": "frame the label starts to dim (default 5 at 30 fps)",
+    "timing.hold": "frames the split state holds (default 88)",
+    "timing.restHold": "frames the pill rests before the loop (default 96)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; pill width 47 % of the frame width at 4:3, capped to 60 % of the short side",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips at t = 0 and t = 3.6: label dims f5-f12, split f12-f25, merge f113-f121, label back by f129. Pill ~47 % W x 17 % H of a 1322x992 frame; chips are circles of the pill height with gaps ~3 % W. No cursor is visible, so cursor-path was not used. Proposed term pill-split (not in vocabulary). Camera reads static in every cell; motion.json reports ~-1.9 %/s zoom with zero frame difference, treated as estimator noise. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

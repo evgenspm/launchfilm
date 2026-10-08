@@ -1,0 +1,243 @@
+{
+  "id": "dot-portal-wave-dashboard-reveal",
+  "title": "Dot portal into a grain-wave brand reveal",
+  "summary": "A one-word hook on cream whose letter dot opens into a dark scene with a drifting grainy green wave; short serif lines blur in, the mark grows, a dashboard pulls out to full view, then a typed URL and a mark hold close it.",
+  "use_when": [
+    "A calm launch for a web app with one dashboard screenshot worth showing",
+    "Brand reveal where the mark and a two-tone name carry the middle of the film",
+    "A serif, premium voice with music only and no voice-over",
+    "Closing on a typed URL and a quiet mark hold"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/36rUTa1B",
+    "author": "Mark Maher",
+    "ref_id": "rl-078"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "dot-portal",
+    "grain-wave",
+    "serif",
+    "dark",
+    "dashboard",
+    "pull-out",
+    "typed-url",
+    "mark-reveal",
+    "web-app",
+    "music-only"
+  ],
+  "techniques": [
+    "portal",
+    "push-in",
+    "blur-in",
+    "word-reveal",
+    "pull-out",
+    "device-browser",
+    "typewriter",
+    "end-card",
+    "grain",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 15.98,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000101",
+      "#F9F8F3",
+      "#094222",
+      "#4F795B",
+      "#1D1F1E",
+      "#4C4D4A"
+    ],
+    "type_style": "bold transitional serif, sentence case, normal tracking; hook word ~14 % H, lines ~4 % H, split pair ~7 % H, URL ~3 % H; name two-tone (second half in the green accent)",
+    "treatment": [
+      "grain",
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 118.9,
+      "energy": "medium",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "dot opens into the dark scene at 0.93 s",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "mark grows and glows at 3.00-3.77 s",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "dashboard pull-out at 9.27 s",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "URL characters typed 11.77-12.77 s",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "final mark lands at 14.00 s",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.93,
+      "beat": "hook",
+      "shot": "one short word, centred black serif on flat cream; one letter is a solid black dot",
+      "camera": "push-in: word width grows ~1.00 -> 1.15 from 0.00 to 0.77 s, then blurs at 0.90 s",
+      "motion": "word scales up on easings.inOutSine ~28 fr (±0.25 s); last ~3 fr motion blur; the dot becomes a disc mask that opens into the next scene",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.93,
+      "t1": 2,
+      "beat": "problem",
+      "shot": "dark ground, wide grainy green wave band drifting; centred serif line, 4 words, names the finished chore",
+      "camera": "drift: wave band travels and changes phase, text fixed",
+      "motion": "disc mask expands from the dot to full frame by 1.00 s; line blur-in, easings.outExpo ~8 fr (±0.25 s), sharp at 1.27 s; holds; blur-out before 2.00 s",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2,
+      "t1": 3,
+      "beat": "reveal",
+      "shot": "same wave; intro line, 2 words: verb + product name, second half of the name in the green accent",
+      "camera": "drift: wave band only",
+      "motion": "whole line blur-in from 2.00 s, sharp at 2.27 s (easings.outExpo ~8 fr, ±0.25 s); holds to ~2.85 s; blur-out",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 3,
+      "t1": 4,
+      "beat": "logo",
+      "shot": "the brand mark (thin line icon) alone on the wave",
+      "camera": "push-in on the mark: height ~0.9x -> 1.9x of the 3.00 s size by 3.77 s",
+      "motion": "mark scales up on springs.heavy ~23 fr (overshoot not measurable), line strokes thicken into a filled white glyph with glow at 3.77 s; vanishes by 4.00 s",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 4,
+      "t1": 6.5,
+      "beat": "feature",
+      "shot": "wave only, then the two-tone name returns upper centre and dissolves into a 4-word capability line built word by word",
+      "camera": "drift: wave band rises and flattens; line moves from upper third to centre between 4.77 and 5.00 s",
+      "motion": "name blur-in at 4.27 s; at 4.50 s name crossfades into the first word; words appended one per ~0.25 s (4.77, 5.00, 5.27, 5.50 s), each blur-in easings.outExpo ~6 fr (±0.25 s); line re-centres on springs.ui; soft white glow grows behind it to 6.27 s",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 6.5,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "a tilted dark document card lands centre; two large serif words appear left and right of it, then the card flies up and out",
+      "camera": "drift: wave band only",
+      "motion": "card enters tilted ~-15 deg at 6.50 s (springs.pop, overshoot not measurable); pair of words blur-in at 6.77 s around it; card rotates and exits to the top 7.00-7.50 s on easings.inExpo ~12 fr (±0.25 s); words hold then fade by 7.77 s",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 8,
+      "t1": 9.5,
+      "beat": "reveal",
+      "shot": "product dashboard close-up, cropped top-left: greeting header, 4 stat tiles, a list of flagged rows",
+      "camera": "detail tier, slow drift right/up; from 9.27 s a fast pull-out with motion blur (~-30 %/s zoom in motion.json 9-10 s)",
+      "motion": "dashboard appears ~7.87 s (between cells, ±0.25 s); pull-out on springs.cameraOut ~15 fr (±0.25 s) with rows smearing at 9.50 s",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9.5,
+      "t1": 11.5,
+      "beat": "feature",
+      "shot": "full dashboard inside a dark rounded window over the green wave, side nav, header, stat tiles, lists",
+      "camera": "full tier, settled by 9.77 s; slight drift; from 11.00 s the window slides up (~51 px/s @1920 in motion.json 11-12 s)",
+      "motion": "window settles springs.cameraOut (overshoot not measurable); hold ~1.2 s; exits upward and is gone by 11.50 s (easings.inExpo, ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 11.5,
+      "t1": 14,
+      "beat": "cta",
+      "shot": "wave only, then the site URL typed in small white serif, centred, then held",
+      "camera": "drift: wave band only",
+      "motion": "typewriter from 11.77 s, ~16 chars over ~1.0 s (~16 cps), complete by 12.77 s; holds 1.0 s; cut away near 13.90 s (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 14,
+      "t1": 15.98,
+      "beat": "logo",
+      "shot": "the brand mark small and white, centred in the dip of the wave, held to the end",
+      "camera": "drift: wave band only; mark lands from ~1.6x to 1.0x between 14.00 and 14.27 s",
+      "motion": "mark arrives large and settles on springs.snappy ~8 fr (overshoot not measurable); hold 1.7 s while the wave keeps moving",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 4,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "BrandProvider",
+    "PortalZoom",
+    "PortalWord",
+    "BlurIn",
+    "WordReveal",
+    "BrandMark",
+    "Wordmark",
+    "FocusCamera",
+    "ScreenSlot",
+    "Typewriter",
+    "Grain",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: display serif, cream light bg for the hook, near-black bg, green accent for the wave and the name's second half",
+    "content.hookWord": "one short word with a round letter that becomes the portal dot",
+    "content.problem": "line, ~4 words, the chore the user just finished or faces",
+    "content.intro": "2 words: verb + product name (name may be two-tone)",
+    "content.capability": "line, ~4 words, built word by word",
+    "content.pair": "2 words split around a document card",
+    "content.screenshot": "one dashboard image, 1512x982 or larger, with a readable top-left region",
+    "content.url": "site URL, typed",
+    "timing.bpm": "music tempo; rows ~1 s each in the first 4 s"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "One cut only (0.93 s, cuts.json): the letter dot of the hook word opens as a disc into the dark scene; the detector flags it as a hard cut in motion. Everything after is one continuous shot over a grainy green sine band (grain wave background not in the vocabulary, see recipe.md Proposed terms). Entrances, springs and stagger are below the 4 fps sheet resolution and are suggested defaults (±0.25 s). sfx planned by the glue rule, not measured: the reference is music only (118.9 BPM, -17.2 LUFS, no VO). cut_on_beat 0/1.",
+  "status": "studied"
+}

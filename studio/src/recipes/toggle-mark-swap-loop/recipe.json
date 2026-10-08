@@ -1,0 +1,141 @@
+{
+  "id": "toggle-mark-swap-loop",
+  "title": "Toggle-driven old/new mark swap loop",
+  "summary": "A two-label pill switch at the top flips and the centred mark swaps: the old mark swells, shrinks and fades, the new one fades in and grows into place. Then it flips back, so the 5 s loop shows a rebrand as one tap.",
+  "use_when": [
+    "Announcing a rebrand or a new logo next to the old one",
+    "A square social loop that compares two versions of one thing",
+    "A v2 reveal where the change itself is the message",
+    "A short silent autoplay post with no copy beyond two labels"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/before-after-logo/",
+    "author": "Jitter",
+    "ref_id": "jt-059"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "rebrand",
+    "logo-swap",
+    "toggle",
+    "old-vs-new",
+    "loop",
+    "square",
+    "minimal",
+    "flat-color",
+    "no-audio"
+  ],
+  "techniques": [
+    "match-cut"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#FE495A",
+      "#FDFDFC",
+      "#FCA4AD",
+      "#FBE6E7"
+    ],
+    "type_style": "no copy beyond the switch: two one-word labels, regular grotesk, sentence case, ~2.3 % H; marks centred at ~60-65 % of frame width",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "switch knob slides to the other label",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "incoming mark settles at full size",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.2,
+      "beat": "hook",
+      "shot": "old mark (script wordmark with outline) centred on flat brand colour; two-label switch top centre, knob on the left label",
+      "camera": "static frame; the mark itself scales during its exit",
+      "motion": "hold f0-27; exit: mark swells 1.00 -> 1.06 f28-31 (3 fr, easings.outQuint), then shrinks to ~0.84 and fades to 0 f32-36 (5 fr, easings.inExpo); knob starts sliding f30; whole switch dims to ~0.5 opacity during the swap",
+      "transition_out": "match-cut"
+    },
+    {
+      "t0": 1.2,
+      "t1": 2,
+      "beat": "logo",
+      "shot": "new mark (symbol + geometric wordmark lockup) arrives on the same centre; knob lands on the right label",
+      "camera": "static frame; mark grows in place",
+      "motion": "knob slide ends f41 (11 fr total, springs.ui, overshoot not measurable); new mark fades in f37-47 (10 fr, easings.outQuint) while its scale dips to ~0.94 at f44 then grows to 1.00 at f60 (16 fr, easings.outQuint); switch opacity back to 1 by f47",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2,
+      "t1": 3.7,
+      "beat": "logo",
+      "shot": "new mark holds, switch on the right label; then the same exit runs in reverse direction of the switch",
+      "camera": "static frame; the mark itself scales during its exit",
+      "motion": "hold f60-102 (43 fr); exit: swell 1.00 -> 1.06 f103-106 (3 fr), shrink to ~0.84 + fade f107-111 (5 fr, easings.inExpo); knob slides back to the left label starting f106",
+      "transition_out": "match-cut"
+    },
+    {
+      "t0": 3.7,
+      "t1": 5,
+      "beat": "logo",
+      "shot": "old mark returns on the same centre, knob back on the left label; ends identical to frame 0 for a seamless loop",
+      "camera": "static frame; mark grows in place",
+      "motion": "old mark fades in f112-122 (10 fr, easings.outQuint), scale ~0.93 at f120 grows to 1.00 at f136 (16 fr, easings.outQuint); knob lands ~f117 (11 fr, springs.ui); hold f136-149 (14 fr) = frame 0",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "BrandMark",
+    "Lockup",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg carries the flat field, fg the marks and knob, a light tint of bg for the switch track",
+    "content.oldMark": "image or vector of the previous logo (state A)",
+    "content.newMark": "image or vector of the new logo (state B); defaults to brand.logo",
+    "content.labels": "two one-word switch labels, old state then new state",
+    "aspect": "1:1 (default) | 4:5 | 9:16 | 16:9; switch stays top centre at ~9 % H, marks centred",
+    "timing.holdA": "frames state A holds before the first swap (default 28)",
+    "timing.holdB": "frames state B holds after it settles (default 43)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from a 30 fps pass over the source (bounding box of the white mark per frame, luma of the switch). Swap anatomy, identical both ways: swell +6 % over 3 fr, shrink to ~0.84 and fade over 5 fr, ~4-5 fr where neither mark reads, incoming fades over 10 fr with a slight scale dip (~0.94) then grows to 1.00 over 16 fr. Switch knob travel 11 fr, starting 2 fr after the exit swell. Old mark width 59 % of frame, new lockup 65 %. Silent reference: sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): toggle-swap, segmented-switch; match-cut is the nearest vocabulary id for the in-place swap.",
+  "status": "studied"
+}

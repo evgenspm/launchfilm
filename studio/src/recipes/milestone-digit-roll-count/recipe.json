@@ -1,0 +1,112 @@
+{
+  "id": "milestone-digit-roll-count",
+  "title": "Milestone number rolls up one step at a time",
+  "summary": "A big accent-coloured number on white ticks up one unit at a time, each digit rolling upward through a clip, then cascades into the round milestone while a short label rises in below. Built-in suspense, one clear figure.",
+  "use_when": [
+    "Announcing a round milestone (users, downloads, stars)",
+    "A short silent social post where one number is the whole message",
+    "A stat insert inside a longer launch film",
+    "A growth update that should feel earned, not shouted"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/counter-1-000-figma-plugin-installs/",
+    "author": "Jitter",
+    "ref_id": "jt-081"
+  },
+  "family": "data-stats",
+  "tags": [
+    "counter",
+    "milestone",
+    "number",
+    "stat",
+    "rolling-digits",
+    "light",
+    "minimal",
+    "type-only",
+    "announcement",
+    "growth",
+    "silent"
+  ],
+  "techniques": [
+    "counter",
+    "mask-rise"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 3,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#030303",
+      "#5B7CF0",
+      "#84A1F2",
+      "#B3C6F3",
+      "#E7EFFC"
+    ],
+    "type_style": "heavy rounded grotesk numerals, tabular, tight tracking, ~20 % of frame height, accent blue with a soft same-hue drop shadow; label bold grotesk, sentence case, black, ~6 % H, centred under the number",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each digit roll step",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "number lands on the milestone",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3,
+      "beat": "hook",
+      "shot": "one shot: a three-digit number centred on white steps up twice by one, then rolls to the round four-digit milestone; a 3-word label rises in below and holds",
+      "camera": "locked-off frame, no camera move; the number group re-centres as it widens from 3 to 4 digits plus separator at ~1.50 (±0.25 s)",
+      "motion": "counter steps every ~0.75 s (22 fr, ±0.25 s): changing digit rolls up through a clip mask, old digit exits up, new one enters from below, springs.ui ~15 fr (overshoot not measurable); step 1 in progress at f0, settled by f15; step 2 starts ~f23, settled by f38; final step ~f40: all digits roll together with a ~2 fr per-digit stagger (±0.25 s), leading digit and separator enter, group re-centres, settled ~f55-60; label words mask-rise from f50, stagger ~4 fr (±0.25 s), springs.ui, settled by f68; hold f68-f90",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "Counter",
+    "BlurIn"
+  ],
+  "params": {
+    "target": "the milestone number the count lands on (round number reads best)",
+    "steps": "how many single-unit steps before the milestone (reference: 3, one every ~22 fr)",
+    "label": "what the number counts, 2-4 words, sentence case"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from one 4 fps sheet (0.25 s resolution) plus keyframes at 0.50/1.50/2.50 s; no cuts, silent. Count advances by single units with holds (proposed term: step-roll), not a continuous ticker. motion.json reports ~8.7 %/s zoom in the first 2 s; the unchanged digits keep their size and position across cells, so it is read as the digit rolls and the final widening, not a camera move. Sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

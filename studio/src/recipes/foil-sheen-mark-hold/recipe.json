@@ -1,0 +1,115 @@
+{
+  "id": "foil-sheen-mark-hold",
+  "title": "Iridescent foil sheen on a still mark",
+  "summary": "A single brand mark holds dead centre on black while a pearly, iridescent foil sheen drifts across its surface. Nothing moves but the light, so the mark reads as a premium physical object.",
+  "use_when": [
+    "A premium end card or logo sting of about 3 s",
+    "A brand with a bold, solid mark that can carry a surface texture",
+    "Silent loops for social headers or product pages",
+    "Closing a longer film where the mark should feel tangible, not animated"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/holographic-logo/",
+    "author": "Jitter",
+    "ref_id": "jt-056"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo",
+    "mark",
+    "foil",
+    "iridescent",
+    "pearl",
+    "sheen",
+    "end-card",
+    "dark",
+    "minimal",
+    "premium",
+    "silent"
+  ],
+  "techniques": [
+    "halftone"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 2.97,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#F0F1F3",
+      "#C1C5D0",
+      "#9EA2B5",
+      "#777882",
+      "#9C9A98"
+    ],
+    "type_style": "no type; one solid mark about 60 % of frame width, 40 % of frame height, centred slightly above middle",
+    "treatment": [
+      "halftone"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "foil sheen band crosses the mark",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.97,
+      "beat": "hook",
+      "shot": "one solid brand mark centred on pure black, its fill a pearly silver foil with lilac, mint and blue tints",
+      "camera": "static: mark position and width identical in all 12 cells (±1 px on the sheet); motion.json zoom 0.8-1.9 %/s is the sheen flow, not geometry",
+      "motion": "only the fill moves: soft highlight bands drift along the mark, easings.linear over the whole 89 fr (±0.25 s); fill brightens to near white by 2.50-2.77 and a fine dot emboss shows through",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandMark",
+    "MarkSource",
+    "useMarkSource",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json with a solid single-colour mark (vector or alpha image); bg forced to near black",
+    "content.mark": "the mark to foil; a wordmark works if strokes are thick",
+    "foil.tints": "3-4 pastel tints mixed into the silver base (default lilac, mint, ice blue)",
+    "foil.speed": "sheen drift in mark widths per second (default ~0.3)",
+    "foil.dots": "strength of the fine dot emboss, 0 = off",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; mark scales to 60 % of the shorter fit",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One shot, 0 cuts, no audio in the reference; sfx planned by the glue rule, not measured. The only motion is the iridescent fill: a silver base with drifting lilac/mint/blue highlight bands; the mark outline has a thin darker grey rim. Brightness rises toward the end (cells 2.50, 2.77 near white) and a fine dot emboss becomes visible (tagged halftone). Proposed term (not in vocabulary): foil-sheen, an animated iridescent gradient clipped to the mark. Missing component FoilMark. Not loopable: last cell is brighter than the first.",
+  "status": "studied"
+}

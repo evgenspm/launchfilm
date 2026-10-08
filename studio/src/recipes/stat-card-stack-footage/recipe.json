@@ -1,0 +1,149 @@
+{
+  "id": "stat-card-stack-footage",
+  "title": "Stat cards stacking over moody footage",
+  "summary": "Four rounded stat cards rise one over another on dim monochrome footage, each a different fill with a mono label and one big figure, every 0.8 s; then a hard cut to a two-line word-by-word close on black.",
+  "use_when": [
+    "A fitness, health or tracking product with three to five headline figures",
+    "Short silent social promo (4:5 feed) that has to show results in under 4 s",
+    "A metric recap where each figure gets its own colour",
+    "Footage of the activity exists but no UI recording does"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-track-app-showcase/",
+    "author": "Jitter",
+    "ref_id": "jt-082"
+  },
+  "family": "data-stats",
+  "tags": [
+    "stats",
+    "metrics",
+    "stat-card",
+    "card-stack",
+    "footage",
+    "monochrome",
+    "fitness",
+    "social",
+    "short",
+    "4x5",
+    "silent",
+    "word-reveal"
+  ],
+  "techniques": [
+    "ui-rebuild",
+    "word-reveal",
+    "hard-cut",
+    "grain"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#F5F5F5",
+      "#ED2D00",
+      "#FFFFFF",
+      "#656362",
+      "#111111"
+    ],
+    "type_style": "card labels: small uppercase mono, ~1.3 % H; figures: heavy grotesk, tight tracking, ~4 % H with a smaller bold unit line under it; close: bold grotesk, sentence case, tight, ~5 % H, two centred lines with periods",
+    "treatment": [
+      "grain"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "a stat card lands on the stack",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "the figure appears on the landed card",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "each word of the close appears",
+        "sound": "type-click",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.8,
+      "beat": "hook",
+      "shot": "black open (~0.2 s), then dim grey close-up footage; accent-red stat card rises in, figure lands; second black card stacks over it",
+      "camera": "footage drift: scale 1.00->0.98 (-1.3 %/s), cards fixed in the centre column",
+      "motion": "card 1 rises ~6 % H into place, springs.ui ~8 fr (±0.25 s, overshoot not measurable); figure + unit appear 6-8 fr after the card (±0.25 s); at 1.00 card 2 rises over card 1 from ~5 % H lower, springs.ui ~8 fr (±0.25 s); card 1 hidden behind by 1.27; pager dot 2 lights",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1.8,
+      "t1": 3.4,
+      "beat": "proof",
+      "shot": "same footage; white stat card with a small icon by the figure stacks over the black one, then a mid-grey card over the white",
+      "camera": "footage drift continues, scale ~-0.2 %/s",
+      "motion": "card 3 rises over card 2 from ~8 % H lower, springs.ui ~8 fr (±0.25 s), figure already set on entry; card 4 enters at 2.77 the same way, unit line appears at 3.00; 0.8 s per card (24 fr); pager dots 3 then 4 light",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.4,
+      "t1": 5,
+      "beat": "cta",
+      "shot": "flat black; two-line close, 7 words: line 1 claims the activity, line 2 tells the viewer to get the product",
+      "camera": "static",
+      "motion": "word-reveal, words appear one by one without blur at ~4 fr per word (±0.25 s), wrap to line 2 at 3.77; full by 4.00; hold 30 fr to the end",
+      "transition_out": "end",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 4,
+    "url": false
+  },
+  "components": [
+    "FootageClip",
+    "KenBurns",
+    "Grain",
+    "WordReveal",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: display font for figures and close, mono for card labels, accent for card 1",
+    "content.footage": "one moody close-up clip of the activity, graded to monochrome and darkened",
+    "content.stats": "4 items {label, value, unit?, fill, icon?}; label uppercase mono, value 2-5 characters",
+    "content.close": "2 short lines, ≤ 4 words each, line 2 is the call to action",
+    "timing.cardPeriod": "frames between card entrances (default 24 = 0.8 s)",
+    "aspect": "4:5 default; 9:16 and 1:1 keep the card column centred"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s). Card cadence 0.27 / 1.00 / 1.80 / 2.77 s, ~0.8 s each; detected cuts at 1.80 and 3.40 are a card entrance and the cut to black. Card fills in order: accent red, black, white, mid-grey; each new card covers the previous with a slightly lower start so the old card's top edge peeks for a few frames. Vertical 4-dot pager right of the card tracks the active card. Whether figures count up is not measurable. Proposed terms (not in vocabulary): stat-card-stack, pager-dots. sfx planned by the glue rule, not measured; the reference is silent. difficulty medium: one card component in 4 data states counted as one rebuilt screen.",
+  "status": "studied"
+}

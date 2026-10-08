@@ -1,0 +1,155 @@
+{
+  "id": "hover-card-stack-expand",
+  "title": "Hover card stack expand loop",
+  "summary": "A single content card waits on a soft grey gradient; the pointer reaches it, a count badge appears and a second card slides out from behind, holds, then tucks back. One component, one interaction, a seamless loop.",
+  "use_when": [
+    "Showing one interactive component state (hover, expand) for a design system or UI kit",
+    "A short looping clip for a landing page section or social post about a component",
+    "Explaining a stacked notification or recent-items widget in under 6 s",
+    "Silent autoplay where a single gesture has to read without copy"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/interactive-components/",
+    "author": "Rico®",
+    "ref_id": "jt-017"
+  },
+  "family": "product-ui",
+  "tags": [
+    "component",
+    "hover",
+    "card-stack",
+    "loop",
+    "ui-kit",
+    "design-system",
+    "minimal",
+    "light",
+    "silent",
+    "badge"
+  ],
+  "techniques": [
+    "ui-rebuild",
+    "cursor-path",
+    "notification-stack"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 6,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#DFE3E4",
+      "#EEF0EF",
+      "#B3B7B6",
+      "#7A7E7E",
+      "#6C6F6F"
+    ],
+    "type_style": "regular grotesk, sentence case, normal tracking; card title ~2.2 % H, grey date line above ~1.6 % H; small mono footer labels ~1.4 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "second card slides out from behind the first",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "count badge appears on the card corner",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.5,
+      "beat": "hook",
+      "shot": "one content card centred (square thumbnail, grey date line, one-line title); pointer rests just below its right edge",
+      "camera": "static",
+      "motion": "idle; pointer starts its move up toward the card edge (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 0.5,
+      "t1": 1,
+      "beat": "feature",
+      "shot": "count badge in accent blue on the card's top-right corner; a second card emerges from behind the first and drops below it; small text link appears under the pair",
+      "camera": "static",
+      "motion": "second card slides down from under the first, scale ~0.85 to 1 and opacity 0.4 to 1, springs.layout ~12 fr (overshoot not measurable, ±0.25 s); group recentres up ~6 % H on springs.ui; badge in within 1 cell (±0.25 s); pointer travels ~3 % H up onto the lower card, springs.ui",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1,
+      "t1": 3,
+      "beat": "feature",
+      "shot": "expanded state held: two cards stacked with a gap, badge on the top card, pointer resting on the lower card's right edge, link below",
+      "camera": "static",
+      "motion": "hold 60 fr, no visible motion at 4 fps",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 3,
+      "t1": 3.5,
+      "beat": "feature",
+      "shot": "collapse: badge disappears, lower card shrinks and slides back under the top card, link fades; pointer drops below the card",
+      "camera": "static",
+      "motion": "reverse of the expand: lower card scale 1 to ~0.85, opacity to 0, tucks behind, easings.outQuint ~12 fr (±0.25 s); group recentres down ~6 % H; badge out within 1 cell (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 3.5,
+      "t1": 6,
+      "beat": "feature",
+      "shot": "back to the single-card idle state, pointer below its right edge, identical to the first frame",
+      "camera": "static",
+      "motion": "small settle of the card ~1 % H by 3.77 s (springs.ui, ±0.25 s); hold 67 fr to the loop point",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 2,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "NotifCard",
+    "Cursor",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg and muted for the gradient, fg for titles, accent for the count badge",
+    "content.items": "2 cards: thumbnail image, date or meta line, title of 2-4 words",
+    "content.count": "number in the badge (1-2 digits)",
+    "content.linkLabel": "small link under the expanded stack, 1-2 words",
+    "timing.expandAt": "frame the expand starts (default 15)",
+    "timing.holdFrames": "frames the expanded state holds (default 60)",
+    "aspect": "other (4:3 reference) | 16:9 | 1:1 | 4:5 | 9:16",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets only (±0.25 s); no 30 fps strip. motion.json reports a constant -160 px/s pan at coherence ~0.85, but every sheet cell shows the footer labels and the card at the same x; treated as a gradient-matching artifact, camera static. Expand 0.50-1.00 s, hold 1.00-3.00 s, collapse 3.00-3.50 s, idle 3.50-6.00 s; first and last cells match, so it loops. The accent blue badge is not in the palettegen output (too small); sample it from brand.accent. No cut, no click squash visible: the hover alone triggers the state. Proposed term hover-stack-expand (not in vocabulary). sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

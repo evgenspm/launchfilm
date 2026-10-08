@@ -1,0 +1,192 @@
+{
+  "id": "diagonal-card-staircase-loop",
+  "title": "Diagonal card staircase loop",
+  "summary": "One hero image card shrinks into a pile of five, the pile fans out into a corner-to-corner diagonal and the view steps one card per second, then the cards slide back into one pile and the hero grows to fill the frame again: a seamless loop.",
+  "use_when": [
+    "Showing four or five product shots, icons or renders as one calm sequence",
+    "A square feed loop for a minimal dev tool or SaaS brand",
+    "A gallery of feature visuals where each needs about one second of focus",
+    "Silent autoplay where no copy is needed beyond a small label block"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/linear-cards/",
+    "author": "Anagram",
+    "ref_id": "jt-029"
+  },
+  "family": "product-ui",
+  "tags": [
+    "cards",
+    "staircase",
+    "diagonal",
+    "loop",
+    "gallery",
+    "monochrome",
+    "dark",
+    "square",
+    "minimal",
+    "image-cards"
+  ],
+  "techniques": [
+    "card-grid",
+    "pull-out",
+    "dolly",
+    "match-cut"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 8,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#C4C4C4",
+      "#222222",
+      "#949594",
+      "#7E7E7E",
+      "#ABABAB"
+    ],
+    "type_style": "small uppercase grotesk label block, regular weight, normal tracking, about 1.2 % H per line, white, fixed at the left edge",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "the pile fans out behind the hero card",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "each staircase step settles on the next card",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "the hero card lands full size at the loop seam",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.53,
+      "beat": "hook",
+      "shot": "one light grey square image card, 0.77 W, centred on black; small 5-line label block at the left edge",
+      "camera": "static",
+      "motion": "hold, no movement in cells 0.00-0.50",
+      "transition_out": "match-cut"
+    },
+    {
+      "t0": 0.53,
+      "t1": 1.77,
+      "beat": "reveal",
+      "shot": "same card shrunk on top of a pile of five square cards fanned down-right in a diagonal staircase",
+      "camera": "drift: pile moves up-left, about 0.05 W over 1.0 s",
+      "motion": "hero 0.65 W -> 0.42 W by 0.77, easings.outExpo 8 fr (±0.25 s); pile offset grows 0.07 W -> 0.09 W per card, easings.linear",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1.77,
+      "t1": 2.77,
+      "beat": "feature",
+      "shot": "staircase spread corner to corner at 0.42 W per card: card 2 (dark UI panel) in focus, card 1 exiting top-left, card 3 bottom-right",
+      "camera": "dolly down-right one card (0.42 W, 0.42 H) then hold; slow push 1.00 -> 1.05",
+      "motion": "spread from pile to corner-to-corner offset in <= 8 fr (±0.25 s), easings.inOutCubic; hold about 22 fr",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.77,
+      "t1": 3.77,
+      "beat": "feature",
+      "shot": "card 3 (phone-like UI with tab bar) in focus; card 2 top-left, card 4 bottom-right",
+      "camera": "dolly down-right one card step, then hold",
+      "motion": "step move <= 8 fr (±0.25 s), easings.inOutCubic; hold about 22 fr",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3.77,
+      "t1": 4.77,
+      "beat": "feature",
+      "shot": "card 4 (dark capsule object on a plinth) in focus; earlier cards now overlap in the top-left corner",
+      "camera": "dolly down-right one card step, then hold",
+      "motion": "step move <= 8 fr (±0.25 s), easings.inOutCubic; passed cards stack at 0.07 W offsets in the corner",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4.77,
+      "t1": 5.77,
+      "beat": "feature",
+      "shot": "card 5 (dark ring object on mid grey) in focus, last card, nothing to its lower right",
+      "camera": "dolly down-right one card step, then hold",
+      "motion": "step move <= 8 fr (±0.25 s), easings.inOutCubic; hold about 22 fr",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 5.77,
+      "t1": 6.47,
+      "beat": "feature",
+      "shot": "cards slide back up-left onto each other; by 6.27 one compact pile, card 1 on top, 0.34 W, centred",
+      "camera": "pull back: content scale -3 %/s, framing recentres on the pile",
+      "motion": "collapse in reverse order, 1 s total, easings.inOutCubic (±0.25 s); pile offset 0.09 W -> 0.01 W",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 6.47,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "top card grows from 0.35 W back to the 0.77 W hero, identical to frame 0, then holds",
+      "camera": "static after the grow",
+      "motion": "scale 0.35 W -> 0.71 W in 7 fr (6.47-6.70), settles 0.77 W by 7.00, springs.cameraIn (overshoot not measurable); hold 30 fr",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 5,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "Surface",
+    "Dolly",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the frame, surface for card fills, mono or text font for the label block",
+    "content.cards": "4-6 square images (renders, icons, UI crops), shown in order; the first is the hero and the loop seam",
+    "content.label": "up to 4 short label lines plus the brand mark, fixed at the left edge",
+    "aspect": "1:1 by default; 4:5 and 9:16 keep the 45 degree diagonal and scale card size to width",
+    "timing.step": "frames per card in focus (default 30)",
+    "timing.stepMove": "frames of each step move (default 8)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s). Hero 0.77 W, stack and staircase cards 0.42 W, final pile 0.34 W. Pile offset 0.07-0.09 W; staircase offset = one card width (corners touch). One step per 1.0 s. Last frame equals frame 0: loop. No audio in the reference: sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): staircase-dolly, stack-collapse.",
+  "status": "studied"
+}

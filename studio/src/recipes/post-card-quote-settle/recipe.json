@@ -1,0 +1,141 @@
+{
+  "id": "post-card-quote-settle",
+  "title": "Social post card quote settle",
+  "summary": "One white social-post card on a blue diagonal gradient: avatar and footer land first, name and handle rise, the two-line quote sweeps in word by word within 1 s, then the card holds still and fades out. Social proof in one calm beat.",
+  "use_when": [
+    "Sharing one user quote or public post as social proof",
+    "A square feed clip that must read as a real platform post",
+    "A short insert between feature shots in a longer launch film",
+    "Silent autoplay where one sentence carries the message"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/animated-tweet/",
+    "author": "Jitter",
+    "ref_id": "jt-087"
+  },
+  "family": "social-promo",
+  "tags": [
+    "social-proof",
+    "quote",
+    "post-card",
+    "testimonial",
+    "square",
+    "single-card",
+    "gradient-bg",
+    "calm",
+    "silent",
+    "loop"
+  ],
+  "techniques": [
+    "word-reveal",
+    "mask-rise"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#2B9FDE",
+      "#1C3649",
+      "#FFFFFF",
+      "#1C7FBB",
+      "#39A9E8",
+      "#8ECBF1"
+    ],
+    "type_style": "neutral grotesk, sentence case, normal tracking; quote regular ~4 % H, name bold ~2.7 % H, handle and footer regular grey ~2.4 % H, footer source in accent blue",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "card lands",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "card fades out",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "empty blue gradient, then a white rounded post card centred: photo avatar, name with verified badge, handle, 2-line quote, grey meta footer",
+      "camera": "static",
+      "motion": "card appears between f0 and f8 at its final place and size (entrance type not measurable, ±0.25 s); avatar and footer already set at f8; handle and name rise from a clip mask f8-f15 (springs.ui, overshoot not measurable); quote word-reveal left to right f15-f30, easings.outQuint per word (±0.25 s); all settled by f30",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 1,
+      "t1": 4.73,
+      "beat": "social-proof",
+      "shot": "the full post card holds: quote of 2 lines, about 12 words plus one emoji, names the user's reaction",
+      "camera": "static",
+      "motion": "full hold 112 fr, nothing moves (motion diff 0.0 for 1-4 s)",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 4.73,
+      "t1": 5,
+      "beat": "social-proof",
+      "shot": "card fades to transparent and shrinks slightly, leaving the empty gradient (same as frame 0)",
+      "camera": "static (card scales, camera does not)",
+      "motion": "card opacity 1 to 0 and scale 1.00 to ~0.94 over 5 fr (f142-f147), easings.inExpo; empty gradient holds f147-f150",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "WordReveal",
+    "BlurIn",
+    "Testimonial",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg gradient from accent, card surface, fg, muted grey, accent for the badge and footer link",
+    "content.quote": "the post text, 1-3 lines, about 12-20 words; an emoji at the end is fine",
+    "content.name": "display name of the person quoted",
+    "content.handle": "their @handle",
+    "content.avatar": "square photo of the person (with consent); falls back to initials",
+    "content.verified": "show the badge after the name (default true)",
+    "content.meta": "footer: time, date and the posting client",
+    "aspect": "1:1 (reference) | 4:5 | 9:16 | 16:9; card width ~82 % of frame width at 1:1",
+    "timing.hold": "frames the settled card holds (default 112 at 30 fps)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Studied from 4 fps sheets only (no 30 fps strips): the entrance (f0-f30) and the exit (f142-f147) are at ±0.25 s resolution. Card geometry from kf-001.50: x 104-1083 of 1188 (82 % W), y 368-820 (38 % H), corner radius ~2 % W, soft blue-tinted drop shadow below. Background is a diagonal gradient, lighter top-left (#39A9E8) to darker bottom-right (#1C7FBB). The last frame equals the first (empty gradient), so the clip loops. Text colour near-black was not captured by palettegen (too few pixels). sfx planned by the glue rule, not measured (reference is silent). Proposed term: post-card (platform-accurate social post rebuilt as UI), not in vocabulary. The hint card-grid does not apply: a single card, no cascade.",
+  "status": "studied"
+}

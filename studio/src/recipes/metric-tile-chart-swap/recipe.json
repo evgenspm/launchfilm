@@ -1,0 +1,145 @@
+{
+  "id": "metric-tile-chart-swap",
+  "title": "Metric card with sliding highlight and chart swap",
+  "summary": "One light dashboard card settles in while its line chart draws on and two figures roll up; a lime highlight then slides to the second tile and the chart wipes over to that metric's series before the card folds away.",
+  "use_when": [
+    "Showing one growth metric and a second related figure in a 5 s loop",
+    "Investor or launch slide where a single chart proves a claim",
+    "Silent feed or website hero loop for a data or analytics product",
+    "Comparing two series that share one axis without cutting"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/line-chart-user-acquisition/",
+    "author": "Jitter",
+    "ref_id": "jt-077"
+  },
+  "family": "data-stats",
+  "tags": [
+    "line-chart",
+    "dashboard-card",
+    "metric",
+    "growth",
+    "highlight-slide",
+    "counter",
+    "light",
+    "loop",
+    "silent",
+    "investor"
+  ],
+  "techniques": [
+    "chart-draw",
+    "counter",
+    "ui-rebuild"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#F4F6F3",
+      "#C6E584",
+      "#EDF0E9",
+      "#BCDE71",
+      "#EAF2DF"
+    ],
+    "type_style": "geometric grotesk, sentence case; two-line card title (dark line over grey line) ~3 % H; tile figures regular weight ~4.5 % H, tabular; tiny tracked uppercase labels and link",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "figures roll to their final value",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "highlight lands on the second tile",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "chart wipes to the second series",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.25,
+      "beat": "hook",
+      "shot": "white frame; a pale card with a two-line title, two metric tiles (first lime), an area line chart and a small link row, then holds",
+      "camera": "locked frame; card scale 1.17 -> 1.00 f6-f24, centred",
+      "motion": "4 empty frames; card fades in f4-f12; lime fill grows from a thin vertical bar to the full first tile f6-f24, springs.layout (overshoot not measurable); line draws left to right with area fill following, easings.outQuint ~21 fr (f6-f27); figures roll up digit by digit, last digit lands f27; settled f27, hold to f67",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.25,
+      "t1": 4,
+      "beat": "proof",
+      "shot": "same card: the lime highlight moves from the first tile to the second and the chart swaps to a flatter second series, then holds",
+      "camera": "static",
+      "motion": "highlight leaves tile one and slides right as a stretched bar into tile two f66-f78, springs.ui (overshoot not measurable); old series erased and new series drawn left to right in one sweep f66-f90, easings.linear (±0.25 s); hold f90-f120",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 4,
+      "t1": 5,
+      "beat": "proof",
+      "shot": "card folds away: figures roll out, the first tile collapses, the lime tile narrows to a sliver, then white frame",
+      "camera": "locked frame; card scale 1.00 -> ~0.85 and fades f120-f135",
+      "motion": "figures roll out from the leading digit f120-f126; card fades with easings.inExpo ~15 fr (f120-f135); chart erased left to right; lime sliver last out f135; white hold f135-f150 (matches frame 0, loop point)",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 2,
+    "url": false
+  },
+  "components": [
+    "LineChart",
+    "Counter",
+    "Surface",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg white, surface for the card, accent for the highlight tile, fg and muted for the title lines",
+    "content.title": "two-line card title: subject line (fg) and qualifier line (muted), 1-2 words each",
+    "content.metrics": "exactly 2 tiles: {label, value, delta} each, value up to 5 digits, delta a short percent chip",
+    "content.series": "2 number arrays, one per tile, same length (~20 points) on a shared 0-max axis",
+    "content.xLabels": "4 axis labels under the chart",
+    "content.link": "small uppercase link line at the card foot, 2-3 words with an arrow",
+    "timing.switchAt": "frame of the highlight move and chart swap (default 66 at 30 fps)",
+    "timing.exitAt": "frame the card folds away (default 120)",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips at t = 0, 2, 4 s: entrance f4-f27, highlight switch f66-f78, chart sweep f66-f90, exit f120-f135, white frames f0-f3 and f135-f149 so the loop closes on white. The card never cuts; one locked frame. Highlight-slide between tiles and series-swap wipe are not in the vocabulary (see recipe.md Proposed terms). sfx planned by the glue rule, not measured (reference is silent). Text colour not in palette: dark text is too small for palettegen.",
+  "status": "studied"
+}

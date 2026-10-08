@@ -1,0 +1,205 @@
+{
+  "id": "phone-tumble-screen-split-claims",
+  "title": "Dark phone tumble with split claims",
+  "summary": "On black, a dark phone tumbles from its back to its screen side every 4 s and settles as a diagonal screen close-up; each claim splits into two halves flanking it. One continuous shot, seven turns, quiet premium rhythm.",
+  "use_when": [
+    "A mobile app promo with no UI ready to show yet",
+    "A dark, premium hardware-feel teaser with four to six short claims",
+    "Silent autoplay where each claim gets a full 4 s hold",
+    "A trailer that should feel like one camera move, not a montage"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/dixKgHfR",
+    "author": "Chile Guy",
+    "ref_id": "rl-112"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "dark",
+    "device-turn",
+    "split-caption",
+    "one-shot",
+    "premium",
+    "teaser",
+    "app-promo",
+    "claims"
+  ],
+  "techniques": [
+    "device-3d",
+    "device-phone",
+    "blur-in",
+    "push-in"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 30.37,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#050505",
+      "#FFFFFF",
+      "#747576",
+      "#2C2C2C",
+      "#ACACAC",
+      "#635F59"
+    ],
+    "type_style": "bold grotesk, sentence case, white, ~7 % H per line, two lines with the second line indented; small regular sub-lines ~2 % H; first title word white, second word muted grey",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone tumbles from back to screen side (7 times)",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "claim halves resolve from blur beside the phone",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "closing heading and instruction line land",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "black frame, then a two-word title right of centre: first word white, second muted grey",
+      "camera": "drift: title slides ~1 % W left over 1.00-1.50 (±0.25 s)",
+      "motion": "0.00-0.77 empty (23 fr); first word blur-in at 0.77, second at 1.00, per word, left to right, easings.outExpo ~8 fr (±0.25 s); title drifts slightly left ~1 % W by 1.50",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.5,
+      "t1": 5.5,
+      "beat": "reveal",
+      "shot": "dark phone enters edge-on at the left, shows its camera back, turns to its screen and becomes a diagonal screen close-up",
+      "camera": "push-in on the screen close-up ~1.00->1.02 over 2.50-5.50 (motion.json ~0.3-1 %/s)",
+      "motion": "phone edge-on at 1.50, back view tilted ~-25 deg at 1.77-2.00, edge-on again 2.27, screen side fills frame on a ~30 deg diagonal by 2.50: tumble ~30 fr, springs.heavy (overshoot not measurable); title fades out 2.27-2.50 (±0.25 s); screen hold 2.50-5.27 drifting",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5.5,
+      "t1": 9.5,
+      "beat": "feature",
+      "shot": "phone back view at centre, claim one split in two halves left and right of it, then the screen close-up behind the text",
+      "camera": "push-in ~1.00->1.03 over 6.50-9.27 (motion.json 0.6-1.7 %/s at 6-8 s)",
+      "motion": "phone back enters at 5.50 small, grows to frame height by 5.77, edge-on 6.00, screen diagonal 6.27-6.50 (tumble ~30 fr, springs.heavy, overshoot not measurable); both halves blur-in at 5.77 per letter left to right, settled by 6.27 (~15 fr, ±0.25 s); hold to 9.27; text and screen out by 9.50",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 9.5,
+      "t1": 13.5,
+      "beat": "feature",
+      "shot": "phone enters edge-on from the right, large back view with a small one-line label on its left, then screen close-up alone",
+      "camera": "fast scale jump during the turn at 10-11 s (motion.json zoom spike), then push-in ~1.00->1.02 over 10.50-13.27",
+      "motion": "edge-on at right 9.50, back view cropped large at 9.77, edge-on at left 10.00, screen diagonal at 10.27 (tumble ~23 fr, springs.heavy, ±0.25 s); small label blur-in at 9.77, gone by 10.27 (one beat of ~15 fr, ±0.25 s); screen hold 10.27-13.27",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 13.5,
+      "t1": 17.27,
+      "beat": "feature",
+      "shot": "small phone back view, claim two split left and right, then the screen tilted ~20 deg behind the text",
+      "camera": "push-in ~1.00->1.03 over 14.50-17.00 (motion.json 0.8-1.7 %/s at 14-16 s)",
+      "motion": "small back view at 13.50, grows and turns 13.77-14.27 (tumble ~23 fr, springs.heavy, ±0.25 s), screen settles at ~20 deg tilt by 14.50; halves blur-in at 13.77 per letter, settled by 14.27; hold to 17.00",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 17.27,
+      "t1": 21.5,
+      "beat": "feature",
+      "shot": "phone side at right edge, cropped camera back, then left-aligned two-line heading with a small sub-line; screen sits right with a soft light streak",
+      "camera": "push-in ~1.00->1.02 over 18.27-21.27; slight rotate at 18 s (motion.json -0.5 %/s, camera-rotate)",
+      "motion": "edge-on at right 17.27, cropped back 17.50-17.77, screen diagonal on the right by 18.27 (tumble ~30 fr, springs.heavy, ±0.25 s); heading blur-in from 17.50 per letter, settled 18.00; sub-line blur-in 18.00, settled 18.27 (~8 fr after heading, ±0.25 s); hold to 21.27",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 21.5,
+      "t1": 25.5,
+      "beat": "feature",
+      "shot": "large warm-lit phone back at centre, claim three split left and right, then the screen diagonal between the halves",
+      "camera": "push-in ~1.00->1.03 over 22.27-25.27 (motion.json 0.6-1.7 %/s at 22-24 s)",
+      "motion": "back view at 21.50 (warm), cooler at 21.77, edge-on 22.00, screen diagonal 22.27 (tumble ~23 fr, springs.heavy, ±0.25 s); halves blur-in 21.77, settled 22.27; hold to 25.27",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 25.5,
+      "t1": 27.77,
+      "beat": "feature",
+      "shot": "no text: small phone back rises from the lower right, turns to its screen and stands near-upright right of centre",
+      "camera": "slight pull back while the phone settles (motion.json -2.8 %/s at 27 s)",
+      "motion": "phone rises bottom right 25.50-25.77, edge-on 26.27, screen side ~10 deg tilt at 26.50, settles by 27.00 (springs.heavy ~45 fr, ±0.25 s); empty frame of type 25.50-27.77",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 27.77,
+      "t1": 30.37,
+      "beat": "cta",
+      "shot": "left-aligned two-line closing heading with a small download-instruction line under it; phone screen stays right",
+      "camera": "static (phone and type hold from 28.50, no scale change in cells)",
+      "motion": "heading blur-in per letter left to right from 27.77, settled 28.27 (~15 fr, ±0.25 s); instruction line blur-in 28.27, settled 28.50; hold 55 fr to the end",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 9,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BlurIn",
+    "PhoneFrame",
+    "Camera",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any dark brand.json: display font, fg, muted (second title word), bg",
+    "content.title": "two-word opening title, second word muted",
+    "content.claims": "3 claims, each split into a left half and a right half of 2 words each",
+    "content.label": "one short single-line label for the quick turn (row 4)",
+    "content.feature": "two-line heading plus a 4-word sub-line (row 6)",
+    "content.close": "two-line closing heading plus a 3-word download instruction",
+    "phone.color": "body tint of the 3D phone (reference: dark grey, warm under light)",
+    "timing.period": "frames between phone turns (default 120 = 4 s at 30 fps)"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "One shot, zero cuts (cuts.json empty; near misses at 17.23 and 21.30 are phone turns). Phone turns start at 1.50, 5.50, 9.50, 13.50, 17.27, 21.50, 25.50: a 4.0 s period (120 fr@30). Each turn: edge-on -> camera back -> edge-on -> screen side in ~23-30 fr, then a ~3 s hold with a slow push-in of ~1-1.7 %/s (motion.json). Text resolves letter by letter left to right with blur, settles in ~15 fr; this and all spring choices are defaults, not measurable at 4 fps. The screen never shows UI: it is a dark fine grid texture. Claims split in two halves flank the phone, second line indented. Silent reference: sfx planned by the glue rule, not measured. Proposed terms (not used as ids): device-tumble, split-caption. Missing component: a 3D phone with a tumble path (PhoneFrame is a 2D fallback).",
+  "status": "studied"
+}

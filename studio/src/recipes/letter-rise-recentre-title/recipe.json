@@ -1,0 +1,109 @@
+{
+  "id": "letter-rise-recentre-title",
+  "title": "Letter rise with recentring slide",
+  "summary": "One bold oblique word builds letter by letter: each letter rises and fades in on a 1.5 fr stagger while the whole word slides left into centre, holds about one second, then smears out in 4 frames.",
+  "use_when": [
+    "A section header or chapter title inside a longer film",
+    "Revealing a product name or one-word claim on a flat background",
+    "A short looping title sting for social or a site hero",
+    "Type-only openers where one word must feel deliberate"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/sliding-text-reveal/",
+    "author": "Jitter",
+    "ref_id": "jt-050"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "title",
+    "section-header",
+    "per-letter",
+    "rise",
+    "slide",
+    "one-word",
+    "type-only",
+    "light",
+    "loop",
+    "minimal"
+  ],
+  "techniques": [
+    "blur-in",
+    "blur-dissolve"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 2.8,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#D7E0F1",
+      "#8D95AA",
+      "#B0B8CC"
+    ],
+    "type_style": "heavy geometric sans, oblique, all caps, cap height ~14 % H, word ~65 % W, muted slate on pale blue",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "word settles in centre",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.8,
+      "beat": "hook",
+      "shot": "one title word, 6 letters, built letter by letter on a flat pale background, holds centred, smears out, empty tail",
+      "camera": "static (word moves, frame does not; pan 0 px/s after f23)",
+      "motion": "f0 empty; letters rise ~0.3 em + opacity 0->1, stagger 1.5 fr (f1..f9), each easings.outExpo ~12 fr; whole word slides left ~0.32 W (~620 px @1920) into centre, easings.outQuint 22 fr, settled f23; hold f23-f54; exit f55-f58: fade + scale up ~5 % + leftward smear, easings.inExpo 4 fr; empty f59-f84",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BlurIn",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: heavy display font (oblique if available), muted fg on a pale bg",
+    "content.word": "one title word or short name, 4-10 letters, one line",
+    "timing.stagger": "frames between letter starts (default 1.5 at 30 fps)",
+    "timing.slide": "frames for the recentring slide (default 22)",
+    "timing.hold": "frames the word holds centred (default 32)",
+    "timing.exit": "frames of the smear exit (default 4)",
+    "loop": "keep the empty head and tail so the clip loops (default true)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips: entrance f1-f23, hold f23-f54, exit 4 fr f55-f58, 26 empty frames at the end; first and last frames are empty, so it loops. Letters rise and fade without a visible clip edge (no hard mask line). Letter spacing tightens ~4 % while settling (0.50 s vs 1.50 s keyframes). Proposed terms (not in vocabulary): letter-rise-fade, recentre-slide, smear-exit. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

@@ -1,0 +1,140 @@
+{
+  "id": "replay-prefix-statement-url-close",
+  "title": "Replayed-prefix statement swap to URL close",
+  "summary": "One centred line on dark navy, then the same line replays with only its last word changed, then an eyebrow and a big URL, then an availability close. A drifting blue light arc keeps the empty frame alive.",
+  "use_when": [
+    "A site or portal launch where the URL itself is the hero line",
+    "Saying the product fits two audiences with one sentence and a changed last word",
+    "Silent autoplay feeds where type carries the whole message",
+    "A calm, restrained voice on a dark brand"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/1CyfFRAc",
+    "author": "Rahul Shrivastava",
+    "ref_id": "rl-111"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "statement",
+    "word-swap",
+    "url",
+    "dark",
+    "type-only",
+    "no-ui",
+    "light-arc",
+    "announcement",
+    "minimal"
+  ],
+  "techniques": [
+    "statement-sequence",
+    "blur-in",
+    "word-swap",
+    "push-in",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 11.4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#0C161F",
+      "#E6E8EF",
+      "#213D74",
+      "#142953",
+      "#7387AC",
+      "#42516D"
+    ],
+    "type_style": "semibold-bold grotesk, sentence case, tight tracking (~-0.02 em), hero line ~11.8 % H (human 30 fps study), period on statements; eyebrow and sub-line ~1.5 % H, same face, muted",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": []
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 2.5,
+      "beat": "hook",
+      "shot": "statement, 3 words (prefix of 2 + a 1-word audience), centred; thin blue light arc curving in from the left edge",
+      "camera": "push-in creep on the statement ~1-2 %/s (motion.json zoom 2.0, 1.2 %/s; not measurable on sheets); arc drifts and rotates slowly",
+      "motion": "per-word blur-in from f1, stagger 2 fr, easings.outExpo ~10-12 fr, settles ~f12, ~5-10 px downward settle (human 30 fps study); hold to f68; exit f69-74: 5-6 fr fade + blur to ~4 px + slight drop; f75-78 empty",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2.5,
+      "t1": 5.2,
+      "beat": "hook",
+      "shot": "the same statement replayed with only the last word changed; prefix lands in the same pixels so it reads as a word swap",
+      "camera": "push-in creep continues ~1-3 %/s (motion.json; 3-4 s reads 14.5 %/s while the arc moves, treat as noise); arc rotates toward vertical at left",
+      "motion": "full per-word replay: words at f79, f81, f83 (stagger 2 fr), full contrast f89-90 (~10 fr, easings.outExpo); sheet 2.77 shows prefix sharp, new word still blurred; hold ~2 s; exit f150-156 same 5-6 fr blur fade",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 5.2,
+      "t1": 8.47,
+      "beat": "cta",
+      "shot": "small muted eyebrow (4 words, names what the site is) above a big one-line URL; arc fades left, soft blue glow blooms top centre-right, a bright arc line enters top right from ~7.27",
+      "camera": "push-in creep ~1.5 %/s (motion.json 6-8 s); background light drifts",
+      "motion": "eyebrow blur-in f158, URL blur-in 6 fr later (f164), URL settles by 5.77 (±0.25 s, sheet); hold ~2.5 s; exit both lines from ~8.20: 5-6 fr blur fade (sheet 8.27 mid-fade)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 8.47,
+      "t1": 11.4,
+      "beat": "cta",
+      "shot": "availability statement, 3 words, centred; small sub-line pointing to the site URL underneath; broad diagonal blue light band rises lower-left to upper-right behind",
+      "camera": "push-in creep ~1.4-3.4 %/s (motion.json 9-11 s); light band sweeps up across the frame",
+      "motion": "per-word blur-in from f254, stagger 2 fr, easings.outExpo ~10 fr (sheet 8.50: 2 words in, second still blurred); sub-line blur-in +12 fr after the statement (human 30 fps study), present by 9.00; hold ~2 s; fade out between 11.00 and 11.27 (±0.25 s), 5-6 fr",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": true,
+    "lines": 5,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "StatementSequence",
+    "Statement",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg, muted, accent (the light arc colour), bg",
+    "content.prefix": "sentence start shared by both statements, 2-3 words",
+    "content.words": "2 last words (audiences or uses), 1 word each, with the period",
+    "content.eyebrow": "small muted label above the URL, <= 5 words",
+    "content.url": "the URL as the hero line, one line at 16:9",
+    "content.close": "availability statement, <= 4 words",
+    "content.sub": "small line under the close pointing to the URL",
+    "timing.period": "frames per statement at 30 fps (measured ~78 fr for the first two, ~98 for the URL)",
+    "arc": "drifting light arc on/off and colour (default brand accent)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One shot, no cuts in cuts.json: every handover is continuous. The word swap is not in place: the whole line fades out (5-6 fr), 4 empty frames, then the full per-word entrance replays with the new last word; the prefix landing in the same pixels makes it read as a swap (human 30 fps study). Entrance/exit frame counts and the 2 fr stagger come from the human 30 fps study; sheets resolve 0.25 s. Push-in rate is from motion.json, not measured on sheets. Reference is silent: no SFX observed, none planned. Proposed term (not used as an id): light-arc-drift, a soft blurred blue arc of light that slowly rotates and travels behind the type for the whole film.",
+  "status": "studied"
+}

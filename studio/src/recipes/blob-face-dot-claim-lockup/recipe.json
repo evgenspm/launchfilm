@@ -1,0 +1,174 @@
+{
+  "id": "blob-face-dot-claim-lockup",
+  "title": "Glyph-eyed blob crowd into dotted claim and lockup",
+  "summary": "One pale round face with type-glyph eyes pulls out from macro, blinks through expressions, gets crowded by coloured faces, then the crowd collapses to dots that trace a short number claim and resolve into a three-colour event lockup.",
+  "use_when": [
+    "A playful event or launch-day teaser with a friendly, character-led voice",
+    "A silent short where one numeric claim and a name lockup are the whole message",
+    "Brands with a 4-5 colour accent palette that can be shown as characters",
+    "Opening sting before a longer keynote or launch-week recap"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/J2QxqjJC",
+    "author": "Raylight",
+    "ref_id": "rl-085"
+  },
+  "family": "launch-film",
+  "tags": [
+    "characters",
+    "faces",
+    "circles",
+    "dots",
+    "particles",
+    "claim",
+    "lockup",
+    "playful",
+    "dark",
+    "event",
+    "silent"
+  ],
+  "techniques": [
+    "pull-out",
+    "particle-form",
+    "morph"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 12.1,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#DCDCDC",
+      "#EE6F1A",
+      "#26C14D",
+      "#854ED4",
+      "#2E6AF2"
+    ],
+    "type_style": "geometric grotesk, medium weight, sentence case, normal tracking; claim ~14 % H at its large state, ~4 % H once extended; lockup ~4 % H in three colours (white name, green word, purple bracketed year); face glyphs are bold black type characters",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      { "event": "face glyph eyes swap expression (blink / squint)", "sound": "pop", "origin": "planned" },
+      { "event": "coloured faces push into frame around the hero face", "sound": "swoosh-short", "origin": "planned" },
+      { "event": "crowd collapses to dots", "sound": "whoosh", "origin": "planned" },
+      { "event": "dots settle into claim letters", "sound": "shimmer", "origin": "planned" },
+      { "event": "lockup glyphs decode and lock", "sound": "tick", "origin": "planned" }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 0.52,
+      "beat": "hook",
+      "shot": "extreme close-up on a pale grey round face filling the frame, two black asterisk glyphs as eyes, black background at the edges",
+      "camera": "pull-out: face width ~1.4 W -> ~0.6 W over 16 fr (sheet-01 cells 0-2), decelerating",
+      "motion": "easings.outExpo pull-out ~16 fr (±0.25 s); slight rotation of the face (~5 deg/s from motion.json)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.52,
+      "t1": 2.27,
+      "beat": "hook",
+      "shot": "the single face settles centred at ~0.37 H diameter and cycles eye glyphs: asterisks, short dashes (blink), small circles, angle brackets (squint)",
+      "camera": "pull-out continues to ~0.33 H by 1.00, then near static (-15 %/s in 1-2 s, ~0 %/s after 2.00)",
+      "motion": "face drifts and wobbles a few px; eye glyphs swap on hard frame changes about every 0.25-0.5 s (±0.25 s); eyes shift position as the face turns; springs.pop suggested for each swap (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 2.27,
+      "t1": 4.42,
+      "beat": "hook",
+      "shot": "five coloured faces (orange, green, near-black, purple, blue) push in from the frame edges and pack tightly around the grey one; each has its own glyph eyes (dashes, plus signs, carets, circles, angle brackets)",
+      "camera": "slight push then hold: neighbours enter 2.27-3.00, crowd settles by 3.00 with faces touching (sheet-01 cells 9-15, sheet-02 cell 0)",
+      "motion": "faces slide in from off-frame edges, springs.heavy suggested (~20 fr, ±0.25 s); all faces keep swapping eye glyphs independently every ~0.25-0.5 s; grey face grows slightly as the crowd fills in",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4.42,
+      "t1": 5.0,
+      "beat": "hook",
+      "shot": "the crowd shrinks at different rates and gaps open; by 4.77 only a small purple face and a single blue dot remain on black",
+      "camera": "pull-out / shrink: faces scale ~-60 %/s (motion.json 4-5 s), each face shrinking toward its own point",
+      "motion": "per-face scale-down to a dot, staggered ~3-5 fr (±0.25 s), easings.inExpo into the collapse; faces drift toward frame centre",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5.0,
+      "t1": 6.27,
+      "beat": "proof",
+      "shot": "a scatter of orange dots in the centre traces the outline of a short claim (a number and a unit, 2 words, with a period); outlines fill to solid white; large, ~14 % H",
+      "camera": "static, claim centred",
+      "motion": "dots gather into glyph outlines 5.00-5.50, outline strokes appear 5.27, letters fill white by 5.77; leftover dots cling to the strokes then fade; particle gather ~22 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 6.27,
+      "t1": 8.27,
+      "beat": "proof",
+      "shot": "the claim drops to ~4 % H and a second 2-word part (a count with a plus, then a noun, with a period) is appended on the same line; new words appear as orange dotted outlines and fill white left to right",
+      "camera": "static",
+      "motion": "scale jump from large to small between 6.00 and 6.27 (≤ 7 fr, not measurable); appended words resolve dot -> outline -> white over 6.27-7.50, sweeping left to right, last word last; holds 7.50-8.00",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 8.27,
+      "t1": 12.1,
+      "beat": "logo",
+      "shot": "event lockup on one line, ~4 % H centred: white company name, green event word, purple year in brackets",
+      "camera": "static",
+      "motion": "claim dissolves into scrambled dotted glyphs that decode left to right into the lockup over 8.27-9.27 (~30 fr): name first, event word by 8.77, bracketed year last at 9.27; colours tint in from blue-green to final; hold 85 fr to the end",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 2,
+    "url": false
+  },
+  "components": [
+    "ParticleForm",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: bg black, fg light grey for the hero face, 5 accent colours for the crowd faces and lockup",
+    "content.faces": "6 faces: colour + list of eye glyph pairs to cycle (e.g. asterisks, dashes, circles, angle brackets, plus signs, carets)",
+    "content.claim": "short numeric claim, 2 words with a period",
+    "content.claimExtra": "second part appended after the shrink, 2 words with a period",
+    "content.lockup": "three parts: name (fg), event word (accent 1), year/version in brackets (accent 2)",
+    "timing.faceSwap": "frames between eye glyph swaps (default ~8-12 at 30 fps, suggested)",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "easy",
+  "render_cost": "heavy",
+  "notes": "One continuous shot, no hard cuts; cuts.json soft entries at 0.33-0.70 and 4.20-4.63 are the opening pull-out and the crowd collapse, both inside the same shot, so transitions are continuous. Silent reference: every SFX is planned by the glue rule, not observed. All times from 4 fps sheets (±0.25 s); spring names, glyph swap rate and staggers are suggested defaults, not measured. Proposed terms (not in vocabulary): glyph-face (round character with type-glyph eyes that swap expressions), crowd-pack (characters push in and pack around a hero), glyph-decode (scrambled dotted glyphs resolve into a lockup left to right). Catalogue hint said product-ui; there is no UI, so family is launch-film. Difficulty per rule is easy (3 techniques), but the face character system has to be built from scratch.",
+  "status": "studied"
+}

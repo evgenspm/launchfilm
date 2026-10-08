@@ -1,0 +1,168 @@
+{
+  "id": "lockscreen-notification-land",
+  "title": "Lock screen notifications landing from the camera",
+  "summary": "A phone drops into a dark frame lit by a blue planet rim, settles on its lock screen, then two glass notifications arrive one at a time: the first lands from the viewer, the second takes the top slot after a push-down.",
+  "use_when": [
+    "A mobile product whose value is a timely alert or message",
+    "Showing what the user receives, one event at a time, fully readable",
+    "A short silent loop for a feed or a landing-page hero",
+    "Opening shot before a longer app walkthrough"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/doUCRX5o",
+    "author": "Joseph Lauriano",
+    "ref_id": "rl-073"
+  },
+  "family": "product-ui",
+  "tags": [
+    "notifications",
+    "lock-screen",
+    "phone",
+    "glass",
+    "dark",
+    "single-shot",
+    "mobile",
+    "alert",
+    "silent"
+  ],
+  "techniques": [
+    "notification-stack",
+    "device-phone",
+    "ui-rebuild",
+    "horizon-arc"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 11.93,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000201",
+      "#F6F5F3",
+      "#2A4073",
+      "#E0B995",
+      "#091732",
+      "#535B81"
+    ],
+    "type_style": "lock screen clock: condensed ultra-tall numerals ~40 % of phone height, white; cards: semibold title + regular body, sentence case, dark on light glass, ~2 % H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone drops into frame",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "a notification card lands",
+        "sound": "notification",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.6,
+      "beat": "hook",
+      "shot": "black frame, blue planet rim bottom-left; phone descends from above the top edge, wallpaper swaps night to sunset",
+      "camera": "static frame; the device travels down ~1000 px/s (1920 basis) in 0-1 s, ~470 px/s in 2-3 s, rotateX tilt ~5 deg easing to 0",
+      "motion": "phone enters bottom-first from off-frame on springs.heavy (overshoot not measurable), settles f78; wallpaper cross-dissolve inside the screen 1.77-2.27 s (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2.6,
+      "t1": 3.7,
+      "beat": "reveal",
+      "shot": "lock screen settled: status bar, date line, huge clock over the sunset wallpaper; rim arc drifting behind",
+      "camera": "drift: background rim sweeps slowly, phone holds",
+      "motion": "hold 33 fr; only the backdrop arc moves, easings.linear",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 3.7,
+      "t1": 5.3,
+      "beat": "feature",
+      "shot": "first glass notification card lands in the top slot: avatar with app badge, name title, one-line body",
+      "camera": "drift: rim arc continues",
+      "motion": "land from the camera: scale 1.47 to 1, offset up-left a quarter card width, opacity 0.3 to 1, blur 8 px to 0, easings.landing 7 fr (f111-f118); hold 41 fr",
+      "transition_out": "continuous",
+      "sfx": "notification"
+    },
+    {
+      "t0": 5.3,
+      "t1": 6.1,
+      "beat": "feature",
+      "shot": "first card pushed down one slot; second card, a message preview, fills the freed top slot",
+      "camera": "drift: rim arc continues",
+      "motion": "push-down one card height + 8 px gap on springs.layout 10-11 fr (f159-f170); second card fades and blur-ins, scale 1.03 to 1, opacity 0.15 to 1, 6 fr (f176-f182)",
+      "transition_out": "continuous",
+      "sfx": "notification"
+    },
+    {
+      "t0": 6.1,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "two-card stack held on the lock screen; a band of blue light starts to sweep across the top right",
+      "camera": "drift: background arc slides toward the top right, phone static",
+      "motion": "hold 57 fr; backdrop arc on easings.linear",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 8,
+      "t1": 11.93,
+      "beat": "feature",
+      "shot": "same two-card stack; the lit rim now crosses the whole top right of the frame behind the phone",
+      "camera": "drift: rim arc grows and brightens ~3 %/s at 8-9 s and ~7 %/s in the last second (motion estimate), phone static",
+      "motion": "hold 118 fr to the end; no element motion, only the backdrop",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "NotificationStack",
+    "NotifCard",
+    "HorizonArc",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: app icon for the card badge, accent tints the rim light, bg behind the phone",
+    "content.notifications": "2 items, each a title (name, 2-3 words) and a body (one line, 3-5 words)",
+    "content.wallpaper": "lock screen image or gradient; a second image for the in-screen cross-dissolve (optional)",
+    "content.time": "clock string on the lock screen",
+    "timing.firstLand": "frame of the first landing (default 111 at 30 fps)",
+    "timing.gap": "frames between first landing and the push-down (default 48)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; phone height ~1.1 x frame height, cropped at the bottom",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "medium",
+  "notes": "One continuous shot, 0 cuts. Measured at 30 fps by hand: landing = scale 1.47 to 1 over 7 fr, bezier(0.35,0.05,0.7,1), no overshoot, blur 8 px; push-down 10-11 fr no overshoot (springs.layout); second card lags the push by ~17 fr (consider overlapping it at ~60 % of the push). Card 360x62 px at 720p, radius ~20 px, gap 8 px, light glass with heavy backdrop blur. The backdrop rim never stops, so holds are not dead frames. sfx planned by the glue rule, not measured (reference is silent). Proposed terms: device-drop-in, screen-crossfade (recipe.md).",
+  "status": "studied"
+}

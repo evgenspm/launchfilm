@@ -1,0 +1,344 @@
+{
+  "id": "macro-phone-scan-quiz-tour",
+  "title": "Macro phone study-app tour, scan to quiz",
+  "summary": "A dark phone UI shot in shallow-focus macro on tilted planes: home, new topic, scan pages, a topic card counting up, step trail, reading screen, mascot and a quiz answered. Black tagline and wordmark close.",
+  "use_when": [
+    "A mobile app with a clear multi-step flow (create, capture, learn, test) to walk through in 30 s",
+    "Dark product UI that looks premium when lit like a physical object in macro",
+    "An app with a mascot or character that can carry an emotional beat mid-film",
+    "Store launch where the close is mark, wordmark and store badges"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/HeFudGqz",
+    "author": "keewinek",
+    "ref_id": "rl-100"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "mobile",
+    "phone",
+    "macro",
+    "tilted-ui",
+    "depth-of-field",
+    "dark",
+    "education",
+    "quiz",
+    "mascot",
+    "store-badges",
+    "product-tour"
+  ],
+  "techniques": [
+    "tilt-plane",
+    "device-phone",
+    "ui-rebuild",
+    "rack-focus",
+    "push-in",
+    "pull-out",
+    "dolly",
+    "cursor-path",
+    "blur-dissolve",
+    "end-card",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 33.77,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#090A0B",
+      "#E2E4E5",
+      "#4C5F92",
+      "#242D40",
+      "#2B3835",
+      "#7B5B5B"
+    ],
+    "type_style": "UI: geometric sans, sentence case, normal tracking, list titles ~5 % H when in macro; close: bold geometric sans wordmark ~4 % H and a small regular tagline ~2 % H, both white on pure black",
+    "treatment": [
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 133,
+      "energy": "high",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "button or answer pressed (rows 9, 12, 17)",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "camera viewfinder captures the pages (row 4)",
+        "sound": "camera-shutter",
+        "origin": "planned"
+      },
+      {
+        "event": "topic card lands into the list (row 7)",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "camera swings between tilted planes (rows 3, 8)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "hard cut (7.27, 18.63, 26.27)",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "mark and store badges appear (row 20)",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "dark phone screen in macro, leaned back: small gear icon, wordmark, greeting line with user name, tiny sub-line; red clock pill at the top edge",
+      "camera": "push-in ~1.00 to 1.15 over 38 fr with slow upward drift (motion.json zoom ~15 %/s); shallow focus, far edge blurred",
+      "motion": "no element motion; camera only, easings.inOutSine (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 1.27,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "search field and a large outlined new-topic button, a finished topic card with a full green progress bar below",
+      "camera": "dolly across the tilted plane down to the button, plane rotates ~10 deg (motion.json rot 10 deg/s at 2 s); focus racks from button to blur",
+      "motion": "camera move easings.inOutSine ~37 fr (±0.25 s); content static",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2.5,
+      "t1": 5.27,
+      "beat": "feature",
+      "shot": "new-topic form screen: title, name field, page-slot card with a plus; then a bottom sheet with two options (take photo, pick from gallery)",
+      "camera": "fast swing at 2.50 from a steep diagonal tilt to a flatter top-down tilt, settles by 2.77; slow push to the sheet at 4.50",
+      "motion": "swing springs.cameraIn ~8 fr (overshoot not measurable); bottom sheet rises at 4.27 to 4.50, springs.ui ~7 fr (±0.25 s); option rows stagger ~1 cell (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5.27,
+      "t1": 7.27,
+      "beat": "feature",
+      "shot": "whole phone on a dark blue backdrop showing a camera viewfinder on a textbook page; a stack of three paper pages slides out to the right of the phone and floats",
+      "camera": "pull-out to the full device at 5.27, then near static, drift ~2 %/s",
+      "motion": "pages slide out from behind the phone 5.50 to 5.77, springs.heavy ~10 fr (±0.25 s), fan offset ~3 % W per page; pages bright and slightly glowing",
+      "transition_out": "hard-cut",
+      "sfx": "camera-shutter"
+    },
+    {
+      "t0": 7.27,
+      "t1": 9.27,
+      "beat": "feature",
+      "shot": "list of topic cards with segmented green progress bars and percentages scrolling up into the home header and the new-topic button",
+      "camera": "tilt-plane, push-in ~1 %/s while the list scrolls up; deep focus falloff on the lower rows",
+      "motion": "list scroll ~1 card per 0.25 s, easings.outQuint ~30 fr (±0.25 s); a new processing card appears at the top of the list at 8.00",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 9.27,
+      "t1": 13.27,
+      "beat": "feature",
+      "shot": "single topic card floating alone on a dark blue backdrop with a processing sub-line, then the card switches to a zero-progress count",
+      "camera": "card drifts from upper right to lower left then back to upper left; at ~11.5 the plane rotates ~5 deg toward camera",
+      "motion": "card enters at 9.77 from off-frame left, springs.ui ~8 fr (±0.25 s); content swaps at 12.00 (processing to 0 of N, 0 %) as a cut-free state change",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 13.27,
+      "t1": 14.27,
+      "beat": "feature",
+      "shot": "the phone rises behind the floating card; the card lands into its slot at the top of the home list, full phone visible small in frame",
+      "camera": "pull-out ~1.10 to 1.00 across 30 fr, plane tilts slightly back",
+      "motion": "card drops into list springs.ui ~8 fr (±0.25 s); phone rises from below springs.heavy ~15 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 14.27,
+      "t1": 16.77,
+      "beat": "feature",
+      "shot": "dark plane with numbered step circles counting down from the low teens to two, a long rail of dots crossing the frame",
+      "camera": "dolly along a tilted path of circles at high speed (motion.json pan ~740 px/s at 15 s), circles pass the lens in macro with heavy depth blur",
+      "motion": "camera move easings.linear, one circle per ~0.25 s (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 16.77,
+      "t1": 18.63,
+      "beat": "feature",
+      "shot": "lesson card with a small mascot head, card title and a filled blue start button above the current step circle",
+      "camera": "push-in ~1.00 to 1.08 on the card, then at 18.27 to 18.50 a fast zoom into the button label until it fills the frame",
+      "motion": "card held; final zoom easings.inExpo ~8 fr (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 18.63,
+      "t1": 20.5,
+      "beat": "feature",
+      "shot": "whole phone small on a dark blue backdrop, seen almost edge-on, turning to face camera; reading screen with a long body paragraph",
+      "camera": "orbit: phone yaw from ~70 deg to ~20 deg over 56 fr, push-in from a small device to ~45 % H",
+      "motion": "turn springs.heavy ~30 fr (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 20.5,
+      "t1": 21.5,
+      "beat": "feature",
+      "shot": "macro on the reading screen: heading, a small AI tag, the paragraph lines",
+      "camera": "dolly down the paragraph on a tilted plane, ~1 line per 2 fr; focus racks along the lines",
+      "motion": "camera easings.inOutSine 30 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 21.5,
+      "t1": 22.77,
+      "beat": "feature",
+      "shot": "large blue start-quiz button at the bottom of the screen; a hand pointer enters and presses it",
+      "camera": "camera settles onto the button 21.50 to 22.00, then pulls out to ~0.7 by 22.50",
+      "motion": "pointer enters from bottom right 22.00, press at ~22.40, springs.click squash (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 22.77,
+      "t1": 23.17,
+      "beat": "feature",
+      "shot": "mascot character sitting on a dark plane under the wordmark and a question header bar",
+      "camera": "slow push-in",
+      "motion": "mascot changes expression at ~23.00 (frame swap); otherwise static",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 23.17,
+      "t1": 24.27,
+      "beat": "feature",
+      "shot": "mascot close-up, a soft white light sweeps across its body",
+      "camera": "push-in ~1.00 to 1.30 over 33 fr",
+      "motion": "light spot travels left to right, easings.inOutSine ~30 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 24.27,
+      "t1": 25.5,
+      "beat": "feature",
+      "shot": "question card in macro, three-line question text crossing the frame; a bright lens flare passes over the words",
+      "camera": "dolly right to left along the line of text on a tilted plane; slight push",
+      "motion": "flare sweeps ~20 % W per 0.25 s, easings.linear (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 25.5,
+      "t1": 26.27,
+      "beat": "feature",
+      "shot": "mascot above, then four lettered answer options on the tilted phone screen",
+      "camera": "fast tilt down from the mascot to the options at 25.50 to 25.77 (motion.json pan ~280 px/s, zoom -50 %/s)",
+      "motion": "camera springs.cameraOut ~8 fr (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 26.27,
+      "t1": 28.5,
+      "beat": "feature",
+      "shot": "macro on the four answer rows; the third option turns green with a small confetti burst, rows dim",
+      "camera": "pull-out from extreme macro ~2.0 to ~1.0 over 23 fr (26.27 to 27.00), then hold with drift",
+      "motion": "selection at ~27.77: row fills green, confetti burst ~8 fr (±0.25 s); fade to black 28.27 to 28.50",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 28.5,
+      "t1": 31.27,
+      "beat": "tension",
+      "shot": "pure black hold, then one small centred tagline, one sentence of 7 words about the future of learning",
+      "camera": "static",
+      "motion": "black 37 fr; tagline fades in at ~29.75, 8 fr (±0.25 s); holds 45 fr",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 31.27,
+      "t1": 32.77,
+      "beat": "logo",
+      "shot": "bold wordmark centred on black; a tiny credit line fades in at the top",
+      "camera": "static",
+      "motion": "tagline swaps to wordmark at 31.27 (one-cell change, no visible animation at 4 fps); credit line fade ~8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 32.77,
+      "t1": 33.77,
+      "beat": "cta",
+      "shot": "app icon with the mascot appears above the wordmark, two store badges stack below",
+      "camera": "static",
+      "motion": "icon and first badge appear at 32.77, second badge at 33.00; fade ~6 fr (±0.25 s), stagger ~7 fr (±0.25 s)",
+      "transition_out": "end",
+      "sfx": "pop"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "TiltPlane",
+    "PhoneFrame",
+    "RackFocus",
+    "Dolly",
+    "Camera",
+    "Cursor",
+    "Vignette",
+    "EndCard",
+    "Wordmark",
+    "BrandProvider"
+  ],
+  "params": {
+    "brand": "brand.json: dark bg, fg, one blue accent for primary buttons, green for progress",
+    "content.screens": "6-8 app screens rebuilt as React UI: home, new item form, capture sheet, list with progress, lesson card, reading screen, question, answers",
+    "content.mascot": "optional character image used on the lesson card, mid-film close-up and the app icon",
+    "content.tagline": "one closing sentence, about 7 words",
+    "content.badges": "store badges to show at the end (0-2)",
+    "timing.bpm": "music tempo (reference ~133 BPM); cuts are not on the beat"
+  },
+  "difficulty": "hard",
+  "render_cost": "medium",
+  "notes": "Measured from 4 fps sheets (±0.25 s) and motion.json; springs, staggers and fr counts below 8 fr are defaults, not measured. One-shot camera travel inside shots 1, 2, 3 and 5: transitions between their rows are continuous; real cuts only at 7.27, 18.63, 26.27, soft dissolve 23.17-23.60. SFX planned by the glue rule, not measured (reference is music only, no VO). cut_on_beat 0/3. Not in vocabulary (see recipe.md Proposed terms): page-pullout (paper pages slide out of the phone), step-trail (numbered circles on a tilted rail passed at speed), lens-flare sweep over UI. The whole film is shallow focus: only a band of ~20 % H is sharp in macro rows.",
+  "status": "studied"
+}

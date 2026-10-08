@@ -1,0 +1,133 @@
+{
+  "id": "glossy-block-tumble-push-in",
+  "title": "Glossy block tumble with camera push-in",
+  "summary": "Five glossy rounded primitives on a dark gradient floor: a block tumbles in from the right, bumps the hero cube and settles, then the camera springs in to a low close-up and holds. A brand-colour toy moment with no copy.",
+  "use_when": [
+    "A short abstract brand sting built from the brand palette as physical objects",
+    "An intro or bumper before a title card, where weight and contact read as playful",
+    "Social loops or teasers that need motion without any copy or UI"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/8KvCZC3E",
+    "author": "Raylight",
+    "ref_id": "rl-093"
+  },
+  "family": "3d-device",
+  "tags": [
+    "3d",
+    "physics",
+    "blocks",
+    "primitives",
+    "push-in",
+    "dark",
+    "no-copy",
+    "abstract",
+    "sting",
+    "playful"
+  ],
+  "techniques": [
+    "physics",
+    "push-in"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 3.33,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#1C1C1C",
+      "#111112",
+      "#555DF8",
+      "#4349DF",
+      "#05773E"
+    ],
+    "type_style": "none: no type on screen",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "green block lands and bumps the hero cube (~1.00-1.27 s)",
+        "sound": "impact-low",
+        "origin": "planned"
+      },
+      {
+        "event": "camera springs in to the close-up (2.00-2.50 s)",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.5,
+      "beat": "hook",
+      "shot": "hero blue rounded cube centre-left, small pink and orange rounded cubes resting behind it, dark gradient floor, no copy",
+      "camera": "slow pull back: cube width ~90 -> ~75 px per cell over 15 fr (motion.json -4.5 %/s zoom in second 0)",
+      "motion": "small objects shift a few px as the frame drifts; nothing enters yet (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.5,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "a red sphere riding a long green rounded block tumbles in from frame right, lands tilted, slides into the blue cube, rebounds and settles beside it",
+      "camera": "drift: framing pans slightly left (-14 px/s @1920) while the scene recentres on the pair",
+      "motion": "physics: green block enters f15 rotated ~30 deg, lands f30, contacts the cube f38, rebounds and settles by f53 (±0.25 s); blue cube tips slightly from the hit by f60; red sphere stays on top; settle reads as springs.heavy (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "impact-low"
+    },
+    {
+      "t0": 2,
+      "t1": 3.33,
+      "beat": "hook",
+      "shot": "low close-up: the blue cube and green block fill the lower frame edges, the three small primitives line up along the top of the gap",
+      "camera": "push-in ~1.0 -> ~2.2 (cube width ~90 -> ~200 px per cell) f60-f75, settled by f75; static hold f83-f100",
+      "motion": "camera on springs.cameraIn ~15 fr (overshoot not measurable, ±0.25 s); objects at rest; last two cells identical",
+      "transition_out": "end",
+      "sfx": "whoosh"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: object colours from accent, fg and muted; bg for the floor gradient",
+    "objects": "list of primitives {shape: cube|slab|sphere, colour, size}; default 2 hero cubes/slabs + 3 small pieces",
+    "timing.dropAt": "frame the tumbling block enters (default 15 at 30 fps)",
+    "timing.pushAt": "frame the camera push-in starts (default 60)",
+    "push.scale": "close-up scale (default ~2.2)",
+    "seed": "physics seed so the tumble is deterministic"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "One continuous shot, 0 cuts (cuts.json). Silent reference: sfx planned by the glue rule, not measured. All times from the 4 fps sheet (±0.25 s); spring names are defaults (no 30 fps strip). Palette from palettegen on keyframes; pink (~#E0B0C8), orange (~#E08000) and red (~#E00000) pieces were too small for palettegen and are eyeballed, recipe.md only. The studio has no R3F/physics scene component: missing PhysicsPrimitives (see recipe.md). The catalogue hint device-3d does not apply: no device is shown.",
+  "status": "studied"
+}

@@ -1,0 +1,196 @@
+{
+  "id": "rim-lit-page-section-tour",
+  "title": "Rim-lit tilted page section tour",
+  "summary": "Four sections of a dark storefront page glide past on a tilted plane lit by bright edge bars, one hard cut each, then a gold mark card, a plain wordmark and the whole page shrunk into a phone. Only the camera moves.",
+  "use_when": [
+    "A premium or luxury storefront or landing page with a dark theme and a metal-coloured accent",
+    "Silent autoplay showcase of an existing website, section by section",
+    "The page already looks good and only needs a camera, not new animation",
+    "Closing on the logo plus a mobile view of the same page"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/vyv5MQHv",
+    "author": "veprazo tunyi",
+    "ref_id": "rl-046"
+  },
+  "family": "product-ui",
+  "tags": [
+    "tilt-plane",
+    "landing-page",
+    "storefront",
+    "luxury",
+    "dark",
+    "gold-accent",
+    "light-rim",
+    "section-tour",
+    "phone-close",
+    "silent",
+    "camera-only"
+  ],
+  "techniques": [
+    "tilt-plane",
+    "dolly",
+    "push-in",
+    "ui-rebuild",
+    "device-phone",
+    "hard-cut",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 24.63,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#0A0B0A",
+      "#DCDDD7",
+      "#D7B371",
+      "#918C7A",
+      "#A78650",
+      "#4D4537"
+    ],
+    "type_style": "headlines geometric grotesk, semibold, sentence case with periods, tight, ~6 % H on the plane; body light italic-feel grotesk ~2.5 % H in grey; button labels wide-tracked caps; gold tracked caps label; final wordmark small semibold grotesk ~2.5 % H",
+    "treatment": [
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "hard cut to the next tilted section",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "gold mark card appears",
+        "sound": "shimmer",
+        "origin": "planned"
+      },
+      {
+        "event": "phone with the full page appears",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.1,
+      "beat": "hook",
+      "shot": "hero section of a dark store page on a tilted plane: 2-line headline, 2-line sub, pale pill button; white rim bars at both edges",
+      "camera": "tilt-plane, push-in 1.00->1.04 over 93 fr (1.2-1.45 %/s), drift up 2-5 px/s @1920, easings.linear",
+      "motion": "none: every element is on from frame 0; only the camera moves",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 3.1,
+      "t1": 6.37,
+      "beat": "feature",
+      "shot": "image slide of the page: clothing-rack photo, 3-word statement in two lines, two slider dots (active one in gold); plane tilted ~10 deg",
+      "camera": "tilt-plane + dolly: content rises 63 px/s @1920 (2.1 px/fr), push-in 1.00->1.09 over 98 fr (2.4-4.4 %/s), easings.linear",
+      "motion": "none: slide and copy are on at the cut frame f93; no entrance",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 6.37,
+      "t1": 10.03,
+      "beat": "cta",
+      "shot": "follow-us block at the right: 2-line headline, 2-line sub, gold pill button cropped by the frame; one diagonal white rim bar at the left; far edge out of focus",
+      "camera": "tilt-plane with depth of field + dolly: content travels left 63-73 px/s @1920 (2.3 px/fr), scale +0.2-0.9 %/s, easings.linear",
+      "motion": "none: block on at the cut frame f191; only the camera moves",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 10.03,
+      "t1": 14.17,
+      "beat": "cta",
+      "shot": "contact column top-left: gold tracked caps label, 2 channel names, 3 phone lines, on a near-black plane; diagonal rim bar across the corner",
+      "camera": "tilt-plane + dolly: content travels right 78-81 px/s @1920 (2.7 px/fr), push 1.00->1.04 over 124 fr, roll -0.5 to -0.8 deg/s, easings.linear",
+      "motion": "none: column on at f301 (cut measured on a 30 fps strip); only the camera moves",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 14.17,
+      "t1": 16.67,
+      "beat": "logo",
+      "shot": "black card ~57 % W x 89 % H centred on near-black, gold monogram in an open ring above a tracked serif wordmark and a small ruled sub-line",
+      "camera": "push-in 1.00->1.02 over 75 fr (0.9 %/s), easings.linear",
+      "motion": "none: card on at f425 in one frame (30 fps strip); holds 75 fr",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 16.67,
+      "t1": 19.67,
+      "beat": "logo",
+      "shot": "brand name as plain small white semibold text, 2 words, centred on flat near-black",
+      "camera": "push-in 1.00->1.03 over 90 fr (1.1 %/s), easings.linear",
+      "motion": "text on at f500; the card behind fades out over ~3 fr after the cut (30 fps strip); holds 90 fr",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 19.67,
+      "t1": 24.63,
+      "beat": "outro",
+      "shot": "the full mobile page (hero, 2 buttons, 3 stats, chat bubble) in a thin phone frame, ~90 % H, centred on near-black",
+      "camera": "static (0.1 %/s, no change between cells)",
+      "motion": "phone on at f590 in one frame (30 fps strip); holds 149 fr to the end",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 5,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "TiltPlane",
+    "Dolly",
+    "KenBurns",
+    "PhoneFrame",
+    "Vignette",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any dark brand.json: bg near-black, fg off-white, accent a metal tone (gold) for the label, active dot and one button",
+    "content.hero": "headline (2 lines, <= 4 words, periods), sub (<= 14 words), button label (2 words)",
+    "content.slide": "photo src + statement of 3 words over two lines",
+    "content.follow": "headline (2 lines), sub (<= 10 words), button label",
+    "content.contacts": "caps label + 2 channel names + up to 3 contact lines",
+    "content.mark": "logo image for the card row",
+    "content.name": "brand name for the plain wordmark row",
+    "content.mobileShot": "full-height mobile screenshot of the page (or the rebuilt page at phone width)",
+    "timing.sections": "section lengths at 30 fps: 93, 98, 110, 124 fr; logo 75, wordmark 90, phone 149"
+  },
+  "difficulty": "hard",
+  "render_cost": "medium",
+  "notes": "No element animates: every section, the logo card, the wordmark and the phone enter by a hard cut and only the camera moves (linear drift 2-3 px/fr at 1920, scale 1-4 %/s). Each tilted section moves in a new direction (up, left, right) so cuts read as a tour. Rim light bars along the plane edges are the main look; not in the vocabulary (Proposed terms: rim-light-bar). Cuts at 10.03, 14.17, 16.67, 19.67 were missed by the detector (dark low-contrast scenes) and measured on 30 fps strips. Silent reference: sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

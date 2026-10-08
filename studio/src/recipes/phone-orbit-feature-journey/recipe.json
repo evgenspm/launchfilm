@@ -1,0 +1,273 @@
+{
+  "id": "phone-orbit-feature-journey",
+  "title": "Orbit-to-phone feature journey",
+  "summary": "A dark statement opens into a glowing selector, expanding rings cycle three benefit words, then a framed phone carries the viewer through a feed, chart and configurable list before a quiet logo hold.",
+  "use_when": [
+    "a 20-30 s launch film with three connected mobile features",
+    "a dark product reveal that needs a visual bridge from promise to UI",
+    "a phone-first release with a proof chart and configurable list",
+    "a silent autoplay film where motion must explain the sequence"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/cPK02itW",
+    "author": "Raylight",
+    "ref_id": "rl-002"
+  },
+  "family": "launch-film",
+  "tags": [
+    "dark",
+    "mobile-ui",
+    "feature-tour",
+    "orbit-rings",
+    "chart",
+    "list",
+    "silent",
+    "logo-close"
+  ],
+  "techniques": [
+    "mask-wipe",
+    "glow",
+    "word-swap",
+    "morph",
+    "device-phone",
+    "ui-rebuild",
+    "dolly",
+    "zoom-tier",
+    "chart-draw",
+    "list-assemble",
+    "quiet-close",
+    "blur-dissolve"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 25.87,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FDFDFD",
+      "#2F2F2F",
+      "#4C5644",
+      "#73765B",
+      "#ACAEA3"
+    ],
+    "type_style": "regular grotesk, sentence case, neutral tracking, benefit words 12-14 % of frame height, UI labels 2-4 %",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "opening statement reveals through the centre",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "selector progress advances",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "benefit word changes",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "phone enters and camera changes tier",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "chart line completes",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "list rows lift and settle",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "logo appears",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.27,
+      "beat": "hook",
+      "shot": "one centred 5-word rebuild statement writes on, holds, then is erased from both sides",
+      "camera": "drift scale 1.00 to 1.03 over 68 fr",
+      "motion": "characters reveal over about 30 fr and crop away over about 23 fr, easings.outExpo (±0.25 s)",
+      "transition_out": "mask-wipe",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.27,
+      "t1": 5,
+      "beat": "reveal",
+      "shot": "a dark three-option selector with circular icons, one progress rim and a short state label",
+      "camera": "dolly down about 400 px/s @1920 for 30 fr, then drift right about 51 px/s",
+      "motion": "panel enters on easings.outExpo 18 fr; progress arc advances on easings.linear for about 68 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "tick"
+    },
+    {
+      "t0": 5,
+      "t1": 7.77,
+      "beat": "feature",
+      "shot": "one large benefit word sits inside a dashed ring while wider rings travel behind it",
+      "camera": "pull-out scale 1.08 to 1.00 over 83 fr",
+      "motion": "ring field crosses on easings.linear 83 fr; word brightens on easings.outQuint about 15 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "swell"
+    },
+    {
+      "t0": 7.77,
+      "t1": 9,
+      "beat": "feature",
+      "shot": "the central benefit changes to a second word as three outlined circles overlap",
+      "camera": "locked framing; rings translate left about 0.9 frame widths over 37 fr",
+      "motion": "word-swap on springs.ui about 15 fr; circles continue on easings.linear 37 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "swell"
+    },
+    {
+      "t0": 9,
+      "t1": 9.77,
+      "beat": "feature",
+      "shot": "a third one-word benefit resolves on black before the phone rises into frame",
+      "camera": "locked framing, then phone pushes upward about 0.45 frame heights in 23 fr",
+      "motion": "word-swap on springs.ui about 12 fr; phone enters on springs.heavy about 18 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9.77,
+      "t1": 12.27,
+      "beat": "feature",
+      "shot": "a generic phone shows a media-rich social feed while the content scrolls upward",
+      "camera": "dolly down the screen about 107 px/s @1920 for 75 fr",
+      "motion": "feed scrolls on easings.linear 75 fr inside a fixed device frame",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 12.27,
+      "t1": 15,
+      "beat": "feature",
+      "shot": "the camera moves from the full phone to successive feed details and a compact data card",
+      "camera": "zoom-tier full to region to element, peak growth about 58 %/s, springs.cameraIn over about 36 fr",
+      "motion": "screen content keeps scrolling on easings.linear while tier changes settle on springs.cameraIn (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 15,
+      "t1": 15.77,
+      "beat": "proof",
+      "shot": "a compact market-style card fills the phone, with one value, positive delta and rising line chart",
+      "camera": "dolly down about 255 px/s @1920 while holding the chart near centre",
+      "motion": "line chart draws left to right on easings.outQuint about 23 fr (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 15.77,
+      "t1": 19,
+      "beat": "feature",
+      "shot": "a phone settings screen presents three topic rows; each row lifts forward, then settles into a pinned group",
+      "camera": "zoom-tier region to detail, scale about 1.00 to 1.25 over 97 fr on springs.cameraIn",
+      "motion": "three rows list-assemble with 8 fr stagger and springs.layout about 18 fr each (±0.25 s)",
+      "transition_out": "morph",
+      "sfx": "pop"
+    },
+    {
+      "t0": 19,
+      "t1": 20.77,
+      "beat": "feature",
+      "shot": "the feed returns with the new topic tabs visible, then the phone recedes toward black",
+      "camera": "zoom-tier region to detail on springs.cameraIn 24 fr, then pull-out on springs.cameraOut about 18 fr (±0.25 s)",
+      "motion": "feed settles on springs.ui about 18 fr; device exits downward on easings.inExpo about 18 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 20.77,
+      "t1": 22.77,
+      "beat": "feature",
+      "shot": "a small centred 3-word production line appears on black, holds briefly, then wipes away",
+      "camera": "locked centre framing with no camera move for 60 fr",
+      "motion": "quiet-close fades in on easings.outQuint about 15 fr and mask-wipes out over about 23 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "swell"
+    },
+    {
+      "t0": 22.77,
+      "t1": 25.87,
+      "beat": "logo",
+      "shot": "a geometric white mark appears at centre and holds on pure black",
+      "camera": "locked centre framing with no camera move for 93 fr",
+      "motion": "mark fades in on easings.outQuint about 8 fr, then holds for about 85 fr (±0.25 s)",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 5,
+    "screenshots": 3,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "BrandMark",
+    "SelectorCarousel",
+    "RingWordField",
+    "FeedRebuild",
+    "MediaPanel",
+    "MiniChart",
+    "TopicPinPanel",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json; colours, fonts, radius and final mark skin every scene",
+    "content.openingLine": "one 5-word statement describing the rebuild",
+    "content.benefits": "three single-word outcomes for the ring sequence",
+    "content.feedItems": "4-6 generic feed cards with original user-supplied copy",
+    "content.chart": "one label, value, delta and 7-10 points for the proof card",
+    "content.topics": "three configurable list rows with neutral icons",
+    "content.closingLine": "one short production or availability line",
+    "aspect": "16:9 master; device and type scale from the composition size",
+    "fps": "composition fps; all reference timings are measured at 30 fps"
+  },
+  "difficulty": "hard",
+  "render_cost": "light",
+  "notes": "No detected cuts and no audio. All state boundaries come from 4 fps sheets at ±0.25 s. Ring geometry is recorded as the proposed term ring-field, not as a vocabulary id. The final mark entrance is also below temporal resolution. SFX are planned by the glue rule, not measured. Palette sampled from full-resolution keyframes because no cut frames exist. Three UI states require a React rebuild; supplied media must be original or licensed.",
+  "preview": {
+    "demo_brand": "lumenfold"
+  },
+  "status": "built"
+}

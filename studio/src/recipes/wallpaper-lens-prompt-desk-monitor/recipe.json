@@ -1,0 +1,327 @@
+{
+  "id": "wallpaper-lens-prompt-desk-monitor",
+  "title": "Wallpaper prompt tour with lens wipes and monitor close",
+  "summary": "A one-word mark types over flower footage, a ring opens onto a desktop wallpaper where a prompt is typed and sent, then a desk with a capability scroll, a glass-lens headline over autumn footage and a monitor end card.",
+  "use_when": [
+    "An AI assistant or productivity tool that wants a friendly, nostalgic look instead of dark UI",
+    "Showing one prompt being asked, then many things the tool covers",
+    "A 30 s social cut that ends on a URL and a logo on a device",
+    "Brands with a mascot or small mark that can sit alone on screen"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/9HAbMEbj",
+    "author": "scanna",
+    "ref_id": "rl-080"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "ai-chat",
+    "prompt",
+    "wallpaper",
+    "stock-footage",
+    "lens-wipe",
+    "iris",
+    "capability-list",
+    "word-swap",
+    "monitor",
+    "end-card",
+    "light",
+    "typing"
+  ],
+  "techniques": [
+    "pull-out",
+    "typewriter",
+    "word-swap",
+    "mask-wipe",
+    "prompt-typing",
+    "push-in",
+    "dolly",
+    "stacked-roll",
+    "dim-emphasis",
+    "cursor-path",
+    "flash",
+    "liquid-glass",
+    "blur-dissolve"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 30.89,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#F3F3F3",
+      "#353737",
+      "#2586F3",
+      "#D1835B",
+      "#B66918",
+      "#BFA380"
+    ],
+    "type_style": "rounded geometric sans, bold, sentence case, white on footage at ~7 % H for headlines; caps label for the name; dark on white at ~4 % H on the monitor",
+    "treatment": [
+      "liquid-glass"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 139.8,
+      "energy": "high",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "letters typing (name, prompt, headline, monitor lines)",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "ring iris and send-circle exit",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "send button and pill-button press",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "capability list rows passing",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "white flash after the press",
+        "sound": "hit",
+        "origin": "planned"
+      },
+      {
+        "event": "glass bubble appears",
+        "sound": "shimmer",
+        "origin": "planned"
+      },
+      {
+        "event": "action pill swaps and mark tile",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 1.0,
+      "beat": "hook",
+      "shot": "macro footage of two orange tulips against a blue sky, filling the frame",
+      "camera": "pull-out: scale ~1.25->1.00 over 30 fr, decelerating (motion.json zoom -20 to -28 %/s)",
+      "motion": "footage only; pull-out on easings.outQuint ~30 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1.0,
+      "t1": 2.5,
+      "beat": "logo",
+      "shot": "same tulip footage wider; product name types in white caps at centre, four small dots sit around it",
+      "camera": "pull-out continues to 1.50, then hold",
+      "motion": "name types letter by letter, 1.00->1.50 (~15 fr, ±0.25 s); four satellite dots fade in at 1.50 around the word (top, left, right, bottom)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4.23,
+      "beat": "logo",
+      "shot": "name deletes back to a caret, a one-word category label types in smaller, holds, then deletes to a single dot",
+      "camera": "static (motion.json hold 2-4 s)",
+      "motion": "delete 2.27->2.50, category word types 2.50->2.77 (±0.25 s), holds to 3.50, deletes by 3.77, one dot left; dots tighten to the shorter word",
+      "transition_out": "mask-wipe",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 4.23,
+      "t1": 5.77,
+      "beat": "reveal",
+      "shot": "a thin circular ring opens over the flowers and reveals a classic green-hill desktop wallpaper; a dark prompt bar with a small mascot icon and a question heading settles centre",
+      "camera": "zoom 0.6 s through the ring (cuts.json soft 4.23-4.83), then hold",
+      "motion": "circle iris mask grows from centre, ~18 fr (frame 127->145); old scene fades under it; prompt bar fades and rises in by 4.77 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5.77,
+      "t1": 8.0,
+      "beat": "feature",
+      "shot": "the prompt bar holds while a short question (6 words) types in with a caret",
+      "camera": "push-in ~1.00->1.25 at 5.77 on springs.cameraIn ~15 fr (±0.25 s), then slow lateral drift left ~-76 to -127 px/s @1920",
+      "motion": "typewriter ~4 chars per 0.25 s cell, caret blinks; frame shows slight jitter (handheld-like, unmeasured)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 8.0,
+      "t1": 9.57,
+      "beat": "feature",
+      "shot": "camera flies up and right to the send button at the bar's right end; the bar slides away, leaving sky; a blue circle rises from the bottom edge",
+      "camera": "push-in to element tier at 8.27 (~1.6x, ±0.25 s), then fast pan up-right ending in a motion burst at 9.0-9.5",
+      "motion": "send button click implied at ~8.77 (not seen at 4 fps); bar exits left by 9.27 on easings.inExpo (±0.25 s); blue circle enters from bottom 9.50",
+      "transition_out": "hard-cut",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 9.57,
+      "t1": 12.5,
+      "beat": "feature",
+      "shot": "top-down photo of a wooden desk with three sketch sheets, colour fan, pen and camera; the blue circle with an up arrow rises and leaves",
+      "camera": "pull-out from the centre sheet 10.27->11.50, ~1.6->1.00 (±0.25 s), with an upward pan 10.0-11.0 (-625 px/s @1920)",
+      "motion": "blue send circle travels upward and out of frame 10.00->10.27 on easings.inExpo (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 12.5,
+      "t1": 15.5,
+      "beat": "feature",
+      "shot": "a centred vertical list of about 12 capability names scrolls upward over the desk; one item near the bottom reads bright, the rest dimmed",
+      "camera": "static (motion.json hold/animation 12-14 s)",
+      "motion": "list rolls up at constant speed ~2 rows per 0.25 s (easings.linear, ±0.25 s); far rows fade by distance; scroll stops 14.77 with one bright item centred, others fade out by 15.00",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 15.5,
+      "t1": 16.67,
+      "beat": "feature",
+      "shot": "the remaining word becomes a soft glass pill button with a one-word action label; an arrow cursor arrives and presses it",
+      "camera": "slight push-in 1.00->1.03 (motion.json -8.6 %/s at 14 s; ±0.25 s)",
+      "motion": "word fades to pill 15.50->15.77 (±0.25 s); cursor enters lower right 16.00, glides to the pill by 16.27, press at ~16.50 on springs.click (squash not measurable)",
+      "transition_out": "flash",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 16.67,
+      "t1": 16.9,
+      "beat": "feature",
+      "shot": "white flash washes over the desk scene",
+      "camera": "static",
+      "motion": "white flash peaks ~4 fr (frames 500-504, cuts.json flash), then holds white",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 16.9,
+      "t1": 17.17,
+      "beat": "feature",
+      "shot": "flat white frame with a small pale glass bubble at centre",
+      "camera": "static",
+      "motion": "glass bubble sits centred, ~10 % of frame width",
+      "transition_out": "mask-wipe",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 17.17,
+      "t1": 22.0,
+      "beat": "feature",
+      "shot": "the bubble grows into a full-frame glass lens rim over autumn-avenue footage; a headline start (4 words) types left, a pill on the right cycles 4 action labels",
+      "camera": "lens zoom 0.37 s (cuts.json soft 17.17-17.53), then static",
+      "motion": "lens grows ~11 fr (frames 515->526) on easings.outExpo; headline types 17.50->18.00; pill label swaps every ~1.1-1.3 s (18.50, 19.77, 20.77) by blur crossfade upward, ~7 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 22.0,
+      "t1": 22.4,
+      "beat": "feature",
+      "shot": "the pill dissolves and the headline's last words drop in, completing one 8-word line",
+      "camera": "static",
+      "motion": "closing words slide down into line with a blur, ~7 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 22.4,
+      "t1": 25.27,
+      "beat": "cta",
+      "shot": "fade to white; a white desktop monitor rises from below to centre; two lines type on its screen: an invitation and the URL",
+      "camera": "monitor rises 23.27->23.50 on springs.heavy (overshoot not measurable), then static",
+      "motion": "white wash 10 fr (frames 672->682); lines type 23.50->24.00 (±0.25 s), hold 1.0 s, cleared by 25.27",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 25.27,
+      "t1": 26.77,
+      "beat": "logo",
+      "shot": "the monitor screen shows only the small mascot mark tile at centre",
+      "camera": "static",
+      "motion": "mark tile cuts in at 25.27; tiny eye change at 25.77 (blink, ±0.25 s); jumps down 0.5 frame-height at 26.00 (layout shift)",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 26.77,
+      "t1": 28.27,
+      "beat": "logo",
+      "shot": "the screen shows a closing slogan of two 2-word sentences typing in",
+      "camera": "static",
+      "motion": "first sentence appears 26.77, second types 27.27->27.50 (±0.25 s), line recentres on springs.ui; hold to 28.00",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 28.27,
+      "t1": 30.89,
+      "beat": "logo",
+      "shot": "push in on the monitor; the letter mark appears, then the wordmark types beside it and holds to the end",
+      "camera": "push-in 1.00->~1.20 from 28.00 to 28.50 on springs.cameraIn (±0.25 s), then slow creep (+1.9 %/s)",
+      "motion": "mark cuts in at 28.27; drifts off-centre 29.00; wordmark types 29.50->29.77 while the pair recentres on springs.ui; hold 1.1 s",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 8,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "Typewriter",
+    "WordSwap",
+    "PromptBar",
+    "StackedRoll",
+    "Cursor",
+    "Camera",
+    "KenBurns",
+    "FootageClip",
+    "Flash",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: display font, fg, accent (send button and circle), bg, logo mark and wordmark",
+    "content.name": "product name typed at the open, one word",
+    "content.category": "one word that replaces the name (what the product is)",
+    "content.question": "prompt-bar heading, a question of about 6 words",
+    "content.prompt": "text typed into the bar, about 6 words",
+    "content.capabilities": "10-14 short capability names for the scrolling list; one is held at the end",
+    "content.action": "one-word label on the pill button the cursor presses",
+    "content.headline": "8-word line split into a 4-word start and a 4-word close",
+    "content.actions": "4 short action labels cycled in the pill (3-4 words each)",
+    "content.cta": "two monitor lines: invitation and URL",
+    "content.slogan": "closing slogan, two 2-word sentences",
+    "footage": "5 backgrounds: flower macro, desktop wallpaper, top-down desk, autumn avenue, white studio with a monitor"
+  },
+  "difficulty": "medium",
+  "render_cost": "heavy",
+  "notes": "Measured from 4 fps sheets (±0.25 s) and cuts.json; motion.json gives the zoom/pan rates. Music only, no VO: sfx planned by the glue rule, not measured. cut_on_beat 0/6 (hard and soft cut starts all > 2 fr from a beat). The 16.67 cut is a white flash (cuts.json via flash, same composition). Spring names and the 4 orbit dots' motion are suggestions (not measurable at 4 fps). Proposed terms (not in vocabulary): iris-lens (ring that grows into a refracting lens over the next scene, rows 4 and 12), dot-satellites (four dots ringing a word, rows 2-3), device-monitor (desktop monitor frame, rows 14-17). Theme light: majority bright backgrounds, no dark section.",
+  "status": "studied"
+}

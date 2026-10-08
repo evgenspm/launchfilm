@@ -1,0 +1,373 @@
+{
+  "id": "stacked-sample-editor-zoom-promo",
+  "title": "Stacked sample cards into an editor zoom tour",
+  "summary": "Two stacked cards show finished sample clips, a feed post proves reach with a climbing view count, then the camera dives through an editor: typed prompts, a step list, a tilted gallery, layer swaps. Mark tile, URL and offer close it.",
+  "use_when": [
+    "A vertical promo for a creative or video tool that has finished outputs worth showing first",
+    "VO-led social ad (about 40 s) that walks three ways to use the product",
+    "The product has a canvas plus timeline UI that reads well in punch-ins",
+    "Closing on an integration: your mark plus a partner mark side by side"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/BYp6gJ6G",
+    "author": "Raylight",
+    "ref_id": "rl-107"
+  },
+  "family": "social-promo",
+  "tags": [
+    "vertical",
+    "social-ad",
+    "editor-tour",
+    "prompt",
+    "tilted-ui",
+    "warm-gradient",
+    "grain",
+    "voice-over",
+    "end-card",
+    "creative-tool"
+  ],
+  "techniques": [
+    "card-grid",
+    "screen-recording",
+    "push-in",
+    "pull-out",
+    "counter",
+    "typewriter",
+    "prompt-typing",
+    "list-assemble",
+    "tilt-plane",
+    "device-phone",
+    "cursor-path",
+    "thinking-state",
+    "slide-push",
+    "whip-pan",
+    "blur-in",
+    "end-card",
+    "mesh-gradient",
+    "grain"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 42.24,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#D2A695",
+      "#101010",
+      "#E56A3E",
+      "#82ADC7",
+      "#F8F7F6",
+      "#C5C4CE"
+    ],
+    "type_style": "UI type is the product's own small grotesk; close lines medium-weight rounded grotesk, sentence case, normal tracking, about 3 % of frame height, centred, black on the gradient",
+    "treatment": [
+      "mesh-gradient",
+      "grain"
+    ]
+  },
+  "audio": {
+    "vo": true,
+    "music": {
+      "present": true,
+      "bpm": 115,
+      "energy": "medium",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "prompt characters typed (rows 6, 15, 17)",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "view counter climbs (row 4)",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "feature pills pop around the phone (row 10)",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor clicks the button, send and menu items (rows 11, 13, 15)",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "whip to the properties panel and back (rows 13, 14)",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "mark tile lands on a hard cut (rows 7, 18)",
+        "sound": "hit",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.77,
+      "beat": "hook",
+      "shot": "two stacked rounded cards on a warm grainy gradient: top = dark clip of a phone tilting in, bottom = white card where one cover grows into a strip, then a 3-row cover wall with a short count label",
+      "camera": "push-in on both cards ~1.00->1.05 over 53 fr (motion.json 13 %/s zoom at 1 s)",
+      "motion": "cover tiles cascade in: 1 tile at 0.00, 4 at 0.27, 3 rows at 1.27, easings.outExpo per step (stagger not measurable at 0.25 s); top clip plays its own camera move",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 1.77,
+      "t1": 3.83,
+      "beat": "hook",
+      "shot": "top card swaps to a blue wave lock-screen sample with a glass answer-call pill; at 3.00 bottom card swaps to a yellow card with a wordmark and an emoji",
+      "camera": "drift: wall zooms 1.00->1.6 at 2.77 then card content swaps; cards static in frame",
+      "motion": "card content swaps are cuts inside the cards (no frame cut); glass pill slides 0.25 s steps; emoji tumbles in springs.pop (overshoot not measurable)",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 3.83,
+      "t1": 5,
+      "beat": "reveal",
+      "shot": "a social feed post card (vertical clip of the editor on a laptop, side engagement counts, caption line) floating on the gradient",
+      "camera": "push-in 1.00->1.08 over 35 fr, easings.inOutSine",
+      "motion": "post plays its clip; the card itself holds",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 5,
+      "t1": 6.7,
+      "beat": "proof",
+      "shot": "close crop on the post's footer: the view count climbs from a few thousand to six figures, then the number swells",
+      "camera": "push-in to element tier ~1.08->2.8 between 4.77 and 5.27 (±0.25 s), then hold",
+      "motion": "counter rolls 9k -> 59k -> 120k -> 139k -> 140k over 1.0 s, easings.outExpo; at 6.27 the figure scales ~1.4x and settles springs.snappy (overshoot not measurable)",
+      "transition_out": "hard-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 6.7,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "small editor window (layers list, canvas with a soft green clip, properties panel, timeline) centred on the gradient",
+      "camera": "push-in ~1.00->1.15 over 39 fr, easings.inOutSine",
+      "motion": "window holds; title on the canvas fades out at 7.77",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 8,
+      "t1": 10.27,
+      "beat": "feature",
+      "shot": "canvas fills the width: a one-line prompt typed large with a caret, then the view pulls back and the line shrinks into a prompt pill with a send dot",
+      "camera": "push-in to the canvas at 8.00 (~1.6x), pull-out 9.00->9.27 to region tier, easings.outExpo",
+      "motion": "typewriter ~12 chars/s from 8.27 to 9.00; caret blinks; at 9.27 the text re-sets into the pill on springs.ui; pill finishes typing to 10.00",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 10.27,
+      "t1": 11.77,
+      "beat": "feature",
+      "shot": "the prompt pill opens into a card with a numbered step list of 4 steps with coloured tags, then the editor tilts away",
+      "camera": "static until 11.27, then the editor plane rotates ~25 deg in Y and slides left between 11.27 and 11.50",
+      "motion": "list rows assemble top to bottom, about one row per 0.25 s cell, easings.outExpo; card grows on springs.layout; tilt exit easings.inExpo",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 11.77,
+      "t1": 13.23,
+      "beat": "logo",
+      "shot": "the brand mark in a white squircle tile, centred on a swirling orange, cream and blue gradient",
+      "camera": "drift: tile scale 1.00->0.94 over 44 fr",
+      "motion": "tile lands between 11.50 and 11.77 (entrance not measurable at 0.25 s, near-miss at 11.60 in cuts.json); gradient swirls slowly behind",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 13.23,
+      "t1": 16.27,
+      "beat": "feature",
+      "shot": "a template gallery page laid on a tilted plane: header, featured card with a phone clip, community row; then the whole grid of template cards",
+      "camera": "tilt-plane ~8 deg Z and slight X lean; drift right to left; at 15.00 pull-out ~1.0->0.55 to show the grid, then dolly up",
+      "motion": "pull-out easings.inOutSine over ~8 fr between 14.77 and 15.00 (±0.25 s); cards inside play their own clips",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 16.27,
+      "t1": 18.03,
+      "beat": "feature",
+      "shot": "one template's page: short title top left, a phone mockup on a warm card; three feature pills with icons pop around the phone",
+      "camera": "pan left ~25 px/s @1920 (motion.json), then push-in 1.00->1.10 to the phone",
+      "motion": "phone rotates from upright to ~25 deg tilt between 17.00 and 17.50 on springs.heavy; pills pop at 17.50, 17.77 and 18.00 on springs.pop (overshoot not measurable)",
+      "transition_out": "slide-push",
+      "sfx": "pop"
+    },
+    {
+      "t0": 18.03,
+      "t1": 19.67,
+      "beat": "feature",
+      "shot": "corner of the tilted page: a like count and a blue primary button; a cursor comes in and clicks; the button turns pale with a spinner and a loading label",
+      "camera": "slide-push left over 12 fr (18.03-18.43 in cuts.json), then the page keeps tilting ~5 deg clockwise",
+      "motion": "cursor-path to the button 18.50-19.00, click squash springs.click at ~19.00; loading state from 19.27 with a spinner",
+      "transition_out": "hard-cut",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 19.67,
+      "t1": 22.5,
+      "beat": "feature",
+      "shot": "editor canvas holding a tilted phone mockup image layer, toolbar and timeline below; selection box appears on the layer",
+      "camera": "push-in 1.00->~1.8 from 20.00 to 22.27 (motion.json up to 35 %/s at 21 s), easings.inOutSine",
+      "motion": "phone image slides into the canvas from below 20.00-20.77; selection box with handles at 21.77",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 22.5,
+      "t1": 23.57,
+      "beat": "feature",
+      "shot": "the properties panel (position, depth, tilt fields); a source dropdown opens with 3 options, cursor highlights the first",
+      "camera": "whip-pan right to the panel at 22.27-22.50, then hold with slight push-in",
+      "motion": "dropdown opens at 23.00 on springs.ui; item highlight at 23.50",
+      "transition_out": "whip-pan",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 23.57,
+      "t1": 26.27,
+      "beat": "feature",
+      "shot": "back on the canvas: the phone layer now shows a new screenshot (yellow app screen); then the editor slides down and off, leaving the full-frame gradient",
+      "camera": "whip-pan back left 23.57-24.10 (cuts.json soft), slow drift down 24.50-25.77, then the editor slides out downward 26.00-26.27",
+      "motion": "screenshot swap shows as an upload state at 24.10, new image visible at 24.50; exit easings.inExpo (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 26.27,
+      "t1": 29.27,
+      "beat": "feature",
+      "shot": "a fresh canvas with a blue gradient frame and an empty prompt pill; a prompt of about 7 words is typed, then the send button is shown close",
+      "camera": "editor rises in 26.27-26.50; static while typing; push-in to the send button ~1.0->2.5 at 28.27-28.50, easings.outExpo",
+      "motion": "typewriter 26.77-27.77, about 30 chars in 1 s; cursor hovers then clicks send at ~29.00, springs.click",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 29.27,
+      "t1": 30.27,
+      "beat": "feature",
+      "shot": "close on the toolbar and timeline: clip segments and a playhead that scrubs",
+      "camera": "pan down and push-in to detail tier at 29.27, then a slight pan right",
+      "motion": "playhead scrubs ~1 s of timeline per 0.25 s cell, easings.linear",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 30.27,
+      "t1": 31.77,
+      "beat": "feature",
+      "shot": "pull back to the canvas: the prompt pill text gets a selection box with handles, then is highlighted",
+      "camera": "pull-out to region tier at 30.27, springs.cameraOut; small push-in 30.50-31.50",
+      "motion": "text box selection at 30.77, text highlight at 31.00",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 31.77,
+      "t1": 34.6,
+      "beat": "feature",
+      "shot": "the highlighted text is replaced: a short line of about 5 words is typed in the pill, letter by letter",
+      "camera": "static (pill and timeline hold; no change across 32.00-34.50 cells, motion.json hold 32-33 s)",
+      "motion": "typewriter ~8 chars/s from 31.77 to 34.00, caret visible; holds 0.5 s",
+      "transition_out": "hard-cut",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 34.6,
+      "t1": 36.27,
+      "beat": "logo",
+      "shot": "the mark tile on the gradient; a second partner tile (sunburst mark) slides out from behind it to the left, forming a pair",
+      "camera": "drift 1.00->0.95, tiles shrink and recentre",
+      "motion": "partner tile emerges 34.77-35.27 springs.snappy (overshoot not measurable); pair holds; at 36.27 both fade out with blur",
+      "transition_out": "continuous",
+      "sfx": "hit"
+    },
+    {
+      "t0": 36.27,
+      "t1": 38.5,
+      "beat": "cta",
+      "shot": "the product URL alone, centred on the moving gradient",
+      "camera": "static frame; gradient swirls behind",
+      "motion": "URL blur-in from 36.27 to 36.50 (about 8 fr, ±0.25 s), easings.outExpo; hold 2.0 s",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 38.5,
+      "t1": 42.24,
+      "beat": "cta",
+      "shot": "a 3-word offer line replaces the URL in the same place and holds to the end; gradient keeps flowing",
+      "camera": "static frame; gradient swirls behind",
+      "motion": "line swaps in as a cut between 38.27 and 38.50 cells; holds 3.7 s; audio is silent from 41.87",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 6,
+    "screenshots": 2,
+    "screen_recording": true,
+    "ui_rebuild": false,
+    "stats": 1,
+    "url": true
+  },
+  "components": [
+    "DesktopBackdrop",
+    "Grain",
+    "Surface",
+    "FootageClip",
+    "Counter",
+    "Camera",
+    "TiltPlane",
+    "PhoneFrame",
+    "Cursor",
+    "PromptBar",
+    "Typewriter",
+    "ListAssemble",
+    "BlurIn",
+    "ShotTransition",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: warm gradient colours, accent for buttons, display font for the close lines",
+    "content.samples": "3-4 short finished clips for the two stacked cards in the hook",
+    "content.covers": "about 20 square thumbnails for the growing wall",
+    "content.post": "a vertical clip of the product in use, plus a view figure from and to",
+    "content.editorClips": "screen recordings: canvas, prompt typing, step list, gallery, layer swap, timeline",
+    "content.prompts": "two prompt lines: one about 7 words, one about 5 words",
+    "content.pills": "3 one-word feature labels with icons",
+    "content.screenshots": "2 phone screenshots for the layer swap",
+    "content.partnerMark": "optional second mark for the integration pair",
+    "content.url": "product URL",
+    "content.offer": "3-word offer line",
+    "voiceOver": "VO file and words.json; rows stretch to its sentence ends"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Rows follow the VO: each sentence gets one row or a pair. Only 5 hard cuts in 42 s (1 of 5 within 2 fr of a beat); most changes are continuous camera moves inside screen recordings. Speeds are from 4 fps sheets (±0.25 s) and motion.json, not from 30 fps strips; spring names are suggestions (overshoot not measurable). SFX planned by the glue rule, not measured: the reference has VO plus music and no SFX can be told apart. Proposed terms (not in the vocabulary): stacked-sample-cards, partner-tile-pair, gradient-interlude.",
+  "status": "studied"
+}

@@ -1,0 +1,116 @@
+{
+  "id": "ring-fill-percent-climb",
+  "title": "Ring fill with a climbing percentage",
+  "summary": "One thin ring on a flat saturated field fills clockwise from 12 o'clock while the centred percentage counts up in sync, fast through the middle and crawling into the last points. A single stat lands without any other element.",
+  "use_when": [
+    "One headline figure (accuracy, uptime, completion) needs its own short beat",
+    "A loading or processing moment inside a longer product film",
+    "A loopable social tile or stat card for a feed",
+    "Silent autoplay where the number must read without VO"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/counter-progress-ring/",
+    "author": "Jitter",
+    "ref_id": "jt-079"
+  },
+  "family": "data-stats",
+  "tags": [
+    "counter",
+    "progress",
+    "ring",
+    "percentage",
+    "single-stat",
+    "loader",
+    "minimal",
+    "light",
+    "flat-color",
+    "no-audio"
+  ],
+  "techniques": [
+    "counter"
+  ],
+  "format": {
+    "aspect": "4:5",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#00FF29",
+      "#010101",
+      "#4EFE6A"
+    ],
+    "type_style": "bold grotesk numerals with a percent sign, centred in the ring, cap height about 7 % of frame height; label width grows with digit count",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "counter digits change during the fast middle of the fill",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "ring closes at the final value",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "one thin ring centred on a flat bright field: pale track, dark progress arc filling clockwise from 12 o'clock, percentage label in the centre",
+      "camera": "static",
+      "motion": "fill and counter share one curve: holds at 0 until about f8 (±0.25 s), short ease-in, fastest 1.00 to 1.27 s (22 to 51 %), then a long decelerating tail close to easings.outExpo, 85 % at f60, 95 % at f83, 99 % from f105 to the end; label is an integer that tracks the arc each frame; nothing enters or exits",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "ProgressRing",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the field, fg for arc and label, a 30 % tint of fg or a lighter bg tone for the track",
+    "content.value": "final value 0..1 (reference stops just short of full, label reads 99)",
+    "content.suffix": "unit after the number, default percent sign",
+    "content.caption": "optional short label under the ring, off in the reference",
+    "timing.start": "frames before the fill starts (default 8)",
+    "timing.duration": "frames of the fill (default 105, then hold to the end)",
+    "ring.radius": "fraction of the short side (default 0.32)",
+    "ring.stroke": "stroke px at 1080 short side (default 12, thin)",
+    "aspect": "4:5 | 1:1 | 9:16 | 16:9; ring stays centred",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Counter values read from sheet-01 (t s: %): 0.27:0, 0.50:2, 0.77:9, 1.00:22, 1.27:51, 1.50:68, 1.77:78, 2.00:85, 2.27:90, 2.50:93, 2.77:95, 3.00:97, 3.27:98, 3.50:99, 3.77:99. Arc and number move together; the arc starts at 12 o'clock and runs clockwise with butt caps. ProgressRing defaults differ (9 o'clock, counter-clockwise, thick stroke, glow, inOutExpo): set startAngle 0, direction 1, a thin stroke, glow 0 and a decelerating easing. Not loopable as is (ends at 99 %, starts at 0 %). Proposed term progress-ring (circular fill tied to a counter) not in vocabulary. sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

@@ -1,0 +1,273 @@
+{
+  "id": "kinetic-phrase-glass-reveal",
+  "title": "Beat-Built Phrase Into a Glass UI",
+  "summary": "A centred phrase grows one word at a time, sheds its earlier words, and dives into a glass badge. A floating orb carries the focus into a compact interface reveal.",
+  "use_when": [
+    "a six-to-eight-second feature teaser led by typography",
+    "a launch beat that must bridge copy into one compact interface",
+    "a light brand with one saturated accent and translucent surfaces"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/cn9UdlNI",
+    "author": "Samet Onder",
+    "ref_id": "rl-024"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "kinetic-type",
+    "word-build",
+    "glass-ui",
+    "mesh-gradient",
+    "feature-teaser",
+    "orb-bridge"
+  ],
+  "techniques": [
+    "word-reveal",
+    "dim-emphasis",
+    "typewriter",
+    "zoom-tier",
+    "blur-dissolve",
+    "morph",
+    "glass-mark",
+    "mesh-gradient",
+    "liquid-glass",
+    "glow",
+    "ui-rebuild"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 6.96,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#2978FC",
+      "#71A6FD",
+      "#EEF6FE"
+    ],
+    "type_style": "bold grotesk, sentence case, tight tracking, 7-12 % of frame height; compact regular UI labels at the close",
+    "treatment": [
+      "mesh-gradient",
+      "liquid-glass",
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": true,
+      "bpm": 152.2,
+      "energy": "high",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each phrase word arrives",
+        "sound": "tick"
+      },
+      {
+        "event": "badge letters resolve",
+        "sound": "type-click"
+      },
+      {
+        "event": "camera snaps to the badge",
+        "sound": "whoosh"
+      },
+      {
+        "event": "glass mark settles",
+        "sound": "shimmer"
+      },
+      {
+        "event": "interface panel lands",
+        "sound": "swell"
+      },
+      {
+        "event": "interface details settle",
+        "sound": "ui-confirm"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.53,
+      "beat": "hook",
+      "shot": "one centred setup word over a drifting blue-white gradient",
+      "camera": "static",
+      "motion": "word already present; background blobs drift 2-6 px/s with easings.linear over 16 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 0.53,
+      "t1": 0.93,
+      "beat": "hook",
+      "shot": "a second word extends the centred setup line and becomes the accent focus",
+      "camera": "static",
+      "motion": "second word blur-in and opacity rise with easings.outExpo 3 fr; line recentres in 10 fr with springs.ui",
+      "transition_out": "blur-dissolve",
+      "sfx": "tick"
+    },
+    {
+      "t0": 0.93,
+      "t1": 1.3,
+      "beat": "hook",
+      "shot": "a third word completes the short setup statement while the middle word stays darkest",
+      "camera": "static",
+      "motion": "third word blur-in with easings.outExpo 3 fr; three-word line recentres over 10 fr with springs.ui",
+      "transition_out": "blur-dissolve",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.3,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "the leading word fades away and the remaining pair shifts back to centre",
+      "camera": "static",
+      "motion": "leading word opacity and blur exit with easings.inExpo 6 fr; reflow rides springs.ui over 10 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 1.5,
+      "t1": 1.8,
+      "beat": "hook",
+      "shot": "the second word fades, leaving the final setup word isolated for a brief beat",
+      "camera": "static",
+      "motion": "second word exits with easings.inExpo 9 fr; surviving word recentres with springs.ui",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 1.8,
+      "t1": 2.17,
+      "beat": "reveal",
+      "shot": "a new two-word reveal statement replaces the isolated setup word",
+      "camera": "static",
+      "motion": "two words crossfade and blur-in sequentially, 6 fr apart, easings.outExpo 6 fr each",
+      "transition_out": "blur-dissolve",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.17,
+      "t1": 2.37,
+      "beat": "reveal",
+      "shot": "a rounded blue badge completes the reveal line with one compact label",
+      "camera": "static",
+      "motion": "glass pill expands with springs.layout; label types across 6 fr with easings.stepped(7)",
+      "transition_out": "blur-dissolve",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 2.37,
+      "t1": 3.13,
+      "beat": "reveal",
+      "shot": "the complete three-part reveal holds, then the badge fills the frame",
+      "camera": "zoom-tier full to detail, scale 1.00 to 2.75 in the final 5 fr with springs.cameraSnappy",
+      "motion": "line holds for 18 fr; camera snap begins at 2.97 s and lands within 5 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.13,
+      "t1": 4.43,
+      "beat": "reveal",
+      "shot": "a translucent orb appears above the enlarged badge while the surrounding phrase crops away",
+      "camera": "drift x -4 px/s at 1920-wide, scale 1.00 to 0.99 over 39 fr",
+      "motion": "orb enters over 12 fr with springs.pop, then floats 2-6 px/s with easings.inOutSine",
+      "transition_out": "blur-dissolve",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 4.43,
+      "t1": 4.8,
+      "beat": "reveal",
+      "shot": "the enlarged phrase and badge dissolve as the glass orb grows and takes focus",
+      "camera": "static",
+      "motion": "type and badge exit with easings.inExpo 11 fr; orb grows with springs.heavy over 11 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 4.8,
+      "t1": 5.17,
+      "beat": "logo",
+      "shot": "the glass orb crosses the empty gradient field as the sole subject",
+      "camera": "static",
+      "motion": "orb translates right and down over 11 fr with springs.heavy, retaining its internal refraction",
+      "transition_out": "morph",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 5.17,
+      "t1": 5.6,
+      "beat": "outro",
+      "shot": "a rounded interface panel slides in and absorbs the orb as its small mark",
+      "camera": "static",
+      "motion": "panel rises and slides left with springs.ui over 13 fr; mark scales down with springs.heavy over 13 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "swell"
+    },
+    {
+      "t0": 5.6,
+      "t1": 6.67,
+      "beat": "outro",
+      "shot": "the compact interface settles with a mark, heading, two side icons and one highlighted capability row",
+      "camera": "static",
+      "motion": "labels and icons blur-in with easings.outExpo 6 fr and 2 fr stagger; panel holds for 26 fr",
+      "transition_out": "blur-dissolve",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 6.67,
+      "t1": 6.96,
+      "beat": "outro",
+      "shot": "the interface fades back into the blue-white gradient",
+      "camera": "static",
+      "motion": "panel, mark and labels exit together with easings.inExpo 9 fr",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "EvolvingPhrase",
+    "MeshGradientBackdrop",
+    "LiquidOrbMark",
+    "CompactPanel",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any light brand.json; bg, surface, fg, accent, accent2, display and text fonts drive the whole render",
+    "content.setupWords": "three short words revealed on separate beats, each no longer than 10 letters",
+    "content.revealWords": "two plain words in the replacement phrase",
+    "content.badgeLabel": "one compact label inside the glass badge",
+    "content.panelTitle": "short heading for the final interface, no more than two words",
+    "content.capabilityLabel": "one highlighted interface capability, no more than three words",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; size comes from ASPECTS",
+    "fps": "composition fps (default 30); the measured 209-frame structure scales by fps / 30"
+  },
+  "difficulty": "medium",
+  "render_cost": "heavy",
+  "notes": "One continuous shot with zero detected cuts. State boundaries were measured from 30 fps strips; the rapid full-to-detail move occupies about 5 frames. Proposed phrase-chain reflow appends words, removes leading words, and recentres the survivors. The glass orb bridges the badge to the final mark. SFX planned by the glue rule, not measured.",
+  "preview": {
+    "demo_brand": "plumday"
+  },
+  "status": "built"
+}

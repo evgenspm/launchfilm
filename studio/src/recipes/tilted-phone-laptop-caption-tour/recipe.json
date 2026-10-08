@@ -1,0 +1,236 @@
+{
+  "id": "tilted-phone-laptop-caption-tour",
+  "title": "Tilted phone to laptop tour with typed captions",
+  "summary": "Dark, silent 30 s promo: a mark lockup, three tilted phone close-ups each paired with a short green caption typed letter by letter, a four-line stacked statement, then a laptop pull-out and a closing mark.",
+  "use_when": [
+    "A consumer app that ships on phone and desktop and wants one film for both",
+    "Silent autoplay feeds where green-on-black captions carry the message",
+    "You have 3 phone screenshots and 1 desktop screenshot, no UI rebuild",
+    "A dark brand with one saturated accent colour"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/qd1lP40w",
+    "author": "Joseph Lauriano",
+    "ref_id": "rl-047"
+  },
+  "family": "launch-film",
+  "tags": [
+    "dark",
+    "phone",
+    "laptop",
+    "tilted-device",
+    "captions",
+    "letter-type-on",
+    "stacked-statement",
+    "silent",
+    "accent-green",
+    "multi-device"
+  ],
+  "techniques": [
+    "device-phone",
+    "device-laptop",
+    "tilt-plane",
+    "push-in",
+    "pull-out",
+    "zoom-through",
+    "kinetic-depth",
+    "hard-cut",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 30.03,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#15AA4A",
+      "#118E3D",
+      "#A11D0F",
+      "#3B363C",
+      "#94938B"
+    ],
+    "type_style": "captions: bold rounded grotesk, sentence case, 7-9 % H, accent green on black, set on the device's tilted plane; stacked statement: extended heavy grotesk caps, 4 lines, 7 % H rising to 10 % H on the last line",
+    "treatment": [
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "caption letters typing on",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "zoom-through exit of the third phone shot",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "laptop pull-out reveal",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "closing mark fades in",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.77,
+      "beat": "hook",
+      "shot": "small mark-plus-word lockup in accent green, centred on black, an opener credit line",
+      "camera": "static",
+      "motion": "mark wipes in from its left edge 0.27→0.50 (±0.25 s), word slides out from behind the mark 0.50→0.77, easings.outExpo ~8 fr (±0.25 s); hold 0.77–1.50; fade out ~6 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1.77,
+      "t1": 6.27,
+      "beat": "reveal",
+      "shot": "extreme close-up of a phone's top corner tilted ~20°: greeting header, settings icon, row of large album-style cover tiles",
+      "camera": "tilt-plane drift down-right ~1.5-2.5 px/fr @1920 with a slow roll (~3.5°/s, motion.json), no zoom",
+      "motion": "fades up from black 2.00→2.27, easings.outQuint 8 fr (±0.25 s); continuous drift through the hold; fades to black by 6.27",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 6.27,
+      "t1": 8.77,
+      "beat": "feature",
+      "shot": "phone bottom edge (now-playing bar, tab bar) on a tilted plane; caption of 2 words types on beneath it, then the phone pulls back to show a track list",
+      "camera": "phone slides in from top-left 6.50→7.00, springs.heavy (overshoot not measurable); pull-out at 8.50 (scale ~0.85, ±0.25 s)",
+      "motion": "caption letter-by-letter on the plane 7.27→7.77, ~2 letters/fr-cell (≈ 1 letter per 1.5 fr, ±0.25 s), slight depth blur at the far end; holds to 8.00; erases right-to-left 8.00→8.50",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 8.77,
+      "t1": 10.77,
+      "beat": "feature",
+      "shot": "phone tilted showing an artist profile page with red header and round portrait; 3-word caption on 2 lines types on to its right",
+      "camera": "near static tilt-plane (drift < 1 px/fr) then zoom-through toward the left screen edge at 10.27→10.77: zoom ~22 %/s, pan -178 px/s @1920 (motion.json), easings.inExpo",
+      "motion": "caption letter-by-letter 9.00→9.50 (±0.25 s), holds 9.50–10.27; caption is carried into the zoom and leaves with the plane",
+      "transition_out": "zoom-through",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 10.77,
+      "t1": 14.27,
+      "beat": "feature",
+      "shot": "four-line stacked statement in extended heavy caps on black, last line names the product, larger",
+      "camera": "static while building; at 13.77 the stack tips back onto a receding plane and scrolls up out of frame (~380 px/s @1920, motion.json)",
+      "motion": "each line types on letter by letter in ~0.25 s, lines start 11.00, 11.77, 12.27, 12.77 (±0.25 s); new lines enter blurred and sharpen in ~8 fr (±0.25 s); hold 13.00–13.50; exit easings.inExpo ~15 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 14.27,
+      "t1": 16.23,
+      "beat": "feature",
+      "shot": "two-line availability caption (4 words, sentence case) arriving from the top-right corner to centre on black",
+      "camera": "static",
+      "motion": "black 14.27–14.50; caption flies in from top-right 14.77→15.27, springs.ui (overshoot not measurable); hold 15.27–16.00; blurs and dims over the last ~6 fr (±0.25 s)",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 16.23,
+      "t1": 20,
+      "beat": "feature",
+      "shot": "close, angled view across a desktop app home screen on a laptop: section titles, square release tiles, coloured category bars",
+      "camera": "tilt-plane drift left and up ~1.5-2 px/fr @1920 with push-in ~1.2-2 %/s (motion.json)",
+      "motion": "no element motion; dims to black 19.50→20.00, easings.inOutSine 15 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 20,
+      "t1": 21.77,
+      "beat": "tension",
+      "shot": "black hold, 53 fr, rhythm break before the desktop reveal",
+      "camera": "static",
+      "motion": "none",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 21.77,
+      "t1": 24.77,
+      "beat": "feature",
+      "shot": "the full desktop app screen rises from the bottom, fills the frame, then pulls out to a laptop seen front-on",
+      "camera": "rise from bottom 21.77→22.00 (~500 px/s @1920), push-in to ~1.3 at 22.27, then pull-out to the laptop at 22.50→23.00 springs.cameraOut; hold 23.00–24.50; at 24.77 the laptop tilts forward and the camera pushes toward its lower half",
+      "motion": "screen is a flat plate until 22.50, then the laptop bezel and keyboard fade up with the pull-out over ~15 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 24.77,
+      "t1": 28.27,
+      "beat": "feature",
+      "shot": "low-angle close of the laptop's lower screen (category bars, player bar) and the dark keyboard",
+      "camera": "one black frame-cell at 25.00, then push-in ~2-6 %/s with a slight drift left (motion.json), easings.linear",
+      "motion": "fades up 25.00→25.27 (±0.25 s); hold; fades to black 27.77→28.27",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 28.27,
+      "t1": 30.03,
+      "beat": "logo",
+      "shot": "brand mark and wordmark lockup centred on black",
+      "camera": "static",
+      "motion": "fades in 28.27→28.50, easings.outQuint 8 fr (±0.25 s); hold 28.50–29.50; fades out 29.50→30.00",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 7,
+    "screenshots": 4,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "LaptopFrame",
+    "LaptopReveal",
+    "TiltPlane",
+    "Camera",
+    "ZoomThrough",
+    "Typewriter",
+    "DepthPhrase",
+    "BrandLogo",
+    "Lockup",
+    "Vignette",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: accent (caption green), bg black, display font for captions, extended heavy font for the stack",
+    "content.opener": "small lockup line after the mark, 1 word",
+    "content.phoneShots": "3 phone screenshots: home grid, now-playing/tab bar, profile page",
+    "content.captions": "2 captions, 2-3 words each, typed beside the phone shots",
+    "content.stack": "4 short caps lines, last one the product name",
+    "content.availability": "2-line caption, ~4 words, says where else it runs",
+    "content.desktopShot": "1 desktop screenshot shown in a laptop"
+  },
+  "difficulty": "medium",
+  "render_cost": "medium",
+  "notes": "Silent reference: sfx planned by the glue rule, not measured. Every shot enters and leaves through black (fade ~6-15 fr) instead of cuts; only one hard cut (16.23). Captions type on letter by letter without a caret (proposed term letter-type-on); the opener lockup mark wipes in and the word slides out of it (proposed term mark-slide-lockup). Black hold 20.00-21.77 is deliberate. Timings from 4 fps sheets, ±0.25 s.",
+  "status": "studied"
+}

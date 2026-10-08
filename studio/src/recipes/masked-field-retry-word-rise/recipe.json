@@ -1,0 +1,218 @@
+{
+  "id": "masked-field-retry-word-rise",
+  "title": "Masked field retries, then a calm word rise",
+  "summary": "A lone password field is typed, wiped and retyped three times, each attempt longer, before one still line names the pain. The product then fills the field in one go and three short lines rise word by word to a URL.",
+  "use_when": [
+    "Security, login or credential products whose pain is a familiar input struggle",
+    "Problem then solution story told with behaviour before any copy",
+    "Silent autoplay where a tiny UI moment carries the hook",
+    "Short 15-20 s teaser with one UI element rebuilt in React"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/KzfDULKH",
+    "author": "scanna",
+    "ref_id": "rl-079"
+  },
+  "family": "product-ui",
+  "tags": [
+    "problem-solution",
+    "input-field",
+    "masked-typing",
+    "retry",
+    "statement",
+    "word-rise",
+    "dark",
+    "silent",
+    "security",
+    "cursor"
+  ],
+  "techniques": [
+    "typewriter",
+    "ui-rebuild",
+    "cursor-path",
+    "morph",
+    "statement-sequence"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 17.83,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#090B0A",
+      "#FFFFFF",
+      "#9B9A9B",
+      "#000000",
+      "#1C1D43",
+      "#B3B3C4"
+    ],
+    "type_style": "geometric sans, bold, sentence case, normal tracking; statements one line ~5.5 % of H, ~43 % of W wide (human 30 fps study); small bold wordmark above a 5.6 % H field",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each masked character lands in the field (human attempts and the auto-fill)",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor clicks the field, the product pill and the generate button",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "the still problem line appears: drop the room tone for the hold",
+        "sound": "silence-beat",
+        "origin": "planned"
+      },
+      {
+        "event": "last word of each rising statement settles",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "empty white input bar centred on near-black; small wordmark fades in above it",
+      "camera": "locked (motion.json zoom 0 %/s)",
+      "motion": "wordmark fades grey to white ~12 fr (human 30 fps study); bar squashes twice, scaleX 1 to ~0.25 to 1 with a skewed trapezoid, 0.55-0.75 s and 0.95-1.15 s (human 30 fps study; sheet cells 0.50-1.27 show it); cursor enters from lower left, easings.outQuint ~10 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 1.5,
+      "t1": 5.97,
+      "beat": "problem",
+      "shot": "the field gains a small label and a 3-segment strength meter; three masked attempts, each wiped and retyped longer",
+      "camera": "locked (motion.json zoom ≤ 0.4 %/s, not visible on sheets)",
+      "motion": "click at 1.50 s, label + meter appear ~6 fr (±0.25 s); typing easings.linear 2 fr/char (human 30 fps study): 5 chars f47-55, hold 27 fr, select-all wipe in 1 fr at f82 then 10 chars to f99, hold 15 fr, wipe at f114 then 20 chars to f151; meter fills by length red, orange, green (green at 5.27 s on the sheet); hold 27 fr",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 5.97,
+      "t1": 7.77,
+      "beat": "problem",
+      "shot": "one-line statement, 7 words, names the pain; pure black with two soft diagonal light streaks (violet, lilac)",
+      "camera": "locked; streaks drift slowly, motion.json zoom 0.5-1.3 %/s",
+      "motion": "line switches in whole, no entrance animation, holds 53 fr (human 30 fps study); nothing on the type moves",
+      "transition_out": "continuous",
+      "sfx": "silence-beat"
+    },
+    {
+      "t0": 7.77,
+      "t1": 9.6,
+      "beat": "reveal",
+      "shot": "one-line answer statement, 4 words, names the product as the end of the pain; same streak backdrop",
+      "camera": "locked; streaks drift, motion.json zoom 0.7-1.3 %/s",
+      "motion": "per-word rise 0.8 em to 0, opacity ~0.3 to 1, easings.outCubic 13 fr per word, stagger ~2.3 fr, settled f251, hold ~35 fr (human 30 fps study); sheet 7.77 shows first word only, 8.00 mid-rise, 8.27 settled",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 9.6,
+      "t1": 11.27,
+      "beat": "feature",
+      "shot": "the field again, empty, with an outlined pill button under it; cursor clicks the pill and it slides left of the field as a generate button",
+      "camera": "slight drift, motion.json zoom 0.6-1.1 %/s (not visible on sheets)",
+      "motion": "field fades up from black 10 fr (human 30 fps study); cursor-path to the pill, press at ~10.6 s (±0.25 s); pill fills and morphs left on springs.ui ~10 fr, overshoot not measurable; settled by 11.50 on the sheet",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 11.27,
+      "t1": 14.33,
+      "beat": "feature",
+      "shot": "cursor clicks the generate button; the field fills with 20 masked chars in one run, meter jumps to green",
+      "camera": "near-locked, motion.json zoom -0.2 to 0.1 %/s",
+      "motion": "click ~11.77 s (±0.25 s); auto-fill easings.linear 2 fr/char, no pauses, no wipes (human 30 fps study), 3 chars at 12.27, 10 at 12.77, 20 by 13.50 on the sheet; meter green at 13.77; hold to 14.33",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 14.33,
+      "t1": 15.73,
+      "beat": "cta",
+      "shot": "imperative statement, 2 short sentences, 5 words, invites the viewer to stop remembering; streaks now cross lower right",
+      "camera": "locked; streaks drift, motion.json zoom 0.7 %/s",
+      "motion": "same per-word rise, easings.outCubic 13 fr per word, stagger ~2-3 fr, line settled ~18 fr, hold ~22 fr (human 30 fps study); 14.50 shows 3 words rising, 15.00 settled",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 15.73,
+      "t1": 17.07,
+      "beat": "cta",
+      "shot": "reassurance statement, 5 words, hands the job to the product",
+      "camera": "locked; streaks drift, motion.json zoom 0.8 %/s",
+      "motion": "same per-word rise, settled ~16 fr, hold ~22 fr (human 30 fps study); 15.77 first word, 16.00 mid-rise, 16.27 settled",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 17.07,
+      "t1": 17.83,
+      "beat": "cta",
+      "shot": "the product URL alone, centred, same streak backdrop",
+      "camera": "locked",
+      "motion": "whole block fades in with a small rise, easings.outCubic 10 fr (human 30 fps study); 17.27 a few px low, 17.50 settled; holds to the end",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "FieldType",
+    "fieldTimeline",
+    "Cursor",
+    "StatementSequence",
+    "Statement",
+    "TYPE_ENTER",
+    "Wordmark",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: wordmark above the field, bg, fg, accent for the meter's final segment",
+    "content.fieldLabel": "small label above the field, 1 word",
+    "content.attempts": "lengths of the human attempts, default 5, 10, 20 chars; each wiped by select-all",
+    "content.problem": "one line, ≤ 8 words, names the pain; arrives still",
+    "content.answer": "one line, ≤ 5 words, names the product as the fix; rises per word",
+    "content.buttonLabels": "pill label before and after the morph, 1-2 words each",
+    "content.closers": "two short lines, ≤ 6 words each, rise per word",
+    "content.url": "final line, defaults to brand.url",
+    "timing.perChar": "frames per typed char at 30 fps (default 2)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "cuts.json lists 0 cuts, so every transition_out is continuous; the sheets show instant whole-frame switches at 5.97, 7.77, 9.60, 14.33, 15.73, 17.07 s (three are cuts.json near-misses at 5.967, 9.600, 14.333 s), so a rebuild may treat them as hard cuts. Timings, 2 fr/char cadence, 0.8 em rise and 13 fr per word come from the human 30 fps study; sheet resolution is 0.25 s. Escalating attempts 5 -> 10 -> 20 are the story; the wipe is select-all replace, not backspace. Problem line still, answer lines move. Meter red/orange/green not in palette (palettegen on keyframes missed them). Light streak backdrop and per-word rise without blur are proposed terms. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

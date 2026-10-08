@@ -1,0 +1,114 @@
+{
+  "id": "tile-mark-spin-resolve",
+  "title": "App tile mark spin-resolve sting",
+  "summary": "A black rounded app tile fades in over a soft iridescent gradient, its white line mark spins out of a blur into focus, holds, then dissolves back and the tile shrinks away. A 3 s silent loop for an icon moment.",
+  "use_when": [
+    "A short logo sting or loop for an app whose icon is a single-colour mark on a solid tile",
+    "Opening or closing a longer film on the app icon",
+    "A silent social or website loop that returns to the empty background",
+    "An AI or abstract product whose mark reads as a knot, swirl or radial glyph"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/openai-logo/",
+    "author": "Fons Mans",
+    "ref_id": "jt-061"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo",
+    "app-icon",
+    "sting",
+    "loop",
+    "mark-reveal",
+    "blur",
+    "gradient-bg",
+    "minimal",
+    "silent",
+    "light"
+  ],
+  "techniques": [
+    "mesh-gradient",
+    "grain"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 3.2,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#EDD288",
+      "#000000",
+      "#627ECF",
+      "#91A1CE",
+      "#C7BFB1",
+      "#2B4367"
+    ],
+    "type_style": "no type; white line mark at ~45 % of the tile width, tile ~42 % of frame height with ~22 % corner radius",
+    "treatment": [
+      "mesh-gradient",
+      "grain"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "mark spins out of the blur into focus",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.2,
+      "beat": "hook",
+      "shot": "empty iridescent gradient; black rounded app tile centred; white line mark resolves, holds, leaves; tile shrinks out",
+      "camera": "static (motion.json pan 0-1 px/s, zoom 0.0 %/s; background does not move)",
+      "motion": "f0-3 empty; tile opacity 0->1 f4-9 (6 fr, easings.outQuint), no scale change; mark f10-24: blur ~0.1 tile -> 0, rotation in (amount not measurable), opacity 0->1, easings.outExpo 15 fr; hold f24-78; mark exit f79-83 reverse (blur up, dim, 5 fr, easings.inExpo); tile f84-89 opacity 1->0, scale 1.0->0.6, easings.inExpo 6 fr; f90-95 empty",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "Grain",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: tile colour (fg or a dark surface), mark colour, gradient colours for the backdrop",
+    "content.mark": "single-colour SVG mark, line or solid, centred in the tile",
+    "content.tileRadius": "corner radius as a share of tile size (default 0.22)",
+    "background": "gradient image or generated mesh-gradient stops (3-5 pastel colours)",
+    "timing.hold": "frames the resolved mark holds (default 54)",
+    "loop": "true = start and end on the empty background (default)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 30 fps strips at t = 0 and t = 2.2: tile in f4-9, mark resolve f10-24, hold to f78, mark out f79-83, tile out with shrink f84-89, empty from f90. Exit is faster than entrance (5+6 fr vs 6+15 fr). Proposed terms (not in vocabulary): spin-resolve (mark spins out of a gaussian blur into focus), tile-pop-out (container shrinks and fades after its content leaves). sfx planned by the glue rule, not measured; the reference is silent.",
+  "status": "studied"
+}

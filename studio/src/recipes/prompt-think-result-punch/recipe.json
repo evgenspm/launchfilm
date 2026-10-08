@@ -1,0 +1,180 @@
+{
+  "id": "prompt-think-result-punch",
+  "title": "Prompt, punch-in send, agent thinks, result lands",
+  "summary": "A white prompt pill types one request fast on a warm mesh gradient, holds, punches in on the send button for a slow cursor and a 3-frame press, then cuts to the chat: agent header, thinking lines, spinner, a code card and a shimmer.",
+  "use_when": [
+    "An AI agent or assistant product that turns one prompt into a result",
+    "A short 5 s social loop or the opener of a longer AI product film",
+    "A light, warm consumer brand that wants the UI to feel soft and premium",
+    "Showing that the product is working without a progress bar"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/0Gk9f2du",
+    "author": "Raylight",
+    "ref_id": "rl-053"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "prompt",
+    "ai-agent",
+    "thinking",
+    "cursor",
+    "punch-in",
+    "mesh-gradient",
+    "light",
+    "warm",
+    "chat",
+    "short"
+  ],
+  "techniques": [
+    "prompt-typing",
+    "zoom-tier",
+    "cursor-path",
+    "thinking-state",
+    "stream-text",
+    "mesh-gradient",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4.97,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FDBC93",
+      "#F5ECF1",
+      "#FE9962",
+      "#F6C1D2",
+      "#DB8555",
+      "#906048"
+    ],
+    "type_style": "neutral grotesk, regular weight, sentence case, normal tracking; prompt 2 % H in the pill, 4 % H in the message bubble; thinking lines 2.5 % H grey; code card in small mono",
+    "treatment": [
+      "mesh-gradient"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each typed character in the prompt pill",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "send button press",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "agent header and thinking lines appear",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "shimmer sweep across the thinking lines",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.17,
+      "beat": "hook",
+      "shot": "white pill input with a plus glyph, centred on a peach and lilac mesh gradient; one request types in, 39 chars",
+      "camera": "pill shifts left ~200 px @1920 in the first 8 fr (±0.25 s), then drift ≤ 0.3 px/fr; background blobs drift slowly",
+      "motion": "typing 1 char per frame (≈ 38 cps, f4 to f35, 31 fr), easings.linear, no caret; bar width constant",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 1.17,
+      "t1": 2,
+      "beat": "hook",
+      "shot": "the full one-line request holds in the pill",
+      "camera": "drift ≤ 0.3 px/fr (motion.json pan 0,3 px/s, zoom 0.3 %/s); gradient keeps moving",
+      "motion": "hold 25 fr (f35 to f60), nothing enters; only the background mesh moves",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2,
+      "t1": 3.03,
+      "beat": "feature",
+      "shot": "close-up on the right end of the pill: black round send button with an up arrow; a hand cursor comes in and presses it",
+      "camera": "zoom-tier jump to detail (≈ 3×, button at 110 px of 720) at f60 with no transition, then near static (≤ 0.5 px/fr)",
+      "motion": "cursor enters from lower right f74 to f81, easings.outExpo 7 fr; rests 6 fr (f81 to f87); press f88 to f91 scale 1 → 0.84, easings.inQuad 3 fr (springs.click squash, release never shown)",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 3.03,
+      "t1": 3.97,
+      "beat": "feature",
+      "shot": "chat layout: the request is now a white message bubble at the top; agent mark and name, then two grey status lines and a spinner line appear under it",
+      "camera": "static frame for the layout; slow push-in 1.2 %/s (motion.json 3 to 4 s)",
+      "motion": "bubble slides in from the top 4 fr (f91 to f95), springs.ui; agent header fades 0 → 1 over 4 fr at f101; status lines at f107, f109, f115, each fade 2 to 4 fr with 4 px rise, easings.outCubic; spinner open arc 270°, 24 fr per turn, easings.linear",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3.97,
+      "t1": 4.97,
+      "beat": "proof",
+      "shot": "a white result card grows under the status lines, then a short code block types in line by line; a bright band sweeps the status lines",
+      "camera": "slow push-in 1.4 %/s (motion.json 4 to 5 s)",
+      "motion": "card rect grows over 4 fr (f119 to f123), springs.layout (overshoot not measurable); code lines stream in at ≈ 1 line per 3 fr; shimmer band 1/3 line width sweeps left to right in 10 to 12 fr (f124 to f134), easings.linear, text at 55 % outside the band, period ≥ 25 fr",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PromptBar",
+    "ThinkingState",
+    "Spinner",
+    "Cursor",
+    "ChatBubble",
+    "TypeLine",
+    "Surface",
+    "Camera",
+    "BrandMark",
+    "BrandProvider"
+  ],
+  "params": {
+    "brand": "any brand.json; accent drives the gradient blobs, fg the send button, display/text fonts the UI",
+    "content.prompt": "one request, 30 to 45 chars, one line in the pill",
+    "content.agentName": "name shown next to the mark in the agent header",
+    "content.status": "2 or 3 short status lines (3 to 5 words), the last one with the spinner",
+    "content.result": "4 to 6 short code or result lines typed into the card",
+    "timing.cps": "typing speed, default 38 (reference); 30 for slower readers",
+    "timing.hold": "frames the full prompt holds before the punch-in (default 25)",
+    "aspect": "16:9 | 1:1 | 9:16; the pill and the chat column recentre"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured at 30 fps by frame (human notes) and checked on the 4 fps sheets. One continuous take with two camera jumps the cut detector missed: 2.00 s punch-in on the send button, 3.03 s reframe to the chat. Speed contrast is the point: 38 cps typing, 25 fr hold, 7 fr cursor, 6 fr rest, 3 fr press, cut before the release. Status lines 2 to 6 fr apart. Shimmer sweep 10 to 12 fr over a ~240 px line at 720p. sfx planned by the glue rule, not measured (reference is silent). Missing: a mesh-gradient background component, a growing code card; proposed term cut-on-press.",
+  "status": "studied"
+}

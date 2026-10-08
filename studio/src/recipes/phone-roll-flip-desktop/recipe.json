@@ -1,0 +1,154 @@
+{
+  "id": "phone-roll-flip-desktop",
+  "title": "Phone roll and flip into a desktop card",
+  "summary": "A tall phone screen rolls a quarter turn with its tiled backdrop, flips over like a card and lands as a wide desktop screen while the camera pushes in. One continuous move says the product works on both.",
+  "use_when": [
+    "Announcing that a mobile product now has a desktop or web version",
+    "A 5 s cross-platform beat inside a longer launch film",
+    "You have one mobile and one desktop screenshot and no motion footage",
+    "A light, calm, silent loop for a landing page or feed"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/rotating-smartphones/",
+    "author": "Jitter",
+    "ref_id": "jt-033"
+  },
+  "family": "3d-device",
+  "tags": [
+    "phone",
+    "desktop",
+    "cross-platform",
+    "flip",
+    "roll",
+    "placeholder",
+    "light",
+    "single-shot",
+    "card",
+    "device-swap"
+  ],
+  "techniques": [
+    "device-phone",
+    "morph",
+    "pull-out",
+    "push-in"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#F0FBFF",
+      "#3EA8E9",
+      "#28A9FC",
+      "#C8EBFE",
+      "#FFFFFF",
+      "#E1F5FD"
+    ],
+    "type_style": "rounded geometric sans, medium weight, size label 7 % H centred on each screen, tiny 3-line caption 1.5 % H below it",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "phone and backdrop roll a quarter turn",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "card flips from phone face to desktop face",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "desktop card settles after the push-in",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "blue portrait phone screen with a size label centred on pale blue, flanked by columns of light blue placeholder tiles",
+      "camera": "pull-out with roll: whole scene scales 1.00 -> 0.75 and rolls about -90 deg over 45 fr",
+      "motion": "phone and tile backdrop rotate together, -15 deg by f8, -60 deg by f23, -88 deg by f45; easings.inOutSine 45 fr (±0.25 s)",
+      "transition_out": "morph"
+    },
+    {
+      "t0": 1.5,
+      "t1": 2.5,
+      "beat": "reveal",
+      "shot": "the landscape phone flips on its horizontal axis; its back face is a white desktop screen with a size label and caption",
+      "camera": "push-in starts: scale 1.00 -> 1.20 over 30 fr; residual roll -2 deg -> 0",
+      "motion": "flip 180 deg rotateX top edge first, blue face gone by f68, card aspect grows from 2.2:1 to 1.6:1 while flipping; tiles straighten into a level grid; springs.ui 30 fr (overshoot not measurable)",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2.5,
+      "t1": 4,
+      "beat": "reveal",
+      "shot": "white wide desktop card centred, light blue tile rows above and below drifting off frame",
+      "camera": "push-in: card width 64 % -> 82 % of frame (scale 1.00 -> 1.28) over 45 fr, decelerating",
+      "motion": "camera only, springs.cameraIn 45 fr (overshoot not measurable); tiles leave top and bottom edges by f120",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4,
+      "t1": 5,
+      "beat": "reveal",
+      "shot": "desktop card fills 82 % of the frame width on the pale blue ground, nothing else moves",
+      "camera": "static (card width 82 % in every cell 4.00-4.77)",
+      "motion": "hold 30 fr",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 2,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "ScreenSlot",
+    "Camera",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the ground, accent for the phone face, surface for the desktop face and tiles",
+    "content.mobileScreen": "portrait mobile screenshot (375x812 ratio) shown on the phone face",
+    "content.desktopScreen": "16:10 desktop screenshot shown on the back face",
+    "timing.roll": "frames of the quarter-turn roll (default 45)",
+    "timing.flip": "frames of the flip and aspect morph (default 30)",
+    "timing.push": "frames of the push-in after the flip (default 45)",
+    "timing.hold": "frames of the final hold (default 30)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16 (reference is 4:3); tile grid recomposes"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Single continuous shot, 0 cuts, silent. Measured from 4 fps sheets (±0.25 s): roll ends ~f45, flip f45-f75, push-in f60-f120 (card width 53 % at 2.00 s, 64 % at 2.50 s, 73 % at 3.00 s, 79 % at 3.50 s, 82 % at 4.00 s), hold f120-f150. The tile backdrop rolls with the phone so the turn reads as a camera roll, not a spinning object. sfx planned by the glue rule, not measured. Proposed terms (not in vocabulary): camera-roll, card-flip, tile-backdrop.",
+  "status": "studied"
+}

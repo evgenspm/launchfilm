@@ -1,0 +1,91 @@
+{
+  "id": "typed-intro-skill-screen-showcase",
+  "title": "Typed intro, skill words on tilted screens, desk pull-out",
+  "summary": "A personal showcase: a caret types a greeting and a name on flat light grey, then each skill word cascades in beside a tilted screen of that work, and the profile page is pushed in, panned and pulled back onto a desk monitor.",
+  "use_when": [
+    "A freelancer or creator introducing themselves and three to four skills",
+    "A portfolio reel built from screenshots rather than footage",
+    "A profile or cover-image showcase that needs to end on the full page in context",
+    "Voice-over intros where the type follows the speaker word by word"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/9mfuMfbY",
+    "author": "Romie Jay Bacasmas",
+    "ref_id": "rl-090"
+  },
+  "family": "kinetic-type",
+  "tags": ["portfolio", "personal-brand", "profile", "typed-intro", "skills", "tilted-screens", "pull-out", "light", "voice-over", "collage"],
+  "techniques": ["typewriter", "tilt-plane", "device-browser", "push-in", "dolly", "pull-out", "hard-cut"],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 28.69,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": ["#EBEBEB", "#233332", "#2C6766", "#356A68", "#293E6B", "#B9C4C4"],
+    "type_style": "serif text face throughout: greeting and lead lines regular, small (~4 % H); name and skill words bold or semibold accent colour, wide letter-spacing caps for the first skill word (~6 % H), sentence case for later ones (~7 % H); each skill word has its own colour",
+    "treatment": []
+  },
+  "audio": {
+    "vo": true,
+    "music": {
+      "present": true,
+      "bpm": 122.6,
+      "energy": "build",
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {"event": "each typed letter of the greeting and name lines", "sound": "type-click", "origin": "planned"},
+      {"event": "tilted screen rises from the bottom edge beside a skill word", "sound": "swoosh-short", "origin": "planned"},
+      {"event": "hard cut onto the profile page", "sound": "hit", "origin": "planned"},
+      {"event": "pull-out from the page to the desk monitor", "sound": "whoosh", "origin": "planned"}
+    ]
+  },
+  "structure": [
+    {"t0": 0.0, "t1": 2.27, "beat": "hook", "shot": "flat light grey; a thin teal caret blinks left of centre, then a greeting line types out and runs on into a half sentence", "camera": "locked frame, no camera move; the whole line slides left as it grows so the caret stays near centre-right", "motion": "caret alone 0.27-1.00 s; typing ~10 chars/s (±0.25 s); line slides left on easings.linear while typing; line clears by 2.27 s", "transition_out": "continuous", "sfx": "type-click"},
+    {"t0": 2.27, "t1": 5.0, "beat": "reveal", "shot": "small 3-word label + the person's name typed letter by letter in bold teal caps; whole line fades, name returns as a small plain dark word and holds", "camera": "locked frame, no camera move; line slides left ~2 % per cell as letters append", "motion": "name typed ~4 letters/s (one letter per 0.25 s cell); fade out 3.00-3.27 s, ~8 fr (±0.25 s); plain name fades in by 3.50 s and holds 1.5 s", "transition_out": "continuous", "sfx": "type-click"},
+    {"t0": 5.0, "t1": 7.93, "beat": "feature", "shot": "3-word lead phrase types top left; skill word 1 in spaced teal caps with a swash underline; tilted profile-page screenshot, then a photo collage, rise at right", "camera": "locked frame; the tilted screenshot travels up ~340-400 px/s at 1920 (motion.json s6-7) and grows ~12 %/s", "motion": "lead words type in 5.00-5.50 s; skill word + swash at 5.77 s; screenshot enters from right edge on easings.outExpo ~10 fr (±0.25 s); lead line fades by 6.77 s; skill word recolours teal to grey to coral 7.00-7.77 s", "transition_out": "hard-cut", "sfx": "swoosh-short"},
+    {"t0": 7.93, "t1": 11.77, "beat": "feature", "shot": "empty grey 1.3 s; 2-word aside appears, then 3-word lead in teal; skill word 2 cascades in letter by letter in blue beside a tilted dark editor screen rising from bottom left", "camera": "locked frame; dark screen tilted ~-5 degrees rises from the bottom edge, ~110 px/s at 1920 (motion.json s11)", "motion": "aside words step in 9.50 s, offset baselines; lead at 10.00 s; skill letters drop in on a diagonal, ~2 letters per cell (stagger ~4 fr, ±0.25 s); lead text fades by 10.77 s; next skill word starts to cascade under it at 11.77 s", "transition_out": "hard-cut", "sfx": "swoosh-short"},
+    {"t0": 11.77, "t1": 14.83, "beat": "feature", "shot": "skill word 3 (green) cascades beside a tilted light browser screenshot; at 13.00 s skill word 4 (coral) with five floating app icons beside a tilted dark node-graph screen", "camera": "locked frame; each screen rises from the bottom edge and settles tilted ~-5 degrees, ~100-190 px/s at 1920 (motion.json s12, s14)", "motion": "letter cascade as row 4; previous screen exits up and out of frame as the next rises; icons drift ~10 px/cell; skill word 3 fades 13.00 s; springs.ui settle (overshoot not measurable)", "transition_out": "hard-cut", "sfx": "swoosh-short"},
+    {"t0": 14.83, "t1": 16.97, "beat": "feature", "shot": "tilted light window with an agent prompt and a working status list rises; then 2-line closing claim (dark + teal accent) right, six tool logos scattered left", "camera": "locked frame; window rises ~190 px/s at 1920 then exits up by 15.77 s", "motion": "window rise 14.83-15.27 s on easings.outExpo (±0.25 s); claim lines in at 15.77 s; logos drift outward and off the frame 16.00-16.97 s, easings.inExpo (±0.25 s)", "transition_out": "hard-cut", "sfx": "swoosh-short"},
+    {"t0": 16.97, "t1": 19.77, "beat": "feature", "shot": "full profile page: wide cover banner with tool logos and portrait, avatar and the name typing in letter by letter, follower and bio lines under it", "camera": "push-in 1.00 -> ~2.0 over 84 fr toward the name and the banner tagline, accelerating (motion.json zoom 17 to 72 %/s), drifting up-left", "motion": "name types ~2 letters per cell (±0.25 s); push-in easings.inOutSine (suggested), speed rises across the row", "transition_out": "hard-cut", "sfx": "hit"},
+    {"t0": 19.77, "t1": 21.63, "beat": "feature", "shot": "close crop on the banner tagline and the name block; camera travels across the banner to the portrait and the contact block", "camera": "dolly up-right across the banner, ~450-700 px/s at 1920 (motion.json s20), scale ~2.0 held", "motion": "dolly easings.inOutSine 56 fr (suggested curve); settles on the portrait by 20.77 s, slow drift after", "transition_out": "hard-cut", "sfx": ""},
+    {"t0": 21.63, "t1": 23.5, "beat": "feature", "shot": "banner at portrait crop, then the whole cover page with a skills ticker strip under it comes into view", "camera": "pull-out ~2.0 -> 1.0 over 56 fr, -10 to -27 %/s (motion.json s21-23)", "motion": "pull-out springs.cameraOut (overshoot not measurable); a cursor arrow sits on the page", "transition_out": "continuous", "sfx": "whoosh"},
+    {"t0": 23.5, "t1": 26.63, "beat": "feature", "shot": "the page becomes the screen of a desktop monitor on a desk with blue backlight, plant and keyboard; 3 icon + verb rows appear right of the monitor", "camera": "pull-out continues ~-27 to -10 %/s, monitor shrinks to ~50 % W by 26.50 s; slight drift left", "motion": "monitor frame dark edge in at 23.50 s; verb rows appear 24.50 s small and grow with the camera, then enlarge to ~4 % H by 26.50 s (±0.25 s); decelerating, easings.outQuint (suggested)", "transition_out": "hard-cut", "sfx": "whoosh"},
+    {"t0": 26.63, "t1": 28.69, "beat": "feature", "shot": "empty flat light grey hold to the end", "camera": "locked frame, nothing moves", "motion": "none; 62 fr empty hold", "transition_out": "end", "sfx": ""}
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 9,
+    "screenshots": 7,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": ["Typewriter", "TiltPlane", "BrowserFrame", "Camera", "Dolly", "BrandBackdrop", "BrandProvider", "LineIcon", "ASPECTS"],
+  "params": {
+    "brand": "brand.json: serif display font, fg, accent (name, lead lines), bg light grey",
+    "content.greeting": "1 greeting line typed with a caret, 3-5 words",
+    "content.label": "small 3-word label before the name",
+    "content.name": "the person's name, typed in accent caps",
+    "content.skills": "3-4 skill words, one word each, each with its own colour and one screenshot",
+    "content.leads": "short lead phrases before skill words, 2-3 words each",
+    "content.claim": "2-line closing claim, second line in the accent",
+    "content.toolLogos": "4-8 tool logos that scatter around the claim",
+    "content.profileImage": "full-page profile or cover screenshot, used for the push-in, dolly and desk pull-out",
+    "content.verbs": "3 icon + verb rows next to the desk monitor",
+    "timing.typeCps": "typing speed (default ~10 chars/s for the greeting, ~4 letters/s for the name)"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s); no 30 fps strip. Rows 1-3 are one shot (0-7.93 s), split at the state changes 2.27 s and 5.00 s; rows 9-10 are one shot split at 23.50 s when the monitor frame appears. Cut_on_beat 2/7. Whisper says VO is present (heuristic disagreed); ~42 words over 28.7 s (~1.5 words/s) and the on-screen words follow the VO. sfx planned by the glue rule, not measured: the mix is music + VO. Spring and easing names, screen tilt and letter stagger are suggested, not measured. Proposed terms (not in vocabulary): letter-cascade, swash-underline, desk-monitor-pullout. The blank 1.3 s at 7.93 s and the 2 s empty tail are in the reference; trim them in a remake if there is no VO to carry them."
+  ,
+  "status": "studied"
+}

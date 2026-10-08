@@ -1,0 +1,179 @@
+{
+  "id": "forest-plate-laptop-whip-loop",
+  "title": "Laptop in a forest plate, whip in and out",
+  "summary": "A laptop showing one landing page sits in a sunlit forest behind ferns. The camera whips in, drifts left for 3 s, whips out past a tree trunk, and the 5 s cycle runs twice. The page reads as a calm object in nature.",
+  "use_when": [
+    "A brand with an outdoor, natural or wellness voice shows its landing page",
+    "A silent 10 s social loop around one hero screenshot",
+    "You have one strong page screenshot and no UI animation to show",
+    "An opener before a longer product walkthrough"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/jYFQJryY",
+    "author": "Raylight",
+    "ref_id": "rl-081"
+  },
+  "family": "product-ui",
+  "tags": [
+    "laptop",
+    "landing-page",
+    "nature",
+    "footage-plate",
+    "whip",
+    "loop",
+    "silent",
+    "screenshot",
+    "wellness"
+  ],
+  "techniques": [
+    "device-laptop",
+    "whip-pan",
+    "dolly",
+    "speed-ramp",
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 10,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#71CEFD",
+      "#212D13",
+      "#AAD2C5",
+      "#58692C",
+      "#89984C",
+      "#3E4D24"
+    ],
+    "type_style": "no overlay type; the screen page carries a medium grotesk headline, sentence case, 2 lines, ~4 % of frame height",
+    "treatment": [
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "whip-in: camera swings onto the laptop (0.03 s, 5.00 s)",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "whip-out: laptop slides off left behind the trunk (4.00 s, 9.00 s)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.03,
+      "beat": "hook",
+      "shot": "one held frame: empty sunlit forest floor, mossy roots, conifers against a flat sky",
+      "camera": "static (1 frame)",
+      "motion": "none; single frame before the cut",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 0.03,
+      "t1": 1,
+      "beat": "reveal",
+      "shot": "whip across blurred undergrowth; laptop slides in from the right edge, screen on, base hidden in ferns",
+      "camera": "whip-pan to the left, ~880 px/s at 1920 averaged over the second, zoom -2.4 %/s, roll -2.8 deg/s; decelerates into the hold",
+      "motion": "laptop enters from the right rolled ~10 deg (±5), levels and settles by 1.00 s (±0.25 s), easings.outExpo ~27 fr (suggested); directional blur peaks 0.03-0.27 s",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1,
+      "t1": 4,
+      "beat": "reveal",
+      "shot": "laptop at ~55 % frame width shows a landing page: nav, 2-line headline, small paragraph, 4 product cards, one button; ferns cover its lower edge",
+      "camera": "dolly left: 217 -> 36 -> 174 px/s (at 1920) in seconds 1, 2, 3; scale 1.00 -> ~1.01; laptop travels from right of centre to left of centre",
+      "motion": "speed-ramp: easings.inOutSine slow-down to a near hold at 2-3 s, then accelerates into the whip-out; laptop width constant within ±2 %",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4,
+      "t1": 5,
+      "beat": "reveal",
+      "shot": "laptop tilts and slides off the left edge; a large mossy trunk crosses the foreground; lands on the empty forest frame",
+      "camera": "whip-pan left, 580 -> 880 px/s (at 1920), zoom -8.5 %/s, roll -3.8 deg/s; easings.inExpo into the blur",
+      "motion": "laptop rolls ~5-8 deg (±5) and exits by 4.77 s (±0.25 s); trunk wipes across 4.50-4.77 s; clean forest frame at 5.00 s matches 0.00 s",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5,
+      "t1": 6,
+      "beat": "reveal",
+      "shot": "repeat of row 2: whip across undergrowth, laptop slides in from the right and settles",
+      "camera": "whip-pan left, ~880 px/s (at 1920), zoom -0.1 %/s, roll -2.1 deg/s",
+      "motion": "same as row 2, laptop settled by 6.00 s (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 6,
+      "t1": 9,
+      "beat": "reveal",
+      "shot": "repeat of row 3: the same page held on the laptop in the ferns",
+      "camera": "dolly left: 215 -> 36 -> 171 px/s (at 1920); scale ~1.00 -> 1.01",
+      "motion": "same speed-ramp as row 3, easings.inOutSine (suggested)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 9,
+      "t1": 10,
+      "beat": "reveal",
+      "shot": "repeat of row 4: laptop slides off left behind the mossy trunk; film ends mid-whip",
+      "camera": "whip-pan left, 681 px/s (at 1920), zoom -5.7 %/s, roll -2.5 deg/s",
+      "motion": "same as row 4; last cell 9.77 s is the trunk mid-blur, so the film ends inside the motion",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "LaptopFrame",
+    "FootageClip",
+    "Dolly",
+    "Camera",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json; colours only matter inside the page screenshot",
+    "content.screenshot": "one landing-page screenshot, authored at 1512x982 for LaptopFrame screenContent",
+    "content.plate": "a still or slow footage plate of a natural scene, wide enough for ~2.5 frame widths of lateral travel, plus a foreground foliage layer with alpha",
+    "timing.cycle": "frames per whip-in/hold/whip-out cycle (default 150 = 5 s at 30 fps)",
+    "timing.cycles": "number of cycles (default 2)",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "easy",
+  "render_cost": "heavy",
+  "notes": "One shot after a 1-frame opener: cuts.json lists only the cut at 0.03 s (frame 1). The film is a 5 s cycle played twice (sheet cells 5.00-9.77 repeat 0.00-4.77; motion.json seconds 5-9 repeat 0-4). The 5.00 s frame equals the 0.00 s frame, so a seamless loop works if the opener frame is dropped, but format.loopable stays false because the last cell (trunk mid-blur) does not match the first. Pan speeds and zoom come from motion.json (per-second averages at 1920 width); whip peaks, roll angles and the settle ease are not measurable at 4 fps (±0.25 s). Theme: keyframe mean luma 0.35-0.40, neither dark nor light by the rule; mixed = bright sky plate with a dark green page. Silent reference: sfx planned by the glue rule, not measured. Proposed terms (not used as ids): plate-composite, foreground-occluder.",
+  "status": "studied"
+}

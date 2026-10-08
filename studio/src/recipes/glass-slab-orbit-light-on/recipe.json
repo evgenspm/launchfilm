@@ -1,0 +1,298 @@
+{
+  "id": "glass-slab-orbit-light-on",
+  "title": "Glass mark macro orbit, light-on and dive",
+  "summary": "Macro glimpses of a blue glass mark, then a thin glowing slab drifting through black; it turns face-on, goes dark, lights up with a wide halo, the camera dives through it into a glowing wordmark and a tagline.",
+  "use_when": [
+    "A logo teaser or brand intro where the mark itself is the story",
+    "A dark, cinematic opener before a launch film",
+    "A brand with a simple geometric mark that reads as an extruded solid",
+    "A silent autoplay piece that needs suspense before the name"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/49CnmevG",
+    "author": "Raylight",
+    "ref_id": "rl-060"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo-reveal",
+    "glass",
+    "3d-mark",
+    "teaser",
+    "dark",
+    "blue",
+    "halo",
+    "zoom-through",
+    "wordmark",
+    "cinematic",
+    "silent"
+  ],
+  "techniques": [
+    "glass-mark",
+    "orbit-3d",
+    "light-on",
+    "bloom",
+    "push-in",
+    "zoom-through",
+    "smash-cut-black",
+    "blur-dissolve",
+    "glitch-cut",
+    "glow",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 38.33,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000315",
+      "#9B9F84",
+      "#63D2FE",
+      "#1C5DF7",
+      "#06309F",
+      "#0F35A4"
+    ],
+    "type_style": "medium geometric sans, sentence case, normal tracking, about 4 % of frame height, centred, soft white glow",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "specular patch sweeps across a facet in the macro shots",
+        "sound": "shimmer",
+        "origin": "planned"
+      },
+      {
+        "event": "face-on mark lights up, halo blooms",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "accelerating dive through the mark",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "black breath before the wordmark",
+        "sound": "silence-beat",
+        "origin": "planned"
+      },
+      {
+        "event": "RGB-split glitch on the tagline",
+        "sound": "glitch-sfx",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4.6,
+      "beat": "hook",
+      "shot": "macro of a translucent blue glass solid, blown cyan specular patches on its facets, frame brightens to full blue",
+      "camera": "orbit-3d slide along the edge: drift down-left then pushes in, about +15 %/s to +40 %/s from 2.00 s",
+      "motion": "specular patches travel across facets about 250-300 px/s at 1920 W, easings.linear; no object spring",
+      "transition_out": "hard-cut",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 4.6,
+      "t1": 7.53,
+      "beat": "logo",
+      "shot": "second macro angle: the curved top of the glass mark from below, highlight moves from the inner corner to the right edge",
+      "camera": "orbit-3d slow push-in about +12 to +21 %/s with a slight roll",
+      "motion": "highlight band slides along the facet, easings.inOutSine over about 60 fr (±0.25 s); body barely moves",
+      "transition_out": "hard-cut",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 7.53,
+      "t1": 12.27,
+      "beat": "logo",
+      "shot": "the mark edge-on as a thin bright slab on black, sliding left to right across the frame with a wide blue halo behind",
+      "camera": "lateral travel left to right about 330-410 px/s at 1920 W, easings.linear; slab rises from 0.17 H to 0.6 H",
+      "motion": "slab segments catch light in turn; one-frame pink/green fringe at 9.50; halo pulses with the bright segments",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 12.27,
+      "t1": 15,
+      "beat": "logo",
+      "shot": "closer edge-on pass: slab larger and soft-focused, parts come in and out of focus, frame lifts to mid blue",
+      "camera": "push-in about +76 %/s at 12.50 then lateral drift right about 300 px/s",
+      "motion": "defocus shifts between near and far ends of the slab over about 15 fr (±0.25 s); easings.inOutSine",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 15,
+      "t1": 17.77,
+      "beat": "logo",
+      "shot": "edge-on slab seen nearly end-on, sliding out to the right edge, background dims back to black",
+      "camera": "lateral travel right about 600-800 px/s at 1920 W, easings.linear",
+      "motion": "3 fr dissolve in; slab exits frame right by 17.50",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 17.77,
+      "t1": 21,
+      "beat": "logo",
+      "shot": "the mark far away as a tiny glowing sliver, about 0.05 W wide, drifting near centre on black",
+      "camera": "static far wide, sliver drifts about 1 % of W per second",
+      "motion": "glint travels along the sliver every about 0.75 s (±0.25 s); faint halo field",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 21,
+      "t1": 23.77,
+      "beat": "logo",
+      "shot": "the sliver rotates from edge-on to face-on, the mark shape appears and goes almost black mid-turn, then picks up dim blue",
+      "camera": "static; object rotates about 90 deg on X over about 75 fr, springs.heavy (overshoot not measurable)",
+      "motion": "brightness falls to about #0A1A40 at 22.77, returns to dim blue #113DBB by 23.77",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 23.77,
+      "t1": 25,
+      "beat": "logo",
+      "shot": "face-on mark lights up from dim blue to cyan core, halo blooms behind it",
+      "camera": "static, centred, mark height about 0.15 H",
+      "motion": "light-on S-curve: core lights over 14 fr, halo lags 5 fr and keeps building for about 30 fr",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 25,
+      "t1": 28,
+      "beat": "logo",
+      "shot": "lit mark holds centred on a two-radius blue halo field",
+      "camera": "push-in about +0.75 %/frame on the last 27 fr (mark 67 to 81 px wide at 720 p)",
+      "motion": "halo grows to the frame edge; no overshoot",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 28,
+      "t1": 28.87,
+      "beat": "logo",
+      "shot": "camera dives at the mark, mark grows from 0.09 W to over 0.34 W with a slight tilt",
+      "camera": "zoom-through, easings.inExpo on ln(scale): per-frame growth 1.01 to 1.18 over 29 fr",
+      "motion": "mark body shifts from cyan to blue as it nears; halo brightens",
+      "transition_out": "zoom-through",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 28.87,
+      "t1": 29.27,
+      "beat": "logo",
+      "shot": "the mark rim fills the frame, then black",
+      "camera": "zoom-through tail, scale keeps rising",
+      "motion": "1 fr glow, then about 5 fr of pure black",
+      "transition_out": "smash-cut-black",
+      "sfx": "silence-beat"
+    },
+    {
+      "t0": 29.27,
+      "t1": 31.5,
+      "beat": "logo",
+      "shot": "the product name, one word, centred on black in grey, flares blue and settles white with a soft glow",
+      "camera": "static",
+      "motion": "fade in grey over about 8 fr (±0.25 s); flare up about 9 fr at 30.10, back about 9 fr; easings.inOutSine",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 31.5,
+      "t1": 33,
+      "beat": "logo",
+      "shot": "name gets a period, a 4-word tagline wipes on to its right, the whole line re-centres; a blue light window travels along the words",
+      "camera": "static",
+      "motion": "line wipes left to right over about 15 fr (±0.25 s); re-centre springs.layout about 15 fr (±0.25 s); light window sweeps the tagline over about 20 fr",
+      "transition_out": "glitch-cut",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 33,
+      "t1": 33.77,
+      "beat": "logo",
+      "shot": "the full line breaks into an RGB-split and slice glitch, then snaps clean",
+      "camera": "static",
+      "motion": "glitch on 2 bursts at 33.00 and 33.50, each about 4 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 33.77,
+      "t1": 37.77,
+      "beat": "logo",
+      "shot": "name and tagline hold in white with a soft glow on black",
+      "camera": "push-in about 0.8 %/s (scale 1.00 to 1.03)",
+      "motion": "no element motion; glow steady",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 37.77,
+      "t1": 38.33,
+      "beat": "logo",
+      "shot": "the line fades to black",
+      "camera": "push-in continues",
+      "motion": "fade out easings.linear about 15 fr (±0.25 s)",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "GlassMark",
+    "Bloom",
+    "MarkHalo",
+    "lightCurve",
+    "Camera",
+    "ZoomThrough",
+    "BlurIn",
+    "RGBSplit",
+    "SliceGlitch",
+    "BrandProvider"
+  ],
+  "params": {
+    "mark": "brand mark as a simple geometric vector; reads best as one extruded solid",
+    "content.name": "product name, one word, shown after the dive",
+    "content.tagline": "short tagline, about 4 words, wipes on after the name",
+    "timing.compress": "scale of the macro and slab rows; a launch-film cut keeps 23.77-31.5 and shortens the rest",
+    "palette": "one brand blue for body and halo, cyan only in the lit core"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Measured by hand at 30 fps: light-on core 14 fr S-curve from #113DBB to #62FBFF, halo lags 5 fr and grows another ~30 fr; halo has two radii (tight about 1x mark, field 4-5x mark), pure blue, only the core goes cyan. Push-in on the hold +0.75 %/frame. Zoom-through: width 111 to 432 px over 29 fr, per-frame growth 1.01 to 1.18 (accelerating on ln scale), then 1 fr glow, 5 fr black. Text flare up ~9 fr, down ~9 fr. No overshoot anywhere: heavy damping. Specular sweeps 250-300 px/s at 1080p. Proposed terms (not in vocabulary): specular-sweep, type-wipe-on, light-window-sweep. Cuts at 12.27 and 17.77 are near-miss jumps read from the sheets. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

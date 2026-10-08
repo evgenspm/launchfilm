@@ -1,0 +1,75 @@
+{
+  "id": "intro-name-role-slot-cover",
+  "title": "Self-intro card: name, role slot, shape cover",
+  "summary": "A tiny greeting and name on light grey, a shape that slides in and swells to cover the frame, one huge bold word that shrinks to line size on blue, a role word that rolls through four titles, then a social handle.",
+  "use_when": [
+    "a personal or freelancer intro for a portfolio, profile or reel opener",
+    "an 8 s card that lists several roles or services in one slot",
+    "a calm, type-only opener with one colour flip in the middle"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/AhM3E4dX",
+    "author": "Kulani Ronny",
+    "ref_id": "rl-094"
+  },
+  "family": "logo-brand",
+  "tags": ["personal-intro", "portfolio", "role-slot", "type-only", "colour-flip", "blue", "handle-close", "calm"],
+  "techniques": ["fit-word", "word-swap", "mask-wipe", "hard-cut"],
+  "format": {"aspect": "16:9", "duration_s": 8.08, "fps": 30, "loopable": false},
+  "look": {
+    "theme": "mixed",
+    "palette": ["#EBEBEB", "#111111", "#2147D6", "#1D3AC8", "#B4C5E9", "#1E226A"],
+    "type_style": "grotesk, sentence case: small medium-weight words ~2.5 % H on light grey; one bold word at ~75 % W shrinking to ~25 % W; regular-weight role line ~6 % H on blue; small monospace handle ~2.5 % H in navy",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {"present": true, "bpm": 77.1, "energy": "calm", "genre": null, "cut_on_beat": false},
+    "sfx": [
+      {"event": "shape swells and covers the frame", "sound": "whoosh", "origin": "planned"},
+      {"event": "role word rolls to the next title", "sound": "tick", "origin": "planned"},
+      {"event": "small icon flies across the frame", "sound": "swoosh-short", "origin": "planned"}
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0, "t1": 2.63, "beat": "hook",
+      "shot": "light grey plate: a 1-word greeting centred, replaced by a 2-word intro (lead word + bold name); a blue 5-point shape slides in from the left and swells over the frame",
+      "camera": "static (motion.json pan 0, zoom 0 for 0-2 s); only the shape moves",
+      "motion": "greeting holds f0-f20; intro lead word cuts in at f21 (no blend frame at 30 fps); name drops ~4 px from above with a fade, easings.outExpo 3 fr (f24-f27, 30 fps strip); shape enters at the left edge at f60, slides right ~50 px@320 to sit left of the line by f65, easings.outExpo; holds to f74; swells f74-f80 from ~3 % W to cover the frame, easings.inExpo 6 fr (30 fps strip)",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.63, "t1": 6.53, "beat": "feature",
+      "shot": "diagonal blue gradient: one bold word fills ~75 % W, shrinks to line size, swaps to a regular-weight word, a second word joins and rolls through 4 role titles; a small plane icon flies across",
+      "camera": "static plate; the type scales (motion.json zoom -38.8 %/s in 3-4 s is the word shrink, not a camera)",
+      "motion": "bold word holds ~75 % W f81-f90; shrinks to ~25 % W f90-f102, easings.outExpo 12 fr; holds to f109; crossfade to the regular-weight word f109-f110 (2 fr); second word appears at f140 and the line re-centres over ~6 fr, springs.ui (overshoot not measurable); slot rolls (old word up and out, new from below with fade, 3 fr each) at f155, f170, f185: period 15 fr; icon enters bottom-left at f178, travels a straight up-right diagonal through the line and exits top-right at f192, easings.linear",
+      "transition_out": "hard-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 6.53, "t1": 8.08, "beat": "cta",
+      "shot": "light grey plate: a small monospace social handle centred in navy, then replaced by a second handle",
+      "camera": "static",
+      "motion": "first handle cuts in with the cut; f201-f205 first handle fades out and the second fades in with a ~3 px upward drift, easings.inOutSine ~4 fr (30 fps strip); second handle holds f205-f242",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {"product_name": true, "logo": false, "tagline": false, "lines": 6, "screenshots": 0, "screen_recording": false, "ui_rebuild": false, "stats": 0, "url": true},
+  "components": ["WordSwap", "FitWord", "BrandBackdrop", "BrandProvider"],
+  "params": {
+    "greeting": "1 word shown first, small, centred",
+    "intro": "lead word + the person's name (name in bold), one line",
+    "leadWord": "1 bold word that fills the frame on the blue cut, then shrinks",
+    "rolePrefix": "first word of the role line, regular weight",
+    "roles": "4 role words rolled in the slot, <= 10 letters each",
+    "handles": "2 social handles for the close, monospace",
+    "colors": "plate grey, blue gradient pair, navy for the handle"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets plus 30 fps strips extracted locally (0.5, 2.0, 2.6, 3.2, 4.6, 5.6, 6.0 s). Cuts at 2.63 and 6.53 are both off-beat (0/2 within 2 fr), so cut_on_beat false. The shape cover is a mask-style reveal that ends in a real cut (cuts.json, via flash), so transition_out stays hard-cut. Rows follow the 3 shots (none > 4 s); in-shot state changes are in motion with absolute frames. Proposed terms: icon-flyby, scale-settle. SFX planned by the glue rule, not measured (music only, no VO). Star shape and gradient plate have no studio component.",
+  "status": "studied"
+}

@@ -1,0 +1,130 @@
+{
+  "id": "tilted-send-button-cursor-press",
+  "title": "Tilted send button pressed by a hand cursor",
+  "summary": "A corner of an empty prompt card, leaned in perspective, fills a vertical frame; a hand cursor glides onto the round send button, presses it with a squash and slides away. A 2.8 s loopable micro-moment.",
+  "use_when": [
+    "A short vertical loop that teases sending a prompt without showing an answer",
+    "The press moment inside a longer AI product film, before a thinking or result beat",
+    "Social stories where one tap is the whole message",
+    "A product whose primary action is a single round button"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/ceZhGoMd",
+    "author": "Raylight",
+    "ref_id": "rl-048"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "prompt",
+    "send-button",
+    "cursor",
+    "press",
+    "tilted-ui",
+    "vertical",
+    "loop",
+    "light",
+    "micro-interaction"
+  ],
+  "techniques": [
+    "tilt-plane",
+    "cursor-path"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 2.83,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#EFEFEF",
+      "#37B853",
+      "#C0C1C0",
+      "#E2E2E2"
+    ],
+    "type_style": "no type: a white arrow glyph on the button is the only mark",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "cursor presses the send button (f31)",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.47,
+      "beat": "hook",
+      "shot": "bottom-right corner of an empty prompt card, leaned in perspective, cropped by the frame; green round send button with an up arrow",
+      "camera": "tilt-plane, fixed: plane rotated (top edge leans away, right edge recedes), no pan or zoom measured (motion.json 0.03 %/s)",
+      "motion": "nothing moves; the card and its soft drop shadow hold from f0",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.47,
+      "t1": 1.83,
+      "beat": "feature",
+      "shot": "a hand pointer cursor enters from the lower right edge, lands on the lower half of the send button and presses it",
+      "camera": "tilt-plane, fixed",
+      "motion": "cursor path f14 -> f20 into the button, springs.ui (decelerates, no overshoot seen at 1 fr); rests f20-f30; press f31-f37: cursor scales ~1 -> 0.7 -> 1 and the button dips ~0.9 with it, springs.click 6 fr; holds on the button to f55",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.83,
+      "t1": 2.83,
+      "beat": "feature",
+      "shot": "cursor slides out past the lower left of the card; the idle card holds, matching the first frame",
+      "camera": "tilt-plane, fixed",
+      "motion": "cursor exits f55 -> f62 down and left, easings.inExpo 7 fr; then a still hold of 23 fr so the loop seam is invisible",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "TiltPlane",
+    "Cursor",
+    "PromptBar",
+    "BrandProvider"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (white), surface for the input well, accent for the send button",
+    "content.placeholder": "optional placeholder in the input well (the reference keeps it empty)",
+    "tilt": "rotateX/Y/Z of the plane; reference leans the top away and the right edge back, card cropped to its bottom-right corner",
+    "timing.enterAt": "frame the cursor appears (default 14)",
+    "timing.pressAt": "click frame (default 31)",
+    "timing.exitAt": "frame the cursor leaves (default 55)",
+    "cursor.kind": "pointer (hand); size so the hand is ~0.6 of the button width"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from a 1 fr strip of the local source: cursor visible f14-f62, lands f20, press squash f31-f37 (cursor shrinks most at f33-f34, button dips with it), leaves f55-f62, empty hold f62-f85. No ripple ring and no button colour change on the press. Single shot, no cuts, silent. Last frame equals the first, so it loops. The catalogue hint prompt-typing is not visible: the input well stays empty. SFX planned by the glue rule, not measured.",
+  "status": "studied"
+}

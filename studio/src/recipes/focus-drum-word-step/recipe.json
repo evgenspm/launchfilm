@@ -1,0 +1,232 @@
+{
+  "id": "focus-drum-word-step",
+  "title": "Focus drum word stepper",
+  "summary": "A tilted column of single words on black steps up one line every 0.75 s. Only the word at the arrow is sharp and white; neighbours fall off into grey blur, so the eye locks on one word at a time and the list reads as momentum.",
+  "use_when": [
+    "Title or chapter intro listing 6-12 qualities or themes, one word each",
+    "Silent loop for a hero banner or social header",
+    "Opener before a product statement, naming what the product is about",
+    "Editorial or portfolio reels where type is the whole picture"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/blur-text-scroller/",
+    "author": "Jitter",
+    "ref_id": "jt-048"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "word-list",
+    "drum",
+    "focus",
+    "depth-blur",
+    "loop",
+    "type-only",
+    "dark",
+    "minimal",
+    "title-sequence",
+    "no-ui"
+  ],
+  "techniques": [
+    "stacked-roll",
+    "blur-in"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 9,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#F6F6F6",
+      "#7B7B7B",
+      "#5B5B5B",
+      "#252526"
+    ],
+    "type_style": "bold geometric grotesk, sentence case, tight tracking, active word ~14 % H (±2 %), line pitch ~20 % H, a thin right arrow glyph before the active word",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "drum step lands on the next word",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.27,
+      "beat": "hook",
+      "shot": "slanted word drum on black: active word white with a right arrow at its left, 2 grey blurred words above and below; word 1 of the list is active",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "hold; drum starts its first step to word 2, move ~8 fr easings.outExpo (±0.25 s), active word sharpens while the leaving one blurs (overshoot not measurable)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 0.27,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 2 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1,
+      "t1": 1.77,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 3 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.77,
+      "t1": 2.5,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 4 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.5,
+      "t1": 3.27,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 5 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3.27,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 6 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4,
+      "t1": 4.77,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 7 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4.77,
+      "t1": 5.5,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 8 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 5.5,
+      "t1": 6.27,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 9 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 6.27,
+      "t1": 7,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 10 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 7,
+      "t1": 7.77,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 11 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 7.77,
+      "t1": 8.5,
+      "beat": "hook",
+      "shot": "drum stepped up one line: word 12 of 12 (1-2 words) is active at the arrow, neighbours grey and blurred by distance",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "one-line step up, easings.outExpo ~8 fr (±0.25 s), then hold ~15 fr; blur and grey ride the same progress (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 8.5,
+      "t1": 9,
+      "beat": "hook",
+      "shot": "the list wraps: word 1 returns to the arrow slot, same layout as the first frame",
+      "camera": "static frame; the whole column sits rotated ~-5 deg on a shallow curve, no zoom (motion.json zoom < 1.6 %/s)",
+      "motion": "last step lands; holds to the end, matches frame 0 for a seamless loop",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 12,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "StackedRoll",
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg for the active word, muted for neighbours, bg",
+    "content.words": "6-12 entries of 1-2 words each; the list wraps, so the last steps back to the first",
+    "content.marker": "glyph before the active word (default a right arrow; '' = none)",
+    "timing.period": "frames per step at 30 fps (default 22.5 = 0.75 s; alternate 22/23)",
+    "timing.move": "frames of the step move (default 8, easings.outExpo)",
+    "tilt": "column rotation in degrees (default -5)",
+    "blurPerLine": "blur added per line of distance from the active slot (default ~0.06 em)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets: 12 words, the active word changes at cells 0.27, 1.00, 1.77, 2.50, 3.27, 4.00, 4.77, 5.50, 6.27, 7.00, 7.77, 8.50 (period 0.748 s = 22.4 fr); scdet near-miss peaks at 0.13, 1.63, 3.90, 4.63, 5.40, 6.13, 6.90, 8.40 mark mid-move. Visible window: 2 words above, 2 below, blur and grey grow with distance; whole column tilted ~-5 deg (motion.json rot about -2 deg per s mixed with pan). Ends on the first word: seamless loop. Proposed term: focus-drum (distance-based blur and dim around one sharp slot), not in vocabulary. Motion blur during the step not measurable at 4 fps. SFX planned by the glue rule, not measured (reference is silent). Palette sampled from keyframes (no cut frames).",
+  "status": "studied"
+}

@@ -1,0 +1,157 @@
+{
+  "id": "letter-echo-trail-wave",
+  "title": "Letter echo trail drop and rise loop",
+  "summary": "One short uppercase word on a flat saturated field drops from the top edge to the bottom and rises back, letter by letter in a left-to-right wave; each letter drags a stack of fading echoes behind it. Seamless loop.",
+  "use_when": [
+    "A loopable social or banner accent where one word is the whole picture",
+    "A high-energy sting between scenes of a longer film",
+    "A product name or one-word claim that needs motion without any UI",
+    "Square or vertical feeds that autoplay silently"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/type-trail/",
+    "author": "Jitter",
+    "ref_id": "jt-047"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "kinetic-type",
+    "one-word",
+    "letter-stagger",
+    "echo-trail",
+    "loop",
+    "square",
+    "type-only",
+    "no-ui",
+    "bold-color",
+    "accent"
+  ],
+  "techniques": [
+    "motion-blur"
+  ],
+  "format": {
+    "aspect": "1:1",
+    "duration_s": 4.33,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#E7060A",
+      "#FF82C4",
+      "#FB344C",
+      "#FD6EA3"
+    ],
+    "type_style": "heavy rounded geometric sans, uppercase, wide tracking, one 4-letter word spanning ~92 % of W, cap height ~17 % H",
+    "treatment": [
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "letters fall or rise across the frame with echo trails",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "each letter settles at the top or bottom edge",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.5,
+      "beat": "hook",
+      "shot": "one 4-letter word in pale pink across the top edge of a flat red square, crisp, no trail",
+      "camera": "locked-off: scale 1.00, no pan; only the letters move",
+      "motion": "hold 15 fr; at 0.50 the first letter starts to sink (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.5,
+      "t1": 1.77,
+      "beat": "hook",
+      "shot": "the letters fall to the bottom edge one after another, left first, each dragging fading echoes above it",
+      "camera": "locked-off: scale 1.00, no pan; only the letters move",
+      "motion": "per letter travel ~0.75 H, easings.inOutSine ~30 fr (±0.25 s), stagger ~6 fr left to right (±0.25 s); echo trail above each letter, length tracks speed, up to ~0.32 H at peak velocity, fades to the bg",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 1.77,
+      "t1": 2.5,
+      "beat": "hook",
+      "shot": "word rests crisp along the bottom edge; the last letter's short trail dies out first",
+      "camera": "locked-off: scale 1.00, no pan; only the letters move",
+      "motion": "settle without overshoot (overshoot not measurable); hold ~15 fr fully still",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 2.5,
+      "t1": 3.77,
+      "beat": "hook",
+      "shot": "the letters rise back to the top edge in the same left-first wave, echoes now trailing below them",
+      "camera": "locked-off: scale 1.00, no pan; only the letters move",
+      "motion": "mirror of the drop: easings.inOutSine ~30 fr per letter (±0.25 s), stagger ~6 fr (±0.25 s), echo trail below, up to ~0.4 H at peak velocity",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.77,
+      "t1": 4.33,
+      "beat": "hook",
+      "shot": "word back at the top edge, identical to the first frame; last letter's trail fades out",
+      "camera": "locked-off: scale 1.00, no pan; only the letters move",
+      "motion": "last letter lands ~4.00 (±0.25 s), then hold ~10 fr; last frame matches frame 0 for the loop",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg carries the flat field, accent or fg the letters, display font at heavy weight",
+    "content.word": "one short word, 3-6 letters, uppercase; letters are spread across the frame width",
+    "aspect": "1:1 (reference) | 4:5 | 9:16 | 16:9; travel = edge to edge on the vertical axis",
+    "timing.travel": "frames per letter for one edge-to-edge move (default 30 at 30 fps)",
+    "timing.stagger": "frames between adjacent letters (default 6)",
+    "timing.hold": "frames each rest holds at an edge (default 15)",
+    "trail.echoes": "number of echo copies behind each letter (default ~12), opacity fading to 0",
+    "trail.lag": "frames of history the trail samples (default ~6); trail length follows speed",
+    "fps": "composition fps (default 30); timing scales with fps/30"
+  },
+  "difficulty": "easy",
+  "render_cost": "heavy",
+  "notes": "One shot, no cuts, silent. Single technique: per-letter echo trail (closest vocabulary id motion-blur; proposed term echo-trail) driven by a left-to-right letter wave. Measured from 4 fps sheets: travel ~0.75 H per move, adjacent-letter lag ~0.2 s, rests 1.77-2.50 s at the bottom and 3.77-4.33 s at the top; trails are visibly banded (discrete echoes), not a smooth blur, and always sit behind the motion. Trail length scales with speed and is zero at rest. Theme is 'dark' by the luminance rule (bg L ~0.17) although the field reads as saturated red. sfx planned by the glue rule, not measured (reference is silent). Proposed terms: echo-trail, letter-wave.",
+  "status": "studied"
+}

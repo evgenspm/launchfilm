@@ -1,0 +1,147 @@
+{
+  "id": "turntable-card-stack-spin",
+  "title": "Turntable card stack spin",
+  "summary": "Four large square cards lie overlapped on black and the whole stack turns like a turntable: a slow constant drift, then a quick ramped step that brings the next card to the front, twice in 8 s. Constant motion with two accents.",
+  "use_when": [
+    "Showing three to five finished visuals (posts, covers, product shots) as one set",
+    "A silent loop for a portfolio, template pack or feature tier page",
+    "A background plate behind a headline that needs motion but no story",
+    "Any brand with strong flat colour where the cards carry the palette"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/rotating-cards/",
+    "author": "Vendredi Society",
+    "ref_id": "jt-031"
+  },
+  "family": "product-ui",
+  "tags": [
+    "cards",
+    "turntable",
+    "spin",
+    "stack",
+    "loop",
+    "showcase",
+    "no-text",
+    "dark",
+    "silent",
+    "portfolio"
+  ],
+  "techniques": [
+    "speed-ramp"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 8,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#0C4231",
+      "#EBFB32",
+      "#DBE9E7",
+      "#ECF5EE",
+      "#52654F"
+    ],
+    "type_style": "no headline type; small grotesk labels printed inside the card images only (about 4 % H, sentence case)",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "ramped step brings the next card to the front",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "four square cards overlapped on black: product photo card centre-left, patterned poster right, two more cut by the edges",
+      "camera": "static frame; the stack itself turns clockwise about a pivot near centre-bottom, about 13 deg/s",
+      "motion": "whole stack rotates as one rigid group, easings.linear, about 0.43 deg/fr; no card moves on its own (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1.5,
+      "t1": 2.27,
+      "beat": "feature",
+      "shot": "the stack swings one step: the patterned poster card takes the centre, the photo card slides to the lower right",
+      "camera": "static frame; stack scale pulses about +7 % then back (motion.json 1-3 s)",
+      "motion": "ramped step, easings.inOutSine 23 fr (±0.25 s); peak about 45 deg/s over the second, one card slot of travel",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.27,
+      "t1": 5.27,
+      "beat": "feature",
+      "shot": "pale blue poster card leads at centre-left, patterned poster right, yellow card with a hand-held tablet enters from the left",
+      "camera": "static frame; stack keeps turning clockwise about 13 deg/s",
+      "motion": "same linear drift, easings.linear about 0.43 deg/fr, 90 fr hold (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 5.27,
+      "t1": 6,
+      "beat": "feature",
+      "shot": "second step: the yellow tablet card swings to the centre, the pale card exits lower right, the patterned card returns top left",
+      "camera": "static frame; stack scale dips about 9 % during the step (motion.json 5-6 s)",
+      "motion": "ramped step, easings.inOutSine 22 fr (±0.25 s); same travel as row 2",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 6,
+      "t1": 8,
+      "beat": "feature",
+      "shot": "patterned poster at centre-top, photo card back at the left, yellow tablet card right: close to the opening layout",
+      "camera": "static frame; stack drifts clockwise about 13 deg/s to the end",
+      "motion": "linear drift, easings.linear about 0.43 deg/fr, 60 fr (±0.25 s); ends without a stop",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 4,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS",
+    "Surface"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the empty frame, accent and surface tint the default cards",
+    "content.cards": "3-5 square images (1:1), drawn as cards about 0.6 H wide",
+    "timing.drift": "drift speed in deg/s (default 13)",
+    "timing.stepAt": "frames at 30 fps where a ramped step starts (default [45, 158])",
+    "timing.stepFrames": "frames per step (default 23)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; pivot stays at centre-bottom, card size follows H",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One shot, no cuts, silent. Measured from 4 fps sheets (±0.25 s) and motion.json: in-plane rotation about 13 deg/s during drift, about 45 deg/s averaged over the step seconds (1-2 s and 5-6 s), scale +7.4 %/s then -6.1 %/s around step one, -9.2 %/s at step two. The cards are flat; no 3D flip is visible despite the catalogue hint. Proposed term turntable-spin (rigid in-plane rotation of an overlapped card stack) is not in the vocabulary and not used as a technique id. sfx planned by the glue rule, not measured.",
+  "status": "studied"
+}

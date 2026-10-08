@@ -1,0 +1,164 @@
+{
+  "id": "glass-cube-layer-twist",
+  "title": "Glass puzzle cube twisting on neon rails",
+  "summary": "A dark 3x3x3 glass puzzle cube with blue liquid inside rests on diagonal glowing rails, turns single layers, then tumbles and fans its columns apart before re-forming. A wordless hero-object loop for a premium dark brand.",
+  "use_when": [
+    "A wordless hero loop or background plate behind a headline",
+    "A dark, blue-accented brand that wants a premium 3D object moment",
+    "Visualising assembly, modularity or solving a puzzle without copy",
+    "Opening bed under a title card added later"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/bVg2s9A2",
+    "author": "Raylight",
+    "ref_id": "rl-072"
+  },
+  "family": "3d-device",
+  "tags": [
+    "glass-cube",
+    "3d",
+    "puzzle-cube",
+    "layer-turn",
+    "dark",
+    "blue",
+    "no-text",
+    "hero-object",
+    "abstract",
+    "neon-rails"
+  ],
+  "techniques": [
+    "liquid-glass",
+    "glow",
+    "motion-blur",
+    "push-in"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 9.8,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#0E1740",
+      "#1D2961",
+      "#2D42A4",
+      "#1C3ACE",
+      "#3759E0"
+    ],
+    "type_style": "none: no on-screen type",
+    "treatment": [
+      "liquid-glass",
+      "glow",
+      "motion-blur"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "single layer quarter-turn",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "whole cube tumbles about the rail axis",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "edge glint on a turning column",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "dark glass 3x3x3 cube with blue liquid inside, sitting on three diagonal blue glowing rails, lower left to upper right",
+      "camera": "locked-off three-quarter view from above; motion.json s0 pan 0-1 px/s @1920, zoom 0.1 %/s",
+      "motion": "one horizontal layer turns 90 deg from 0.27 to 0.77 s, ~15 fr (±0.25 s), edge highlights flare at 0.27, smear at 0.50; springs.heavy suggested (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1,
+      "t1": 3.5,
+      "beat": "hook",
+      "shot": "same cube at rest, liquid inside drifts; a second layer turn mid-row",
+      "camera": "locked-off; motion.json s1-s3 pan <= 6 px/s, zoom -0.2..0 %/s",
+      "motion": "hold 1.00-2.00 s; right-hand layer turns 2.27 to 2.77 s, ~15 fr (±0.25 s), springs.heavy suggested; hold 2.77-3.27 s",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.5,
+      "t1": 5.75,
+      "beat": "tension",
+      "shot": "whole cube tumbles about the rail axis into a diamond pose, edges light up, three vertical columns fan apart, one column spins",
+      "camera": "locked-off; motion.json s3-s5 zoom -0.2..0.23 %/s, rot 0.15-0.56 deg/s",
+      "motion": "tumble 3.50 to 4.50 s (~30 fr, ±0.25 s), easings.inOutSine suggested; lit edges at 4.77; columns separated at 5.00; single column turn with glint 5.27, settled 5.50",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5.75,
+      "t1": 8,
+      "beat": "tension",
+      "shot": "cube re-forms, tilts, a column then the top layer turn; the glass softens and the liquid swirls",
+      "camera": "slow push from 6.00 s; motion.json s6 zoom 0.85 %/s, s7 0.4 %/s",
+      "motion": "re-form soft at 5.77; tilt 6.00-6.27; column turn with highlight 6.50; top layer turn 7.00; settle 7.27-7.77 (each ±0.25 s), springs.heavy suggested",
+      "transition_out": "continuous",
+      "sfx": "shimmer"
+    },
+    {
+      "t0": 8,
+      "t1": 9.8,
+      "beat": "tension",
+      "shot": "cube back near the opening pose, seen more frontal and larger, vertical slices turn, then the whole cube rolls again",
+      "camera": "push-in, motion.json s8 zoom 0.7 %/s, s9 2.7 %/s, pan -9..4 px/s",
+      "motion": "frontal pose 8.27-8.77; vertical slices 9.00; whole-cube roll 9.27 to 9.77, still moving on the last frame (±0.25 s)",
+      "transition_out": "end",
+      "sfx": "whoosh"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandBackdrop",
+    "Dolly",
+    "BrandProvider"
+  ],
+  "params": {
+    "brand": "brand.json: accent colour drives rail glow and the liquid inside the cubelets; bg near black",
+    "turns": "list of {at, axis, layer, dir} layer quarter-turns; reference: 0.27, 2.27, 5.27, 6.50, 7.00, 9.00 s",
+    "tumbles": "list of {at, frames} whole-cube rolls about the rail axis; reference 3.50 (30 fr) and 9.27 s",
+    "push": "late camera push, zoom %/s (reference ~0.7-2.7 %/s from 6 s on)"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "One shot, no cuts (cuts.json empty), silent reference: sfx planned by the glue rule, not measured. Turn and tumble times read from 4 fps sheets (±0.25 s); springs and easings are suggestions, overshoot not measurable. Beats: no logo, cta or product appears, so rows inherit hook, and the first whole-cube tumble at 3.50 s is taken as the rhythm break (tension). Not loopable: the last frame is mid-roll. Proposed terms (not in vocabulary): puzzle-layer-turn, glow-rails. Needs an R3F glass cube rig the studio lacks.",
+  "status": "studied"
+}

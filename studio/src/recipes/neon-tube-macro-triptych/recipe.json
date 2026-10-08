@@ -1,0 +1,137 @@
+{
+  "id": "neon-tube-macro-triptych",
+  "title": "Neon tube macro triptych",
+  "summary": "Three hard-cut macro views of one glowing tube on black: a bent corner, a level band with light sliding along it, a forked joint. A slow creep keeps each hold alive; a vertical mood loop or backdrop for type.",
+  "use_when": [
+    "A vertical teaser or story background before the product or a line of type appears",
+    "Brands with a single saturated accent colour that can carry a whole frame",
+    "Silent autoplay openers where a 6 s abstract hold is enough",
+    "A backplate behind a short statement or logo added on top"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/6sadmipG",
+    "author": "Raylight",
+    "ref_id": "rl-091"
+  },
+  "family": "social-promo",
+  "tags": [
+    "vertical",
+    "abstract",
+    "neon",
+    "glow-line",
+    "macro",
+    "dark",
+    "no-text",
+    "backdrop",
+    "three-shot",
+    "accent-colour"
+  ],
+  "techniques": [
+    "glow",
+    "push-in",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 6.3,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#010302",
+      "#0B200B",
+      "#096F08",
+      "#13A913",
+      "#79F472"
+    ],
+    "type_style": "none: no on-screen type",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "first frame, the lit tube corner is already on",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "hard cut to a new macro view of the tube (2.17 s, 4.13 s)",
+        "sound": "hit",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.17,
+      "beat": "hook",
+      "shot": "macro of a bent neon tube: diagonal from top-left, rounded corner, then almost vertical down to the bottom edge; white core, wide green falloff",
+      "camera": "near static drift: ~0.1 % frame diff/s, pan ~2 px/fr @1920, zoom within ±1.5 %/s (motion.json; not visible on the 4 fps sheets)",
+      "motion": "no element motion; tube fully lit from frame 0; glow holds constant across 9 cells (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "swell"
+    },
+    {
+      "t0": 2.17,
+      "t1": 4.13,
+      "beat": "hook",
+      "shot": "a level glowing band across the full width at about half height, two bright edge lines, haze above and below",
+      "camera": "static framing on the band (band stays at ~50 % H in every cell); motion.json reports ~+10 %/s zoom on the haze, not visible on the sheets",
+      "motion": "light travels along the band: from ~3.50 s the right end dims and a darker gradient moves leftwards, easings.linear ~19 fr (±0.25 s); estimated lateral flow ~46 px/fr @1920 (motion.json second 3)",
+      "transition_out": "hard-cut",
+      "sfx": "hit"
+    },
+    {
+      "t0": 4.13,
+      "t1": 6.3,
+      "beat": "hook",
+      "shot": "macro of a forked tube joint: thick green body from the left, one arm up-left, one arm to the right, one arm down; dark inner corner",
+      "camera": "push-in, slow creep ~1.00→1.03 over 65 fr (suggested; motion.json 6-10 %/s, sheets show < 2 % change at 0.25 s resolution)",
+      "motion": "no element motion; joint lit from the cut frame; slight darkening of the body towards the end (6.00-6.27 s cells)",
+      "transition_out": "end",
+      "sfx": "hit"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "KenBurns",
+    "Bloom",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "brand.json: accent paints the tube glow, bg is the black field",
+    "shots": "3 tube shapes (corner, band, fork), each ~2 s (65/59/65 fr @30)",
+    "glow": "falloff width of the halo in % of frame width (reference ~12 %, suggested)",
+    "travel": "speed of the light sliding along the band in shot 2 (suggested ~45 px/fr @1920)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Silent reference; sfx planned by the glue rule, not measured. Three shots cut hard at 2.17 s (f65) and 4.13 s (f124). No text, no logo: the film is pure light. Camera numbers come from motion.json block matching, not from the sheets, where frames look almost identical within a shot; treat drift and push values as suggested. Proposed term (not in vocabulary): neon-tube = stroked path with a white core and a wide accent falloff.",
+  "status": "studied"
+}

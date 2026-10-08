@@ -1,0 +1,137 @@
+{
+  "id": "ruled-feature-grid-cascade",
+  "title": "Ruled feature grid cascade",
+  "summary": "Four short feature points in a 2x2 grid on black. Each item's blue hairline draws from the left, then its three lines rise out of a clip mask in reading order; the grid holds, then rules retract and text fades.",
+  "use_when": [
+    "A product page or pitch slide needs four short benefits shown at once",
+    "A text-only section between product shots in a longer film",
+    "A silent loop for a website hero or social feed",
+    "Points of equal weight that should read in a fixed order"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/animated-feature-list/",
+    "author": "Jitter",
+    "ref_id": "jt-049"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "feature-list",
+    "grid",
+    "type-only",
+    "no-ui",
+    "dark",
+    "minimal",
+    "loop",
+    "hairline",
+    "benefits"
+  ],
+  "techniques": [
+    "card-grid",
+    "list-assemble",
+    "mask-rise"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FCFCFC",
+      "#819CD2",
+      "#2D406A"
+    ],
+    "type_style": "bold grotesk, sentence case, normal tracking, about 3.6 % H, 3 lines per item, ragged left; a 6 px blue hairline above each item",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each feature item lands (4 per film)",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "empty black, then a 2x2 grid of four feature items builds: blue hairline on top, a 3-line statement under it",
+      "camera": "static",
+      "motion": "order top-left, top-right, bottom-left, bottom-right, item stagger ~4 fr (±0.25 s); hairline draws from left, easings.outExpo ~12 fr (±0.25 s); each line rises out of its clip mask, line stagger ~4 fr (±0.25 s), springs.ui (overshoot not measurable); first rule f8, last line settles ~f45",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.27,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "the full grid holds: four items, two columns, two rows, all text white, all rules blue",
+      "camera": "static",
+      "motion": "hold 82 fr; nothing moves after the last line settles (sheet cells 1.77 to 4.00 identical)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4,
+      "t1": 4.5,
+      "beat": "hook",
+      "shot": "the grid clears: hairlines shrink toward their right ends, text fades out, top row first",
+      "camera": "static",
+      "motion": "rules retract to the right, easings.inExpo ~10 fr (±0.25 s); text opacity fade ~6 fr (±0.25 s), top row leads bottom row by ~4 fr (±0.25 s); empty by f135",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 4.5,
+      "t1": 5,
+      "beat": "hook",
+      "shot": "empty black, matching the first frame so the clip loops",
+      "camera": "static",
+      "motion": "none; 15 fr of black before the loop restarts",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 4,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "BlurIn",
+    "STAGGER",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg for the text, accent for the hairlines, bg",
+    "content.items": "4 feature statements, 6 to 8 words each, wrapping to 3 short lines",
+    "aspect": "other (4:3 like the reference) | 16:9 | 1:1 | 4:5; 2 columns, 9:16 stacks into 1 column",
+    "timing.itemStagger": "frames between items (default 4)",
+    "timing.hold": "frames the full grid holds (default 82)",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets only (no strip): sub-0.25 s numbers carry ±0.25 s. Grid: column left edges at about 16 % and 56 % W, rule rows at 29 % and 55 % H; hairline about 30 % W long, 6 px thick, solid pixels #3D6AD6 (palettegen gives antialiased #819CD2 / #2D406A). Rules draw from the left and leave toward the right. Last line drifts up 2 to 3 px between 1.27 and 1.77 s (settle). Loop: first and last frames are both black. sfx planned by the glue rule, not measured (reference is silent). Proposed term: rule-draw (accent hairline draws on from one end, retracts to the other).",
+  "status": "studied"
+}

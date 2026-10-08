@@ -1,0 +1,75 @@
+{
+  "id": "tilted-image-wheel-label-loop",
+  "title": "Tilted picture wheel turning through a centred label",
+  "summary": "About 22 square images ride a vertical wheel seen side-on, scaled 4x from far to near, crossing in front of and behind one centred line of type on white. One slow, even turn per loop; the line blurs in and out word by word.",
+  "use_when": [
+    "a seamless loop for a gallery, template pack or asset library",
+    "showing many images or outputs around one short claim",
+    "a calm feature beat inside a longer film where depth comes from scale, not 3D",
+    "muted autoplay feeds that need constant motion without cuts"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/4h3tpK70",
+    "author": "Raylight",
+    "ref_id": "rl-083"
+  },
+  "family": "kinetic-type",
+  "tags": ["picture-wheel", "carousel", "depth-scale", "loop", "one-shot", "light", "gallery", "label", "no-ui"],
+  "techniques": ["orbit-ring", "blur-in"],
+  "format": {"aspect": "16:9", "duration_s": 10.63, "fps": 30, "loopable": true},
+  "look": {
+    "theme": "light",
+    "palette": ["#FFFFFF", "#242125", "#3B54C9", "#EF807C", "#94B8A5", "#F4F9D6"],
+    "type_style": "regular geometric grotesk, sentence case, normal tracking, black, ~48 px at 720p (6.7 % of frame height), one line centred",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {"present": false, "bpm": null, "energy": null, "genre": null, "cut_on_beat": false},
+    "sfx": [
+      {"event": "label words resolve from blur", "sound": "swell", "origin": "planned"},
+      {"event": "label words blur out at the loop point", "sound": "reverse-cymbal", "origin": "planned"}
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0, "t1": 0.8, "beat": "hook",
+      "shot": "white stage, image wheel already turning right of centre; a 5-word label names the technique, resolving left to right",
+      "camera": "static frame (locked; only the wheel moves)",
+      "motion": "label per word blur-in, stagger ~3 fr (human 30 fps study), easings.outExpo ~10 fr (±0.25 s); first word visible but soft at 0.27, last word sharp by 0.80–1.00; wheel easings.linear 34°/s from frame 0",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 0.8, "t1": 9.7, "beat": "hook",
+      "shot": "label holds still at frame centre; ~11 distinct images (twice around, ~22 cards) turn on a vertical wheel, near cards cover the label's right end, far ones pass behind its left part",
+      "camera": "static frame (locked; only the wheel moves)",
+      "motion": "ItemWheel easings.linear 34°/s = one turn per 10.6 s (human 30 fps study); near side moves down 300–370 px/s, far side up 210–260 px/s at 720p; card size near ~230 px (0.32 H) to far ~56 px (0.078 H); no fade, no depth blur",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 9.7, "t1": 10.63, "beat": "hook",
+      "shot": "the label dissolves word by word left to right while the wheel keeps turning; last frame matches frame 0",
+      "camera": "static frame (locked; only the wheel moves)",
+      "motion": "mirror of row 1: per-word blur-out, stagger ~3 fr (human 30 fps study), easings.inExpo ~10 fr (±0.25 s); first word soft at 9.77, gone by 10.00, label gone by 10.50; wheel continues linear",
+      "transition_out": "end",
+      "sfx": "reverse-cymbal"
+    }
+  ],
+  "inputs": {"product_name": false, "logo": false, "tagline": true, "lines": 1, "screenshots": 11, "screen_recording": false, "ui_rebuild": false, "stats": 0, "url": false},
+  "components": ["ItemWheel", "BlurIn", "BrandProvider"],
+  "params": {
+    "label": "one line, about 5 words, sits at depth 0 inside the wheel",
+    "images": "about 11 images, used twice around the wheel (~22 cards), square corners, no shadow",
+    "wheel.radius": "vertical radius ~0.74 H (cards run off top and bottom)",
+    "wheel.tilt": "~71° about the vertical axis (half-extent 172 px of radius 533 px at 720p)",
+    "wheel.speed": "34°/s linear, one turn = loop length",
+    "wheel.scale": "[1, 0.24] near to far, perspectiveRatio 1.4",
+    "wheel.offsetX": "+0.035 W (axis at x ~685 of 1280)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One shot, 0 cuts (cuts.json empty), so every hand-over is continuous. Wheel numbers (34°/s, 0.74 H radius, 71° tilt, 4.1x scale range, +0.035 W axis, ~3 fr word stagger) are from a human 30 fps study; sheets at 4 fps confirm text in by ~0.8–1.0 s and out 9.7–10.5 s and a picture repeat every ~5.3 s. Entrance easing names are suggested (overshoot not measurable at 0.25 s). Reference is silent: all SFX are planned by the glue rule, not measured. Family is kinetic-type by elimination: the label is the anchor, no cut is the subject. Missing vocabulary term: image wheel interleaved with type (see Proposed terms in recipe.md).",
+  "status": "studied"
+}

@@ -27,6 +27,7 @@ const FILM_TRANSITIONS = new Set(['hard-cut', 'match-cut', 'mask-wipe', 'blur-di
 
 type Row = {t0: number; t1: number; beat: string; shot?: string; camera?: string; motion?: string; transition_out?: string; sfx?: string};
 
+const beatChain = (beats: Row[]) => beats.map((b) => b.beat).filter((b, i, a) => b !== a[i - 1]).join(' → ');
 const round2 = (n: number) => Math.round(n * 100) / 100;
 /** One line of text; `comment` also defuses a block-comment close for TSX comments. */
 const oneLine = (s: unknown) => String(s ?? '').replace(/\s+/g, ' ').trim();
@@ -68,7 +69,7 @@ export const run = async (argv: string[]) => {
 	let imports = '';
 	let scenes = '';
 	let shots: Record<string, unknown>[] = [];
-	const todo: {key: string; row: Row}[] = [];
+	const todo: {key: string; row: Row; beats: Row[]}[] = [];
 	if (recipeId) {
 		if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(recipeId)) die(`recipe id must be kebab-case, got ${JSON.stringify(recipeId)}`);
 		const rdir = studioPath('src', 'recipes', recipeId);
@@ -86,7 +87,14 @@ export const run = async (argv: string[]) => {
 		} else {
 			mode = 'text';
 			const rows: Row[] = (Array.isArray(recipe?.structure) ? recipe.structure : []).filter((s: any) => s && Number.isFinite(s.t0) && Number.isFinite(s.t1));
-			rows.forEach((row, i) => todo.push({key: `${String(i + 1).padStart(2, '0')}-${/^[a-z-]+$/.test(row.beat) ? row.beat : 'shot'}`, row}));
+			// beats joined by `continuous` are one shot in the reference (state changes, no cut): build them as one scene
+			const groups: Row[][] = [];
+			rows.forEach((row, i) => (i > 0 && rows[i - 1].transition_out === 'continuous' ? groups[groups.length - 1].push(row) : groups.push([row])));
+			groups.forEach((g, i) => {
+				const beat = /^[a-z-]+$/.test(g[0].beat) ? g[0].beat : 'shot';
+				const last = g[g.length - 1];
+				todo.push({key: `${String(i + 1).padStart(2, '0')}-${beat}`, row: {...g[0], t1: last.t1, transition_out: last.transition_out}, beats: g});
+			});
 		}
 	}
 
@@ -103,27 +111,39 @@ export const run = async (argv: string[]) => {
 			const into = prev?.transition_out && FILM_TRANSITIONS.has(prev.transition_out) && prev.transition_out !== 'hard-cut' ? prev.transition_out : undefined;
 			const at = Math.abs(row.t0 - cursor) > 0.02 ? round2(row.t0) : undefined;
 			cursor = row.t1;
-			const sound = firstSound(row.sfx);
+			const sfx = todo[i].beats.flatMap((b) => {
+				const sound = firstSound(b.sfx);
+				return sound ? [{at: round2(b.t0 - row.t0), sound}] : [];
+			});
 			return {
 				id: key,
 				...(at !== undefined ? {at} : {}),
 				dur: round2(Math.max(0.1, row.t1 - row.t0)),
 				scene: key,
 				...(into ? {transition: into} : {}),
-				...(sound ? {sfx: [{at: 0, sound}]} : {}),
-				props: {row: i + 1, beat: row.beat, shot: oneLine(row.shot), recipe: recipeId},
+				...(sfx.length ? {sfx} : {}),
+				props: {row: i + 1, beat: beatChain(todo[i].beats), shot: oneLine(row.shot), recipe: recipeId},
 			};
 		});
 		imports = `import {TodoScene} from '../../src/film';\n`;
+		const beatLines = (b: Row, prefix: string) =>
+			[
+				b.shot ? `\t//${prefix}picture: ${comment(b.shot)}` : '',
+				b.camera ? `\t//${prefix}camera: ${comment(b.camera)}` : '',
+				b.motion ? `\t//${prefix}motion: ${comment(b.motion)}` : '',
+				b.sfx ? `\t//${prefix}sound: ${comment(b.sfx)}` : '',
+			];
 		scenes = todo
-			.map(({key, row}, i) =>
+			.map(({key, row, beats}, i) =>
 				[
-					`\t// TODO #${i + 1} ${row.beat}, recipe ${round2(row.t0)}-${round2(row.t1)} s (re-timed in film.json). Build it from src/presets + src/components (API.md).`,
-					row.shot ? `\t//   picture: ${comment(row.shot)}` : '',
-					row.camera ? `\t//   camera: ${comment(row.camera)}` : '',
-					row.motion ? `\t//   motion: ${comment(row.motion)}` : '',
+					`\t// TODO #${i + 1} ${beatChain(beats)}, recipe ${round2(row.t0)}-${round2(row.t1)} s (re-timed in film.json). Build it from src/presets + src/components (API.md).`,
+					...(beats.length === 1
+						? beatLines(row, '   ')
+						: [
+								`\t//   one continuous shot in the reference (no cut): build ONE scene whose state changes at these times`,
+								...beats.flatMap((b) => [`\t//   · ${round2(b.t0 - row.t0)} s ${b.beat}`, ...beatLines(b, '       ')]),
+							]),
 					row.transition_out ? `\t//   out: ${comment(row.transition_out)}` : '',
-					row.sfx ? `\t//   sound: ${comment(row.sfx)}` : '',
 					`\t'${key}': TodoScene,`,
 				]
 					.filter(Boolean)

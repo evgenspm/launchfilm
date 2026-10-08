@@ -1,0 +1,155 @@
+{
+  "id": "prompt-type-zoom-send-press",
+  "title": "Dark prompt card types, zooms in, cursor presses send",
+  "summary": "A small dark prompt card types a two-line request at speed, the camera springs in toward its left half, then a pointer slides up and presses the blue send button. A 4.5 s silent loop of one prompt being written and sent.",
+  "use_when": [
+    "Showing that an AI tool starts from one typed request",
+    "A short insert before a result or answer scene",
+    "Silent autoplay social clip for a prompt-driven product",
+    "Opening beat of a longer ai-chat film"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/mPotbvtC",
+    "author": "Joseph Lauriano",
+    "ref_id": "rl-055"
+  },
+  "family": "ai-chat",
+  "tags": [
+    "prompt",
+    "typing",
+    "send-button",
+    "cursor",
+    "zoom",
+    "dark",
+    "minimal",
+    "ai",
+    "ui",
+    "short"
+  ],
+  "techniques": [
+    "prompt-typing",
+    "typewriter",
+    "zoom-tier",
+    "cursor-path",
+    "ui-rebuild"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 4.5,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#090B0A",
+      "#F5F5F5",
+      "#3E63AC",
+      "#2E2F30",
+      "#9A9B9B"
+    ],
+    "type_style": "bold grotesk, sentence case, normal tracking, 2 lines, ~2.5 % H before the zoom, ~6 % H after",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each typed character",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "camera springs in on the card",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor presses the send button",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "empty dark rounded prompt card, ~45 % W, centred; plus icon bottom-left, blue send arrow bottom-right; first line types",
+      "camera": "drift: zoom -1.1 %/s, pan ~21 px/s down (1920 frame), near static",
+      "motion": "typing starts ~f2 at ~50 chars/s, easings.linear, no caret visible (±0.25 s); card widens ~10 % as the first line fills, springs.layout (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 1,
+      "t1": 2,
+      "beat": "feature",
+      "shot": "request wraps to a second line and finishes with a period; card grows one line taller",
+      "camera": "drift: zoom -0.6 %/s, pan ~11 px/s, near static",
+      "motion": "typing continues ~50 chars/s, done at ~1.77 s (f53, ±0.25 s); card height grows one line, springs.layout (overshoot not measurable); 7 fr hold before the zoom",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 2,
+      "t1": 3.27,
+      "beat": "feature",
+      "shot": "camera pushes into the card's text, left edge of the text leaves frame; card fills the upper left",
+      "camera": "zoom-tier region→element: scale 1.00→~1.6 (±10 %), toward upper left, pan ~245 px/s left and ~160 px/s up",
+      "motion": "springs.cameraIn, f60→~f87 settle (±0.25 s, overshoot not measurable); then static hold to f98",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.27,
+      "t1": 4.5,
+      "beat": "feature",
+      "shot": "white pointer hand enters from below right, lands on the send button and presses it; holds to the end",
+      "camera": "static after the zoom (zoom 0.0–0.2 %/s)",
+      "motion": "cursor-path from below-right, lands on the button by f105 (±0.25 s), springs.ui; press squash springs.click ~f105–f113 (±0.25 s); hold 37 fr",
+      "transition_out": "end",
+      "sfx": "ui-confirm"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PromptBar",
+    "Typewriter",
+    "Camera",
+    "Cursor",
+    "BrandProvider",
+    "BrandBackdrop"
+  ],
+  "params": {
+    "content.prompt": "one request, ~80 characters, wraps to 2 lines at the card width",
+    "timing.cps": "typing speed in chars/s (default 50)",
+    "timing.zoomAt": "frame the camera springs in (default 60)",
+    "timing.zoomScale": "camera scale after the zoom (default 1.6)",
+    "timing.pressAt": "frame the cursor presses send (default 105)",
+    "accent": "send button colour, defaults to brand accent"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s). Typing ~50 chars/s, done ~1.77 s; zoom 2.00→~2.90 s at ~1.6x toward upper left; cursor first visible 3.27 s, on the button by 3.50 s. No cuts, silent. sfx planned by the glue rule, not measured. Proposed term: multiline-prompt-card (card that grows with wrapped text).",
+  "status": "studied"
+}

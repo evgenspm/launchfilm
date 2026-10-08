@@ -1,0 +1,173 @@
+{
+  "id": "edge-rail-hover-scroll",
+  "title": "Edge tab opens into a scrolling icon rail",
+  "summary": "A small labelled tab grows out of a panel seam, morphs into a three-icon rail, and a hover dot drives it to scroll one item at a time up and back before it folds away. A loopable nav pattern demo.",
+  "use_when": [
+    "Showing a compact side navigation or quick-switch rail in a web or desktop app",
+    "A loopable UI micro-demo for a landing page, docs or a social post",
+    "Explaining that a rail holds more items than it shows (scroll on hover)",
+    "A silent clip where one interaction pattern is the whole message"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/side-rail-menu/",
+    "author": "Jitter",
+    "ref_id": "jt-015"
+  },
+  "family": "product-ui",
+  "tags": [
+    "navigation",
+    "side-rail",
+    "menu",
+    "hover",
+    "icon-rail",
+    "ui-micro",
+    "loop",
+    "split-frame",
+    "silent"
+  ],
+  "techniques": [
+    "ui-rebuild",
+    "cursor-path",
+    "morph"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 6.5,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "mixed",
+    "palette": [
+      "#F2EEFB",
+      "#2F1431",
+      "#DD5624",
+      "#CA3C0C",
+      "#EE8857",
+      "#B42D0B"
+    ],
+    "type_style": "small geometric sans, sentence case, one word set vertically (rotated 90 deg) inside the tab, ~4 % H; outline icons ~4.5 % H, one hue each",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "tab grows out of the seam",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "rail scrolls one item",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "rail folds away",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.93,
+      "beat": "hook",
+      "shot": "split frame: flat light panel left, warm abstract wallpaper right; a dark tab with a vertical one-word label and grid glyph grows from the seam",
+      "camera": "static",
+      "motion": "tab scales out from the seam (origin left-centre) f2 to f6, springs.layout 4 fr (overshoot not measurable); label and glyph ride inside it; hold to f28",
+      "transition_out": "morph",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 0.93,
+      "t1": 2.5,
+      "beat": "reveal",
+      "shot": "the tab becomes a rail of three outline icons in three hues; a small dark hover dot rests next to the middle icon",
+      "camera": "static",
+      "motion": "label crossfades out while icons fade in f28 to f32, tab height grows ~20 % on springs.layout 4 fr; hover dot appears f29; hold 43 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 2.5,
+      "t1": 3.17,
+      "beat": "feature",
+      "shot": "rail scrolls by one: a new icon enters at the top, the bottom icon leaves; the dot follows the item it hovers",
+      "camera": "static",
+      "motion": "column shifts one slot down f76 to f81, springs.ui 5 fr; entering icon fades in at the top, leaving icon fades out at the bottom over 3 fr; dot glides with the column",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3.17,
+      "t1": 4.43,
+      "beat": "feature",
+      "shot": "the dot climbs to the top icon and the rail scrolls one more item in",
+      "camera": "static",
+      "motion": "dot moves up first f95 to f100 easings.outQuint 5 fr, then column shifts one slot f100 to f103 springs.ui 3 fr with the same fade in/out; hold f103 to f133",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4.43,
+      "t1": 5.2,
+      "beat": "feature",
+      "shot": "the dot drops down twice and the rail scrolls back two items, returning to the first icon set",
+      "camera": "static",
+      "motion": "step 1: dot down f133 to f135, column shifts up f136 to f138; step 2: dot down f145 to f147, column shifts up f148 to f149; each shift springs.ui 3 fr, dot easings.outQuint 2 to 3 fr",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 5.2,
+      "t1": 6.5,
+      "beat": "feature",
+      "shot": "the dot fades, the rail folds back into the seam, empty split frame holds and matches frame 0 for the loop",
+      "camera": "static",
+      "motion": "dot fades f156 to f157; icons shrink and fade f164 to f165, rail collapses into the seam f164 to f168, easings.inExpo 4 fr; empty hold 27 fr",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "Cursor",
+    "LineIcon",
+    "DesktopBackdrop",
+    "springs",
+    "easings"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the light panel, surface/fg for the rail, accent for one icon",
+    "content.label": "one word shown vertically in the closed tab (menu name)",
+    "content.items": "5 icons (LineIcon names + hue), 3 visible at once",
+    "timing.steps": "scroll script, e.g. [+1, +1, -1, -1]; each step: dot moves 3 to 5 fr, column shifts 3 to 5 fr",
+    "panelSplit": "x of the seam as a share of width (reference 0.49)",
+    "wallpaper": "right-side backdrop: gradient colours or an image",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Single shot, no cuts; rows split at state changes measured from 30 fps strips (1 fr). Every motion is short: tab open 4 fr, morph 4 fr, each scroll 3 to 5 fr, collapse 4 fr; long holds between keep it readable. The dot leads the scroll in steps 2 to 4 (moves to the edge item, then the column shifts). Loopable: last frames equal frame 0. No camera move (motion.json zoom under 0.3 %/s, noise). Theme mixed: the frame is half light panel, half warm mid-tone wallpaper for the whole runtime. Palette from palettegen misses the small dark rail colour (~#14063A by eye). sfx planned by the glue rule, not measured (reference is silent). Proposed terms (not in vocabulary): edge-tab-reveal, rail-scroll, fold-away.",
+  "status": "studied"
+}

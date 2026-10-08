@@ -1,0 +1,169 @@
+{
+  "id": "phone-macro-focus-glide",
+  "title": "Macro phone screen glide with a hero pull-back",
+  "summary": "Four equal close-ups glide across one phone home screen in a dark blue void with shallow focus, each on one region (header, actions, balance, tab bar), then the whole device rises into a centred hold. Quiet, premium, one screen is enough.",
+  "use_when": [
+    "A mobile app with one strong home screen and no story to tell yet",
+    "Silent loop or background reel for a fintech or consumer app page",
+    "A premium, calm product teaser with no copy and no VO",
+    "Opening a longer film with a tactile look at the UI before features"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/z21E5wed",
+    "author": "Raylight",
+    "ref_id": "rl-006"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "macro",
+    "close-up",
+    "shallow-focus",
+    "tilted-ui",
+    "dark",
+    "blue",
+    "silent",
+    "no-copy",
+    "fintech",
+    "device-hero"
+  ],
+  "techniques": [
+    "device-phone",
+    "device-3d",
+    "tilt-plane",
+    "push-in",
+    "dolly",
+    "rack-focus",
+    "hard-cut",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 19.3,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#020438",
+      "#7386C5",
+      "#0F37E0",
+      "#3665F0",
+      "#303146",
+      "#0A0E42"
+    ],
+    "type_style": "UI type only (the app's own sans), no overlay copy; balance figure is the largest type, ~18 % H in macro",
+    "treatment": [
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "hard cut to the next macro region",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "device settles in the centred hold",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.87,
+      "beat": "hook",
+      "shot": "macro on the top of a phone screen: status bar, avatar, search pill, two icon buttons; deep blue screen gradient",
+      "camera": "hold 0.00-1.00, then push-in 1.00->1.25 (±0.05) with slight roll -1.3 deg/s and drift down, to f116",
+      "motion": "screen plane tilted back (tilt-plane), shallow focus on the search row; push easings.inOutSine 86 fr (±0.25 s); no UI animation",
+      "transition_out": "hard-cut",
+      "sfx": ""
+    },
+    {
+      "t0": 3.87,
+      "t1": 7.73,
+      "beat": "feature",
+      "shot": "macro lower on the same screen: four round action buttons with labels, two transaction rows, a see-all link",
+      "camera": "dolly: plane drifts up ~25 % of frame height over 116 fr, easings.linear (±0.25 s)",
+      "motion": "rack-focus down the list: first row sharp 5.00-6.00, focus slides to the second row by 6.77, buttons go soft; focus shift ~45 fr easings.inOutSine (±0.25 s)",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 7.73,
+      "t1": 11.6,
+      "beat": "feature",
+      "shot": "steep diagonal macro on the balance block: account label, large currency figure with small decimals, pill button under it",
+      "camera": "dolly + push-in: content travels down-right ~50 px/s @1920, scale +6 %/s (1.00->1.25), roll -4 deg/s, over 116 fr",
+      "motion": "screen tilted ~30 deg in roll, shallow focus on the figure; constant drift easings.linear; no UI animation",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 11.6,
+      "t1": 15.43,
+      "beat": "feature",
+      "shot": "low-angle macro on the bottom corner of the device: a card edge, a section label, five-tab bar with icons; phone body edge visible",
+      "camera": "push-in + dolly: scale +8 %/s (1.00->1.30), drift up-right ~35 px/s @1920 over 115 fr",
+      "motion": "device-3d body with thickness and rim highlight; tab bar in focus, card above soft; easings.linear drift",
+      "transition_out": "hard-cut",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 15.43,
+      "t1": 19.3,
+      "beat": "feature",
+      "shot": "empty dark blue backdrop with a soft grey glow top-right, then the whole phone rises from below into a centred front view and holds",
+      "camera": "static (the device moves, not the camera)",
+      "motion": "empty 15.43-15.77 (10 fr); device rises from below frame, small to full height, settles by 17.00, springs.heavy ~37 fr (overshoot not measurable); hold 17.00-19.00; exits up off frame by 19.27, easings.inExpo ~8 fr (±0.25 s)",
+      "transition_out": "end",
+      "sfx": "swell"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "TiltPlane",
+    "RackFocus",
+    "Dolly",
+    "Camera",
+    "Vignette",
+    "BrandBackdrop",
+    "BrandProvider"
+  ],
+  "params": {
+    "screen": "one rebuilt home screen (authored at phone size) with four regions: header, actions + list, hero figure, tab bar",
+    "regions": "4 rects on the screen, one per macro shot, in order",
+    "figure": "the hero number for the balance shot, e.g. a balance or total",
+    "shotFrames": "frames per macro shot at 30 fps (default 116)",
+    "heroHold": "frames the full-device hold lasts (default 60)",
+    "bg": "deep backdrop colour (default brand bg, dark navy) with one soft grey glow top-right"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "Five equal shots of ~116 fr (3.87 s) each, metronomic, all hard cuts, no music. Every macro shot moves (push and/or drift with a slight roll); only the final hold is still. Shallow depth of field carries the look: one band sharp, the rest heavily blurred. Proposed terms (not in vocabulary): device-rise, macro-region-tour. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

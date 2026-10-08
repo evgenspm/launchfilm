@@ -5,35 +5,110 @@
   "description": "One studied launch film written down as a reusable recipe. Lives at studio/src/recipes/<id>/recipe.json next to recipe.md (both required). A text recipe (status studied) is enough to build a film from; Recipe.tsx + index.tsx are optional ready code (status built).",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "title", "summary", "source", "family", "tags", "techniques", "format", "look", "audio", "structure", "inputs", "components", "difficulty"],
+  "required": [
+    "id",
+    "title",
+    "summary",
+    "source",
+    "family",
+    "tags",
+    "techniques",
+    "format",
+    "look",
+    "audio",
+    "structure",
+    "inputs",
+    "components",
+    "difficulty"
+  ],
   "properties": {
     "id": {
       "type": "string",
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
       "description": "kebab-case, unique, e.g. 'statement-blur-launch'. Never include the source brand name."
     },
-    "title": { "type": "string", "maxLength": 60, "description": "Our own descriptive title, not the source's title." },
-    "summary": { "type": "string", "maxLength": 240, "description": "One or two sentences: what the viewer sees and why it works." },
-    "use_when": { "type": "array", "items": { "type": "string" }, "maxItems": 5, "description": "Situations where this recipe is the right pick." },
+    "title": {
+      "type": "string",
+      "maxLength": 60,
+      "description": "Our own descriptive title, not the source's title."
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 240,
+      "description": "One or two sentences: what the viewer sees and why it works."
+    },
+    "use_when": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 5,
+      "description": "Situations where this recipe is the right pick."
+    },
     "source": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "url"],
+      "required": [
+        "name",
+        "url"
+      ],
       "properties": {
-        "name": { "enum": ["raylight", "jitter", "launchvideo", "own", "other"] },
-        "url": { "type": "string", "format": "uri", "description": "Link to the original. We never redistribute the original file." },
-        "author": { "type": "string" },
-        "author_url": { "type": "string", "format": "uri" },
-        "ref_id": { "type": "string", "description": "Internal reference id, e.g. 'rl-007' or 'jt-031'." }
+        "name": {
+          "enum": [
+            "raylight",
+            "jitter",
+            "launchvideo",
+            "own",
+            "other"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Link to the original. We never redistribute the original file."
+        },
+        "author": {
+          "type": "string"
+        },
+        "author_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "ref_id": {
+          "type": "string",
+          "description": "Internal reference id, e.g. 'rl-007' or 'jt-031'."
+        }
       }
     },
     "family": {
-      "enum": ["launch-film", "product-ui", "ai-chat", "mobile-app", "kinetic-type", "logo-brand", "transitions", "social-promo", "3d-device", "data-stats"]
+      "enum": [
+        "launch-film",
+        "product-ui",
+        "ai-chat",
+        "mobile-app",
+        "kinetic-type",
+        "logo-brand",
+        "transitions",
+        "social-promo",
+        "3d-device",
+        "data-stats"
+      ]
     },
-    "tags": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9-]+$" }, "maxItems": 12, "uniqueItems": true },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "maxItems": 12,
+      "uniqueItems": true
+    },
     "techniques": {
       "type": "array",
-      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
       "minItems": 1,
       "uniqueItems": true,
       "description": "Only ids from craft/vocabulary.md. Validated by scripts/validate-recipes."
@@ -41,40 +116,117 @@
     "format": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["aspect", "duration_s", "fps"],
+      "required": [
+        "aspect",
+        "duration_s",
+        "fps"
+      ],
       "properties": {
-        "aspect": { "enum": ["16:9", "9:16", "1:1", "4:5", "other"] },
-        "duration_s": { "type": "number", "minimum": 1, "maximum": 180 },
-        "fps": { "enum": [24, 25, 30, 50, 60] },
-        "loopable": { "type": "boolean" }
+        "aspect": {
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1",
+            "4:5",
+            "other"
+          ]
+        },
+        "duration_s": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 180
+        },
+        "fps": {
+          "enum": [
+            24,
+            25,
+            30,
+            50,
+            60
+          ]
+        },
+        "loopable": {
+          "type": "boolean"
+        }
       }
     },
     "look": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["theme"],
+      "required": [
+        "theme"
+      ],
       "properties": {
-        "theme": { "enum": ["dark", "light", "mixed"] },
-        "palette": { "type": "array", "items": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }, "maxItems": 6 },
-        "type_style": { "type": "string", "description": "e.g. 'large grotesk, tight tracking, blur-in'" },
-        "treatment": { "type": "array", "items": { "type": "string" }, "description": "look-* techniques: grain, glow, liquid-glass…" }
+        "theme": {
+          "enum": [
+            "dark",
+            "light",
+            "mixed"
+          ]
+        },
+        "palette": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^#[0-9A-Fa-f]{6}$"
+          },
+          "maxItems": 6
+        },
+        "type_style": {
+          "type": "string",
+          "description": "e.g. 'large grotesk, tight tracking, blur-in'"
+        },
+        "treatment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "look-* techniques: grain, glow, liquid-glass…"
+        }
       }
     },
     "audio": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["vo", "music"],
+      "required": [
+        "vo",
+        "music"
+      ],
       "properties": {
-        "vo": { "type": "boolean" },
+        "vo": {
+          "type": "boolean"
+        },
         "music": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "present": { "type": "boolean" },
-            "bpm": { "type": ["number", "null"] },
-            "energy": { "enum": ["calm", "medium", "high", "build", null] },
-            "genre": { "type": ["string", "null"] },
-            "cut_on_beat": { "type": "boolean" }
+            "present": {
+              "type": "boolean"
+            },
+            "bpm": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "energy": {
+              "enum": [
+                "calm",
+                "medium",
+                "high",
+                "build",
+                null
+              ]
+            },
+            "genre": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "cut_on_beat": {
+              "type": "boolean"
+            }
           }
         },
         "sfx": {
@@ -82,10 +234,26 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["event", "sound"],
+            "required": [
+              "event",
+              "sound"
+            ],
             "properties": {
-              "event": { "type": "string", "description": "what happens on screen" },
-              "sound": { "type": "string", "description": "audio id from craft/vocabulary.md#audio" }
+              "event": {
+                "type": "string",
+                "description": "what happens on screen"
+              },
+              "sound": {
+                "type": "string",
+                "description": "audio id from craft/vocabulary.md#audio"
+              },
+              "origin": {
+                "enum": [
+                  "observed",
+                  "planned"
+                ],
+                "description": "observed = audible in the reference; planned = our suggestion (glue rule) for a silent or music-only reference. Default planned when the reference has no audio."
+              }
             }
           }
         }
@@ -98,16 +266,54 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["t0", "t1", "beat", "shot"],
+        "required": [
+          "t0",
+          "t1",
+          "beat",
+          "shot"
+        ],
         "properties": {
-          "t0": { "type": "number", "minimum": 0 },
-          "t1": { "type": "number", "minimum": 0 },
-          "beat": { "enum": ["hook", "problem", "tension", "reveal", "feature", "proof", "social-proof", "cta", "logo", "outro"] },
-          "shot": { "type": "string", "description": "what is on screen" },
-          "camera": { "type": "string" },
-          "motion": { "type": "string", "description": "how elements move: springs, staggers, durations in frames" },
-          "transition_out": { "type": "string", "description": "transition technique id or 'hard-cut'" },
-          "sfx": { "type": "string" }
+          "t0": {
+            "type": "number",
+            "minimum": 0
+          },
+          "t1": {
+            "type": "number",
+            "minimum": 0
+          },
+          "beat": {
+            "enum": [
+              "hook",
+              "problem",
+              "tension",
+              "reveal",
+              "feature",
+              "proof",
+              "social-proof",
+              "cta",
+              "logo",
+              "outro"
+            ]
+          },
+          "shot": {
+            "type": "string",
+            "description": "what is on screen"
+          },
+          "camera": {
+            "type": "string"
+          },
+          "motion": {
+            "type": "string",
+            "description": "how elements move: springs, staggers, durations in frames"
+          },
+          "transition_out": {
+            "type": "string",
+            "description": "How this beat hands over to the next. 'continuous' = no cut, the same shot keeps going (state change inside one shot; use it whenever cuts.json has no cut there). Otherwise a transition id from craft/vocabulary.md, or 'hard-cut' only for a real cut listed in cuts.json. Last beat: 'end'."
+          },
+          "sfx": {
+            "type": "string",
+            "description": "sound on this beat: a vocabulary audio id. Whether it is heard in the reference or only suggested lives in audio.sfx[].origin"
+          }
         }
       }
     },
@@ -116,41 +322,97 @@
       "additionalProperties": false,
       "description": "What the user must provide to make their own version.",
       "properties": {
-        "product_name": { "type": "boolean" },
-        "logo": { "type": "boolean" },
-        "tagline": { "type": "boolean" },
-        "lines": { "type": "integer", "minimum": 0, "description": "number of short copy lines" },
-        "screenshots": { "type": "integer", "minimum": 0 },
-        "screen_recording": { "type": "boolean" },
-        "ui_rebuild": { "type": "boolean", "description": "needs the product UI rebuilt in React" },
-        "stats": { "type": "integer", "minimum": 0 },
-        "url": { "type": "boolean" }
+        "product_name": {
+          "type": "boolean"
+        },
+        "logo": {
+          "type": "boolean"
+        },
+        "tagline": {
+          "type": "boolean"
+        },
+        "lines": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "number of short copy lines"
+        },
+        "screenshots": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "screen_recording": {
+          "type": "boolean"
+        },
+        "ui_rebuild": {
+          "type": "boolean",
+          "description": "needs the product UI rebuilt in React"
+        },
+        "stats": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "url": {
+          "type": "boolean"
+        }
       }
     },
     "components": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Studio components/presets (exported names, see studio/API.md) the rebuild uses: the ones Recipe.tsx imports when the recipe is built, the suggested ones for building from the beat sheet when it is text only."
     },
     "params": {
       "type": "object",
       "description": "Content slots the user fills, name → short description (copy lines, product name, stats, UI). For a built recipe these are the props of Recipe.tsx beyond brand, so an agent can remix without reading the code."
     },
-    "difficulty": { "enum": ["easy", "medium", "hard"] },
-    "render_cost": { "enum": ["light", "medium", "heavy"], "description": "heavy = WebGL/3D/motion-blur" },
-    "notes": { "type": "string", "description": "pitfalls, measured numbers worth keeping" },
+    "difficulty": {
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    "render_cost": {
+      "enum": [
+        "light",
+        "medium",
+        "heavy"
+      ],
+      "description": "heavy = WebGL/3D/motion-blur"
+    },
+    "notes": {
+      "type": "string",
+      "description": "pitfalls, measured numbers worth keeping"
+    },
     "preview": {
       "type": "object",
       "additionalProperties": false,
       "description": "Optional: links to a render the recipe author made and hosts themselves. launchfilm does not pre-render or host previews; omit this when there is none (the source link is what users watch).",
       "properties": {
-        "video": { "type": "string", "format": "uri", "description": "URL of the author's render (optional)" },
-        "poster": { "type": "string", "format": "uri", "description": "URL of its poster frame (optional)" },
-        "demo_brand": { "type": "string", "description": "which demo brand a built recipe's composition uses" }
+        "video": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the author's render (optional)"
+        },
+        "poster": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of its poster frame (optional)"
+        },
+        "demo_brand": {
+          "type": "string",
+          "description": "which demo brand a built recipe's composition uses"
+        }
       }
     },
     "status": {
-      "enum": ["studied", "built", "reviewed"],
+      "enum": [
+        "studied",
+        "built",
+        "reviewed"
+      ],
       "default": "studied",
       "description": "studied = text recipe: recipe.md + recipe.json, the default and enough to build a film from; built = also has a ready Recipe.tsx + index.tsx that render; reviewed = checked by a human"
     }

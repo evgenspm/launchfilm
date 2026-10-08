@@ -1,0 +1,115 @@
+{
+  "id": "band-slice-mark-reform",
+  "title": "Mark slices into bands and snaps back",
+  "summary": "A still monochrome mark on black splits into horizontal bands that slide apart, ghost and lock back into place in under a second, then holds. A short, loopable logo sting that reads as motion without leaving the mark.",
+  "use_when": [
+    "a 1-2 s logo sting or loop for socials or a site header",
+    "the close of a longer film where the mark should twitch, not fly in",
+    "a mark built from straight or stepped horizontal shapes that survive slicing"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/nike-curv-logo/",
+    "author": "Rico®",
+    "ref_id": "jt-062"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "logo",
+    "mark",
+    "slice",
+    "glitch",
+    "sting",
+    "loop",
+    "dark",
+    "monochrome",
+    "short",
+    "no-copy"
+  ],
+  "techniques": [
+    "glitch-cut",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 1.27,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#E4E6E7",
+      "#C8C9C9",
+      "#949494",
+      "#0D0E0E"
+    ],
+    "type_style": "no headline type; tiny grey mono footer labels at the frame bottom, about 1.5 % of frame height",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "mark splits into bands",
+        "sound": "glitch-sfx",
+        "origin": "planned"
+      },
+      {
+        "event": "bands lock back into the mark",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "mark centred on flat black at ~23 % of frame width, white-to-grey fill; it slices into 3-4 horizontal bands, then re-forms and holds",
+      "camera": "static (no scale or position change in any cell or strip frame)",
+      "motion": "hold f0-4; bands split from f5, peak offset f10-13 (bands up to ~25 % of mark width apart, fill dims to grey); re-align f14-24 on springs.ui (overshoot not measurable); hold f25-38",
+      "transition_out": "end",
+      "sfx": "glitch-sfx"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "SliceGlitch",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json; logo.mark is the sliced shape, bg is the flat background",
+    "content.mark": "the mark (inline path or image), best with horizontal edges",
+    "bands": "number of horizontal slices (reference: 3-4)",
+    "timing.hold": "frames before the split (reference: 5)",
+    "timing.split": "frames from split to peak offset (reference: ~7)",
+    "timing.reform": "frames to re-align (reference: ~11)",
+    "loop": "end on the exact first frame so the sting loops"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Single shot, no cuts, silent. Measured from a 30 fps strip of the local source: split f5, peak f10-13, settled f25, 38 frames total; first frame equals last (loopable). The in-shot slice displacement is the glitch-cut slice look used without a cut; a deterministic band-shift-and-reform is a proposed term (band-reform). SFX planned by the glue rule, not measured.",
+  "status": "studied"
+}

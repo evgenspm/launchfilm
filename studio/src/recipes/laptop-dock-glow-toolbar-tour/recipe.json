@@ -1,0 +1,318 @@
+{
+  "id": "laptop-dock-glow-toolbar-tour",
+  "title": "Laptop dock push into a glowing toolbar tour",
+  "summary": "A lit laptop pushes in on one hopping dock tile and match-cuts to the mark; a glowing pill toolbar, word-by-word claims on black and drag-to-select grabs that drop into an editor canvas sell a screen-grab tool.",
+  "use_when": [
+    "A screen or screen-grab tool whose UI is a small floating toolbar",
+    "A desktop utility launched from a dock or menu bar",
+    "Showing grabs becoming editable layers in a second app",
+    "Silent social cut where short black statements carry the pitch"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/z9u6bWLc",
+    "author": "Raylight",
+    "ref_id": "rl-035"
+  },
+  "family": "product-ui",
+  "tags": [
+    "laptop",
+    "dock",
+    "toolbar",
+    "glow",
+    "screen-grab",
+    "cursor",
+    "statements",
+    "dark",
+    "blue",
+    "editor",
+    "frame-in-frame"
+  ],
+  "techniques": [
+    "push-in",
+    "speed-ramp",
+    "match-cut",
+    "pull-out",
+    "device-laptop",
+    "device-phone",
+    "glow",
+    "cursor-path",
+    "ui-rebuild",
+    "statement-sequence",
+    "frame-in-frame",
+    "end-card"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 30,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FFFFFF",
+      "#133987",
+      "#0D2146",
+      "#86AECE",
+      "#566AA5"
+    ],
+    "type_style": "bold geometric grotesk, sentence case, normal tracking, ~8 % H statements centred; small bold URL ~4 % H",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "dock tile hop settles / mark lands",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor selects a mode or releases a drag",
+        "sound": "ui-confirm",
+        "origin": "planned"
+      },
+      {
+        "event": "word enters with RGB split or glyph scramble",
+        "sound": "glitch-sfx",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "dark laptop lit by a blue streaked wallpaper; a frosted dock row of five app tiles, the product tile in the middle",
+      "camera": "push-in with speed-ramp: ~11 %/s for 0-3 s, ~38 %/s for 3-4 s (scale ~1.00->1.39->1.9, ±0.25 s), slight rotate -2.5 deg/s",
+      "motion": "middle tile hops up ~1 tile height at 1.77, holds, settles back by 2.77 (springs.snappy, overshoot not measurable); push accelerates on easings.inExpo into the tile",
+      "transition_out": "match-cut",
+      "sfx": "tick"
+    },
+    {
+      "t0": 4,
+      "t1": 5.25,
+      "beat": "logo",
+      "shot": "the product mark full-frame on deep navy, then small and centred on black",
+      "camera": "pull-out from mark filling the frame to ~12 % H, -36 %/s",
+      "motion": "springs.cameraOut ~8 fr (±0.25 s) from the match-cut; navy radial glow fades to black by 4.50",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 5.25,
+      "t1": 6.5,
+      "beat": "logo",
+      "shot": "product name in bold grotesk writes in left to right while the mark is pushed right and clipped out",
+      "camera": "static",
+      "motion": "letters revealed left to right ~12 chars in 15 fr (±0.25 s) with the mark riding the leading edge, mark slices out by 5.77; name re-centres by 6.00 (springs.ui), holds 9 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 6.5,
+      "t1": 8.5,
+      "beat": "reveal",
+      "shot": "dark pill toolbar with a strong blue rim glow: close button, three grab-mode buttons, a mic picker; cursor picks the second mode",
+      "camera": "toolbar slides in from the right, then camera drifts; push-in ~1.0->1.08 at 8.0-8.5",
+      "motion": "toolbar enters from right with blur, springs.ui ~10 fr (±0.25 s), settled at 7.00; cursor-path from below to mode 2 7.00-7.50, hover highlight on 7.27, selected state holds to 8.27",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 8.5,
+      "t1": 10.75,
+      "beat": "feature",
+      "shot": "three short statements on black, one at a time: 3 words naming the toolbar, 2 words on footage, 3 words on no export",
+      "camera": "static",
+      "motion": "each statement built word by word, 1 word per 0.25-0.5 s, centred and re-centring as it grows (springs.ui); the 2nd word of the first line enters with an RGB split for ~4 fr (±0.25 s); holds 8-15 fr",
+      "transition_out": "continuous",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 10.75,
+      "t1": 11.5,
+      "beat": "cta",
+      "shot": "one statement of 3 words that states the price (free, with a percentage)",
+      "camera": "static",
+      "motion": "words appear one per 0.25 s, last word enters with RGB split ~4 fr (±0.25 s), settles by 11.27",
+      "transition_out": "continuous",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 11.5,
+      "t1": 13.5,
+      "beat": "feature",
+      "shot": "dark desktop project page screenshot over a blue gradient; cursor drags a blue selection rectangle over the page header",
+      "camera": "pan up 67 px/s at 11.5-12.0, then near static; push ~1.0->1.10 at 13.0-13.5",
+      "motion": "cursor-path to top-left corner 12.27, drag to 12.77 draws an accent rectangle (easings.outQuint ~15 fr), released 13.00, rectangle clears 13.27",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 13.5,
+      "t1": 14.75,
+      "beat": "feature",
+      "shot": "heavily defocused close detail of the grabbed sidebar",
+      "camera": "drift right ~224 px/s at 13.5-14.0, then pull back -24 %/s",
+      "motion": "whole plane blurred (~10 px), the grabbed region is the layer being placed",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 14.75,
+      "t1": 15.5,
+      "beat": "feature",
+      "shot": "the grabbed layer shrinks into the canvas of a dark editor window with side panels and a coloured timeline",
+      "camera": "pull-out ~1.25->1.0 (springs.cameraOut ~15 fr, ±0.25 s)",
+      "motion": "frame-in-frame: scene settles into the canvas by 15.00, playhead visible, holds",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 15.5,
+      "t1": 17.5,
+      "beat": "feature",
+      "shot": "phone app screen card (status bar, header, action tiles, list) rises over a blue gradient; cursor drags a selection rectangle",
+      "camera": "card rises from bottom ~40 % H at 15.5-15.77, then drift; push ~1.0->1.04 at 17.0-17.27",
+      "motion": "card springs.heavy ~10 fr (±0.25 s); cursor-path to top-right 16.27, drag rectangle to 16.50, release, cursor exits lower-left 16.77-17.00",
+      "transition_out": "continuous",
+      "sfx": "ui-confirm"
+    },
+    {
+      "t0": 17.5,
+      "t1": 18.75,
+      "beat": "feature",
+      "shot": "defocused extreme close-up of the phone screen corner on grey",
+      "camera": "near static, push ~1.0->1.04 (±0.25 s)",
+      "motion": "depth blur over the whole layer, slow drift",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 18.75,
+      "t1": 19.5,
+      "beat": "feature",
+      "shot": "the phone layer sits inside the editor canvas with side panels and the timeline",
+      "camera": "pull-out ~1.3->1.0 (springs.cameraOut ~8 fr, ±0.25 s)",
+      "motion": "frame-in-frame into the editor canvas, settled by 19.00, holds 15 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 19.5,
+      "t1": 20.5,
+      "beat": "feature",
+      "shot": "three single nouns on black, one replacing the other (camera, screen, pointer sources)",
+      "camera": "static",
+      "motion": "each word cut-replaced every 0.25-0.5 s; the third enters with RGB split ~4 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 20.5,
+      "t1": 21.4,
+      "beat": "feature",
+      "shot": "statement of 4 words: each source lands as its own layer",
+      "camera": "static",
+      "motion": "first 2 words, then the rest scrambles in with glyph glitch 20.77 and resolves by 21.00, holds 12 fr",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 21.4,
+      "t1": 23,
+      "beat": "feature",
+      "shot": "grid of template cards from the parent library (thumbnails, titles, counts) on dark",
+      "camera": "pull-out -32 %/s then -35 %/s; sidebar enters frame left at 22.77",
+      "motion": "continuous zoom out (easings.outQuint over the shot), grid fully readable by 22.50",
+      "transition_out": "hard-cut"
+    },
+    {
+      "t0": 23,
+      "t1": 24.5,
+      "beat": "logo",
+      "shot": "3-word sign-off naming the maker platform, then the name scrambles into symbols and resolves",
+      "camera": "static; the line moves up ~25 % H at 24.27",
+      "motion": "words fade in from grey per word, 1 per 0.25 s; name decodes from random glyphs with RGB split in ~6 fr (±0.25 s) at 24.00",
+      "transition_out": "continuous",
+      "sfx": "glitch-sfx"
+    },
+    {
+      "t0": 24.5,
+      "t1": 28,
+      "beat": "logo",
+      "shot": "product mark alone, centred on black, ~12 % H",
+      "camera": "push-in 3.8 %/s (easings.linear)",
+      "motion": "mark holds 105 fr, no other motion",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 28,
+      "t1": 29.5,
+      "beat": "cta",
+      "shot": "product URL line, centred, small bold",
+      "camera": "static",
+      "motion": "appears on a cut, holds 40 fr, cut out at 29.50",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 29.5,
+      "t1": 30,
+      "beat": "outro",
+      "shot": "black",
+      "camera": "static",
+      "motion": "empty 15 fr",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 7,
+    "screenshots": 3,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "LaptopFrame",
+    "Camera",
+    "KenBurns",
+    "Cursor",
+    "StatementSequence",
+    "BlurIn",
+    "RGBSplit",
+    "FrameInFrame",
+    "ScreenSlot",
+    "BrandMark",
+    "Wordmark",
+    "BrandProvider",
+    "BrandBackdrop",
+    "EndCard"
+  ],
+  "params": {
+    "brand": "brand.json: accent drives the toolbar rim glow, wallpaper streaks and selection rectangles; bg near black",
+    "content.dockApps": "5 neutral app tiles, product tile in the middle (the one that hops)",
+    "content.name": "product name written in after the mark",
+    "content.toolbar": "close + 3 grab modes + input picker; which mode the cursor picks",
+    "content.statements": "4 short statements of 2-3 words, built word by word; the last one states the price",
+    "content.sources": "3 single words naming input sources, then a 4-word line about layers",
+    "content.screens": "2 screenshots to select from (one desktop page, one phone screen) and the editor shell they land in",
+    "content.library": "optional grid of 12 cards for the closing pull-out",
+    "content.signoff": "3-word sign-off with a name that decodes from glyphs",
+    "content.url": "product URL for the closing line"
+  },
+  "difficulty": "hard",
+  "render_cost": "light",
+  "notes": "Silent reference; sfx planned by the glue rule, not measured. Only 3 detected cuts (4.00 match-cut, 21.40, 23.00), but the long 4.00-21.40 shot contains undetected black-background cuts near 8.50, 11.47, 15.50, 17.47, 19.37 (near_misses in cuts.json); all rows split there. Opening push is a speed-ramp: ~11 %/s for 3 s then ~38 %/s into the product tile. Words with RGB split and a glyph decode on the sign-off are proposed terms (rgb-split-word, glyph-decode), not in the vocabulary. Rows 8.50-10.75 are 3 merged statement rows (21 -> 19 rows).",
+  "status": "studied"
+}

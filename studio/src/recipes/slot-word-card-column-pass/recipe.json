@@ -1,0 +1,212 @@
+{
+  "id": "slot-word-card-column-pass",
+  "title": "Slot-word statements with passing UI card stacks",
+  "summary": "Three short white statements on black with blue corner glows; one slot word swaps while stacks of product cards slide across and up through the frame, then split to reveal a glowing card edge and cut to black.",
+  "use_when": [
+    "A service or agent product with a landing page and one dashboard panel to show",
+    "Silent social or landing-page loop where type carries the message and UI is texture",
+    "Positioning line with one swappable role word (assistant, employee, teammate)",
+    "Dark brand with one saturated accent colour for the glow"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/4wByBvbq",
+    "author": "Samet Onder",
+    "ref_id": "rl-020"
+  },
+  "family": "product-ui",
+  "tags": [
+    "statement",
+    "word-swap",
+    "card-stack",
+    "dark",
+    "blue-glow",
+    "screenshots",
+    "silent",
+    "service",
+    "agent",
+    "minimal"
+  ],
+  "techniques": [
+    "statement-sequence",
+    "blur-in",
+    "word-swap",
+    "card-grid",
+    "frame-in-frame",
+    "smash-cut-black",
+    "glow"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 15.4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FAFBFB",
+      "#1C39AE",
+      "#052591",
+      "#57698C",
+      "#031240"
+    ],
+    "type_style": "medium-weight grotesk, sentence case, normal tracking, cap height ~5 % H, single centred line; slot word set with a small gap",
+    "treatment": [
+      "glow"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "slot word swaps",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "card stack passes through frame",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "cut to black",
+        "sound": "silence-beat",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.5,
+      "beat": "hook",
+      "shot": "black; positioning line, 3 words, then a 4th slot word; blue glows light the top-right and bottom-left corners",
+      "camera": "static (locked frame; the line re-centres as words arrive)",
+      "motion": "first 3 words blur-in together from 0.27, easings.outExpo ~8 fr (±0.25 s); slot word blur-in at 0.77, settled 1.00; corner glows fade in over 1.00-1.50 (easings.inOutSine)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 1.5,
+      "t1": 3.25,
+      "beat": "reveal",
+      "shot": "cluster of product cards (2 light landing cards + 1 dark editor panel) slides along the lower third left to right; slot word swaps to a 2nd role word and back",
+      "camera": "static (locked frame; cards travel)",
+      "motion": "dark panel enters from left at 1.50, light cards follow with stagger ~5 fr (±0.25 s), cluster crosses at ~ constant speed (easings.linear) and exits right by 3.25; slot swap at 1.77 (new word drops from above, springs.ui, ~8 fr ±0.25 s), swap back at 3.00",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.25,
+      "t1": 4,
+      "beat": "reveal",
+      "shot": "line holds alone with the first slot word; glows shift to the left and right edges",
+      "camera": "static",
+      "motion": "hold 15 fr, line fades to ~0.5 opacity at 3.77 and out by 4.00 (easings.inExpo, ~7 fr ±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": ""
+    },
+    {
+      "t0": 4,
+      "t1": 6,
+      "beat": "feature",
+      "shot": "2nd statement, 2 words, built word by word; at 5.00 a vertical stack of cards rises from below through and past the line",
+      "camera": "static (locked frame; cards travel up ~560 px/s at 1920 wide)",
+      "motion": "word 1 at 4.00, word 2 blur-in from slightly above at 4.77 (easings.outExpo ~8 fr ±0.25 s); card stack (light, dark panel, light) rises bottom to top 5.00-6.00, easings.inOutSine; line fades under the cards",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 6,
+      "t1": 7.25,
+      "beat": "feature",
+      "shot": "3rd statement, 2 words joined by a comma, centred on black with edge glows",
+      "camera": "static",
+      "motion": "word 1 at 6.00, word 2 blur-in at 6.00-6.27 (easings.outExpo ~8 fr ±0.25 s); hold 30 fr; dims at 7.27",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 7.25,
+      "t1": 9,
+      "beat": "feature",
+      "shot": "cards rise from below and settle into a centred vertical column: light card, dark editor panel, light card",
+      "camera": "static (column drifts up ~300 px/s at 7-8 s, then holds)",
+      "motion": "light card rises at 7.27, dark panel follows at 7.50 (stagger ~7 fr ±0.25 s), springs.heavy (overshoot not measurable); column holds 8.00-8.77 with a slow drift",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 9,
+      "t1": 9.5,
+      "beat": "feature",
+      "shot": "column splits: light cards slide out left, dark panel slides out right, opening the centre",
+      "camera": "static",
+      "motion": "lateral exit ~520 px/s at 1920 wide, easings.inExpo, ~12 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9.5,
+      "t1": 11.3,
+      "beat": "feature",
+      "shot": "a huge black rounded card fills the lower left with a bright blue rim glow on its top and right edges",
+      "camera": "push-in 1.00 to ~1.15 over 9.50-10.00 (card moves right and grows), then ~0.5 %/s creep",
+      "motion": "card enters already large at 9.50, settles at 10.00 on springs.cameraIn (overshoot not measurable); rim glow steady; hold 39 fr",
+      "transition_out": "smash-cut-black",
+      "sfx": "silence-beat"
+    },
+    {
+      "t0": 11.3,
+      "t1": 15.4,
+      "beat": "tension",
+      "shot": "pure black tail, nothing on screen (slot for an end card in a rebuild)",
+      "camera": "static",
+      "motion": "none; 123 fr of black",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": true,
+    "lines": 3,
+    "screenshots": 2,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "WordSwap",
+    "BlurIn",
+    "StatementSequence",
+    "Surface",
+    "FrameInFrame",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "content.line": "positioning line before the slot, 3 words",
+    "content.slotWords": "2 role words that swap in the slot (first, second, then back to first)",
+    "content.statements": "2 follow-up statements, 2 words each",
+    "content.cards": "2 screenshots: a light landing hero card and a dark product panel; each reused 1-2 times in the stacks",
+    "glow.color": "accent colour of the corner glows and the rim light (default brand accent)",
+    "tail": "frames of black after the cut (reference 123), or an end card"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (0.25 s). Cards never cover the type for long: horizontal pass along the lower third, vertical pass straight through, then a centred column. Glow sits in two opposite corners and moves between rows. The 4.1 s black tail after the cut is empty in the reference. Proposed terms (not in vocabulary): card-stack-pass, corner-glow. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

@@ -1,0 +1,188 @@
+{
+  "id": "stack-fan-filmstrip-reel",
+  "title": "Card stack fan into a vertical filmstrip reel",
+  "summary": "A dot grows into a small rounded image card, fans into a column of four, folds back, then the front card grows to full bleed. Four full-bleed images slide down one after another under a rolling index number, closing on a framed title card.",
+  "use_when": [
+    "A vertical portfolio or gallery reel of 3-6 strong images or app screens",
+    "Social or store asset where the visuals carry the message and copy is one title",
+    "Opening a showcase by previewing every item at once before showing each full screen",
+    "Silent autoplay where motion alone has to read as a sequence"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/frames-mobile-showreel/",
+    "author": "Jitter",
+    "ref_id": "jt-041"
+  },
+  "family": "transitions",
+  "tags": [
+    "vertical",
+    "showreel",
+    "portfolio",
+    "image-cards",
+    "card-stack",
+    "filmstrip",
+    "slide-push",
+    "index-number",
+    "end-card",
+    "dark",
+    "no-ui",
+    "silent"
+  ],
+  "techniques": [
+    "frame-in-frame",
+    "push-in",
+    "slide-push",
+    "counter",
+    "end-card"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 9.17,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#141412",
+      "#FC7F28",
+      "#EF591E",
+      "#DA161A",
+      "#CFBFD4",
+      "#273522"
+    ],
+    "type_style": "bold grotesk, all caps, tight leading, title lines about 3.5 % of H on the end card; index label medium grotesk, rotated 90 degrees, about 4 % of H, bottom-left; tiny caps URL about 0.6 % of H",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "card stack fans open and folds back",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "front card grows to full bleed",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "next full-bleed image slides down over the previous one",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "end-card lines land",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.45,
+      "beat": "hook",
+      "shot": "dark bg, 4 corner tick dots frame a dot that becomes a small rounded image card; fans into a column of 4 cards, folds back, front card grows to fill",
+      "camera": "static frame; subject scale grows 0.27 W to 1.00 W (card to full bleed) over 3.00-3.53",
+      "motion": "dot to card 0.27-0.50 springs.pop (overshoot not measurable); fan open 1.00-1.50 springs.layout 15 fr; hold 1.50-2.27; fold 2.27-2.77 springs.ui 15 fr; grow to bleed 3.00-3.53 easings.inOutCubic 16 fr (±0.25 s); ticks track the card bounds",
+      "transition_out": "frame-in-frame",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 3.45,
+      "t1": 4.72,
+      "beat": "reveal",
+      "shot": "image 1 full bleed, index label 01 rotated at bottom-left",
+      "camera": "push-in 1.00->1.03 across the hold (±0.25 s), easings.linear",
+      "motion": "index label appears with the bleed at 3.50; next image enters from the top edge at 4.30 and pushes this one down, easings.inOutCubic 24 fr (4.30-5.10)",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 4.72,
+      "t1": 5.65,
+      "beat": "feature",
+      "shot": "image 2 full bleed, index rolls to 02",
+      "camera": "static between slides (motion.json zoom 0.07 %/s)",
+      "motion": "index digit rolls during the slide (±0.25 s); next slide 5.30-6.00, easings.inOutCubic 21 fr",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5.65,
+      "t1": 6.85,
+      "beat": "feature",
+      "shot": "image 3 full bleed, index rolls to 03",
+      "camera": "static between slides",
+      "motion": "index digit roll with the slide (±0.25 s); next slide 6.60-7.10, easings.inOutCubic 15 fr",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 6.85,
+      "t1": 7.8,
+      "beat": "feature",
+      "shot": "image 4 full bleed, index rolls to 04",
+      "camera": "static between slides",
+      "motion": "index digit roll with the slide (±0.25 s); last slide brings the dark end card down from the top 7.57-8.03, easings.inOutCubic 14 fr",
+      "transition_out": "slide-push",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 7.8,
+      "t1": 9.17,
+      "beat": "logo",
+      "shot": "dark end card: 2-line caps title, then a 2-line caps sub-block, then a tiny URL, inside 4 corner tick dots",
+      "camera": "static; tick frame grows taller as lines are added",
+      "motion": "title in with the slide at 8.00; sub-block lands at 8.27 and the stack re-centres up, springs.ui 8 fr (±0.25 s); URL at 8.50 fade 8 fr (±0.25 s); ticks springs.layout; hold 8.50-9.17",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 4,
+    "screenshots": 4,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS",
+    "ShotTransition",
+    "TRANSITIONS",
+    "KenBurns",
+    "FrameInFrame",
+    "Surface",
+    "BlurIn"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the dark open and end card, fg for type and ticks, display font for title and index",
+    "content.images": "3-6 full-bleed portrait images or app screens; the first is the front card of the stack",
+    "content.title": "end-card title, 2 short caps lines",
+    "content.sub": "2-line caps sub-block under the title (series code, category)",
+    "content.url": "tiny URL under the sub-block; defaults to brand.url",
+    "index.format": "rotated index label pattern, default slash + 2-digit number",
+    "timing.holds": "frames each full-bleed image holds before its slide (measured 38, 28, 36, 29 at 30 fps)",
+    "timing.slides": "slide-push length per image (measured 24, 21, 15, 14 fr: each slide shorter)",
+    "aspect": "9:16 native; 4:5 and 1:1 keep the column stack but with 3 cards"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Zero hard cuts: all 5 boundaries are soft (cuts.json soft[]). Slides run top to bottom (motion.json pan +600..+1140 px/s at 1920 W) and get shorter each time (24, 21, 15, 14 fr), which reads as acceleration. The index label stays fixed on screen while the images move; only its digits change. Catalogue hint 3d-device/device-phone not confirmed: no device frame, cards are flat rounded rectangles. Proposed terms (not in vocabulary): stack-fan, corner-ticks. sfx planned by the glue rule, not measured (source is silent). Palette from palettegen on 3 cut frames; the white text colour is not in the sample.",
+  "status": "studied"
+}

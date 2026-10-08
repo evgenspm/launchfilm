@@ -1,0 +1,221 @@
+{
+  "id": "tilted-docs-truck-focus",
+  "title": "Tilted docs tour with a travelling focus band",
+  "summary": "A dark product UI leaned back in 3D, the camera trucking slowly and linearly across it while a narrow focus band sits on one element per shot; eight UI shots, then a flat mark and a flat wordmark.",
+  "use_when": [
+    "A developer tool or docs product whose UI is the story and there is no VO",
+    "Calm, premium product tour where reading speed matters more than energy",
+    "Several UI states (landing, article, search, API page) to show in under 25 s",
+    "Dark UI with one accent colour that survives heavy vignetting"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/vrZJ0X9q",
+    "author": "Raylight",
+    "ref_id": "rl-026"
+  },
+  "family": "product-ui",
+  "tags": [
+    "tilt-plane",
+    "dolly",
+    "depth-of-field",
+    "dark-ui",
+    "docs",
+    "developer-tool",
+    "silent",
+    "product-tour",
+    "typing",
+    "calm"
+  ],
+  "techniques": [
+    "tilt-plane",
+    "dolly",
+    "typewriter",
+    "cursor-path",
+    "ui-rebuild",
+    "vignette"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 29.4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#0B0C0D",
+      "#E8E8F4",
+      "#1044A1",
+      "#35558D",
+      "#8993A1",
+      "#182646"
+    ],
+    "type_style": "UI grotesk, sentence case, small (page titles ~3 % H, body ~1.5 % H); end wordmark medium weight, sentence case, ~4 % H, light grey",
+    "treatment": [
+      "vignette"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "characters typed into the search field and the card input",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "cursor clicks the primary button on the API page",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "flat mark appears after the last UI shot",
+        "sound": "hit",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 3.1,
+      "beat": "hook",
+      "shot": "docs landing: nav bar, product wordmark title, two-line intro, two blue feature cards with captions, plane leaned back",
+      "camera": "tilt-plane rotateX ~15-25 deg; no pan (0.1 px/fr decaying); push-in 1.000 -> 1.034 over 93 fr (+1.1 %/s), easings.linear",
+      "motion": "no element motion; focus band on the middle third (79 vs 10-11 edge sharpness), plane static apart from the creep",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 3.1,
+      "t1": 6.77,
+      "beat": "feature",
+      "shot": "sidebar nav with active item plus an overview article: two-line heading and two body paragraphs",
+      "camera": "tilt-plane rotateX + rotateY, baseline rises ~8 deg; dolly left 2.4 px/fr @1920, easings.linear, 110 fr; scale +0.6 %/s; roll +0.4 deg/s",
+      "motion": "no element motion; focus band across the heading and sidebar",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 6.77,
+      "t1": 11.27,
+      "beat": "feature",
+      "shot": "close on an explainer diagram card under a section heading: blue node box, document icon, connector lines, small chips",
+      "camera": "tilt-plane rotateY ~-25 deg, rotateX ~15-20 deg; dolly up 2.4 px/fr @1920 with push-in 1.00 -> 1.12 over 135 fr (+2.7 %/s); speed 2.68 / 2.47 / 2.18 px/fr by thirds, easings.outQuint; roll +0.5 deg/s",
+      "motion": "no element motion; focus band on the diagram, near rows below blurred",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 11.27,
+      "t1": 12.5,
+      "beat": "feature",
+      "shot": "page title with a two-line subtitle and an install section, cursor resting near a copy button",
+      "camera": "tilt-plane; dolly right 2.0 px/fr @1920, easings.linear, 37 fr",
+      "motion": "cursor drifts toward the top bar, easings.linear (±0.25 s); very shallow focus: middle 12x sharper than edges",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 12.5,
+      "t1": 15.5,
+      "beat": "feature",
+      "shot": "search popup over the dimmed page: recent results list, then a query typed letter by letter and the result list refills",
+      "camera": "tilt-plane; dolly right 1.9 px/fr @1920, easings.linear, 90 fr; scale ~0",
+      "motion": "popup opens at 12.50 (±0.25 s, spring not measurable); typing starts 13.77, 5 characters by 14.50, typewriter ~6 cps; results swap per keystroke, hard swap (±0.25 s); bottom third fully out of focus",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 15.5,
+      "t1": 19.67,
+      "beat": "feature",
+      "shot": "section heading over a recipe card grid; an input inside the first card fills with a short question",
+      "camera": "tilt-plane, strong lean, far edge top; dolly left 1.1 px/fr @1920, easings.linear, 125 fr",
+      "motion": "typewriter in the card input from 16.00 to 19.25, ~7 words, ~10 cps with a caret; focus band on the card (217 vs 8/92), far edge blurred hardest",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 19.67,
+      "t1": 21.4,
+      "beat": "feature",
+      "shot": "API reference page: endpoint list in the sidebar, endpoint title, method pill, primary button, code sample panel on the right",
+      "camera": "tilt-plane; dolly left 2.2 px/fr @1920, easings.linear, 52 fr",
+      "motion": "cursor travels to the primary button by 20.27 and clicks at ~20.50 (±0.25 s); cursor-path, springs.click on press (overshoot not measurable); wider focus band",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 21.4,
+      "t1": 22.6,
+      "beat": "feature",
+      "shot": "same API page closer: request panel with an error response and the code sample, cursor parked",
+      "camera": "tilt-plane, punched in ~1.4x on the same move: dolly left 2.1 px/fr @1920, easings.linear, 36 fr",
+      "motion": "no element motion; focus on the request panel (553 vs 60-154)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 22.6,
+      "t1": 25.25,
+      "beat": "logo",
+      "shot": "flat white brand mark centred on near-black, ~8 % H",
+      "camera": "static",
+      "motion": "appears on the cut, holds 80 fr, no entrance",
+      "transition_out": "continuous",
+      "sfx": "hit"
+    },
+    {
+      "t0": 25.25,
+      "t1": 29.4,
+      "beat": "logo",
+      "shot": "flat light-grey wordmark centred on near-black, ~4 % H",
+      "camera": "static",
+      "motion": "appears on the cut, holds 124 fr to the end, no entrance or exit",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "TiltPlane",
+    "Typewriter",
+    "Cursor",
+    "Vignette",
+    "BrandMark",
+    "Wordmark",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: dark bg, fg, one accent for active items and buttons, display font for the wordmark",
+    "content.screens": "6-8 UI screens (React nodes or rebuilt pages), each with a focus target (0-1 along the plane) and a dolly vector",
+    "content.searchQuery": "short query typed into the search popup, ~5 characters",
+    "content.cardPrompt": "short question typed into a card input, ~7 words",
+    "content.clickTarget": "element on the API screen the cursor clicks",
+    "timing.shots": "seconds per UI shot (default 3.1, 3.67, 4.5, 1.23, 3.0, 4.17, 1.73, 1.2); action shots short, reading shots long",
+    "timing.markHold": "frames the flat mark holds (default 80)",
+    "timing.wordmarkHold": "frames the wordmark holds (default 124)",
+    "truckSpeed": "px per frame at 1920 wide (default 2.2, range 1.1-2.7)",
+    "focusBand": "TiltPlane dof band width (default 0.24) and edge blur (default 8-10)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16",
+    "fps": "composition fps (default 30)"
+  },
+  "difficulty": "hard",
+  "render_cost": "medium",
+  "notes": "Zero detected cuts: the scene detector missed every cut because the frames are dark; boundaries are from sheet cells and the frame-by-frame notes (near misses at 3.10, 6.77, 11.27, 15.50, 19.67). Every UI shot trucks at constant speed (1.1-2.7 px/fr at 1920); never a static UI frame. Focus band is narrow (middle third 3-12x sharper than the edges) and placed on the shot's subject. Shots 7 and 8 are a punch-in on the same move vector, so they read as one camera. Roll drift 0.3-0.5 deg/s. Heavy vignette. Proposed terms (not in vocabulary): focus-band, vector-punch-in, flat-mark-card. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

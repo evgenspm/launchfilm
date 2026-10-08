@@ -1,0 +1,180 @@
+{
+  "id": "counter-trace-chart-mark-close",
+  "title": "Counter over a three-line traced chart, mark close",
+  "summary": "A big headline figure races up and settles while three coloured series trace across a dark chart one after another; the chart gives way to a dim oversized mark that lights up and shrinks, then a wordmark slides in as the mark breaks away.",
+  "use_when": [
+    "A monthly or yearly recap with one headline figure and up to three growth series",
+    "Proving traction with a single number before the brand close",
+    "A silent social clip where the chart must read without VO",
+    "Dark product brands with a three-colour data palette"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/NI0I2l01",
+    "author": "Raylight",
+    "ref_id": "rl-065"
+  },
+  "family": "data-stats",
+  "tags": [
+    "counter",
+    "line-chart",
+    "recap",
+    "stats",
+    "growth",
+    "dark",
+    "three-series",
+    "mark-close",
+    "wordmark",
+    "silent"
+  ],
+  "techniques": [
+    "counter",
+    "chart-draw",
+    "light-on"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 9.87,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#080D0B",
+      "#FFFFFF",
+      "#10BA80",
+      "#05B5D1",
+      "#5F6AE7",
+      "#425158"
+    ],
+    "type_style": "bold grotesk figures with thousands separator, ~17 % H, top-left; two-line muted caption ~3 % H below; tiny legend and axis labels ~1.5 % H; medium-weight sentence-case wordmark ~6 % H at the close",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "counter digits rolling up (0.27-2.77 s)",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "each series starts tracing",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "mark lights up after the chart clears",
+        "sound": "swell",
+        "origin": "planned"
+      },
+      {
+        "event": "wordmark slides in as the mark breaks away",
+        "sound": "whoosh",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "dark chart frame: baseline axis with start/end date labels and a three-item legend; headline figure top-left, two-line muted caption under it",
+      "camera": "static, locked frame (chart frame and figure never move)",
+      "motion": "axis + legend present from f0; figure fades grey->white ~23 fr (±0.25 s) while counting up from ~half its final value, easings.outExpo; caption words fade in left to right over ~30 fr (±0.25 s); series 1 (green) traces from the left, easings.linear-ish (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1.27,
+      "t1": 4,
+      "beat": "proof",
+      "shot": "same chart: series 2 (cyan) then series 3 (violet) trace under series 1; figure decelerates into its final value",
+      "camera": "static, locked frame",
+      "motion": "series stagger ~22 fr (±0.25 s): starts at f8, f38, f60; each series traces ~52-60 fr (±0.25 s) to the right edge; counter lands f83 (2.77 s), total roll 75 fr, easings.outExpo",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 4,
+      "t1": 5.77,
+      "beat": "proof",
+      "shot": "complete three-line chart with the settled figure, no motion",
+      "camera": "static, locked frame",
+      "motion": "hold 45 fr (4.00-5.50 s); chart clears between 5.50 and 5.77 s, faster than the sheet resolution (±0.25 s), no cut in cuts.json",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 5.77,
+      "t1": 7,
+      "beat": "logo",
+      "shot": "brand mark alone, centred, starting oversized (~50 % H) and dark grey",
+      "camera": "static frame; the mark itself scales",
+      "motion": "mark brightens dark grey->white over ~22 fr (light-on) and shrinks ~50 % H -> ~17 % H over ~37 fr, springs.heavy (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 7,
+      "t1": 8.77,
+      "beat": "logo",
+      "shot": "small white mark centred on dark, held",
+      "camera": "static, locked frame",
+      "motion": "hold ~45 fr (7.00-8.50 s), no visible motion",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 8.77,
+      "t1": 9.87,
+      "beat": "logo",
+      "shot": "wordmark (product name) slides in from the left while the mark moves right and breaks into fragments; wordmark ends centred",
+      "camera": "static, locked frame",
+      "motion": "wordmark enters from left, easings.outExpo ~15 fr (±0.25 s); mark slides right, splits into strokes and vanishes by 9.27 s; wordmark settles centred by 9.50 s and holds ~11 fr",
+      "transition_out": "end",
+      "sfx": "whoosh"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 1,
+    "url": false
+  },
+  "components": [
+    "Counter",
+    "LineChart",
+    "BrandMark",
+    "Wordmark",
+    "BrandBackdrop",
+    "BrandProvider"
+  ],
+  "params": {
+    "brand": "any brand.json: bg, fg, muted for caption/legend, three data colours for the series",
+    "content.figure": "headline number, integer with thousands separator; counter starts near half of it",
+    "content.caption": "two-line muted caption naming what the figure counts and the period",
+    "content.series": "1-3 series of ~25-30 points each, with a legend label per series",
+    "content.axis": "start and end labels of the period on the baseline",
+    "timing.seriesStagger": "frames between series starts (default ~22 at 30 fps)",
+    "timing.hold": "frames the finished chart holds before the mark (default 45)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured from 4 fps sheets (±0.25 s): counter values climb from ~49 % to 100 % of the final figure between 0.27 and 2.77 s, about 85 % of the climb in the first 0.5 s (outExpo shape). Series starts 0.27 / 1.27 / 2.00 s, each ends at the right edge ~2 s later. The chart-to-mark change at 5.50-5.77 s is not a cut (cuts.json near miss 5.70 s, score 5.1); its exact form is not measurable from sheets. Spring for the mark shrink (springs.heavy) and stagger frames are suggested defaults. SFX planned by the glue rule, not measured: the reference is silent. Proposed term (not in vocabulary): mark-break-handoff, the mark slides aside and fragments while the wordmark takes its place (row 6).",
+  "status": "studied"
+}

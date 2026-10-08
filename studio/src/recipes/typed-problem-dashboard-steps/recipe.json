@@ -1,0 +1,224 @@
+{
+  "id": "typed-problem-dashboard-steps",
+  "title": "Typed problem to tilted dashboard with stepped capabilities",
+  "summary": "A caret types the pain on white, a short phrase types its accent word, the product name fades in, then a tilted dashboard card slides in and a pointer steps through three capability rows before the labels clear and one icon holds.",
+  "use_when": [
+    "A service product whose story is one pain, one name, one dashboard",
+    "Silent feed teaser where typing carries the problem without VO",
+    "Showing three capabilities next to a single hero screen",
+    "Light, calm SaaS brands with one accent colour"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/UCqDDKhP",
+    "author": "Samet Onder",
+    "ref_id": "rl-015"
+  },
+  "family": "product-ui",
+  "tags": [
+    "typing",
+    "caret",
+    "problem-solution",
+    "dashboard",
+    "tilted-card",
+    "capability-list",
+    "pointer",
+    "light",
+    "minimal",
+    "saas",
+    "silent"
+  ],
+  "techniques": [
+    "typewriter",
+    "blur-dissolve",
+    "tilt-plane",
+    "pull-out",
+    "ui-rebuild",
+    "list-assemble"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 13.5,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#3D3D3D",
+      "#5F7DAC",
+      "#9CB0CC",
+      "#F2F4F7",
+      "#A1A5AB"
+    ],
+    "type_style": "medium geometric grotesk, sentence case, normal tracking; typed lines ~4 % H, name line ~6 % H, list labels ~4 % H in grey; accent word in brand blue",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each typed character (rows 2-3)",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "dashboard card slides in",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "pointer lands on a capability row",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1,
+      "beat": "hook",
+      "shot": "empty white frame, then a thin caret blinks left of centre",
+      "camera": "static",
+      "motion": "caret appears at 0.27 s, blinks ~2 Hz (±0.25 s); no other element",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1,
+      "t1": 2.27,
+      "beat": "problem",
+      "shot": "problem sentence, 6 words, typed in grey; the line scrolls left to keep the caret on screen",
+      "camera": "line pans left with the caret once it passes frame centre (from 1.77 s), easings.linear",
+      "motion": "typewriter ~22 chars/s measured from cells (±0.25 s); line scroll keeps caret near x 45 %; leaves by scrolling off left",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 2.27,
+      "t1": 3.27,
+      "beat": "problem",
+      "shot": "short 3-word phrase centred, dark; its last word types in the accent colour",
+      "camera": "static",
+      "motion": "first two words present at 2.27 s, accent word typed ~10 chars/s over 15 fr (±0.25 s); hold 7 fr; exit fade to ~15 % opacity by 3.27 s, easings.outQuint ~8 fr (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 3.27,
+      "t1": 4.5,
+      "beat": "reveal",
+      "shot": "intro word + product name in accent, centred, larger; intro word leaves and the name recentres alone",
+      "camera": "static",
+      "motion": "line fades in 0.25 s (springs.ui, overshoot not measurable); intro word gone at 4.27 s and name slides to centre springs.ui ~8 fr (±0.25 s); name blurs out by 4.50 s",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 4.5,
+      "t1": 5.77,
+      "beat": "reveal",
+      "shot": "2-word headline on the left, tilted dashboard card slides in from the right; headline is erased right to left",
+      "camera": "pull-out: card travels left and shrinks (motion.json zoom -18 %/s, pan -103 px/s in 5-6 s), easings.inOutSine",
+      "motion": "card enters from x 90 % at 4.77 s, springs.heavy ~30 fr; headline fades in with the card, backspace-erased from 5.50 s",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 5.77,
+      "t1": 6.77,
+      "beat": "feature",
+      "shot": "card settled at left 60 % W; three capability rows (line icon + label, ruled dividers) fade in on the right",
+      "camera": "drift left ~15 px/s (motion.json 6-7 s)",
+      "motion": "rows fade in top to bottom, stagger ~2 fr, easings.outQuint ~8 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 6.77,
+      "t1": 7.77,
+      "beat": "feature",
+      "shot": "accent pointer triangle appears left of the list and sits on row one; row one darkens and grows",
+      "camera": "card sways in tilt (rot -1.1 deg/s, pan y 37 px/s in 7-8 s), easings.inOutSine",
+      "motion": "pointer pops in springs.pop (overshoot not measurable); active row scale ~1.1 and colour grey to dark, springs.ui ~8 fr (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 7.77,
+      "t1": 8.5,
+      "beat": "feature",
+      "shot": "pointer steps to row two; row two active, row one back to grey",
+      "camera": "card sway continues, easings.inOutSine",
+      "motion": "pointer slides down one row springs.ui ~8 fr (±0.25 s); active row swaps",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 8.5,
+      "t1": 9.27,
+      "beat": "feature",
+      "shot": "pointer steps to row three; its bell icon and label go active",
+      "camera": "card sway (rot 3.5 deg/s in 8-9 s), settling",
+      "motion": "pointer slides down springs.ui ~8 fr (±0.25 s); hold 15 fr",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 9.27,
+      "t1": 10,
+      "beat": "feature",
+      "shot": "pointer fades, labels clear one per row top to bottom, then the top two icons go; dividers and bell stay",
+      "camera": "static (motion.json hold 9-10 s)",
+      "motion": "labels fade out stagger ~7 fr, easings.outQuint ~6 fr (±0.25 s); icons follow at 10.00 s",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 10,
+      "t1": 13.5,
+      "beat": "feature",
+      "shot": "hold: dashboard card at left, single accent bell icon on the right",
+      "camera": "static (motion.json zoom -0.1 %/s, below visible)",
+      "motion": "none; end on hold",
+      "transition_out": "end"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": true,
+    "lines": 4,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": true,
+    "stats": 2,
+    "url": false
+  },
+  "components": [
+    "BrandBackdrop",
+    "Typewriter",
+    "TiltPlane",
+    "Dolly",
+    "Surface",
+    "LineChart",
+    "LineIcon"
+  ],
+  "params": {
+    "problem": "typed problem sentence, ~6 words",
+    "phrase": "3-word restatement; last word typed in the accent colour",
+    "intro": "one intro word before the product name",
+    "headline": "2-word positioning line next to the card",
+    "dashboard": "one hero card: status line, title, 2 stat chips, logo, blurb, line chart",
+    "capabilities": "3 items {icon, label}, one verb each; the last icon holds at the end"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Zero cuts in 13.5 s: rows come from state changes in the sheets. Typing ~22 chars/s on the problem line, ~10 chars/s on the accent word. Catalogue hint card-grid not seen (one card only). sfx planned by the glue rule, not measured (reference is silent). Proposed terms (not in vocabulary): caret-follow-scroll, pointer-step, label-clear.",
+  "status": "studied"
+}

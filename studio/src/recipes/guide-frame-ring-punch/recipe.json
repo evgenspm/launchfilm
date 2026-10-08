@@ -1,0 +1,144 @@
+{
+  "id": "guide-frame-ring-punch",
+  "title": "Guide lines close on a dot that punches into a ring",
+  "summary": "Four hairline guides slide in from the frame edges and box a gradient dot as it grows; the dot dips, a hole punches open and it swells into a ring, then the ring thins away as the guides fly back out. A 3 s loopable mark sting.",
+  "use_when": [
+    "A short loopable sting for a round or ring-shaped mark",
+    "A light, design-tool or precision-themed brand that wants a construction-grid feel",
+    "A bumper before or after a longer film, no copy needed",
+    "A gradient brand colour that should carry the moment on white"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/PqxmHNj6",
+    "author": "Raylight",
+    "ref_id": "rl-038"
+  },
+  "family": "logo-brand",
+  "tags": [
+    "mark-sting",
+    "ring",
+    "dot",
+    "guide-lines",
+    "construction-grid",
+    "gradient",
+    "light",
+    "loop",
+    "minimal",
+    "no-copy"
+  ],
+  "techniques": [
+    "logo-from-dot",
+    "grain"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 3,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#D4D4D4",
+      "#61323A",
+      "#D73E23",
+      "#E76E27",
+      "#358EAB"
+    ],
+    "type_style": "no type on screen",
+    "treatment": [
+      "grain"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "dot appears at the centre and grows",
+        "sound": "pop",
+        "origin": "planned"
+      },
+      {
+        "event": "hole punches open and the disc swells into a ring",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "ring thins away and the guides fly out",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.17,
+      "beat": "hook",
+      "shot": "white frame with 4 grey hairline guides on its edges; a vertical-gradient dot appears at centre and grows to a disc 31 % of H",
+      "camera": "locked frame; the scale change motion.json reads as zoom is the dot and guides themselves",
+      "motion": "guides slide from the frame edges f2 to a box 2 px outside the disc by f25, easings.inOutCubic 23 fr; dot visible f6 (8 px), grows to 222 px @720 by f25, easings.inOutCubic 19 fr, no overshoot; hold f25-f35",
+      "transition_out": "continuous",
+      "sfx": "pop"
+    },
+    {
+      "t0": 1.17,
+      "t1": 2.53,
+      "beat": "logo",
+      "shot": "the disc dips, a white hole punches open at its centre and the disc swells into a thick gradient ring 50 % of H; guides track its box",
+      "camera": "locked frame; guides re-box the ring, box 226 -> 362 px @720",
+      "motion": "anticipation: disc 222 -> 206 px (-7 %) f35-f42, easings.inOutSine 7 fr; hole opens at f41 (9 px) -> 210 px by f58; outer 206 -> 358 px f42-f61, easings.outCubic 19 fr, no overshoot at 30 fps; inner/outer = 0.59; hold f61-f76",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.53,
+      "t1": 3,
+      "beat": "outro",
+      "shot": "the ring's band thins inward to a hairline and vanishes; the guides fly back to the frame edges, ending on the empty first frame",
+      "camera": "locked frame; guides box 366 px -> full frame",
+      "motion": "outer edge 357 -> 238 px f76-f82 while the hole holds 210 px, easings.inExpo 7 fr, gone at f83; guides out f76-f89, easings.inOutCubic 13 fr; f89 matches f0 for a seamless loop",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": true,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "Grain",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg for the frame, muted for the guides, accent stops for the ring gradient",
+    "gradient": "3-7 vertical stops for the dot and ring fill (default dark red, red, orange, yellow, teal, blue, navy)",
+    "ringRatio": "inner / outer diameter of the final ring (default 0.59)",
+    "discSize": "disc diameter as a share of H (default 0.31); ring outer = 1.61 x disc",
+    "guideColor": "hairline guide colour (default #D4D4D4, 2 px at 720p)",
+    "guideMargin": "gap between guides and the shape box (default 2 px at 720p)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; the shape stays centred, sized from H",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured per frame at 30 fps from the source: dot 8 px f6 -> 222 px f25 (720p); guides start on the frame edges and keep a ~2 px margin to the shape box; anticipation dip 7 % f35-f42 before the hole opens at f41; ring 358 px outer / 210 px inner settles f61 with no overshoot; exit thins the band from outside in (outer shrinks, hole fixed) f76-f83; guides out f76-f89; first and last frames are the same empty grid, so it loops. Gradient is vertical, dark maroon top -> red -> orange -> yellow -> teal -> navy bottom, with fine grain. sfx planned by the glue rule, not measured (reference is silent). Proposed terms (not in the vocabulary): guide-box, hole-punch, band-collapse, gradient-fill.",
+  "status": "studied"
+}

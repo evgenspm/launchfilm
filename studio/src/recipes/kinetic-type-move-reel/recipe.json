@@ -1,0 +1,223 @@
+{
+  "id": "kinetic-type-move-reel",
+  "title": "Kinetic type move reel on light grey",
+  "summary": "Eleven text beats on flat light grey, one type move each: lens pull, centred re-flow, spring rise, four gradient verbs rising through a clip mask, a typed URL. Exits have direction and beat entrances.",
+  "use_when": [
+    "A type-only launch or capability list with no UI to show yet",
+    "Listing four one-word verbs of what the product does",
+    "A silent autoplay feed where type alone must carry 15 s",
+    "Showing off a range of text animation styles in one film"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/gsL3RnzC",
+    "author": "Raylight",
+    "ref_id": "rl-036"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "kinetic-type",
+    "type-only",
+    "mask-rise",
+    "gradient-type",
+    "re-flow",
+    "typed-url",
+    "light",
+    "minimal",
+    "capability-list",
+    "no-ui"
+  ],
+  "techniques": [
+    "statement-sequence",
+    "blur-in",
+    "mask-rise",
+    "typewriter",
+    "blur-dissolve"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 16.4,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#EFEFEF",
+      "#020202",
+      "#0799FB",
+      "#5353F8",
+      "#2B3F4C",
+      "#67B3D8"
+    ],
+    "type_style": "geometric grotesk ~500 weight, sentence case, tight tracking; hero line 19 % H, single verbs 40 % H with a vertical gradient fill, body lines 7 % H in near-black",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "single verb rises through the clip mask",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "URL typed one character at a time",
+        "sound": "type-click",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 2.4,
+      "beat": "hook",
+      "shot": "one greeting word centred, then the product name joins it in a navy to cyan horizontal gradient",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "word lens pull f1-f11: blur 0.15 em -> 0, scale 1.10 -> 1.00, opacity 0.3 -> 1; f35-f55 re-flow left 285 px on springs.ui 20 fr, name blur-in from peak-velocity frame, sharp 8 fr later; f53-f68 line lifts 130 px easings.inExpo 15 fr, blur + fade last 3 fr",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 2.4,
+      "t1": 3.77,
+      "beat": "feature",
+      "shot": "three-word line in near-black, names the core capability",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "per-word spring rise from 1 em below, stagger 3 fr, springs.snappy, settled 15 fr after each word (f73-f90); exit f104-f110 drift up + fade 6 fr",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 3.77,
+      "t1": 5.2,
+      "beat": "feature",
+      "shot": "verb one, single word at 40 % H, blue vertical gradient",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "per-letter mask-rise f114-f126, stagger 2.3 fr, springs.maskRise (10 % overshoot at +4-5 fr, settled +12 fr); exit f146-f153 up through the clip top 150 px, easings.inExpo 8 fr",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 5.2,
+      "t1": 6.7,
+      "beat": "feature",
+      "shot": "verb two, single word, green vertical gradient",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "same mask-rise from f158 (sheet: first letter at 5.27); exit up through the clip at 6.50 (±0.25 s), easings.inExpo 8 fr",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 6.7,
+      "t1": 8.1,
+      "beat": "feature",
+      "shot": "verb three, single word, red vertical gradient",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "same mask-rise from 6.77 (±0.25 s); hold to 7.77; exit up through the clip, easings.inExpo 8 fr, empty frame at 8.00",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 8.1,
+      "t1": 9.5,
+      "beat": "feature",
+      "shot": "verb four, single word, indigo vertical gradient",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "same mask-rise from 8.27 (±0.25 s), settled by 8.50; exit up through the clip at 9.27 (±0.25 s), empty at 9.50",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 9.5,
+      "t1": 10.95,
+      "beat": "feature",
+      "shot": "two-line statement, line one near-black, line two in a blue to violet gradient",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "per-word spring rise, stagger 3 fr, springs.snappy (overshoot not measurable), in by 9.77 (±0.25 s); exit fade + blur 10.77-10.95 (±0.25 s)",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 10.95,
+      "t1": 12.1,
+      "beat": "feature",
+      "shot": "three-word line in near-black, names the use case",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "whole-line lens pull: blur 0.15 em -> 0, scale 1.10 -> 1.00, 10 fr, sharp by 11.27 (±0.25 s); exit slides left + fades by 12.00",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 12.1,
+      "t1": 12.95,
+      "beat": "feature",
+      "shot": "three-word line continuing the previous one, passes through the frame",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "enters from the right, easings.outExpo, in by 12.27 (±0.25 s); drifts left at 15 px/s (sheet), leaves left word by word with blur by 13.00",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 12.95,
+      "t1": 14.4,
+      "beat": "feature",
+      "shot": "three-word benefit line built word by word, always centred",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "progressive re-flow: each word blur-in at the right end, stagger 3 fr, while the line chases centre on springs.ui 21 fr (velocity x0.86 per fr, no overshoot), f390-f411; exit drop + blur at 14.27 (±0.25 s)",
+      "transition_out": "blur-dissolve"
+    },
+    {
+      "t0": 14.4,
+      "t1": 16.4,
+      "beat": "cta",
+      "shot": "the product URL in near-black body size, typed from a fixed left edge",
+      "camera": "static (no camera move; only the type moves)",
+      "motion": "typewriter 1 char per 2-3 fr (14.40-15.50), no caret visible, no re-flow; hold 0.8 s; exit blur-out 16.27-16.40 (±0.25 s)",
+      "transition_out": "blur-dissolve",
+      "sfx": "type-click"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 9,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "BlurIn",
+    "WordSwap",
+    "Typewriter",
+    "TYPE_ENTER",
+    "TYPE_EXIT",
+    "typeSprings",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font, fg, bg, accent for the name gradient",
+    "content.greeting": "one word before the product name in the hook",
+    "content.name": "product name, painted in the accent gradient",
+    "content.capability": "three-word line naming the core capability",
+    "content.verbs": "exactly 4 one-word verbs, each with its own gradient pair",
+    "content.gradients": "4 [top, bottom] colour pairs for the verbs (default: brand accent tints)",
+    "content.statement": "two-line statement, second line gradient",
+    "content.useCase": "two three-word lines, the second continues the first",
+    "content.benefit": "three-word line built word by word",
+    "content.url": "URL typed at the end, defaults to brand.url",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16",
+    "fps": "composition fps (default 30); all timing scales with it"
+  },
+  "difficulty": "medium",
+  "render_cost": "light",
+  "notes": "Single shot, 0 cuts; rows are state changes. Measured per frame at 30 fps by a human: lens pull 10 fr (blur 0.15 em, scale 1.10), re-flow springs.ui ~20 fr peak 71 px/fr, mask-rise springs.maskRise 300/20/1 (10.5 % overshoot, peak 6.7 fr, letter stagger 2-2.3 fr), mask exit up 150 px in 8 fr easings.inExpo, word stagger 3 fr. Exits always shorter than entrances. Gradients stay inside the letters (vertical on single verbs). Proposed terms (not in vocabulary): lens-pull, line-reflow, gradient-fill-type, slide-through-line. Silent reference: sfx planned by the glue rule, not measured. The catalogue hint mesh-gradient was not seen: the background is flat.",
+  "status": "studied"
+}

@@ -1,0 +1,169 @@
+{
+  "id": "board-row-flip-loop",
+  "title": "Status board row-flip loop",
+  "summary": "A black status board of five label/value rows under a split wordmark. Rows roll to a second copy set one by one, top to bottom, while an amber arrow dashes right and creeps back. Reads like a transit board and loops seamlessly.",
+  "use_when": [
+    "Announcing a collection, release or schedule as a list of short label/value facts",
+    "Bilingual or two-message loops where the same rows swap copy in place",
+    "Travel, transport, logistics or event products that want a timetable voice",
+    "Silent autoplay loops for a site hero or social feed"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-route-departures-board/",
+    "author": "Jitter",
+    "ref_id": "jt-054"
+  },
+  "family": "kinetic-type",
+  "tags": [
+    "status-board",
+    "timetable",
+    "row-swap",
+    "bilingual",
+    "mono",
+    "dark",
+    "amber-accent",
+    "loop",
+    "type-only",
+    "no-ui",
+    "announcement"
+  ],
+  "techniques": [
+    "word-swap"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 8.8,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#000000",
+      "#FCF4E2",
+      "#E4BC61",
+      "#787061",
+      "#28241F"
+    ],
+    "type_style": "header: bold geometric grotesk, uppercase, tight, ~10 % H, split left/right with an amber arrow; board: monospaced uppercase, regular tracking, ~4.5 % H, labels warm white left, values amber right; tiny mono column heads",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "each board row settles on its new copy",
+        "sound": "tick",
+        "origin": "planned"
+      },
+      {
+        "event": "arrow dashes right across the header",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.5,
+      "beat": "hook",
+      "shot": "split wordmark header with amber arrow beside the first word; board of 5 label/value rows in copy set A; tiny column heads",
+      "camera": "static",
+      "motion": "hold, nothing moves f0-f15",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.5,
+      "t1": 1,
+      "beat": "feature",
+      "shot": "rows swap to copy set B one by one, top to bottom; label and value of a row swap together",
+      "camera": "static",
+      "motion": "per row: old line rises ~0.1 row and fades 3 fr, new line rises from ~0.1 row below and fades in 3 fr (easings.outQuint), ~6 fr per row; stagger 4 fr; cascade f16-f32",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 1,
+      "t1": 2,
+      "beat": "feature",
+      "shot": "board holds set B; the amber arrow dashes right from the first word toward the second",
+      "camera": "static",
+      "motion": "arrow travels ~40 % of frame width, easings.inOutSine ~24 fr (f30-f54, ±3 fr), settles with no overshoot",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2,
+      "t1": 4.5,
+      "beat": "feature",
+      "shot": "board holds set B; arrow creeps back left",
+      "camera": "static",
+      "motion": "arrow easings.linear back-drift ~3.8 px/fr @1920 that runs until the end; board static",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 4.5,
+      "t1": 5.4,
+      "beat": "feature",
+      "shot": "rows swap back to copy set A one by one, top to bottom",
+      "camera": "static",
+      "motion": "same per-row roll as row 2 (3 fr out, 3 fr in, easings.outQuint), stagger 4-5 fr; cascade f136-f160; arrow keeps its linear drift",
+      "transition_out": "continuous",
+      "sfx": "tick"
+    },
+    {
+      "t0": 5.4,
+      "t1": 8.8,
+      "beat": "feature",
+      "shot": "board holds set A; arrow drifts back to its start beside the first word, matching frame 0",
+      "camera": "static",
+      "motion": "arrow easings.linear drift continues; ends within ~1 % of its frame-0 position so the loop is seamless",
+      "transition_out": "end",
+      "sfx": ""
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": false,
+    "tagline": false,
+    "lines": 5,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "BrandProvider",
+    "BrandBackdrop",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font for the header, mono for the board, fg for labels, accent for values and the arrow, bg",
+    "content.header": "two words of the product name, split left and right of the arrow",
+    "content.columns": "two tiny column heads (label side, value side)",
+    "content.setA": "5 rows of {label, value}: label ≤ 4 words, value ≤ 3 words",
+    "content.setB": "5 rows of {label, value} that replace set A in place (translation or second message)",
+    "timing.rowStagger": "frames between row swaps (default 4 at 30 fps)",
+    "timing.swapA": "frame the swap to set B starts (default 16)",
+    "timing.swapB": "frame the swap back to set A starts (default 136)",
+    "timing.arrowDash": "arrow dash start and length in frames (default 30, 24)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; board rows stack full width",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "Measured on 30 fps strips: swap 1 runs f16-f32, swap 2 f136-f160; per row ~3 fr out + 3 fr in with a small vertical roll, row stagger 4 fr, label and value of a row swap on the same frame. Arrow dash f30-f54, then a constant drift back for ~7 s that lands on its frame-0 position, so the loop needs no transition. No camera move: motion.json 'camera-mixed' seconds are the arrow. Hint 'device-phone' not seen. Proposed terms (not in vocabulary): row-flip-cascade, arrow-shuttle. sfx planned by the glue rule, not measured (reference is silent).",
+  "status": "studied"
+}

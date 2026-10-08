@@ -1,0 +1,114 @@
+{
+  "id": "duotone-photo-luma-flash",
+  "title": "Duotone photo poster with a luminance flash",
+  "summary": "A still aerial photo mapped to two greens holds under a two-line headline, a URL line and a round arrow button; once per loop a posterized light pass flares the highlights for about half a second, so the static poster reads as alive.",
+  "use_when": [
+    "A vertical social ad or story built from one strong photo",
+    "A looping poster where nothing should move except a single accent",
+    "Brand colour has to own a stock or product photo",
+    "A silent autoplay placement with one headline and one link"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/highlight-effect/",
+    "author": "Jitter",
+    "ref_id": "jt-071"
+  },
+  "family": "social-promo",
+  "tags": [
+    "duotone",
+    "photo",
+    "poster",
+    "vertical",
+    "loop",
+    "texture",
+    "static-hero",
+    "light-pass",
+    "silent",
+    "ad"
+  ],
+  "techniques": [
+    "duotone",
+    "hard-cut"
+  ],
+  "format": {
+    "aspect": "9:16",
+    "duration_s": 4,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "dark",
+    "palette": [
+      "#073C1D",
+      "#AFE4B8",
+      "#1CA94B",
+      "#1A9748",
+      "#187B42",
+      "#0F592E"
+    ],
+    "type_style": "bold geometric grotesk, sentence case, tight tracking, two-line headline top left at ~6 % H per line; small uppercase medium footer line bottom left ~1.6 % H",
+    "treatment": [
+      "duotone"
+    ]
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "posterized light pass flares over the photo",
+        "sound": "shimmer",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 4,
+      "beat": "hook",
+      "shot": "full-bleed top-down city photo in two greens; 2-line headline top left, small URL line bottom left, white round arrow button bottom right",
+      "camera": "static (zoom 0.02 %/s, pan ≤ 1 px/s @1920 from motion.json: no measurable move)",
+      "motion": "photo and type hold; light pass at f33: highlights jump to a posterized bright green, peak f34–f38, easings.outExpo decay to clean by ~f45, faint residue to ~f54 (±0.25 s at the tail); type and button never move",
+      "transition_out": "end",
+      "sfx": "shimmer"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": true,
+    "lines": 2,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: bg (duotone shadow), accent (duotone highlight), fg for type and the button",
+    "content.photo": "one high-detail photo (aerial or texture-rich works best), cover-cropped per aspect",
+    "content.headline": "2 lines, 3 words each at most, sentence case",
+    "content.footer": "small uppercase line with the URL, ≤ 4 words",
+    "content.button": "show the round arrow button (default true)",
+    "timing.passAt": "frame of the light pass at 30 fps (default 33)",
+    "timing.passFrames": "length of the pass incl. decay (default 12, residue to 21)",
+    "aspect": "9:16 | 4:5 | 1:1 | 16:9",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One shot, no cuts, silent; loops (last cell = first). Measured from a 30 fps strip 0.90–1.90 s: pass onset f33, brightest f34–f38, decays by ~f45, residue flecks to ~f54; motion.json shows diff only in second 1–2. The pass is posterized (hard luminance steps), strongest on the foliage top left, not a directional sweep. Proposed term luma-flash (not in vocabulary, not used as an id). Theme: mean luma 0.31-0.34 (between dark and light thresholds); dark chosen since the shadow tone dominates and type is light. SFX planned by the glue rule, not measured.",
+  "status": "studied"
+}

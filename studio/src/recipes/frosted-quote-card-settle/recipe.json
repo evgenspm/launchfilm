@@ -1,0 +1,149 @@
+{
+  "id": "frosted-quote-card-settle",
+  "title": "Frosted quote card over a pulled-back photo",
+  "summary": "A blurred glass card shrinks into place while a warm lifestyle photo pulls back behind it, then a customer quote writes in word by word, the attribution fades up and a heart lights. One calm, readable proof shot.",
+  "use_when": [
+    "A single customer quote as the social-proof beat of a launch film",
+    "Silent feed posts where one testimonial must read in under 3 s",
+    "You have a warm lifestyle or customer photo and no product UI to show",
+    "Looping card for a site hero or testimonial carousel slot"
+  ],
+  "source": {
+    "name": "jitter",
+    "url": "https://jitter.video/template/the-stack-testimonial/",
+    "author": "Jitter",
+    "ref_id": "jt-085"
+  },
+  "family": "social-promo",
+  "tags": [
+    "testimonial",
+    "quote",
+    "glass-card",
+    "frosted",
+    "photo-background",
+    "pull-out",
+    "word-reveal",
+    "single-shot",
+    "silent",
+    "warm"
+  ],
+  "techniques": [
+    "pull-out",
+    "word-reveal",
+    "blur-in"
+  ],
+  "format": {
+    "aspect": "other",
+    "duration_s": 5.13,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#B37D42",
+      "#CD9F65",
+      "#996538",
+      "#7D4C25",
+      "#56381E",
+      "#292114"
+    ],
+    "type_style": "neutral grotesk, regular weight, sentence case, white quote 3 lines at ~3.4 % H; attribution 2 lines in muted grey at the same size; small corner wordmark and URL",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "quote words write in",
+        "sound": "type-click",
+        "origin": "planned"
+      },
+      {
+        "event": "heart icon lights",
+        "sound": "pop",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.77,
+      "beat": "hook",
+      "shot": "warm photo of a person at a laptop, tight crop; an empty heavily frosted rounded card covers the centre-left; corner wordmark and URL",
+      "camera": "pull-out on the photo, scale ~1.25 -> 1.00 by 1.00 s (motion.json -24 %/s in second 0), easings.outQuint",
+      "motion": "card scales down ~60 % -> 38 % of frame width and drifts right/down, springs.layout ~23 fr (overshoot not measurable); backdrop blur stays heavy",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 0.77,
+      "t1": 1.5,
+      "beat": "social-proof",
+      "shot": "the card holds a customer quote, 3 lines, about 14 words, praising time saved, opened by a quote mark",
+      "camera": "pull-out settles at 1.00 s, then static",
+      "motion": "quote words write in left to right, line by line, blur-in per word, gap ~1.5 fr, easings.outExpo 12 fr (±0.25 s); all 3 lines set by 1.50 s (f45)",
+      "transition_out": "continuous",
+      "sfx": "type-click"
+    },
+    {
+      "t0": 1.5,
+      "t1": 2.5,
+      "beat": "social-proof",
+      "shot": "attribution row appears under the quote: round avatar, name and role in 2 grey lines, a heart icon at the right edge (dim)",
+      "camera": "static",
+      "motion": "avatar fades in at 1.50 s, name and role blur-in 1.77 -> 2.00 s, easings.outExpo 12 fr (±0.25 s); card narrows ~36 % -> 32 % of width, springs.ui (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 2.5,
+      "t1": 5.13,
+      "beat": "social-proof",
+      "shot": "finished testimonial card holds over the photo; heart icon now solid white",
+      "camera": "static (motion.json -0.1 %/s, below visible)",
+      "motion": "card grows back to ~40 % of width with the heart lighting at 2.50 s, springs.pop (overshoot not measurable); then hold 79 fr",
+      "transition_out": "end",
+      "sfx": "pop"
+    }
+  ],
+  "inputs": {
+    "product_name": true,
+    "logo": true,
+    "tagline": false,
+    "lines": 3,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": true
+  },
+  "components": [
+    "KenBurns",
+    "Surface",
+    "WordReveal",
+    "Initials",
+    "Wordmark",
+    "BrandMark"
+  ],
+  "params": {
+    "photo": "one warm lifestyle or customer photo, landscape, subject right of centre",
+    "quote": "customer quote, 12-16 words, max 3 lines",
+    "author": "name of the person quoted",
+    "role": "role and company of the person quoted",
+    "avatar": "optional square avatar image; initials if absent",
+    "url": "site URL for the top-right corner"
+  },
+  "difficulty": "easy",
+  "render_cost": "medium",
+  "notes": "Single shot, 0 cuts, silent. Card is a frosted glass panel (backdrop blur over the photo): proposed term frosted-card, not in vocabulary. Card size dips to ~32 % then returns to ~40 % of width around 2.27-2.50 s; sheet resolution 0.25 s. Quote text reads as ~3.4 % of frame height on the card. sfx planned by the glue rule, not measured. Theme: footage mid luminance (L ~0.45), nearest rule light; quote text is white on a translucent card.",
+  "status": "studied"
+}

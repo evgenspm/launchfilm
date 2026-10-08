@@ -1,0 +1,176 @@
+{
+  "id": "peak-laptop-cloud-lift",
+  "title": "Laptop on a sky peak with a cloud wipe",
+  "summary": "Clouds part as the camera rises to a laptop balanced on a rocky summit in a blue sky. The laptop lifts off, tilts toward camera and fills the frame, then drops away and clouds sweep back in, so the short clip loops.",
+  "use_when": [
+    "A web product hero shot where one landing screen is the whole message",
+    "A short silent loop for a site header, social feed or ad slot",
+    "Brands with an airy, sky or lightness theme",
+    "Opening a longer film with a device reveal before the feature tour"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/ulG1KIEb",
+    "author": "Raylight",
+    "ref_id": "rl-023"
+  },
+  "family": "product-ui",
+  "tags": [
+    "laptop",
+    "device",
+    "sky",
+    "clouds",
+    "summit",
+    "loop",
+    "hero-shot",
+    "light",
+    "silent",
+    "landing-page"
+  ],
+  "techniques": [
+    "device-laptop",
+    "dolly",
+    "push-in",
+    "blur-dissolve"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 7.43,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#1A78E1",
+      "#EFF6FB",
+      "#2A2C2E",
+      "#5F9EE6",
+      "#A7C9EF",
+      "#3F597B"
+    ],
+    "type_style": "no overlay type; the only text is the product UI on the laptop screen (headline, prompt box, suggestion chips)",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "cloud layer sweeps past the camera (open and close)",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "laptop lifts off the peak and tilts toward camera",
+        "sound": "swell",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 0.07,
+      "beat": "hook",
+      "shot": "empty blue-to-white sky gradient, one soft cloud wisp at the top right edge",
+      "camera": "static (2 fr, no change measurable)",
+      "motion": "none, 2 fr hold",
+      "transition_out": "hard-cut",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.07,
+      "t1": 1,
+      "beat": "reveal",
+      "shot": "a wall of white clouds fills the frame, drops away downward and reveals a laptop resting on a dark rocky summit",
+      "camera": "dolly up (pedestal rise): laptop enters from the top edge at 0.50 and settles at upper third by 1.00, about 25 % of frame height travelled in 28 fr",
+      "motion": "cloud layer falls out of frame bottom, easings.outQuint 28 fr (±0.25 s); clouds blurred (near-camera depth); laptop screen already lit, no lid animation",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 1,
+      "t1": 3,
+      "beat": "feature",
+      "shot": "laptop at three-quarter view on the summit, screen shows a landing page with a headline and a prompt box; clouds below",
+      "camera": "drift: slow continued rise, laptop slides down ~10 % H over 60 fr; scale 1.00 -> 1.10 (screen width 31 % -> 34 % of frame)",
+      "motion": "easings.inOutSine 60 fr; laptop yaws slightly toward frontal; from 2.75 a gap opens between laptop and peak (lift starts)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 3,
+      "t1": 4.27,
+      "beat": "feature",
+      "shot": "laptop lifts off the summit and pitches toward camera so the keyboard comes into view; peak exits frame bottom",
+      "camera": "push-in 1.00 -> 1.30 over 38 fr (screen width 34 % -> 44 % of frame)",
+      "motion": "lift and pitch with springs.heavy 38 fr (overshoot not measurable); roll swings from -8 deg to +6 deg and back to 0 by 4.27 (±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "swell"
+    },
+    {
+      "t0": 4.27,
+      "t1": 6,
+      "beat": "feature",
+      "shot": "laptop near frontal, screen fills the upper two thirds, keyboard cropped by the bottom edge; landing page readable",
+      "camera": "drift: laptop sways ~6 % W right then back left, scale steady 1.00 -> 0.97",
+      "motion": "slow yaw sway, easings.inOutSine 52 fr; the screen content is static",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 6,
+      "t1": 6.5,
+      "beat": "feature",
+      "shot": "laptop tips back and falls out of the frame bottom, leaving empty sky",
+      "camera": "static sky, the object moves",
+      "motion": "lid tilts back toward flat and drops out downward, easings.inExpo 15 fr (±0.25 s)",
+      "transition_out": "continuous"
+    },
+    {
+      "t0": 6.5,
+      "t1": 7.43,
+      "beat": "feature",
+      "shot": "empty sky gradient; soft blurred clouds slide in from the top and cover most of the frame, then open again on clear sky",
+      "camera": "dolly down implied by clouds descending into frame, ~60 % H over 22 fr",
+      "motion": "cloud layer enters from top, easings.inOutSine 22 fr; blurred crossfade 7.13 -> 7.43 (9 fr) to a sky with clouds at the edges",
+      "transition_out": "blur-dissolve",
+      "sfx": "whoosh"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 0,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "LaptopFrame",
+    "Dolly",
+    "KenBurns",
+    "ShotTransition",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "content.screen": "one landing-page screenshot at 1512x982 for the laptop screen",
+    "sky.top": "top sky colour (default deep blue)",
+    "sky.horizon": "horizon colour (default near-white)",
+    "pedestal": "image or drawn shape the laptop rests on (default rocky summit)",
+    "timing.lift": "frame at 30 fps where the laptop leaves the peak (default 90)",
+    "timing.exit": "frame at 30 fps where the laptop falls away (default 180)"
+  },
+  "difficulty": "easy",
+  "render_cost": "light",
+  "notes": "One continuous shot from 0.07 to 7.13 s; rows 2-6 split it at state changes (hard-cut in transition_out means no transition effect, not a cut). Sheets give 0.25 s resolution, no 30 fps strip. Silent reference: sfx planned by the glue rule, not measured. Clouds act as a wipe at both ends (proposed term cloud-wipe); laptop lift-and-pitch off a pedestal is proposed term levitate-tilt. The end frame (sky, clouds at the edges) is close to the start frame but not within 2 %, so loopable is false; a rebuild can match them to loop. LaptopFrame is 2.5D: the summit, cloud sprites and the full pitch toward camera need new components.",
+  "status": "studied"
+}

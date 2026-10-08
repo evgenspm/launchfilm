@@ -1,0 +1,153 @@
+{
+  "id": "phone-side-swap-spin-lines",
+  "title": "Spinning phone swaps sides with each line",
+  "summary": "A phone spins in from the right and parks on the left beside a one-line statement, then turns once more and crosses to the right while a two-line claim wipes in on the left. Each line is wiped in the direction the phone travels.",
+  "use_when": [
+    "A mobile site or app needs a 5 s teaser with two short lines and one hero screen",
+    "Silent social autoplay where one screenshot and two lines carry the message",
+    "A looping hero loop on a light landing page (starts and ends on blank white)",
+    "Setup line then benefit line, each paired with the same device"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/3YstymPX",
+    "author": "sitesbyamin",
+    "ref_id": "rl-084"
+  },
+  "family": "mobile-app",
+  "tags": [
+    "phone",
+    "device-spin",
+    "side-swap",
+    "two-lines",
+    "mask-wipe",
+    "light",
+    "white-background",
+    "loop",
+    "short",
+    "silent"
+  ],
+  "techniques": [
+    "device-phone",
+    "device-3d",
+    "statement-sequence",
+    "mask-wipe"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 5.0,
+    "fps": 30,
+    "loopable": true
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#110F0A",
+      "#4B4432",
+      "#6E624F",
+      "#958876",
+      "#D7D5CC"
+    ],
+    "type_style": "geometric sans, semibold, title case, normal tracking, cap height ~6 % H, black on white; line 2 is two centred lines",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      { "event": "phone spins in from the right", "sound": "whoosh", "origin": "planned" },
+      { "event": "a statement wipes in or out", "sound": "swoosh-short", "origin": "planned" },
+      { "event": "phone turns and crosses to the other side", "sound": "whoosh", "origin": "planned" }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0.0,
+      "t1": 0.77,
+      "beat": "hook",
+      "shot": "blank white, then a phone fades in at the right, spinning on its vertical axis while it travels left",
+      "camera": "locked-off: no camera move measured (motion.json pan 0, zoom 0 in 0-1 s)",
+      "motion": "phone opacity ~0.25 at 0.27 s to 1 at 0.50 s (fade ~8 fr, ±0.25 s); travel x 0.78 W -> 0.23 W from 0.27 s to 1.00 s (~22 fr, ~48 px/fr @1920), easings.outQuint (±0.25 s); spin back -> front -> back -> front across 0.27-1.00 s, >= 1 full turn (aliasing at 4 fps possible); height 0.44 H at 0.50 s -> 0.55 H at 1.00 s",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 0.77,
+      "t1": 1.77,
+      "beat": "feature",
+      "shot": "phone with a shop page on the left in three-quarter view; statement 1 (3 words, sets the context) on the right half",
+      "camera": "locked-off: no camera move; the growth is the phone's own scale",
+      "motion": "statement 1 wipes in right-to-left with a soft-edged horizontal mask (edge follows the phone's leftward travel) while sliding ~3 % W left, done by 1.00 s (~7 fr, ±0.25 s); holds 1.00-1.50 s; phone settles at x 0.23 W, yaw ~20 deg showing the right edge, height 0.55 H -> 0.67 H (+22 % over 30 fr), springs.heavy (overshoot not measurable)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 1.77,
+      "t1": 2.5,
+      "beat": "feature",
+      "shot": "side swap: statement 1 wipes out, phone turns once and crosses to the right, statement 2 wipes in on the left",
+      "camera": "locked-off: motion.json 3.4 %/s zoom and 33 px/s pan in 2-3 s come from the phone's travel, not a camera",
+      "motion": "statement 1 hidden left-to-right by the mask edge, 1.77-2.10 s (~10 fr, ±0.25 s); phone front -> back (2.00) -> edge-on (2.27) -> front (2.50), one full turn in ~22 fr (±0.25 s); travel x 0.23 W -> 0.70 W, peak ~50 px/fr @1920 between 2.00 and 2.50 s; statement 2 (two lines) revealed left-to-right behind the passing phone, done by 2.50 s (~7 fr, ±0.25 s)",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 2.5,
+      "t1": 3.5,
+      "beat": "feature",
+      "shot": "statement 2 (4 words, two centred lines, names the benefit) on the left, phone with the shop page on the right, front-facing",
+      "camera": "locked-off: statement 2 holds at x 0.32 W from 2.27 to 3.27 s",
+      "motion": "phone settles x 0.70 W -> 0.74 W by 2.77 s, easings.outQuint ~24 fr from 2.00 s (±0.25 s), height ~0.77 H, slight yaw ~10 deg; text holds 1.00 s",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 3.5,
+      "t1": 5.0,
+      "beat": "feature",
+      "shot": "statement 2 wipes out, the phone leaves, blank white holds to the end (matches frame 0 for the loop)",
+      "camera": "locked-off",
+      "motion": "statement 2 hidden left-to-right by the soft mask, gone by 3.77 s (~8 fr, ±0.25 s); phone present at 3.77 s, gone at 4.00 s (exit <= 7 fr, method not visible at 4 fps; near-miss scene score 9 at 4.00 s); white hold 30 fr",
+      "transition_out": "end",
+      "sfx": "swoosh-short"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 2,
+    "screenshots": 1,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "PhoneFrame",
+    "transitionStyle",
+    "useTypeTheme",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "brand": "any brand.json: display font and fg for the lines, bg for the field (light brands read closest to the reference)",
+    "content.lines": "2 statements: line 1 up to 4 words on one line (context), line 2 up to 6 words over two lines (benefit)",
+    "content.screen": "one portrait screenshot of the product, shown on the phone for the whole film",
+    "aspect": "16:9 (phone and text share the frame halves); 9:16 would stack them, not measured",
+    "timing.swapAt": "frame where the phone starts its crossing (default 53 at 30 fps)",
+    "timing.spinTurns": "turns during the entrance (default 1, reference >= 1)",
+    "fps": "composition fps (default 30); timing scales with it"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "All timings from 4 fps sheets (±0.25 s); no 30 fps strip was extracted. Spring and easing names are suggested defaults, overshoot not measurable. Spin direction and turn count during the entrance may be aliased at 4 fps. The reference is silent: every sfx is planned by the glue rule, not measured. No cuts in cuts.json: all rows are continuous. Proposed terms (not in vocabulary): device-spin, side-swap, trailing-wipe. A rebuild without a 3D model can fake the spin with PhoneFrame tilt.y plus a back-plate face (missing component SpinPhone).",
+  "status": "studied"
+}

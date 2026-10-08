@@ -1,0 +1,151 @@
+{
+  "id": "edge-on-button-tilt-face",
+  "title": "Edge-on 3D button that tilts up to face the viewer",
+  "summary": "A glossy extruded action button seen almost edge-on, its label skimming the top face, tilts toward the lens; the view then jumps wide and the button turns face-on and holds. One word, one object, curiosity then clarity.",
+  "use_when": [
+    "Teasing a single action or feature that one button label can name",
+    "A short silent loop or social cut-down built around one verb",
+    "An opener before a UI demo that starts on the same button",
+    "Light, minimal brands where one tactile object carries the frame"
+  ],
+  "source": {
+    "name": "raylight",
+    "url": "https://www.raylight.app/templates/3XahLc0S",
+    "author": "Raylight",
+    "ref_id": "rl-092"
+  },
+  "family": "product-ui",
+  "tags": [
+    "button",
+    "3d",
+    "tilt",
+    "single-object",
+    "one-word",
+    "light",
+    "minimal",
+    "macro",
+    "ui-element",
+    "short"
+  ],
+  "techniques": [
+    "orbit-3d",
+    "pull-out",
+    "extrude-type"
+  ],
+  "format": {
+    "aspect": "16:9",
+    "duration_s": 5.37,
+    "fps": 30,
+    "loopable": false
+  },
+  "look": {
+    "theme": "light",
+    "palette": [
+      "#FFFFFF",
+      "#020303",
+      "#E5E5E5",
+      "#C8C9CA",
+      "#A0A3A9",
+      "#828995"
+    ],
+    "type_style": "geometric humanist sans, medium-bold, sentence case, normal tracking; one word printed on the button face, about 13 % of frame height when face-on",
+    "treatment": []
+  },
+  "audio": {
+    "vo": false,
+    "music": {
+      "present": false,
+      "bpm": null,
+      "energy": null,
+      "genre": null,
+      "cut_on_beat": false
+    },
+    "sfx": [
+      {
+        "event": "button tilts up toward the lens (row 2)",
+        "sound": "swoosh-short",
+        "origin": "planned"
+      },
+      {
+        "event": "view jumps wide to the small tilted button at 2.23 s",
+        "sound": "whoosh",
+        "origin": "planned"
+      },
+      {
+        "event": "button settles face-on at ~3.27 s",
+        "sound": "tick",
+        "origin": "planned"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "t0": 0,
+      "t1": 1.27,
+      "beat": "hook",
+      "shot": "extreme low-angle close-up of a glossy white pill button seen edge-on, label (one word) skimming the top face, cropped at right",
+      "camera": "near-static: left edge fixed at ~30 % W, button height 58 -> 64 px of a 270 px cell (+10 %, ~0.7 %/s per motion.json)",
+      "motion": "slow creep only, easings.linear (±0.25 s); no element enters",
+      "transition_out": "continuous",
+      "sfx": ""
+    },
+    {
+      "t0": 1.27,
+      "t1": 2.23,
+      "beat": "hook",
+      "shot": "same button tilts its top face toward the lens; label letters grow taller and become legible, still cropped at right",
+      "camera": "orbit-3d rise: left edge stays at ~30 % W, visible height 64 -> 105 px of 270 (x1.64 over 29 fr), accelerating",
+      "motion": "rotateX toward camera, easings.inQuad ~29 fr (sheet ±0.25 s; strip shows it still moving at f66)",
+      "transition_out": "continuous",
+      "sfx": "swoosh-short"
+    },
+    {
+      "t0": 2.23,
+      "t1": 3.27,
+      "beat": "hook",
+      "shot": "view jumps wide: the whole button, small and centred, top face tilted away ~55 deg; it turns face-on, label fully readable",
+      "camera": "pull-out in one frame at f67 (no cut in cuts.json, near-miss score 4.58), then static; width constant 146 px of a 320 px strip tile",
+      "motion": "rotateX ~55 -> 0 deg (from height ratio 37/68), springs.ui ~31 fr, no overshoot seen on the 30 fps strip; height 37 -> 58 px by f85, last 6 % by f98",
+      "transition_out": "continuous",
+      "sfx": "whoosh"
+    },
+    {
+      "t0": 3.27,
+      "t1": 5.37,
+      "beat": "cta",
+      "shot": "button face-on, centred, one action word in black on a light grey face with a soft white bevel; flat white ground",
+      "camera": "near-static: width 214 -> 209 px of a 480 px cell (-2 %, ±1 %)",
+      "motion": "hold 63 fr; no element moves (motion.json diff 0.02-0.07)",
+      "transition_out": "end",
+      "sfx": "tick"
+    }
+  ],
+  "inputs": {
+    "product_name": false,
+    "logo": false,
+    "tagline": false,
+    "lines": 1,
+    "screenshots": 0,
+    "screen_recording": false,
+    "ui_rebuild": false,
+    "stats": 0,
+    "url": false
+  },
+  "components": [
+    "Dolly",
+    "BrandBackdrop",
+    "BrandProvider",
+    "ASPECTS"
+  ],
+  "params": {
+    "content.label": "one action word on the button (e.g. a verb, <= 8 letters)",
+    "button.color": "button face colour; defaults to a light neutral, accent optional",
+    "timing.jump": "frame of the wide jump (default 67 at 30 fps)",
+    "timing.settle": "frames of the face-on turn (default ~31)",
+    "aspect": "16:9 | 1:1 | 4:5 | 9:16; button stays centred, width ~44 % of frame width face-on"
+  },
+  "difficulty": "hard",
+  "render_cost": "heavy",
+  "notes": "One shot, cuts.json lists 0 cuts; the jump at 2.23 s (f67) is a near-miss (score 4.58) and is treated as an in-shot pull-out, so every transition_out is continuous. Reference is silent: all sfx planned by the glue rule, not measured. Rotation angles are estimated from height ratios (front height 68 px vs 37 px at f67 in a 320 px tile), not measured directly. Easing of the tilt-up and the settle spring are suggested defaults; the 30 fps strip 1.90-2.87 s shows no overshoot. Proposed terms (not in vocabulary): edge-on-reveal, object-turn-face-on. Studio has no 3D button primitive: Button3D in recipe.md Missing components. Not loopable: first frame (edge-on) differs from last (face-on).",
+  "status": "studied"
+}
