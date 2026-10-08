@@ -40,7 +40,8 @@ Done when: brand.json validates (if `schemas/brand.schema.json` exists) and ever
 ## Gate 3: story (hard gate)
 
 1. Pick a hook (story `references/hooks.md`) and a structure for the length (`references/structures.md`).
-2. Optionally pick 1–3 recipes (recipes skill) whose structure fits; cite their ids in the storyboard.
+2. Optionally pick 1–3 recipes (recipes skill, `recipes/CATALOG.md`) whose structure fits; show the user each pick's
+   source link, then cite their ids and the rows you use in the storyboard.
 3. Write the VO script inside the word budget: seconds × 2.5–3 wps × 0.55–0.7 coverage. VO lines go into `film.json`
    (the `vo` command reads them from there; see `schemas/film.schema.json` and studio/API.md for the field names).
 4. Write `STORYBOARD.md` (table format in story `references/storyboard-template.md`). Every row cites rules.

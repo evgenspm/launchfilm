@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/evgenspm/launchfilm/schemas/recipe.schema.json",
   "title": "launchfilm recipe",
-  "description": "One studied reference turned into a reusable recipe. Lives at studio/src/recipes/<id>/recipe.json next to recipe.md, Recipe.tsx and index.tsx.",
+  "description": "One studied launch film written down as a reusable recipe. Lives at studio/src/recipes/<id>/recipe.json next to recipe.md (both required). A text recipe (status studied) is enough to build a film from; Recipe.tsx + index.tsx are optional ready code (status built).",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "title", "summary", "source", "family", "tags", "techniques", "format", "look", "audio", "structure", "inputs", "components", "difficulty"],
@@ -130,11 +130,11 @@
     "components": {
       "type": "array",
       "items": { "type": "string" },
-      "description": "Studio components/presets used by Recipe.tsx (exported names)."
+      "description": "Studio components/presets (exported names, see studio/API.md) the rebuild uses: the ones Recipe.tsx imports when the recipe is built, the suggested ones for building from the beat sheet when it is text only."
     },
     "params": {
       "type": "object",
-      "description": "Props of Recipe.tsx beyond brand: name → short description. Lets an agent remix without reading the code."
+      "description": "Content slots the user fills, name → short description (copy lines, product name, stats, UI). For a built recipe these are the props of Recipe.tsx beyond brand, so an agent can remix without reading the code."
     },
     "difficulty": { "enum": ["easy", "medium", "hard"] },
     "render_cost": { "enum": ["light", "medium", "heavy"], "description": "heavy = WebGL/3D/motion-blur" },
@@ -142,12 +142,17 @@
     "preview": {
       "type": "object",
       "additionalProperties": false,
+      "description": "Optional: links to a render the recipe author made and hosts themselves. launchfilm does not pre-render or host previews; omit this when there is none (the source link is what users watch).",
       "properties": {
-        "video": { "type": "string", "description": "our render, URL on media.eugenefounder.lol" },
-        "poster": { "type": "string" },
-        "demo_brand": { "type": "string", "description": "which demo brand the preview uses" }
+        "video": { "type": "string", "format": "uri", "description": "URL of the author's render (optional)" },
+        "poster": { "type": "string", "format": "uri", "description": "URL of its poster frame (optional)" },
+        "demo_brand": { "type": "string", "description": "which demo brand a built recipe's composition uses" }
       }
     },
-    "status": { "enum": ["studied", "built", "reviewed"], "description": "studied = recipe.md/json only; built = Recipe.tsx renders; reviewed = passed human/agent QA" }
+    "status": {
+      "enum": ["studied", "built", "reviewed"],
+      "default": "studied",
+      "description": "studied = text recipe: recipe.md + recipe.json, the default and enough to build a film from; built = also has a ready Recipe.tsx + index.tsx that render; reviewed = checked by a human"
+    }
   }
 }

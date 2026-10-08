@@ -1,5 +1,5 @@
 # REUSE 3.3 (https://reuse.software/spec-3.3/): licences by glob. `reuse lint` runs in CI.
-# Code, skills, craft docs, schemas and config: MIT. Our own media: CC0 (procedural SFX) or CC BY 4.0 (films, previews).
+# Code, skills, craft docs, recipes, schemas and config: MIT. Our own media: CC0 (procedural SFX) or CC BY 4.0 (films, stills).
 # Fonts: OFL-1.1 by their authors. Third-party audio (Kenney packs, music beds) is fetched on install, never committed.
 version = 1
 SPDX-PackageName = "launchfilm"

@@ -5,7 +5,7 @@ exports for product launches, built on Remotion. Open source (MIT), and the defa
 
 <!-- HERO VIDEO: drag the showcase mp4 (≤ 10 MB) into a GitHub issue, paste the user-attachments URL on the next line. -->
 <!-- https://github.com/user-attachments/assets/REPLACE-WITH-HERO-ID -->
-_Hero film coming with the first release. Meanwhile, see the gallery: [motion.eugenefounder.lol](https://motion.eugenefounder.lol)._
+_The hero film lands here with the first release. To see what the recipes are built from, open any source link in [recipes/CATALOG.md](recipes/CATALOG.md)._
 
 ## Install: paste one line into your agent
 
@@ -38,6 +38,7 @@ missing, `npx launchfilm doctor` from `launch-video/` says what and how to fix i
 ```text
 Make a 30-second launch film for this product, for X and LinkedIn.
 Make a 15-second product film of the onboarding flow, 4:5.
+Make a 30s launch film for my product from recipe statement-sequence-launch.
 Study this video and turn it into a recipe: https://…
 Write the X, LinkedIn and Product Hunt posts for the film.
 ```
@@ -56,8 +57,8 @@ renders per platform → post copy.
 | `story` | Brief, hook, structure for 6/15/30/45/60/90 s, voice-over script at 2.5–3 words per second, storyboard table |
 | `sound` | Voice-over, word timings, music on a beat grid, a sound effect on every visual event, mix at −14 LUFS |
 | `scene-build` | Builds scenes from studio presets: named springs, zoom tiers, kinetic type, transitions, UI rebuilt in React |
-| `recipes` | Searches the recipe library and remixes 1–3 recipes into your film |
-| `reference-study` | Turns any video you like into a reusable recipe: measured beat sheet, techniques, then a working remake |
+| `recipes` | Searches the recipe catalog, shows you 1–3 picks with their source links, and builds your film from their beat sheets |
+| `reference-study` | Turns any video you like into a text recipe: measured beat sheet, techniques, sound. A coded remake is optional |
 | `film-qa` | Contact sheets, stills at key timestamps, readability, contrast, safe zones, loudness, ffprobe. Reports only what it checked |
 | `launch-post` | Post copy for X, LinkedIn and Product Hunt in a human voice |
 
@@ -68,8 +69,10 @@ Behind the skills:
 - **A Remotion studio** (`launch-video/`): presets, components (windows, browser, phone, cursor, keycaps, prompt bar,
   notification stack, list, chart, counter, logo reveal, end card) and a film engine that turns `film.json` into
   scenes, voice, ducked music, sound effects and burned-in captions.
-- **Recipes**: studied launch films rebuilt as parametrized compositions. Browse them with previews at
-  [motion.eugenefounder.lol](https://motion.eugenefounder.lol).
+- **Recipes** (`recipes/`): ~200 studied launch films as text recipes (beat sheets with frame timings, techniques,
+  sound), some with ready code. Browse [recipes/CATALOG.md](recipes/CATALOG.md): one line per recipe with its format,
+  techniques, what you need and a link to the original film; [recipes/index.json](recipes/index.json) is the same
+  catalog for scripts. Your agent builds the film from the recipe on top of the studio, in your brand.
 - **Platform presets**, recomposed per aspect rather than cropped:
 
 | Preset | Size | Length | Notes |

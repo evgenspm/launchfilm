@@ -1,4 +1,5 @@
-// Built-in scenes, so a simple film can be pure film.json with no TSX: "title", "statement", "caption", "logo", "blank".
+// Built-in scenes, so a simple film can be pure film.json with no TSX: "title", "statement", "caption", "logo", "blank",
+// plus "todo" (a labelled placeholder for a shot still to build).
 // A film's own scenes (films/<slug>/scenes.tsx) override these names. Every scene moves (craft: nothing static).
 import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
@@ -89,10 +90,36 @@ export const LogoScene: React.FC<SceneProps> = ({shot, dur}) => {
 
 export const BlankScene: React.FC<SceneProps> = () => <BrandBackdrop glow={0} />;
 
+/**
+ * Placeholder for a shot that still has to be built (what `launchfilm new --recipe` scaffolds from a text recipe's beat
+ * sheet). Labels the frame with the row so stills and sheets show what is missing; `launchfilm qa` fails while one is
+ * left. props: `row?`, `beat?`, `shot?` (what the recipe puts on screen), `recipe?`.
+ */
+export const TodoScene: React.FC<SceneProps> = ({shot, dur, f}) => {
+  const b = useBrand();
+  const {width, height} = useVideoConfig();
+  const p = shot.props ?? {};
+  const label = [p.row !== undefined ? `#${String(p.row)}` : '', str(p.beat, ''), 'TODO'].filter(Boolean).join(' · ');
+  const size = Math.round(Math.min(width, height) * 0.03);
+  const bar = Math.max(1, dur) > 1 ? f / (dur - 1) : 1;
+  return (
+    <AbsoluteFill>
+      <BrandBackdrop glow={0.06} />
+      <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: size * 0.8, padding: width * 0.08, textAlign: 'center'}}>
+        <div style={{fontFamily: b.font.mono, fontSize: size * 0.8, letterSpacing: '0.12em', textTransform: 'uppercase', color: b.colors.accent}}>{label}</div>
+        <div style={{fontFamily: b.font.text, fontSize: size * 1.25, lineHeight: 1.3, color: b.colors.fg, maxWidth: width * 0.8}}>{str(p.shot, shot.id ?? 'scene to build')}</div>
+        {p.recipe ? <div style={{fontFamily: b.font.mono, fontSize: size * 0.65, color: b.colors.muted}}>{`recipe ${String(p.recipe)} · see RECIPE.md`}</div> : null}
+      </AbsoluteFill>
+      <div style={{position: 'absolute', left: 0, bottom: 0, height: Math.max(2, Math.round(height * 0.004)), width: `${bar * 100}%`, background: b.colors.accent, opacity: 0.6}} />
+    </AbsoluteFill>
+  );
+};
+
 export const BUILTIN_SCENES: Record<string, Scene> = {
   title: TitleScene,
   statement: StatementScene,
   caption: CaptionScene,
   logo: LogoScene,
   blank: BlankScene,
+  todo: TodoScene,
 };

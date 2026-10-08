@@ -104,8 +104,10 @@ Hybrid: launch-film open, product-film middle, launch-film close. Cite craft/00#
 - Hand-written timing goes through the timing helpers (`sec`, `ms`, `stagger`, `beatGrid`, `wordsToFrames`).
 - A scene that needs a new component: build it in `films/<slug>/scenes/` from the numbers in craft. If it is reusable,
   say so in your report; a curator promotes it to `src/components/` in a separate change.
-- Recipes: `<studio>/src/recipes/<id>/Recipe.tsx` is parametrized by `brand` + `content`; reuse it as a scene instead of
-  re-implementing (see the `recipes` skill).
+- Recipes: when `<studio>/src/recipes/<id>/Recipe.tsx` exists it is parametrized by `brand` + `content`; reuse it as a
+  scene instead of re-implementing. A text recipe (recipe.md only) leaves `TodoScene` placeholders in `Film.tsx`:
+  replace each with a scene built from its row's motion, springs and frame counts (see the `recipes` skill,
+  references/remix.md §4). `npx launchfilm qa` fails while one is left.
 
 ## 6. Render cost
 

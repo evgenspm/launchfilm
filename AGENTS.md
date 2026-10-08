@@ -18,7 +18,7 @@ payoff, and frame QA before shipping. MIT. Remotion is a dependency under its ow
 | `studio/` | Remotion project template: `src/presets`, `src/components`, `src/film` (film engine), `src/recipes/<id>/`, `films/_sample`, `public/{fonts,sfx,music}`, `scripts/` | `launch-video/` |
 | `studio/API.md` | Exports of presets, components and the film engine. Skills tell agents to read it first | `launch-video/API.md` |
 | `studio/cli/` | `launchfilm` CLI (one verb per pipeline step) and provider adapters in `studio/cli/providers/` | `launch-video/cli/`, run as `npx launchfilm …` |
-| `recipes/index.json` | Catalog generated from `studio/src/recipes/*/recipe.json`. The gallery site reads it | `launch-video/recipes/index.json` |
+| `recipes/index.json`, `recipes/CATALOG.md` | Catalog generated from `studio/src/recipes/*/recipe.json` by `scripts/build-index.mjs`: JSON for scripts and `ref search`, Markdown (one line per recipe, by family) for people and agents | `launch-video/recipes/` |
 | `examples/` | 2–3 films of fictional products, as code | not installed |
 | `INSTALL.md`, `UPDATE.md` | Agent-executable install and update, pinned to a tag | fetched by URL |
 | `.claude-plugin/`, `plugin.json`, `gemini-extension.json` | Thin manifests pointing at `./skills/` | plugin installs |
@@ -38,8 +38,9 @@ in one PR that updates both sides.
 3. Never paste other people's copy (taglines, VO lines, UI strings of real products) into docs, recipes or examples.
    Examples use fictional products (`Acme Ledger`, `Acme Inbox`, `Acme Deploy`, `Acme Notes`) and our own lines.
 4. Recipe ids, titles, summaries and tags never contain the source's brand or product name. `source.url` carries the link.
-5. Repo stays under ~20 MB. No Git LFS (skill installers deliver pointer files). Demo MP4s go to GitHub Release assets;
-   previews go to the gallery CDN. Skill folders are text only.
+5. Repo stays under ~20 MB. No Git LFS (skill installers deliver pointer files). Demo MP4s go to GitHub Release assets.
+   We don't pre-render or host recipe previews: a recipe is text, and its source link is what people watch. Skill
+   folders are text only.
 
 **Licensing**
 6. Code, skills and craft: MIT. Every skill folder carries its own `LICENSE.txt` (installers copy only the folder).
@@ -63,7 +64,7 @@ in one PR that updates both sides.
 **Craft and docs**
 14. Numbers beat adjectives: frames, ms, px, LUFS, words/s. Every rule must say how to check it.
 15. `craft/vocabulary.md` is a closed list. Recipes tag `techniques[]` and `audio.sfx[].sound` only from it. Add a term by
-    PR to that file first; never rename or remove an id (recipes and the gallery filter on them).
+    PR to that file first; never rename or remove an id (recipes, the catalog and `ref search` filter on them).
 16. Skills cite craft by stable H2 anchors (`craft/04#springs`) and the tells by id (`T1`…`T12`). Renaming an H2 in a
     craft file breaks citations: grep `skills/` and fix every hit in the same PR.
 17. No em dash character (U+2014) in craft, skills or root docs. The only exception is the `id`, dash, definition format
@@ -85,15 +86,22 @@ in one PR that updates both sides.
 
 ## How to add a recipe
 
+A recipe is text first: `studio/src/recipes/<id>/recipe.md` (beat sheet, techniques, what to adapt, pitfalls) and
+`recipe.json` (schema `schemas/recipe.schema.json`), status `studied`. That is the deliverable, and a user's agent
+builds a film from it on top of the studio presets and components. Ready code is optional.
+
 1. Study the reference with the `reference-study` skill: `npx launchfilm ref add <file|url>` produces the analysis dir;
-   phase A writes `recipe.md` + `recipe.json` (status `studied`).
-2. Create `studio/src/recipes/<id>/` with `recipe.md`, `recipe.json`, `Recipe.tsx` (parametrized by `brand` + content
-   props), `index.tsx` (a `<Composition>` with the demo brand). Imitate `studio/src/recipes/statement-sequence-launch/`.
-3. Phase B of `reference-study`: stills, half-scale render, our sheet vs the reference sheet, fix, final mp4 + poster
-   (frame 0). Status `built`.
-4. Validate (commands below): schema, vocabulary ids, typecheck, `npx remotion compositions`.
-5. Regenerate `recipes/index.json` (the studio script that builds it; see `studio/API.md`) and commit it with the recipe.
-6. PR checklist: no source brand in id/title/tags, no source copy, no committed source media, render cost stated.
+   phase A writes `recipe.md` + `recipe.json` (status `studied`) into `studio/src/recipes/<id>/`.
+2. Optional, only if you want ready code: phase B adds `Recipe.tsx` (parametrized by `brand` + content props) and
+   `index.tsx` (a `<Composition>` with a demo brand), imitating `studio/src/recipes/statement-sequence-launch/`, checks
+   it with stills and a local half-scale render against the reference sheet, and sets status `built`. Renders stay
+   local in `out/` (gitignored); nothing is uploaded.
+3. Validate (commands below): `node scripts/validate-recipes.mjs` (schema, vocabulary ids, recipe.md present, code files
+   only as a pair and required for `built`); for `built` also typecheck and `npx remotion compositions`.
+4. Regenerate the catalog, `node scripts/build-index.mjs` (writes `recipes/index.json` + `recipes/CATALOG.md`), and
+   commit both with the recipe. CI runs `--check`.
+5. PR checklist: no source brand in id/title/tags, no source copy, no committed source media, `source.url` set, render
+   cost stated.
 
 ## How to add a component or preset
 
@@ -151,7 +159,10 @@ for (const d of fs.readdirSync('skills')) {
 console.log(bad ? `${bad} problem(s)` : 'skills ok'); process.exit(bad ? 1 : 0);
 EOF
 
-# recipes: schema + vocabulary ids (recipe json files under studio/src/recipes)
+# recipes: schema, vocabulary ids, sibling files; then the catalog (recipes/index.json + recipes/CATALOG.md)
+node scripts/validate-recipes.mjs
+node scripts/build-index.mjs --check
+# same schema check without the repo scripts
 npx -y -p ajv-cli@5 -p ajv-formats ajv validate --spec=draft2020 -c ajv-formats \
   -s schemas/recipe.schema.json -d "studio/src/recipes/*/recipe.json"
 node --input-type=module <<'EOF'
@@ -181,7 +192,7 @@ reuse lint
 ```
 
 A PR is ready when every command above passes, the sample film renders (`npm --prefix studio run render` on
-`films/_sample`, see `studio/API.md`), and any changed recipe has a fresh preview render.
+`films/_sample`, see `studio/API.md`), and the catalog is regenerated (`node scripts/build-index.mjs --check`).
 
 ## Versioning
 

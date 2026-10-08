@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Validates every studio/src/recipes/<id>/recipe.json: JSON schema (schemas/recipe.schema.json, ajv draft 2020-12),
 // folder name = id, techniques[] ⊂ craft/vocabulary.md, audio.sfx[].sound ⊂ vocabulary audio ids,
-// transition_out ∈ transitions ids | hard-cut, and the sibling files (recipe.md, Recipe.tsx, index.tsx).
+// transition_out ∈ transitions ids | hard-cut, and the sibling files: recipe.md always; Recipe.tsx + index.tsx only
+// when status is "built" (text recipes, status "studied", are complete without code).
 // Exit 1 on any error. Usage: node scripts/validate-recipes.mjs [--json]
 import {existsSync} from 'node:fs';
 import path from 'node:path';
@@ -33,18 +34,27 @@ for (const dir of recipeDirs()) {
 		if (s.transition_out && s.transition_out !== 'hard-cut' && !transitions.has(s.transition_out)) warnings.push(`structure ${s.t0}–${s.t1}: transition_out "${s.transition_out}" is not a transitions id`);
 		if (s.t1 < s.t0) errors.push(`structure ${s.t0}–${s.t1}: t1 < t0`);
 	}
-	for (const f of ['recipe.md', 'Recipe.tsx', 'index.tsx']) if (!existsSync(path.join(dir, f))) errors.push(`missing ${f}`);
-	results.push({id, errors, warnings});
+	// recipe.md + recipe.json are the recipe. Recipe.tsx + index.tsx are optional ready code, required only once the
+	// status claims it (built / reviewed-with-code), and they come as a pair.
+	if (!existsSync(path.join(dir, 'recipe.md'))) errors.push('missing recipe.md');
+	const hasRecipe = existsSync(path.join(dir, 'Recipe.tsx'));
+	const hasIndex = existsSync(path.join(dir, 'index.tsx'));
+	const status = r.status ?? 'studied';
+	if (hasRecipe !== hasIndex) errors.push(`code is half there: ${hasRecipe ? 'Recipe.tsx without index.tsx' : 'index.tsx without Recipe.tsx'}`);
+	if (status === 'built' && !(hasRecipe && hasIndex)) errors.push('status "built" needs Recipe.tsx and index.tsx (a text-only recipe is "studied")');
+	if (status === 'studied' && hasRecipe && hasIndex) warnings.push('has Recipe.tsx + index.tsx but status is "studied": set "built" once it renders');
+	results.push({id, status, code: hasRecipe && hasIndex, errors, warnings});
 }
 
 const bad = results.filter((r) => r.errors.length);
 if (json) console.log(JSON.stringify({ok: !bad.length, vocabulary: {techniques: vocab.techniques.size, audio: vocab.audio.size}, recipes: results}, null, 1));
 else {
 	for (const r of results) {
-		console.log(`${r.errors.length ? 'FAIL' : 'ok  '} ${r.id}`);
+		console.log(`${r.errors.length ? 'FAIL' : 'ok  '} ${r.id}${r.code ? ' (code)' : ''}`);
 		for (const e of r.errors) console.log(`       ${e}`);
 		for (const w of r.warnings) console.log(`       warn: ${w}`);
 	}
-	console.log(`${results.length} recipes, ${bad.length} failing (vocabulary: ${vocab.techniques.size} techniques, ${vocab.audio.size} audio ids)`);
+	const withCode = results.filter((r) => r.code).length;
+	console.log(`${results.length} recipes (${results.length - withCode} text, ${withCode} with code), ${bad.length} failing (vocabulary: ${vocab.techniques.size} techniques, ${vocab.audio.size} audio ids)`);
 }
 process.exit(bad.length ? 1 : 0);

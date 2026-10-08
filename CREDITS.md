@@ -30,7 +30,7 @@ We read these, learned from them, and wrote our own text and code. Nothing below
 
 Measured numbers in `craft/` (frame counts, scales, blur radii, shot lengths, loudness) come from studying published
 launch films and templates frame by frame. We publish the measurements and our own rebuilds, never the source media or
-its copy. Recipes link to their source by URL.
+its copy. Recipes are our own text (beat sheets, measurements, techniques) and link to their source by URL.
 
 ## Bundled third-party assets
 
@@ -75,4 +75,5 @@ Each family ships with its `OFL.txt` (copyright lines inside) in `studio/public/
 
 ## Our media
 
-Sample films, demo brands and preview renders made for launchfilm are CC BY 4.0: credit "launchfilm (Eugene Li)".
+Sample films, demo brands and recipe code made for launchfilm are ours. Media (renders, stills) is CC BY 4.0: credit
+"launchfilm (Eugene Li)". Code and recipe text are MIT like the rest of the repo.

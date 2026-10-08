@@ -7,7 +7,7 @@
 // What it does (every step checks first, so a re-run changes nothing that is already right):
 //  1. copies the studio template into <repo>/<studio-dir>/ (no node_modules, out/, qa/, .harness/, .env, fetched media;
 //     never touches the user's films/ except films/_sample, never overwrites harness.config.json or .env)
-//  2. copies craft/, schemas/, recipes/index.json and API.md next to it, so skills find them at the same relative paths
+//  2. copies craft/, schemas/, recipes/index.json + CATALOG.md and API.md next to it, so skills find them at the same paths
 //  3. installs skills: <repo>/.agents/skills/<n> as real files, <repo>/.claude/skills/<n> as a relative symlink
 //     (a junction on Windows, a copy as the last resort)
 //  4. writes the ≤15-line managed block into AGENTS.md (created if missing) and CLAUDE.md / GEMINI.md if they exist
@@ -112,6 +112,7 @@ const extras = [
 	['craft', 'craft'],
 	['schemas', 'schemas'],
 	[path.join('recipes', 'index.json'), path.join('recipes', 'index.json')],
+	[path.join('recipes', 'CATALOG.md'), path.join('recipes', 'CATALOG.md')],
 	[path.join('studio', 'API.md'), 'API.md'],
 	['VERSION', 'VERSION'],
 	['LICENSE', 'LICENSE'],
@@ -133,6 +134,8 @@ const fixSchema = (file, from, to) => {
 	if (n !== t) writeFileSync(file, n);
 };
 fixSchema(path.join(DEST, 'harness.config.json'), '"../schemas/', '"./schemas/');
+// catalog links: the harness repo has recipes/ next to studio/; here recipes/ and src/recipes/ both sit in the studio
+fixSchema(path.join(DEST, 'recipes', 'CATALOG.md'), '](../studio/src/recipes/', '](../src/recipes/');
 const filmsDir = path.join(DEST, 'films');
 if (existsSync(filmsDir)) for (const f of readdirSync(filmsDir)) for (const j of ['film.json', 'brand.json']) fixSchema(path.join(filmsDir, f, j), '"../../../schemas/', '"../../schemas/');
 step('docs', 'ok', got.join(', ') || 'none found');

@@ -33,8 +33,9 @@ export const vocabulary = () => {
 		const ids = [];
 		if (section === 'beats') for (const m of line.matchAll(/`([a-z0-9-]+)`/g)) ids.push(m[1]);
 		else if (/^\s*-\s/.test(line)) for (const part of line.replace(/^\s*-\s*/, '').split(' · ')) {
-			const m = /^\s*`([a-z0-9-]+)`/.exec(part);
-			if (m) ids.push(m[1]);
+			// a part starts with one id, or several joined by " / " (`device-phone` / `device-laptop`: …)
+			const m = /^\s*((?:`[a-z0-9-]+`\s*\/\s*)*`[a-z0-9-]+`)/.exec(part);
+			if (m) for (const x of m[1].matchAll(/`([a-z0-9-]+)`/g)) ids.push(x[1]);
 		}
 		const bucket = section === 'audio' ? out.audio : section === 'beats' ? out.beats : out.techniques;
 		for (const id of ids) {

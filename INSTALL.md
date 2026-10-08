@@ -31,7 +31,7 @@ exists (the installer renders it at half scale and checks it with ffprobe: 3.00 
    rm -rf .launchfilm-tmp            # PowerShell: Remove-Item -Recurse -Force .launchfilm-tmp
    ```
    It prints one line per step and ends with `DONE` or `NOT DONE`. What it does:
-   - copies the studio template to `./launch-video/`, with `craft/`, `schemas/`, `recipes/index.json` and `API.md` inside it
+   - copies the studio template to `./launch-video/`, with `craft/`, `schemas/`, the recipe catalog (`recipes/index.json`, `recipes/CATALOG.md`) and `API.md` inside it
      (the same relative paths the skills use). It never overwrites `films/`, `harness.config.json` or `.env`;
    - installs the skills as real files in `.agents/skills/<name>`, and `.claude/skills/<name>` as a relative link
      (a junction on Windows, a copy if links fail);

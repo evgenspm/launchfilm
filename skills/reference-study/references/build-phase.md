@@ -1,7 +1,9 @@
-# Phase B: build the recipe and compare it with the reference
+# Phase B (optional): ready code for a recipe, compared with the reference
 
-Precondition: phase A passed self-check items 1–22. Work only inside `<studio>/src/recipes/<id>/`. Renders go to
-`<studio>/out/recipes/<id>/` (never committed). Exact CLI flags: `npx launchfilm <cmd> --help`.
+Run this only when the task asks for ready code. A studied recipe (phase A) is complete without it: users' agents build
+films from the beat sheet. Precondition: phase A passed self-check items 1–22. Work only inside
+`<studio>/src/recipes/<id>/`. Renders are local QA evidence in `<studio>/out/recipes/<id>/` (gitignored): never
+committed, uploaded or linked from recipe.json. Exact CLI flags: `npx launchfilm <cmd> --help`.
 
 ## B0. The golden recipe
 
@@ -61,23 +63,24 @@ Pass conditions:
 At most 3 iterations of B1–B4. Fix the largest failure first. After 3, keep the best iteration and write the remaining
 differences in recipe.md `Pitfalls` (batch) or report them (attended).
 
-## B6. Final render and poster
+## B6. Frame 0 and duration
 
 ```bash
-npx remotion render <entry> <CompId> out/recipes/<id>/<id>.mp4 --crf=18
-npx remotion still <entry> <CompId> out/recipes/<id>/<id>-poster.png --frame=0
-npx remotion ffprobe -v error -show_entries format=duration -of csv=p=0 out/recipes/<id>/<id>.mp4
+npx remotion still <entry> <CompId> out/recipes/<id>/frame0.png --frame=0
+npx remotion ffprobe -v error -show_entries format=duration -of csv=p=0 out/recipes/<id>/qa.mp4
 ```
-Poster = frame 0 and must not be black: if frame 0 is black, the recipe's first frame is wrong (craft/10#poster), fix it.
+Frame 0 must not be black: if it is, the recipe's first frame is wrong (craft/10#poster), fix it. No full-quality
+render is needed: nothing is published.
 
 ## B7. Gate and status
 
 | Gate | Check |
 |---|---|
 | schema valid | ajv command prints `valid` |
-| render exists | `out/recipes/<id>/<id>.mp4` exists, ffprobe reads it |
-| duration | ffprobe duration ÷ `format.duration_s` within 0.8–1.2 |
+| composition | `npx remotion compositions` lists `<id>` without errors |
+| duration | ffprobe duration of `qa.mp4` ÷ `format.duration_s` within 0.8–1.2 |
 | sheet exists | our sheet files exist |
-All pass → set `status: "built"`, add `components` actually used, fill `preview` only with URLs the batch provides.
-Any fail → keep `status: "studied"`, write `BLOCKED.md` with the failing gate and the measured value.
-Run self-check items 23–32.
+All pass → set `status: "built"`, add `components` actually used. Leave `preview` out (there are no hosted previews).
+Any fail → remove `Recipe.tsx`/`index.tsx` (or leave them out of the commit), keep `status: "studied"`, and write the
+failing gate and the measured value in recipe.md `## Study log` (batch: also `BLOCKED.md`). Run self-check items 23–32.
+Then `node scripts/build-index.mjs` so the catalog marks the recipe as `code`.

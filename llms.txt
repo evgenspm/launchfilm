@@ -2,7 +2,7 @@
 
 > Open-source (MIT) harness that turns a coding agent (Claude Code, Codex, Cursor, Gemini CLI, Copilot, OpenCode, Amp) into a product-launch motion designer on Remotion: Agent Skills for the pipeline, craft rules with numbers, a studio template, recipes, platform export presets and frame QA. Default providers need no API keys. Remotion is a dependency under its own license (free for individuals and companies of up to 3 people).
 
-Install by telling your agent: "Fetch and follow https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/INSTALL.md". The studio lands in `./launch-video/`; run the CLI there with `npx launchfilm <command>`. Pipeline: brief → brand → storyboard (user approves) → sound → scenes → QA → render per preset → package → post. Recipe gallery: https://motion.eugenefounder.lol
+Install by telling your agent: "Fetch and follow https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/INSTALL.md". The studio lands in `./launch-video/`; run the CLI there with `npx launchfilm <command>`. Pipeline: brief → brand → storyboard (user approves) → sound → scenes → QA → render per preset → package → post. Recipes are text: ~200 studied launch films as beat sheets with frame timings, techniques and sound (some with ready code), listed in recipes/CATALOG.md; the agent builds a film from one in the user's brand.
 
 ## Start here
 
@@ -17,8 +17,8 @@ Install by telling your agent: "Fetch and follow https://raw.githubusercontent.c
 - [story](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/story/SKILL.md): brief, hooks, structures for 6–90 s, VO script, storyboard approval
 - [sound](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/sound/SKILL.md): voice-over, word timings, music and beat grid, SFX on events, mix targets
 - [scene-build](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/scene-build/SKILL.md): building scenes with studio presets; camera, motion, type, transitions, UI, look, 3D
-- [recipes](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/recipes/SKILL.md): search and remix recipes from recipes/index.json
-- [reference-study](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/reference-study/SKILL.md): turn a reference video into a recipe (study, then build)
+- [recipes](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/recipes/SKILL.md): pick 1–3 recipes from the catalog and build the film from their beat sheets (or their ready code)
+- [reference-study](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/reference-study/SKILL.md): turn a reference video into a text recipe (study); ready code is an optional second phase
 - [film-qa](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/film-qa/SKILL.md): contact sheets, stills, readability, contrast, safe zones, loudness, ffprobe
 - [launch-post](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/skills/launch-post/SKILL.md): X, LinkedIn and Product Hunt copy without launch clichés
 
@@ -48,6 +48,11 @@ Install by telling your agent: "Fetch and follow https://raw.githubusercontent.c
 - [screen](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/families/screen.md): staging a product screen: tilt plane, dolly, rack focus, laptop reveal
 - [statement](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/families/statement.md): statement sequences, word swaps, mask rises, dimensional hero type
 - [brandmark](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/craft/families/brandmark.md): light-on, glass mark, portal zoom, particle form, end card
+
+## Recipes
+
+- [CATALOG.md](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/recipes/CATALOG.md): every recipe, one line each, grouped by family, with format, techniques, inputs and the source link
+- [index.json](https://raw.githubusercontent.com/evgenspm/launchfilm/v0.1.0/recipes/index.json): the same catalog as JSON for scripts and filters
 
 ## Schemas
 

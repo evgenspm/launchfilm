@@ -62,6 +62,8 @@
     "url": "https://raylight.xyz",
     "author": "Raylight"
    },
+   "status": "built",
+   "code": true,
    "preview": {
     "demo_brand": "tallyfield"
    },

@@ -33,7 +33,7 @@ Every item is PASS or FAIL. Any FAIL: fix and re-run the list. In batch mode, a 
 21. recipe.md has every template section (none deleted; `none` where empty).
 22. The Study log (≤ 15 lines) is appended.
 
-## Phase B (before `status: "built"`)
+## Phase B (optional; before `status: "built"`)
 
 23. The golden recipe exists and Recipe.tsx follows its file layout and prop pattern (brand + content params).
 24. Only files inside the recipe folder changed (`git status --short` shows nothing else, renders excluded).
@@ -44,5 +44,5 @@ Every item is PASS or FAIL. Any FAIL: fix and re-run the list. In batch mode, a 
 29. Our sheet exists and the row-by-row comparison table is in recipe.md with every boundary within ±3 fr (after scaling)
     or a written reason.
 30. Shot count within ±25 % of the reference's rows.
-31. Final mp4 and poster (frame 0) exist; poster is not black.
-32. `preview` fields are filled only with URLs the batch provided; otherwise omitted.
+31. Frame 0 is not black (still at `--frame=0` read).
+32. No `preview` field unless the task gave a URL of a render its author hosts; no render committed or uploaded.

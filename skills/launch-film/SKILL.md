@@ -12,7 +12,7 @@ decides the order of work, the gates, and which rule backs each decision.
 ## Paths and commands
 
 Run every command from `launch-video/` (the studio). Paths below are relative to it. `craft/`, `schemas/` and
-`recipes/index.json` resolve from the harness root (`launch-video/` in a user project, the repo root in launchfilm).
+`recipes/` (`CATALOG.md`, `index.json`) resolve from the harness root (`launch-video/` in a user project, the repo root in launchfilm).
 
 | What | Where |
 |---|---|
@@ -69,7 +69,7 @@ as the first line of `STORYBOARD.md`. Edits after approval re-open the gate for 
 |---|---|
 | "make a launch video / product film / promo for X" | full pipeline from Gate 0 |
 | "use this video as inspiration" + a file/URL | reference-study (phase A only), then continue at gate 3 with the recipe |
-| "something like <style>", "show me options" | recipes: pick 1–3, show gallery links, continue at gate 3 |
+| "something like <style>", "show me options", "from recipe <id>" | recipes: pick 1–3, show each with a one-line why, its beat sheet summary and its source link (no hosted previews), continue at gate 3 |
 | "new brand / logo / colors changed" | brand-intake, then re-run stills and QA |
 | "change the voice / script / music" | story (script) or sound; keep approved rows; re-run 4 → 6 → 7 |
 | "make it vertical / for LinkedIn / for PH" | add the preset (`--presets` or `defaultPresets`), recompose (scene-build), QA that preset, render |

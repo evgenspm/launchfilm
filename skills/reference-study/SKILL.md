@@ -1,12 +1,18 @@
 ---
 name: reference-study
-description: Turn a reference video into a launchfilm recipe. Use for "study this video", "break down this launch film", "how did they make this", "make a recipe from this reference", "ref add", or the unattended reference batch. Phase A (study) reads the analysis directory made by `npx launchfilm ref add <file|url>` (meta.json, 4 fps timestamped contact sheets, cuts.json + cut frames, audio.json, optional transcript.json) and writes recipe.md + recipe.json valid against schemas/recipe.schema.json: timings measured from timestamps, motion in frames and named springs, techniques only from craft/vocabulary.md, our own title, source link only, missing components listed. Phase B (build) imitates the golden recipe in Recipe.tsx, renders stills and a sheet, compares with the reference sheet, fixes, renders mp4 + poster. Strict and mechanical: no guessing, no questions in batch mode. Use recipes to reuse an existing recipe, scene-build to build a user's film, film-qa to check a film render.
+description: Turn a reference video into a launchfilm recipe. Use for "study this video", "break down this launch film", "how did they make this", "make a recipe from this reference", "ref add", or the unattended reference batch. Phase A (study, the deliverable) reads the analysis directory from `npx launchfilm ref add <file|url>` (meta.json, 4 fps timestamped contact sheets, cuts.json + cut frames, audio.json, optional transcript.json) and writes recipe.md + recipe.json valid against schemas/recipe.schema.json: timings measured from timestamps, motion in frames and named springs, techniques only from craft/vocabulary.md, our own title, source link only. That text recipe is complete; an agent builds a film from it. Phase B is optional (only when ready code is wanted): Recipe.tsx imitating the golden recipe, checked with stills and a local sheet against the reference, status built. Mechanical: no guessing, no questions in batch mode. Use recipes to reuse a recipe, scene-build for a user's film, film-qa to check a render.
 ---
 
 # reference-study
 
-One reference video in, one recipe out. The same procedure runs attended (a user shares a video) and unattended
+One reference video in, one text recipe out. The same procedure runs attended (a user shares a video) and unattended
 (a batch of ~200 references). Output must be identical in quality in both: measured, mechanical, reproducible.
+
+The deliverable is phase A: `recipe.md` + `recipe.json` with `status: "studied"`. It must be precise enough that an
+agent who never saw the reference can rebuild the film from studio presets: every row's timing, motion in frames and
+named springs, transition, sound. Phase B (ready `Recipe.tsx`) is optional and runs only when the task asks for code.
+Nothing is rendered for publishing and nothing is uploaded: there are no hosted previews; the source link is what
+people watch.
 
 ## Modes
 
@@ -31,7 +37,10 @@ Also read: `schemas/recipe.schema.json`, `craft/vocabulary.md`, `craft/04-motion
 ## Outputs
 
 `<studio>/src/recipes/<id>/recipe.md` and `recipe.json` (`status: "studied"`), unless the batch names another output
-dir. Phase B adds `Recipe.tsx`, `index.tsx`, renders, and sets `status: "built"`.
+dir. Done when both validate and the self-check passes; then run `node scripts/build-index.mjs` (harness repo) so the
+recipe shows up in `recipes/index.json` and `recipes/CATALOG.md`. Optional phase B adds `Recipe.tsx` + `index.tsx` and
+sets `status: "built"`; its renders stay local in `out/recipes/<id>/` (gitignored) as QA evidence. Never write a
+`preview` field unless the task gives you a URL of a render its author hosts.
 
 ## Hard rules
 
@@ -65,10 +74,12 @@ dir. Phase B adds `Recipe.tsx`, `index.tsx`, renders, and sets `status: "built"`
 | A10 | `inputs`, `components` (studio exports the rebuild will use, verified in `<studio>/API.md`), `params`, missing components (recipe.md only) | [measure.md §9](references/measure.md) |
 | A11 | `id`, `title`, `summary`, `use_when`, `tags`, `family`, `difficulty`, `render_cost` by the rules | [measure.md §10](references/measure.md) |
 | A12 | Write recipe.md from [recipe-md-template.md](references/recipe-md-template.md) and recipe.json with `status: "studied"` | |
-| A13 | Validate (both commands below must pass), then run [self-check.md](references/self-check.md) | |
+| A13 | Validate (the commands below must pass), then run [self-check.md](references/self-check.md) | |
 
-Validation (run from the harness root):
+Validation (run from the harness root). In the launchfilm repo the first command covers schema, vocabulary and sibling
+files for every recipe, offline; the other two check one file anywhere:
 ```bash
+node scripts/validate-recipes.mjs          # launchfilm repo: needs `npm ci --prefix studio`
 npx -y -p ajv-cli@5 -p ajv-formats ajv validate --spec=draft2020 -c ajv-formats \
   -s schemas/recipe.schema.json -d <studio>/src/recipes/<id>/recipe.json
 node -e '
@@ -80,20 +91,23 @@ const used=[...r.techniques,...(r.audio.sfx||[]).map(s=>s.sound),...r.structure.
 const bad=used.filter(x=>!ids.has(x));if(bad.length){console.error("not in vocabulary:",[...new Set(bad)].join(", "));process.exit(1)}
 console.log("vocabulary ok:",used.length,"ids")' <studio>/src/recipes/<id>/recipe.json
 ```
-If `npx` can't reach the network, write `BLOCKED.md` (batch) instead of skipping validation.
+If neither the repo script nor `npx` can run, write `BLOCKED.md` (batch) instead of skipping validation.
 
 Worked example of the whole of phase A: [references/worked-example.md](references/worked-example.md).
 
-## Phase B: build
+## Phase B: build (optional, only if you want ready code)
 
-Only after phase A passed. Steps, comparison method and gate: [references/build-phase.md](references/build-phase.md).
+Skip it unless the task or the user asks for ready code. A studied recipe is complete without it. Only after phase A
+passed. Steps, comparison method and gate: [references/build-phase.md](references/build-phase.md).
 Summary: imitate the golden recipe `<studio>/src/recipes/statement-sequence-launch/` (missing → BLOCKED / tell the user;
 never improvise a structure); implement `Recipe.tsx` (brand + content params) and `index.tsx` (Composition with the demo
-brand) inside the recipe folder only; stills at every row midpoint; half-scale render; our sheet at 4 fps 4×4; compare
-row by row with the reference sheet; fix (≤ 3 iterations); final mp4 + poster (frame 0); `status: "built"`.
-Gate: schema valid, render exists, duration within ±20 % of the reference, our sheet exists.
+brand) inside the recipe folder only; stills at every row midpoint; a local half-scale render and our sheet at 4 fps
+4×4; compare row by row with the reference sheet; fix (≤ 3 iterations); `status: "built"`.
+Gate: schema valid, composition lists, local render duration within ±20 % of the reference, our sheet exists. If the
+gate fails, keep the code out (or delete it) and leave `status: "studied"`: the text recipe stands on its own.
 
 ## Report (≤ 15 lines, also appended to recipe.md `## Study log`)
 
 id, family, duration and rows, techniques count, cut_on_beat, what could not be measured and at which resolution,
-proposed terms, missing components, phase B result (iterations, gate values) or BLOCKED reason.
+proposed terms, missing components, phase B result if it ran (iterations, gate values; else "phase B: not run") or
+BLOCKED reason.

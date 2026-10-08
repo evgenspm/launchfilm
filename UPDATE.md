@@ -22,7 +22,7 @@ shows the new `version`, and `npm run render:sample` writes `out/_sample.mp4`.
 2. **Ask the user** whether to update, quoting the version and the 2–3 most relevant changelog lines.
 3. **Apply (only on yes).** `npx launchfilm update --apply`. It clones the release tag into a temp folder and re-runs its
    installer with `--update`: studio code (`cli/`, `src/`, `scripts/`, presets, procedural SFX), `craft/`, `schemas/`,
-   `recipes/index.json`, `API.md`, skills and the marked block are replaced; your films, `.env`, `harness.config.json`
+   `recipes/index.json` + `recipes/CATALOG.md`, `API.md`, skills and the marked block are replaced; your films, `.env`, `harness.config.json`
    and fetched/generated media are kept. New config keys come from defaults, so an older `harness.config.json` keeps working.
    Without network access to `api.github.com`, do the same by hand:
    ```bash

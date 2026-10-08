@@ -255,6 +255,11 @@ export const run = async (argv: string[]) => {
 	}
 	// film-level checks
 	const filmRows: Row[] = [];
+	// placeholders left by `new --recipe` on a text recipe: the built-in "todo" scene, or Film.tsx entries still = TodoScene
+	const filmTsx = path.join(film.dir, 'Film.tsx');
+	const todoKeys = existsSync(filmTsx) ? [...readFileSync(filmTsx, 'utf8').matchAll(/^\s*['"]?([\w-]+)['"]?\s*:\s*TodoScene\b/gm)].map((m) => m[1]) : [];
+	const todoShots = ((film.spec.shots ?? []) as {id?: string; scene?: string}[]).filter((s) => s.scene === 'todo' || (s.scene && todoKeys.includes(s.scene))).map((s, i) => s.id ?? s.scene ?? `#${i + 1}`);
+	filmRows.push({id: 'B1', check: 'every shot built (no TodoScene placeholders)', result: todoShots.length ? 'FAIL' : 'PASS', evidence: todoShots.length ? `still TODO: ${todoShots.join(', ')} (films/${slug}/Film.tsx)` : `${(film.spec.shots ?? []).length} shots`});
 	const preview = previewVoiceLines(slug);
 	filmRows.push({id: 'V1', check: 'VO publishable (no preview-only voice)', result: preview.length ? 'FAIL' : 'PASS', evidence: preview.length ? `preview-only lines: ${preview.join(', ')}` : `${(film.spec.vo ?? []).length} VO lines`});
 	const cues = voCues(film, PUBLIC_DIR);
