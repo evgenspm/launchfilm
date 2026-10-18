@@ -98,7 +98,7 @@ jobs:
           node cli/launchfilm.mjs sfx gen riser --out "$RUNNER_TEMP/riser.wav"
           node cli/launchfilm.mjs beats "$RUNNER_TEMP/riser.wav" --out "$RUNNER_TEMP/riser.beats.json"
         working-directory: studio
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: sample-render
