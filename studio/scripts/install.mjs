@@ -70,6 +70,26 @@ const isFetchedMedia = (rel) =>
 	(/^public[\\/]music[\\/]/.test(rel) && !/music\.json$|\.gitignore$/.test(rel));
 const userOwned = (rel) => rel === 'harness.config.json' || /^films[\\/](?!_sample([\\/]|$))/.test(rel);
 const before = existsSync(DEST);
+const sfxManifest = path.join(DEST, 'public', 'sfx', 'sfx.json');
+const readSfxManifest = (file) => {
+	if (!existsSync(file)) return null;
+	try {
+		const manifest = JSON.parse(readFileSync(file, 'utf8'));
+		if (!manifest || !Array.isArray(manifest.sounds)) throw new Error('expected a sounds array');
+		const ids = new Set();
+		for (const sound of manifest.sounds) {
+			if (!sound || typeof sound.id !== 'string' || !sound.id.trim() || typeof sound.file !== 'string' || !sound.file.trim()) throw new Error('each sound needs a nonempty id and file');
+			if (ids.has(sound.id)) throw new Error(`duplicate sound id: ${sound.id}`);
+			ids.add(sound.id);
+		}
+		return manifest;
+	} catch (error) {
+		fail(`cannot preserve SFX manifest ${file}: ${error.message}. Fix it before reinstalling; no files were changed.`);
+	}
+};
+// Read the live catalog before copying. A saved installer snapshot predates sounds the user added later.
+const previousSfx = readSfxManifest(sfxManifest);
+const incomingSfx = readSfxManifest(path.join(STUDIO_SRC, 'public', 'sfx', 'sfx.json'));
 mkdirSync(DEST, {recursive: true});
 let copied = 0;
 cpSync(STUDIO_SRC, DEST, {
@@ -88,19 +108,17 @@ cpSync(STUDIO_SRC, DEST, {
 		return true;
 	},
 });
-// the SFX manifest: ours, plus whatever the user added (Kenney imports, paid generations) that still exists on disk
-const sfxManifest = path.join(DEST, 'public', 'sfx', 'sfx.json');
+// Upgrade bundled sounds, preserve live imports and custom procedural variants (including user overrides).
 const prevSfx = path.join(DEST, '.harness', 'sfx.prev.json');
-if (existsSync(prevSfx)) {
-	try {
-		const ours = JSON.parse(readFileSync(sfxManifest, 'utf8'));
-		const old = JSON.parse(readFileSync(prevSfx, 'utf8'));
-		const ids = new Set(ours.sounds.map((s) => s.id));
-		for (const s of old.sounds ?? []) if (!ids.has(s.id) && s.source !== 'launchfilm-procedural' && existsSync(path.join(DEST, 'public', 'sfx', s.file))) ours.sounds.push(s);
-		writeFileSync(sfxManifest, JSON.stringify(ours, null, 1) + '\n');
-	} catch {
-		// keep ours
+
+if (incomingSfx && previousSfx) {
+	const sounds = new Map(incomingSfx.sounds.map((sound) => [sound.id, sound]));
+	for (const sound of previousSfx.sounds) {
+		const incoming = sounds.get(sound.id);
+		const bundled = incoming && incoming.source === 'launchfilm-procedural' && sound.source === incoming.source && sound.file === incoming.file;
+		if (!bundled) sounds.set(sound.id, sound);
 	}
+	writeFileSync(sfxManifest, JSON.stringify({...incomingSfx, sounds: [...sounds.values()]}, null, 1) + '\n');
 }
 // keep a copy of the merged manifest for the next update
 mkdirSync(path.join(DEST, '.harness'), {recursive: true});

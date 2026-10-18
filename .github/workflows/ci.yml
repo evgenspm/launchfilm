@@ -40,6 +40,8 @@ jobs:
             console.log("REUSE ok (" + r.summary.files_total + " files; CC-BY-4.0 reserved for our media)");'
       - name: Media licence gate (SFX CC0 only, no committed music, repo ≤ 20 MB)
         run: node scripts/check-media.mjs
+      - name: Installer preserves user files on retry and update
+        run: node --test scripts/install.test.mjs
       - run: npm ci --prefix studio --no-audit --no-fund
       - name: Skills + manifests (spec frontmatter, versions, no symlinks)
         run: node scripts/sync-skills.mjs --check

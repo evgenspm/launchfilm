@@ -2,6 +2,12 @@
 
 Films people made with launchfilm. Opt-in only: nobody's film appears here unless they add it.
 
+## The film behind the kit
+
+[Eugene Li's Sharpy launch film](https://eugenefounder.lol/blog/how-to-make-cool-motion-design-videos/)
+started this project. Eugene made it with Claude Code, Codex and an earlier private toolkit,
+then extracted the craft rules, presets and workflow into launchfilm. Its product scenes illustrate the concept.
+
 ## Add yours
 
 Open a pull request that adds one row to the table below. Keep it to facts.
@@ -18,4 +24,3 @@ By adding a row you confirm the film is yours to share and that its music and fo
 
 | Film | Product | Made by | Presets | Recipes | Agent | Note |
 |---|---|---|---|---|---|---|
-| [example: replace](https://example.com) | Acme Ledger, example.com | @handle | `x-16x9`, `li-4x5` | `statement-sequence-launch` | Claude Code | Replace this example row with the first real film |

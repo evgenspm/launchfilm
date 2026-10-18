@@ -59,7 +59,7 @@ in one PR that updates both sides.
     `remotionLicenseAck` in `.harness/state.json`). It never blocks a render.
 12. Zero-key defaults must keep working end to end: Kokoro TTS, whisper.cpp timings, bundled CC0/CC BY music,
     procedural SFX, no generated footage. A paid provider is always optional.
-13. No network calls in scripts beyond npm, GitHub, and the provider a user explicitly configured. No `sudo`.
+13. Network calls: npm/GitHub and Google Chrome downloads for installation; Kenney, Incompetech and OpenGameArt for the documented audio library; GitHub/Hugging Face for local models; and providers the user explicitly configured. No telemetry. No `sudo`.
 
 **Craft and docs**
 14. Numbers beat adjectives: frames, ms, px, LUFS, words/s. Every rule must say how to check it.

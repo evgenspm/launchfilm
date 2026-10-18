@@ -3,9 +3,11 @@
 Your coding agent, working as a launch-film motion designer. Story, motion, voice, music, captions and per-platform
 exports for product launches, built on Remotion. Open source (MIT), and the defaults need no API keys.
 
-<!-- HERO VIDEO: drag the showcase mp4 (≤ 10 MB) into a GitHub issue, paste the user-attachments URL on the next line. -->
-<!-- https://github.com/user-attachments/assets/REPLACE-WITH-HERO-ID -->
-_The hero film lands here with the first release. To see what the recipes are built from, open any source link in [recipes/CATALOG.md](recipes/CATALOG.md)._
+[![Watch the 44-second Sharpy launch film](https://eugenefounder.lol/img/motion-design/sharpy-final-web-poster.jpg)](https://eugenefounder.lol/video/motion-design/sharpy-final-web.mp4)
+
+I built the Sharpy film with the earlier tools that became this kit. Read the
+[shot-by-shot breakdown](https://eugenefounder.lol/blog/how-to-make-cool-motion-design-videos/),
+or browse the [202 reference recipes](recipes/CATALOG.md). The film's product scenes are concept illustrations.
 
 ## Install: paste one line into your agent
 
@@ -30,7 +32,7 @@ with the same INSTALL.md):
 | Gemini CLI | `gemini extensions install https://github.com/evgenspm/launchfilm --ref v0.1.0` |
 | Anything that reads `.agents/skills` | `npx skills add evgenspm/launchfilm` |
 
-Needs Node 20+ and git. A studio takes about 420 MB on disk (Remotion plus its headless Chrome). If something is
+Needs Node 20+ and git. Local word timings also need whisper.cpp (or CMake and a C++ compiler to build it). A studio takes about 420 MB on disk (Remotion plus its headless Chrome). If something is
 missing, `npx launchfilm doctor` from `launch-video/` says what and how to fix it.
 
 ## Then ask for a film
@@ -93,7 +95,7 @@ Every render: H.264 High, yuv420p, AAC 48 kHz, faststart, master at −14 LUFS /
 | Word timings | From the TTS when it returns them, else whisper.cpp aligned to your script | ElevenLabs Forced Alignment, Deepgram |
 | Music | A CC0 and CC BY 4.0 library, downloaded at install, with beat grids and credit lines | Lyria, ElevenLabs Music (never committed to git), Stable Audio |
 | Sound effects | Our procedural presets (whoosh, riser, click, pop, impact, ding, glitch), CC0 | ElevenLabs sound effects, Stable Audio, your own Freesound token |
-| Footage and images | None: motion graphics, your UI, your screen recordings | Gemini, OpenAI (images), Runway, fal |
+| Footage and images | None: motion graphics, your UI, your screen recordings | Gemini, OpenAI (images), fal |
 | Studying a reference video | Frame sheets, cut list and a local transcript, read by your own agent | Gemini video understanding |
 | Fonts | Inter, Geist, Geist Mono, JetBrains Mono, Manrope, Unbounded (OFL, loaded offline) | Your brand font, if you hold the rights |
 
@@ -110,8 +112,10 @@ npm, never bundles it, and mentions this once per project before your first film
 
 ## No telemetry, no watermark
 
-- launchfilm sends nothing about you or your films anywhere. Network calls go to npm and GitHub (install, plus at most
-  one update check a day) and to the providers you configure yourself.
+- launchfilm has no analytics or upload service. Installation downloads dependencies from npm, Chrome from Google,
+  and licensed audio from Kenney, Incompetech and OpenGameArt. Local voice and transcript models download from GitHub
+  and Hugging Face on first use. Optional providers receive only the inputs you ask them to process. The CLI checks
+  GitHub for updates at most once a day.
 - Your films carry no watermark, logo or end card of ours.
 - Once per project, after your first successful render, the agent says in one sentence who made launchfilm and offers
   credit lines you can paste if you post the film. You won't see it again in that project.

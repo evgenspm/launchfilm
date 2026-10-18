@@ -40,10 +40,8 @@ export const PROVIDERS: ProviderInfo[] = [
 	{id: 'gemini', capability: 'image', free: false, env: ['GEMINI_API_KEY'], note: 'Gemini image model from config (no free tier)'},
 	{id: 'openai', capability: 'image', free: false, env: ['OPENAI_API_KEY'], note: 'OpenAI image model from config'},
 	{id: 'fal', capability: 'image', free: false, env: ['FAL_KEY'], note: 'fal.ai model from config'},
-	{id: 'runway', capability: 'image', free: false, env: ['RUNWAYML_API_SECRET'], note: 'Runway (trains on inputs/outputs per its terms)'},
 	{id: 'gemini', capability: 'video', free: false, env: ['GEMINI_API_KEY'], note: 'Gemini video model id from config (never a hard-coded preview id)'},
 	{id: 'fal', capability: 'video', free: false, env: ['FAL_KEY'], note: 'fal.ai video model from config'},
-	{id: 'runway', capability: 'video', free: false, env: ['RUNWAYML_API_SECRET'], note: 'Runway video model from config'},
 	{id: 'gemini', capability: 'vision', free: false, env: ['GEMINI_API_KEY'], note: 'Gemini video review (free tier trains on uploads)'},
 ];
 

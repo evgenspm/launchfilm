@@ -18,18 +18,20 @@ exists (the installer renders it at half scale and checks it with ffprobe: 3.00 
 
 ## Steps
 
-1. **Already installed?** If `launch-video/.harness/state.json` has `"version": "0.1.0"`, skip to step 5.
+1. **Installing or retrying?** Run these steps in both cases. A version in `.harness/state.json` does not prove the
+   previous install finished. The installer preserves your films, keys and config, and skips unchanged dependencies.
 2. **Check the tools.** `node -v` must be ≥ 20 and `git --version` must work. If not, tell the user to install Node 20+
    from https://nodejs.org (and git), then stop.
-3. **Fetch the pinned release** into a temporary folder:
+3. **Fetch the pinned release** into a temporary folder. On a retry, reuse `.launchfilm-tmp` only after verifying
+   its remote is this repository and its checked-out tag is `v0.1.0`; otherwise use a new temporary folder:
    ```bash
    git clone --depth 1 --branch v0.1.0 https://github.com/evgenspm/launchfilm .launchfilm-tmp
    ```
-4. **Run the installer**, then delete the clone:
+4. **Run the installer.** Delete the clone only if it exits successfully; keep it on failure for the retry:
    ```bash
-   node .launchfilm-tmp/studio/scripts/install.mjs --target .
-   rm -rf .launchfilm-tmp            # PowerShell: Remove-Item -Recurse -Force .launchfilm-tmp
+   node .launchfilm-tmp/studio/scripts/install.mjs --target . && rm -rf .launchfilm-tmp
    ```
+   In PowerShell, run the installer first, then `if ($LASTEXITCODE -eq 0) { Remove-Item -Recurse -Force .launchfilm-tmp }`.
    It prints one line per step and ends with `DONE` or `NOT DONE`. What it does:
    - copies the studio template to `./launch-video/`, with `craft/`, `schemas/`, the recipe catalog (`recipes/index.json`, `recipes/CATALOG.md`) and `API.md` inside it
      (the same relative paths the skills use). It never overwrites `films/`, `harness.config.json` or `.env`;

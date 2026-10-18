@@ -3,7 +3,7 @@
 // which silently disables DTW token timestamps, and Remotion's transcribe() never passes -nfa. So we call
 // whisper-cli ourselves and add -nfa whenever the binary knows the flag.
 import {createRequire} from 'node:module';
-import {existsSync, readFileSync, rmSync} from 'node:fs';
+import {existsSync, mkdirSync, readFileSync, rmSync} from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import type {Config} from '../../lib/config.js';
@@ -72,6 +72,7 @@ const ensureModel = async (w: W): Promise<string> => {
 	const p = whisperModelPath(w);
 	if (existsSync(p)) return p;
 	const {downloadWhisperModel} = req('@remotion/install-whisper-cpp');
+	mkdirSync(path.dirname(p), {recursive: true});
 	note(`whisper model ${w.model} not found: downloading into ${path.dirname(p)}`);
 	await downloadWhisperModel({model: w.model, folder: path.dirname(p), printOutput: true});
 	return p;
